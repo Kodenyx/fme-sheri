@@ -1,4 +1,4 @@
-import { Headphones, MessageSquare, Robot } from "lucide-react";
+import { Headphones, MessageSquare, Bot } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const solutions = [
@@ -15,7 +15,7 @@ const solutions = [
   {
     title: "Custom Automation",
     description: "Tailored automation solutions that streamline your specific workflow and administrative tasks.",
-    icon: Robot,
+    icon: Bot,
   },
 ];
 
