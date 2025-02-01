@@ -27,7 +27,13 @@ const Navbar = () => {
               {item.label}
             </a>
           ))}
-          <Button className="bg-gradient-primary">Book a Call</Button>
+          <a 
+            href="https://cal.com/aarti-anand82" 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            <Button className="bg-gradient-primary text-black">Book a Call</Button>
+          </a>
         </div>
 
         {/* Mobile Navigation */}
@@ -49,7 +55,14 @@ const Navbar = () => {
                     {item.label}
                   </a>
                 ))}
-                <Button className="bg-gradient-primary w-full">Book a Call</Button>
+                <a 
+                  href="https://cal.com/aarti-anand82" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-full"
+                >
+                  <Button className="bg-gradient-primary w-full text-black">Book a Call</Button>
+                </a>
               </div>
             </SheetContent>
           </Sheet>
