@@ -6,11 +6,10 @@ const Hero = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-5xl md:text-7xl font-bold mb-8 text-gray-900">
-            AI-Powered{" "}
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#818CF8] to-[#06B6D4]">
-              Healthcare
+              Kodenyx AI
             </span>{" "}
-            Solutions
+            for Healthcare
           </h1>
           <p className="text-xl md:text-2xl mb-12 text-gray-600 max-w-3xl mx-auto">
             Transform your healthcare practice with intelligent automation. Our AI agents handle appointments, inquiries, and follow-ups, letting you focus on patient care.
