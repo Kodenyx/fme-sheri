@@ -16,8 +16,8 @@ const FAQs = () => {
       answer: "No! Our AI is trained to use natural, friendly language, ensuring a personalized and human-like interaction that enhances the patient experience.",
     },
     {
-      question: "Do you provide ongoing support?",
-      answer: "Yes, we offer continuous support and maintenance packages to ensure your digital solutions remain up-to-date and perform optimally.",
+      question: "Can AI handle patient inquiries and follow-ups effectively?",
+      answer: "Yes! AI can answer common patient questions (pricing, insurance, hours), send follow-up emails, and even remind patients about upcoming treatments.",
     },
     {
       question: "What is your development process?",
