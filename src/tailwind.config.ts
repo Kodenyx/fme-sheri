@@ -25,20 +25,20 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#8B5CF6",
-          foreground: "#FFFFFF",
+          DEFAULT: "#D6BCFA",
+          foreground: "#4A5568",
         },
         secondary: {
-          DEFAULT: "#7C3AED",
-          foreground: "#FFFFFF",
+          DEFAULT: "#E5DEFF",
+          foreground: "#4A5568",
         },
         accent: {
-          DEFAULT: "#6E59A5",
-          foreground: "#FFFFFF",
+          DEFAULT: "#FFDEE2",
+          foreground: "#4A5568",
         },
       },
       backgroundImage: {
-        "gradient-primary": "linear-gradient(102.3deg, rgba(147,39,143,1) 5.9%, rgba(234,172,232,1) 64%, rgba(246,219,245,1) 89%)",
+        "gradient-primary": "linear-gradient(102.3deg, rgba(214,188,250,1) 5.9%, rgba(229,222,255,1) 64%, rgba(255,222,226,1) 89%)",
       },
     },
   },
