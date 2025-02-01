@@ -13,7 +13,7 @@ const Navbar = () => {
     <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 shadow-sm">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <div className="flex items-center">
-          <img src="/lovable-uploads/f97c1b08-0626-469f-bf99-2d3f3114856b.png" alt="Logo" className="h-8 w-auto" />
+          <img src="/lovable-uploads/ea89699b-8447-4ee3-8fe3-3ee84d764643.png" alt="Kodenyx AI Logo" className="h-12 w-auto" />
           <span className="ml-2 text-xl font-bold text-gray-900">Kodenyx AI</span>
         </div>
 
