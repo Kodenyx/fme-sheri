@@ -8,8 +8,8 @@ import {
 const FAQs = () => {
   const faqs = [
     {
-      question: "What services do you offer?",
-      answer: "We offer comprehensive digital transformation solutions including web development, mobile app development, cloud solutions, and digital strategy consulting.",
+      question: "How does AI scheduling work with my existing appointment system?",
+      answer: "Our AI seamlessly integrates with your current practice management software, automating bookings, cancellations, and reminders without disrupting your workflow.",
     },
     {
       question: "How long does a typical project take?",
