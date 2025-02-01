@@ -8,7 +8,7 @@ import {
 const FAQs = () => {
   const faqs = [
     {
-      question: "How does AI scheduling work with my existing appointment system?",
+      question: "How does AI scheduling work?",
       answer: "Our AI seamlessly integrates with your current practice management software, automating bookings, cancellations, and reminders without disrupting your workflow.",
     },
     {
