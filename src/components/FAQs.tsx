@@ -12,8 +12,8 @@ const FAQs = () => {
       answer: "Our AI seamlessly integrates with your current practice management software, automating bookings, cancellations, and reminders without disrupting your workflow.",
     },
     {
-      question: "How long does a typical project take?",
-      answer: "Project timelines vary depending on complexity and scope. A typical web development project can take 8-12 weeks, while smaller projects might take 4-6 weeks.",
+      question: "Will AI chatbots sound robotic to my patients?",
+      answer: "No! Our AI is trained to use natural, friendly language, ensuring a personalized and human-like interaction that enhances the patient experience.",
     },
     {
       question: "Do you provide ongoing support?",
