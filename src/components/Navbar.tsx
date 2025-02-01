@@ -27,7 +27,7 @@ const Navbar = () => {
               {item.label}
             </a>
           ))}
-          <Button className="bg-gradient-primary">Contact Us</Button>
+          <Button className="bg-gradient-primary">Book a Call</Button>
         </div>
 
         {/* Mobile Navigation */}
@@ -49,7 +49,7 @@ const Navbar = () => {
                     {item.label}
                   </a>
                 ))}
-                <Button className="bg-gradient-primary w-full">Contact Us</Button>
+                <Button className="bg-gradient-primary w-full">Book a Call</Button>
               </div>
             </SheetContent>
           </Sheet>
