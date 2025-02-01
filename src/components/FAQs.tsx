@@ -20,8 +20,8 @@ const FAQs = () => {
       answer: "Yes! AI can answer common patient questions (pricing, insurance, hours), send follow-up emails, and even remind patients about upcoming treatments.",
     },
     {
-      question: "What is your development process?",
-      answer: "We follow an agile methodology with regular client check-ins. This includes discovery, planning, design, development, testing, and deployment phases.",
+      question: "How soon can I start seeing results after implementation?",
+      answer: "Most practices notice a boost in efficiency, fewer missed calls, and higher patient engagement within the first 30 days of using AI automation.",
     },
   ];
 
