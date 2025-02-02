@@ -13,7 +13,7 @@ const Navbar = () => {
     <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 shadow-sm">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <div className="flex items-center">
-          <img src="/lovable-uploads/f97c1b08-0626-469f-bf99-2d3f3114856b.png" alt="Logo" className="h-8 w-auto" />
+          <span className="text-xl font-bold text-primary">Kodenyx AI</span>
         </div>
 
         {/* Desktop Navigation */}
