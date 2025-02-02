@@ -1,13 +1,34 @@
 import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { useNavigate } from "react-router-dom";
+import { supabase } from "@/integrations/supabase/client";
+import { useEffect, useState } from "react";
 
 const Navbar = () => {
+  const navigate = useNavigate();
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
   const navItems = [
     { label: "Solutions", href: "#solutions" },
     { label: "Benefits", href: "#benefits" },
     { label: "Contact", href: "#contact" },
   ];
+
+  useEffect(() => {
+    supabase.auth.onAuthStateChange((event, session) => {
+      setIsAuthenticated(!!session);
+    });
+
+    // Check initial session
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setIsAuthenticated(!!session);
+    });
+  }, []);
+
+  const handleSignOut = async () => {
+    await supabase.auth.signOut();
+    navigate("/auth");
+  };
 
   return (
     <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 shadow-sm">
@@ -30,6 +51,22 @@ const Navbar = () => {
               {item.label}
             </a>
           ))}
+          {isAuthenticated ? (
+            <Button 
+              onClick={handleSignOut}
+              variant="outline"
+              className="border-2 border-gray-200"
+            >
+              Sign Out
+            </Button>
+          ) : (
+            <Button
+              onClick={() => navigate("/auth")}
+              className="bg-[#8B5CF6] hover:bg-[#7C3AED] text-white font-bold shadow-lg"
+            >
+              Sign In
+            </Button>
+          )}
           <a 
             href="https://cal.com/aarti-anand82" 
             target="_blank" 
@@ -58,6 +95,22 @@ const Navbar = () => {
                     {item.label}
                   </a>
                 ))}
+                {isAuthenticated ? (
+                  <Button 
+                    onClick={handleSignOut}
+                    variant="outline"
+                    className="w-full border-2 border-gray-200"
+                  >
+                    Sign Out
+                  </Button>
+                ) : (
+                  <Button
+                    onClick={() => navigate("/auth")}
+                    className="w-full bg-[#8B5CF6] hover:bg-[#7C3AED] text-white font-bold shadow-lg"
+                  >
+                    Sign In
+                  </Button>
+                )}
                 <a 
                   href="https://cal.com/aarti-anand82" 
                   target="_blank" 
