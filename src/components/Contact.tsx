@@ -1,8 +1,49 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ArrowRight } from "lucide-react";
+import { useState } from "react";
+import { useToast } from "@/components/ui/use-toast";
+import axios from "axios";
 
 const Contact = () => {
+  const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      const response = await axios.post(
+        "https://api.convertkit.com/v3/forms/7636289/subscribe",
+        {
+          api_key: "3vcrjfR5Yfz3e1Se2AzGHQ",
+          email,
+          first_name: name,
+        }
+      );
+
+      if (response.status === 200) {
+        toast({
+          title: "Success!",
+          description: "Thank you for subscribing. We'll be in touch soon!",
+        });
+        setEmail("");
+        setName("");
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Something went wrong. Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section id="contact" className="py-20">
       <div className="container mx-auto px-4">
@@ -13,13 +54,29 @@ const Contact = () => {
               Ready to transform your healthcare practice? Let's begin with your details.
             </p>
           </div>
-          <form className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid md:grid-cols-2 gap-6">
-              <Input placeholder="Name" />
-              <Input type="email" placeholder="Email" />
+              <Input 
+                placeholder="Name" 
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
+              />
+              <Input 
+                type="email" 
+                placeholder="Email" 
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
             </div>
-            <Button className="w-full bg-black hover:bg-black/90 text-white font-bold text-lg rounded-xl shadow-lg">
-              Get started <ArrowRight className="ml-2" />
+            <Button 
+              type="submit"
+              disabled={isSubmitting}
+              className="w-full bg-black hover:bg-black/90 text-white font-bold text-lg rounded-xl shadow-lg"
+            >
+              {isSubmitting ? "Submitting..." : "Get started"} 
+              <ArrowRight className="ml-2" />
             </Button>
           </form>
         </div>
