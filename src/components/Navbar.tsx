@@ -35,7 +35,7 @@ const Navbar = () => {
             target="_blank" 
             rel="noopener noreferrer"
           >
-            <Button className="bg-gradient-primary text-black font-bold">Book a Call</Button>
+            <Button className="bg-[#8B5CF6] hover:bg-[#7C3AED] text-white font-bold shadow-lg">Book A Demo</Button>
           </a>
         </div>
 
@@ -64,7 +64,7 @@ const Navbar = () => {
                   rel="noopener noreferrer"
                   className="w-full"
                 >
-                  <Button className="bg-gradient-primary w-full text-black font-bold">Book a Call</Button>
+                  <Button className="bg-[#8B5CF6] hover:bg-[#7C3AED] w-full text-white font-bold shadow-lg">Book A Demo</Button>
                 </a>
               </div>
             </SheetContent>
