@@ -25,7 +25,7 @@ const Hero = () => {
                 size="lg" 
                 className="bg-black text-white hover:bg-black/90 text-lg py-6 px-8"
               >
-                Get Started
+                Book A Demo
               </Button>
             </a>
             <a href="#contact">
