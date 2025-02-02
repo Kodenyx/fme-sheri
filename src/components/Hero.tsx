@@ -7,7 +7,7 @@ const Hero = () => {
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-5xl md:text-7xl font-bold mb-8 text-gray-900">
             AI-Powered{" "}
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#818CF8] to-[#06B6D4]">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#1A1F2C] to-[#333333]">
               Healthcare
             </span>{" "}
             Solutions
