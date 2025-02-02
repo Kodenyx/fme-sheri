@@ -17,7 +17,9 @@ const Contact = () => {
               <Input placeholder="Name" />
               <Input type="email" placeholder="Email" />
             </div>
-            <Button className="w-full bg-gradient-primary">Get Started</Button>
+            <Button className="w-full bg-black hover:bg-black/90 text-white font-bold">
+              Get Started
+            </Button>
           </form>
         </div>
       </div>
