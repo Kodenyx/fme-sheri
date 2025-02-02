@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { ArrowRight } from "lucide-react";
 
 const Contact = () => {
   return (
@@ -17,8 +18,8 @@ const Contact = () => {
               <Input placeholder="Name" />
               <Input type="email" placeholder="Email" />
             </div>
-            <Button className="w-full bg-black hover:bg-black/90 text-white font-bold">
-              Get Started
+            <Button className="w-full bg-black hover:bg-black/90 text-white font-bold text-lg rounded-xl shadow-lg">
+              Get started <ArrowRight className="ml-2" />
             </Button>
           </form>
         </div>
