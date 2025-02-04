@@ -8,7 +8,7 @@ const Hero = () => {
           <h1 className="text-5xl md:text-7xl font-bold mb-8 text-gray-900">
             AI-Powered{" "}
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#818CF8] to-[#06B6D4]">
-              Voice and Chatbased
+              Voice and Chat
             </span>{" "}
             Solutions
           </h1>
