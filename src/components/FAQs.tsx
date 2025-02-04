@@ -9,19 +9,19 @@ const FAQs = () => {
   const faqs = [
     {
       question: "How does AI scheduling work?",
-      answer: "Our AI seamlessly integrates with your current practice management software, automating bookings, cancellations, and reminders without disrupting your workflow.",
+      answer: "Our AI seamlessly integrates with your current business software, automating bookings, cancellations, and reminders without disrupting your workflow.",
     },
     {
-      question: "Will AI chatbots sound robotic to my patients?",
-      answer: "No! Our AI is trained to use natural, friendly language, ensuring a personalized and human-like interaction that enhances the patient experience.",
+      question: "Will AI chatbots sound robotic to my customers?",
+      answer: "No! Our AI is trained to use natural, friendly language, ensuring a personalized and human-like interaction that enhances the customer experience.",
     },
     {
-      question: "Can AI handle patient inquiries and follow-ups effectively?",
-      answer: "Yes! AI can answer common patient questions (pricing, insurance, hours), send follow-up emails, and even remind patients about upcoming treatments.",
+      question: "Can AI handle customer inquiries and follow-ups effectively?",
+      answer: "Yes! AI can answer common customer questions (pricing, services, hours), send follow-up emails, and even remind customers about upcoming appointments.",
     },
     {
       question: "How soon can I start seeing results after implementation?",
-      answer: "Most practices notice a boost in efficiency, fewer missed calls, and higher patient engagement within the first 30 days of using AI automation.",
+      answer: "Most businesses notice a boost in efficiency, fewer missed calls, and higher customer engagement within the first 30 days of using AI automation.",
     },
   ];
 

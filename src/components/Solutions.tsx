@@ -4,12 +4,12 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 const solutions = [
   {
     title: "AI Voice Agents",
-    description: "Intelligent voice assistants that handle appointment scheduling and patient inquiries 24/7.",
+    description: "Intelligent voice assistants that handle customer calls, appointments, and inquiries 24/7.",
     icon: Headphones,
   },
   {
     title: "AI Chatbots",
-    description: "Smart chatbots that provide instant responses to common questions and guide patients through basic processes.",
+    description: "Smart chatbots that provide instant responses to common questions and guide customers through basic processes.",
     icon: MessageSquare,
   },
   {
@@ -26,7 +26,7 @@ const Solutions = () => {
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4">Our Solutions</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Comprehensive AI solutions designed specifically for healthcare providers
+            Comprehensive AI solutions designed to enhance your business operations
           </p>
         </div>
         <div className="grid md:grid-cols-3 gap-8">

@@ -13,7 +13,7 @@ const Hero = () => {
             Solutions
           </h1>
           <p className="text-xl md:text-2xl mb-12 text-gray-600 max-w-3xl mx-auto">
-            Transform your healthcare practice with intelligent automation. Our AI agents handle appointments, inquiries, and follow-ups, letting you focus on patient care.
+            Transform your business with intelligent automation. Our AI agents handle customer inquiries, scheduling, and follow-ups, letting you focus on growth.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 

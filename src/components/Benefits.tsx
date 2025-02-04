@@ -2,7 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 
 const stats = [
   { value: "$10K+", label: "Monthly Revenue Increase" },
-  { value: "90%", label: "Automated Inquiries" },
+  { value: "90%", label: "Automated Customer Service" },
   { value: "24/7", label: "Availability" },
   { value: "10x", label: "Faster Response Time" },
 ];
@@ -12,9 +12,9 @@ const Benefits = () => {
     <section id="benefits" className="py-20 bg-gradient-primary">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4 text-gray-900">Transform Your Practice</h2>
+          <h2 className="text-3xl font-bold mb-4 text-gray-900">Transform Your Business</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            See the real impact our AI solutions can have on your healthcare practice
+            See the real impact our AI solutions can have on your operations
           </p>
         </div>
         <div className="grid md:grid-cols-4 gap-6">
