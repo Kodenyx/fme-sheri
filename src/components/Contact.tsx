@@ -22,6 +22,11 @@ const Contact = () => {
           api_key: "3vcrjfR5Yfz3e1Se2AzGHQ",
           email,
           first_name: name,
+        },
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          }
         }
       );
 
@@ -39,6 +44,7 @@ const Contact = () => {
         description: "Something went wrong. Please try again later.",
         variant: "destructive",
       });
+      console.error('Subscription error:', error);
     } finally {
       setIsSubmitting(false);
     }
