@@ -51,7 +51,7 @@ const Contact = () => {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">Get Started Today</h2>
             <p className="text-gray-600">
-              Ready to transform your business? Let's begin with your details.
+              Discover How Businesses Are Saving 20+ Hours a Week with AI
             </p>
           </div>
           <form onSubmit={handleSubmit} className="space-y-6">
