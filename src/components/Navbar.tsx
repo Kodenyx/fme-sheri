@@ -66,7 +66,7 @@ const Navbar = () => {
             rel="noopener noreferrer"
           >
             <Button 
-              className="bg-gradient-to-r from-[#818CF8] to-[#06B6D4] text-white font-bold shadow-lg hover:opacity-90"
+              className="bg-gradient-to-r from-[#818CF8] to-[#06B6D4] text-black font-bold shadow-lg hover:opacity-90"
             >
               Book A Demo
             </Button>
@@ -108,7 +108,7 @@ const Navbar = () => {
                   className="w-full"
                 >
                   <Button 
-                    className="bg-gradient-to-r from-[#818CF8] to-[#06B6D4] w-full text-white font-bold shadow-lg hover:opacity-90"
+                    className="bg-gradient-to-r from-[#818CF8] to-[#06B6D4] w-full text-black font-bold shadow-lg hover:opacity-90"
                   >
                     Book A Demo
                   </Button>
