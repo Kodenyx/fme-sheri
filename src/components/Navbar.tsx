@@ -51,13 +51,20 @@ const Navbar = () => {
               {item.label}
             </a>
           ))}
-          {isAuthenticated && (
+          {isAuthenticated ? (
             <Button 
               onClick={handleSignOut}
               variant="outline"
               className="border-2 border-gray-200"
             >
               Sign Out
+            </Button>
+          ) : (
+            <Button
+              onClick={() => navigate("/auth")}
+              className="bg-[#8B5CF6] hover:bg-[#7C3AED] text-white font-bold shadow-lg"
+            >
+              Sign In
             </Button>
           )}
           <a 
@@ -88,13 +95,20 @@ const Navbar = () => {
                     {item.label}
                   </a>
                 ))}
-                {isAuthenticated && (
+                {isAuthenticated ? (
                   <Button 
                     onClick={handleSignOut}
                     variant="outline"
                     className="w-full border-2 border-gray-200"
                   >
                     Sign Out
+                  </Button>
+                ) : (
+                  <Button
+                    onClick={() => navigate("/auth")}
+                    className="w-full bg-[#8B5CF6] hover:bg-[#7C3AED] text-white font-bold shadow-lg"
+                  >
+                    Sign In
                   </Button>
                 )}
                 <a 
