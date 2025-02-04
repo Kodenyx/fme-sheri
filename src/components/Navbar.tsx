@@ -65,7 +65,11 @@ const Navbar = () => {
             target="_blank" 
             rel="noopener noreferrer"
           >
-            <Button className="bg-[#8B5CF6] hover:bg-[#7C3AED] text-white font-bold shadow-lg">Book A Demo</Button>
+            <Button 
+              className="bg-gradient-to-r from-[#818CF8] to-[#06B6D4] text-white font-bold shadow-lg hover:opacity-90"
+            >
+              Book A Demo
+            </Button>
           </a>
         </div>
 
@@ -103,7 +107,11 @@ const Navbar = () => {
                   rel="noopener noreferrer"
                   className="w-full"
                 >
-                  <Button className="bg-[#8B5CF6] hover:bg-[#7C3AED] w-full text-white font-bold shadow-lg">Book A Demo</Button>
+                  <Button 
+                    className="bg-gradient-to-r from-[#818CF8] to-[#06B6D4] w-full text-white font-bold shadow-lg hover:opacity-90"
+                  >
+                    Book A Demo
+                  </Button>
                 </a>
               </div>
             </SheetContent>
