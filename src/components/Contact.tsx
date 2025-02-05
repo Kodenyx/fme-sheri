@@ -81,7 +81,7 @@ const Contact = () => {
               disabled={isSubmitting}
               className="w-full bg-black hover:bg-black/90 text-white font-bold text-lg rounded-xl shadow-lg"
             >
-              {isSubmitting ? "Submitting..." : "Get started"} 
+              {isSubmitting ? "Submitting..." : "Get My Free Playbook"} 
               <ArrowRight className="ml-2" />
             </Button>
           </form>
