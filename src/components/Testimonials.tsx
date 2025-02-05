@@ -10,10 +10,10 @@ const testimonials = [
     image: "/placeholder.svg"
   },
   {
-    name: "Michael Rodriguez",
-    role: "CEO",
-    company: "Digital First",
-    content: "Implementing this AI solution was a game-changer. Our response times dropped from hours to minutes, and our team can focus on strategic tasks.",
+    name: "Jason Wickam",
+    role: "VP/General Manager",
+    company: "Sparro",
+    content: "I've had the pleasure of working with Kodenyx on a complex Industrial IoT Fleet project. The level of professionalism to solve complex business challenges has been exceptional. The performance and the quantitative data that was provided to the customer played a major role in securing the next phases of the RFP process and expanded pilot. At SPARRO we look forward to our continual relationship with Kodenyx and winning these complex enterprise opportunities.",
     image: "/placeholder.svg"
   },
   {
