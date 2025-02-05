@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Phone } from "lucide-react";
 
 const Hero = () => {
   return (
@@ -25,6 +26,7 @@ const Hero = () => {
                 size="lg" 
                 className="bg-black text-white hover:bg-black/90 text-lg py-6 px-8"
               >
+                <Phone className="mr-2 h-4 w-4" />
                 Book A Demo
               </Button>
             </a>

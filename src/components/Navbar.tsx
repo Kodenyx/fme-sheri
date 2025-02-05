@@ -1,4 +1,4 @@
-import { Menu } from "lucide-react";
+import { Menu, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { useNavigate } from "react-router-dom";
@@ -68,6 +68,7 @@ const Navbar = () => {
             <Button 
               className="bg-gradient-to-r from-[#818CF8] to-[#06B6D4] text-black font-bold shadow-lg hover:opacity-90"
             >
+              <Phone className="mr-2 h-4 w-4" />
               Book A Demo
             </Button>
           </a>
@@ -110,6 +111,7 @@ const Navbar = () => {
                   <Button 
                     className="bg-gradient-to-r from-[#818CF8] to-[#06B6D4] w-full text-black font-bold shadow-lg hover:opacity-90"
                   >
+                    <Phone className="mr-2 h-4 w-4" />
                     Book A Demo
                   </Button>
                 </a>
