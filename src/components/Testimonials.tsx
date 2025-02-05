@@ -4,8 +4,8 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 const testimonials = [
   {
     name: "Sarah Chen",
-    role: "Operations Manager",
-    company: "TechFlow Solutions",
+    role: "Fractional CFO",
+    company: "",
     content: "The AI automation has completely transformed how we handle customer support. We're saving over 25 hours weekly on routine inquiries alone.",
     image: "/placeholder.svg"
   },
