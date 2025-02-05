@@ -17,10 +17,10 @@ const testimonials = [
     image: "/placeholder.svg"
   },
   {
-    name: "Emily Watson",
-    role: "Customer Success Director",
-    company: "Growth Dynamics",
-    content: "The AI's ability to handle scheduling and follow-ups has eliminated the back-and-forth emails. It's like having an extra team member working 24/7.",
+    name: "Tim Lee",
+    role: "Founder",
+    company: "Movement Mastery Training",
+    content: "Kodenyx's AI powered solutions have made an exponential impact in my online presence.",
     image: "/placeholder.svg"
   }
 ];
