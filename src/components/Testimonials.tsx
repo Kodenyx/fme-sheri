@@ -13,7 +13,7 @@ const testimonials = [
     name: "Jason Wickam",
     role: "VP/General Manager",
     company: "Sparro",
-    content: "Working with Kodenyx on a complex Industrial IoT Fleet project has been exceptional. Their expertise in solving business challenges and delivering impactful data played a key role in advancing the RFP process and pilot expansion. We look forward to winning more enterprise opportunities together.",
+    content: "Working with Kodenyx on a complex Industrial IoT Fleet project has been exceptional. Their expertise in solving business challenges, automating workflows, and delivering impactful data played a key role in advancing the RFP process and pilot expansion. We look forward to winning more enterprise opportunities together.",
     image: "/placeholder.svg"
   },
   {
