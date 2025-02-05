@@ -3,7 +3,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const testimonials = [
   {
-    name: "Sarah Chen",
+    name: "Sarah C.",
     role: "Fractional CFO",
     company: "",
     content: "The AI automation has completely transformed how we handle customer support. We're saving over 25 hours weekly on routine inquiries alone.",
