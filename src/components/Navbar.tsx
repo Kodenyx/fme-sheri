@@ -31,15 +31,15 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 w-full bg-black/90 backdrop-blur-md z-50 shadow-sm">
+    <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 shadow-sm">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <img 
-            src="/lovable-uploads/b9c34d26-48de-4930-824a-af67a7b855db.png" 
+            src="/lovable-uploads/636fa0ba-bab6-4ac2-9303-bdc01c9f877f.png" 
             alt="KodenyxAI Logo" 
-            className="h-10 w-10"
+            className="h-10 w-auto"
           />
-          <span className="text-xl font-bold text-white">KodenyxAI</span>
+          <span className="text-xl font-bold text-black">KodenyxAI</span>
         </div>
 
         {/* Desktop Navigation */}
@@ -48,7 +48,7 @@ const Navbar = () => {
             <a
               key={item.label}
               href={item.href}
-              className="text-gray-300 hover:text-primary transition-colors"
+              className="text-gray-600 hover:text-primary transition-colors"
             >
               {item.label}
             </a>
@@ -57,7 +57,7 @@ const Navbar = () => {
             <Button 
               onClick={handleSignOut}
               variant="outline"
-              className="border-2 border-gray-200 text-white"
+              className="border-2 border-gray-200"
             >
               Sign Out
             </Button>
@@ -80,7 +80,7 @@ const Navbar = () => {
         <div className="md:hidden">
           <Sheet>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="text-white">
+              <Button variant="ghost" size="icon">
                 <Menu className="h-6 w-6" />
               </Button>
             </SheetTrigger>
