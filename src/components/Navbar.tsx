@@ -35,9 +35,9 @@ const Navbar = () => {
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <img 
-            src="/lovable-uploads/a7dfa721-4b28-4fba-b283-e3aea386b100.png" 
+            src="/lovable-uploads/636fa0ba-bab6-4ac2-9303-bdc01c9f877f.png" 
             alt="KodenyxAI Logo" 
-            className="h-10 w-10"
+            className="h-10 w-auto"
           />
           <span className="text-xl font-bold text-black">KodenyxAI</span>
         </div>
