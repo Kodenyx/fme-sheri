@@ -34,11 +34,9 @@ const Navbar = () => {
     <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 shadow-sm">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <img 
-            src="/lovable-uploads/a7dfa721-4b28-4fba-b283-e3aea386b100.png" 
-            alt="KodenyxAI Logo" 
-            className="h-10 w-10"
-          />
+          <div className="w-8 h-8 rounded bg-gradient-to-br from-primary via-secondary to-accent flex items-center justify-center">
+            <div className="w-4 h-4 bg-white rounded-sm transform rotate-45"></div>
+          </div>
           <span className="text-xl font-bold text-black">KodenyxAI</span>
         </div>
 
