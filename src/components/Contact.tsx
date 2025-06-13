@@ -1,18 +1,19 @@
 
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Zap, CheckCircle2, Sparkles } from "lucide-react";
+import { CheckCircle2, Sparkles, Copy } from "lucide-react";
 import { useState } from "react";
-import { useToast } from "@/components/ui/use-toast";
+import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
-  const [email, setEmail] = useState("");
   const [emailContent, setEmailContent] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [makeover, setMakeover] = useState("");
   const [showMakeover, setShowMakeover] = useState(false);
+  const [analysis, setAnalysis] = useState({
+    psychologicalTriggers: [],
+    structureImprovements: []
+  });
   const { toast } = useToast();
 
   const generateMakeover = (originalEmail: string) => {
@@ -33,29 +34,41 @@ const Contact = () => {
 
     // Generate improved version
     const improvedSubject = subject ? 
-      `🚀 ${subject.replace(/free|sale|buy now/gi, '').trim()} - Quick Question` : 
-      "🚀 Quick Question About Your [Specific Pain Point]";
+      `Quick question about [specific challenge they mentioned]` : 
+      "Quick question about [specific pain point]";
 
-    const improvedBody = `Hi [First Name],
+    const improvedBody = `Hi [Name],
 
-I noticed you're working on [specific problem they mentioned/industry challenge].
+I noticed you mentioned [specific challenge] on [platform/context].
 
-Most [their role/industry] I talk to struggle with [specific pain point related to their business].
+I've helped similar companies solve this exact issue - curious if you'd be open to a 15-minute conversation about it?
 
-I just created a simple [solution/resource] that helped [similar client/company] increase [specific metric] by [specific number]% in [timeframe].
-
-Worth a 2-minute look?
-
-[Simple yes/no question that moves them forward]
+No pitch, just genuinely curious about your approach.
 
 Best,
-[Your name]
+[Your name]`;
 
-P.S. If this isn't relevant, just hit reply and let me know what would be more helpful.`;
-
-    return `Subject: ${improvedSubject}
+    const makeoverResult = `Subject: ${improvedSubject}
 
 ${improvedBody}`;
+
+    // Generate analysis
+    const analysisResult = {
+      psychologicalTriggers: [
+        "Added social proof reference",
+        "Created curiosity gap",
+        "Reduced pressure with \"no pitch\" statement",
+        "Added specific value proposition"
+      ],
+      structureImprovements: [
+        "Personalized subject line",
+        "Clear, simple call-to-action",
+        "Strategic P.S. for reinforcement",
+        "Shorter, scannable format"
+      ]
+    };
+
+    return { makeover: makeoverResult, analysis: analysisResult };
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -64,8 +77,9 @@ ${improvedBody}`;
 
     // Simulate processing
     setTimeout(() => {
-      const generatedMakeover = generateMakeover(emailContent);
-      setMakeover(generatedMakeover);
+      const result = generateMakeover(emailContent);
+      setMakeover(result.makeover);
+      setAnalysis(result.analysis);
       setShowMakeover(true);
       
       toast({
@@ -78,10 +92,18 @@ ${improvedBody}`;
   };
 
   const handleReset = () => {
-    setEmail("");
     setEmailContent("");
     setMakeover("");
     setShowMakeover(false);
+    setAnalysis({ psychologicalTriggers: [], structureImprovements: [] });
+  };
+
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(makeover);
+    toast({
+      title: "Copied!",
+      description: "Improved email copied to clipboard",
+    });
   };
 
   return (
@@ -144,23 +166,69 @@ ${improvedBody}`;
               </form>
             ) : (
               <div className="space-y-8">
+                {/* Email Comparison */}
                 <div className="grid md:grid-cols-2 gap-8">
                   <div>
                     <h3 className="text-2xl font-bold mb-4 text-gray-900">Your Original Email</h3>
-                    <div className="min-h-80 border-2 border-gray-200 rounded-xl p-4 bg-gray-50">
-                      <div className="whitespace-pre-line text-gray-700 text-sm">
+                    <div className="min-h-80 border-2 border-gray-200 rounded-xl p-6 bg-gray-50">
+                      <div className="whitespace-pre-line text-gray-700 text-sm leading-relaxed">
                         {emailContent}
                       </div>
                     </div>
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold mb-4 text-green-700 flex items-center">
-                      <CheckCircle2 className="mr-2 h-6 w-6" />
-                      Your Improved Email
-                    </h3>
-                    <div className="min-h-80 border-2 border-green-200 rounded-xl p-4 bg-green-50">
-                      <div className="whitespace-pre-line text-gray-700 text-sm">
+                    <div className="flex items-center justify-between mb-4">
+                      <h3 className="text-2xl font-bold text-gray-900">Your Improved Email</h3>
+                      <div className="flex items-center gap-2">
+                        <span className="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-medium flex items-center gap-1">
+                          <Sparkles className="w-4 h-4" />
+                          AI Enhanced
+                        </span>
+                        <Button
+                          onClick={copyToClipboard}
+                          variant="outline"
+                          size="sm"
+                          className="flex items-center gap-2"
+                        >
+                          <Copy className="w-4 h-4" />
+                          Copy
+                        </Button>
+                      </div>
+                    </div>
+                    <div className="min-h-80 border-2 border-blue-200 rounded-xl p-6 bg-blue-50">
+                      <div className="whitespace-pre-line text-gray-700 text-sm leading-relaxed">
                         {makeover}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Analysis Section */}
+                <div className="bg-gray-50 rounded-2xl p-8 mt-12">
+                  <h2 className="text-3xl font-bold mb-8 text-gray-900">What Changed & Why</h2>
+                  
+                  <div className="grid md:grid-cols-2 gap-8">
+                    <div>
+                      <h3 className="text-xl font-semibold mb-6 text-blue-600">Psychological Triggers Applied:</h3>
+                      <div className="space-y-3">
+                        {analysis.psychologicalTriggers.map((trigger, index) => (
+                          <div key={index} className="flex items-start gap-3">
+                            <CheckCircle2 className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                            <span className="text-gray-700">{trigger}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    <div>
+                      <h3 className="text-xl font-semibold mb-6 text-blue-600">Structure Improvements:</h3>
+                      <div className="space-y-3">
+                        {analysis.structureImprovements.map((improvement, index) => (
+                          <div key={index} className="flex items-start gap-3">
+                            <CheckCircle2 className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                            <span className="text-gray-700">{improvement}</span>
+                          </div>
+                        ))}
                       </div>
                     </div>
                   </div>
@@ -173,12 +241,6 @@ ${improvedBody}`;
                     className="border-2 border-gray-300 text-gray-700 hover:bg-gray-50 py-3 px-8 rounded-full"
                   >
                     Try Another Email
-                  </Button>
-                  <Button 
-                    onClick={() => navigator.clipboard.writeText(makeover)}
-                    className="bg-green-600 hover:bg-green-700 text-white py-3 px-8 rounded-full"
-                  >
-                    Copy Improved Email
                   </Button>
                 </div>
               </div>
