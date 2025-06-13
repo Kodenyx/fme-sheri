@@ -21,7 +21,7 @@ const Hero = () => {
             <a href="#tool">
               <Button 
                 size="lg" 
-                className="bg-black text-white hover:bg-black/90 text-lg py-6 px-8"
+                className="bg-gradient-to-r from-[#818CF8] to-[#06B6D4] text-black font-bold shadow-lg hover:opacity-90 text-lg py-6 px-8"
               >
                 <Zap className="mr-2 h-4 w-4" />
                 Fix My Messaging Now
