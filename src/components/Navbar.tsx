@@ -1,45 +1,25 @@
-import { Menu, Phone } from "lucide-react";
+
+import { Menu, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { useNavigate } from "react-router-dom";
-import { supabase } from "@/integrations/supabase/client";
-import { useEffect, useState } from "react";
 
 const Navbar = () => {
-  const navigate = useNavigate();
-  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
   const navItems = [
-    { label: "Solutions", href: "#solutions" },
-    { label: "Benefits", href: "#benefits" },
-    { label: "Contact", href: "#contact" },
+    { label: "How It Works", href: "#examples" },
+    { label: "Examples", href: "#examples" },
+    { label: "Try It Now", href: "#tool" },
   ];
 
-  useEffect(() => {
-    supabase.auth.onAuthStateChange((event, session) => {
-      setIsAuthenticated(!!session);
-    });
-
-    // Check initial session
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      setIsAuthenticated(!!session);
-    });
-  }, []);
-
-  const handleSignOut = async () => {
-    await supabase.auth.signOut();
-    navigate("/auth");
-  };
-
   return (
-    <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 shadow-sm">
+    <nav className="fixed top-0 w-full bg-black/90 backdrop-blur-md z-50 shadow-sm">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <img 
-            src="/lovable-uploads/636fa0ba-bab6-4ac2-9303-bdc01c9f877f.png" 
-            alt="KodenyxAI Logo" 
+            src="/lovable-uploads/f97c1b08-0626-469f-bf99-2d3f3114856b.png" 
+            alt="KAI Logo" 
             className="h-10 w-auto"
           />
-          <span className="text-xl font-bold text-black">KodenyxAI</span>
+          <span className="text-xl font-bold text-white">Messaging Makeover AI</span>
         </div>
 
         {/* Desktop Navigation */}
@@ -48,30 +28,17 @@ const Navbar = () => {
             <a
               key={item.label}
               href={item.href}
-              className="text-gray-600 hover:text-primary transition-colors"
+              className="text-gray-300 hover:text-white transition-colors"
             >
               {item.label}
             </a>
           ))}
-          {isAuthenticated && (
-            <Button 
-              onClick={handleSignOut}
-              variant="outline"
-              className="border-2 border-gray-200"
-            >
-              Sign Out
-            </Button>
-          )}
-          <a 
-            href="https://cal.com/aarti-anand82" 
-            target="_blank" 
-            rel="noopener noreferrer"
-          >
+          <a href="#tool">
             <Button 
               className="bg-gradient-to-r from-[#818CF8] to-[#06B6D4] text-black font-bold shadow-lg hover:opacity-90"
             >
-              <Phone className="mr-2 h-4 w-4" />
-              Book A Demo
+              <Zap className="mr-2 h-4 w-4" />
+              Try Free Tool
             </Button>
           </a>
         </div>
@@ -81,7 +48,7 @@ const Navbar = () => {
           <Sheet>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon">
-                <Menu className="h-6 w-6" />
+                <Menu className="h-6 w-6 text-white" />
               </Button>
             </SheetTrigger>
             <SheetContent>
@@ -95,26 +62,12 @@ const Navbar = () => {
                     {item.label}
                   </a>
                 ))}
-                {isAuthenticated && (
-                  <Button 
-                    onClick={handleSignOut}
-                    variant="outline"
-                    className="w-full border-2 border-gray-200"
-                  >
-                    Sign Out
-                  </Button>
-                )}
-                <a 
-                  href="https://cal.com/aarti-anand82" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="w-full"
-                >
+                <a href="#tool" className="w-full">
                   <Button 
                     className="bg-gradient-to-r from-[#818CF8] to-[#06B6D4] w-full text-black font-bold shadow-lg hover:opacity-90"
                   >
-                    <Phone className="mr-2 h-4 w-4" />
-                    Book A Demo
+                    <Zap className="mr-2 h-4 w-4" />
+                    Try Free Tool
                   </Button>
                 </a>
               </div>
