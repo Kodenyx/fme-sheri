@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Zap, CheckCircle2 } from "lucide-react";
+import { Zap, CheckCircle2, Sparkles } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/components/ui/use-toast";
 
@@ -53,26 +53,9 @@ Best,
 
 P.S. If this isn't relevant, just hit reply and let me know what would be more helpful.`;
 
-    return `**BEFORE (Problems Identified):**
-❌ Generic subject line that gets ignored
-❌ No personalization or relevance  
-❌ Weak or missing call-to-action
-❌ No social proof or credibility
-❌ Too salesy/pushy tone
+    return `Subject: ${improvedSubject}
 
-**AFTER (Sherry's Makeover):**
-
-**Subject:** ${improvedSubject}
-
-${improvedBody}
-
-**Why This Works:**
-✅ Personalized hook that shows you've done research
-✅ Identifies specific pain point they care about
-✅ Includes social proof with specific metrics
-✅ Soft CTA that doesn't feel pushy
-✅ Professional yet conversational tone
-✅ P.S. gives them an easy out (builds trust)`;
+${improvedBody}`;
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -87,7 +70,7 @@ ${improvedBody}
       
       toast({
         title: "Makeover Complete!",
-        description: "Your improved email is ready below. Scroll down to see the transformation!",
+        description: "Your improved email is ready!",
       });
       
       setIsSubmitting(false);
@@ -102,101 +85,105 @@ ${improvedBody}
   };
 
   return (
-    <section id="tool" className="py-20 bg-gradient-primary">
+    <section id="tool" className="py-20 bg-gradient-to-br from-purple-50 via-blue-50 to-cyan-50">
       <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
-              Ready for Your Email Makeover?
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
+              Transform Your Email in{" "}
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#818CF8] to-[#06B6D4]">
+                30 Seconds
+              </span>
             </h2>
-            <p className="text-xl text-gray-600">
-              Paste your email below and watch Sherry's AI transform it instantly
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto">
+              Paste your email below and watch our AI apply proven behavioral psychology 
+              frameworks to make it more compelling and conversion-focused.
             </p>
           </div>
 
-          {!showMakeover ? (
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                  Your Email Address (optional)
-                </label>
-                <Input 
-                  id="email"
-                  type="email" 
-                  placeholder="your@email.com" 
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="h-12"
-                />
-              </div>
-              <div>
-                <label htmlFor="emailContent" className="block text-sm font-medium text-gray-700 mb-2">
-                  Paste Your Email Content Here
-                </label>
-                <Textarea 
-                  id="emailContent"
-                  placeholder="Subject: Your current subject line
-
-Hi [Name],
-
-Paste your entire email here - subject line, body, CTA, everything. The AI will analyze it all and give you a complete makeover..."
-                  value={emailContent}
-                  onChange={(e) => setEmailContent(e.target.value)}
-                  required
-                  className="min-h-48"
-                />
-              </div>
-              <Button 
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full bg-black hover:bg-black/90 text-white font-bold text-lg py-4 rounded-xl shadow-lg"
-              >
-                {isSubmitting ? (
-                  "Creating Your Makeover..."
-                ) : (
-                  <>
-                    <Zap className="mr-2 h-5 w-5" />
-                    Get My Instant Makeover (FREE)
-                  </>
-                )}
-              </Button>
-              <p className="text-center text-sm text-gray-500">
-                🔒 We'll never share your content. Your makeover appears instantly below.
-              </p>
-            </form>
-          ) : (
-            <div className="space-y-6">
-              <Card className="border-green-200 bg-green-50">
-                <CardHeader>
-                  <CardTitle className="flex items-center text-green-800">
-                    <CheckCircle2 className="mr-2 h-5 w-5" />
-                    Your Email Makeover is Complete!
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="whitespace-pre-line text-gray-700 font-mono text-sm bg-white p-4 rounded border">
-                    {makeover}
+          <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12">
+            {!showMakeover ? (
+              <form onSubmit={handleSubmit} className="space-y-8">
+                <div className="grid md:grid-cols-2 gap-8">
+                  <div>
+                    <h3 className="text-2xl font-bold mb-4 text-gray-900">Your Original Email</h3>
+                    <Textarea 
+                      placeholder="Paste your email content here..."
+                      value={emailContent}
+                      onChange={(e) => setEmailContent(e.target.value)}
+                      required
+                      className="min-h-80 text-base border-2 border-gray-200 rounded-xl focus:border-blue-400 focus:ring-blue-400"
+                    />
                   </div>
-                </CardContent>
-              </Card>
-              
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button 
-                  onClick={handleReset}
-                  variant="outline"
-                  className="flex-1 border-2 border-gray-300"
-                >
-                  Try Another Email
-                </Button>
-                <Button 
-                  onClick={() => navigator.clipboard.writeText(makeover)}
-                  className="flex-1 bg-green-600 hover:bg-green-700"
-                >
-                  Copy Improved Email
-                </Button>
+                  <div>
+                    <h3 className="text-2xl font-bold mb-4 text-gray-900">Your Improved Email</h3>
+                    <div className="min-h-80 border-2 border-gray-200 rounded-xl p-4 bg-gray-50 flex items-center justify-center">
+                      <p className="text-gray-400 text-center">
+                        Your improved email will appear here...
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="text-center">
+                  <Button 
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="bg-gradient-to-r from-[#818CF8] to-[#06B6D4] hover:from-[#6366F1] hover:to-[#0891B2] text-white font-bold text-xl py-6 px-12 rounded-full shadow-lg transform transition-all hover:scale-105"
+                  >
+                    {isSubmitting ? (
+                      "Creating Your Makeover..."
+                    ) : (
+                      <>
+                        <Sparkles className="mr-3 h-6 w-6" />
+                        Get My Email Makeover
+                      </>
+                    )}
+                  </Button>
+                </div>
+              </form>
+            ) : (
+              <div className="space-y-8">
+                <div className="grid md:grid-cols-2 gap-8">
+                  <div>
+                    <h3 className="text-2xl font-bold mb-4 text-gray-900">Your Original Email</h3>
+                    <div className="min-h-80 border-2 border-gray-200 rounded-xl p-4 bg-gray-50">
+                      <div className="whitespace-pre-line text-gray-700 text-sm">
+                        {emailContent}
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold mb-4 text-green-700 flex items-center">
+                      <CheckCircle2 className="mr-2 h-6 w-6" />
+                      Your Improved Email
+                    </h3>
+                    <div className="min-h-80 border-2 border-green-200 rounded-xl p-4 bg-green-50">
+                      <div className="whitespace-pre-line text-gray-700 text-sm">
+                        {makeover}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Button 
+                    onClick={handleReset}
+                    variant="outline"
+                    className="border-2 border-gray-300 text-gray-700 hover:bg-gray-50 py-3 px-8 rounded-full"
+                  >
+                    Try Another Email
+                  </Button>
+                  <Button 
+                    onClick={() => navigator.clipboard.writeText(makeover)}
+                    className="bg-green-600 hover:bg-green-700 text-white py-3 px-8 rounded-full"
+                  >
+                    Copy Improved Email
+                  </Button>
+                </div>
               </div>
-            </div>
-          )}
+            )}
+          </div>
         </div>
       </div>
     </section>
