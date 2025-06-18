@@ -11,7 +11,7 @@ const AboutCreator = () => {
             <CardContent className="p-8">
               <div className="flex flex-col md:flex-row items-center gap-8">
                 <Avatar className="w-32 h-32">
-                  <AvatarImage src="/placeholder.svg" alt="Sheri Otto" />
+                  <AvatarImage src="/lovable-uploads/7e1282b1-8296-4402-baf3-7660e6d779ef.png" alt="Sheri Otto" />
                   <AvatarFallback className="text-2xl">SO</AvatarFallback>
                 </Avatar>
                 <div className="text-center md:text-left">
