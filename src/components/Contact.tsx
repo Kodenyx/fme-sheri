@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { CheckCircle2, Sparkles, Copy } from "lucide-react";
@@ -16,56 +15,157 @@ const Contact = () => {
   });
   const { toast } = useToast();
 
-  const generateMakeover = (originalEmail: string) => {
-    // Simple makeover logic - in real implementation this would call an AI API
-    const lines = originalEmail.split('\n');
-    let subject = "";
-    let body = "";
+  const analyzeEmailType = (content: string) => {
+    const lowerContent = content.toLowerCase();
     
-    // Extract subject line
-    const subjectLine = lines.find(line => line.toLowerCase().startsWith('subject:'));
-    if (subjectLine) {
-      subject = subjectLine.replace(/^subject:\s*/i, '');
+    // Check for re-engagement indicators
+    if (lowerContent.includes("checking in") || lowerContent.includes("follow up") || 
+        lowerContent.includes("haven't heard") || lowerContent.includes("circling back")) {
+      return "re-engagement";
     }
     
-    // Get body content (everything after subject)
-    const subjectIndex = lines.findIndex(line => line.toLowerCase().startsWith('subject:'));
-    body = lines.slice(subjectIndex + 1).join('\n').trim();
+    // Check for promotional indicators
+    if (lowerContent.includes("webinar") || lowerContent.includes("launch") || 
+        lowerContent.includes("sale") || lowerContent.includes("offer") ||
+        lowerContent.includes("limited time") || lowerContent.includes("register")) {
+      return "promotional";
+    }
+    
+    // Default to cold outreach
+    return "cold-outreach";
+  };
 
-    // Generate improved version
-    const improvedSubject = subject ? 
-      `Quick question about [specific challenge they mentioned]` : 
-      "Quick question about [specific pain point]";
+  const generateReEngagementEmail = () => {
+    const subjects = [
+      "You're closer than you think…",
+      "The missing piece you asked about",
+      "Still thinking about this?",
+      "One quick thought"
+    ];
+    
+    const subject = subjects[Math.floor(Math.random() * subjects.length)];
+    
+    const body = `Hey [Name],
 
-    const improvedBody = `Hi [Name],
+You made it halfway. And then—life.
 
-I noticed you mentioned [specific challenge] on [platform/context].
+No pressure to jump back in… but here's a shortcut if you're ready to finish what you started:
 
-I've helped similar companies solve this exact issue - curious if you'd be open to a 15-minute conversation about it?
+[Insert resource or link]
 
-No pitch, just genuinely curious about your approach.
+Your pace. Your terms. I'm here if you need me.
 
-Best,
-[Your name]`;
+Sheri`;
 
-    const makeoverResult = `Subject: ${improvedSubject}
+    return { subject, body };
+  };
 
-${improvedBody}`;
+  const generatePromotionalEmail = () => {
+    const subjects = [
+      "This might be the 30 minutes that changes everything",
+      "Most founders miss this completely",
+      "The signal everyone's ignoring",
+      "Thursday at 2pm: The shift"
+    ];
+    
+    const subject = subjects[Math.floor(Math.random() * subjects.length)];
+    
+    const body = `Most founders waste years optimizing what they should've replaced.
 
-    // Generate analysis
+This Thursday, I'll show you how to spot the signals and turn them into sales — live.
+
+Reserve your spot (limited seats): [CTA]
+
+Sheri`;
+
+    return { subject, body };
+  };
+
+  const generateColdOutreachEmail = () => {
+    const subjects = [
+      "A quick thought about [insert goal they care about]",
+      "Noticed something about [company]",
+      "Quick question about your [specific challenge]",
+      "One pattern I'm seeing"
+    ];
+    
+    const subject = subjects[Math.floor(Math.random() * subjects.length)];
+    
+    const body = `Hey [Name],
+
+Saw [X trigger], and had to reach out. Teams like yours are usually juggling [common friction].
+
+I've seen one tweak work really well — especially when [insert peer proof].
+
+Open to sharing more?
+
+Sheri`;
+
+    return { subject, body };
+  };
+
+  const generateMakeover = (originalEmail: string) => {
+    const emailType = analyzeEmailType(originalEmail);
+    let emailData;
+    let triggers = [];
+    let improvements = [];
+
+    switch (emailType) {
+      case "re-engagement":
+        emailData = generateReEngagementEmail();
+        triggers = [
+          "Ovsiankina Effect (unfinished tasks)",
+          "Loss aversion framing",
+          "Autonomy bias (your pace, your terms)",
+          "Emotional acknowledgment of gap"
+        ];
+        improvements = [
+          "Emotionally intelligent opening",
+          "No pressure, high care approach",
+          "Clear value bridge back to original interest",
+          "Confident but patient CTA"
+        ];
+        break;
+        
+      case "promotional":
+        emailData = generatePromotionalEmail();
+        triggers = [
+          "Loss aversion (waste years optimizing)",
+          "Scarcity + exclusivity (limited seats)",
+          "Social proof (what others miss)",
+          "Curiosity gap (signals and sales)"
+        ];
+        improvements = [
+          "Pain-focused opening",
+          "Specific value proposition",
+          "Time-bound urgency without pressure",
+          "Authority positioning"
+        ];
+        break;
+        
+      default: // cold-outreach
+        emailData = generateColdOutreachEmail();
+        triggers = [
+          "Reciprocity (offering insight first)",
+          "Social proof (peer validation)",
+          "Information gap (specific trigger)",
+          "Empathy-driven personalization"
+        ];
+        improvements = [
+          "Trigger-based relevance",
+          "Short, scannable format",
+          "Peer proof over self-promotion",
+          "Curious, not pushy tone"
+        ];
+    }
+
+    const makeoverResult = `Subject: ${emailData.subject}
+
+${emailData.body}`;
+
     const analysisResult = {
-      psychologicalTriggers: [
-        "Added social proof reference",
-        "Created curiosity gap",
-        "Reduced pressure with \"no pitch\" statement",
-        "Added specific value proposition"
-      ],
-      structureImprovements: [
-        "Personalized subject line",
-        "Clear, simple call-to-action",
-        "Strategic P.S. for reinforcement",
-        "Shorter, scannable format"
-      ]
+      psychologicalTriggers: triggers,
+      structureImprovements: improvements
     };
 
     return { makeover: makeoverResult, analysis: analysisResult };
