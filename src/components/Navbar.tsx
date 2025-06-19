@@ -14,11 +14,6 @@ const Navbar = () => {
     <nav className="fixed top-0 w-full bg-black/90 backdrop-blur-md z-50 shadow-sm">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <img 
-            src="/lovable-uploads/f97c1b08-0626-469f-bf99-2d3f3114856b.png" 
-            alt="KAI Logo" 
-            className="h-10 w-auto"
-          />
           <span className="text-xl font-bold text-white">Messaging Makeover AI</span>
         </div>
 
