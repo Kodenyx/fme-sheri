@@ -2,8 +2,30 @@
 import { Menu, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { useEffect, useState } from "react";
+import { supabase } from "@/integrations/supabase/client";
+import { User } from "@supabase/supabase-js";
+import UserMenu from "./UserMenu";
 
 const Navbar = () => {
+  const [user, setUser] = useState<User | null>(null);
+
+  useEffect(() => {
+    // Set up auth state listener
+    const { data: { subscription } } = supabase.auth.onAuthStateChange(
+      (event, session) => {
+        setUser(session?.user ?? null);
+      }
+    );
+
+    // Check for existing session
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setUser(session?.user ?? null);
+    });
+
+    return () => subscription.unsubscribe();
+  }, []);
+
   const navItems = [
     { label: "How It Works", href: "#examples" },
     { label: "Examples", href: "#examples" },
@@ -28,14 +50,27 @@ const Navbar = () => {
               {item.label}
             </a>
           ))}
-          <a href="#tool">
-            <Button 
-              className="bg-gradient-to-r from-[#818CF8] to-[#06B6D4] text-black font-bold shadow-lg hover:opacity-90"
-            >
-              <Zap className="mr-2 h-4 w-4" />
-              Try Free Tool
-            </Button>
-          </a>
+          {user ? (
+            <div className="flex items-center gap-4">
+              <a href="#tool">
+                <Button 
+                  className="bg-gradient-to-r from-[#818CF8] to-[#06B6D4] text-black font-bold shadow-lg hover:opacity-90"
+                >
+                  <Zap className="mr-2 h-4 w-4" />
+                  Use Tool
+                </Button>
+              </a>
+              <UserMenu />
+            </div>
+          ) : (
+            <a href="/auth">
+              <Button 
+                className="bg-gradient-to-r from-[#818CF8] to-[#06B6D4] text-black font-bold shadow-lg hover:opacity-90"
+              >
+                Sign In
+              </Button>
+            </a>
+          )}
         </div>
 
         {/* Mobile Navigation */}
@@ -57,14 +92,29 @@ const Navbar = () => {
                     {item.label}
                   </a>
                 ))}
-                <a href="#tool" className="w-full">
-                  <Button 
-                    className="bg-gradient-to-r from-[#818CF8] to-[#06B6D4] w-full text-black font-bold shadow-lg hover:opacity-90"
-                  >
-                    <Zap className="mr-2 h-4 w-4" />
-                    Try Free Tool
-                  </Button>
-                </a>
+                {user ? (
+                  <>
+                    <a href="#tool" className="w-full">
+                      <Button 
+                        className="bg-gradient-to-r from-[#818CF8] to-[#06B6D4] w-full text-black font-bold shadow-lg hover:opacity-90"
+                      >
+                        <Zap className="mr-2 h-4 w-4" />
+                        Use Tool
+                      </Button>
+                    </a>
+                    <div className="pt-4 border-t">
+                      <UserMenu />
+                    </div>
+                  </>
+                ) : (
+                  <a href="/auth" className="w-full">
+                    <Button 
+                      className="bg-gradient-to-r from-[#818CF8] to-[#06B6D4] w-full text-black font-bold shadow-lg hover:opacity-90"
+                    >
+                      Sign In
+                    </Button>
+                  </a>
+                )}
               </div>
             </SheetContent>
           </Sheet>

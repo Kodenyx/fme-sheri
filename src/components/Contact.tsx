@@ -3,6 +3,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { CheckCircle2, Sparkles, Copy } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import AuthGuard from "./AuthGuard";
+import AuthPrompt from "./AuthPrompt";
 
 const Contact = () => {
   const [emailContent, setEmailContent] = useState("");
@@ -206,7 +208,7 @@ ${emailData.body}`;
     });
   };
 
-  return (
+  const ToolContent = () => (
     <section id="tool" className="py-20 bg-gradient-to-br from-purple-50 via-blue-50 to-cyan-50">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
@@ -349,6 +351,12 @@ ${emailData.body}`;
         </div>
       </div>
     </section>
+  );
+
+  return (
+    <AuthGuard fallback={<AuthPrompt />}>
+      <ToolContent />
+    </AuthGuard>
   );
 };
 
