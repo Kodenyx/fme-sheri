@@ -13,7 +13,7 @@ const steps = [
     icon: Wand2,
     step: "2", 
     title: "AI Analysis",
-    description: "Our AI identifies problems and applies Sherry's proven frameworks instantly"
+    description: "Our AI identifies problems and applies Sheri's proven frameworks instantly"
   },
   {
     icon: Download,
