@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { CheckCircle2, Sparkles, Copy } from "lucide-react";
@@ -36,72 +37,160 @@ const Contact = () => {
   };
 
   const generateReEngagementEmail = () => {
-    const subjects = [
-      "You're closer than you think…",
-      "The missing piece you asked about",
-      "Still thinking about this?",
-      "One quick thought"
+    const emailVariations = [
+      {
+        subject: "You're closer than you think…",
+        body: `Hey Sarah,
+
+You made it halfway through the messaging audit. And then—life happened.
+
+I get it. Between client fires and quarterly reviews, strategic work gets pushed to "someday."
+
+But here's what I noticed: founders who circle back to finish what they started? They're the ones who break through the noise.
+
+No pressure to jump back in… but I saved your spot if you're ready to finish building the machine that sells while you sleep.
+
+Your pace. Your terms. I'm here when you're ready.
+
+Sheri`
+      },
+      {
+        subject: "The missing piece you asked about",
+        body: `Hey Marcus,
+
+Remember when you said your emails felt "too corporate" but you weren't sure how to fix them?
+
+I've been thinking about that conversation. Most founders get stuck here because they're optimizing copy when they should be rebuilding psychology.
+
+I put together something that might help—a quick framework for turning clinical language into emotional connection.
+
+Want me to send it over? No strings attached.
+
+Sheri`
+      },
+      {
+        subject: "Still thinking about this?",
+        body: `Hi Jennifer,
+
+Three weeks ago, you mentioned your email sequences weren't converting like they used to.
+
+I've seen this pattern before. What worked in 2022 feels tone-deaf now. Your audience evolved, but your messaging stayed static.
+
+The good news? This is fixable. The better news? It's faster than you think.
+
+If you're still wrestling with this, I have 15 minutes Thursday to walk through what's shifted and how to adjust.
+
+Sound useful?
+
+Sheri`
+      }
     ];
     
-    const subject = subjects[Math.floor(Math.random() * subjects.length)];
-    
-    const body = `Hey [Name],
-
-You made it halfway. And then—life.
-
-No pressure to jump back in… but here's a shortcut if you're ready to finish what you started:
-
-[Insert resource or link]
-
-Your pace. Your terms. I'm here if you need me.
-
-Sheri`;
-
-    return { subject, body };
+    return emailVariations[Math.floor(Math.random() * emailVariations.length)];
   };
 
   const generatePromotionalEmail = () => {
-    const subjects = [
-      "This might be the 30 minutes that changes everything",
-      "Most founders miss this completely",
-      "The signal everyone's ignoring",
-      "Thursday at 2pm: The shift"
+    const emailVariations = [
+      {
+        subject: "This might be the 30 minutes that changes everything",
+        body: `Most founders waste years optimizing emails that shouldn't exist.
+
+You tweak subject lines. Polish CTAs. A/B test button colors.
+
+Meanwhile, your competition rewrites the rules.
+
+This Thursday at 2pm, I'm showing exactly how to spot the signals your messaging is fundamentally broken—and the three-step system to rebuild it from the ground up.
+
+No theory. No fluff. Just the frameworks behind $50M+ in client results.
+
+Reserve your spot (limited to 100 founders): [Registration Link]
+
+Sheri`
+      },
+      {
+        subject: "Most founders miss this completely",
+        body: `Your messaging isn't broken because of what you're saying.
+
+It's broken because of what you're not saying.
+
+The assumptions you make. The context you skip. The emotional bridges you never build.
+
+Tuesday's workshop isn't about writing better emails. It's about understanding the psychology that makes people buy—then architecting every word around that truth.
+
+Three hours. Everything I've learned helping companies add 8 figures through messaging alone.
+
+Claim your seat before we hit capacity: [Workshop Link]
+
+Sheri`
+      },
+      {
+        subject: "Thursday at 2pm: The shift",
+        body: `The companies thriving right now aren't the ones with perfect products.
+
+They're the ones who speak to what their audience actually thinks about at 2am.
+
+While others spray generic value props, they're having conversations that feel like mind-reading.
+
+This Thursday, I'm breaking down exactly how they do it. The research methods. The messaging frameworks. The psychology principles that turn strangers into advocates.
+
+90 minutes that could reshape how you think about customer communication forever.
+
+Register now (seats filling fast): [Event Link]
+
+Sheri`
+      }
     ];
     
-    const subject = subjects[Math.floor(Math.random() * subjects.length)];
-    
-    const body = `Most founders waste years optimizing what they should've replaced.
-
-This Thursday, I'll show you how to spot the signals and turn them into sales — live.
-
-Reserve your spot (limited seats): [CTA]
-
-Sheri`;
-
-    return { subject, body };
+    return emailVariations[Math.floor(Math.random() * emailVariations.length)];
   };
 
   const generateColdOutreachEmail = () => {
-    const subjects = [
-      "A quick thought about [insert goal they care about]",
-      "Noticed something about [company]",
-      "Quick question about your [specific challenge]",
-      "One pattern I'm seeing"
+    const emailVariations = [
+      {
+        subject: "Quick thought about your Series A messaging",
+        body: `Hey David,
+
+Saw TechCrunch picked up your Series A news. Congrats on the momentum.
+
+Reading between the lines of your positioning, I'm curious—are you finding that your pre-A messaging still resonates with the growth-stage challenges you're facing now?
+
+Most founders I work with hit this inflection point around month 3 post-raise. The story that got you funded isn't always the story that scales revenue.
+
+Worth a conversation?
+
+Sheri`
+      },
+      {
+        subject: "Noticed something about CloudTech's launch",
+        body: `Hi Rachel,
+
+Your product launch last week caught my attention—specifically how you positioned the enterprise features without alienating your SMB base.
+
+That's a tightrope most companies fall off. You walked it beautifully.
+
+I'm working with a few other vertical SaaS companies on similar positioning challenges. Happy to share what's working if you're interested in comparing notes.
+
+5-minute call this week?
+
+Sheri`
+      },
+      {
+        subject: "One pattern I'm seeing with fintech messaging",
+        body: `Hey Alex,
+
+Been following StreamPay's evolution since the rebrand. Smart move simplifying the value prop—financial infrastructure is hard enough without confusing messaging.
+
+I'm seeing a pattern with fintech companies your size: the messaging that wins enterprise deals often confuses the mid-market prospects (and vice versa).
+
+You might already have this figured out, but if you're wrestling with audience-specific messaging, I've cracked this puzzle for companies like Mercury and Ramp.
+
+Open to sharing what worked?
+
+Sheri`
+      }
     ];
     
-    const subject = subjects[Math.floor(Math.random() * subjects.length)];
-    
-    const body = `Hey [Name],
-
-Saw [X trigger], and had to reach out. Teams like yours are usually juggling [common friction].
-
-I've seen one tweak work really well — especially when [insert peer proof].
-
-Open to sharing more?
-
-Sheri`;
-
-    return { subject, body };
+    return emailVariations[Math.floor(Math.random() * emailVariations.length)];
   };
 
   const generateMakeover = (originalEmail: string) => {
@@ -114,48 +203,48 @@ Sheri`;
       case "re-engagement":
         emailData = generateReEngagementEmail();
         triggers = [
-          "Ovsiankina Effect (unfinished tasks)",
-          "Loss aversion framing",
-          "Autonomy bias (your pace, your terms)",
-          "Emotional acknowledgment of gap"
+          "Ovsiankina Effect: References unfinished task to create psychological completion drive",
+          "Loss aversion: Emphasizes what they're missing by not acting, not what they gain",
+          "Autonomy bias: Explicitly gives permission to choose their own pace and terms",
+          "Emotional acknowledgment: Validates the real reasons people drop off (life happens)"
         ];
         improvements = [
-          "Emotionally intelligent opening",
-          "No pressure, high care approach",
-          "Clear value bridge back to original interest",
-          "Confident but patient CTA"
+          "Opens with empathy and understanding rather than pressure or guilt",
+          "Uses specific, vivid language that creates mental pictures",
+          "Positions value as already created, not conditional on their action",
+          "Confident but patient CTA that reinforces their control"
         ];
         break;
         
       case "promotional":
         emailData = generatePromotionalEmail();
         triggers = [
-          "Loss aversion (waste years optimizing)",
-          "Scarcity + exclusivity (limited seats)",
-          "Social proof (what others miss)",
-          "Curiosity gap (signals and sales)"
+          "Loss aversion: Frames current approach as time waste, not opportunity gain",
+          "Social proof: Implies others are getting ahead while reader optimizes wrong things",
+          "Scarcity: Limited seats creates urgency without aggressive sales pressure",
+          "Curiosity gap: Promises specific insights without revealing the framework"
         ];
         improvements = [
-          "Pain-focused opening",
-          "Specific value proposition",
-          "Time-bound urgency without pressure",
-          "Authority positioning"
+          "Problem-focused opening that diagnoses hidden pain points",
+          "Specific value proposition tied to measurable outcomes",
+          "Authority positioning through client results and methodology",
+          "Time-bound urgency that feels natural, not manufactured"
         ];
         break;
         
       default: // cold-outreach
         emailData = generateColdOutreachEmail();
         triggers = [
-          "Reciprocity (offering insight first)",
-          "Social proof (peer validation)",
-          "Information gap (specific trigger)",
-          "Empathy-driven personalization"
+          "Reciprocity: Offers valuable insight or connection before asking for anything",
+          "Social proof: References specific, relevant companies and situations",
+          "Pattern recognition: Demonstrates expertise by identifying specific challenges",
+          "Information gap: Creates curiosity about solutions without being pushy"
         ];
         improvements = [
-          "Trigger-based relevance",
-          "Short, scannable format",
-          "Peer proof over self-promotion",
-          "Curious, not pushy tone"
+          "Trigger-based relevance that shows you've done your homework",
+          "Short, scannable format that respects their time",
+          "Peer proof over self-promotion to build credibility naturally",
+          "Curious, helpful tone that positions you as advisor, not vendor"
         ];
     }
 
