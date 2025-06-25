@@ -32,7 +32,7 @@ const HowItWorks = () => {
             How It Works
           </h2>
           <p className="text-xl text-gray-600">
-            Get professional email makeovers in under 30 seconds
+            Get professional email makeovers in under 3 seconds
           </p>
         </div>
         <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
