@@ -11,7 +11,7 @@ const SolutionSection = () => {
             The Messaging Makeover AI Difference
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Powered by Sherry Otto's proprietary frameworks that have generated millions in revenue
+            Powered by Sheri Otto's proprietary frameworks that have generated millions in revenue
           </p>
         </div>
         <div className="max-w-4xl mx-auto">
