@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Zap } from "lucide-react";
 
@@ -10,7 +11,7 @@ const Hero = () => {
             Before you write another forgettable email…
           </p>
           <h1 className="text-5xl md:text-7xl font-bold mb-8 text-gray-900">
-            Get instant access to the tool that rewrites your message, like{" "}
+            Get the tool that rewrites your message, like{" "}
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#818CF8] to-[#06B6D4]">
               Sheri would
             </span>
