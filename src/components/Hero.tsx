@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Zap } from "lucide-react";
 
@@ -17,7 +16,7 @@ const Hero = () => {
             </span>
           </h1>
           <p className="text-xl md:text-2xl mb-12 text-gray-600 max-w-3xl mx-auto">
-            For founders and marketers who know their emails suck but don't know how to fix them. Get instant makeovers using Sherry Otto's proven frameworks.
+            Copy that clicks with how humans decide—so your audience doesn't just read, they respond
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="#tool">
