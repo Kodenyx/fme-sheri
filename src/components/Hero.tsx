@@ -16,7 +16,7 @@ const Hero = () => {
             </span>
           </h1>
           <p className="text-xl md:text-2xl mb-12 text-gray-600 max-w-3xl mx-auto">
-            Copy that clicks with how humans decide—so your audience doesn't just read, they respond
+            Copy that clicks with how humans decide - so your audience doesn't just read, they respond
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="#tool">
