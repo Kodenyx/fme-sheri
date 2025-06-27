@@ -7,6 +7,9 @@ const Hero = () => {
     <section className="pt-32 pb-16 bg-gradient-primary">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
+          <p className="text-lg md:text-xl mb-6 text-gray-600 font-medium">
+            Before you write another forgettable email…
+          </p>
           <h1 className="text-5xl md:text-7xl font-bold mb-8 text-gray-900">
             Turn Your{" "}
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#818CF8] to-[#06B6D4]">
