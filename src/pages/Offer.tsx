@@ -98,7 +98,7 @@ const Offer = () => {
               </span>
             </h1>
             <p className="text-xl md:text-2xl mb-12 max-w-3xl mx-auto" style={{ color: '#3B1E5E' }}>
-              Built by HubSpot's former Demand Lead. Free, AI-powered, and engineered to convert.
+              A Free, ai-powered tool built by hubspot's former demand lead and engineered to convert.
             </p>
           </div>
         </div>
