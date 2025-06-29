@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
@@ -117,7 +118,7 @@ const Tool = () => {
               {improvedEmail && (
                 <div className="mt-12">
                   <h2 className="text-3xl font-bold mb-6" style={{ color: '#3B1E5E' }}>
-                    Improved Email:
+                    The Demand-Driven Email:
                   </h2>
                   <div className="bg-gray-100 rounded-xl p-6">
                     <p className="text-lg whitespace-pre-line" style={{ color: '#3B1E5E' }}>
