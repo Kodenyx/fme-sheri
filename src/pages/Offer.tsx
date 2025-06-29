@@ -85,7 +85,7 @@ const Offer = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-16">
+      <section className="pt-32 pb-8">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <p className="text-lg md:text-xl mb-6 font-medium" style={{ color: '#3B1E5E' }}>
@@ -97,7 +97,7 @@ const Offer = () => {
                 HubSpot
               </span>
             </h1>
-            <p className="text-xl md:text-2xl mb-12 max-w-3xl mx-auto" style={{ color: '#3B1E5E' }}>
+            <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto" style={{ color: '#3B1E5E' }}>
               A Free, AI-Powered Tool Built By HubSpot's Former Demand Lead And Engineered To Convert.
             </p>
           </div>
