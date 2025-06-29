@@ -95,8 +95,9 @@ const Offer = () => {
             <h1 className="text-5xl md:text-7xl font-bold mb-8" style={{ color: '#3B1E5E' }}>
               Fix your email with{" "}
               <span style={{ color: '#E19013' }}>
-                HubSpot's proven demand frameworks
-              </span>
+                HubSpot's
+              </span>{" "}
+              proven demand frameworks
             </h1>
             <p className="text-xl md:text-2xl mb-12 max-w-3xl mx-auto" style={{ color: '#3B1E5E' }}>
               Built by HubSpot's former Demand Lead. Free, AI-powered, and engineered to convert.
