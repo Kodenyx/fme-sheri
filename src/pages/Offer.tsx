@@ -1,4 +1,5 @@
 
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -92,9 +93,9 @@ const Offer = () => {
               Before you send another forgettable email…
             </p>
             <h1 className="text-5xl md:text-7xl font-bold mb-8" style={{ color: '#3B1E5E' }}>
-              Fix your message with the frameworks that scaled demand at{" "}
+              Fix your email with{" "}
               <span style={{ color: '#E19013' }}>
-                HubSpot
+                HubSpot's proven demand frameworks
               </span>
             </h1>
             <p className="text-xl md:text-2xl mb-12 max-w-3xl mx-auto" style={{ color: '#3B1E5E' }}>
@@ -156,3 +157,4 @@ const Offer = () => {
 };
 
 export default Offer;
+
