@@ -274,7 +274,9 @@ ${emailData.body}`;
 
   const logToolUsage = async (originalEmail: string, transformedEmail: string, emailCategory: string) => {
     try {
-      await supabase
+      console.log('Logging tool usage:', { userEmail, emailCategory, originalLength: originalEmail.length });
+      
+      const { data, error } = await supabase
         .from('tool_usage')
         .insert([{
           user_id: null, // No user ID since we're not using full auth
@@ -282,10 +284,41 @@ ${emailData.body}`;
           original_email: originalEmail,
           transformed_email: transformedEmail,
           email_category: emailCategory
-        }]);
+        }])
+        .select();
+
+      if (error) {
+        console.error('Error logging tool usage:', error);
+        // Try to log with minimal data if full insert fails
+        await supabase
+          .from('tool_usage')
+          .insert([{
+            user_id: null,
+            email_address: userEmail,
+            original_email: originalEmail.substring(0, 1000), // Truncate if too long
+            transformed_email: transformedEmail.substring(0, 1000),
+            email_category: emailCategory
+          }]);
+      } else {
+        console.log('Tool usage logged successfully:', data);
+      }
     } catch (error) {
-      console.error('Error logging tool usage:', error);
-      // Don't show error to user as this is analytics
+      console.error('Failed to log tool usage:', error);
+      // Final fallback - log basic usage without content
+      try {
+        await supabase
+          .from('tool_usage')
+          .insert([{
+            user_id: null,
+            email_address: userEmail,
+            original_email: `[Content length: ${originalEmail.length} chars]`,
+            transformed_email: `[Content length: ${transformedEmail.length} chars]`,
+            email_category: emailCategory
+          }]);
+        console.log('Basic usage logged as fallback');
+      } catch (fallbackError) {
+        console.error('Even fallback logging failed:', fallbackError);
+      }
     }
   };
 
@@ -293,14 +326,16 @@ ${emailData.body}`;
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate processing
-    setTimeout(async () => {
+    try {
+      // Simulate processing
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      
       const result = generateMakeover(emailContent);
       setMakeover(result.makeover);
       setAnalysis(result.analysis);
       setShowMakeover(true);
       
-      // Log the tool usage
+      // Log the tool usage - this is critical for tracking
       await logToolUsage(emailContent, result.makeover, result.emailType);
       
       toast({
@@ -308,8 +343,16 @@ ${emailData.body}`;
         description: "Your improved email is ready!",
       });
       
+    } catch (error) {
+      console.error('Error during email makeover:', error);
+      toast({
+        title: "Error",
+        description: "Something went wrong. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 2000);
+    }
   };
 
   const handleReset = () => {
