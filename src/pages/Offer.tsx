@@ -24,6 +24,22 @@ const Offer = () => {
         .insert([{ email }]);
 
       if (error) {
+        console.error('Supabase error:', error);
+        
+        // Handle duplicate email error specifically
+        if (error.code === '23505' && error.message.includes('email_leads_email_key')) {
+          toast({
+            title: "Email Already Registered",
+            description: "This email is already registered. Redirecting you to the tool...",
+          });
+          
+          // Still redirect to tool since they're already in the system
+          setTimeout(() => {
+            navigate('/tool');
+          }, 1500);
+          return;
+        }
+        
         throw error;
       }
 
