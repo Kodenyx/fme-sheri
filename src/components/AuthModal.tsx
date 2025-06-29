@@ -50,29 +50,46 @@ const AuthModal = ({
 
     try {
       if (isSignUp) {
-        const redirectUrl = `${window.location.origin}/`;
-        const { error } = await supabase.auth.signUp({
-          email,
-          password,
-          options: {
-            emailRedirectTo: redirectUrl
-          }
+        // For signup mode, we're actually updating the password of an already created account
+        const { error: updateError } = await supabase.auth.updateUser({
+          password: password
         });
-        if (error) throw error;
+        
+        if (updateError) {
+          // If update fails, try signing up normally
+          const redirectUrl = `${window.location.origin}/`;
+          const { error: signUpError } = await supabase.auth.signUp({
+            email,
+            password,
+            options: {
+              emailRedirectTo: redirectUrl
+            }
+          });
+          if (signUpError) throw signUpError;
+        }
+        
         toast({
           title: "Success!",
-          description: "Please check your email to verify your account, or sign in if you already have an account.",
+          description: "Your account is ready! You can now sign in.",
         });
+        
+        // Switch to sign in mode
+        setIsSignUp(false);
+        setPassword("");
+        
       } else {
+        // Sign in mode
         const { error } = await supabase.auth.signInWithPassword({
           email,
           password,
         });
         if (error) throw error;
+        
         toast({
           title: "Welcome back!",
           description: "You have successfully signed in.",
         });
+        
         onClose();
         if (onSuccess) {
           onSuccess();
@@ -100,11 +117,11 @@ const AuthModal = ({
               <User className="h-8 w-8 text-white" />
             </div>
             <DialogTitle className="text-center text-3xl font-bold text-white mb-2">
-              {isSignUp ? "Create your account" : "Welcome back"}
+              {isSignUp ? "Set Your Password" : "Welcome back"}
             </DialogTitle>
             <p className="text-center text-lg" style={{ color: '#A9D6D4' }}>
               {isSignUp 
-                ? "Complete your signup to access the Messaging Makeover AI tool" 
+                ? "Create a secure password to complete your account setup" 
                 : "Sign in to continue transforming your emails"
               }
             </p>
@@ -118,6 +135,7 @@ const AuthModal = ({
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
+                disabled={isSignUp} // Disable email field in signup mode since it's pre-filled
                 className="text-lg py-6 px-6 border-2 rounded-xl bg-white text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
                 style={{ 
                   borderColor: '#A9D6D4'
@@ -125,7 +143,7 @@ const AuthModal = ({
               />
               <Input
                 type="password"
-                placeholder="Enter your password"
+                placeholder={isSignUp ? "Create a secure password" : "Enter your password"}
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
@@ -146,23 +164,23 @@ const AuthModal = ({
                 ) : (
                   <>
                     <LogIn className="mr-3 h-6 w-6" />
-                    {isSignUp ? "Create Account" : "Sign In"}
+                    {isSignUp ? "Set Password" : "Sign In"}
                   </>
                 )}
               </Button>
 
-              <div className="text-center">
-                <button
-                  type="button"
-                  onClick={() => setIsSignUp(!isSignUp)}
-                  className="text-lg font-medium hover:underline transition-colors"
-                  style={{ color: '#A9D6D4' }}
-                >
-                  {isSignUp
-                    ? "Already have an account? Sign in"
-                    : "Don't have an account? Sign up"}
-                </button>
-              </div>
+              {!isSignUp && (
+                <div className="text-center">
+                  <button
+                    type="button"
+                    onClick={() => setIsSignUp(true)}
+                    className="text-lg font-medium hover:underline transition-colors"
+                    style={{ color: '#A9D6D4' }}
+                  >
+                    Don't have an account? Sign up
+                  </button>
+                </div>
+              )}
             </form>
           </div>
         </div>

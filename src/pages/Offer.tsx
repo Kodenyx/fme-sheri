@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -20,52 +21,50 @@ const Offer = () => {
     setIsSubmitting(true);
 
     try {
-      // Check if user already exists by trying to sign up
+      // First, try to create a new account
       const redirectUrl = `${window.location.origin}/`;
-      const tempPassword = 'TempPass123!'; // Use a consistent temporary password
       const { data: signUpData, error: signUpError } = await supabase.auth.signUp({
         email,
-        password: tempPassword,
+        password: 'temp123', // Simple temporary password
         options: {
           emailRedirectTo: redirectUrl
         }
       });
 
-      // If signup succeeded, add to email_leads and show completion modal
       if (!signUpError && signUpData.user) {
+        // New user created successfully
         try {
           await supabase
             .from('email_leads')
             .insert([{ email }]);
         } catch (leadError) {
-          // Email already in leads table, but that's fine
           console.log('Email already in leads table:', leadError);
         }
         
         toast({
           title: "Account Created!",
-          description: "Complete your signup with a secure password to access the tool.",
+          description: "Please set up your secure password to complete registration.",
         });
         
         setAuthModalEmail(email);
         setAuthModalMode('signup');
         setShowAuthModal(true);
-      } else if (signUpError) {
-        // Check if it's because user already exists
-        if (signUpError.message.includes('already registered') || 
-            signUpError.message.includes('already been registered') ||
-            signUpError.message.includes('User already registered')) {
-          toast({
-            title: "Account Already Exists",
-            description: "This email already has an account. Please sign in instead.",
-          });
-          
-          setAuthModalEmail(email);
-          setAuthModalMode('signin');
-          setShowAuthModal(true);
-        } else {
-          throw signUpError;
-        }
+      } else if (signUpError && 
+                 (signUpError.message.includes('already registered') || 
+                  signUpError.message.includes('already been registered') ||
+                  signUpError.message.includes('User already registered'))) {
+        
+        // User already exists, show sign in modal
+        toast({
+          title: "Account Already Exists",
+          description: "Please sign in with your password.",
+        });
+        
+        setAuthModalEmail(email);
+        setAuthModalMode('signin');
+        setShowAuthModal(true);
+      } else {
+        throw signUpError;
       }
 
     } catch (error: any) {
