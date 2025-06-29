@@ -3,8 +3,10 @@ import { Textarea } from "@/components/ui/textarea";
 import { CheckCircle2, Sparkles, Copy } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import AuthGuard from "@/components/AuthGuard";
+import Auth from "./Auth";
 
-const Tool = () => {
+const ToolContent = () => {
   const [emailContent, setEmailContent] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [makeover, setMakeover] = useState("");
@@ -443,6 +445,14 @@ ${emailData.body}`;
         </div>
       </div>
     </div>
+  );
+};
+
+const Tool = () => {
+  return (
+    <AuthGuard fallback={<Auth />}>
+      <ToolContent />
+    </AuthGuard>
   );
 };
 
