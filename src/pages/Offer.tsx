@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -81,23 +80,23 @@ const Offer = () => {
   };
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#0D4049' }}>
+    <div className="min-h-screen" style={{ backgroundColor: '#A9D6D4' }}>
       <Navbar />
       
       {/* Hero Section */}
       <section className="pt-32 pb-16">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <p className="text-base md:text-lg mb-6 font-medium" style={{ color: '#A9D6D4' }}>
+            <p className="text-base md:text-lg mb-6 font-medium" style={{ color: '#0D4049' }}>
               Before you send another forgettable email…
             </p>
-            <h1 className="text-5xl md:text-7xl font-bold mb-8 text-white">
+            <h1 className="text-5xl md:text-7xl font-bold mb-8" style={{ color: '#0D4049' }}>
               Get the tool that rewrites your message, like{" "}
               <span style={{ color: '#E19013' }}>
                 Sheri would
               </span>
             </h1>
-            <p className="text-lg md:text-xl mb-12 text-white max-w-3xl mx-auto">
+            <p className="text-lg md:text-xl mb-12 max-w-3xl mx-auto" style={{ color: '#0D4049' }}>
               Copy that clicks with how humans decide - so your audience doesn't just read, they respond
             </p>
           </div>
@@ -128,7 +127,7 @@ const Offer = () => {
                     required
                     className="text-lg py-6 px-6 border-2 rounded-xl focus:ring-2"
                     style={{ 
-                      borderColor: '#A9D6D4'
+                      borderColor: '#0D4049'
                     }}
                   />
                 </div>

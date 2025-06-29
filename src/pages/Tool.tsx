@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { CheckCircle2, Sparkles, Copy } from "lucide-react";
@@ -330,30 +329,30 @@ ${emailData.body}`;
 
   if (!userEmail) {
     return (
-      <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#0D4049' }}>
+      <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#A9D6D4' }}>
         <div className="text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">Redirecting...</h2>
-          <p className="text-white">Please wait while we redirect you to get access.</p>
+          <h2 className="text-3xl font-bold mb-4" style={{ color: '#0D4049' }}>Redirecting...</h2>
+          <p style={{ color: '#0D4049' }}>Please wait while we redirect you to get access.</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#0D4049' }}>
+    <div className="min-h-screen" style={{ backgroundColor: '#A9D6D4' }}>
       <Navbar />
       
       <div className="py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+              <h1 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: '#0D4049' }}>
                 Transform Your Email in{" "}
                 <span style={{ color: '#E19013' }}>
                   Under 3 Seconds
                 </span>
               </h1>
-              <p className="text-xl text-white max-w-4xl mx-auto">
+              <p className="text-xl max-w-4xl mx-auto" style={{ color: '#0D4049' }}>
                 Paste your email below and watch our AI apply proven behavioral psychology 
                 frameworks to make it more compelling and conversion-focused.
               </p>
