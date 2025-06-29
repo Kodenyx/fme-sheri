@@ -52,9 +52,30 @@ serve(async (req) => {
   }
 
   try {
-    const { emailContent } = await req.json();
+    console.log('Starting email rewrite request...');
+    
+    // Check if API key is available
+    if (!openAIApiKey) {
+      console.error('OpenAI API key is not set');
+      return new Response(
+        JSON.stringify({ 
+          error: 'OpenAI API key not configured',
+          details: 'Please add your OpenAI API key in the Supabase secrets'
+        }),
+        { 
+          status: 500, 
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' } 
+        }
+      );
+    }
+
+    const requestBody = await req.json();
+    console.log('Request body received:', { hasEmailContent: !!requestBody.emailContent });
+    
+    const { emailContent } = requestBody;
 
     if (!emailContent || emailContent.trim().length === 0) {
+      console.error('No email content provided');
       return new Response(
         JSON.stringify({ error: 'Email content is required' }),
         { 
@@ -64,6 +85,7 @@ serve(async (req) => {
       );
     }
 
+    console.log('Making OpenAI API request...');
     const response = await fetch('https://api.openai.com/v1/chat/completions', {
       method: 'POST',
       headers: {
@@ -81,23 +103,34 @@ serve(async (req) => {
       }),
     });
 
+    console.log('OpenAI API response status:', response.status);
+
     if (!response.ok) {
-      const errorData = await response.text();
-      console.error('OpenAI API error:', errorData);
-      throw new Error(`OpenAI API error: ${response.status}`);
+      const errorText = await response.text();
+      console.error('OpenAI API error:', errorText);
+      return new Response(
+        JSON.stringify({ 
+          error: `OpenAI API error: ${response.status}`,
+          details: errorText
+        }),
+        {
+          status: 500,
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        }
+      );
     }
 
     const data = await response.json();
+    console.log('OpenAI API response received successfully');
+    
     const aiResponse = data.choices[0].message.content;
-
-    console.log('AI Response:', aiResponse);
 
     // Try to parse as JSON first
     let result;
     try {
       result = JSON.parse(aiResponse);
+      console.log('Successfully parsed JSON response');
     } catch (parseError) {
-      // If JSON parsing fails, treat as plain text rewrite
       console.log('Response not in JSON format, treating as plain text');
       result = {
         rewritten_email: aiResponse,
@@ -112,11 +145,11 @@ serve(async (req) => {
     });
 
   } catch (error) {
-    console.error('Error in rewrite-email function:', error);
+    console.error('Unexpected error in rewrite-email function:', error);
     return new Response(
       JSON.stringify({ 
         error: error.message || 'Failed to rewrite email',
-        details: 'Please try again or check your OpenAI API key configuration'
+        details: 'An unexpected error occurred. Please try again.'
       }), 
       {
         status: 500,
