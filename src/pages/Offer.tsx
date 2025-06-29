@@ -1,4 +1,5 @@
 
+
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -83,7 +84,7 @@ const Offer = () => {
                   Ready to Transform Your Emails?
                 </h2>
                 <p className="text-lg text-gray-600">
-                  Enter your email to get instant access to the makeover tool
+                  Enter your email to get instant access to the email makeover tool
                 </p>
               </div>
 
@@ -123,3 +124,4 @@ const Offer = () => {
 };
 
 export default Offer;
+
