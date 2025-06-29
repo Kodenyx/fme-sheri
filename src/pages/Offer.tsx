@@ -21,45 +21,64 @@ const Offer = () => {
     setIsSubmitting(true);
 
     try {
-      const { error } = await supabase
-        .from('email_leads')
-        .insert([{ email }]);
+      // First, try to sign up the user - if they already exist in auth, this will fail
+      const redirectUrl = `${window.location.origin}/`;
+      const { data: signUpData, error: signUpError } = await supabase.auth.signUp({
+        email,
+        password: 'temp-password-' + Math.random().toString(36),
+        options: {
+          emailRedirectTo: redirectUrl
+        }
+      });
 
-      if (error) {
-        console.error('Supabase error:', error);
-        
-        // Handle duplicate email error specifically
-        if (error.code === '23505' && error.message.includes('email_leads_email_key')) {
+      // If signup succeeded, also add to email_leads (ignore duplicates)
+      if (!signUpError) {
+        await supabase
+          .from('email_leads')
+          .insert([{ email }])
+          .then(() => {
+            // Success - new user created
+            toast({
+              title: "Account Created!",
+              description: "Complete your signup to access the tool...",
+            });
+            
+            setAuthModalEmail(email);
+            setAuthModalMode('signup');
+            setShowAuthModal(true);
+          })
+          .catch(() => {
+            // Email already in leads table but user was created successfully
+            toast({
+              title: "Account Created!",
+              description: "Complete your signup to access the tool...",
+            });
+            
+            setAuthModalEmail(email);
+            setAuthModalMode('signup');
+            setShowAuthModal(true);
+          });
+      } else {
+        // Check if it's because user already exists
+        if (signUpError.message.includes('already registered') || signUpError.message.includes('already been registered')) {
           toast({
-            title: "Email Already Registered",
-            description: "This email is already registered. You can sign in now.",
+            title: "Account Already Exists",
+            description: "This email already has an account. Please sign in instead.",
           });
           
-          // Show modal in signin mode for existing users
           setAuthModalEmail(email);
           setAuthModalMode('signin');
           setShowAuthModal(true);
-          return;
+        } else {
+          throw signUpError;
         }
-        
-        throw error;
       }
 
-      toast({
-        title: "Success!",
-        description: "Your email has been captured. Complete your signup to access the tool...",
-      });
-
-      // Show modal in signup mode for new users
-      setAuthModalEmail(email);
-      setAuthModalMode('signup');
-      setShowAuthModal(true);
-
-    } catch (error) {
-      console.error('Error submitting email:', error);
+    } catch (error: any) {
+      console.error('Error during signup process:', error);
       toast({
         title: "Error",
-        description: "There was an issue submitting your email. Please try again.",
+        description: error.message || "There was an issue creating your account. Please try again.",
         variant: "destructive",
       });
     } finally {
