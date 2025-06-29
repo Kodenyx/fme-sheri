@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Zap } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
+import Navbar from "@/components/Navbar";
 
 const Offer = () => {
   const [email, setEmail] = useState("");
@@ -50,6 +51,8 @@ const Offer = () => {
 
   return (
     <div className="min-h-screen bg-gradient-primary">
+      <Navbar />
+      
       {/* Hero Section */}
       <section className="pt-32 pb-16">
         <div className="container mx-auto px-4">
