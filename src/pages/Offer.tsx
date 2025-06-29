@@ -1,5 +1,3 @@
-
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -113,7 +111,7 @@ const Offer = () => {
             <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12">
               <div className="text-center mb-8">
                 <h2 className="text-3xl font-bold mb-4" style={{ color: '#3B1E5E' }}>
-                  Ready to Transform Your Emails?
+                  Ready to Fix Your Emails?
                 </h2>
                 <p className="text-lg" style={{ color: '#89888E' }}>
                   Enter your email to get instant access - no password required
@@ -158,4 +156,3 @@ const Offer = () => {
 };
 
 export default Offer;
-
