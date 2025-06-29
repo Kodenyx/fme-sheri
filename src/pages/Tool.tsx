@@ -1,22 +1,33 @@
+
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { CheckCircle2, Sparkles, Copy } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useToast } from "@/hooks/use-toast";
-import AuthGuard from "@/components/AuthGuard";
-import Auth from "./Auth";
 import { supabase } from "@/integrations/supabase/client";
+import Navbar from "@/components/Navbar";
 
-const ToolContent = () => {
+const Tool = () => {
   const [emailContent, setEmailContent] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [makeover, setMakeover] = useState("");
   const [showMakeover, setShowMakeover] = useState(false);
+  const [userEmail, setUserEmail] = useState("");
   const [analysis, setAnalysis] = useState({
     psychologicalTriggers: [],
     structureImprovements: []
   });
   const { toast } = useToast();
+
+  useEffect(() => {
+    // Get email from localStorage or redirect to offer page
+    const storedEmail = localStorage.getItem('userEmail');
+    if (!storedEmail) {
+      window.location.href = '/offer';
+      return;
+    }
+    setUserEmail(storedEmail);
+  }, []);
 
   const analyzeEmailType = (content: string) => {
     const lowerContent = content.toLowerCase();
@@ -264,19 +275,15 @@ ${emailData.body}`;
 
   const logToolUsage = async (originalEmail: string, transformedEmail: string, emailCategory: string) => {
     try {
-      const { data: { user } } = await supabase.auth.getUser();
-      
-      if (user) {
-        await supabase
-          .from('tool_usage')
-          .insert([{
-            user_id: user.id,
-            email_address: user.email || '',
-            original_email: originalEmail,
-            transformed_email: transformedEmail,
-            email_category: emailCategory
-          }]);
-      }
+      await supabase
+        .from('tool_usage')
+        .insert([{
+          user_id: null, // No user ID since we're not using full auth
+          email_address: userEmail,
+          original_email: originalEmail,
+          transformed_email: transformedEmail,
+          email_category: emailCategory
+        }]);
     } catch (error) {
       console.error('Error logging tool usage:', error);
       // Don't show error to user as this is analytics
@@ -321,189 +328,170 @@ ${emailData.body}`;
     });
   };
 
+  if (!userEmail) {
+    return (
+      <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#0D4049' }}>
+        <div className="text-center">
+          <h2 className="text-3xl font-bold text-white mb-4">Redirecting...</h2>
+          <p className="text-white">Please wait while we redirect you to get access.</p>
+        </div>
+      </div>
+    );
+  }
+
   return (
-    <div className="min-h-screen py-20" style={{ backgroundColor: '#0D4049' }}>
-      <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-              Transform Your Email in{" "}
-              <span style={{ color: '#E19013' }}>
-                Under 3 Seconds
-              </span>
-            </h1>
-            <p className="text-xl text-white max-w-4xl mx-auto">
-              Paste your email below and watch our AI apply proven behavioral psychology 
-              frameworks to make it more compelling and conversion-focused.
-            </p>
-          </div>
+    <div className="min-h-screen" style={{ backgroundColor: '#0D4049' }}>
+      <Navbar />
+      
+      <div className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+                Transform Your Email in{" "}
+                <span style={{ color: '#E19013' }}>
+                  Under 3 Seconds
+                </span>
+              </h1>
+              <p className="text-xl text-white max-w-4xl mx-auto">
+                Paste your email below and watch our AI apply proven behavioral psychology 
+                frameworks to make it more compelling and conversion-focused.
+              </p>
+            </div>
 
-          <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12">
-            {!showMakeover ? (
-              <form onSubmit={handleSubmit} className="space-y-8">
-                <div className="grid md:grid-cols-2 gap-8">
-                  <div>
-                    <h3 className="text-2xl font-bold mb-4" style={{ color: '#0D4049' }}>Your Original Email</h3>
-                    <Textarea 
-                      placeholder="Paste your email content here..."
-                      value={emailContent}
-                      onChange={(e) => setEmailContent(e.target.value)}
-                      required
-                      className="min-h-80 text-base border-2 rounded-xl focus:ring-2"
-                      style={{ 
-                        borderColor: '#A9D6D4'
-                      }}
-                    />
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold mb-4" style={{ color: '#0D4049' }}>Your Improved Email</h3>
-                    <div className="min-h-80 border-2 rounded-xl p-4 flex items-center justify-center" style={{ borderColor: '#A9D6D4', backgroundColor: '#FAEEE1' }}>
-                      <p className="text-center" style={{ color: '#536357' }}>
-                        Your improved email will appear here...
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="text-center">
-                  <Button 
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="text-white font-bold text-xl py-6 px-12 rounded-full shadow-lg transform transition-all hover:scale-105 hover:opacity-90"
-                    style={{ backgroundColor: '#E19013' }}
-                  >
-                    {isSubmitting ? (
-                      "Creating Your Makeover..."
-                    ) : (
-                      <>
-                        <Sparkles className="mr-3 h-6 w-6" />
-                        Get My Email Makeover
-                      </>
-                    )}
-                  </Button>
-                </div>
-              </form>
-            ) : (
-              <div className="space-y-8">
-                {/* Email Comparison */}
-                <div className="grid md:grid-cols-2 gap-8">
-                  <div>
-                    <h3 className="text-2xl font-bold mb-4" style={{ color: '#0D4049' }}>Your Original Email</h3>
-                    <div className="min-h-80 border-2 rounded-xl p-6" style={{ borderColor: '#A9D6D4', backgroundColor: '#FAEEE1' }}>
-                      <div className="whitespace-pre-line text-sm leading-relaxed" style={{ color: '#536357' }}>
-                        {emailContent}
-                      </div>
-                    </div>
-                  </div>
-                  <div>
-                    <div className="flex items-center justify-between mb-4">
-                      <h3 className="text-2xl font-bold" style={{ color: '#0D4049' }}>Your Improved Email</h3>
-                      <div className="flex items-center gap-2">
-                        <span className="text-white px-3 py-1 rounded-full text-sm font-medium flex items-center gap-1" style={{ backgroundColor: '#E19013' }}>
-                          <Sparkles className="w-4 h-4" />
-                          AI Enhanced
-                        </span>
-                        <Button
-                          onClick={copyToClipboard}
-                          variant="outline"
-                          size="sm"
-                          className="flex items-center gap-2"
-                          style={{ borderColor: '#A9D6D4', color: '#0D4049' }}
-                        >
-                          <Copy className="w-4 h-4" />
-                          Copy
-                        </Button>
-                      </div>
-                    </div>
-                    <div className="min-h-80 border-2 rounded-xl p-6" style={{ borderColor: '#E19013', backgroundColor: '#A9D6D4' }}>
-                      <div className="whitespace-pre-line text-sm leading-relaxed" style={{ color: '#0D4049' }}>
-                        {makeover}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Analysis Section */}
-                <div className="rounded-2xl p-8 mt-12" style={{ backgroundColor: '#FAEEE1' }}>
-                  <h2 className="text-3xl font-bold mb-8" style={{ color: '#0D4049' }}>What Changed & Why</h2>
-                  
+            <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12">
+              {!showMakeover ? (
+                <form onSubmit={handleSubmit} className="space-y-8">
                   <div className="grid md:grid-cols-2 gap-8">
                     <div>
-                      <h3 className="text-xl font-semibold mb-6" style={{ color: '#E19013' }}>Psychological Triggers Applied:</h3>
-                      <div className="space-y-3">
-                        {analysis.psychologicalTriggers.map((trigger, index) => (
-                          <div key={index} className="flex items-start gap-3">
-                            <CheckCircle2 className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: '#E19013' }} />
-                            <span style={{ color: '#536357' }}>{trigger}</span>
-                          </div>
-                        ))}
-                      </div>
+                      <h3 className="text-2xl font-bold mb-4" style={{ color: '#0D4049' }}>Your Original Email</h3>
+                      <Textarea 
+                        placeholder="Paste your email content here..."
+                        value={emailContent}
+                        onChange={(e) => setEmailContent(e.target.value)}
+                        required
+                        className="min-h-80 text-base border-2 rounded-xl focus:ring-2"
+                        style={{ 
+                          borderColor: '#A9D6D4'
+                        }}
+                      />
                     </div>
-                    
                     <div>
-                      <h3 className="text-xl font-semibold mb-6" style={{ color: '#E19013' }}>Structure Improvements:</h3>
-                      <div className="space-y-3">
-                        {analysis.structureImprovements.map((improvement, index) => (
-                          <div key={index} className="flex items-start gap-3">
-                            <CheckCircle2 className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: '#E19013' }} />
-                            <span style={{ color: '#536357' }}>{improvement}</span>
-                          </div>
-                        ))}
+                      <h3 className="text-2xl font-bold mb-4" style={{ color: '#0D4049' }}>Your Improved Email</h3>
+                      <div className="min-h-80 border-2 rounded-xl p-4 flex items-center justify-center" style={{ borderColor: '#A9D6D4', backgroundColor: '#FAEEE1' }}>
+                        <p className="text-center" style={{ color: '#536357' }}>
+                          Your improved email will appear here...
+                        </p>
                       </div>
                     </div>
                   </div>
+                  
+                  <div className="text-center">
+                    <Button 
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="text-white font-bold text-xl py-6 px-12 rounded-full shadow-lg transform transition-all hover:scale-105 hover:opacity-90"
+                      style={{ backgroundColor: '#E19013' }}
+                    >
+                      {isSubmitting ? (
+                        "Creating Your Makeover..."
+                      ) : (
+                        <>
+                          <Sparkles className="mr-3 h-6 w-6" />
+                          Get My Email Makeover
+                        </>
+                      )}
+                    </Button>
+                  </div>
+                </form>
+              ) : (
+                <div className="space-y-8">
+                  {/* Email Comparison */}
+                  <div className="grid md:grid-cols-2 gap-8">
+                    <div>
+                      <h3 className="text-2xl font-bold mb-4" style={{ color: '#0D4049' }}>Your Original Email</h3>
+                      <div className="min-h-80 border-2 rounded-xl p-6" style={{ borderColor: '#A9D6D4', backgroundColor: '#FAEEE1' }}>
+                        <div className="whitespace-pre-line text-sm leading-relaxed" style={{ color: '#536357' }}>
+                          {emailContent}
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <div className="flex items-center justify-between mb-4">
+                        <h3 className="text-2xl font-bold" style={{ color: '#0D4049' }}>Your Improved Email</h3>
+                        <div className="flex items-center gap-2">
+                          <span className="text-white px-3 py-1 rounded-full text-sm font-medium flex items-center gap-1" style={{ backgroundColor: '#E19013' }}>
+                            <Sparkles className="w-4 h-4" />
+                            AI Enhanced
+                          </span>
+                          <Button
+                            onClick={copyToClipboard}
+                            variant="outline"
+                            size="sm"
+                            className="flex items-center gap-2"
+                            style={{ borderColor: '#A9D6D4', color: '#0D4049' }}
+                          >
+                            <Copy className="w-4 h-4" />
+                            Copy
+                          </Button>
+                        </div>
+                      </div>
+                      <div className="min-h-80 border-2 rounded-xl p-6" style={{ borderColor: '#E19013', backgroundColor: '#A9D6D4' }}>
+                        <div className="whitespace-pre-line text-sm leading-relaxed" style={{ color: '#0D4049' }}>
+                          {makeover}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Analysis Section */}
+                  <div className="rounded-2xl p-8 mt-12" style={{ backgroundColor: '#FAEEE1' }}>
+                    <h2 className="text-3xl font-bold mb-8" style={{ color: '#0D4049' }}>What Changed & Why</h2>
+                    
+                    <div className="grid md:grid-cols-2 gap-8">
+                      <div>
+                        <h3 className="text-xl font-semibold mb-6" style={{ color: '#E19013' }}>Psychological Triggers Applied:</h3>
+                        <div className="space-y-3">
+                          {analysis.psychologicalTriggers.map((trigger, index) => (
+                            <div key={index} className="flex items-start gap-3">
+                              <CheckCircle2 className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: '#E19013' }} />
+                              <span style={{ color: '#536357' }}>{trigger}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                      
+                      <div>
+                        <h3 className="text-xl font-semibold mb-6" style={{ color: '#E19013' }}>Structure Improvements:</h3>
+                        <div className="space-y-3">
+                          {analysis.structureImprovements.map((improvement, index) => (
+                            <div key={index} className="flex items-start gap-3">
+                              <CheckCircle2 className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: '#E19013' }} />
+                              <span style={{ color: '#536357' }}>{improvement}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <Button 
+                      onClick={handleReset}
+                      variant="outline"
+                      className="border-2 py-3 px-8 rounded-full"
+                      style={{ borderColor: '#A9D6D4', color: '#0D4049' }}
+                    >
+                      Try Another Email
+                    </Button>
+                  </div>
                 </div>
-                
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button 
-                    onClick={handleReset}
-                    variant="outline"
-                    className="border-2 py-3 px-8 rounded-full"
-                    style={{ borderColor: '#A9D6D4', color: '#0D4049' }}
-                  >
-                    Try Another Email
-                  </Button>
-                </div>
-              </div>
-            )}
+              )}
+            </div>
           </div>
         </div>
       </div>
     </div>
-  );
-};
-
-import AuthModal from "@/components/AuthModal";
-
-const Tool = () => {
-  const [showAuthModal, setShowAuthModal] = useState(false);
-
-  return (
-    <AuthGuard 
-      fallback={
-        <>
-          <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#0D4049' }}>
-            <div className="text-center">
-              <h2 className="text-3xl font-bold text-white mb-4">Authentication Required</h2>
-              <p className="text-white mb-6">Please sign in to access the Messaging Makeover AI tool.</p>
-              <Button 
-                onClick={() => setShowAuthModal(true)}
-                className="bg-gradient-to-r from-[#818CF8] to-[#06B6D4] hover:from-[#6366F1] hover:to-[#0891B2] text-white font-bold"
-              >
-                Sign In
-              </Button>
-            </div>
-          </div>
-          <AuthModal
-            isOpen={showAuthModal}
-            onClose={() => setShowAuthModal(false)}
-            onSuccess={() => setShowAuthModal(false)}
-          />
-        </>
-      }
-    >
-      <ToolContent />
-    </AuthGuard>
   );
 };
 

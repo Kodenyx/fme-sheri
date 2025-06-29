@@ -5,163 +5,155 @@ import { Input } from "@/components/ui/input";
 import { Zap } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
+import { useNavigate } from "react-router-dom";
 import Navbar from "@/components/Navbar";
-import AuthModal from "@/components/AuthModal";
 
 const Offer = () => {
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [showAuthModal, setShowAuthModal] = useState(false);
-  const [authModalEmail, setAuthModalEmail] = useState("");
-  const [authModalMode, setAuthModalMode] = useState<'signin' | 'signup'>('signup');
   const { toast } = useToast();
+  const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
     try {
-      // First, try to create a new account
-      const redirectUrl = `${window.location.origin}/`;
+      // First, save the email to leads table
+      await supabase
+        .from('email_leads')
+        .insert([{ email }])
+        .select()
+        .single();
+
+      // Create a temporary user account with a random password
+      const tempPassword = Math.random().toString(36).substring(2, 15);
+      
       const { data: signUpData, error: signUpError } = await supabase.auth.signUp({
         email,
-        password: 'temp123', // Simple temporary password
+        password: tempPassword,
         options: {
-          emailRedirectTo: redirectUrl
+          emailRedirectTo: `${window.location.origin}/tool`
         }
       });
 
-      if (!signUpError && signUpData.user) {
-        // New user created successfully
-        try {
-          await supabase
-            .from('email_leads')
-            .insert([{ email }]);
-        } catch (leadError) {
-          console.log('Email already in leads table:', leadError);
-        }
-        
-        toast({
-          title: "Account Created!",
-          description: "Please set up your secure password to complete registration.",
-        });
-        
-        setAuthModalEmail(email);
-        setAuthModalMode('signup');
-        setShowAuthModal(true);
-      } else if (signUpError && 
-                 (signUpError.message.includes('already registered') || 
-                  signUpError.message.includes('already been registered') ||
-                  signUpError.message.includes('User already registered'))) {
-        
-        // User already exists, show sign in modal
-        toast({
-          title: "Account Already Exists",
-          description: "Please sign in with your password.",
-        });
-        
-        setAuthModalEmail(email);
-        setAuthModalMode('signin');
-        setShowAuthModal(true);
-      } else {
+      if (signUpError && !signUpError.message.includes('already registered')) {
         throw signUpError;
       }
 
+      // Store email in localStorage for tool usage tracking
+      localStorage.setItem('userEmail', email);
+      
+      toast({
+        title: "Success!",
+        description: "Your account has been created. Redirecting to the tool...",
+      });
+      
+      // Redirect to tool page
+      setTimeout(() => {
+        navigate("/tool");
+      }, 1500);
+
     } catch (error: any) {
       console.error('Error during signup process:', error);
-      toast({
-        title: "Error",
-        description: error.message || "There was an issue with your request. Please try again.",
-        variant: "destructive",
-      });
+      
+      // If user already exists, still proceed to tool
+      if (error.message?.includes('already registered') || error.message?.includes('User already registered')) {
+        localStorage.setItem('userEmail', email);
+        toast({
+          title: "Welcome back!",
+          description: "Redirecting to the tool...",
+        });
+        
+        setTimeout(() => {
+          navigate("/tool");
+        }, 1500);
+      } else {
+        toast({
+          title: "Error",
+          description: error.message || "There was an issue with your request. Please try again.",
+          variant: "destructive",
+        });
+      }
     } finally {
       setIsSubmitting(false);
     }
   };
 
   return (
-    <>
-      <div className="min-h-screen" style={{ backgroundColor: '#0D4049' }}>
-        <Navbar />
-        
-        {/* Hero Section */}
-        <section className="pt-32 pb-16">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center">
-              <p className="text-base md:text-lg mb-6 font-medium" style={{ color: '#A9D6D4' }}>
-                Before you send another forgettable email…
-              </p>
-              <h1 className="text-5xl md:text-7xl font-bold mb-8 text-white">
-                Get the tool that rewrites your message, like{" "}
-                <span style={{ color: '#E19013' }}>
-                  Sheri would
-                </span>
-              </h1>
-              <p className="text-lg md:text-xl mb-12 text-white max-w-3xl mx-auto">
-                Copy that clicks with how humans decide - so your audience doesn't just read, they respond
-              </p>
-            </div>
+    <div className="min-h-screen" style={{ backgroundColor: '#0D4049' }}>
+      <Navbar />
+      
+      {/* Hero Section */}
+      <section className="pt-32 pb-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <p className="text-base md:text-lg mb-6 font-medium" style={{ color: '#A9D6D4' }}>
+              Before you send another forgettable email…
+            </p>
+            <h1 className="text-5xl md:text-7xl font-bold mb-8 text-white">
+              Get the tool that rewrites your message, like{" "}
+              <span style={{ color: '#E19013' }}>
+                Sheri would
+              </span>
+            </h1>
+            <p className="text-lg md:text-xl mb-12 text-white max-w-3xl mx-auto">
+              Copy that clicks with how humans decide - so your audience doesn't just read, they respond
+            </p>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Email Capture Section */}
-        <section className="pb-20">
-          <div className="container mx-auto px-4">
-            <div className="max-w-2xl mx-auto">
-              <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12">
-                <div className="text-center mb-8">
-                  <h2 className="text-3xl font-bold mb-4" style={{ color: '#0D4049' }}>
-                    Ready to Transform Your Emails?
-                  </h2>
-                  <p className="text-lg" style={{ color: '#536357' }}>
-                    Enter your email to create your account and get instant access
-                  </p>
-                </div>
-
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div>
-                    <Input
-                      type="email"
-                      placeholder="Enter your email address"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      required
-                      className="text-lg py-6 px-6 border-2 rounded-xl focus:ring-2"
-                      style={{ 
-                        borderColor: '#A9D6D4'
-                      }}
-                    />
-                  </div>
-                  
-                  <Button 
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="w-full text-white font-bold text-xl py-6 px-12 rounded-full shadow-lg transform transition-all hover:scale-105 hover:opacity-90"
-                    style={{ backgroundColor: '#E19013' }}
-                  >
-                    {isSubmitting ? (
-                      "Setting Up Your Account..."
-                    ) : (
-                      <>
-                        <Zap className="mr-3 h-6 w-6" />
-                        Create Account & Get Access
-                      </>
-                    )}
-                  </Button>
-                </form>
+      {/* Email Capture Section */}
+      <section className="pb-20">
+        <div className="container mx-auto px-4">
+          <div className="max-w-2xl mx-auto">
+            <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12">
+              <div className="text-center mb-8">
+                <h2 className="text-3xl font-bold mb-4" style={{ color: '#0D4049' }}>
+                  Ready to Transform Your Emails?
+                </h2>
+                <p className="text-lg" style={{ color: '#536357' }}>
+                  Enter your email to get instant access - no password required
+                </p>
               </div>
+
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div>
+                  <Input
+                    type="email"
+                    placeholder="Enter your email address"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                    className="text-lg py-6 px-6 border-2 rounded-xl focus:ring-2"
+                    style={{ 
+                      borderColor: '#A9D6D4'
+                    }}
+                  />
+                </div>
+                
+                <Button 
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full text-white font-bold text-xl py-6 px-12 rounded-full shadow-lg transform transition-all hover:scale-105 hover:opacity-90"
+                  style={{ backgroundColor: '#E19013' }}
+                >
+                  {isSubmitting ? (
+                    "Setting Up Your Access..."
+                  ) : (
+                    <>
+                      <Zap className="mr-3 h-6 w-6" />
+                      Get Instant Access
+                    </>
+                  )}
+                </Button>
+              </form>
             </div>
           </div>
-        </section>
-      </div>
-
-      <AuthModal
-        isOpen={showAuthModal}
-        onClose={() => setShowAuthModal(false)}
-        initialEmail={authModalEmail}
-        initialMode={authModalMode}
-      />
-    </>
+        </div>
+      </section>
+    </div>
   );
 };
 
