@@ -33,31 +33,31 @@ const Offer = () => {
 
       // If signup succeeded, also add to email_leads (ignore duplicates)
       if (!signUpError) {
-        await supabase
-          .from('email_leads')
-          .insert([{ email }])
-          .then(() => {
-            // Success - new user created
-            toast({
-              title: "Account Created!",
-              description: "Complete your signup to access the tool...",
-            });
-            
-            setAuthModalEmail(email);
-            setAuthModalMode('signup');
-            setShowAuthModal(true);
-          })
-          .catch(() => {
-            // Email already in leads table but user was created successfully
-            toast({
-              title: "Account Created!",
-              description: "Complete your signup to access the tool...",
-            });
-            
-            setAuthModalEmail(email);
-            setAuthModalMode('signup');
-            setShowAuthModal(true);
+        try {
+          await supabase
+            .from('email_leads')
+            .insert([{ email }]);
+          
+          // Success - new user created
+          toast({
+            title: "Account Created!",
+            description: "Complete your signup to access the tool...",
           });
+          
+          setAuthModalEmail(email);
+          setAuthModalMode('signup');
+          setShowAuthModal(true);
+        } catch (leadError) {
+          // Email already in leads table but user was created successfully
+          toast({
+            title: "Account Created!",
+            description: "Complete your signup to access the tool...",
+          });
+          
+          setAuthModalEmail(email);
+          setAuthModalMode('signup');
+          setShowAuthModal(true);
+        }
       } else {
         // Check if it's because user already exists
         if (signUpError.message.includes('already registered') || signUpError.message.includes('already been registered')) {
