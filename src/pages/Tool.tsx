@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { CheckCircle2, Sparkles, Copy } from "lucide-react";
@@ -402,58 +403,58 @@ ${emailData.body}`;
             </div>
 
             <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12">
-              <form onSubmit={handleSubmit} className="space-y-8">
-                <div className="grid md:grid-cols-2 gap-8">
-                  <div>
-                    <h3 className="text-2xl font-bold mb-4" style={{ color: '#3B1E5E' }}>Your Original Email</h3>
-                    <Textarea 
-                      placeholder="Paste your email content here..."
-                      value={emailContent}
-                      onChange={(e) => setEmailContent(e.target.value)}
-                      required
-                      className="min-h-80 text-base border-2 rounded-xl focus:ring-2"
-                      style={{ borderColor: '#A9D6D4' }}
-                    />
+              <div className="grid md:grid-cols-2 gap-8 mb-8">
+                <div>
+                  <h3 className="text-2xl font-bold mb-4" style={{ color: '#3B1E5E' }}>Your Original Email</h3>
+                  <Textarea 
+                    placeholder="Paste your email content here..."
+                    value={emailContent}
+                    onChange={(e) => setEmailContent(e.target.value)}
+                    required
+                    className="min-h-80 text-base border-2 rounded-xl focus:ring-2"
+                    style={{ borderColor: '#A9D6D4' }}
+                  />
+                </div>
+                <div>
+                  <div className="flex items-center justify-between mb-4">
+                    <h3 className="text-2xl font-bold" style={{ color: '#3B1E5E' }}>Your Improved Email</h3>
+                    {showMakeover && (
+                      <Button
+                        onClick={copyToClipboard}
+                        variant="outline"
+                        size="sm"
+                        className="flex items-center gap-2"
+                        style={{ borderColor: '#A9D6D4', color: '#3B1E5E' }}
+                      >
+                        <Copy className="w-4 h-4" />
+                        Copy
+                      </Button>
+                    )}
                   </div>
-                  <div>
-                    <div className="flex items-center justify-between mb-4">
-                      <h3 className="text-2xl font-bold" style={{ color: '#3B1E5E' }}>Your Improved Email</h3>
-                      {showMakeover && (
-                        <Button
-                          onClick={copyToClipboard}
-                          variant="outline"
-                          size="sm"
-                          className="flex items-center gap-2"
-                          style={{ borderColor: '#A9D6D4', color: '#3B1E5E' }}
-                        >
-                          <Copy className="w-4 h-4" />
-                          Copy
-                        </Button>
-                      )}
-                    </div>
-                    <div className={`min-h-80 border-2 rounded-xl p-4 ${showMakeover ? '' : 'flex items-center justify-center'}`} 
-                         style={{ 
-                           backgroundColor: showMakeover ? '#FAEEE1' : '#A9D6D4', 
-                           borderColor: showMakeover ? '#E19013' : '#A9D6D4' 
-                         }}>
-                      {showMakeover ? (
-                        <div className="whitespace-pre-line text-sm leading-relaxed" style={{ color: '#3B1E5E' }}>
-                          {makeover}
-                        </div>
-                      ) : (
-                        <p className="text-center" style={{ color: '#89888E' }}>
-                          Your improved email will appear here...
-                        </p>
-                      )}
-                    </div>
+                  <div className={`min-h-80 border-2 rounded-xl p-4 ${showMakeover ? '' : 'flex items-center justify-center'}`} 
+                       style={{ 
+                         backgroundColor: showMakeover ? '#FAEEE1' : '#A9D6D4', 
+                         borderColor: showMakeover ? '#E19013' : '#A9D6D4' 
+                       }}>
+                    {showMakeover ? (
+                      <div className="whitespace-pre-line text-sm leading-relaxed" style={{ color: '#3B1E5E' }}>
+                        {makeover}
+                      </div>
+                    ) : (
+                      <p className="text-center" style={{ color: '#89888E' }}>
+                        Your improved email will appear here...
+                      </p>
+                    )}
                   </div>
                 </div>
-                
-                {!showMakeover && (
+              </div>
+              
+              {!showMakeover && (
+                <form onSubmit={handleSubmit}>
                   <div className="text-center">
                     <Button 
                       type="submit"
-                      disabled={isSubmitting}
+                      disabled={isSubmitting || !emailContent.trim()}
                       className="text-white font-bold text-xl py-6 px-12 rounded-full shadow-lg transform transition-all hover:scale-105 hover:opacity-90"
                       style={{ backgroundColor: '#E19013' }}
                     >
@@ -467,8 +468,8 @@ ${emailData.body}`;
                       )}
                     </Button>
                   </div>
-                )}
-              </form>
+                </form>
+              )}
 
               {showMakeover && (
                 <>
