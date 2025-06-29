@@ -30,12 +30,12 @@ const Offer = () => {
         if (error.code === '23505' && error.message.includes('email_leads_email_key')) {
           toast({
             title: "Email Already Registered",
-            description: "This email is already registered. Redirecting you to the tool...",
+            description: "This email is already registered. Redirecting you to sign in...",
           });
           
-          // Still redirect to tool since they're already in the system
+          // Redirect to auth page with email pre-filled
           setTimeout(() => {
-            navigate('/tool');
+            navigate(`/auth?email=${encodeURIComponent(email)}`);
           }, 1500);
           return;
         }
@@ -45,12 +45,12 @@ const Offer = () => {
 
       toast({
         title: "Success!",
-        description: "Your email has been captured. Redirecting to the tool...",
+        description: "Your email has been captured. Complete your signup to access the tool...",
       });
 
-      // Redirect to tool page after successful submission
+      // Redirect to auth page with email pre-filled after successful submission
       setTimeout(() => {
-        navigate('/tool');
+        navigate(`/auth?email=${encodeURIComponent(email)}`);
       }, 1000);
 
     } catch (error) {
@@ -99,7 +99,7 @@ const Offer = () => {
                   Ready to Transform Your Emails?
                 </h2>
                 <p className="text-lg" style={{ color: '#536357' }}>
-                  Enter your email to get instant access to the email makeover tool
+                  Enter your email to create your account and get instant access
                 </p>
               </div>
 
@@ -125,11 +125,11 @@ const Offer = () => {
                   style={{ backgroundColor: '#E19013' }}
                 >
                   {isSubmitting ? (
-                    "Getting Your Access..."
+                    "Setting Up Your Account..."
                   ) : (
                     <>
                       <Zap className="mr-3 h-6 w-6" />
-                      Get Instant Access
+                      Create Account & Get Access
                     </>
                   )}
                 </Button>

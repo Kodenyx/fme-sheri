@@ -1,6 +1,6 @@
 
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
@@ -12,8 +12,18 @@ const Auth = () => {
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [isSignUp, setIsSignUp] = useState(false);
+  const [searchParams] = useSearchParams();
   const navigate = useNavigate();
   const { toast } = useToast();
+
+  useEffect(() => {
+    // Pre-fill email from URL parameter and set to signup mode
+    const emailParam = searchParams.get('email');
+    if (emailParam) {
+      setEmail(emailParam);
+      setIsSignUp(true); // Automatically set to signup mode when coming from offer page
+    }
+  }, [searchParams]);
 
   const handleAuth = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -44,7 +54,7 @@ const Auth = () => {
           title: "Welcome back!",
           description: "You have successfully signed in.",
         });
-        navigate("/");
+        navigate("/tool");
       }
     } catch (error: any) {
       toast({
@@ -69,7 +79,7 @@ const Auth = () => {
           </h2>
           <p className="mt-2 text-center text-sm text-gray-600">
             {isSignUp 
-              ? "Get started with your free Messaging Makeover AI account" 
+              ? "Complete your signup to access the Messaging Makeover AI tool" 
               : "Welcome back to Messaging Makeover AI"
             }
           </p>
@@ -105,7 +115,7 @@ const Auth = () => {
               ) : (
                 <>
                   <LogIn className="mr-2 h-5 w-5" />
-                  {isSignUp ? "Create Account" : "Sign In"}
+                  {isSignUp ? "Complete Signup" : "Sign In"}
                 </>
               )}
             </Button>
