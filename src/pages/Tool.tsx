@@ -340,8 +340,8 @@ ${emailData.body}`;
       await logToolUsage(emailContent, result.makeover, result.emailType);
       
       toast({
-        title: "Makeover Complete!",
-        description: "Your improved email is ready!",
+        title: "Makeover complete!",
+        description: "Your high-converting version is ready to go.",
       });
       
     } catch (error) {
