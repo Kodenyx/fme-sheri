@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -21,46 +20,41 @@ const Offer = () => {
     setIsSubmitting(true);
 
     try {
-      // First, try to sign up the user - if they already exist in auth, this will fail
+      // Check if user already exists by trying to sign up
       const redirectUrl = `${window.location.origin}/`;
+      const tempPassword = 'TempPass123!'; // Use a consistent temporary password
       const { data: signUpData, error: signUpError } = await supabase.auth.signUp({
         email,
-        password: 'temp-password-' + Math.random().toString(36),
+        password: tempPassword,
         options: {
           emailRedirectTo: redirectUrl
         }
       });
 
-      // If signup succeeded, also add to email_leads (ignore duplicates)
-      if (!signUpError) {
+      // If signup succeeded, add to email_leads and show completion modal
+      if (!signUpError && signUpData.user) {
         try {
           await supabase
             .from('email_leads')
             .insert([{ email }]);
-          
-          // Success - new user created
-          toast({
-            title: "Account Created!",
-            description: "Complete your signup to access the tool...",
-          });
-          
-          setAuthModalEmail(email);
-          setAuthModalMode('signup');
-          setShowAuthModal(true);
         } catch (leadError) {
-          // Email already in leads table but user was created successfully
-          toast({
-            title: "Account Created!",
-            description: "Complete your signup to access the tool...",
-          });
-          
-          setAuthModalEmail(email);
-          setAuthModalMode('signup');
-          setShowAuthModal(true);
+          // Email already in leads table, but that's fine
+          console.log('Email already in leads table:', leadError);
         }
-      } else {
+        
+        toast({
+          title: "Account Created!",
+          description: "Complete your signup with a secure password to access the tool.",
+        });
+        
+        setAuthModalEmail(email);
+        setAuthModalMode('signup');
+        setShowAuthModal(true);
+      } else if (signUpError) {
         // Check if it's because user already exists
-        if (signUpError.message.includes('already registered') || signUpError.message.includes('already been registered')) {
+        if (signUpError.message.includes('already registered') || 
+            signUpError.message.includes('already been registered') ||
+            signUpError.message.includes('User already registered')) {
           toast({
             title: "Account Already Exists",
             description: "This email already has an account. Please sign in instead.",
@@ -78,7 +72,7 @@ const Offer = () => {
       console.error('Error during signup process:', error);
       toast({
         title: "Error",
-        description: error.message || "There was an issue creating your account. Please try again.",
+        description: error.message || "There was an issue with your request. Please try again.",
         variant: "destructive",
       });
     } finally {
