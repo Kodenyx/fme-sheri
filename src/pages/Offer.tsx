@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -80,23 +81,23 @@ const Offer = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-primary">
+    <div className="min-h-screen" style={{ backgroundColor: '#FAEEE1' }}>
       <Navbar />
       
       {/* Hero Section */}
       <section className="pt-32 pb-16">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <p className="text-lg md:text-xl mb-6 text-gray-600 font-medium">
+            <p className="text-lg md:text-xl mb-6 font-medium" style={{ color: '#89888E' }}>
               Before you send another forgettable email…
             </p>
-            <h1 className="text-5xl md:text-7xl font-bold mb-8 text-gray-900">
+            <h1 className="text-5xl md:text-7xl font-bold mb-8" style={{ color: '#0D4049' }}>
               Get the tool that rewrites your message, like{" "}
               <span style={{ color: '#E19013' }}>
                 Sheri would
               </span>
             </h1>
-            <p className="text-xl md:text-2xl mb-12 text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl md:text-2xl mb-12 max-w-3xl mx-auto" style={{ color: '#536357' }}>
               Copy that clicks with how humans decide - so your audience doesn't just read, they respond
             </p>
           </div>
@@ -109,10 +110,10 @@ const Offer = () => {
           <div className="max-w-2xl mx-auto">
             <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12">
               <div className="text-center mb-8">
-                <h2 className="text-3xl font-bold mb-4 text-gray-900">
+                <h2 className="text-3xl font-bold mb-4" style={{ color: '#0D4049' }}>
                   Ready to Transform Your Emails?
                 </h2>
-                <p className="text-lg text-gray-600">
+                <p className="text-lg" style={{ color: '#536357' }}>
                   Enter your email to get instant access - no password required
                 </p>
               </div>
@@ -125,7 +126,8 @@ const Offer = () => {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
-                    className="text-lg py-6 px-6 border-2 rounded-xl focus:ring-2 border-gray-300"
+                    className="text-lg py-6 px-6 border-2 rounded-xl focus:ring-2"
+                    style={{ borderColor: '#A9D6D4' }}
                   />
                 </div>
                 
