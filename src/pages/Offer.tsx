@@ -91,13 +91,13 @@ const Offer = () => {
             <p className="text-lg md:text-xl mb-6 font-medium" style={{ color: '#89888E' }}>
               Before you send another forgettable email…
             </p>
-            <h1 className="text-5xl md:text-7xl font-bold mb-8" style={{ color: '#0D4049' }}>
+            <h1 className="text-5xl md:text-7xl font-bold mb-8" style={{ color: '#3B1E5E' }}>
               Get the tool that rewrites your message, like{" "}
               <span style={{ color: '#E19013' }}>
                 Sheri would
               </span>
             </h1>
-            <p className="text-xl md:text-2xl mb-12 max-w-3xl mx-auto" style={{ color: '#536357' }}>
+            <p className="text-xl md:text-2xl mb-12 max-w-3xl mx-auto" style={{ color: '#3B1E5E' }}>
               Copy that clicks with how humans decide - so your audience doesn't just read, they respond
             </p>
           </div>
@@ -110,10 +110,10 @@ const Offer = () => {
           <div className="max-w-2xl mx-auto">
             <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12">
               <div className="text-center mb-8">
-                <h2 className="text-3xl font-bold mb-4" style={{ color: '#0D4049' }}>
+                <h2 className="text-3xl font-bold mb-4" style={{ color: '#3B1E5E' }}>
                   Ready to Transform Your Emails?
                 </h2>
-                <p className="text-lg" style={{ color: '#536357' }}>
+                <p className="text-lg" style={{ color: '#89888E' }}>
                   Enter your email to get instant access - no password required
                 </p>
               </div>
