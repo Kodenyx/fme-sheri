@@ -448,9 +448,35 @@ ${emailData.body}`;
   );
 };
 
+import AuthModal from "@/components/AuthModal";
+
 const Tool = () => {
+  const [showAuthModal, setShowAuthModal] = useState(false);
+
   return (
-    <AuthGuard fallback={<Auth />}>
+    <AuthGuard 
+      fallback={
+        <>
+          <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#0D4049' }}>
+            <div className="text-center">
+              <h2 className="text-3xl font-bold text-white mb-4">Authentication Required</h2>
+              <p className="text-white mb-6">Please sign in to access the Messaging Makeover AI tool.</p>
+              <Button 
+                onClick={() => setShowAuthModal(true)}
+                className="bg-gradient-to-r from-[#818CF8] to-[#06B6D4] hover:from-[#6366F1] hover:to-[#0891B2] text-white font-bold"
+              >
+                Sign In
+              </Button>
+            </div>
+          </div>
+          <AuthModal
+            isOpen={showAuthModal}
+            onClose={() => setShowAuthModal(false)}
+            onSuccess={() => setShowAuthModal(false)}
+          />
+        </>
+      }
+    >
       <ToolContent />
     </AuthGuard>
   );
