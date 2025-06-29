@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -66,7 +65,7 @@ const Offer = () => {
                 Sheri would
               </span>
             </h1>
-            <p className="text-xl md:text-2xl mb-12 text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg md:text-xl mb-12 text-gray-600 max-w-3xl mx-auto">
               Copy that clicks with how humans decide - so your audience doesn't just read, they respond
             </p>
           </div>
