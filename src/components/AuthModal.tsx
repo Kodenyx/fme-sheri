@@ -118,10 +118,9 @@ const AuthModal = ({
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="text-lg py-6 px-6 border-2 rounded-xl focus:ring-2 bg-white text-gray-900 placeholder:text-gray-500"
+                className="text-lg py-6 px-6 border-2 rounded-xl bg-white text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
                 style={{ 
-                  borderColor: '#A9D6D4',
-                  focusRingColor: '#E19013'
+                  borderColor: '#A9D6D4'
                 }}
               />
               <Input
@@ -130,10 +129,9 @@ const AuthModal = ({
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
-                className="text-lg py-6 px-6 border-2 rounded-xl focus:ring-2 bg-white text-gray-900 placeholder:text-gray-500"
+                className="text-lg py-6 px-6 border-2 rounded-xl bg-white text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
                 style={{ 
-                  borderColor: '#A9D6D4',
-                  focusRingColor: '#E19013'
+                  borderColor: '#A9D6D4'
                 }}
               />
 
