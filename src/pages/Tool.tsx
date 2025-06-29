@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { CheckCircle2, Sparkles, Copy } from "lucide-react";
@@ -441,8 +440,7 @@ ${emailData.body}`;
                     value={emailContent}
                     onChange={(e) => setEmailContent(e.target.value)}
                     required
-                    className="min-h-80 text-base border-2 rounded-xl focus:ring-2"
-                    style={{ borderColor: '#A9D6D4' }}
+                    className="min-h-80 text-base border-2 rounded-xl focus:ring-2 border-gray-300 focus:border-gray-400"
                   />
                 </div>
                 <div>
@@ -453,8 +451,7 @@ ${emailData.body}`;
                         onClick={copyToClipboard}
                         variant="outline"
                         size="sm"
-                        className="flex items-center gap-2"
-                        style={{ borderColor: '#A9D6D4', color: '#3B1E5E' }}
+                        className="flex items-center gap-2 border-gray-300 text-gray-600"
                       >
                         <Copy className="w-4 h-4" />
                         Copy
@@ -463,8 +460,8 @@ ${emailData.body}`;
                   </div>
                   <div className={`min-h-80 border-2 rounded-xl p-4 ${showMakeover ? '' : 'flex items-center justify-center'}`} 
                        style={{ 
-                         backgroundColor: showMakeover ? '#ffffff' : '#A9D6D4', 
-                         borderColor: '#A9D6D4' 
+                         backgroundColor: showMakeover ? '#ffffff' : '#f9fafb', 
+                         borderColor: '#d1d5db' 
                        }}>
                     {showMakeover ? (
                       <div className="whitespace-pre-line text-sm leading-relaxed" style={{ color: '#3B1E5E' }}>
@@ -504,7 +501,7 @@ ${emailData.body}`;
               {showMakeover && (
                 <>
                   {/* Analysis Section */}
-                  <div className="rounded-2xl p-8 mt-12" style={{ backgroundColor: '#A9D6D4' }}>
+                  <div className="rounded-2xl p-8 mt-12" style={{ backgroundColor: '#f9fafb' }}>
                     <h2 className="text-3xl font-bold mb-8" style={{ color: '#3B1E5E' }}>What Changed & Why</h2>
                     
                     <div className="grid md:grid-cols-2 gap-8">
@@ -538,8 +535,7 @@ ${emailData.body}`;
                     <Button 
                       onClick={handleReset}
                       variant="outline"
-                      className="border-2 py-3 px-8 rounded-full"
-                      style={{ borderColor: '#A9D6D4', color: '#3B1E5E' }}
+                      className="border-2 py-3 px-8 rounded-full border-gray-300 text-gray-600"
                     >
                       Try Another Email
                     </Button>
