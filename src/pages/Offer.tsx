@@ -1,5 +1,4 @@
 
-
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -51,23 +50,23 @@ const Offer = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-primary">
+    <div className="min-h-screen" style={{ backgroundColor: '#0D4049' }}>
       <Navbar />
       
       {/* Hero Section */}
       <section className="pt-32 pb-16">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <p className="text-base md:text-lg mb-6 text-gray-600 font-medium">
+            <p className="text-base md:text-lg mb-6 font-medium" style={{ color: '#A9D6D4' }}>
               Before you send another forgettable email…
             </p>
-            <h1 className="text-5xl md:text-7xl font-bold mb-8 text-gray-900">
+            <h1 className="text-5xl md:text-7xl font-bold mb-8 text-white">
               Get the tool that rewrites your message, like{" "}
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#818CF8] to-[#06B6D4]">
+              <span style={{ color: '#E19013' }}>
                 Sheri would
               </span>
             </h1>
-            <p className="text-lg md:text-xl mb-12 text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg md:text-xl mb-12 text-white max-w-3xl mx-auto">
               Copy that clicks with how humans decide - so your audience doesn't just read, they respond
             </p>
           </div>
@@ -80,10 +79,10 @@ const Offer = () => {
           <div className="max-w-2xl mx-auto">
             <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12">
               <div className="text-center mb-8">
-                <h2 className="text-3xl font-bold mb-4 text-gray-900">
+                <h2 className="text-3xl font-bold mb-4" style={{ color: '#0D4049' }}>
                   Ready to Transform Your Emails?
                 </h2>
-                <p className="text-lg text-gray-600">
+                <p className="text-lg" style={{ color: '#536357' }}>
                   Enter your email to get instant access to the email makeover tool
                 </p>
               </div>
@@ -96,14 +95,20 @@ const Offer = () => {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
-                    className="text-lg py-6 px-6 border-2 border-gray-200 rounded-xl focus:border-blue-400 focus:ring-blue-400"
+                    className="text-lg py-6 px-6 border-2 rounded-xl focus:ring-2"
+                    style={{ 
+                      borderColor: '#A9D6D4',
+                      focusBorderColor: '#0D4049',
+                      focusRingColor: '#A9D6D4'
+                    }}
                   />
                 </div>
                 
                 <Button 
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-gradient-to-r from-[#818CF8] to-[#06B6D4] hover:from-[#6366F1] hover:to-[#0891B2] text-white font-bold text-xl py-6 px-12 rounded-full shadow-lg transform transition-all hover:scale-105"
+                  className="w-full text-white font-bold text-xl py-6 px-12 rounded-full shadow-lg transform transition-all hover:scale-105 hover:opacity-90"
+                  style={{ backgroundColor: '#E19013' }}
                 >
                   {isSubmitting ? (
                     "Getting Your Access..."
@@ -124,4 +129,3 @@ const Offer = () => {
 };
 
 export default Offer;
-
