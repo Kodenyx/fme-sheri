@@ -97,9 +97,7 @@ const Offer = () => {
                     required
                     className="text-lg py-6 px-6 border-2 rounded-xl focus:ring-2"
                     style={{ 
-                      borderColor: '#A9D6D4',
-                      focusBorderColor: '#0D4049',
-                      focusRingColor: '#A9D6D4'
+                      borderColor: '#A9D6D4'
                     }}
                   />
                 </div>
