@@ -92,7 +92,7 @@ const Offer = () => {
               Before you send another forgettable email…
             </p>
             <h1 className="text-5xl md:text-7xl font-bold mb-8" style={{ color: '#3B1E5E' }}>
-              Fix your email with proven frameworks that scaled demand at{" "}
+              Fix your email with frameworks that scaled demand at{" "}
               <span style={{ color: '#E19013' }}>
                 HubSpot
               </span>
