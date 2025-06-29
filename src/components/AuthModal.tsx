@@ -65,12 +65,17 @@ const AuthModal = ({
             }
           });
           if (signUpError) throw signUpError;
+          
+          toast({
+            title: "Welcome aboard! 🎉",
+            description: "You're all set! Redirecting you to the tool now...",
+          });
+        } else {
+          toast({
+            title: "Welcome aboard! 🎉",
+            description: "You're all set! Redirecting you to the tool now...",
+          });
         }
-        
-        toast({
-          title: "Welcome aboard! 🎉",
-          description: "You're all set! Redirecting you to the tool now...",
-        });
         
         // Switch to sign in mode and redirect immediately
         setIsSignUp(false);
