@@ -45,8 +45,8 @@ const Offer = () => {
       localStorage.setItem('userEmail', email);
       
       toast({
-        title: "Success!",
-        description: "Your account has been created. Redirecting to the tool...",
+        title: "Welcome aboard! 🎉",
+        description: "You're all set! Redirecting you to the tool now...",
       });
       
       // Redirect to tool page
