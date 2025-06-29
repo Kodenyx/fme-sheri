@@ -461,7 +461,7 @@ ${emailData.body}`;
                     ) : (
                       <>
                         <Sparkles className="mr-3 h-6 w-6" />
-                        Get My Email Makeover
+                        Fix My Email
                       </>
                     )}
                   </Button>
