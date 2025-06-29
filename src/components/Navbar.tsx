@@ -8,11 +8,7 @@ const Navbar = () => {
     <nav className="fixed top-0 w-full bg-black/90 backdrop-blur-md z-50 shadow-sm">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <img 
-            src="/lovable-uploads/7f60b816-7463-4d9b-bba6-32fea546ade1.png" 
-            alt="Fix My Email Logo" 
-            className="h-8 w-auto"
-          />
+          <span className="text-xl font-bold text-white">Fix My Email</span>
         </div>
 
         {/* Mobile Navigation */}
