@@ -352,7 +352,7 @@ ${emailData.body}`;
                   Under 3 Seconds
                 </span>
               </h1>
-              <p className="text-xl max-w-4xl mx-auto text-gray-600">
+              <p className="text-xl md:text-2xl max-w-4xl mx-auto text-gray-600">
                 Paste your email below and watch our AI apply proven behavioral psychology 
                 frameworks to make it more compelling and conversion-focused.
               </p>
