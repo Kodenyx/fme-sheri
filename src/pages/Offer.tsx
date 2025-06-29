@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -91,13 +92,13 @@ const Offer = () => {
               Before you send another forgettable email…
             </p>
             <h1 className="text-5xl md:text-7xl font-bold mb-8" style={{ color: '#3B1E5E' }}>
-              Get the tool that rewrites your message, like{" "}
+              Fix your message with the frameworks that scaled demand at{" "}
               <span style={{ color: '#E19013' }}>
-                Sheri would
+                HubSpot
               </span>
             </h1>
             <p className="text-xl md:text-2xl mb-12 max-w-3xl mx-auto" style={{ color: '#3B1E5E' }}>
-              Copy that clicks with how humans decide - so your audience doesn't just read, they respond
+              Built by HubSpot's former Demand Lead. Free, AI-powered, and engineered to convert.
             </p>
           </div>
         </div>
