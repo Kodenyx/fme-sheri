@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import AuthGuard from "@/components/AuthGuard";
 import Auth from "./Auth";
+import { supabase } from "@/integrations/supabase/client";
 
 const ToolContent = () => {
   const [emailContent, setEmailContent] = useState("");
@@ -258,7 +259,28 @@ ${emailData.body}`;
       structureImprovements: improvements
     };
 
-    return { makeover: makeoverResult, analysis: analysisResult };
+    return { makeover: makeoverResult, analysis: analysisResult, emailType };
+  };
+
+  const logToolUsage = async (originalEmail: string, transformedEmail: string, emailCategory: string) => {
+    try {
+      const { data: { user } } = await supabase.auth.getUser();
+      
+      if (user) {
+        await supabase
+          .from('tool_usage')
+          .insert([{
+            user_id: user.id,
+            email_address: user.email || '',
+            original_email: originalEmail,
+            transformed_email: transformedEmail,
+            email_category: emailCategory
+          }]);
+      }
+    } catch (error) {
+      console.error('Error logging tool usage:', error);
+      // Don't show error to user as this is analytics
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -266,11 +288,14 @@ ${emailData.body}`;
     setIsSubmitting(true);
 
     // Simulate processing
-    setTimeout(() => {
+    setTimeout(async () => {
       const result = generateMakeover(emailContent);
       setMakeover(result.makeover);
       setAnalysis(result.analysis);
       setShowMakeover(true);
+      
+      // Log the tool usage
+      await logToolUsage(emailContent, result.makeover, result.emailType);
       
       toast({
         title: "Makeover Complete!",

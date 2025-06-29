@@ -54,6 +54,36 @@ export type Database = {
         }
         Relationships: []
       }
+      tool_usage: {
+        Row: {
+          created_at: string
+          email_address: string
+          email_category: string
+          id: string
+          original_email: string
+          transformed_email: string
+          user_id: string | null
+        }
+        Insert: {
+          created_at?: string
+          email_address: string
+          email_category: string
+          id?: string
+          original_email: string
+          transformed_email: string
+          user_id?: string | null
+        }
+        Update: {
+          created_at?: string
+          email_address?: string
+          email_category?: string
+          id?: string
+          original_email?: string
+          transformed_email?: string
+          user_id?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
