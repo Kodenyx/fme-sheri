@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -69,8 +68,8 @@ const AuthModal = ({
         }
         
         toast({
-          title: "Success!",
-          description: "Your account is ready! You can now sign in.",
+          title: "Welcome aboard! 🎉",
+          description: "You're all set! Redirecting you to the tool now...",
         });
         
         // Switch to sign in mode
