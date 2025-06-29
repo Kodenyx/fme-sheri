@@ -402,88 +402,74 @@ ${emailData.body}`;
             </div>
 
             <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12">
-              {!showMakeover ? (
-                <form onSubmit={handleSubmit} className="space-y-8">
-                  <div className="grid md:grid-cols-2 gap-8">
-                    <div>
-                      <h3 className="text-2xl font-bold mb-4" style={{ color: '#3B1E5E' }}>Your Original Email</h3>
-                      <Textarea 
-                        placeholder="Paste your email content here..."
-                        value={emailContent}
-                        onChange={(e) => setEmailContent(e.target.value)}
-                        required
-                        className="min-h-80 text-base border-2 rounded-xl focus:ring-2"
-                        style={{ borderColor: '#A9D6D4' }}
-                      />
-                    </div>
-                    <div>
-                      <h3 className="text-2xl font-bold mb-4" style={{ color: '#3B1E5E' }}>Your Improved Email</h3>
-                      <div className="min-h-80 border-2 rounded-xl p-4 flex items-center justify-center" style={{ backgroundColor: '#A9D6D4', borderColor: '#A9D6D4' }}>
-                        <p className="text-center" style={{ color: '#89888E' }}>
-                          Your improved email will appear here...
-                        </p>
-                      </div>
-                    </div>
+              <form onSubmit={handleSubmit} className="space-y-8">
+                <div className="grid md:grid-cols-2 gap-8">
+                  <div>
+                    <h3 className="text-2xl font-bold mb-4" style={{ color: '#3B1E5E' }}>Your Original Email</h3>
+                    <Textarea 
+                      placeholder="Paste your email content here..."
+                      value={emailContent}
+                      onChange={(e) => setEmailContent(e.target.value)}
+                      required
+                      className="min-h-80 text-base border-2 rounded-xl focus:ring-2"
+                      style={{ borderColor: '#A9D6D4' }}
+                    />
                   </div>
-                  
-                  <div className="text-center">
-                    <Button 
-                      type="submit"
-                      disabled={isSubmitting}
-                      className="text-white font-bold text-xl py-6 px-12 rounded-full shadow-lg transform transition-all hover:scale-105 hover:opacity-90"
-                      style={{ backgroundColor: '#E19013' }}
-                    >
-                      {isSubmitting ? (
-                        "Creating Your Makeover..."
-                      ) : (
-                        <>
-                          <Sparkles className="mr-3 h-6 w-6" />
-                          Get My Email Makeover
-                        </>
+                  <div>
+                    <div className="flex items-center justify-between mb-4">
+                      <h3 className="text-2xl font-bold" style={{ color: '#3B1E5E' }}>Your Improved Email</h3>
+                      {showMakeover && (
+                        <Button
+                          onClick={copyToClipboard}
+                          variant="outline"
+                          size="sm"
+                          className="flex items-center gap-2"
+                          style={{ borderColor: '#A9D6D4', color: '#3B1E5E' }}
+                        >
+                          <Copy className="w-4 h-4" />
+                          Copy
+                        </Button>
                       )}
-                    </Button>
-                  </div>
-                </form>
-              ) : (
-                <div className="space-y-8">
-                  {/* Email Comparison */}
-                  <div className="grid md:grid-cols-2 gap-8">
-                    <div>
-                      <h3 className="text-2xl font-bold mb-4" style={{ color: '#3B1E5E' }}>Your Original Email</h3>
-                      <div className="min-h-80 border-2 rounded-xl p-6" style={{ backgroundColor: '#A9D6D4', borderColor: '#A9D6D4' }}>
-                        <div className="whitespace-pre-line text-sm leading-relaxed" style={{ color: '#3B1E5E' }}>
-                          {emailContent}
-                        </div>
-                      </div>
                     </div>
-                    <div>
-                      <div className="flex items-center justify-between mb-4">
-                        <h3 className="text-2xl font-bold" style={{ color: '#3B1E5E' }}>Your Improved Email</h3>
-                        <div className="flex items-center gap-2">
-                          <span className="text-white px-3 py-1 rounded-full text-sm font-medium flex items-center gap-1" style={{ backgroundColor: '#E19013' }}>
-                            <Sparkles className="w-4 h-4" />
-                            AI Enhanced
-                          </span>
-                          <Button
-                            onClick={copyToClipboard}
-                            variant="outline"
-                            size="sm"
-                            className="flex items-center gap-2"
-                            style={{ borderColor: '#A9D6D4', color: '#3B1E5E' }}
-                          >
-                            <Copy className="w-4 h-4" />
-                            Copy
-                          </Button>
-                        </div>
-                      </div>
-                      <div className="min-h-80 border-2 rounded-xl p-6" style={{ borderColor: '#E19013', backgroundColor: '#FAEEE1' }}>
+                    <div className={`min-h-80 border-2 rounded-xl p-4 ${showMakeover ? '' : 'flex items-center justify-center'}`} 
+                         style={{ 
+                           backgroundColor: showMakeover ? '#FAEEE1' : '#A9D6D4', 
+                           borderColor: showMakeover ? '#E19013' : '#A9D6D4' 
+                         }}>
+                      {showMakeover ? (
                         <div className="whitespace-pre-line text-sm leading-relaxed" style={{ color: '#3B1E5E' }}>
                           {makeover}
                         </div>
-                      </div>
+                      ) : (
+                        <p className="text-center" style={{ color: '#89888E' }}>
+                          Your improved email will appear here...
+                        </p>
+                      )}
                     </div>
                   </div>
+                </div>
+                
+                <div className="text-center">
+                  <Button 
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="text-white font-bold text-xl py-6 px-12 rounded-full shadow-lg transform transition-all hover:scale-105 hover:opacity-90"
+                    style={{ backgroundColor: '#E19013' }}
+                  >
+                    {isSubmitting ? (
+                      "Creating Your Makeover..."
+                    ) : (
+                      <>
+                        <Sparkles className="mr-3 h-6 w-6" />
+                        Get My Email Makeover
+                      </>
+                    )}
+                  </Button>
+                </div>
+              </form>
 
+              {showMakeover && (
+                <>
                   {/* Analysis Section */}
                   <div className="rounded-2xl p-8 mt-12" style={{ backgroundColor: '#A9D6D4' }}>
                     <h2 className="text-3xl font-bold mb-8" style={{ color: '#3B1E5E' }}>What Changed & Why</h2>
@@ -515,7 +501,7 @@ ${emailData.body}`;
                     </div>
                   </div>
                   
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
                     <Button 
                       onClick={handleReset}
                       variant="outline"
@@ -525,7 +511,7 @@ ${emailData.body}`;
                       Try Another Email
                     </Button>
                   </div>
-                </div>
+                </>
               )}
             </div>
           </div>
