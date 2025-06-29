@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { CheckCircle2, Sparkles, Copy } from "lucide-react";
@@ -446,7 +447,7 @@ ${emailData.body}`;
                 </div>
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <h3 className="text-2xl font-bold" style={{ color: '#3B1E5E' }}>The Version That Converts</h3>
+                    <h3 className="text-2xl font-bold" style={{ color: '#3B1E5E' }}>Your Improved Email</h3>
                     {showMakeover && (
                       <Button
                         onClick={copyToClipboard}
@@ -462,8 +463,8 @@ ${emailData.body}`;
                   </div>
                   <div className={`min-h-80 border-2 rounded-xl p-4 ${showMakeover ? '' : 'flex items-center justify-center'}`} 
                        style={{ 
-                         backgroundColor: showMakeover ? '#FAEEE1' : '#A9D6D4', 
-                         borderColor: showMakeover ? '#E19013' : '#A9D6D4' 
+                         backgroundColor: showMakeover ? '#ffffff' : '#A9D6D4', 
+                         borderColor: '#A9D6D4' 
                        }}>
                     {showMakeover ? (
                       <div className="whitespace-pre-line text-sm leading-relaxed" style={{ color: '#3B1E5E' }}>
