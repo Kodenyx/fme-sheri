@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -81,7 +80,7 @@ const Offer = () => {
   };
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#FAEEE1' }}>
+    <div className="min-h-screen bg-gradient-primary">
       <Navbar />
       
       {/* Hero Section */}

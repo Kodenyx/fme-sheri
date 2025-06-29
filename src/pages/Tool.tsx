@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { CheckCircle2, Sparkles, Copy } from "lucide-react";
@@ -330,7 +329,7 @@ ${emailData.body}`;
 
   if (!userEmail) {
     return (
-      <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#FAEEE1' }}>
+      <div className="min-h-screen flex items-center justify-center bg-gradient-primary">
         <div className="text-center">
           <h2 className="text-3xl font-bold mb-4" style={{ color: '#3B1E5E' }}>Redirecting...</h2>
           <p style={{ color: '#89888E' }}>Please wait while we redirect you to get access.</p>
@@ -340,7 +339,7 @@ ${emailData.body}`;
   }
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#FAEEE1' }}>
+    <div className="min-h-screen bg-gradient-primary">
       <Navbar />
       
       <div className="py-20">
