@@ -417,7 +417,7 @@ ${emailData.body}`;
                 </div>
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <h3 className="text-2xl font-bold" style={{ color: '#3B1E5E' }}>Your Improved Email</h3>
+                    <h3 className="text-2xl font-bold" style={{ color: '#3B1E5E' }}>The Version That Converts</h3>
                     {showMakeover && (
                       <Button
                         onClick={copyToClipboard}
