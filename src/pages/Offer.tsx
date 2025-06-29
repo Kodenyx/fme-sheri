@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -56,7 +57,7 @@ const Offer = () => {
       <section className="pt-32 pb-16">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <p className="text-lg md:text-xl mb-6 text-gray-600 font-medium">
+            <p className="text-base md:text-lg mb-6 text-gray-600 font-medium">
               Before you send another forgettable email…
             </p>
             <h1 className="text-5xl md:text-7xl font-bold mb-8 text-gray-900">
