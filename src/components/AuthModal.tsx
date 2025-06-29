@@ -93,67 +93,81 @@ const AuthModal = ({
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-md">
-        <DialogHeader>
-          <div className="mx-auto h-12 w-12 bg-gradient-to-r from-[#818CF8] to-[#06B6D4] rounded-full flex items-center justify-center mb-4">
-            <User className="h-6 w-6 text-white" />
+      <DialogContent className="sm:max-w-md border-0 p-0 bg-transparent shadow-none">
+        <div className="rounded-3xl shadow-2xl overflow-hidden" style={{ backgroundColor: '#0D4049' }}>
+          <DialogHeader className="p-8 pb-4">
+            <div className="mx-auto h-16 w-16 rounded-full flex items-center justify-center mb-6" style={{ backgroundColor: '#E19013' }}>
+              <User className="h-8 w-8 text-white" />
+            </div>
+            <DialogTitle className="text-center text-3xl font-bold text-white mb-2">
+              {isSignUp ? "Create your account" : "Welcome back"}
+            </DialogTitle>
+            <p className="text-center text-lg" style={{ color: '#A9D6D4' }}>
+              {isSignUp 
+                ? "Complete your signup to access the Messaging Makeover AI tool" 
+                : "Sign in to continue transforming your emails"
+              }
+            </p>
+          </DialogHeader>
+
+          <div className="px-8 pb-8">
+            <form className="space-y-6" onSubmit={handleAuth}>
+              <Input
+                type="email"
+                placeholder="Enter your email address"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                className="text-lg py-6 px-6 border-2 rounded-xl focus:ring-2 bg-white text-gray-900 placeholder:text-gray-500"
+                style={{ 
+                  borderColor: '#A9D6D4',
+                  focusRingColor: '#E19013'
+                }}
+              />
+              <Input
+                type="password"
+                placeholder="Enter your password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+                className="text-lg py-6 px-6 border-2 rounded-xl focus:ring-2 bg-white text-gray-900 placeholder:text-gray-500"
+                style={{ 
+                  borderColor: '#A9D6D4',
+                  focusRingColor: '#E19013'
+                }}
+              />
+
+              <Button
+                type="submit"
+                disabled={isLoading}
+                className="w-full text-white font-bold text-xl py-6 px-12 rounded-full shadow-lg transform transition-all hover:scale-105 hover:opacity-90 border-0"
+                style={{ backgroundColor: '#E19013' }}
+              >
+                {isLoading ? (
+                  "Loading..."
+                ) : (
+                  <>
+                    <LogIn className="mr-3 h-6 w-6" />
+                    {isSignUp ? "Create Account" : "Sign In"}
+                  </>
+                )}
+              </Button>
+
+              <div className="text-center">
+                <button
+                  type="button"
+                  onClick={() => setIsSignUp(!isSignUp)}
+                  className="text-lg font-medium hover:underline transition-colors"
+                  style={{ color: '#A9D6D4' }}
+                >
+                  {isSignUp
+                    ? "Already have an account? Sign in"
+                    : "Don't have an account? Sign up"}
+                </button>
+              </div>
+            </form>
           </div>
-          <DialogTitle className="text-center text-2xl font-bold">
-            {isSignUp ? "Create your account" : "Sign in to your account"}
-          </DialogTitle>
-          <p className="text-center text-sm text-gray-600">
-            {isSignUp 
-              ? "Complete your signup to access the Messaging Makeover AI tool" 
-              : "Welcome back to Messaging Makeover AI"
-            }
-          </p>
-        </DialogHeader>
-
-        <form className="space-y-4" onSubmit={handleAuth}>
-          <Input
-            type="email"
-            placeholder="Email address"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-            className="h-12"
-          />
-          <Input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-            className="h-12"
-          />
-
-          <Button
-            type="submit"
-            className="w-full bg-gradient-to-r from-[#818CF8] to-[#06B6D4] hover:from-[#6366F1] hover:to-[#0891B2] text-white font-bold h-12"
-            disabled={isLoading}
-          >
-            {isLoading ? (
-              "Loading..."
-            ) : (
-              <>
-                <LogIn className="mr-2 h-5 w-5" />
-                {isSignUp ? "Complete Signup" : "Sign In"}
-              </>
-            )}
-          </Button>
-
-          <div className="text-center">
-            <button
-              type="button"
-              onClick={() => setIsSignUp(!isSignUp)}
-              className="text-sm text-gray-600 hover:text-gray-900 underline"
-            >
-              {isSignUp
-                ? "Already have an account? Sign in"
-                : "Don't have an account? Sign up"}
-            </button>
-          </div>
-        </form>
+        </div>
       </DialogContent>
     </Dialog>
   );
