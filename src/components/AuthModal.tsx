@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -72,9 +73,19 @@ const AuthModal = ({
           description: "You're all set! Redirecting you to the tool now...",
         });
         
-        // Switch to sign in mode
+        // Switch to sign in mode and redirect immediately
         setIsSignUp(false);
         setPassword("");
+        
+        // Redirect to tool after a brief delay
+        setTimeout(() => {
+          onClose();
+          if (onSuccess) {
+            onSuccess();
+          } else {
+            navigate("/tool");
+          }
+        }, 1500);
         
       } else {
         // Sign in mode
