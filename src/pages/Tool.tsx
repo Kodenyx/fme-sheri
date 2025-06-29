@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { CheckCircle2, Sparkles, Copy } from "lucide-react";
@@ -363,12 +362,42 @@ ${emailData.body}`;
     setAnalysis({ psychologicalTriggers: [], structureImprovements: [] });
   };
 
-  const copyToClipboard = () => {
-    navigator.clipboard.writeText(makeover);
-    toast({
-      title: "Copied!",
-      description: "Improved email copied to clipboard",
-    });
+  const copyToClipboard = async () => {
+    try {
+      await navigator.clipboard.writeText(makeover);
+      toast({
+        title: "Copied!",
+        description: "Improved email copied to clipboard",
+      });
+    } catch (error) {
+      console.error('Failed to copy to clipboard:', error);
+      // Fallback method for older browsers or when clipboard API fails
+      const textArea = document.createElement('textarea');
+      textArea.value = makeover;
+      textArea.style.position = 'fixed';
+      textArea.style.left = '-999999px';
+      textArea.style.top = '-999999px';
+      document.body.appendChild(textArea);
+      textArea.focus();
+      textArea.select();
+      
+      try {
+        document.execCommand('copy');
+        toast({
+          title: "Copied!",
+          description: "Improved email copied to clipboard",
+        });
+      } catch (fallbackError) {
+        console.error('Fallback copy failed:', fallbackError);
+        toast({
+          title: "Copy failed",
+          description: "Unable to copy to clipboard. Please select and copy manually.",
+          variant: "destructive",
+        });
+      } finally {
+        document.body.removeChild(textArea);
+      }
+    }
   };
 
   if (!userEmail) {
