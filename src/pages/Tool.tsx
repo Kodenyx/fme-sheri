@@ -449,23 +449,25 @@ ${emailData.body}`;
                   </div>
                 </div>
                 
-                <div className="text-center">
-                  <Button 
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="text-white font-bold text-xl py-6 px-12 rounded-full shadow-lg transform transition-all hover:scale-105 hover:opacity-90"
-                    style={{ backgroundColor: '#E19013' }}
-                  >
-                    {isSubmitting ? (
-                      "Creating Your Makeover..."
-                    ) : (
-                      <>
-                        <Sparkles className="mr-3 h-6 w-6" />
-                        Fix My Email
-                      </>
-                    )}
-                  </Button>
-                </div>
+                {!showMakeover && (
+                  <div className="text-center">
+                    <Button 
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="text-white font-bold text-xl py-6 px-12 rounded-full shadow-lg transform transition-all hover:scale-105 hover:opacity-90"
+                      style={{ backgroundColor: '#E19013' }}
+                    >
+                      {isSubmitting ? (
+                        "Creating Your Makeover..."
+                      ) : (
+                        <>
+                          <Sparkles className="mr-3 h-6 w-6" />
+                          Fix My Email
+                        </>
+                      )}
+                    </Button>
+                  </div>
+                )}
               </form>
 
               {showMakeover && (
