@@ -329,30 +329,30 @@ ${emailData.body}`;
 
   if (!userEmail) {
     return (
-      <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#A9D6D4' }}>
+      <div className="min-h-screen flex items-center justify-center bg-gradient-primary">
         <div className="text-center">
-          <h2 className="text-3xl font-bold mb-4" style={{ color: '#0D4049' }}>Redirecting...</h2>
-          <p style={{ color: '#0D4049' }}>Please wait while we redirect you to get access.</p>
+          <h2 className="text-3xl font-bold mb-4 text-gray-900">Redirecting...</h2>
+          <p className="text-gray-600">Please wait while we redirect you to get access.</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#A9D6D4' }}>
+    <div className="min-h-screen bg-gradient-primary">
       <Navbar />
       
       <div className="py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: '#0D4049' }}>
+              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
                 Transform Your Email in{" "}
                 <span style={{ color: '#E19013' }}>
                   Under 3 Seconds
                 </span>
               </h1>
-              <p className="text-xl max-w-4xl mx-auto" style={{ color: '#0D4049' }}>
+              <p className="text-xl max-w-4xl mx-auto text-gray-600">
                 Paste your email below and watch our AI apply proven behavioral psychology 
                 frameworks to make it more compelling and conversion-focused.
               </p>
@@ -363,22 +363,19 @@ ${emailData.body}`;
                 <form onSubmit={handleSubmit} className="space-y-8">
                   <div className="grid md:grid-cols-2 gap-8">
                     <div>
-                      <h3 className="text-2xl font-bold mb-4" style={{ color: '#0D4049' }}>Your Original Email</h3>
+                      <h3 className="text-2xl font-bold mb-4 text-gray-900">Your Original Email</h3>
                       <Textarea 
                         placeholder="Paste your email content here..."
                         value={emailContent}
                         onChange={(e) => setEmailContent(e.target.value)}
                         required
-                        className="min-h-80 text-base border-2 rounded-xl focus:ring-2"
-                        style={{ 
-                          borderColor: '#A9D6D4'
-                        }}
+                        className="min-h-80 text-base border-2 rounded-xl focus:ring-2 border-gray-300"
                       />
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold mb-4" style={{ color: '#0D4049' }}>Your Improved Email</h3>
-                      <div className="min-h-80 border-2 rounded-xl p-4 flex items-center justify-center" style={{ borderColor: '#A9D6D4', backgroundColor: '#FAEEE1' }}>
-                        <p className="text-center" style={{ color: '#536357' }}>
+                      <h3 className="text-2xl font-bold mb-4 text-gray-900">Your Improved Email</h3>
+                      <div className="min-h-80 border-2 rounded-xl p-4 flex items-center justify-center border-gray-300" style={{ backgroundColor: '#FAEEE1' }}>
+                        <p className="text-center text-gray-600">
                           Your improved email will appear here...
                         </p>
                       </div>
@@ -408,16 +405,16 @@ ${emailData.body}`;
                   {/* Email Comparison */}
                   <div className="grid md:grid-cols-2 gap-8">
                     <div>
-                      <h3 className="text-2xl font-bold mb-4" style={{ color: '#0D4049' }}>Your Original Email</h3>
-                      <div className="min-h-80 border-2 rounded-xl p-6" style={{ borderColor: '#A9D6D4', backgroundColor: '#FAEEE1' }}>
-                        <div className="whitespace-pre-line text-sm leading-relaxed" style={{ color: '#536357' }}>
+                      <h3 className="text-2xl font-bold mb-4 text-gray-900">Your Original Email</h3>
+                      <div className="min-h-80 border-2 rounded-xl p-6 border-gray-300" style={{ backgroundColor: '#FAEEE1' }}>
+                        <div className="whitespace-pre-line text-sm leading-relaxed text-gray-700">
                           {emailContent}
                         </div>
                       </div>
                     </div>
                     <div>
                       <div className="flex items-center justify-between mb-4">
-                        <h3 className="text-2xl font-bold" style={{ color: '#0D4049' }}>Your Improved Email</h3>
+                        <h3 className="text-2xl font-bold text-gray-900">Your Improved Email</h3>
                         <div className="flex items-center gap-2">
                           <span className="text-white px-3 py-1 rounded-full text-sm font-medium flex items-center gap-1" style={{ backgroundColor: '#E19013' }}>
                             <Sparkles className="w-4 h-4" />
@@ -427,8 +424,7 @@ ${emailData.body}`;
                             onClick={copyToClipboard}
                             variant="outline"
                             size="sm"
-                            className="flex items-center gap-2"
-                            style={{ borderColor: '#A9D6D4', color: '#0D4049' }}
+                            className="flex items-center gap-2 border-gray-300 text-gray-700"
                           >
                             <Copy className="w-4 h-4" />
                             Copy
@@ -436,7 +432,7 @@ ${emailData.body}`;
                         </div>
                       </div>
                       <div className="min-h-80 border-2 rounded-xl p-6" style={{ borderColor: '#E19013', backgroundColor: '#A9D6D4' }}>
-                        <div className="whitespace-pre-line text-sm leading-relaxed" style={{ color: '#0D4049' }}>
+                        <div className="whitespace-pre-line text-sm leading-relaxed text-gray-900">
                           {makeover}
                         </div>
                       </div>
@@ -445,7 +441,7 @@ ${emailData.body}`;
 
                   {/* Analysis Section */}
                   <div className="rounded-2xl p-8 mt-12" style={{ backgroundColor: '#FAEEE1' }}>
-                    <h2 className="text-3xl font-bold mb-8" style={{ color: '#0D4049' }}>What Changed & Why</h2>
+                    <h2 className="text-3xl font-bold mb-8 text-gray-900">What Changed & Why</h2>
                     
                     <div className="grid md:grid-cols-2 gap-8">
                       <div>
@@ -454,7 +450,7 @@ ${emailData.body}`;
                           {analysis.psychologicalTriggers.map((trigger, index) => (
                             <div key={index} className="flex items-start gap-3">
                               <CheckCircle2 className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: '#E19013' }} />
-                              <span style={{ color: '#536357' }}>{trigger}</span>
+                              <span className="text-gray-700">{trigger}</span>
                             </div>
                           ))}
                         </div>
@@ -466,7 +462,7 @@ ${emailData.body}`;
                           {analysis.structureImprovements.map((improvement, index) => (
                             <div key={index} className="flex items-start gap-3">
                               <CheckCircle2 className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: '#E19013' }} />
-                              <span style={{ color: '#536357' }}>{improvement}</span>
+                              <span className="text-gray-700">{improvement}</span>
                             </div>
                           ))}
                         </div>
@@ -478,8 +474,7 @@ ${emailData.body}`;
                     <Button 
                       onClick={handleReset}
                       variant="outline"
-                      className="border-2 py-3 px-8 rounded-full"
-                      style={{ borderColor: '#A9D6D4', color: '#0D4049' }}
+                      className="border-2 py-3 px-8 rounded-full border-gray-300 text-gray-700"
                     >
                       Try Another Email
                     </Button>
