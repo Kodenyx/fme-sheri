@@ -114,7 +114,7 @@ const Offer = () => {
                   Fix My Email Now!
                 </h2>
                 <p className="text-lg" style={{ color: '#89888E' }}>
-                  Enter your email to get instant access - no password required
+                  Enter your email to get instant access
                 </p>
               </div>
 
