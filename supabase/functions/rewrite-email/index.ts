@@ -52,7 +52,7 @@ Be brave. Be specific. Be emotionally smart.
 
 If it sounds like everyone else — rewrite it.
 
-IMPORTANT: You must significantly transform the message, not just polish it. Make it sound distinctly like Sheri Otto's voice - bold, behaviorally smart, and emotionally resonant. Avoid generic marketing language at all costs.`;
+CRITICAL: Return ONLY the JSON object. No markdown formatting, no code blocks, no explanations. Just the raw JSON.`;
 
 serve(async (req) => {
   if (req.method === 'OPTIONS') {
@@ -106,11 +106,12 @@ serve(async (req) => {
           { role: 'system', content: SHERI_OTTO_PROMPT },
           { 
             role: 'user', 
-            content: `Transform this email using Sheri Otto's distinctive voice and behavioral psychology approach. Make it bold, emotionally intelligent, and conversion-focused. Do NOT just polish - completely rewrite it:\n\n${emailContent}` 
+            content: `Transform this email using Sheri Otto's distinctive voice and behavioral psychology approach. Make it bold, emotionally intelligent, and conversion-focused. Do NOT just polish - completely rewrite it. Return only the JSON structure specified in the system prompt:\n\n${emailContent}` 
           }
         ],
         temperature: 0.7,
         max_tokens: 1500,
+        response_format: { type: "json_object" }
       }),
     });
 
@@ -136,13 +137,16 @@ serve(async (req) => {
     
     const aiResponse = data.choices[0].message.content;
 
-    // Try to parse as JSON first
+    // Parse the JSON response
     let result;
     try {
       result = JSON.parse(aiResponse);
       console.log('Successfully parsed JSON response');
     } catch (parseError) {
-      console.log('Response not in JSON format, treating as plain text');
+      console.error('Failed to parse JSON response:', parseError);
+      console.log('Raw AI response:', aiResponse);
+      
+      // If JSON parsing fails, create a fallback response
       result = {
         rewritten_email: aiResponse,
         psychological_triggers: ['Sheri Otto messaging frameworks applied'],
