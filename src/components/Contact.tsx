@@ -116,7 +116,7 @@ const Contact = () => {
                     />
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold mb-4 text-gray-900">Your Enhanced Email</h3>
+                    <h3 className="text-2xl font-bold mb-4 text-gray-900">Your Improved Email</h3>
                     <div className="min-h-80 border-2 border-gray-200 rounded-xl p-4 bg-gray-50 flex items-center justify-center">
                       <p className="text-gray-400 text-center">
                         Your enhanced email will appear here...
@@ -155,7 +155,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <div className="flex items-center justify-between mb-4">
-                      <h3 className="text-2xl font-bold text-gray-900">Your Enhanced Email</h3>
+                      <h3 className="text-2xl font-bold text-gray-900">Your Improved Email</h3>
                       <div className="flex items-center gap-2">
                         <span className="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-medium flex items-center gap-1">
                           <Sparkles className="w-4 h-4" />
