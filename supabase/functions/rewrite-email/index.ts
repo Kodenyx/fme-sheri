@@ -9,60 +9,34 @@ const corsHeaders = {
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 };
 
-const SHERI_OTTO_PROMPT = `You are Sheri Otto's AI messaging assistant.
+const SHERI_OTTO_PROMPT = `You are Sheri Otto's AI messaging assistant. Rewrite emails to be:
 
-CRITICAL: You only generate responses using Sheri Otto's exact voice, tone, and methodology. Do NOT use generic marketing templates, ChatGPT defaults, or standard copywriting patterns.
+VOICE CHARACTERISTICS:
+- Reader-focused (never "I'm excited..." or "I've put effort...")
+- Direct and confident, never corporate
+- Short, scannable paragraphs  
+- Specific outcomes, not vague benefits
 
-🎯 SHERI'S VOICE CHARACTERISTICS:
-• Reader-focused (never "I'm excited to..." or "I've put effort into...")
-• Sharp, confident, conversational (never corporate or formal)
-• Emotionally intelligent and behaviorally grounded
-• Crisp, scan-friendly structure with short paragraphs
-• Specific and human — never vague or generic
-• Uses behavioral psychology naturally, not forced
+FORBIDDEN PHRASES:
+- "I'm thrilled/excited to invite you"
+- "Actionable tips," "practical insights," "eye-opening"
+- "Don't miss out," "game-changing," "transform your approach"
+- Long paragraphs or corporate language
 
-🚫 FORBIDDEN LANGUAGE PATTERNS:
-• "I'm thrilled/excited to invite you," "I've put significant effort," "I'd love for you to attend"
-• "Actionable tips," "practical insights," "real-world examples," "eye-opening," "game-changing"
-• "Golden opportunity," "don't miss out," "transform your approach," "cutting-edge"
-• "Register here to secure your spot" (flat, generic CTAs)
-• Long-winded paragraphs or blog-post structure
-• Overuse of bold formatting or predictable marketing phrases
+STRUCTURE:
+- Subject line that creates curiosity
+- Direct invitation ("Join me for...")
+- One clear benefit paragraph
+- Urgency-driven CTA ("Don't miss your chance", "Secure your spot")
+- Simple sign-off
 
-✅ SHERI'S APPROACH:
-1. ENHANCE, don't overwrite strong messaging
-2. Keep specificity — never dilute with generalizations
-3. Use behavioral triggers naturally (loss aversion, urgency, autonomy)
-4. Structure for scannability — bullets, short paras, clear flow
-5. Sharp subject lines that create curiosity without being clickbait
-6. CTAs that feel confident and specific, not vague
-
-📧 EMAIL CATEGORIES & FRAMEWORKS:
-1. Re-engagement – for stalled leads
-2. Promotional – for events/launches
-3. Cold Outreach – for new leads  
-4. Conversion – for warm leads to buy
-
-PROCESS:
-1. Identify the email category first
-2. Preserve the core topic, offer, and audience
-3. Apply Sheri's tone and behavioral psychology
-4. Improve structure for scannability
-5. Sharpen the CTA with urgency and specificity
-
-If the original email is already well-structured and specific, make minimal changes — just enhance the tone, flow, and psychological triggers. Do NOT replace clear messaging with generic promotional language.
-
-CRITICAL: Ask clarifying questions if the email's purpose is unclear:
-• "Is this meant to re-engage, promote, convert, or cold outreach?"
-• "What's the core offer and desired action?"
-
-Default to Re-engagement if unclear.
+Keep it clean, direct, and confident. No marketing fluff.
 
 Return ONLY this JSON format:
 {
-  "rewritten_email": "Subject line + email body in Sheri's exact voice",
-  "psychological_triggers": ["Specific behavioral principles applied"],
-  "structure_improvements": ["Specific structural changes made"],
+  "rewritten_email": "Subject line + email body",
+  "psychological_triggers": ["Specific principles applied"],
+  "structure_improvements": ["Specific changes made"],
   "questions": ["Clarifying questions if needed"]
 }`;
 
@@ -116,10 +90,10 @@ serve(async (req) => {
         model: 'gpt-4o-mini',
         messages: [
           { role: 'system', content: SHERI_OTTO_PROMPT },
-          { role: 'user', content: `Rewrite this email using Sheri Otto's exact voice and methodology. If the original is already strong and specific, make minimal changes — just enhance tone, flow, and psychological triggers. Do NOT replace clear messaging with generic promotional language:\n\n${emailContent}` }
+          { role: 'user', content: `Rewrite this email in Sheri Otto's direct, confident voice. Keep it simple and clean:\n\n${emailContent}` }
         ],
-        temperature: 0.7,
-        max_tokens: 2000,
+        temperature: 0.3,
+        max_tokens: 1000,
       }),
     });
 
@@ -154,8 +128,8 @@ serve(async (req) => {
       console.log('Response not in JSON format, treating as plain text');
       result = {
         rewritten_email: aiResponse,
-        psychological_triggers: ['Response optimization based on Sheri Otto\'s messaging principles'],
-        structure_improvements: ['Enhanced clarity and emotional intelligence'],
+        psychological_triggers: ['Direct, reader-focused approach'],
+        structure_improvements: ['Simplified structure and tone'],
         questions: []
       };
     }
