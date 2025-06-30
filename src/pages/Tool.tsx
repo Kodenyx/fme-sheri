@@ -200,8 +200,8 @@ const Tool = () => {
                 </span>
               </h1>
               <p className="text-xl md:text-2xl max-w-4xl mx-auto" style={{ color: '#3B1E5E' }}>
-                Paste your email below and watch our AI apply Sheri Otto's proven behavioral psychology 
-                frameworks to enhance your message while preserving your original intent.
+                Paste your email below and watch our AI apply proven behavioral psychology 
+                frameworks to make it more compelling and conversion-focused.
               </p>
             </div>
 

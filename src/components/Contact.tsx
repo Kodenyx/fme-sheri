@@ -96,8 +96,8 @@ const Contact = () => {
               </span>
             </h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto">
-              Paste your email below and watch our AI apply Sheri Otto's messaging philosophy 
-              to enhance your message while preserving your original intent.
+              Paste your email below and watch our AI apply proven behavioral psychology 
+              frameworks to make it more compelling and conversion-focused.
             </p>
           </div>
 
