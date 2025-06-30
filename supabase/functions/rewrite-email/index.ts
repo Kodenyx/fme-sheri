@@ -78,6 +78,15 @@ FOR CONVERSION EMAILS (100-120 words):
 - Acknowledge the groundwork already laid: "You've laid the groundwork. You've stayed in the conversation."
 - Position next step as the one that matters: "Now the next move is the one that turns momentum into results"
 
+FOR PROMOTIONAL EMAILS (80-120 words):
+- Must include event specificity: exact timing, format, limited seats/availability
+- Create timing pressure: "This Thursday," "48 hours only," "100 seats remaining"
+- Describe specific value proposition: "3 growth-lagging habits I spot in 9 out of 10 campaigns"
+- Use confident, action-oriented CTAs: "See the gap in your strategy →" / "Get the breakdown (before it disappears) →"
+- Include scarcity elements: limited time, seats, or availability
+- Focus on what they'll discover/learn, not just attendance
+- Make the offer feel exclusive and time-sensitive
+
 FOR RE-ENGAGEMENT EMAILS (50-80 words):
 - Acknowledge the pause without judgment: "You got halfway. Then life happened."
 - Offer gentle re-entry point with respect for autonomy
@@ -119,6 +128,13 @@ CONVERSION (100-120 words):
 4. Final Decision Point: Clear next step that turns interest into action
 5. CTA: Confident, results-focused with urgency
 
+PROMOTIONAL (80-120 words):
+1. Subject: Event-specific with timing pressure
+2. Hook: Emotional friction + specific problem identification
+3. Event Details: Exact timing, format, scarcity elements
+4. Value Proposition: What they'll discover/learn specifically
+5. CTA: Confident, action-oriented with urgency
+
 RE-ENGAGEMENT (50-80 words):
 1. Subject: Gentle acknowledgment of pause
 2. Hook: Acknowledge the pause without judgment
@@ -143,6 +159,15 @@ CONVERSION:
 - "This is your shortcut: a final nudge to turn interest into traction"
 - "Your next step is here"
 - "I've helped others make this exact leap"
+
+PROMOTIONAL:
+- "This Thursday, I'm breaking down..."
+- "48 hours only — then it's gone"
+- "100 seats remaining"
+- "See the gap in your strategy →"
+- "Get the breakdown (before it disappears) →"
+- "Reserve your spot before we're full →"
+- "Last chance to catch this live →"
 
 RE-ENGAGEMENT:
 - "You got halfway. Then life happened."
@@ -169,6 +194,7 @@ FORBIDDEN LANGUAGE (Never use):
 - "I'm not here to convince you" (too passive)
 - Overly familiar language in cold emails
 - Assumptive language in cold emails
+- "Want to have a look?" (too soft for promotional)
 
 EXAMPLES:
 
@@ -199,6 +225,21 @@ Your next step is here → [CTA link]
 
 – Sheri"
 
+PROMOTIONAL (94 words):
+Subject: This Thursday: 3 growth gaps killing your campaigns
+
+"Hey [First Name],
+
+Ever wonder why your campaigns feel right but don't convert?
+
+This Thursday, I'm breaking down the 3 growth-lagging habits I spot in 9 out of 10 startup campaigns. Live breakdown. Real examples. Exact fixes.
+
+100 seats only — then we're full.
+
+See the gap in your strategy → [Register link]
+
+– Sheri"
+
 RE-ENGAGEMENT (52 words):
 Subject: You got halfway. Then life happened.
 
@@ -213,7 +254,7 @@ Your pace. Your terms. I'm here if you need me.
 – Sheri"
 
 TRANSFORMATION APPROACH:
-1. IDENTIFY EMAIL TYPE: Determine if cold outreach, nurture/warm, conversion, or re-engagement
+1. IDENTIFY EMAIL TYPE: Determine if cold outreach, nurture/warm, conversion, promotional, or re-engagement
 2. Apply appropriate word count limits and structural rules
 3. Use email-type-specific power phrases and behavioral triggers
 4. Always offer value BEFORE any ask
