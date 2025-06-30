@@ -50,7 +50,9 @@ Return ONLY this structure in your response:
 
 Be brave. Be specific. Be emotionally smart.
 
-If it sounds like everyone else — rewrite it.`;
+If it sounds like everyone else — rewrite it.
+
+IMPORTANT: You must significantly transform the message, not just polish it. Make it sound distinctly like Sheri Otto's voice - bold, behaviorally smart, and emotionally resonant. Avoid generic marketing language at all costs.`;
 
 serve(async (req) => {
   if (req.method === 'OPTIONS') {
@@ -99,13 +101,16 @@ serve(async (req) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        model: 'gpt-4o-mini',
+        model: 'gpt-4o',
         messages: [
           { role: 'system', content: SHERI_OTTO_PROMPT },
-          { role: 'user', content: `Rewrite this email in Sheri's voice:\n\n${emailContent}` }
+          { 
+            role: 'user', 
+            content: `Transform this email using Sheri Otto's distinctive voice and behavioral psychology approach. Make it bold, emotionally intelligent, and conversion-focused. Do NOT just polish - completely rewrite it:\n\n${emailContent}` 
+          }
         ],
-        temperature: 0.2,
-        max_tokens: 1000,
+        temperature: 0.7,
+        max_tokens: 1500,
       }),
     });
 
