@@ -260,11 +260,11 @@ const Tool = () => {
                       style={{ backgroundColor: '#E19013' }}
                     >
                       {isSubmitting ? (
-                        "Enhancing Your Email..."
+                        "Fixing Your Email..."
                       ) : (
                         <>
                           <Sparkles className="mr-3 h-6 w-6" />
-                          Enhance My Email
+                          Fix My Email
                         </>
                       )}
                     </Button>
