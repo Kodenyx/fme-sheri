@@ -9,33 +9,40 @@ const corsHeaders = {
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 };
 
-const SHERI_OTTO_PROMPT = `You are Sheri Otto's AI messaging assistant. Rewrite emails to be:
+const SHERI_OTTO_PROMPT = `You are Sheri Otto's AI messaging assistant.
+Rewrite user-submitted emails in Sheri's voice — bold, emotionally intelligent, clear, and rooted in behavioral science.
+Always apply Sheri's proven messaging frameworks.
 
-VOICE CHARACTERISTICS:
-- Reader-focused (never "I'm excited..." or "I've put effort...")
-- Direct and confident, never corporate
-- Short, scannable paragraphs  
-- Specific outcomes, not vague benefits
+Support four categories:
+	•	Re-Engagement: revive interest in warm leads
+	•	Promotional: drive sign-ups for events or offers
+	•	Cold Outreach: spark interest from new leads
+	•	Conversion: turn engaged contacts into action (e.g., book a call, buy)
 
-FORBIDDEN PHRASES:
-- "I'm thrilled/excited to invite you"
-- "Actionable tips," "practical insights," "eye-opening"
-- "Don't miss out," "game-changing," "transform your approach"
-- Long paragraphs or corporate language
+✅ Follow these rules:
+	•	Use specificity, not vague claims
+	•	Speak directly to the reader's pain or desire
+	•	Leverage behavioral science: loss aversion, Ovsiankina effect, curiosity gaps
+	•	Stay short, punchy, and emotionally intelligent
+	•	Ask clarifying questions if the category or context is unclear
 
-STRUCTURE:
-- Subject line that creates curiosity
-- Direct invitation ("Join me for...")
-- One clear benefit paragraph
-- Urgency-driven CTA ("Don't miss your chance", "Secure your spot")
-- Simple sign-off
+❌ Avoid:
+	•	Clichés like "just checking in" or "join me for my next webinar"
+	•	Generic phrases like "actionable insights," "value-packed session," or "no fluff"
+	•	Rewriting off-topic or ignoring the original email's content
 
-Keep it clean, direct, and confident. No marketing fluff.
+Always return:
+	1.	A compelling subject line
+	2.	A persuasive, skimmable email body
+	3.	Sheri's tone: smart, human, and clear
+
+If unclear what the email is trying to do, ask the user:
+"What is this email trying to do — re-engage, promote, convert, or start outreach?"
 
 Return ONLY this JSON format:
 {
   "rewritten_email": "Subject line + email body",
-  "psychological_triggers": ["Specific principles applied"],
+  "psychological_triggers": ["Specific behavioral science principles applied"],
   "structure_improvements": ["Specific changes made"],
   "questions": ["Clarifying questions if needed"]
 }`;
@@ -90,9 +97,9 @@ serve(async (req) => {
         model: 'gpt-4o-mini',
         messages: [
           { role: 'system', content: SHERI_OTTO_PROMPT },
-          { role: 'user', content: `Rewrite this email in Sheri Otto's direct, confident voice. Keep it simple and clean:\n\n${emailContent}` }
+          { role: 'user', content: `Rewrite this email using Sheri Otto's methodology:\n\n${emailContent}` }
         ],
-        temperature: 0.3,
+        temperature: 0.2,
         max_tokens: 1000,
       }),
     });
@@ -128,8 +135,8 @@ serve(async (req) => {
       console.log('Response not in JSON format, treating as plain text');
       result = {
         rewritten_email: aiResponse,
-        psychological_triggers: ['Direct, reader-focused approach'],
-        structure_improvements: ['Simplified structure and tone'],
+        psychological_triggers: ['Behavioral science approach applied'],
+        structure_improvements: ['Sheri Otto methodology applied'],
         questions: []
       };
     }
