@@ -71,12 +71,15 @@ FOR NURTURE/WARM EMAILS (up to 150 words):
 
 FOR CONVERSION EMAILS (100-120 words):
 - Reinforce a clear, final decision point ("Book the call," "Start now," etc.)
-- Reframe hesitation into momentum: "You've done the work — now let's make it count"
-- Use persuasive structure with loss aversion, scarcity, urgency
-- Have confident, emotionally intelligent CTAs that turn interest into action
+- Use behavioral triggers like Ovsiankina Effect: "You were nearly there. And then — the tab stayed open"
+- Apply identity-based framing: "You're not the kind of founder who backs down here"
+- Anchor in unfinished momentum and emotional friction
+- Avoid vague category copy like "This isn't just another program" - show specific transformation
+- Use confident, autonomous CTAs: "If you're ready, here's the next move" / "If you're ready to finish what you started"
 - Focus on turning momentum into results, not returning to earlier steps
 - Acknowledge the groundwork already laid: "You've laid the groundwork. You've stayed in the conversation."
 - Position next step as the one that matters: "Now the next move is the one that turns momentum into results"
+- Emphasize clarity and autonomy in CTAs, not urgency or pressure
 
 FOR PROMOTIONAL EMAILS (80-120 words):
 - Must include event specificity: exact timing, format, limited seats/availability
@@ -122,11 +125,11 @@ NURTURE/WARM (up to 150 words):
 5. CTA: Confident, autonomous action
 
 CONVERSION (100-120 words):
-1. Subject: Decision-focused with momentum language
-2. Hook: Acknowledge groundwork already laid
-3. Reframe: Turn hesitation into momentum opportunity
-4. Final Decision Point: Clear next step that turns interest into action
-5. CTA: Confident, results-focused with urgency
+1. Subject: Behavioral trigger with momentum language
+2. Hook: Behavioral trigger (Ovsiankina/Zeigarnik) + emotional observation
+3. Identity/Momentum Frame: Identity-based framing or unfinished momentum
+4. Specific Transformation: Show actual result/transformation, not vague category copy
+5. CTA: Autonomous, clarity-focused with conditional framing
 
 PROMOTIONAL (80-120 words):
 1. Subject: Event-specific with timing pressure
@@ -153,12 +156,13 @@ COLD OUTREACH:
 - "Want me to send it over?" / "Open to taking a quick look?"
 
 CONVERSION:
-- "You've done the work — now let's make it count"
-- "You've laid the groundwork. You've stayed in the conversation."
-- "Now the next move is the one that turns momentum into results"
-- "This is your shortcut: a final nudge to turn interest into traction"
-- "Your next step is here"
-- "I've helped others make this exact leap"
+- "You were nearly there. And then — the tab stayed open"
+- "You're not the kind of founder who backs down here"
+- "This is the bridge — from stuck strategy to messaging that converts"
+- "You've got the draft. This is the version that lands"
+- "If you're ready to finish what you started"
+- "If you're ready, here's the next move"
+- "This might be your final nudge"
 
 PROMOTIONAL:
 - "This Thursday, I'm breaking down..."
@@ -195,6 +199,7 @@ FORBIDDEN LANGUAGE (Never use):
 - Overly familiar language in cold emails
 - Assumptive language in cold emails
 - "Want to have a look?" (too soft for promotional)
+- "This isn't just another program" (vague category copy)
 
 EXAMPLES:
 
@@ -210,18 +215,18 @@ Want me to send it over?
 
 – Sheri"
 
-CONVERSION (108 words):
-Subject: You've done the work — now let's make it count
+CONVERSION (86 words):
+Subject: This might be your final nudge
 
 "Hey [First Name],
 
-You've laid the groundwork. You've stayed in the conversation. Now the next move is the one that turns momentum into results.
+You were nearly there. And then — the tab stayed open, the day moved on.
 
-This is your shortcut: a final nudge to turn interest into traction. I've helped others make this exact leap — and I'd love to walk you through it.
+No guilt. But here's what I don't want: for you to miss a shot at clarity, just because timing slipped.
 
-The difference between where you are and where you want to be isn't more strategy. It's one decision.
+This program is the bridge — from stuck strategy to messaging that converts. You've got the draft. This is the version that lands.
 
-Your next step is here → [CTA link]
+If you're ready to finish what you started → [Link]
 
 – Sheri"
 
