@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { CheckCircle2, Sparkles, Copy } from "lucide-react";
@@ -89,32 +88,30 @@ const Tool = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch(`https://xkoncobtixlrtvgpdqtq.functions.supabase.co/rewrite-email`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
+      console.log('Calling rewrite-email function...');
+      
+      const { data, error } = await supabase.functions.invoke('rewrite-email', {
+        body: {
           emailContent: emailContent
-        }),
+        },
       });
 
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.error || 'Failed to rewrite email');
+      if (error) {
+        console.error('Supabase function error:', error);
+        throw new Error(error.message || 'Failed to rewrite email');
       }
 
-      const result: RewriteResponse = await response.json();
+      console.log('Function response:', data);
       
-      setMakeover(result.rewritten_email);
+      setMakeover(data.rewritten_email);
       setAnalysis({
-        psychologicalTriggers: result.psychological_triggers || [],
-        structureImprovements: result.structure_improvements || [],
-        questions: result.questions || []
+        psychologicalTriggers: data.psychological_triggers || [],
+        structureImprovements: data.structure_improvements || [],
+        questions: data.questions || []
       });
       setShowMakeover(true);
       
-      await logToolUsage(emailContent, result.rewritten_email, 'ai-rewritten');
+      await logToolUsage(emailContent, data.rewritten_email, 'ai-rewritten');
       
       toast({
         title: "Makeover complete!",
