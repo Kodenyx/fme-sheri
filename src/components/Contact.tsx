@@ -90,9 +90,9 @@ const Contact = () => {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-              Transform Your Email with{" "}
+              Transform Your Email{" "}
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#818CF8] to-[#06B6D4]">
-                AI-Powered Messaging
+                in Under 3 Seconds
               </span>
             </h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto">

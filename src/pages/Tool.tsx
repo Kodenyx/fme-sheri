@@ -194,9 +194,9 @@ const Tool = () => {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <h1 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: '#3B1E5E' }}>
-                Transform Your Email with{" "}
+                Transform Your Email{" "}
                 <span style={{ color: '#E19013' }}>
-                  AI-Powered Messaging
+                  in Under 3 Seconds
                 </span>
               </h1>
               <p className="text-xl md:text-2xl max-w-4xl mx-auto" style={{ color: '#3B1E5E' }}>
