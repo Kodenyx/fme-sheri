@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import Index from "./pages/Index";
 import Offer from "./pages/Offer";
+import OfferBeta from "./pages/OfferBeta";
 import Tool from "./pages/Tool";
 import Auth from "./pages/Auth";
 import NotFound from "./pages/NotFound";
@@ -39,6 +40,7 @@ const App = () => {
             <Route path="/home" element={<Index />} />
             <Route path="/main" element={<Index />} />
             <Route path="/offer" element={<Offer />} />
+            <Route path="/offerbeta" element={<OfferBeta />} />
             <Route path="/tool" element={<Tool />} />
             <Route path="/auth" element={<Auth />} />
             <Route path="*" element={<NotFound />} />
