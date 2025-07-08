@@ -7,7 +7,12 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 w-full bg-black/90 backdrop-blur-md z-50 shadow-sm">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-3">
+          <img 
+            src="/lovable-uploads/f0914198-3ee9-4b3b-968e-4dcac9907e0d.png" 
+            alt="Fix My Email Logo" 
+            className="h-8 w-8"
+          />
           <span className="text-xl font-bold text-white">Fix My Email</span>
         </div>
 
