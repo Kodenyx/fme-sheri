@@ -98,7 +98,7 @@ const Offer = () => {
               </span>
             </h1>
             <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto" style={{ color: '#3B1E5E' }}>
-              A Free, AI-Powered Tool Built By HubSpot's Former Demand Lead And Engineered To Convert.
+              A free, AI-powered tool built by HubSpot's former demand lead and engineered to convert.
             </p>
           </div>
         </div>
@@ -113,8 +113,11 @@ const Offer = () => {
                 <h2 className="text-3xl font-bold mb-4" style={{ color: '#3B1E5E' }}>
                   Fix My Email Now!
                 </h2>
-                <p className="text-lg" style={{ color: '#89888E' }}>
+                <p className="text-lg mb-6" style={{ color: '#89888E' }}>
                   Enter your email to get instant access
+                </p>
+                <p className="text-sm text-gray-500 mb-6">
+                  Works for Cold Outreach, Promotional, Re-engagement, and Conversion Emails.
                 </p>
               </div>
 

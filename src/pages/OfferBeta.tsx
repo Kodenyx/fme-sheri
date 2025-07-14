@@ -61,7 +61,7 @@ const OfferBeta = () => {
               </span>
             </h1>
             <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto" style={{ color: '#3B1E5E' }}>
-              A Free, AI-Powered Tool for B2B Teams - Built by HubSpot's Former Demand Lead and Engineered To Convert.
+              A free, AI-powered tool built by HubSpot's former demand lead and engineered to convert.
             </p>
           </div>
         </div>
@@ -80,7 +80,7 @@ const OfferBeta = () => {
                   Beta access - click below to get started
                 </p>
                 <p className="text-sm text-gray-500 mb-6">
-                  Works for B2B Re-engagement, Promotional, Cold Outreach & Conversion Emails.
+                  Works for Cold Outreach, Promotional, Re-engagement, and Conversion Emails.
                 </p>
               </div>
 
