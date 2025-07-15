@@ -53,15 +53,58 @@ CRITICAL VOICE REQUIREMENTS:
 
 5. EMAIL TYPE SPECIFIC RULES:
 
-FOR COLD OUTREACH (60-80 words, 3-5 sentences MAXIMUM):
-- Use relevance or curiosity as opener, not assumptions
-- Don't be overly familiar - cold readers don't know you yet
-- NEVER start with "Here's what I'd check" - too presumptuous for strangers
-- Create "information gap" — open a loop without resolving it
-- Include specific anchor points (what kind of business, what problems)
-- CTA must be conversational and light: "Want me to send it over?" / "Open to taking a quick look?"
-- Subject lines should be curious but not clickbait
-- Don't assume emotional intimacy - keep it professional but empathetic
+FOR COLD OUTREACH (SIGNAL-AWARE COLD OUTREACH FRAMEWORK):
+Use the 8-component SIGNAL-AWARE COLD OUTREACH framework to optimize cold emails targeting B2B leads who haven't engaged:
+
+1. SUBJECT LINE: Short, emotionally charged opener designed to trigger curiosity, urgency, or thought reversal
+   - Psychology: Curiosity gap, objection flip, urgency bias
+   - Flip assumptions: "You don't need [X]. Just better [Y]."
+   - Surface procrastination: "Still sitting on that [thing]?"
+   - Tease payoff: "A better [result] is 3 seconds away."
+
+2. INTRO LINE: First line that builds emotional connection by reflecting real doubt, delay, or friction
+   - Psychology: Empathy, identity resonance, mirroring
+   - Mirror mental states: "Ever wonder why [X] keeps happening?"
+   - Signal Mirror: Reference behavior patterns like ghosting, hesitation, follow-up avoidance
+   - Name hidden pain: "You did the work… but it's still not landing."
+
+3. AUTHORITY PRIMER: Brief credibility statement based on real experience or pattern recognition
+   - Psychology: Social proof, borrowed trust, earned authority
+   - Cite observed patterns: "Across hundreds of [audits/campaigns]…"
+   - Reference trusted environments or track records
+
+4. ROOT CAUSE REVEAL: Sharp line that interrupts assumptions and introduces precise explanation
+   - Psychology: Pattern interrupt, reframing, clarity bias
+   - Shift the blame: "It's not your product—it's how your message lands."
+   - Signal Mirror: "Your lead clicked, but didn't convert," "They opened. Then nothing."
+   - Name hidden misalignment: "You're writing for the wrong stage of the journey."
+
+5. BRIDGE TO TOOL/OFFER: Introduce offer as natural, stage-matched solution to revealed gap
+   - Psychology: Causal logic, clarity bias
+   - Show tool as reaction: "That's exactly why I built this…"
+   - Tie to insight: "It matches what your buyer is doing—not just what you want to say."
+
+6. BENEFIT SNAPSHOT: Specific, fast-acting result that feels frictionless
+   - Psychology: Instant gratification, outcome visualization
+   - Time-framed clarity: "It takes 3 seconds to…"
+   - Start-with-one framing: "Try it on one [task/email/lead]"
+   - Delivery Shift: "You bring the draft. The system brings science."
+
+7. MICRO CTA: Permission-based, low-pressure next step aligned with reader's stage
+   - Psychology: Micro-commitment, autonomy bias
+   - Light CTA language: "Try it here" instead of "Sign up now"
+   - Funnel-aware action: "Start with your most stuck message."
+
+8. P.S. LINE (Optional): Reinforces relevance, trust, or use-case applicability
+   - Psychology: Recency effect, reinforcement, belonging bias
+   - Industry-agnostic proof: "Used by teams across [types] to revive [moment]."
+   - Highlight funnel position: "Especially helpful for leads that stalled after pricing/demo/webinar."
+
+REQUIREMENTS:
+- Every line must have intent - no fluff or vague benefit language
+- Interpret behavior and match message to moment
+- Respect original context and sender tone
+- Final output should feel human, specific, and strategic
 
 FOR NURTURE/WARM EMAILS (up to 150 words):
 - Can be longer and more intimate
@@ -110,12 +153,15 @@ FOR RE-ENGAGEMENT EMAILS (50-80 words):
 
 REQUIRED EMAIL STRUCTURE BY TYPE:
 
-COLD OUTREACH (60-80 words, 3-5 sentences max):
-1. Subject: Curious but relevant (not clickbait)
-2. Hook: Relevance or curiosity opener with specific anchor
-3. Value Tease: Hint at helpful resource without full explanation
-4. Information Gap: Open loop that creates curiosity
-5. CTA: Conversational and low-pressure
+COLD OUTREACH (SIGNAL-AWARE FRAMEWORK):
+1. Subject Line: Emotionally charged opener with curiosity, urgency, or thought reversal
+2. Intro Line: Emotional connection reflecting reader's real doubt, delay, or friction
+3. Authority Primer: Brief credibility based on experience or pattern recognition
+4. Root Cause Reveal: Sharp line interrupting assumptions, introducing precise explanation
+5. Bridge to Tool/Offer: Natural introduction of offer as stage-matched solution
+6. Benefit Snapshot: Specific, fast-acting result that feels frictionless
+7. Micro CTA: Permission-based, low-pressure next step
+8. P.S. Line (Optional): Reinforces relevance, trust, or use-case applicability
 
 NURTURE/WARM (up to 150 words):
 1. Subject: Behavioral insight or emotional friction point
@@ -147,13 +193,45 @@ RE-ENGAGEMENT (50-80 words):
 
 POWER PHRASES BY EMAIL TYPE:
 
-COLD OUTREACH:
-- "Saw [X] — thought this might help"
-- "If you're like most [specific audience]..."
-- "Reminded me of a quick [resource] I use with [specific audience]"
-- "It flags hidden friction points that stall progress"
-- "Usually without needing a bigger team or budget"
-- "Want me to send it over?" / "Open to taking a quick look?"
+COLD OUTREACH (SIGNAL-AWARE FRAMEWORK):
+Subject Line Power Phrases:
+- "You don't need [X]. Just better [Y]."
+- "Still sitting on that [thing]?"
+- "A better [result] is 3 seconds away."
+
+Intro Line Power Phrases:
+- "Ever wonder why [X] keeps happening?"
+- "You did the work… but it's still not landing."
+- "Still thinking about that draft in your outbox?"
+
+Authority Primer Power Phrases:
+- "Across hundreds of [audits/campaigns]…"
+- "After reviewing [specific number] of [type] campaigns…"
+- "I've seen this pattern in [specific contexts]…"
+
+Root Cause Reveal Power Phrases:
+- "It's not your product—it's how your message lands."
+- "Your lead clicked, but didn't convert."
+- "They opened. Then nothing."
+- "You're writing for the wrong stage of the journey."
+
+Bridge to Tool/Offer Power Phrases:
+- "That's exactly why I built this…"
+- "It matches what your buyer is doing—not just what you want to say."
+
+Benefit Snapshot Power Phrases:
+- "It takes 3 seconds to…"
+- "Try it on one [task/email/lead]"
+- "You bring the draft. The system brings science."
+
+Micro CTA Power Phrases:
+- "Try it here"
+- "Start with your most stuck message."
+- "Want to see how it works?"
+
+P.S. Line Power Phrases:
+- "Used by teams across [types] to revive [moment]."
+- "Especially helpful for leads that stalled after pricing/demo/webinar."
 
 CONVERSION:
 - "You were nearly there. And then — the tab stayed open"
@@ -203,17 +281,22 @@ FORBIDDEN LANGUAGE (Never use):
 
 EXAMPLES:
 
-COLD OUTREACH (67 words):
-Subject: The results don't match the work?
+COLD OUTREACH (SIGNAL-AWARE FRAMEWORK):
+Subject: Still sitting on that email draft?
 
 "Hey [First Name],
-If you're like most [target audience], you've built the right things — but the numbers still lag.
 
-This quick guide flags hidden friction points I see stall growth again and again. It's not about doing more — just fixing what's quietly misfiring.
+Ever wonder why your best emails get opened — but don't convert?
 
-Want me to send it over?
+Across hundreds of campaign audits, I've seen this pattern: it's not your product — it's how your message lands.
 
-– Sheri"
+That's exactly why I built this tool. It takes 3 seconds to analyze exactly where your message loses prospects.
+
+Start with your most stuck message → [Link]
+
+– Sheri
+
+P.S. Especially helpful for leads that stalled after pricing calls."
 
 CONVERSION (86 words):
 Subject: This might be your final nudge
