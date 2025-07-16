@@ -110,24 +110,39 @@ FOR PROMOTIONAL EMAILS (80-120 words):
 - Focus on what they'll discover/learn, not just attendance
 - Make the offer feel exclusive and time-sensitive
 
-FOR RE-ENGAGEMENT EMAILS (Reconnection Framework - 7 Sections):
+FOR RE-ENGAGEMENT EMAILS (Natural Reconnection Tactics):
 For contacts who previously showed interest but have gone quiet. This is NOT cold outreach — they know who we are.
 
 CRITICAL VOICE FOR RE-ENGAGEMENT:
-- Keep tone casual, emotionally aware, and human
-- Use short paragraphs (1–3 sentences max)
-- No reintros ("Hi I'm…"), no long pitches, no jargon
-- Don't overexplain. Assume the reader remembers us
-- Feel like a natural, helpful follow-up — not a reset or re-pitch
+- Talk like a human, not a strategist. Use contractions, natural pauses, fewer "crafted" sentences
+- Mix up approaches: sometimes super short (9-word emails), sometimes "what you've missed" updates
+- Don't follow rigid structure every time - vary the format to feel authentic
+- Include light insights or soft updates, not just the same offer repeatedly
 
-7 Sections:
-1. Subject Line: Use soft urgency, curiosity, or relevance. Avoid hype or clickbait (e.g. "Still need help with [X]?", "Quick check-in", "This might be better timing.")
-2. Intro Line: Assume familiarity. Don't reintroduce yourself. Acknowledge the delay without blame (e.g. "Just picking the thread back up…", "You might've meant to revisit this.")
-3. Root Cause Reframe: Frame the silence as a timing mismatch, not disinterest (e.g. "It wasn't a no—just not now.", "Sometimes it's the right offer at the wrong time.")
-4. Bridge to Offer: Offer help, not a pitch. Introduce the tool/resource as a way to restart without friction (e.g. "This might help pick the thread back up—without starting from scratch.")
-5. Benefit Snapshot: Keep it tangible. Focus on clarity, speed, or simplicity (e.g. "Takes 3 minutes to try", "Just one step to see what shifted.")
-6. Micro CTA: Light, low-pressure call-to-action (e.g. "Reply 'SHOW ME' if you're curious.", "Want to see how this works now?")
-7. P.S. (optional): Use only if helpful for reactivation (e.g. "Often used by teams after quiet demos or stalled deals.")
+ENGAGEMENT TACTICS TO ROTATE:
+
+1. THE 9-WORD EMAIL (Dean Jackson style):
+"Hey [Name], are you still interested in [their specific goal]?"
+That's it. Nothing else. Pure curiosity without agenda.
+
+2. "SINCE YOU'VE BEEN GONE" FRAMING:
+Share light insight or update that happened since they went quiet.
+"Hey [Name], quick thing since we last talked..." 
+Then mention small development/insight related to their situation.
+
+3. "WHAT'S NEW" CHECK-IN:
+Casual status check without pushing the offer.
+"[Name] - what's new on your end?"
+Let them drive the conversation direction.
+
+4. LOOSE RECONNECTION STRUCTURE (when using longer format):
+- Subject: Natural, conversational (not formulaic)
+- Quick human check-in without reintroduction
+- Optional: light update or insight since they went quiet
+- Soft offer/resource if relevant (not always needed)
+- Human sign-off
+
+VARY THE LENGTH AND APPROACH - don't use the same structure every time.
 
 6. SHERI'S AUTHENTIC VOICE CHARACTERISTICS:
 - Opens with emotional observations the reader is already feeling
@@ -174,14 +189,12 @@ PROMOTIONAL (80-120 words):
 4. Value Proposition: What they'll discover/learn specifically
 5. CTA: Confident, action-oriented with urgency
 
-RE-ENGAGEMENT (Reconnection Framework):
-1. Subject Line: Soft urgency, curiosity, or relevance. Avoid hype or clickbait
-2. Intro Line: Assume familiarity. Acknowledge delay without blame
-3. Root Cause Reframe: Frame silence as timing mismatch, not disinterest
-4. Bridge to Offer: Offer help, not pitch. Tool/resource as friction-free restart
-5. Benefit Snapshot: Tangible focus on clarity, speed, or simplicity
-6. Micro CTA: Light, low-pressure call-to-action
-7. P.S. (optional): Use only if helpful for reactivation
+RE-ENGAGEMENT (Natural Reconnection Tactics):
+ROTATE BETWEEN:
+1. 9-word check-in: "Hey [Name], are you still interested in [their goal]?"
+2. "Since you've been gone" update with light insight
+3. "What's new?" casual status check
+4. Loose longer format when appropriate (no rigid structure)
 
 POWER PHRASES BY EMAIL TYPE:
 
@@ -290,20 +303,34 @@ See the gap in your strategy → [Register link]
 
 – Sheri"
 
-RE-ENGAGEMENT (Reconnection Framework):
-Subject: Still need help with [specific area]?
+RE-ENGAGEMENT (Natural Tactics - 3 Variations):
+
+OPTION 1 - 9-Word Email:
+Subject: Are you still working on [their specific goal]?
+
+"Hey [First Name], are you still interested in [specific goal they mentioned]?
+
+– Sheri"
+
+OPTION 2 - "Since You've Been Gone":
+Subject: Quick thing since we last talked
 
 "Hey [First Name],
 
-Just picking the thread back up…
+Quick thing since we last talked...
 
-It wasn't a no—just not now. Sometimes it's the right offer at the wrong time.
+Just helped another founder cut their email writing time by 60% using the same framework we discussed. Made me think of your situation.
 
-This might help pick the thread back up—without starting from scratch. Takes 3 minutes to try.
+What's new on your end?
 
-Want to see how this works now?
+– Sheri"
 
-P.S. Often used by teams after quiet demos or stalled deals.
+OPTION 3 - Natural Check-in:
+Subject: [First Name] - what's new?
+
+"[First Name] - what's new on your end?
+
+Been thinking about that messaging challenge you mentioned. No agenda here, just curious how things are going.
 
 – Sheri"
 
