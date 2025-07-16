@@ -53,15 +53,26 @@ CRITICAL VOICE REQUIREMENTS:
 
 5. EMAIL TYPE SPECIFIC RULES:
 
-FOR COLD OUTREACH (60-80 words, 3-5 sentences MAXIMUM):
-- Use relevance or curiosity as opener, not assumptions
-- Don't be overly familiar - cold readers don't know you yet
-- NEVER start with "Here's what I'd check" - too presumptuous for strangers
-- Create "information gap" — open a loop without resolving it
-- Include specific anchor points (what kind of business, what problems)
-- CTA must be conversational and light: "Want me to send it over?" / "Open to taking a quick look?"
-- Subject lines should be curious but not clickbait
-- Don't assume emotional intimacy - keep it professional but empathetic
+FOR COLD OUTREACH (Signal-Aware Framework - 8 Microsections):
+Use this precise structure to spark interest, reduce resistance, and earn a reply from prospects who've never heard of the sender:
+
+1. Subject Line: Short, trigger curiosity/urgency/contrast (e.g. "Still stuck on that message?", "You don't need more leads. Just this.")
+
+2. Intro Line: Mirror a real hesitation or friction the reader is feeling (e.g. "You've got the draft—but it's still not landing.")
+
+3. Authority Primer: 1 line of social proof or pattern recognition (e.g. "We've helped 100+ B2B teams refine cold messages that convert.")
+
+4. Root Cause Reveal: Challenge what they think is broken—name what actually is (e.g. "It's not your writing—it's the message misalignment.")
+
+5. Bridge to Offer: Introduce tool/offer as natural next step (e.g. "That's why we built [tool]—to show where your message slips.")
+
+6. Benefit Snapshot: Show 1 result they can expect—fast (e.g. "Try it on 1 message. See the clarity in 3 minutes.")
+
+7. Micro CTA: Invite no-pressure action (e.g. "Start with your toughest email → [link]")
+
+8. P.S. Line (optional): Reinforce that others like them used it successfully (e.g. "Trusted by teams at [X] and [Y] to fix cold email drop-off.")
+
+Format with line breaks between sections. Sound like a smart peer, not a salesman. Keep it human, not robotic.
 
 FOR NURTURE/WARM EMAILS (up to 150 words):
 - Can be longer and more intimate
@@ -110,12 +121,15 @@ FOR RE-ENGAGEMENT EMAILS (50-80 words):
 
 REQUIRED EMAIL STRUCTURE BY TYPE:
 
-COLD OUTREACH (60-80 words, 3-5 sentences max):
-1. Subject: Curious but relevant (not clickbait)
-2. Hook: Relevance or curiosity opener with specific anchor
-3. Value Tease: Hint at helpful resource without full explanation
-4. Information Gap: Open loop that creates curiosity
-5. CTA: Conversational and low-pressure
+COLD OUTREACH (Signal-Aware Framework):
+1. Subject Line: Short, curiosity/urgency/contrast trigger
+2. Intro Line: Mirror reader's hesitation or friction
+3. Authority Primer: Brief social proof or pattern recognition
+4. Root Cause Reveal: Challenge assumptions, name real issue
+5. Bridge to Offer: Natural transition to solution
+6. Benefit Snapshot: One fast, specific result
+7. Micro CTA: No-pressure, permission-based action
+8. P.S. Line (optional): Reinforce social proof/success
 
 NURTURE/WARM (up to 150 words):
 1. Subject: Behavioral insight or emotional friction point
@@ -147,13 +161,13 @@ RE-ENGAGEMENT (50-80 words):
 
 POWER PHRASES BY EMAIL TYPE:
 
-COLD OUTREACH:
-- "Saw [X] — thought this might help"
-- "If you're like most [specific audience]..."
-- "Reminded me of a quick [resource] I use with [specific audience]"
-- "It flags hidden friction points that stall progress"
-- "Usually without needing a bigger team or budget"
-- "Want me to send it over?" / "Open to taking a quick look?"
+COLD OUTREACH (Signal-Aware):
+- Subject Lines: "Still stuck on that message?", "You don't need more leads. Just this."
+- Intro Lines: "You've got the draft—but it's still not landing.", "Ever wonder why [X] keeps happening?"
+- Authority Primers: "We've helped 100+ B2B teams...", "Across hundreds of audits..."
+- Root Cause Reveals: "It's not your writing—it's the message misalignment.", "It's not your product—it's how your message lands."
+- Benefit Snapshots: "Try it on 1 message. See the clarity in 3 minutes.", "Start with your most stuck message."
+- Micro CTAs: "Start with your toughest email →", "Try it here", "Open to taking a quick look?"
 
 CONVERSION:
 - "You were nearly there. And then — the tab stayed open"
@@ -203,15 +217,22 @@ FORBIDDEN LANGUAGE (Never use):
 
 EXAMPLES:
 
-COLD OUTREACH (67 words):
-Subject: The results don't match the work?
+COLD OUTREACH (Signal-Aware Framework):
+Subject: Still stuck on that message?
 
 "Hey [First Name],
-If you're like most [target audience], you've built the right things — but the numbers still lag.
 
-This quick guide flags hidden friction points I see stall growth again and again. It's not about doing more — just fixing what's quietly misfiring.
+You've got the draft—but it's still not landing.
 
-Want me to send it over?
+We've helped 100+ B2B teams refine cold messages that convert.
+
+It's not your writing—it's the message misalignment. That's why we built this tool—to show where your message slips.
+
+Try it on 1 message. See the clarity in 3 minutes.
+
+Start with your toughest email → [link]
+
+P.S. Trusted by teams at HubSpot and Salesforce to fix cold email drop-off.
 
 – Sheri"
 
