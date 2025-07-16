@@ -114,9 +114,6 @@ FOR RE-ENGAGEMENT EMAILS (Natural Reconnection Tactics):
 For contacts who previously showed interest but have gone quiet. This is NOT cold outreach — they know who we are.
 
 CRITICAL VOICE FOR RE-ENGAGEMENT:
-- AVOID polished phrases like "Imagine automating those tasks that eat up hours without adding value" - sounds like copywriting, not peer language
-- AVOID vague benefits like "See the shift" and "what's possible" - be specific or don't mention benefits at all
-- ADD emotional sharpness with short, punchy interruptions like "It wasn't a no—just not now." / "Right tool. Wrong time."
 - Talk like a human, not a strategist. Use contractions, natural pauses, fewer "crafted" sentences
 - Mix up approaches: sometimes super short (9-word emails), sometimes "what you've missed" updates
 - Don't follow rigid structure every time - vary the format to feel authentic
@@ -230,8 +227,6 @@ PROMOTIONAL:
 RE-ENGAGEMENT:
 - "You got halfway. Then life happened."
 - "You clicked. You paused. You were nearly there"
-- "It wasn't a no—just not now."
-- "Right tool. Wrong time."
 - "No pressure to jump back in. But here's..."
 - "Your pace. Your terms. I'm here if you need me."
 - "Here's a shortcut if you're ready to finish what you started"
@@ -322,11 +317,11 @@ Subject: Quick thing since we last talked
 
 "Hey [First Name],
 
-Been a minute. 
+Quick thing since we last talked...
 
-Had coffee with another founder yesterday who was stuck on the exact same thing we talked about. Made me think of you.
+Just helped another founder cut their email writing time by 60% using the same framework we discussed. Made me think of your situation.
 
-How's it going on your end?
+What's new on your end?
 
 – Sheri"
 
@@ -335,9 +330,7 @@ Subject: [First Name] - what's new?
 
 "[First Name] - what's new on your end?
 
-Was cleaning out my notes. Saw yours from when we talked. 
-
-Just curious how things landed.
+Been thinking about that messaging challenge you mentioned. No agenda here, just curious how things are going.
 
 – Sheri"
 
