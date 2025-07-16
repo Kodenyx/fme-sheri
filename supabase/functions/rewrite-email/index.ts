@@ -135,15 +135,12 @@ Casual status check without pushing the offer.
 "[Name] - what's new on your end?"
 Let them drive the conversation direction.
 
-4. CONTEXTUAL RECONNECTION (when using longer format):
+4. LOOSE RECONNECTION STRUCTURE (when using longer format):
 - Subject: Natural, conversational (not formulaic)
-- Intro: Echo familiarity with direct behavioral signal - anchor to specific moment/call/context
-  Example: "We had that call about [specific topic] — and then life happened."
-- Pause Reframe: "Wasn't a no—just not the right time." (clear repositioning without chasing)
-- Bridge: Mirror 'moment-fit' - connect to their context before jumping to results
-  Example: "They were where you are — ready to fix the gap without burning more hours."
-- CTA: Ultra-light and contextual
-  Example: "Want to see what it could look like now?"
+- Quick human check-in without reintroduction
+- Optional: light update or insight since they went quiet
+- Soft offer/resource if relevant (not always needed)
+- Human sign-off
 
 VARY THE LENGTH AND APPROACH - don't use the same structure every time.
 
@@ -328,18 +325,12 @@ What's new on your end?
 
 – Sheri"
 
-OPTION 3 - Contextual Reconnection:
-Subject: That lead gen conversation
+OPTION 3 - Natural Check-in:
+Subject: [First Name] - what's new?
 
-"Hey [First Name],
+"[First Name] - what's new on your end?
 
-We had that call about simplifying your lead gen — and then life happened.
-
-Wasn't a no—just not the right time. 
-
-Just helped another founder in a similar spot. They were where you are — ready to fix the gap without burning more hours.
-
-Want to see what it could look like now?
+Been thinking about that messaging challenge you mentioned. No agenda here, just curious how things are going.
 
 – Sheri"
 
