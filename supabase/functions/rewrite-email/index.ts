@@ -67,9 +67,9 @@ CRITICAL VOICE FOR COLD EMAILS:
 
 1. Subject Line: Short, trigger curiosity/urgency/contrast (e.g. "Still stuck on that message?", "You don't need more leads. Just this.")
 
-2. Intro Line: Mirror a real hesitation or friction the reader is feeling - make it emotionally sharp and immediate (e.g. "You've set things in motion, but your calendar's still not filling up.")
+2. Intro Line: Mirror a very specific, relatable situation they're experiencing right now - make it feel like you understand their exact moment (e.g. "They opened the email. Maybe even clicked. But then? Nothing." or "You've got the pipeline. But the conversion? That's where most systems stall.")
 
-3. Authority Primer: 1 line of social proof or pattern recognition - keep conversational (e.g. "That's what we kept seeing — again and again — across 100+ B2B teams.")
+3. Authority Primer: 1 line of pattern recognition with specific, believable proof - keep conversational (e.g. "We see it all the time" or "after 500+ campaigns, we've seen the real issue")
 
 4. Root Cause Reveal: Challenge what they think is broken—name what actually is. Use short, punchy sentences for emotional impact (e.g. "It's not the leads. It's not the volume. It's how the message lands.")
 
@@ -79,7 +79,7 @@ CRITICAL VOICE FOR COLD EMAILS:
 
 7. Micro CTA: Invite curiosity-driven action that creates intrigue (e.g. "Want to see how it shifts?", "Want to try it?", "Start with the one email you can't seem to send.")
 
-8. P.S. Line (optional): Reinforce that others like them used it successfully (e.g. "Trusted by teams at [X] and [Y] to fix cold email drop-off.")
+8. P.S. Line (optional): Add funnel-aware, use-case specific proof (e.g. "Most teams use this first to revive stuck demos or post-webinar leads." or "One founder landed 19 qualified calls last month — just by uploading a CSV.")
 
 Format with line breaks between sections. Sound emotionally sharp and conversational - like Sheri's authentic voice, not polished marketing copy.
 
