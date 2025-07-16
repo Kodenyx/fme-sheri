@@ -120,35 +120,64 @@ CRITICAL VOICE FOR RE-ENGAGEMENT:
 - Don't overexplain. Assume the reader remembers us
 - Feel like a natural, helpful follow-up — not a reset or re-pitch
 
-RE-ENGAGEMENT SUBCATEGORIES:
-Choose one of these three approaches based on what makes most sense for the specific situation:
+SHERI RE-ENGAGEMENT STRUCTURE:
 
-CATEGORY 1: "See What's New"
-Use when there's something genuinely new to show — new feature, update, or development that changes the value proposition.
-- P.S. Line: Focus on what's happening now that they've missed
-- Bridge to Solution: Frame new development as reason to reconnect
-- Example phrases: "Been building something you might find useful", "This just went live", "Finally cracked the thing we talked about"
+Use the format below. Match the sender's casual tone. Prioritize natural phrasing, soft urgency, and emotional sharpness.
 
-CATEGORY 2: "Here's What You've Missed"
-Use when you want to create gentle FOMO about ongoing value or progress.
-- Root Cause Reframe: Position their silence as missing out on ongoing value
-- Intro Line: Subtle suggestion they've missed something valuable
-- Example phrases: "Been quiet on our end — probably missed this", "You might've intended to revisit this", "While you were focused elsewhere"
+7 Sections:
+1. Subject Line
+   • Use curiosity, timing, or relevance. Avoid clickbait.
+   • Examples:
+     • "Still need help with [X]?"
+     • "Quick check-in"
+     • "This might be better timing."
 
-CATEGORY 3: "Are You Still Interested in [Their Goal]?" (Dean Jackson 9-Word Email Style)
-Use for maximum simplicity and directness — strips everything down to core question.
-- Micro CTA: Make it binary and goal-aligned
-- Keep entire email under 50 words
-- Example phrases: "Still working on [specific goal they mentioned]?", "Still need help with [specific thing]?", "Ready to tackle [their original challenge]?"
+2. Intro Line (Signal Mirror)
+   • Acknowledge the gap without pressure. Assume familiarity.
+   • Examples:
+     • "Just picking the thread back up…"
+     • "You were nearly there—then life happened."
+     • "You clicked. You paused. All good."
 
-7 Sections (apply chosen category throughout):
-1. Subject Line: Use soft urgency, curiosity, or relevance. Avoid hype or clickbait (e.g. "Still need help with [X]?", "Quick check-in", "This might be better timing.")
-2. Intro Line: Assume familiarity. Don't reintroduce yourself. Acknowledge the delay without blame (e.g. "Just picking the thread back up…", "You might've meant to revisit this.")
-3. Root Cause Reframe: Frame the silence as a timing mismatch, not disinterest (e.g. "It wasn't a no—just not now.", "Sometimes it's the right offer at the wrong time.")
-4. Bridge to Offer: Offer help, not a pitch. Introduce the tool/resource as a way to restart without friction (e.g. "This might help pick the thread back up—without starting from scratch.")
-5. Benefit Snapshot: Keep it tangible. Focus on clarity, speed, or simplicity (e.g. "Takes 3 minutes to try", "Just one step to see what shifted.")
-6. Micro CTA: Light, low-pressure call-to-action (e.g. "Reply 'SHOW ME' if you're curious.", "Want to see how this works now?")
-7. P.S. (optional): Use only if helpful for reactivation (e.g. "Often used by teams after quiet demos or stalled deals.")
+3. Root Cause Reframe
+   • Normalize the delay. Position it as timing, not rejection.
+   • Examples:
+     • "It wasn't a no—just not now."
+     • "Sometimes the right message shows up at the wrong time."
+
+4. Bridge to Offer
+   • Mention the tool/resource as a helpful re-entry point.
+   • Examples:
+     • "That's why we built this—to help restart without starting over."
+     • "This might help pick the thread back up—without any heavy lift."
+
+5. Benefit Snapshot
+   • Emphasize clarity, speed, or ease.
+   • Examples:
+     • "Takes 3 minutes to try."
+     • "No overhaul—just a clearer next move."
+     • "One click to see what changed."
+
+6. Micro CTA
+   • Make it feel frictionless. Suggest low-commitment action.
+   • Examples:
+     • "Want to take a peek?"
+     • "Say 'curious' and I'll show you."
+     • "Just reply 'ready' if now's the time."
+
+7. P.S. (Optional)
+   • Use to reinforce value for reactivation moments.
+   • Examples:
+     • "Used by teams to re-engage after quiet demos."
+     • "Often helps revive high-fit leads—without chasing."
+
+TONE & STYLE NOTES:
+• Keep it short: 1–3 sentence paragraphs max
+• Use line breaks generously
+• No intros or "Hi, I'm [Name]…"
+• Avoid hype or pressure
+• Mirror natural human behavior (ghosting, forgetting, delaying)
+• Sound like a peer, not a marketer
 
 6. SHERI'S AUTHENTIC VOICE CHARACTERISTICS:
 - Opens with emotional observations the reader is already feeling
