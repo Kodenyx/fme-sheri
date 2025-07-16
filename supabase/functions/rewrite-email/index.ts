@@ -165,11 +165,21 @@ Use the format below. Match the sender's casual tone. Prioritize natural phrasin
      • "Say 'curious' and I'll show you."
      • "Just reply 'ready' if now's the time."
 
-7. P.S. (Optional)
-   • Use to reinforce value for reactivation moments.
+7. P.S. (Optional but Intentional)
+   • Use ONLY when it reinforces re-entry confidence or trust
+   • Acts as a reactivation moment — reminds reader that silence is common and this solution works even after a pause
+   • Only include if:
+     - It contextualizes the tool's usefulness post-demo, post-click, or post-silence
+     - It provides believable, situational proof (e.g. "used after a quiet webinar", "helped reignite 12 stalled leads")
+     - It avoids vague or generic language ("others found this helpful") and adds new insight
+   • SKIP the P.S. if:
+     - The main email already resolves trust or timing concerns
+     - The email is already over 100 words
+   • Keep it short, signal-aware, and behavior-based
    • Examples:
      • "Used by teams to re-engage after quiet demos."
-     • "Often helps revive high-fit leads—without chasing."
+     • "Helped reignite 12 stalled leads last month."
+     • "Works especially well post-webinar when interest cooled."
 
 TONE & STYLE NOTES:
 • Keep it short: 1–3 sentence paragraphs max
