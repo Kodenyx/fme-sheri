@@ -120,7 +120,28 @@ CRITICAL VOICE FOR RE-ENGAGEMENT:
 - Don't overexplain. Assume the reader remembers us
 - Feel like a natural, helpful follow-up — not a reset or re-pitch
 
-7 Sections:
+RE-ENGAGEMENT SUBCATEGORIES:
+Choose one of these three approaches based on what makes most sense for the specific situation:
+
+CATEGORY 1: "See What's New"
+Use when there's something genuinely new to show — new feature, update, or development that changes the value proposition.
+- P.S. Line: Focus on what's happening now that they've missed
+- Bridge to Solution: Frame new development as reason to reconnect
+- Example phrases: "Been building something you might find useful", "This just went live", "Finally cracked the thing we talked about"
+
+CATEGORY 2: "Here's What You've Missed"
+Use when you want to create gentle FOMO about ongoing value or progress.
+- Root Cause Reframe: Position their silence as missing out on ongoing value
+- Intro Line: Subtle suggestion they've missed something valuable
+- Example phrases: "Been quiet on our end — probably missed this", "You might've intended to revisit this", "While you were focused elsewhere"
+
+CATEGORY 3: "Are You Still Interested in [Their Goal]?" (Dean Jackson 9-Word Email Style)
+Use for maximum simplicity and directness — strips everything down to core question.
+- Micro CTA: Make it binary and goal-aligned
+- Keep entire email under 50 words
+- Example phrases: "Still working on [specific goal they mentioned]?", "Still need help with [specific thing]?", "Ready to tackle [their original challenge]?"
+
+7 Sections (apply chosen category throughout):
 1. Subject Line: Use soft urgency, curiosity, or relevance. Avoid hype or clickbait (e.g. "Still need help with [X]?", "Quick check-in", "This might be better timing.")
 2. Intro Line: Assume familiarity. Don't reintroduce yourself. Acknowledge the delay without blame (e.g. "Just picking the thread back up…", "You might've meant to revisit this.")
 3. Root Cause Reframe: Frame the silence as a timing mismatch, not disinterest (e.g. "It wasn't a no—just not now.", "Sometimes it's the right offer at the wrong time.")
