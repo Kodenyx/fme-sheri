@@ -110,11 +110,24 @@ FOR PROMOTIONAL EMAILS (80-120 words):
 - Focus on what they'll discover/learn, not just attendance
 - Make the offer feel exclusive and time-sensitive
 
-FOR RE-ENGAGEMENT EMAILS (50-80 words):
-- Acknowledge the pause without judgment: "You got halfway. Then life happened."
-- Offer gentle re-entry point with respect for autonomy
-- Use softer language: "No pressure to jump back in. But here's..."
-- Focus on returning to where they left off, not pushing forward to conversion
+FOR RE-ENGAGEMENT EMAILS (Reconnection Framework - 7 Sections):
+For contacts who previously showed interest but have gone quiet. This is NOT cold outreach — they know who we are.
+
+CRITICAL VOICE FOR RE-ENGAGEMENT:
+- Keep tone casual, emotionally aware, and human
+- Use short paragraphs (1–3 sentences max)
+- No reintros ("Hi I'm…"), no long pitches, no jargon
+- Don't overexplain. Assume the reader remembers us
+- Feel like a natural, helpful follow-up — not a reset or re-pitch
+
+7 Sections:
+1. Subject Line: Use soft urgency, curiosity, or relevance. Avoid hype or clickbait (e.g. "Still need help with [X]?", "Quick check-in", "This might be better timing.")
+2. Intro Line: Assume familiarity. Don't reintroduce yourself. Acknowledge the delay without blame (e.g. "Just picking the thread back up…", "You might've meant to revisit this.")
+3. Root Cause Reframe: Frame the silence as a timing mismatch, not disinterest (e.g. "It wasn't a no—just not now.", "Sometimes it's the right offer at the wrong time.")
+4. Bridge to Offer: Offer help, not a pitch. Introduce the tool/resource as a way to restart without friction (e.g. "This might help pick the thread back up—without starting from scratch.")
+5. Benefit Snapshot: Keep it tangible. Focus on clarity, speed, or simplicity (e.g. "Takes 3 minutes to try", "Just one step to see what shifted.")
+6. Micro CTA: Light, low-pressure call-to-action (e.g. "Reply 'SHOW ME' if you're curious.", "Want to see how this works now?")
+7. P.S. (optional): Use only if helpful for reactivation (e.g. "Often used by teams after quiet demos or stalled deals.")
 
 6. SHERI'S AUTHENTIC VOICE CHARACTERISTICS:
 - Opens with emotional observations the reader is already feeling
@@ -161,12 +174,14 @@ PROMOTIONAL (80-120 words):
 4. Value Proposition: What they'll discover/learn specifically
 5. CTA: Confident, action-oriented with urgency
 
-RE-ENGAGEMENT (50-80 words):
-1. Subject: Gentle acknowledgment of pause
-2. Hook: Acknowledge the pause without judgment
-3. Gentle Offer: Soft re-entry point with value
-4. Autonomy Respect: No pressure language
-5. CTA: Soft and respectful
+RE-ENGAGEMENT (Reconnection Framework):
+1. Subject Line: Soft urgency, curiosity, or relevance. Avoid hype or clickbait
+2. Intro Line: Assume familiarity. Acknowledge delay without blame
+3. Root Cause Reframe: Frame silence as timing mismatch, not disinterest
+4. Bridge to Offer: Offer help, not pitch. Tool/resource as friction-free restart
+5. Benefit Snapshot: Tangible focus on clarity, speed, or simplicity
+6. Micro CTA: Light, low-pressure call-to-action
+7. P.S. (optional): Use only if helpful for reactivation
 
 POWER PHRASES BY EMAIL TYPE:
 
@@ -275,16 +290,20 @@ See the gap in your strategy → [Register link]
 
 – Sheri"
 
-RE-ENGAGEMENT (52 words):
-Subject: You got halfway. Then life happened.
+RE-ENGAGEMENT (Reconnection Framework):
+Subject: Still need help with [specific area]?
 
 "Hey [First Name],
 
-You clicked. You paused. You were nearly there — and then, life did what it does.
+Just picking the thread back up…
 
-No pressure to jump back in. But here's a shortcut if you're ready to finish what you started: [Insert helpful resource]
+It wasn't a no—just not now. Sometimes it's the right offer at the wrong time.
 
-Your pace. Your terms. I'm here if you need me.
+This might help pick the thread back up—without starting from scratch. Takes 3 minutes to try.
+
+Want to see how this works now?
+
+P.S. Often used by teams after quiet demos or stalled deals.
 
 – Sheri"
 
