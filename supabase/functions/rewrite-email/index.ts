@@ -322,11 +322,11 @@ Subject: Quick thing since we last talked
 
 "Hey [First Name],
 
-Quick thing since we last talked...
+Been a minute. 
 
-Just helped another founder cut their email writing time by 60% using the same framework we discussed. Made me think of your situation.
+Had coffee with another founder yesterday who was stuck on the exact same thing we talked about. Made me think of you.
 
-What's new on your end?
+How's it going on your end?
 
 – Sheri"
 
@@ -335,7 +335,9 @@ Subject: [First Name] - what's new?
 
 "[First Name] - what's new on your end?
 
-Been thinking about that messaging challenge you mentioned. No agenda here, just curious how things are going.
+Was cleaning out my notes. Saw yours from when we talked. 
+
+Just curious how things landed.
 
 – Sheri"
 
