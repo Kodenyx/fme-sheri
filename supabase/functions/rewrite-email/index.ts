@@ -54,25 +54,34 @@ CRITICAL VOICE REQUIREMENTS:
 5. EMAIL TYPE SPECIFIC RULES:
 
 FOR COLD OUTREACH (Signal-Aware Framework - 8 Microsections):
-Use this precise structure to spark interest, reduce resistance, and earn a reply from prospects who've never heard of the sender:
+Use this precise structure to spark interest, reduce resistance, and earn a reply from prospects who've never heard of the sender.
+
+CRITICAL VOICE FOR COLD EMAILS:
+- Sound emotionally sharp, not polished ("You've set things in motion, but your calendar's still not filling up")
+- Use punchy, broken sentences for impact ("It's not the leads. It's not the volume.")
+- Make it feel conversational and direct, like talking to a peer
+- Avoid case study language - make it personal and immediate
+- Use curiosity-driven CTAs that create intrigue
+
+8 Microsections:
 
 1. Subject Line: Short, trigger curiosity/urgency/contrast (e.g. "Still stuck on that message?", "You don't need more leads. Just this.")
 
-2. Intro Line: Mirror a real hesitation or friction the reader is feeling (e.g. "You've got the draft—but it's still not landing.")
+2. Intro Line: Mirror a real hesitation or friction the reader is feeling - make it emotionally sharp and immediate (e.g. "You've set things in motion, but your calendar's still not filling up.")
 
-3. Authority Primer: 1 line of social proof or pattern recognition (e.g. "We've helped 100+ B2B teams refine cold messages that convert.")
+3. Authority Primer: 1 line of social proof or pattern recognition - keep conversational (e.g. "That's what we kept seeing — again and again — across 100+ B2B teams.")
 
-4. Root Cause Reveal: Challenge what they think is broken—name what actually is (e.g. "It's not your writing—it's the message misalignment.")
+4. Root Cause Reveal: Challenge what they think is broken—name what actually is. Use short, punchy sentences for emotional impact (e.g. "It's not the leads. It's not the volume. It's how the message lands.")
 
-5. Bridge to Offer: Introduce tool/offer as natural next step (e.g. "That's why we built [tool]—to show where your message slips.")
+5. Bridge to Offer: Introduce tool/offer as natural next step (e.g. "So we built a system to pinpoint exactly where your outreach slips — and fix it fast.")
 
-6. Benefit Snapshot: Show 1 result they can expect—fast (e.g. "Try it on 1 message. See the clarity in 3 minutes.")
+6. Benefit Snapshot: Show 1 result they can expect—fast and emotionally compelling (e.g. "Start with one email. See what shifts in 10 minutes.")
 
-7. Micro CTA: Invite no-pressure action (e.g. "Start with your toughest email → [link]")
+7. Micro CTA: Invite curiosity-driven action that creates intrigue (e.g. "Want to see how it shifts?", "Want to try it?", "Start with the one email you can't seem to send.")
 
 8. P.S. Line (optional): Reinforce that others like them used it successfully (e.g. "Trusted by teams at [X] and [Y] to fix cold email drop-off.")
 
-Format with line breaks between sections. Sound like a smart peer, not a salesman. Keep it human, not robotic.
+Format with line breaks between sections. Sound emotionally sharp and conversational - like Sheri's authentic voice, not polished marketing copy.
 
 FOR NURTURE/WARM EMAILS (up to 150 words):
 - Can be longer and more intimate
