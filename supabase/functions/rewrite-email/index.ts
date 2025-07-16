@@ -73,13 +73,13 @@ CRITICAL VOICE FOR COLD EMAILS:
 
 4. Root Cause Reveal: Challenge what they think is broken—name what actually is. Use short, punchy sentences for emotional impact (e.g. "It's not the leads. It's not the volume. It's how the message lands.")
 
-5. Bridge to Offer: Introduce tool/offer as natural next step (e.g. "So we built a system to pinpoint exactly where your outreach slips — and fix it fast.")
+5. Bridge to Offer: Introduce tool/offer as natural next step, especially for people already in motion (e.g. "We built this for founders who are already in motion — but still buried in tasks that shouldn't need them." or "So we built a system to pinpoint exactly where your outreach slips — and fix it fast.")
 
 6. Benefit Snapshot: Show 1 result they can expect—fast and emotionally compelling (e.g. "Start with one email. See what shifts in 10 minutes.")
 
 7. Micro CTA: Invite curiosity-driven action that creates intrigue (e.g. "Want to see how it shifts?", "Want to try it?", "Start with the one email you can't seem to send.")
 
-8. P.S. Line (optional): Add funnel-aware, use-case specific proof (e.g. "Most teams use this first to revive stuck demos or post-webinar leads." or "One founder landed 19 qualified calls last month — just by uploading a CSV.")
+8. P.S. Line (optional): Add insight-based proof with specific time/value savings (e.g. "Most teams use this to free up 6–10 hours/week in under 30 days." or "One founder landed 19 qualified calls last month — just by uploading a CSV.")
 
 Format with line breaks between sections. Sound emotionally sharp and conversational - like Sheri's authentic voice, not polished marketing copy.
 
