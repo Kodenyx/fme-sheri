@@ -142,7 +142,18 @@ Use the format below. Match the sender's casual tone. Prioritize natural phrasin
 3. Root Cause Reframe
    • Normalize the delay. Position it as timing, not rejection.
    • Examples:
-     • "It wasn't a no—just not now."
+     • "You didn't say no — life just had other plans."
+     • "Not a no — just a pause."
+     • "This might've slipped through the cracks. Happens to all of us."
+     • "Looked like interest… then timing got in the way."
+     • "You were close — then it went quiet. Just checking in."
+     • "You clicked. You paused. That usually means it's still on your mind."
+     • "Still curious? Felt like we weren't far off."
+     • "It didn't feel like a no — more like a 'not yet.'"
+     • "You leaned in — then life happened. Let's pick up where we left off?"
+     • "No pressure — just a quick pulse check in case this still matters."
+     • "You ghosted us a little… but we get it. We still here."
+     • "Feels like we had momentum. Want to hit resume?"
      • "Sometimes the right message shows up at the wrong time."
 
 4. Bridge to Offer
