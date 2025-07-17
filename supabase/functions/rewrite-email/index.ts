@@ -375,7 +375,7 @@ Subject: Still need help with [specific area]?
 
 Just picking the thread back up…
 
-It wasn't a no—just not now. Sometimes it's the right offer at the wrong time.
+You leaned in — then life happened. Sometimes it's the right offer at the wrong time.
 
 This might help pick the thread back up—without starting from scratch. Takes 3 minutes to try.
 
