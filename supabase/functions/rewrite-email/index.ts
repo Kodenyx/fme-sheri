@@ -120,6 +120,26 @@ CRITICAL VOICE FOR RE-ENGAGEMENT:
 - Don't overexplain. Assume the reader remembers us
 - Feel like a natural, helpful follow-up — not a reset or re-pitch
 
+⚠️ Avoid Repetitive Language:
+Do NOT default to phrases like:
+- "It wasn't a no — just not now."
+- "Right tool, wrong time."
+- "Pick the thread back up."
+
+These may appear in example emails but should be rewritten in fresh, human, situation-specific language.
+
+✅ Re-Engagement Tactics to Use:
+Try using one of these optional, more emotionally resonant re-entry patterns:
+- "Are you still interested in [their specific goal]?"
+- "Since we last talked, here's what's changed…"
+- "You were almost there. Want to see what you missed?"
+- "Still curious about [specific topic]?"
+
+These reflect Dean Jackson's "9-word email" tactic and should feel like you're meeting the person where they left off — without making them feel guilty or re-pitched.
+
+✅ Optional P.S. Line Guidance:
+If using a P.S., tie it to a specific funnel moment (e.g. post-demo, webinar, trial drop-off) and make sure it feels relevant — not generic.
+
 SHERI RE-ENGAGEMENT STRUCTURE:
 
 Use the format below. Match the sender's casual tone. Prioritize natural phrasing, soft urgency, and emotional sharpness.
