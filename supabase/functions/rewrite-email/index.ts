@@ -110,56 +110,96 @@ FOR PROMOTIONAL EMAILS (80-120 words):
 - Focus on what they'll discover/learn, not just attendance
 - Make the offer feel exclusive and time-sensitive
 
-FOR RE-ENGAGEMENT EMAILS (💬 RE-ENGAGEMENT PROMPT INSTRUCTION):
+FOR RE-ENGAGEMENT EMAILS (🔧 REFINED LOVABLE RE-ENGAGEMENT TRAINING PROMPT):
 
-You are writing a re-engagement email.
-The recipient showed interest before — clicked, replied, or almost moved forward — but paused or went quiet. Your job is to restart the conversation without pressure. You're not selling. You're re-inviting. Subtle, sharp, and helpful.
+Your Task:
+You're writing a re-engagement email. The contact previously showed interest, but paused or went silent. Your goal is to re-spark attention, reduce friction to re-entry, and reconnect to their original motivation — without sounding salesy or scripted.
 
-🎯 Your Goal:
-• Re-spark curiosity
-• Normalize the pause
-• Offer a low-friction way back in
-• Reflect the sender's natural voice (like a sharp peer, not a salesperson)
+Voice Guidelines:
+• Match the sender's original tone: casual, sharp, emotionally intelligent.
+• Short, punchy sentences. Broken for rhythm.
+• Write like a peer. Never polished or robotic.
+• Avoid "marketing" phrases — talk like a real human picking up a thread.
 
-📚 Use This Framework Internally:
-1. Subject Line – spark curiosity or softly mirror the situation
-   Examples: "Still curious about [goal]?" | "This might be better timing"
-2. Intro Line (Signal Mirror) – assume familiarity, no re-intro
-   Examples: "You leaned in — then life happened." | "We were nearly there…"
-3. Root Cause Reframe – the pause wasn't disinterest, just timing
-   Examples: "It wasn't a no—just not now."
-4. Bridge to Solution – remind them what's changed or relevant now
-   Examples: "Since then, we've helped other teams unlock [benefit]…"
-5. Benefit Snapshot – outcome, speed, ease
-   Examples: "Takes 3 minutes to see the shift." | "No overhaul. Just traction."
-6. Micro CTA – low-commitment ask
-   Examples: "Want to take a peek?" | "Reply 'ready' and I'll send it over."
-7. P.S. (Optional) – reference how others use this after silence
-   Examples: "Used after paused demos or stalled projects."
+Framework to Follow (Label Internally, No Need to Display):
+1. Subject Line:
+• Use soft urgency or curiosity.
+• Echo a goal or timing cue.
+• Examples:
+• "Still curious about [their goal]?"
+• "This might be better timing."
+• "Almost said yes…"
 
-🗣 Voice & Tone:
-• Keep it casual, sharp, and real
-• No filler, no hype, no re-intros
-• Use short paragraphs (1–3 sentences max)
-• Never assume they're not interested
-• Be helpful, not salesy
-• Think: high-trust nudge, not a pitch
+2. Intro Line (Signal Mirror):
+• Assume familiarity — no reintros.
+• Acknowledge pause without blame.
+• Examples:
+• "You leaned in — then life happened."
+• "We were almost there… then inbox chaos."
 
-🚫 DO NOT:
-• Re-introduce yourself
-• Start with "I wanted to follow up…"
-• Write long paragraphs
-• Sound formal, robotic, or overly polished
-• Use urgency or pressure tactics
+3. Root Cause Reframe:
+• Normalize the delay as timing mismatch, not disinterest.
+• Shift the frame from "you ghosted" → "wrong moment."
+• Examples:
+• "It wasn't a no — just not now."
+• "The right message sometimes shows up at the wrong time."
 
-✨ Example Email Target:
+4. Bridge to Solution:
+• Reference what's changed or why this moment matters now.
+• Tie back to their original interest.
+• Examples:
+• "We've refined the workflow since we spoke."
+• "Built for busy teams who want the win — not the work."
+
+5. Benefit Snapshot (Tangible Outcome):
+• Clear, fast, low-effort win.
+• Avoid generic claims — make it feel real and useful.
+• Examples:
+• "Takes 3 minutes to try."
+• "Unlocks clarity in one click."
+• "No overhaul. Just traction."
+
+6. Micro CTA (Low-Friction Ask):
+• Don't push the sale. Invite curiosity.
+• Reply-based, or simple link.
+• Examples:
+• "Want to see if it fits now?"
+• "Reply 'ready' and I'll send it over."
+• "Here if you want to pick the thread back up."
+
+7. P.S. (Optional, but Strong If Used):
+• Add a moment-specific reactivation cue.
+• Social proof or use case works well here.
+• Examples:
+• "Often used by teams after quiet demos or stalled projects."
+• "Most founders use this after their calendar starts to slip again."
+
+DO NOT:
+🚫 Overhype the tool
+🚫 Add re-introductions
+🚫 Use "just checking in" or filler
+🚫 Assume disinterest
+🚫 Use long blocks of text
+🚫 Make it feel like marketing copy
+
+Optional Enhancers:
+(Only use when it fits the moment)
+• "Since you've been gone…" update (what they missed)
+• "Still trying to [their original goal]?" question (Dean Jackson 9-word style)
+• Personalized goal callback ("Back then, you were trying to [goal]… still true?")
+
+✨ Example Output Target (Your North Star):
 
 Subject: Still curious about AI for your ops?
 
 Hey [First Name],
+
 You leaned in — then life happened. Happens to the best of us.
+
 We've quietly helped 4 teams unlock 10+ hours/week since we last talked — just by simplifying one workflow.
+
 No overhaul. No friction. Just traction.
+
 Want to see what that might look like for you?
 
 P.S. Most teams use this right after stalled projects — to reset momentum without starting over.
@@ -211,14 +251,14 @@ PROMOTIONAL (80-120 words):
 4. Value Proposition: What they'll discover/learn specifically
 5. CTA: Confident, action-oriented with urgency
 
-RE-ENGAGEMENT (New Framework):
-1. Subject Line: Spark curiosity or softly mirror the situation
-2. Intro Line: Assume familiarity, no re-intro
-3. Root Cause Reframe: The pause wasn't disinterest, just timing
-4. Bridge to Solution: Remind them what's changed or relevant now
-5. Benefit Snapshot: Outcome, speed, ease
-6. Micro CTA: Low-commitment ask
-7. P.S. (optional): Reference how others use this after silence
+RE-ENGAGEMENT (Refined Framework):
+1. Subject Line: Soft urgency or curiosity that echoes a goal or timing cue
+2. Intro Line: Assume familiarity, acknowledge pause without blame
+3. Root Cause Reframe: Normalize delay as timing mismatch, not disinterest
+4. Bridge to Solution: Reference what's changed or why this moment matters now
+5. Benefit Snapshot: Clear, fast, low-effort win
+6. Micro CTA: Low-friction ask that invites curiosity
+7. P.S. (optional): Moment-specific reactivation cue
 
 POWER PHRASES BY EMAIL TYPE:
 
@@ -248,15 +288,19 @@ PROMOTIONAL:
 - "Reserve your spot before we're full →"
 - "Last chance to catch this live →"
 
-RE-ENGAGEMENT:
-- "Still curious about [goal]?"
+RE-ENGAGEMENT (Refined):
+- "Still curious about [their goal]?"
+- "This might be better timing."
+- "Almost said yes…"
 - "You leaned in — then life happened."
-- "We were nearly there…"
-- "It wasn't a no—just not now."
-- "Since then, we've helped other teams unlock [benefit]…"
-- "Takes 3 minutes to see the shift."
-- "Want to take a peek?"
+- "We were almost there… then inbox chaos."
+- "It wasn't a no — just not now."
+- "The right message sometimes shows up at the wrong time."
+- "We've refined the workflow since we spoke."
+- "Takes 3 minutes to try."
+- "Want to see if it fits now?"
 - "Reply 'ready' and I'll send it over."
+- "Here if you want to pick the thread back up."
 
 WARM/NURTURE:
 - "Ever feel like you've done everything right — but the numbers still don't move?"
@@ -330,7 +374,7 @@ See the gap in your strategy → [Register link]
 
 – Sheri"
 
-RE-ENGAGEMENT (New Framework):
+RE-ENGAGEMENT (Refined Framework):
 Subject: Still curious about AI for your ops?
 
 "Hey [First Name],
