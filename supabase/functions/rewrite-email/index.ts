@@ -1,3 +1,4 @@
+
 import "https://deno.land/x/xhr@0.1.0/mod.ts";
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 
@@ -89,113 +90,48 @@ FOR NURTURE/WARM EMAILS (up to 150 words):
 - Can use stronger behavioral triggers and emotional friction
 - Can be more direct with insights and recommendations
 
-FOR CONVERSION EMAILS (100-120 words) - SEGMENT-AWARE FRAMEWORK:
+FOR CONVERSION RE-ENGAGEMENT EMAILS (100-120 words) - ENHANCED STRUCTURE:
 
-STEP 1: IDENTIFY USER BEHAVIOR SEGMENT
-First, analyze the original email content to determine which segment the user belongs to:
+🛠️ ENHANCED CONVERSION RE-ENGAGEMENT FRAMEWORK:
 
-1. DORMANT: No recent activity, long silence, initial interest but went cold
-2. RECENTLY ACTIVE BUT PAUSED: Engaged recently (opened, clicked, downloaded) but stopped
-3. MID-EVALUATION: Actively comparing, researching, asking questions, in decision process
-4. POST-DEMO WITH NO FOLLOW-UP: Attended demo/call/presentation but didn't respond
+When writing conversion re-engagement emails, follow this enhanced structure:
 
-STEP 2: APPLY SEGMENT-SPECIFIC BEHAVIORAL STRATEGY
+1. **Signal Mirror**: Reflect the user's past action (clicked, demoed, paused, explored once but didn't continue).
+   - "You clicked through the whole demo — then closed the tab."
+   - "You asked great questions on the call — then silence. I get it."
+   - "You downloaded it twice — but something held you back."
 
-DORMANT → Apply: Curiosity, Fresh Start Effect, Autonomy Bias
-- Create information gaps about what they've missed
-- Position as new beginning/reset opportunity
-- Frame as their choice to re-engage
-- Example triggers: "Since you've been gone...", "This might be better timing"
+2. **Internal Friction**: Acknowledge why they likely didn't move forward — timing, overwhelm, unclear fit, etc.
+   - "I get it — another system feels like the last thing you need right now."
+   - "You're probably thinking: 'Not sure this fits our exact situation.'"
+   - "The timing felt off. Too much on your plate already."
 
-RECENTLY ACTIVE BUT PAUSED → Apply: Loss Aversion, Commitment/Consistency, Cognitive Fluency
-- Highlight what they lose by not acting on recent interest
-- Reference their recent actions to create consistency pressure
-- Make next step feel simple and obvious
-- Example triggers: "You were 90% there", "After opening it twice..."
+3. **System Snapshot**: Present the offer or feature update as a clear fix for that hesitation (mention specific changes, not general "new features").
+   - "This actually eliminates systems. One dashboard replaces the 3 tools most teams juggle."
+   - "We've streamlined the setup — takes 10 minutes now, not hours."
+   - "Built specifically for teams who want results without the setup overhead."
 
-MID-EVALUATION → Apply: Social Proof, Authority, Exclusivity
-- Show what similar companies/teams are doing
-- Demonstrate expertise and credibility
-- Create sense of exclusive access or timing
-- Example triggers: "Teams like yours using this...", "The 47 companies we work with..."
+4. **Trust Builder**: Add social proof or outcome (e.g., "teams like yours now save 10+ hours/week").
+   - "The 47 teams using this cut their weekly reporting time by 60%."
+   - "Teams like yours now save 10+ hours/week without changing anything else."
+   - "Most teams see the shift in the first week — zero learning curve."
 
-POST-DEMO WITH NO FOLLOW-UP → Apply: Reciprocity, Salience, Emotion
-- Reference value already provided in demo
-- Make benefits more concrete and tangible
-- Address emotional hesitation or concerns
-- Example triggers: "After our conversation...", "You asked great questions..."
+5. **Low-Friction CTA**: Use a clear but gentle prompt to take the next step ("Want to see how it fits now?").
+   - "Want to see how it fits now?"
+   - "Ready to see what this looks like for your specific setup?"
+   - "Want the 3-minute walkthrough that shows exactly how?"
 
-STEP 3: CONVERSION EMAIL STRUCTURE
+6. **P.S. (Optional)**: Use to reinforce momentum or reset tone. Ex: "This version often clicks after a false start."
+   - "This version often clicks after a false start."
+   - "Most teams use this right after stalled projects — to reset momentum."
+   - "Often the second look is when it clicks."
 
-1. **Signal Mirror (Segment-Aware)**: Instead of generic "You leaned in — then life happened," dynamically reflect the real pause based on segment:
-   - DORMANT: "You were curious about [specific topic] — then went quiet. I get it."
-   - RECENTLY ACTIVE: "You opened the report twice — but something held you back."
-   - MID-EVALUATION: "You've been researching [solution type] for weeks now."
-   - POST-DEMO: "You asked great questions on the call — then silence. I get it."
-
-2. **Address Internal Friction (Segment-Specific)**: Acknowledge the real mental blockers for each segment:
-   - DORMANT: "Wrong timing before. Maybe this makes sense now."
-   - RECENTLY ACTIVE: "You're probably thinking: 'Another system to learn?'"
-   - MID-EVALUATION: "I know you're getting pitched by everyone right now."
-   - POST-DEMO: "You're weighing if this actually fits your specific situation."
-
-3. **System Snapshot**: Introduce system/offer as solving the exact blocker with segment-appropriate specificity
-   - DORMANT: Position as simplified, low-effort solution
-   - RECENTLY ACTIVE: Emphasize no additional complexity
-   - MID-EVALUATION: Compare directly to alternatives they're considering
-   - POST-DEMO: Reference specific demo points and address their questions
-
-4. **Trust Builder (Segment-Relevant)**: Include proof that resonates with their specific situation
-   - DORMANT: "Most teams start here after quiet periods"
-   - RECENTLY ACTIVE: "The 73% of teams who act on early interest see results in week 1"
-   - MID-EVALUATION: "Beats [competitor] on [specific metric they care about]"
-   - POST-DEMO: "Like [similar company from demo], they saw [specific outcome]"
-
-5. **Low-Friction CTA (Enhanced Specificity)**: Replace generic CTAs with segment-aware, curiosity-driven actions:
-
-NEVER USE GENERIC CTAs LIKE:
-- "Want to see what that might look like?"
-- "Interested in learning more?"
-- "Ready to get started?"
-
-INSTEAD USE ENHANCED CTAs THAT CREATE SPECIFIC CURIOSITY:
-- "Want me to show you where your ops are leaking time?"
-- "Curious which workflow your team could offload first?"
-- "Want to peek at how your setup compares to similar teams?"
-- "Ready to see what changed since we last talked?"
-- "Want the breakdown of what teams like yours are doing differently?"
-- "Curious about the 3 signals your current system is missing?"
-- "Want to see which automation would save you the most hours?"
-- "Ready to spot the gap in your current approach?"
-
-CTA ENHANCEMENT RULES:
-- Make it diagnostic ("show you where...")
-- Create comparison curiosity ("how your setup compares...")
-- Offer insider knowledge ("what teams like yours...")
-- Promise specific revelation ("the 3 signals...")
-- Frame as personalized insight ("which workflow your team...")
-
-BEHAVIORAL SCIENCE PRINCIPLES TO DEPLOY BY SEGMENT:
-- Information Gap: Create curiosity about what they're missing
-- Loss Aversion: What they lose by waiting/not acting
-- Social Proof: "Teams like yours using this..."
-- Reciprocity: Offer value before asking
-- Autonomy Bias: Frame as their choice/control
-- Cognitive Fluency: Make decision feel simple and clear
-- Fresh Start Effect: Position as new beginning/reset
-- Commitment/Consistency: Align with their stated goals
-- Authority: Demonstrate expertise relevant to their situation
-- Exclusivity: Limited access or insider information
-- Salience: Make benefits concrete and tangible
-- Emotion: Address fears, aspirations, frustrations
-
-Voice Requirements:
-- Emotionally grounded, not inflated
-- Reflective of real B2B decision tension
-- Feels like a thoughtful peer or mentor
-- Acknowledge the pause without judgment
-- Address real business pressure points
-- Segment-appropriate intimacy level
+**Behavioral Science Principles to Prioritize:**
+- **Signal Matching**: Mirror their exact past behavior accurately
+- **Loss Aversion**: Highlight missed opportunity without pressure
+- **Autonomy Bias**: Frame as "your call" and their choice
+- **Social Proof**: "Teams like yours..." with specific outcomes
+- **Fresh Start Effect**: Position as a reset opportunity
 
 FOR PROMOTIONAL EMAILS (80-120 words):
 - Must include event specificity: exact timing, format, limited seats/availability
@@ -333,12 +269,13 @@ NURTURE/WARM (up to 150 words):
 4. Behavioral Insight: Specific example with concrete metrics
 5. CTA: Confident, autonomous action
 
-CONVERSION (100-120 words) - UPDATED:
-1. Signal Mirror: Reflect back specific user actions (clicked, paused, downloaded, attended but didn't act)
-2. Address Internal Friction: Acknowledge real B2B mental blockers ("too busy," "not sure if right fit," "need to think it over")
-3. System Snapshot: Introduce system/offer as solving this exact blocker with specificity
-4. Trust Builder: Include quick proof or social norm that removes doubt
-5. Low-Friction CTA: Make action feel easy, relevant, and fast with clear next step
+CONVERSION RE-ENGAGEMENT (100-120 words):
+1. Signal Mirror: Reflect user's past action (clicked, demoed, paused, explored once but didn't continue)
+2. Internal Friction: Acknowledge why they likely didn't move forward — timing, overwhelm, unclear fit, etc.
+3. System Snapshot: Present offer/feature update as clear fix for that hesitation (mention specific changes, not general "new features")
+4. Trust Builder: Add social proof or outcome ("teams like yours now save 10+ hours/week")
+5. Low-Friction CTA: Clear but gentle prompt to take next step ("Want to see how it fits now?")
+6. P.S. (Optional): Reinforce momentum or reset tone ("This version often clicks after a false start")
 
 PROMOTIONAL (80-120 words):
 1. Subject: Event-specific with timing pressure
@@ -366,36 +303,41 @@ COLD OUTREACH (Signal-Aware):
 - Benefit Snapshots: "Try it on 1 message. See the clarity in 3 minutes.", "Start with your most stuck message."
 - Micro CTAs: "Start with your toughest email →", "Try it here", "Open to taking a quick look?"
 
-CONVERSION (UPDATED):
+CONVERSION RE-ENGAGEMENT (Enhanced):
 Signal Mirror:
-- "You clicked. You read through the whole thing. Then closed the tab."
-- "You downloaded it. Started reading. Then got pulled into a meeting."
-- "You attended the demo. Asked great questions. Then went quiet."
-- "You were 90% there. Then something shifted."
+- "You clicked through the whole demo — then closed the tab."
+- "You asked great questions on the call — then silence. I get it."
+- "You downloaded it twice — but something held you back."
+- "You explored the features — then paused. Totally get it."
 
 Internal Friction:
 - "I get it — another system feels like the last thing you need right now."
 - "You're probably thinking: 'Not sure this fits our exact situation.'"
-- "The timing feels off. There's too much on your plate already."
-- "You need to think it over. Run it by the team. I get it."
+- "The timing felt off. Too much on your plate already."
+- "You needed to think it over. Run it by the team. Makes sense."
 
 System Snapshot:
 - "This actually eliminates systems. One dashboard replaces the 3 tools most teams juggle."
-- "Built specifically for [their situation] — no configuration needed."
-- "Takes 10 minutes to implement. Zero disruption to current workflow."
-- "Designed for teams who want results without the setup overhead."
+- "We've streamlined the setup — takes 10 minutes now, not hours."
+- "Built specifically for teams who want results without the setup overhead."
+- "No configuration needed. Works with your existing workflow."
 
 Trust Builder:
 - "The 47 teams using this cut their weekly reporting time by 60%."
-- "Most teams see the shift in the first week — without changing anything else."
+- "Teams like yours now save 10+ hours/week without changing anything else."
+- "Most teams see the shift in the first week — zero learning curve."
 - "Used by teams at [similar companies] to solve exactly this problem."
-- "No learning curve. Teams are productive from day one."
 
 Low-Friction CTA:
-- "Want to see the 3-minute walkthrough that shows exactly how?"
+- "Want to see how it fits now?"
 - "Ready to see what this looks like for your specific setup?"
-- "Take a quick look — decide in 5 minutes if this fits."
-- "Here's the demo that answers your exact question →"
+- "Want the 3-minute walkthrough that shows exactly how?"
+- "Curious to see what changed since we last talked?"
+
+P.S. Options:
+- "This version often clicks after a false start."
+- "Most teams use this right after stalled projects — to reset momentum."
+- "Often the second look is when it clicks."
 
 PROMOTIONAL:
 - "This Thursday, I'm breaking down..."
@@ -462,22 +404,24 @@ P.S. Trusted by teams at HubSpot and Salesforce to fix cold email drop-off.
 
 – Sheri"
 
-CONVERSION (UPDATED - 108 words):
+CONVERSION RE-ENGAGEMENT (Enhanced - 108 words):
 Subject: You were 90% there
 
 "Hey [First Name],
 
-You clicked. You read through the whole thing. Then closed the tab.
+You clicked through the whole demo — then closed the tab.
 
 I get it — another system feels like the last thing you need right now.
 
 This actually eliminates systems. One dashboard replaces the 3 tools most teams juggle.
 
-The 47 teams using this cut their weekly reporting time by 60%. No learning curve. Teams are productive from day one.
+The 47 teams using this cut their weekly reporting time by 60%. Zero learning curve. Teams are productive from day one.
 
-Want to see the 3-minute walkthrough that shows exactly how?
+Want to see how it fits now?
 
 Ready to see what this looks like for your specific setup? → [Link]
+
+P.S. This version often clicks after a false start.
 
 – Sheri"
 
@@ -514,14 +458,12 @@ P.S. Most teams use this right after stalled projects — to reset momentum with
 — Sheri"
 
 TRANSFORMATION APPROACH:
-1. IDENTIFY EMAIL TYPE: Determine if cold outreach, nurture/warm, conversion, promotional, or re-engagement
-2. FOR CONVERSION EMAILS: Apply segment-aware behavioral strategy by first identifying user behavior segment (Dormant, Recently Active, Mid-Evaluation, Post-Demo)
-3. Apply appropriate word count limits and structural rules with segment-specific behavioral triggers
-4. Use enhanced CTAs that create specific curiosity rather than generic interest
-5. Apply dynamic signal mirroring that reflects real pause reasons instead of generic language
-6. Always offer value BEFORE any ask
-7. End with segment-appropriate CTA for the email type
-8. Make every word emotionally resonant and behaviorally precise
+1. IDENTIFY EMAIL TYPE: Determine if cold outreach, nurture/warm, conversion re-engagement, promotional, or re-engagement
+2. Apply appropriate word count limits and structural rules
+3. Use enhanced behavioral triggers and specific power phrases for each type
+4. Always offer value BEFORE any ask
+5. End with appropriate CTA for the email type
+6. Make every word emotionally resonant and behaviorally precise
 
 Return ONLY this structure in your response:
 {
