@@ -1,3 +1,4 @@
+
 import "https://deno.land/x/xhr@0.1.0/mod.ts";
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 
@@ -89,17 +90,38 @@ FOR NURTURE/WARM EMAILS (up to 150 words):
 - Can use stronger behavioral triggers and emotional friction
 - Can be more direct with insights and recommendations
 
-FOR CONVERSION EMAILS (100-120 words):
-- Reinforce a clear, final decision point ("Book the call," "Start now," etc.)
-- Use behavioral triggers like Ovsiankina Effect: "You were nearly there. And then — the tab stayed open"
-- Apply identity-based framing: "You're not the kind of founder who backs down here"
-- Anchor in unfinished momentum and emotional friction
-- Avoid vague category copy like "This isn't just another program" - show specific transformation
-- Use confident, autonomous CTAs: "If you're ready, here's the next move" / "If you're ready to finish what you started"
-- Focus on turning momentum into results, not returning to earlier steps
-- Acknowledge the groundwork already laid: "You've laid the groundwork. You've stayed in the conversation."
-- Position next step as the one that matters: "Now the next move is the one that turns momentum into results"
-- Emphasize clarity and autonomy in CTAs, not urgency or pressure
+FOR CONVERSION EMAILS (100-120 words) - UPDATED FRAMEWORK:
+
+Structure:
+1. Signal Mirror: Reflect back specific user actions (clicked, paused, downloaded, attended but didn't act)
+2. Address Internal Friction: Acknowledge real B2B mental blockers ("too busy," "not sure if right fit," "need to think it over," "waiting for perfect timing")
+3. System Snapshot: Introduce the system/offer as solving this exact blocker with specificity
+4. Trust Builder: Include quick proof or social norm that removes doubt
+5. Low-Friction CTA: Make the action feel easy, relevant, and fast with clear next step
+
+Behavioral Science Principles to Deploy:
+- Information Gap: Create curiosity about what they're missing
+- Loss Aversion: What they lose by waiting/not acting
+- Social Proof: "Teams like yours using this..."
+- Reciprocity: Offer value before asking
+- Autonomy Bias: Frame as their choice/control
+- Cognitive Fluency: Make decision feel simple and clear
+- Fresh Start Effect: Position as new beginning/reset
+- Commitment/Consistency: Align with their stated goals
+
+Voice Requirements:
+- Emotionally grounded, not inflated
+- Reflective of real B2B decision tension
+- Feels like a thoughtful peer or mentor
+- Acknowledge the pause without judgment
+- Address real business pressure points
+
+Examples:
+Signal Mirror: "You clicked. You read through the whole thing. Then closed the tab."
+Internal Friction: "I get it — another system feels like the last thing you need right now."
+System Snapshot: "This actually eliminates systems. One dashboard replaces the 3 tools most teams juggle."
+Trust Builder: "The 47 teams using this cut their weekly reporting time by 60%."
+Low-Friction CTA: "Want to see the 3-minute walkthrough that shows exactly how?"
 
 FOR PROMOTIONAL EMAILS (80-120 words):
 - Must include event specificity: exact timing, format, limited seats/availability
@@ -237,12 +259,12 @@ NURTURE/WARM (up to 150 words):
 4. Behavioral Insight: Specific example with concrete metrics
 5. CTA: Confident, autonomous action
 
-CONVERSION (100-120 words):
-1. Subject: Behavioral trigger with momentum language
-2. Hook: Behavioral trigger (Ovsiankina/Zeigarnik) + emotional observation
-3. Identity/Momentum Frame: Identity-based framing or unfinished momentum
-4. Specific Transformation: Show actual result/transformation, not vague category copy
-5. CTA: Autonomous, clarity-focused with conditional framing
+CONVERSION (100-120 words) - UPDATED:
+1. Signal Mirror: Reflect back specific user actions (clicked, paused, downloaded, attended but didn't act)
+2. Address Internal Friction: Acknowledge real B2B mental blockers ("too busy," "not sure if right fit," "need to think it over")
+3. System Snapshot: Introduce system/offer as solving this exact blocker with specificity
+4. Trust Builder: Include quick proof or social norm that removes doubt
+5. Low-Friction CTA: Make action feel easy, relevant, and fast with clear next step
 
 PROMOTIONAL (80-120 words):
 1. Subject: Event-specific with timing pressure
@@ -270,14 +292,36 @@ COLD OUTREACH (Signal-Aware):
 - Benefit Snapshots: "Try it on 1 message. See the clarity in 3 minutes.", "Start with your most stuck message."
 - Micro CTAs: "Start with your toughest email →", "Try it here", "Open to taking a quick look?"
 
-CONVERSION:
-- "You were nearly there. And then — the tab stayed open"
-- "You're not the kind of founder who backs down here"
-- "This is the bridge — from stuck strategy to messaging that converts"
-- "You've got the draft. This is the version that lands"
-- "If you're ready to finish what you started"
-- "If you're ready, here's the next move"
-- "This might be your final nudge"
+CONVERSION (UPDATED):
+Signal Mirror:
+- "You clicked. You read through the whole thing. Then closed the tab."
+- "You downloaded it. Started reading. Then got pulled into a meeting."
+- "You attended the demo. Asked great questions. Then went quiet."
+- "You were 90% there. Then something shifted."
+
+Internal Friction:
+- "I get it — another system feels like the last thing you need right now."
+- "You're probably thinking: 'Not sure this fits our exact situation.'"
+- "The timing feels off. There's too much on your plate already."
+- "You need to think it over. Run it by the team. I get it."
+
+System Snapshot:
+- "This actually eliminates systems. One dashboard replaces the 3 tools most teams juggle."
+- "Built specifically for [their situation] — no configuration needed."
+- "Takes 10 minutes to implement. Zero disruption to current workflow."
+- "Designed for teams who want results without the setup overhead."
+
+Trust Builder:
+- "The 47 teams using this cut their weekly reporting time by 60%."
+- "Most teams see the shift in the first week — without changing anything else."
+- "Used by teams at [similar companies] to solve exactly this problem."
+- "No learning curve. Teams are productive from day one."
+
+Low-Friction CTA:
+- "Want to see the 3-minute walkthrough that shows exactly how?"
+- "Ready to see what this looks like for your specific setup?"
+- "Take a quick look — decide in 5 minutes if this fits."
+- "Here's the demo that answers your exact question →"
 
 PROMOTIONAL:
 - "This Thursday, I'm breaking down..."
@@ -344,18 +388,22 @@ P.S. Trusted by teams at HubSpot and Salesforce to fix cold email drop-off.
 
 – Sheri"
 
-CONVERSION (86 words):
-Subject: This might be your final nudge
+CONVERSION (UPDATED - 108 words):
+Subject: You were 90% there
 
 "Hey [First Name],
 
-You were nearly there. And then — the tab stayed open, the day moved on.
+You clicked. You read through the whole thing. Then closed the tab.
 
-No guilt. But here's what I don't want: for you to miss a shot at clarity, just because timing slipped.
+I get it — another system feels like the last thing you need right now.
 
-This program is the bridge — from stuck strategy to messaging that converts. You've got the draft. This is the version that lands.
+This actually eliminates systems. One dashboard replaces the 3 tools most teams juggle.
 
-If you're ready to finish what you started → [Link]
+The 47 teams using this cut their weekly reporting time by 60%. No learning curve. Teams are productive from day one.
+
+Want to see the 3-minute walkthrough that shows exactly how?
+
+Ready to see what this looks like for your specific setup? → [Link]
 
 – Sheri"
 
