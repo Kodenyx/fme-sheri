@@ -1,4 +1,3 @@
-
 import "https://deno.land/x/xhr@0.1.0/mod.ts";
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 
@@ -90,48 +89,59 @@ FOR NURTURE/WARM EMAILS (up to 150 words):
 - Can use stronger behavioral triggers and emotional friction
 - Can be more direct with insights and recommendations
 
-FOR CONVERSION RE-ENGAGEMENT EMAILS (100-120 words) - ENHANCED STRUCTURE:
+FOR CONVERSION RE-ENGAGEMENT EMAILS (60-80 words) - ENHANCED STRUCTURE:
 
 🛠️ ENHANCED CONVERSION RE-ENGAGEMENT FRAMEWORK:
 
 When writing conversion re-engagement emails, follow this enhanced structure:
 
-1. **Signal Mirror**: Reflect the user's past action (clicked, demoed, paused, explored once but didn't continue).
-   - "You clicked through the whole demo — then closed the tab."
-   - "You asked great questions on the call — then silence. I get it."
-   - "You downloaded it twice — but something held you back."
+**WORD COUNT**: Strict 60-80 words maximum for entire email body (excluding subject line)
 
-2. **Internal Friction**: Acknowledge why they likely didn't move forward — timing, overwhelm, unclear fit, etc.
-   - "I get it — another system feels like the last thing you need right now."
-   - "You're probably thinking: 'Not sure this fits our exact situation.'"
-   - "The timing felt off. Too much on your plate already."
+**SUBJECT LINE PATTERNS** (Choose one approach):
+- Problem-focused: "Still buried in busywork?" / "Still stuck on [specific pain]?"
+- Timing-based: "Better timing now?" / "This might be better timing."
+- Progress-based: "Almost there last time..." / "You were 90% there"
 
-3. **System Snapshot**: Present the offer or feature update as a clear fix for that hesitation (mention specific changes, not general "new features").
-   - "This actually eliminates systems. One dashboard replaces the 3 tools most teams juggle."
-   - "We've streamlined the setup — takes 10 minutes now, not hours."
-   - "Built specifically for teams who want results without the setup overhead."
+**EMAIL STRUCTURE** (Each section should be 1-2 sentences max):
 
-4. **Trust Builder**: Add social proof or outcome (e.g., "teams like yours now save 10+ hours/week").
-   - "The 47 teams using this cut their weekly reporting time by 60%."
-   - "Teams like yours now save 10+ hours/week without changing anything else."
-   - "Most teams see the shift in the first week — zero learning curve."
+1. **Signal Mirror + Permission**: Reflect their past action AND validate their hesitation
+   - "You explored this once — then paused. Totally fair."
+   - "You clicked through the demo — then life happened. Get it."
+   - "You were interested — then timing felt off. Makes sense."
 
-5. **Low-Friction CTA**: Use a clear but gentle prompt to take the next step ("Want to see how it fits now?").
-   - "Want to see how it fits now?"
-   - "Ready to see what this looks like for your specific setup?"
-   - "Want the 3-minute walkthrough that shows exactly how?"
+2. **System Snapshot** (Ultra-specific transformation): One sentence showing exact before → after
+   - "[Old problem] → [New specific solution with clear benefits]"
+   - "But we rebuilt it since then to solve the #1 drag: manual tasks that eat your week. Now? Prebuilt automations, clean UI, and workflows that actually stick."
+   - "We've eliminated the setup overhead since then. One click, zero configuration, immediate results."
 
-6. **P.S. (Optional)**: Use to reinforce momentum or reset tone. Ex: "This version often clicks after a false start."
-   - "This version often clicks after a false start."
-   - "Most teams use this right after stalled projects — to reset momentum."
-   - "Often the second look is when it clicks."
+3. **Concrete Social Proof**: Specific time/effort savings with "no complexity" qualifier
+   - "Teams like yours are already saving 10+ hours/month — no extra tools or training."
+   - "47 teams cut their weekly reporting by 6+ hours — zero learning curve."
+   - "Most users save 2+ hours daily without changing their existing workflow."
+
+4. **Low-Friction CTA**: Single, gentle question that assumes their autonomy
+   - "Want to see if it fits now?"
+   - "Curious how it looks for your setup?"
+   - "Ready to see what changed?"
+
+5. **P.S. (Optional)**: Reset/restart psychology with "false start" framing
+   - "Most teams use this after a false start — to regain traction without the reset."
+   - "This version often clicks after stalled projects."
+   - "Built for teams who tried once — then came back when timing improved."
 
 **Behavioral Science Principles to Prioritize:**
 - **Signal Matching**: Mirror their exact past behavior accurately
-- **Loss Aversion**: Highlight missed opportunity without pressure
+- **Loss Aversion**: Highlight missed opportunity without pressure  
 - **Autonomy Bias**: Frame as "your call" and their choice
 - **Social Proof**: "Teams like yours..." with specific outcomes
-- **Fresh Start Effect**: Position as a reset opportunity
+- **Fresh Start Effect**: Position as a reset opportunity with "false start" language
+
+**CRITICAL VOICE REQUIREMENTS FOR CONVERSION RE-ENGAGEMENT:**
+- Use assumption-based language ("You explored this once")
+- Include permission-giving validation ("Totally fair," "Get it," "Makes sense")
+- Be ultra-specific about what changed (not generic "new features")
+- Use "false start" psychological framing in P.S.
+- Keep total word count between 60-80 words
 
 FOR PROMOTIONAL EMAILS (80-120 words):
 - Must include event specificity: exact timing, format, limited seats/availability
