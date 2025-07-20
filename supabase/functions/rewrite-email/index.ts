@@ -1,4 +1,3 @@
-
 import "https://deno.land/x/xhr@0.1.0/mod.ts";
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 
@@ -90,16 +89,93 @@ FOR NURTURE/WARM EMAILS (up to 150 words):
 - Can use stronger behavioral triggers and emotional friction
 - Can be more direct with insights and recommendations
 
-FOR CONVERSION EMAILS (100-120 words) - UPDATED FRAMEWORK:
+FOR CONVERSION EMAILS (100-120 words) - SEGMENT-AWARE FRAMEWORK:
 
-Structure:
-1. Signal Mirror: Reflect back specific user actions (clicked, paused, downloaded, attended but didn't act)
-2. Address Internal Friction: Acknowledge real B2B mental blockers ("too busy," "not sure if right fit," "need to think it over," "waiting for perfect timing")
-3. System Snapshot: Introduce the system/offer as solving this exact blocker with specificity
-4. Trust Builder: Include quick proof or social norm that removes doubt
-5. Low-Friction CTA: Make the action feel easy, relevant, and fast with clear next step
+STEP 1: IDENTIFY USER BEHAVIOR SEGMENT
+First, analyze the original email content to determine which segment the user belongs to:
 
-Behavioral Science Principles to Deploy:
+1. DORMANT: No recent activity, long silence, initial interest but went cold
+2. RECENTLY ACTIVE BUT PAUSED: Engaged recently (opened, clicked, downloaded) but stopped
+3. MID-EVALUATION: Actively comparing, researching, asking questions, in decision process
+4. POST-DEMO WITH NO FOLLOW-UP: Attended demo/call/presentation but didn't respond
+
+STEP 2: APPLY SEGMENT-SPECIFIC BEHAVIORAL STRATEGY
+
+DORMANT → Apply: Curiosity, Fresh Start Effect, Autonomy Bias
+- Create information gaps about what they've missed
+- Position as new beginning/reset opportunity
+- Frame as their choice to re-engage
+- Example triggers: "Since you've been gone...", "This might be better timing"
+
+RECENTLY ACTIVE BUT PAUSED → Apply: Loss Aversion, Commitment/Consistency, Cognitive Fluency
+- Highlight what they lose by not acting on recent interest
+- Reference their recent actions to create consistency pressure
+- Make next step feel simple and obvious
+- Example triggers: "You were 90% there", "After opening it twice..."
+
+MID-EVALUATION → Apply: Social Proof, Authority, Exclusivity
+- Show what similar companies/teams are doing
+- Demonstrate expertise and credibility
+- Create sense of exclusive access or timing
+- Example triggers: "Teams like yours using this...", "The 47 companies we work with..."
+
+POST-DEMO WITH NO FOLLOW-UP → Apply: Reciprocity, Salience, Emotion
+- Reference value already provided in demo
+- Make benefits more concrete and tangible
+- Address emotional hesitation or concerns
+- Example triggers: "After our conversation...", "You asked great questions..."
+
+STEP 3: CONVERSION EMAIL STRUCTURE
+
+1. **Signal Mirror (Segment-Aware)**: Instead of generic "You leaned in — then life happened," dynamically reflect the real pause based on segment:
+   - DORMANT: "You were curious about [specific topic] — then went quiet. I get it."
+   - RECENTLY ACTIVE: "You opened the report twice — but something held you back."
+   - MID-EVALUATION: "You've been researching [solution type] for weeks now."
+   - POST-DEMO: "You asked great questions on the call — then silence. I get it."
+
+2. **Address Internal Friction (Segment-Specific)**: Acknowledge the real mental blockers for each segment:
+   - DORMANT: "Wrong timing before. Maybe this makes sense now."
+   - RECENTLY ACTIVE: "You're probably thinking: 'Another system to learn?'"
+   - MID-EVALUATION: "I know you're getting pitched by everyone right now."
+   - POST-DEMO: "You're weighing if this actually fits your specific situation."
+
+3. **System Snapshot**: Introduce system/offer as solving the exact blocker with segment-appropriate specificity
+   - DORMANT: Position as simplified, low-effort solution
+   - RECENTLY ACTIVE: Emphasize no additional complexity
+   - MID-EVALUATION: Compare directly to alternatives they're considering
+   - POST-DEMO: Reference specific demo points and address their questions
+
+4. **Trust Builder (Segment-Relevant)**: Include proof that resonates with their specific situation
+   - DORMANT: "Most teams start here after quiet periods"
+   - RECENTLY ACTIVE: "The 73% of teams who act on early interest see results in week 1"
+   - MID-EVALUATION: "Beats [competitor] on [specific metric they care about]"
+   - POST-DEMO: "Like [similar company from demo], they saw [specific outcome]"
+
+5. **Low-Friction CTA (Enhanced Specificity)**: Replace generic CTAs with segment-aware, curiosity-driven actions:
+
+NEVER USE GENERIC CTAs LIKE:
+- "Want to see what that might look like?"
+- "Interested in learning more?"
+- "Ready to get started?"
+
+INSTEAD USE ENHANCED CTAs THAT CREATE SPECIFIC CURIOSITY:
+- "Want me to show you where your ops are leaking time?"
+- "Curious which workflow your team could offload first?"
+- "Want to peek at how your setup compares to similar teams?"
+- "Ready to see what changed since we last talked?"
+- "Want the breakdown of what teams like yours are doing differently?"
+- "Curious about the 3 signals your current system is missing?"
+- "Want to see which automation would save you the most hours?"
+- "Ready to spot the gap in your current approach?"
+
+CTA ENHANCEMENT RULES:
+- Make it diagnostic ("show you where...")
+- Create comparison curiosity ("how your setup compares...")
+- Offer insider knowledge ("what teams like yours...")
+- Promise specific revelation ("the 3 signals...")
+- Frame as personalized insight ("which workflow your team...")
+
+BEHAVIORAL SCIENCE PRINCIPLES TO DEPLOY BY SEGMENT:
 - Information Gap: Create curiosity about what they're missing
 - Loss Aversion: What they lose by waiting/not acting
 - Social Proof: "Teams like yours using this..."
@@ -108,6 +184,10 @@ Behavioral Science Principles to Deploy:
 - Cognitive Fluency: Make decision feel simple and clear
 - Fresh Start Effect: Position as new beginning/reset
 - Commitment/Consistency: Align with their stated goals
+- Authority: Demonstrate expertise relevant to their situation
+- Exclusivity: Limited access or insider information
+- Salience: Make benefits concrete and tangible
+- Emotion: Address fears, aspirations, frustrations
 
 Voice Requirements:
 - Emotionally grounded, not inflated
@@ -115,13 +195,7 @@ Voice Requirements:
 - Feels like a thoughtful peer or mentor
 - Acknowledge the pause without judgment
 - Address real business pressure points
-
-Examples:
-Signal Mirror: "You clicked. You read through the whole thing. Then closed the tab."
-Internal Friction: "I get it — another system feels like the last thing you need right now."
-System Snapshot: "This actually eliminates systems. One dashboard replaces the 3 tools most teams juggle."
-Trust Builder: "The 47 teams using this cut their weekly reporting time by 60%."
-Low-Friction CTA: "Want to see the 3-minute walkthrough that shows exactly how?"
+- Segment-appropriate intimacy level
 
 FOR PROMOTIONAL EMAILS (80-120 words):
 - Must include event specificity: exact timing, format, limited seats/availability
@@ -441,11 +515,13 @@ P.S. Most teams use this right after stalled projects — to reset momentum with
 
 TRANSFORMATION APPROACH:
 1. IDENTIFY EMAIL TYPE: Determine if cold outreach, nurture/warm, conversion, promotional, or re-engagement
-2. Apply appropriate word count limits and structural rules
-3. Use email-type-specific power phrases and behavioral triggers
-4. Always offer value BEFORE any ask
-5. End with appropriate CTA for the email type
-6. Make every word emotionally resonant and behaviorally precise
+2. FOR CONVERSION EMAILS: Apply segment-aware behavioral strategy by first identifying user behavior segment (Dormant, Recently Active, Mid-Evaluation, Post-Demo)
+3. Apply appropriate word count limits and structural rules with segment-specific behavioral triggers
+4. Use enhanced CTAs that create specific curiosity rather than generic interest
+5. Apply dynamic signal mirroring that reflects real pause reasons instead of generic language
+6. Always offer value BEFORE any ask
+7. End with segment-appropriate CTA for the email type
+8. Make every word emotionally resonant and behaviorally precise
 
 Return ONLY this structure in your response:
 {
