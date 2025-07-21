@@ -1,4 +1,3 @@
-
 import "https://deno.land/x/xhr@0.1.0/mod.ts";
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 
@@ -90,21 +89,22 @@ FOR NURTURE/WARM EMAILS (up to 150 words):
 - Can use stronger behavioral triggers and emotional friction
 - Can be more direct with insights and recommendations
 
-FOR CONVERSION RE-ENGAGEMENT EMAILS (60-80 words) - REFINED HIGH-LEVEL FRAMEWORK:
-
-🔧 CONVERSION RE-ENGAGEMENT - TARGET LEVEL (9.5/10 Quality):
+FOR CONVERSION RE-ENGAGEMENT EMAILS (60-80 words) - HIGH-LEVEL FRAMEWORK:
 
 **WORD COUNT**: Strict 60-80 words maximum for entire email body (excluding subject line)
 
-**SUBJECT LINE PATTERNS** (Curiosity-driven, non-accusatory):
+**TWO PROVEN PATTERNS TO CHOOSE FROM:**
+
+**PATTERN 1: BEHAVIOR-FIRST APPROACH**
+Use when the prospect showed clear engagement signals (clicked, downloaded, demoed) but went silent:
+
+**SUBJECT LINE PATTERNS**:
 - "Curious if now's your moment?"
 - "Still feel like you're juggling too much?"
 - "This might be better timing."
 - "Curious about [specific outcome]?"
-- AVOID: "Still holding back?" or "Don't miss this opportunity" (too aggressive)
 
-**EMAIL STRUCTURE** (Ultra-refined, each section 1-2 sentences max):
-
+**EMAIL STRUCTURE**:
 1. **Enhanced Signal Mirror + Permission**: Reflect their past action WITH validating permission language
    - "You leaned in — then paused. Totally fair."
    - "You clicked through everything — then stepped back. Get it."
@@ -113,7 +113,6 @@ FOR CONVERSION RE-ENGAGEMENT EMAILS (60-80 words) - REFINED HIGH-LEVEL FRAMEWORK
 2. **Since-Then Social Proof**: Show what's happened for similar teams since they paused
    - "Since then, we've helped teams like yours unlock 8–12 hours a week"
    - "In the meantime, teams similar to yours have cut onboarding time by 40%"
-   - "Since we last talked, we've helped 4 teams free up 10+ hours/week"
 
 3. **Specific Transformation**: One concrete, believable outcome with specific method
    - "just by automating one manual workflow"
@@ -123,17 +122,44 @@ FOR CONVERSION RE-ENGAGEMENT EMAILS (60-80 words) - REFINED HIGH-LEVEL FRAMEWORK
 4. **Triple-No System Simplicity**: Use "No X. No Y. Just Z." structure to reduce friction
    - "No overhaul. No friction. Just traction."
    - "No setup. No complexity. Just results."
-   - "No training curve. No downtime. Just momentum."
 
 5. **Curiosity-Driven Personalized CTA**: Light exploration invitation
    - "Want to see what that might look like in your setup?"
    - "Curious how this might fit your current workflow?"
-   - "Want to see what this could look like for your ops?"
 
-6. **Reset Momentum P.S.**: Acknowledge their specific constraints and positioning with reset framing
+6. **Reset Momentum P.S.**: Acknowledge their constraints with reset framing
    - "Most teams use this after stalled projects — to reset momentum without starting over."
    - "Built for busy teams who want the win without the rebuild."
-   - "We see this work best after false starts — when teams are ready to reset."
+
+**PATTERN 2: SOLUTION-FOCUSED APPROACH**
+Use when the prospect was evaluating tools but hesitated due to implementation concerns or fit:
+
+**SUBJECT LINE PATTERNS**:
+- "Tired of tools that almost work?"
+- "Your stack isn't broken — but..."
+- "Still looking for the missing piece?"
+
+**EMAIL STRUCTURE**:
+1. **Friction Validation**: Mirror their current situation without judgment
+   - "Your stack isn't broken — but it's not quite doing the job."
+   - "The tools are there — but the workflow still drags."
+
+2. **Empathy-Driven Solution**: Show understanding and introduce fix
+   - "We've felt that, so we rebuilt the AI layer: dashboards that finally click, automations that actually save time."
+   - "We saw the gap, so we filled it: workflows that connect, not complicate."
+
+3. **Concrete Social Proof**: Specific, believable metrics
+   - "Teams like yours are saving 8+ hours/week — without changing platforms."
+   - "Similar setups cut manual work by 60% — no migration needed."
+
+4. **Friction-Free Benefit**: Address their main concern
+   - "without changing platforms"
+   - "no training curve"
+   - "no migration headaches"
+
+5. **Natural, Benefit-Focused CTA**: Low-pressure exploration
+   - "Want a quick peek at how?"
+   - "Curious what that looks like for your setup?"
 
 **BEHAVIORAL SCIENCE PRINCIPLES TO PRIORITIZE:**
 - **Enhanced Signal Mirror**: "You leaned in" (specific behavior match)
@@ -156,6 +182,7 @@ FOR CONVERSION RE-ENGAGEMENT EMAILS (60-80 words) - REFINED HIGH-LEVEL FRAMEWORK
 
 **ENHANCED POWER PHRASES FOR CONVERSION RE-ENGAGEMENT:**
 
+Pattern 1 (Behavior-First):
 Signal Mirror + Permission:
 - "You leaned in — then paused. Totally fair."
 - "You clicked through everything — then stepped back. Get it."
@@ -187,11 +214,66 @@ Reset Momentum P.S.:
 - "Built for busy teams who want the win without the rebuild."
 - "We see this work best after false starts — when teams are ready to reset."
 
+Pattern 2 (Solution-Focused):
+Friction Validation:
+- "Your stack isn't broken — but it's not quite doing the job."
+- "The tools are there — but the workflow still drags."
+- "Everything works — but nothing clicks together."
+
+Empathy-Driven Solution:
+- "We've felt that, so we rebuilt the AI layer: dashboards that finally click, automations that actually save time."
+- "We saw the gap, so we filled it: workflows that connect, not complicate."
+
+Concrete Social Proof:
+- "Teams like yours are saving 8+ hours/week — without changing platforms."
+- "Similar setups cut manual work by 60% — no migration needed."
+
+Friction-Free Benefit:
+- "without changing platforms"
+- "no training curve"
+- "no migration headaches"
+
+Natural, Benefit-Focused CTAs:
+- "Want a quick peek at how?"
+- "Curious what that looks like for your setup?"
+
 AVOID IN RE-ENGAGEMENT:
 🚫 Vague phrases like "elevate your operations," "unlock a window," or "the right time"
 🚫 Aggressive language like "Don't miss this opportunity" or "Still holding back?"
 🚫 Generic benefits ("improve efficiency," "boost productivity") — replace with specifics
 🚫 Accusatory subject lines that make them feel bad about pausing
+
+**EXAMPLE OUTPUTS:**
+
+Pattern 1 (Behavior-First - 67 words):
+Subject: Curious if now's your moment?
+
+Hey [First Name],
+
+You leaned in — then paused. Totally fair.
+
+Since then, we've helped teams like yours unlock 8–12 hours a week just by automating one manual workflow. No overhaul. No friction. Just traction.
+
+Want to see what that might look like in your setup?
+
+P.S. Most teams use this after stalled projects — to reset momentum without starting over.
+
+— Sheri
+
+Pattern 2 (Solution-Focused - 76 words):
+Subject: Tired of tools that almost work?
+
+Hey [First Name],
+
+Your stack isn't broken — but it's not quite doing the job.
+
+We've felt that, so we rebuilt the AI layer: dashboards that finally click, automations that actually save time.
+
+Teams like yours are saving 8+ hours/week — without changing platforms.
+
+Want a quick peek at how?
+
+– Sheri
 
 FOR PROMOTIONAL EMAILS (80-120 words):
 - Must include event specificity: exact timing, format, limited seats/availability
@@ -374,12 +456,12 @@ Since-Then Social Proof:
 
 Specific Transformation:
 - "just by automating one manual workflow"
-- "by eliminating one repetitive process"
+- "by eliminating one repetitive process"  
 - "through one smart system switch"
 
 Triple-No System Simplicity:
 - "No overhaul. No friction. Just traction."
-- "No setup. No complexity. Just results."
+- "No setup. No complexity. Just results."  
 - "No training curve. No downtime. Just momentum."
 
 Curiosity-Driven Personalized CTAs:
