@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { CheckCircle2, Sparkles, Copy } from "lucide-react";
@@ -114,8 +115,8 @@ const Tool = () => {
       await logToolUsage(emailContent, data.rewritten_email, 'ai-rewritten');
       
       toast({
-        title: "Makeover complete!",
-        description: "Your AI-enhanced email is ready using Sheri Otto's messaging philosophy.",
+        title: "Fixes applied",
+        description: "We handled the fix. You handle the final touch.",
       });
       
     } catch (error) {
@@ -194,7 +195,7 @@ const Tool = () => {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <h1 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: '#3B1E5E' }}>
-                Transform Your Email{" "}
+                Transform Your B2B Email{" "}
                 <span style={{ color: '#E19013' }}>
                   in Under 3 Seconds
                 </span>
