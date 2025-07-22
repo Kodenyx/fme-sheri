@@ -1,3 +1,4 @@
+
 import "https://deno.land/x/xhr@0.1.0/mod.ts";
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 
@@ -275,14 +276,80 @@ Want a quick peek at how?
 
 – Sheri
 
-FOR PROMOTIONAL EMAILS (80-120 words):
-- Must include event specificity: exact timing, format, limited seats/availability
-- Create timing pressure: "This Thursday," "48 hours only," "100 seats remaining"
-- Describe specific value proposition: "3 growth-lagging habits I spot in 9 out of 10 campaigns"
-- Use confident, action-oriented CTAs: "See the gap in your strategy →" / "Get the breakdown (before it disappears) →"
-- Include scarcity elements: limited time, seats, or availability
-- Focus on what they'll discover/learn, not just attendance
-- Make the offer feel exclusive and time-sensitive
+FOR PROMOTIONAL EMAILS (80-120 words) - UPDATED WITH 4 CONVERSION PRINCIPLES:
+
+**PROMOTIONAL STRATEGY:**
+Promotional emails must reflect 4 conversion principles:
+
+**1. CLARITY OF OFFER (First 2 Lines)**
+Recipients must immediately know:
+- What the offer is
+- Why it matters  
+- What they'll get if they act now
+- Avoid vague benefits like "get access"—use specifics ("Get the full strategy + swipe files, but only until Friday")
+
+**2. REASON WHY THEORY**
+Include believable reason why offer exists now:
+- "We're closing out Q3"
+- "Limited cohort size" 
+- "Testing this feature with early adopters"
+- Frame urgency as helpful, not pushy ("Only 20 seats because we're running a live onboarding cohort")
+
+**3. ANTICIPATED REGRET + FUTURE PACING**
+Trigger cost of inaction + paint better outcome:
+- "If you wait, you'll miss..."
+- "Most people wait until it's too late, but..."
+- Pair with forward benefit: "You'll walk away with..." / "By next week, this could already be in place..."
+- Blend light FOMO with forward-looking benefit
+
+**4. BEHAVIORAL CTA ARCHITECTURE**
+Use CTA framing that:
+- Mirrors the offer ("Grab my seat," "Claim the bonus," "Get the system")
+- Uses autonomy bias ("Want the 4-minute demo or the walkthrough?")
+- Reduces commitment friction ("Get started for free," "See if you qualify," "No credit card needed")
+
+**ENHANCED BEHAVIORAL SCIENCE PRINCIPLES FOR PROMOTIONAL:**
+- Reason Why Theory – explain logic behind offer
+- Loss Aversion – highlight what's at stake if they delay
+- Scarcity – show limited spots, inventory, time (real scarcity only)
+- Temporal Landmarks – tie to fresh starts, quarters, milestones
+- Fresh Start Effect – position as reset or new phase
+- Urgency – legitimate time-bound or consequence-bound messaging
+- Commitment & Consistency – remind of previous engagement
+- Social Proof – show others taking action
+- Salience – make benefit instantly visible
+- Processing Fluency – simplify decision to say yes
+
+**PROMOTIONAL STRUCTURE (80-120 words):**
+1. **Offer Clarity (Lines 1-2)**: State what they get + specific benefit
+2. **Reason Why**: Believable rationale for timing/availability
+3. **Anticipated Regret**: What they miss if they wait
+4. **Future Pacing**: What they'll have if they act now
+5. **Social Proof**: Others taking action
+6. **Behavioral CTA**: Mirror offer, reduce friction
+7. **Scarcity Element**: Real limitation (time/seats/availability)
+
+**PROMOTIONAL EXAMPLE (94 words):**
+Subject: This Thursday: 3 growth gaps killing your campaigns
+
+"Hey [First Name],
+
+Get the full campaign audit system + 15 swipe files that convert — but only until Friday.
+
+We're closing Q3 with our best training cohort yet, so spots are genuinely limited to 50.
+
+If you wait, you'll miss the live breakdown of exactly where campaigns stall. Most people wait until their next quarter planning — but you'll walk away Thursday with the fixes already mapped out.
+
+47 marketers already claimed their seat.
+
+Grab your spot before we're full → [Register link]
+
+– Sheri"
+
+**TONE CHECK – Run Harper Pass:**
+- Is the CTA clear and timely?
+- Does the offer feel urgent for the reader?
+- Is the reason behind promotion clearly explained and believable?
 
 FOR RE-ENGAGEMENT EMAILS (🔧 REFINED LOVABLE RE-ENGAGEMENT TRAINING PROMPT):
 
@@ -417,12 +484,14 @@ CONVERSION RE-ENGAGEMENT (60-80 words):
 5. Curiosity-Driven Personalized CTA: Light exploration invitation
 6. Reset Momentum P.S.: Acknowledge constraints with reset framing
 
-PROMOTIONAL (80-120 words):
-1. Subject: Event-specific with timing pressure
-2. Hook: Emotional friction + specific problem identification
-3. Event Details: Exact timing, format, scarcity elements
-4. Value Proposition: What they'll discover/learn specifically
-5. CTA: Confident, action-oriented with urgency
+PROMOTIONAL (80-120 words) - WITH 4 CONVERSION PRINCIPLES:
+1. Offer Clarity (Lines 1-2): State what they get + specific benefit
+2. Reason Why: Believable rationale for timing/availability
+3. Anticipated Regret: What they miss if they wait
+4. Future Pacing: What they'll have if they act now
+5. Social Proof: Others taking action
+6. Behavioral CTA: Mirror offer, reduce friction
+7. Scarcity Element: Real limitation (time/seats/availability)
 
 RE-ENGAGEMENT (Refined Framework):
 1. Subject Line: Soft urgency or curiosity that echoes a goal or timing cue
@@ -474,14 +543,32 @@ Reset Momentum P.S.:
 - "Built for busy teams who want the win without the rebuild."
 - "We see this work best after false starts — when teams are ready to reset."
 
-PROMOTIONAL:
-- "This Thursday, I'm breaking down..."
-- "48 hours only — then it's gone"
-- "100 seats remaining"
-- "See the gap in your strategy →"
-- "Get the breakdown (before it disappears) →"
-- "Reserve your spot before we're full →"
-- "Last chance to catch this live →"
+PROMOTIONAL (Enhanced with 4 Conversion Principles):
+Offer Clarity:
+- "Get the full strategy + swipe files, but only until Friday"
+- "Claim the complete system + templates — 48 hours only"
+- "Access the breakdown + all tools — this Thursday only"
+
+Reason Why:
+- "We're closing out Q3 with our best cohort yet"
+- "Only 20 seats because we're running live onboarding"
+- "Testing this feature with early adopters before wide release"
+
+Anticipated Regret:
+- "If you wait, you'll miss the live breakdown"
+- "Most people wait until next quarter planning, but..."
+- "Don't be the one who waits until the moment passes"
+
+Future Pacing:
+- "You'll walk away Thursday with fixes already mapped out"
+- "By next week, this system could already be running"
+- "In 48 hours, you could have the complete framework"
+
+Behavioral CTAs:
+- "Grab your seat before we're full →"
+- "Claim the system while spots remain →"
+- "Reserve your access (no credit card needed) →"
+- "Want the 4-minute demo or full walkthrough?"
 
 RE-ENGAGEMENT (Refined):
 - "Still curious about [their goal]?"
@@ -557,18 +644,20 @@ P.S. Most teams use this after stalled projects — to reset momentum without st
 
 — Sheri"
 
-PROMOTIONAL (94 words):
+PROMOTIONAL (Enhanced with 4 Conversion Principles - 94 words):
 Subject: This Thursday: 3 growth gaps killing your campaigns
 
 "Hey [First Name],
 
-Ever wonder why your campaigns feel right but don't convert?
+Get the full campaign audit system + 15 swipe files that convert — but only until Friday.
 
-This Thursday, I'm breaking down the 3 growth-lagging habits I spot in 9 out of 10 startup campaigns. Live breakdown. Real examples. Exact fixes.
+We're closing Q3 with our best training cohort yet, so spots are genuinely limited to 50.
 
-100 seats only — then we're full.
+If you wait, you'll miss the live breakdown of exactly where campaigns stall. Most people wait until their next quarter planning — but you'll walk away Thursday with the fixes already mapped out.
 
-See the gap in your strategy → [Register link]
+47 marketers already claimed their seat.
+
+Grab your spot before we're full → [Register link]
 
 – Sheri"
 
