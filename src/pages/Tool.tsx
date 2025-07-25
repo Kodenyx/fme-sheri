@@ -1,11 +1,14 @@
-
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
-import { CheckCircle2, Sparkles, Copy } from "lucide-react";
+import { CheckCircle2, Sparkles, Copy, BarChart3 } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
+import { useSearchParams } from "react-router-dom";
 import Navbar from "@/components/Navbar";
+import EmailCaptureModal from "@/components/EmailCaptureModal";
+import PaywallModal from "@/components/PaywallModal";
+import { useUsageTracking } from "@/hooks/useUsageTracking";
 
 interface RewriteResponse {
   rewritten_email: string;
@@ -19,24 +22,49 @@ const Tool = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [makeover, setMakeover] = useState("");
   const [showMakeover, setShowMakeover] = useState(false);
-  const [userEmail, setUserEmail] = useState("");
   const [analysis, setAnalysis] = useState({
     psychologicalTriggers: [] as string[],
     structureImprovements: [] as string[],
     questions: [] as string[]
   });
+  const [searchParams] = useSearchParams();
   const { toast } = useToast();
+  
+  const {
+    usageCount,
+    email,
+    isSubscribed,
+    needsEmailCapture,
+    needsPaywall,
+    loading,
+    incrementUsage,
+    setUserEmail,
+    createCheckoutSession,
+    refreshUsageData
+  } = useUsageTracking();
+
+  const [showEmailModal, setShowEmailModal] = useState(false);
+  const [showPaywallModal, setShowPaywallModal] = useState(false);
 
   useEffect(() => {
-    const storedEmail = localStorage.getItem('userEmail');
-    if (!storedEmail) {
-      window.location.href = '/offer';
-      return;
+    const subscription = searchParams.get('subscription');
+    if (subscription === 'success') {
+      toast({
+        title: "Welcome to unlimited access! 🎉",
+        description: "Your subscription is active. Enjoy unlimited email fixes!",
+      });
+      refreshUsageData();
+    } else if (subscription === 'cancelled') {
+      toast({
+        title: "Subscription cancelled",
+        description: "No worries! You can still use your remaining free uses.",
+      });
     }
-    setUserEmail(storedEmail);
-  }, []);
+  }, [searchParams, toast, refreshUsageData]);
 
   const logToolUsage = async (originalEmail: string, transformedEmail: string, emailCategory: string = 'ai-rewritten') => {
+    const userEmail = email || 'anonymous@example.com';
+    
     try {
       console.log('Logging tool usage:', { userEmail, emailCategory, originalLength: originalEmail.length });
       
@@ -67,25 +95,23 @@ const Tool = () => {
       }
     } catch (error) {
       console.error('Failed to log tool usage:', error);
-      try {
-        await supabase
-          .from('tool_usage')
-          .insert([{
-            user_id: null,
-            email_address: userEmail,
-            original_email: `[Content length: ${originalEmail.length} chars]`,
-            transformed_email: `[Content length: ${transformedEmail.length} chars]`,
-            email_category: emailCategory
-          }]);
-        console.log('Basic usage logged as fallback');
-      } catch (fallbackError) {
-        console.error('Even fallback logging failed:', fallbackError);
-      }
     }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Check access control before processing
+    if (needsEmailCapture) {
+      setShowEmailModal(true);
+      return;
+    }
+    
+    if (needsPaywall) {
+      setShowPaywallModal(true);
+      return;
+    }
+    
     setIsSubmitting(true);
 
     try {
@@ -112,6 +138,8 @@ const Tool = () => {
       });
       setShowMakeover(true);
       
+      // Increment usage count and log usage
+      await incrementUsage(email || undefined);
       await logToolUsage(emailContent, data.rewritten_email, 'ai-rewritten');
       
       toast({
@@ -175,12 +203,26 @@ const Tool = () => {
     }
   };
 
-  if (!userEmail) {
+  const handleEmailSubmit = (submittedEmail: string) => {
+    setUserEmail(submittedEmail);
+    toast({
+      title: "Email saved!",
+      description: "You can now continue using the tool.",
+    });
+  };
+
+  const handleSubscribe = () => {
+    if (email) {
+      createCheckoutSession(email);
+    }
+  };
+
+  if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gradient-primary">
         <div className="text-center">
-          <h2 className="text-3xl font-bold mb-4" style={{ color: '#3B1E5E' }}>Redirecting...</h2>
-          <p style={{ color: '#89888E' }}>Please wait while we redirect you to get access.</p>
+          <h2 className="text-3xl font-bold mb-4" style={{ color: '#3B1E5E' }}>Loading...</h2>
+          <p style={{ color: '#89888E' }}>Preparing your email tool...</p>
         </div>
       </div>
     );
@@ -204,6 +246,23 @@ const Tool = () => {
                 Paste your email below and watch our AI apply proven behavioral psychology 
                 frameworks to make it more compelling and conversion-focused.
               </p>
+              
+              {/* Usage Status */}
+              <div className="mt-8 flex justify-center">
+                <div className="flex items-center gap-4 bg-white/80 rounded-full px-6 py-3">
+                  <BarChart3 className="w-5 h-5" style={{ color: '#E19013' }} />
+                  <span style={{ color: '#3B1E5E' }}>
+                    {isSubscribed ? (
+                      <strong>Unlimited Access</strong>
+                    ) : (
+                      <>Uses: <strong>{usageCount}</strong> / 5 free</>
+                    )}
+                  </span>
+                  {email && (
+                    <span className="text-sm text-gray-600">• {email}</span>
+                  )}
+                </div>
+              </div>
             </div>
 
             <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12">
@@ -333,6 +392,21 @@ const Tool = () => {
           </div>
         </div>
       </div>
+
+      {/* Modals */}
+      <EmailCaptureModal
+        isOpen={showEmailModal}
+        onClose={() => setShowEmailModal(false)}
+        onEmailSubmit={handleEmailSubmit}
+        usageCount={usageCount}
+      />
+
+      <PaywallModal
+        isOpen={showPaywallModal}
+        onClose={() => setShowPaywallModal(false)}
+        onSubscribe={handleSubscribe}
+        usageCount={usageCount}
+      />
     </div>
   );
 };
