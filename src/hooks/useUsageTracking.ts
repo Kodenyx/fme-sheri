@@ -107,8 +107,17 @@ export const useUsageTracking = () => {
       isSubscribed = await checkSubscription(storedEmail);
     }
     
-    const needsEmailCapture = actualCount >= 1 && actualCount < 5 && !storedEmail;
+    // Fixed logic: Show email capture after 1st use when no email is stored
+    const needsEmailCapture = actualCount >= 1 && !storedEmail;
     const needsPaywall = actualCount >= 5 && !isSubscribed;
+    
+    console.log('Usage tracking debug:', {
+      actualCount,
+      storedEmail,
+      needsEmailCapture,
+      needsPaywall,
+      isSubscribed
+    });
     
     setUsageData({
       usageCount: actualCount,
