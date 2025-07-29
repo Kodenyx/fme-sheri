@@ -40,8 +40,11 @@ serve(async (req) => {
         {
           price_data: {
             currency: "usd",
-            product_data: { name: "Unlimited Email Fixes" },
-            unit_amount: 1999, // $19.99
+            product_data: { 
+              name: "FixMyEmail Pro - Founders Program",
+              description: "Up to 60 email makeovers per month"
+            },
+            unit_amount: 999, // $9.99
             recurring: { interval: "month" },
           },
           quantity: 1,
@@ -50,6 +53,10 @@ serve(async (req) => {
       mode: "subscription",
       success_url: `${req.headers.get("origin")}/tool?subscription=success`,
       cancel_url: `${req.headers.get("origin")}/tool?subscription=cancelled`,
+      metadata: {
+        plan: "founders_program",
+        monthly_limit: "60"
+      }
     });
 
     return new Response(JSON.stringify({ url: session.url }), {

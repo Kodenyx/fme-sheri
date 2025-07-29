@@ -32,11 +32,13 @@ const Tool = () => {
   
   const {
     usageCount,
+    monthlyUsage,
     email,
     isSubscribed,
     needsEmailCapture,
     needsPaywall,
     loading,
+    monthlyLimit,
     incrementUsage,
     setUserEmail,
     createCheckoutSession,
@@ -253,13 +255,18 @@ const Tool = () => {
                   <BarChart3 className="w-5 h-5" style={{ color: '#E19013' }} />
                   <span style={{ color: '#3B1E5E' }}>
                     {isSubscribed ? (
-                      <strong>Unlimited Access</strong>
+                      <strong>{monthlyUsage}/{monthlyLimit} this month</strong>
                     ) : (
                       <>Uses: <strong>{usageCount}</strong> / 5 free</>
                     )}
                   </span>
                   {email && (
                     <span className="text-sm text-gray-600">• {email}</span>
+                  )}
+                  {isSubscribed && (
+                    <span className="text-sm bg-green-100 text-green-800 px-2 py-1 rounded-full">
+                      Founders Program
+                    </span>
                   )}
                 </div>
               </div>

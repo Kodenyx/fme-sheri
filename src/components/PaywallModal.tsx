@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { CreditCard, Check } from "lucide-react";
+import { CreditCard, Check, Clock } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -23,11 +23,11 @@ const PaywallModal = ({
   usageCount 
 }: PaywallModalProps) => {
   const features = [
-    "Unlimited email fixes",
+    "60 email makeovers per month",
     "Advanced psychological triggers",
-    "Priority support",
-    "Custom frameworks",
-    "Analytics dashboard"
+    "Priority support", 
+    "Founders program access",
+    "Cancel anytime"
   ];
 
   return (
@@ -41,16 +41,27 @@ const PaywallModal = ({
             <DialogTitle className="text-center text-3xl font-bold text-white mb-2">
               You've hit your free limit!
             </DialogTitle>
-            <DialogDescription className="text-center text-lg" style={{ color: '#A9D6D4' }}>
-              You've used the tool {usageCount} times. Subscribe to unlock unlimited access and premium features.
+            <DialogDescription className="text-center text-lg mb-4" style={{ color: '#A9D6D4' }}>
+              You've used the tool {usageCount} times. Join our exclusive Founders Program for unlimited access.
             </DialogDescription>
+            
+            {/* Urgency Badge */}
+            <div className="flex items-center justify-center gap-2 mb-4">
+              <Clock className="w-4 h-4 text-orange-400" />
+              <span className="text-sm font-medium text-orange-400">
+                Limited Availability - Founders Program
+              </span>
+            </div>
           </DialogHeader>
 
           <div className="px-8 pb-8">
             <div className="bg-white/10 rounded-xl p-6 mb-6">
               <div className="text-center mb-4">
-                <div className="text-3xl font-bold text-white">$19.99</div>
-                <div className="text-sm" style={{ color: '#A9D6D4' }}>per month</div>
+                <div className="flex items-center justify-center gap-2 mb-2">
+                  <span className="text-lg line-through text-gray-400">$19.99</span>
+                  <span className="text-3xl font-bold text-white">$9.99</span>
+                </div>
+                <div className="text-sm" style={{ color: '#A9D6D4' }}>per month • Founders pricing</div>
               </div>
               
               <div className="space-y-3">
@@ -68,11 +79,11 @@ const PaywallModal = ({
               className="w-full text-white font-bold text-xl py-6 px-12 rounded-full shadow-lg transform transition-all hover:scale-105 hover:opacity-90 border-0"
               style={{ backgroundColor: '#E19013' }}
             >
-              Subscribe Now
+              Join Founders Program - $9.99/month
             </Button>
 
             <p className="text-center text-sm mt-4" style={{ color: '#A9D6D4' }}>
-              Cancel anytime. No commitments.
+              Special pricing • Limited time • Cancel anytime
             </p>
           </div>
         </div>

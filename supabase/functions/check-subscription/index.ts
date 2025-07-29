@@ -82,8 +82,9 @@ serve(async (req) => {
       const price = await stripe.prices.retrieve(priceId);
       const amount = price.unit_amount || 0;
       
-      if (amount <= 999) {
-        subscriptionTier = "Basic";
+      // Updated tier logic for $9.99 founders program
+      if (amount === 999) {
+        subscriptionTier = "Founders Program";
       } else if (amount <= 1999) {
         subscriptionTier = "Premium";
       } else {

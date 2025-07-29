@@ -5,21 +5,25 @@ import { useToast } from "@/hooks/use-toast";
 
 export interface UsageData {
   usageCount: number;
+  monthlyUsage: number;
   email: string | null;
   isSubscribed: boolean;
   needsEmailCapture: boolean;
   needsPaywall: boolean;
   loading: boolean;
+  monthlyLimit: number;
 }
 
 export const useUsageTracking = () => {
   const [usageData, setUsageData] = useState<UsageData>({
     usageCount: 0,
+    monthlyUsage: 0,
     email: null,
     isSubscribed: false,
     needsEmailCapture: false,
     needsPaywall: false,
     loading: true,
+    monthlyLimit: 60,
   });
   const { toast } = useToast();
 
@@ -34,6 +38,21 @@ export const useUsageTracking = () => {
 
   const setLocalUsageCount = (count: number) => {
     localStorage.setItem('toolUsageCount', count.toString());
+  };
+
+  const getMonthlyUsage = (): number => {
+    const currentMonth = new Date().getMonth();
+    const currentYear = new Date().getFullYear();
+    const key = `monthlyUsage_${currentYear}_${currentMonth}`;
+    const stored = localStorage.getItem(key);
+    return stored ? parseInt(stored, 10) : 0;
+  };
+
+  const setMonthlyUsage = (count: number) => {
+    const currentMonth = new Date().getMonth();
+    const currentYear = new Date().getFullYear();
+    const key = `monthlyUsage_${currentYear}_${currentMonth}`;
+    localStorage.setItem(key, count.toString());
   };
 
   const checkSubscription = async (email: string): Promise<boolean> => {
@@ -97,6 +116,7 @@ export const useUsageTracking = () => {
     
     const storedEmail = getStoredEmail();
     const localCount = getLocalUsageCount();
+    const monthlyCount = getMonthlyUsage();
     
     let actualCount = localCount;
     let isSubscribed = false;
@@ -107,12 +127,22 @@ export const useUsageTracking = () => {
       isSubscribed = await checkSubscription(storedEmail);
     }
     
-    // Fixed logic: Show email capture after 1st use when no email is stored
+    // Show email capture after 1st use when no email is stored
     const needsEmailCapture = actualCount >= 1 && !storedEmail;
-    const needsPaywall = actualCount >= 5 && !isSubscribed;
+    
+    // Show paywall logic:
+    // - For non-subscribers: after 5 uses
+    // - For subscribers: after 60 uses in current month
+    let needsPaywall = false;
+    if (!isSubscribed) {
+      needsPaywall = actualCount >= 5;
+    } else {
+      needsPaywall = monthlyCount >= 60;
+    }
     
     console.log('Usage tracking debug:', {
       actualCount,
+      monthlyCount,
       storedEmail,
       needsEmailCapture,
       needsPaywall,
@@ -121,19 +151,23 @@ export const useUsageTracking = () => {
     
     setUsageData({
       usageCount: actualCount,
+      monthlyUsage: monthlyCount,
       email: storedEmail,
       isSubscribed,
       needsEmailCapture,
       needsPaywall,
       loading: false,
+      monthlyLimit: 60,
     });
   };
 
   const incrementUsage = async (email?: string) => {
     const currentEmail = email || getStoredEmail();
     const newCount = usageData.usageCount + 1;
+    const newMonthlyCount = usageData.monthlyUsage + 1;
     
     setLocalUsageCount(newCount);
+    setMonthlyUsage(newMonthlyCount);
     
     if (currentEmail) {
       await updateUsageInDatabase(currentEmail, newCount);
