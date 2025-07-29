@@ -24,10 +24,11 @@ const PaywallModal = ({
 }: PaywallModalProps) => {
   const features = [
     "60 email makeovers per month",
-    "Advanced psychological triggers",
-    "Priority support", 
+    "Advanced psychological triggers + proven sales frameworks",
+    "Bonus: Access to the FixMyEmail Pro Course",
+    "Priority support & feature feedback access", 
     "Founders program access",
-    "Cancel anytime"
+    "Cancel anytime, no questions asked"
   ];
 
   return (
@@ -42,14 +43,14 @@ const PaywallModal = ({
               You've hit your free limit!
             </DialogTitle>
             <DialogDescription className="text-center text-lg mb-4" style={{ color: '#A9D6D4' }}>
-              You've used the tool {usageCount} times. Join our exclusive Founders Program for unlimited access.
+              You've used FixMyEmail {usageCount} times. Join our exclusive Founders Program at our lowest price ever.
             </DialogDescription>
             
             {/* Urgency Badge */}
             <div className="flex items-center justify-center gap-2 mb-4">
               <Clock className="w-4 h-4 text-orange-400" />
               <span className="text-sm font-medium text-orange-400">
-                Limited Availability - Founders Program
+                Limited Availability - only 30 slots available.
               </span>
             </div>
           </DialogHeader>
@@ -58,10 +59,10 @@ const PaywallModal = ({
             <div className="bg-white/10 rounded-xl p-6 mb-6">
               <div className="text-center mb-4">
                 <div className="flex items-center justify-center gap-2 mb-2">
-                  <span className="text-lg line-through text-gray-400">$19.99</span>
-                  <span className="text-3xl font-bold text-white">$9.99</span>
+                  <span className="text-lg line-through text-gray-400">$19.97</span>
+                  <span className="text-3xl font-bold text-white">$9.97</span>
                 </div>
-                <div className="text-sm" style={{ color: '#A9D6D4' }}>per month • Founders pricing</div>
+                <div className="text-sm" style={{ color: '#A9D6D4' }}>per month • locked in.</div>
               </div>
               
               <div className="space-y-3">
@@ -79,7 +80,7 @@ const PaywallModal = ({
               className="w-full text-white font-bold text-xl py-6 px-12 rounded-full shadow-lg transform transition-all hover:scale-105 hover:opacity-90 border-0"
               style={{ backgroundColor: '#E19013' }}
             >
-              Join Founders Program - $9.99/month
+              Join Founders Program - $9.97/month
             </Button>
 
             <p className="text-center text-sm mt-4" style={{ color: '#A9D6D4' }}>
