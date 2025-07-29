@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { CheckCircle2, Sparkles, Copy, BarChart3 } from "lucide-react";
@@ -143,11 +144,6 @@ const Tool = () => {
       // Increment usage count and log usage
       await incrementUsage(email || undefined);
       await logToolUsage(emailContent, data.rewritten_email, 'ai-rewritten');
-      
-      toast({
-        title: "Fixes applied",
-        description: "We handled the fix. You handle the final touch.",
-      });
       
     } catch (error) {
       console.error('Error during email makeover:', error);
@@ -316,6 +312,15 @@ const Tool = () => {
                   </div>
                 </div>
               </div>
+
+              {/* Permanent subheadline message */}
+              {showMakeover && (
+                <div className="text-center mb-8">
+                  <p className="text-xl md:text-2xl italic" style={{ color: '#3B1E5E' }}>
+                    We handle the fix, you handle the final touch.
+                  </p>
+                </div>
+              )}
               
               {!showMakeover && (
                 <form onSubmit={handleSubmit}>
