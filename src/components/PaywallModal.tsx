@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { CreditCard, Check, Clock } from "lucide-react";
 import {
@@ -26,9 +25,7 @@ const PaywallModal = ({
     "60 optimized rewrites/month",
     "Proven conversion triggers + sales frameworks",
     "Bonus: FixMyEmail Pro mini-course",
-    "Priority support & feature feedback access", 
-    "Founders program access",
-    "Cancel anytime, no questions asked"
+    "Priority support & feature feedback access"
   ];
 
   return (
