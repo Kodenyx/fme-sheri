@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { CreditCard, Check, Clock } from "lucide-react";
 import {
@@ -56,7 +57,8 @@ const PaywallModal = ({
             <div className="bg-white/10 rounded-xl p-6 mb-6">
               <div className="text-center mb-4">
                 <div className="flex items-center justify-center gap-2 mb-2">
-                  <span className="text-3xl font-bold text-white">$9.97/mo</span>
+                  <span className="text-lg line-through text-gray-400">$19.97/month</span>
+                  <span className="text-3xl font-bold text-white">$9.97/month</span>
                 </div>
                 <div className="text-sm" style={{ color: '#A9D6D4' }}>Founders Rate</div>
               </div>
