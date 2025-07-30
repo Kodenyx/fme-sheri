@@ -79,7 +79,7 @@ const PaywallModal = ({
               className="w-full text-white font-bold text-xl py-6 px-12 rounded-full shadow-lg transform transition-all hover:scale-105 hover:opacity-90 border-0"
               style={{ backgroundColor: '#E19013' }}
             >
-              Join Founders Program - $9.97/month
+              Claim My Founders Rate - $9.97/month
             </Button>
 
             <p className="text-center text-sm mt-4" style={{ color: '#A9D6D4' }}>
