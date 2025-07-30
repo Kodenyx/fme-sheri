@@ -23,9 +23,9 @@ const PaywallModal = ({
   usageCount 
 }: PaywallModalProps) => {
   const features = [
-    "60 email makeovers per month",
-    "Advanced psychological triggers + proven sales frameworks",
-    "Bonus: Access to the FixMyEmail Pro Course",
+    "60 optimized rewrites/month",
+    "Proven conversion triggers + sales frameworks",
+    "Bonus: FixMyEmail Pro mini-course",
     "Priority support & feature feedback access", 
     "Founders program access",
     "Cancel anytime, no questions asked"
@@ -40,17 +40,17 @@ const PaywallModal = ({
               <CreditCard className="h-8 w-8 text-white" />
             </div>
             <DialogTitle className="text-center text-3xl font-bold text-white mb-2">
-              You've hit your free limit!
+              You're Already In – Let It Compound
             </DialogTitle>
             <DialogDescription className="text-center text-lg mb-4" style={{ color: '#A9D6D4' }}>
-              You've used FixMyEmail {usageCount} times. Join our exclusive Founders Program at our lowest price ever.
+              Because you made it this far, you've unlocked Founders Access at our lowest rate ever.
             </DialogDescription>
             
             {/* Urgency Badge */}
             <div className="flex items-center justify-center gap-2 mb-4">
               <Clock className="w-4 h-4 text-orange-400" />
               <span className="text-sm font-medium text-orange-400">
-                Limited Availability - only 30 slots available.
+                Only 30 spots. This rate will never return.
               </span>
             </div>
           </DialogHeader>
@@ -59,10 +59,9 @@ const PaywallModal = ({
             <div className="bg-white/10 rounded-xl p-6 mb-6">
               <div className="text-center mb-4">
                 <div className="flex items-center justify-center gap-2 mb-2">
-                  <span className="text-lg line-through text-gray-400">$19.97</span>
-                  <span className="text-3xl font-bold text-white">$9.97</span>
+                  <span className="text-3xl font-bold text-white">$9.97/mo</span>
                 </div>
-                <div className="text-sm" style={{ color: '#A9D6D4' }}>per month • locked in.</div>
+                <div className="text-sm" style={{ color: '#A9D6D4' }}>Founders Rate</div>
               </div>
               
               <div className="space-y-3">
