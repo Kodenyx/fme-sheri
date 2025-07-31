@@ -12,6 +12,7 @@ import OfferBeta from "./pages/OfferBeta";
 import Tool from "./pages/Tool";
 import Auth from "./pages/Auth";
 import Modal from "./pages/Modal";
+import Modal1 from "./pages/Modal1";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -45,6 +46,7 @@ const App = () => {
             <Route path="/tool" element={<Tool />} />
             <Route path="/auth" element={<Auth />} />
             <Route path="/modal" element={<Modal />} />
+            <Route path="/modal1" element={<Modal1 />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
