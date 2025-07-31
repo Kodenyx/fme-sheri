@@ -14,7 +14,7 @@ import {
 interface EmailCaptureModalProps {
   isOpen: boolean;
   onClose: () => void;
-  onEmailSubmit: (email: string) => void;
+  onEmailSubmit: (email: string, firstName?: string) => void;
   usageCount: number;
 }
 
@@ -25,6 +25,7 @@ const EmailCaptureModal = ({
   usageCount 
 }: EmailCaptureModalProps) => {
   const [email, setEmail] = useState("");
+  const [firstName, setFirstName] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -33,7 +34,7 @@ const EmailCaptureModal = ({
     
     setIsSubmitting(true);
     try {
-      onEmailSubmit(email.trim());
+      onEmailSubmit(email.trim(), firstName.trim() || undefined);
       onClose();
     } catch (error) {
       console.error('Error submitting email:', error);
@@ -61,7 +62,16 @@ const EmailCaptureModal = ({
           </DialogHeader>
 
           <div className="px-8 pb-8">
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <Input
+                type="text"
+                placeholder="Enter your first name"
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
+                className="text-lg py-6 px-6 border-2 rounded-xl bg-white text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                style={{ borderColor: '#A9D6D4' }}
+              />
+
               <Input
                 type="email"
                 placeholder="Enter your email address"
