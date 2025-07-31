@@ -78,7 +78,7 @@ const Offer = () => {
                 )}
               </Button>
 
-              <p className="text-center text-lg mt-4 mb-2" style={{ color: '#89888E' }}>
+              <p className="text-center text-sm mt-6 mb-2" style={{ color: '#89888E' }}>
                 🧊 Cold Outreach | 📣 Promotional | 🔁 Re-Engagement | 🎯 Conversion
               </p>
             </div>
