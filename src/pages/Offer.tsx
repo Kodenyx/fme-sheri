@@ -60,9 +60,6 @@ const Offer = () => {
                 <p className="text-lg mb-6" style={{ color: '#89888E' }}>
                   Start your first free email fix instantly
                 </p>
-                <p className="text-sm text-gray-500 mb-6">
-                  Works for Cold Outreach, Promotional, Re-engagement, and Conversion Emails.
-                </p>
               </div>
 
               <Button 
@@ -80,6 +77,10 @@ const Offer = () => {
                   </>
                 )}
               </Button>
+
+              <p className="text-center text-lg mt-4 mb-2" style={{ color: '#89888E' }}>
+                🧊 Cold Outreach | 📣 Promotional | 🔁 Re-Engagement | 🎯 Conversion
+              </p>
             </div>
           </div>
         </div>

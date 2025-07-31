@@ -79,9 +79,6 @@ const OfferBeta = () => {
                 <p className="text-lg mb-6" style={{ color: '#89888E' }}>
                   Beta access - click below to get started
                 </p>
-                <p className="text-sm text-gray-500 mb-6">
-                  Works for Cold Outreach, Promotional, Re-engagement, and Conversion Emails.
-                </p>
               </div>
 
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -113,6 +110,10 @@ const OfferBeta = () => {
                   )}
                 </Button>
               </form>
+
+              <p className="text-center text-lg mt-4 mb-2" style={{ color: '#89888E' }}>
+                🧊 Cold Outreach | 📣 Promotional | 🔁 Re-Engagement | 🎯 Conversion
+              </p>
             </div>
           </div>
         </div>
