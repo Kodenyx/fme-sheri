@@ -92,6 +92,10 @@ const EmailCaptureModal = ({
               </Button>
             </form>
 
+            <p className="text-center text-lg mt-4 mb-2" style={{ color: '#A9D6D4' }}>
+              🧊 Cold Outreach | 📣 Promotional | 🔁 Re-Engagement | 🎯 Conversion
+            </p>
+
             <p className="text-center text-sm mt-4" style={{ color: '#A9D6D4' }}>
               FixMyEmail Pro unlocks after your 5th use. We'll send helpful tips to guide you along the way.
             </p>
