@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { CheckCircle2, Sparkles, Copy, BarChart3 } from "lucide-react";
@@ -241,8 +240,7 @@ const Tool = () => {
                 </span>
               </h1>
               <p className="text-xl md:text-2xl max-w-4xl mx-auto" style={{ color: '#3B1E5E' }}>
-                Paste your email below and watch our AI apply proven behavioral psychology 
-                frameworks to make it more compelling and conversion-focused.
+                Give us your email. We'll make it convert better.
               </p>
               
               {/* Usage Status */}
