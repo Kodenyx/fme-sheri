@@ -56,7 +56,7 @@ const EmailCaptureModal = ({
             <DialogDescription className="text-center text-lg" style={{ color: '#A9D6D4' }}>
               You've already started optimizing for conversions. 
               <br />
-              Drop your name + email to continue improving your emails
+              <em>Drop your name + email to continue improving your emails</em>
             </DialogDescription>
           </DialogHeader>
 
