@@ -51,11 +51,12 @@ const EmailCaptureModal = ({
               <Mail className="h-8 w-8 text-white" />
             </div>
             <DialogTitle className="text-center text-3xl font-bold text-white mb-2">
-              You're loving this tool!
+              You're the kind of person who knows what works
             </DialogTitle>
             <DialogDescription className="text-center text-lg" style={{ color: '#A9D6D4' }}>
-              This is your {usageCount === 1 ? '2nd' : usageCount === 2 ? '3rd' : `${usageCount + 1}th`} time using our email fixer. 
-              Quick question: What's your email?
+              You've already started optimizing for conversions. 
+              <br />
+              Drop your name + email to continue improving your emails
             </DialogDescription>
           </DialogHeader>
 
@@ -77,12 +78,12 @@ const EmailCaptureModal = ({
                 className="w-full text-white font-bold text-xl py-6 px-12 rounded-full shadow-lg transform transition-all hover:scale-105 hover:opacity-90 border-0"
                 style={{ backgroundColor: '#E19013' }}
               >
-                {isSubmitting ? "Saving..." : "Continue to the tool"}
+                {isSubmitting ? "Saving..." : "Let's Keep Going"}
               </Button>
             </form>
 
             <p className="text-center text-sm mt-4" style={{ color: '#A9D6D4' }}>
-              We'll email you tips (only the good stuff) and your free FixMyEmail Pro invite.
+              FixMyEmail Pro unlocks after your 5th use. We'll send helpful tips to guide you along the way.
             </p>
           </div>
         </div>
