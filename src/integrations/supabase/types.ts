@@ -59,6 +59,51 @@ export type Database = {
         }
         Relationships: []
       }
+      social_media_credits: {
+        Row: {
+          created_at: string
+          credits_awarded: number
+          email: string
+          id: string
+          image_url: string
+          notes: string | null
+          reviewed_at: string | null
+          reviewed_by: string | null
+          status: string
+          submission_date: string
+          updated_at: string
+          user_id: string | null
+        }
+        Insert: {
+          created_at?: string
+          credits_awarded?: number
+          email: string
+          id?: string
+          image_url: string
+          notes?: string | null
+          reviewed_at?: string | null
+          reviewed_by?: string | null
+          status?: string
+          submission_date?: string
+          updated_at?: string
+          user_id?: string | null
+        }
+        Update: {
+          created_at?: string
+          credits_awarded?: number
+          email?: string
+          id?: string
+          image_url?: string
+          notes?: string | null
+          reviewed_at?: string | null
+          reviewed_by?: string | null
+          status?: string
+          submission_date?: string
+          updated_at?: string
+          user_id?: string | null
+        }
+        Relationships: []
+      }
       subscribers: {
         Row: {
           created_at: string
@@ -127,6 +172,7 @@ export type Database = {
       }
       user_usage_tracking: {
         Row: {
+          bonus_credits: number
           created_at: string
           email: string
           id: string
@@ -136,6 +182,7 @@ export type Database = {
           user_id: string | null
         }
         Insert: {
+          bonus_credits?: number
           created_at?: string
           email: string
           id?: string
@@ -145,6 +192,7 @@ export type Database = {
           user_id?: string | null
         }
         Update: {
+          bonus_credits?: number
           created_at?: string
           email?: string
           id?: string

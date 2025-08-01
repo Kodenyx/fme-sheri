@@ -33,12 +33,14 @@ const Tool = () => {
   const {
     usageCount,
     monthlyUsage,
+    bonusCredits,
     email,
     isSubscribed,
     needsEmailCapture,
     needsPaywall,
     loading,
     monthlyLimit,
+    effectiveMonthlyLimit,
     incrementUsage,
     setUserEmail,
     createCheckoutSession,
@@ -249,11 +251,16 @@ const Tool = () => {
                   <BarChart3 className="w-5 h-5" style={{ color: '#E19013' }} />
                   <span style={{ color: '#3B1E5E' }}>
                     {isSubscribed ? (
-                      <strong>{monthlyUsage}/{monthlyLimit} this month</strong>
+                      <strong>{monthlyUsage}/{effectiveMonthlyLimit} this month</strong>
                     ) : (
                       <>Uses: <strong>{usageCount}</strong> / 5 free</>
                     )}
                   </span>
+                  {bonusCredits > 0 && (
+                    <span className="text-sm bg-green-100 text-green-800 px-2 py-1 rounded-full">
+                      +{bonusCredits} bonus
+                    </span>
+                  )}
                   {email && (
                     <span className="text-sm text-gray-600">• {email}</span>
                   )}
