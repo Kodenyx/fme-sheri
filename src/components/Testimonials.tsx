@@ -50,63 +50,66 @@ const Testimonials = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {testimonials.map((testimonial, index) => (
-            <Card key={index} className={`
-              border-none shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 
-              ${index === 0 ? 'md:-rotate-2 hover:rotate-0' : index === 2 ? 'md:rotate-2 hover:rotate-0' : 'hover:scale-105'}
-              bg-gradient-to-br from-white to-gray-50 relative overflow-hidden
-            `}>
-              {/* Fun accent elements */}
-              <div className={`absolute top-0 left-0 w-full h-2 ${
-                index === 0 ? 'bg-gradient-to-r from-purple-400 to-pink-400' : 
-                index === 1 ? 'bg-gradient-to-r from-blue-400 to-purple-400' :
-                'bg-gradient-to-r from-pink-400 to-yellow-400'
-              }`}></div>
+        {/* Masonry-style layout */}
+        <div className="max-w-6xl mx-auto">
+          <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
+            {testimonials.map((testimonial, index) => (
+              <Card key={index} className={`
+                break-inside-avoid mb-6 border-none shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105
+                bg-gradient-to-br from-white to-gray-50 relative overflow-hidden
+                ${index === 0 ? 'lg:-rotate-2 hover:rotate-0' : index === 2 ? 'lg:rotate-2 hover:rotate-0' : ''}
+              `}>
+                {/* Fun accent elements - colorful borders on top */}
+                <div className={`absolute top-0 left-0 w-full h-2 ${
+                  index === 0 ? 'bg-gradient-to-r from-purple-400 to-pink-400' : 
+                  index === 1 ? 'bg-gradient-to-r from-blue-400 to-purple-400' :
+                  'bg-gradient-to-r from-pink-400 to-yellow-400'
+                }`}></div>
 
-              <CardContent className="p-8">
-                <div className="flex flex-col h-full">
-                  {/* Quote icon */}
-                  <Quote className={`w-8 h-8 mb-4 ${
-                    index === 0 ? 'text-purple-400' : 
-                    index === 1 ? 'text-blue-400' :
-                    'text-pink-400'
-                  }`} />
+                <CardContent className="p-8">
+                  <div className="flex flex-col">
+                    {/* Quote icon */}
+                    <Quote className={`w-8 h-8 mb-4 ${
+                      index === 0 ? 'text-purple-400' : 
+                      index === 1 ? 'text-blue-400' :
+                      'text-pink-400'
+                    }`} />
 
-                  {/* Star rating */}
-                  <div className="flex mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                    ))}
-                  </div>
+                    {/* Star rating */}
+                    <div className="flex mb-4">
+                      {[...Array(testimonial.rating)].map((_, i) => (
+                        <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                      ))}
+                    </div>
 
-                  {/* Content */}
-                  <p className="text-gray-700 mb-6 italic text-lg leading-relaxed flex-grow">
-                    "{testimonial.content}"
-                  </p>
+                    {/* Content */}
+                    <p className="text-gray-700 mb-6 italic text-lg leading-relaxed">
+                      "{testimonial.content}"
+                    </p>
 
-                  {/* Author info */}
-                  <div className="flex items-center">
-                    <Avatar className="w-14 h-14 mr-4 ring-4 ring-white shadow-lg">
-                      <AvatarImage src={testimonial.image} alt={testimonial.name} />
-                      <AvatarFallback className={`text-white font-bold ${
-                        index === 0 ? 'bg-gradient-to-br from-purple-400 to-pink-400' : 
-                        index === 1 ? 'bg-gradient-to-br from-blue-400 to-purple-400' :
-                        'bg-gradient-to-br from-pink-400 to-yellow-400'
-                      }`}>
-                        {testimonial.name.split(' ').map(n => n[0]).join('')}
-                      </AvatarFallback>
-                    </Avatar>
-                    <div>
-                      <h4 className="font-bold text-gray-900 text-lg">{testimonial.name}</h4>
-                      <p className="text-gray-600 font-medium">{testimonial.role}</p>
-                      <p className="text-gray-500 text-sm">{testimonial.company}</p>
+                    {/* Author info */}
+                    <div className="flex items-center">
+                      <Avatar className="w-14 h-14 mr-4 ring-4 ring-white shadow-lg">
+                        <AvatarImage src={testimonial.image} alt={testimonial.name} />
+                        <AvatarFallback className={`text-white font-bold ${
+                          index === 0 ? 'bg-gradient-to-br from-purple-400 to-pink-400' : 
+                          index === 1 ? 'bg-gradient-to-br from-blue-400 to-purple-400' :
+                          'bg-gradient-to-br from-pink-400 to-yellow-400'
+                        }`}>
+                          {testimonial.name.split(' ').map(n => n[0]).join('')}
+                        </AvatarFallback>
+                      </Avatar>
+                      <div>
+                        <h4 className="font-bold text-gray-900 text-lg">{testimonial.name}</h4>
+                        <p className="text-gray-600 font-medium">{testimonial.role}</p>
+                        <p className="text-gray-500 text-sm">{testimonial.company}</p>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
 
         {/* Fun CTA */}
