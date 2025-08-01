@@ -1,56 +1,122 @@
+
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Quote, Star } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Sarah C.",
-    role: "Fractional CFO",
-    company: "",
-    content: "The AI automation has completely transformed how we handle customer support. We're saving over 25 hours weekly on routine inquiries alone.",
-    image: "/placeholder.svg"
+    name: "Rachel Pedersen",
+    role: "Social Media Expert",
+    company: "300K LinkedIn Followers",
+    content: "I'm a total nerd for behavioral science... So when I saw how FixMyEmail instantly upgraded basic email copy into proven copy (backed by the science of human-behavior, too!), I fell in love.",
+    image: "/placeholder.svg",
+    rating: 5
   },
   {
-    name: "Jason Wickam",
-    role: "VP/General Manager",
-    company: "Sparro",
-    content: "Working with Kodenyx on a complex Industrial IoT Fleet project has been exceptional. Their expertise in solving business challenges, automating workflows, and delivering impactful data played a key role in advancing the RFP process and pilot expansion. We look forward to winning more enterprise opportunities together.",
-    image: "/placeholder.svg"
+    name: "John Frydman",
+    role: "Founder AI Expert",
+    company: "Digismart.io",
+    content: "The output is really better than all the other methods/apps/GenAI that I have tested so far",
+    image: "/placeholder.svg",
+    rating: 5
   },
   {
-    name: "Tim Lee",
-    role: "Founder",
-    company: "Movement Mastery Training",
-    content: "Kodenyx's AI powered solutions have made an exponential impact in my online presence.",
-    image: "/placeholder.svg"
+    name: "Shriya Prasanna",
+    role: "Founder and CEO",
+    company: "Good On Digital",
+    content: "I was impressed by how the tool delivered a well-crafted message backed with scientific reasoning.",
+    image: "/placeholder.svg",
+    rating: 5
   }
 ];
 
 const Testimonials = () => {
   return (
-    <section className="py-16 bg-gradient-to-b from-white to-gray-50">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-          What Our Clients Say
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <section className="py-20 bg-gradient-to-br from-purple-50 via-blue-50 to-pink-50 relative overflow-hidden">
+      {/* Fun background elements */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full blur-xl"></div>
+        <div className="absolute bottom-20 right-20 w-40 h-40 bg-gradient-to-br from-blue-400 to-purple-400 rounded-full blur-xl"></div>
+        <div className="absolute top-1/2 left-1/3 w-24 h-24 bg-gradient-to-br from-yellow-400 to-orange-400 rounded-full blur-xl"></div>
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-600 via-blue-600 to-pink-600 bg-clip-text text-transparent">
+            People Are Going Wild! 🔥
+          </h2>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            See what happens when emails actually work
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {testimonials.map((testimonial, index) => (
-            <Card key={index} className="border-none shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <CardContent className="pt-6">
-                <div className="flex flex-col items-center text-center">
-                  <Avatar className="w-16 h-16 mb-4">
-                    <AvatarImage src={testimonial.image} alt={testimonial.name} />
-                    <AvatarFallback>{testimonial.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
-                  </Avatar>
-                  <p className="text-gray-600 mb-6 italic">"{testimonial.content}"</p>
-                  <div>
-                    <h4 className="font-semibold text-primary">{testimonial.name}</h4>
-                    <p className="text-sm text-gray-500">{testimonial.role}</p>
-                    <p className="text-sm text-gray-500">{testimonial.company}</p>
+            <Card key={index} className={`
+              border-none shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 
+              ${index === 0 ? 'md:-rotate-2 hover:rotate-0' : index === 2 ? 'md:rotate-2 hover:rotate-0' : 'hover:scale-105'}
+              bg-gradient-to-br from-white to-gray-50 relative overflow-hidden
+            `}>
+              {/* Fun accent elements */}
+              <div className={`absolute top-0 left-0 w-full h-2 ${
+                index === 0 ? 'bg-gradient-to-r from-purple-400 to-pink-400' : 
+                index === 1 ? 'bg-gradient-to-r from-blue-400 to-purple-400' :
+                'bg-gradient-to-r from-pink-400 to-yellow-400'
+              }`}></div>
+
+              <CardContent className="p-8">
+                <div className="flex flex-col h-full">
+                  {/* Quote icon */}
+                  <Quote className={`w-8 h-8 mb-4 ${
+                    index === 0 ? 'text-purple-400' : 
+                    index === 1 ? 'text-blue-400' :
+                    'text-pink-400'
+                  }`} />
+
+                  {/* Star rating */}
+                  <div className="flex mb-4">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                    ))}
+                  </div>
+
+                  {/* Content */}
+                  <p className="text-gray-700 mb-6 italic text-lg leading-relaxed flex-grow">
+                    "{testimonial.content}"
+                  </p>
+
+                  {/* Author info */}
+                  <div className="flex items-center">
+                    <Avatar className="w-14 h-14 mr-4 ring-4 ring-white shadow-lg">
+                      <AvatarImage src={testimonial.image} alt={testimonial.name} />
+                      <AvatarFallback className={`text-white font-bold ${
+                        index === 0 ? 'bg-gradient-to-br from-purple-400 to-pink-400' : 
+                        index === 1 ? 'bg-gradient-to-br from-blue-400 to-purple-400' :
+                        'bg-gradient-to-br from-pink-400 to-yellow-400'
+                      }`}>
+                        {testimonial.name.split(' ').map(n => n[0]).join('')}
+                      </AvatarFallback>
+                    </Avatar>
+                    <div>
+                      <h4 className="font-bold text-gray-900 text-lg">{testimonial.name}</h4>
+                      <p className="text-gray-600 font-medium">{testimonial.role}</p>
+                      <p className="text-gray-500 text-sm">{testimonial.company}</p>
+                    </div>
                   </div>
                 </div>
               </CardContent>
             </Card>
           ))}
+        </div>
+
+        {/* Fun CTA */}
+        <div className="text-center mt-16">
+          <p className="text-2xl font-bold text-gray-700 mb-4">
+            Ready to join the email revolution? 🚀
+          </p>
+          <p className="text-lg text-gray-600">
+            Your next email could be your best email yet!
+          </p>
         </div>
       </div>
     </section>
