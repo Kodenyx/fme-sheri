@@ -51,7 +51,7 @@ const OfferBeta = () => {
       <section className="pt-32 pb-8">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <p className="text-lg md:text-xl mb-6 font-medium" style={{ color: '#3B1E5E' }}>
+            <p className="text-xl md:text-2xl mb-6 font-medium" style={{ color: '#3B1E5E' }}>
               Before you send another forgettable email…
             </p>
             <h1 className="text-5xl md:text-7xl font-bold mb-8" style={{ color: '#3B1E5E' }}>
@@ -111,7 +111,7 @@ const OfferBeta = () => {
                 </Button>
               </form>
 
-              <p className="text-center text-sm mt-6 mb-2" style={{ color: '#89888E' }}>
+              <p className="text-center text-xs mt-8 mb-2" style={{ color: '#89888E' }}>
                 🧊 Cold Outreach | 📣 Promotional | 🔁 Re-Engagement | 🎯 Conversion
               </p>
             </div>
