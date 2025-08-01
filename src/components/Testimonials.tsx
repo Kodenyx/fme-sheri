@@ -27,6 +27,14 @@ const testimonials = [
     content: "I was impressed by how the tool delivered a well-crafted message backed with scientific reasoning.",
     image: "/placeholder.svg",
     rating: 5
+  },
+  {
+    name: "Jacob Statler",
+    role: "Founder",
+    company: "Stat Digital",
+    content: "The hook plays into the desire and intent of the lead.",
+    image: "/placeholder.svg",
+    rating: 5
   }
 ];
 
@@ -63,7 +71,8 @@ const Testimonials = () => {
                 <div className={`absolute top-0 left-0 w-full h-2 ${
                   index === 0 ? 'bg-gradient-to-r from-purple-400 to-pink-400' : 
                   index === 1 ? 'bg-gradient-to-r from-blue-400 to-purple-400' :
-                  'bg-gradient-to-r from-pink-400 to-yellow-400'
+                  index === 2 ? 'bg-gradient-to-r from-pink-400 to-yellow-400' :
+                  'bg-gradient-to-r from-green-400 to-blue-400'
                 }`}></div>
 
                 <CardContent className="p-8">
@@ -72,7 +81,8 @@ const Testimonials = () => {
                     <Quote className={`w-8 h-8 mb-4 ${
                       index === 0 ? 'text-purple-400' : 
                       index === 1 ? 'text-blue-400' :
-                      'text-pink-400'
+                      index === 2 ? 'text-pink-400' :
+                      'text-green-400'
                     }`} />
 
                     {/* Star rating */}
@@ -94,7 +104,8 @@ const Testimonials = () => {
                         <AvatarFallback className={`text-white font-bold ${
                           index === 0 ? 'bg-gradient-to-br from-purple-400 to-pink-400' : 
                           index === 1 ? 'bg-gradient-to-br from-blue-400 to-purple-400' :
-                          'bg-gradient-to-br from-pink-400 to-yellow-400'
+                          index === 2 ? 'bg-gradient-to-br from-pink-400 to-yellow-400' :
+                          'bg-gradient-to-br from-green-400 to-blue-400'
                         }`}>
                           {testimonial.name.split(' ').map(n => n[0]).join('')}
                         </AvatarFallback>
