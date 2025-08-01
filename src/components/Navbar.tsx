@@ -4,7 +4,12 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { useNavigate, useLocation } from "react-router-dom";
 
-const Navbar = () => {
+interface NavbarProps {
+  onTestimonialsClick?: () => void;
+  onTryToolClick?: () => void;
+}
+
+const Navbar = ({ onTestimonialsClick, onTryToolClick }: NavbarProps = {}) => {
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -15,6 +20,18 @@ const Navbar = () => {
     } else {
       // If we're on any other page, navigate to the tool page
       navigate('/tool');
+    }
+  };
+
+  const handleTestimonialsClick = () => {
+    if (onTestimonialsClick) {
+      onTestimonialsClick();
+    }
+  };
+
+  const handleTryToolClick = () => {
+    if (onTryToolClick) {
+      onTryToolClick();
     }
   };
 
@@ -33,6 +50,26 @@ const Navbar = () => {
           <span className="text-xl font-bold text-white">Fix My Email</span>
         </div>
 
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex items-center gap-6">
+          {onTestimonialsClick && (
+            <button 
+              onClick={handleTestimonialsClick}
+              className="text-white hover:opacity-80 transition-opacity"
+            >
+              Testimonials
+            </button>
+          )}
+          {onTryToolClick && (
+            <button 
+              onClick={handleTryToolClick}
+              className="text-white hover:opacity-80 transition-opacity bg-orange-500 px-4 py-2 rounded-full font-medium"
+            >
+              Try Tool
+            </button>
+          )}
+        </div>
+
         {/* Mobile Navigation */}
         <div className="md:hidden">
           <Sheet>
@@ -43,7 +80,22 @@ const Navbar = () => {
             </SheetTrigger>
             <SheetContent>
               <div className="flex flex-col space-y-4 mt-8">
-                {/* Empty - no navigation items */}
+                {onTestimonialsClick && (
+                  <button 
+                    onClick={handleTestimonialsClick}
+                    className="text-left hover:opacity-80 transition-opacity"
+                  >
+                    Testimonials
+                  </button>
+                )}
+                {onTryToolClick && (
+                  <button 
+                    onClick={handleTryToolClick}
+                    className="text-left hover:opacity-80 transition-opacity bg-orange-500 text-white px-4 py-2 rounded-full font-medium"
+                  >
+                    Try Tool
+                  </button>
+                )}
               </div>
             </SheetContent>
           </Sheet>

@@ -5,6 +5,7 @@ import { Zap } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useNavigate } from "react-router-dom";
 import Navbar from "@/components/Navbar";
+import Testimonials from "@/components/Testimonials";
 
 const Offer = () => {
   const [isRedirecting, setIsRedirecting] = useState(false);
@@ -24,9 +25,23 @@ const Offer = () => {
     }, 1000);
   };
 
+  const scrollToTestimonials = () => {
+    const testimonialsElement = document.getElementById('testimonials');
+    if (testimonialsElement) {
+      testimonialsElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const scrollToTryTool = () => {
+    const tryToolElement = document.getElementById('try-tool');
+    if (tryToolElement) {
+      tryToolElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gradient-primary">
-      <Navbar />
+      <Navbar onTestimonialsClick={scrollToTestimonials} onTryToolClick={scrollToTryTool} />
       
       {/* Hero Section */}
       <section className="pt-32 pb-8">
@@ -49,7 +64,7 @@ const Offer = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="pb-20">
+      <section id="try-tool" className="pb-20">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto">
             <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12">
@@ -82,6 +97,11 @@ const Offer = () => {
           </div>
         </div>
       </section>
+
+      {/* Testimonials Section */}
+      <div id="testimonials">
+        <Testimonials />
+      </div>
     </div>
   );
 };
