@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Zap } from "lucide-react";
@@ -57,9 +56,6 @@ const Offer = () => {
                 <h2 className="text-3xl font-bold mb-4" style={{ color: '#3B1E5E' }}>
                   Fix My Email Now!
                 </h2>
-                <p className="text-lg mb-6" style={{ color: '#89888E' }}>
-                  Start your first free email fix instantly
-                </p>
               </div>
 
               <Button 
