@@ -102,7 +102,7 @@ const SocialCreditsForm = ({
       // Check if user already has a submission to prevent duplicates
       const { data: existingSubmissions } = await supabase
         .from('social_media_credits')
-        .select('id')
+        .select('id, created_at')
         .eq('email', email)
         .eq('status', 'approved');
 
