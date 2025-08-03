@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { CheckCircle2, Sparkles, Copy, BarChart3 } from "lucide-react";
@@ -140,17 +139,14 @@ const Tool = () => {
 
       console.log('Function response:', data);
       
+      // Set all data at once to prevent multiple renders
       setMakeover(data.rewritten_email);
       setAnalysis({
         psychologicalTriggers: data.psychological_triggers || [],
         structureImprovements: data.structure_improvements || [],
         questions: data.questions || []
       });
-      
-      // Use setTimeout to create a smooth transition
-      setTimeout(() => {
-        setShowMakeover(true);
-      }, 100);
+      setShowMakeover(true);
       
       // Increment usage count and log usage
       await incrementUsage(email || undefined);
@@ -170,7 +166,6 @@ const Tool = () => {
 
   const handleReset = () => {
     setShowMakeover(false);
-    // Clear content immediately, no timeout
     setEmailContent("");
     setMakeover("");
     setAnalysis({ psychologicalTriggers: [], structureImprovements: [], questions: [] });
@@ -297,7 +292,7 @@ const Tool = () => {
             </div>
 
             <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12">
-              {/* Main content area - Fixed layout */}
+              {/* Main content area */}
               <div className="grid md:grid-cols-2 gap-8 mb-8">
                 <div>
                   <h3 className="text-2xl font-bold mb-4" style={{ color: '#3B1E5E' }}>Your Original Email</h3>
@@ -313,50 +308,50 @@ const Tool = () => {
                 <div>
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="text-2xl font-bold" style={{ color: '#3B1E5E' }}>Your Improved Email</h3>
-                    <Button
-                      onClick={copyToClipboard}
-                      variant="outline"
-                      size="sm"
-                      className={`flex items-center gap-2 border-gray-300 text-gray-600 transition-opacity duration-300 ${
-                        showMakeover && makeover ? 'opacity-100' : 'opacity-0 pointer-events-none'
-                      }`}
-                    >
-                      <Copy className="w-4 h-4" />
-                      Copy
-                    </Button>
+                    {showMakeover && makeover && (
+                      <Button
+                        onClick={copyToClipboard}
+                        variant="outline"
+                        size="sm"
+                        className="flex items-center gap-2 border-gray-300 text-gray-600"
+                      >
+                        <Copy className="w-4 h-4" />
+                        Copy
+                      </Button>
+                    )}
                   </div>
-                  <div className="min-h-80 border-2 rounded-xl p-4 transition-all duration-500" 
-                       style={{ 
-                         backgroundColor: showMakeover && makeover ? '#ffffff' : '#f9fafb', 
-                         borderColor: showMakeover && makeover ? '#10b981' : '#d1d5db'
-                       }}>
-                    <div className={`transition-all duration-500 ${showMakeover && makeover ? 'opacity-100' : 'opacity-50'}`}>
-                      {showMakeover && makeover ? (
-                        <div className="whitespace-pre-line text-sm leading-relaxed" style={{ color: '#3B1E5E' }}>
-                          {makeover}
-                        </div>
-                      ) : (
-                        <div className="h-full flex items-center justify-center">
-                          <p className="text-center" style={{ color: '#89888E' }}>
-                            {isSubmitting ? "Transforming your email..." : "Your enhanced email will appear here..."}
-                          </p>
-                        </div>
-                      )}
-                    </div>
+                  <div 
+                    className="min-h-80 border-2 rounded-xl p-4"
+                    style={{ 
+                      backgroundColor: showMakeover && makeover ? '#ffffff' : '#f9fafb', 
+                      borderColor: showMakeover && makeover ? '#10b981' : '#d1d5db'
+                    }}
+                  >
+                    {showMakeover && makeover ? (
+                      <div className="whitespace-pre-line text-sm leading-relaxed" style={{ color: '#3B1E5E' }}>
+                        {makeover}
+                      </div>
+                    ) : (
+                      <div className="h-full flex items-center justify-center">
+                        <p className="text-center" style={{ color: '#89888E' }}>
+                          {isSubmitting ? "Transforming your email..." : "Your enhanced email will appear here..."}
+                        </p>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
 
-              {/* Fixed height subheadline area */}
-              <div className="text-center mb-8 h-12 flex items-center justify-center">
-                <p className={`text-xl md:text-2xl italic transition-opacity duration-500 ${
-                  showMakeover && makeover ? 'opacity-100' : 'opacity-0'
-                }`} style={{ color: '#3B1E5E' }}>
-                  We handle the fix, you handle the final touch.
-                </p>
+              {/* Subheadline area */}
+              <div className="text-center mb-8">
+                {showMakeover && makeover && (
+                  <p className="text-xl md:text-2xl italic" style={{ color: '#3B1E5E' }}>
+                    We handle the fix, you handle the final touch.
+                  </p>
+                )}
               </div>
               
-              {/* Fixed button area */}
+              {/* Button area */}
               <div className="text-center mb-8">
                 {!showMakeover || !makeover ? (
                   <form onSubmit={handleSubmit}>
@@ -380,19 +375,15 @@ const Tool = () => {
                   <Button 
                     onClick={handleReset}
                     variant="outline"
-                    className="border-2 py-3 px-8 rounded-full border-gray-300 text-gray-600 transition-all duration-300"
+                    className="border-2 py-3 px-8 rounded-full border-gray-300 text-gray-600"
                   >
                     Enhance Another Email
                   </Button>
                 )}
               </div>
 
-              {/* Analysis section - Always present in DOM, just hidden */}
-              <div className={`transition-all duration-700 ${
-                showMakeover && makeover && (analysis.psychologicalTriggers.length > 0 || analysis.structureImprovements.length > 0) 
-                  ? 'opacity-100 max-h-none' 
-                  : 'opacity-0 max-h-0 overflow-hidden'
-              }`}>
+              {/* Analysis section */}
+              {showMakeover && makeover && (analysis.psychologicalTriggers.length > 0 || analysis.structureImprovements.length > 0) && (
                 <div className="rounded-2xl p-8" style={{ backgroundColor: '#f9fafb' }}>
                   <h2 className="text-3xl font-bold mb-8" style={{ color: '#3B1E5E' }}>What Changed & Why</h2>
                   
@@ -401,9 +392,7 @@ const Tool = () => {
                       <h3 className="text-xl font-semibold mb-6" style={{ color: '#E19013' }}>Psychological Triggers Applied:</h3>
                       <div className="space-y-3">
                         {analysis.psychologicalTriggers.map((trigger, index) => (
-                          <div key={index} className={`flex items-start gap-3 transition-all duration-500 ${
-                            showMakeover ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
-                          }`} style={{ transitionDelay: `${index * 100}ms` }}>
+                          <div key={index} className="flex items-start gap-3">
                             <CheckCircle2 className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: '#E19013' }} />
                             <span style={{ color: '#3B1E5E' }}>{trigger}</span>
                           </div>
@@ -415,9 +404,7 @@ const Tool = () => {
                       <h3 className="text-xl font-semibold mb-6" style={{ color: '#E19013' }}>Structure Improvements:</h3>
                       <div className="space-y-3">
                         {analysis.structureImprovements.map((improvement, index) => (
-                          <div key={index} className={`flex items-start gap-3 transition-all duration-500 ${
-                            showMakeover ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
-                          }`} style={{ transitionDelay: `${(index + analysis.psychologicalTriggers.length) * 100}ms` }}>
+                          <div key={index} className="flex items-start gap-3">
                             <CheckCircle2 className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: '#E19013' }} />
                             <span style={{ color: '#3B1E5E' }}>{improvement}</span>
                           </div>
@@ -427,19 +414,18 @@ const Tool = () => {
                   </div>
 
                   {analysis.questions && analysis.questions.length > 0 && (
-                    <div className={`mt-8 transition-all duration-500 ${
-                      showMakeover ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
-                    }`} style={{ transitionDelay: '800ms' }}>
+                    <div className="mt-8">
                       <h3 className="text-xl font-semibold mb-4" style={{ color: '#E19013' }}>Questions for Better Results:</h3>
                       <div className="space-y-2">
                         {analysis.questions.map((question, index) => (
-                          <div key={index} className={`p-3 rounded-lg transition-all duration-500 ${
-                            showMakeover ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
-                          }`} style={{ 
-                            backgroundColor: '#fff3cd', 
-                            color: '#856404',
-                            transitionDelay: `${(index + 10) * 100}ms`
-                          }}>
+                          <div 
+                            key={index} 
+                            className="p-3 rounded-lg" 
+                            style={{ 
+                              backgroundColor: '#fff3cd', 
+                              color: '#856404'
+                            }}
+                          >
                             {question}
                           </div>
                         ))}
@@ -447,7 +433,7 @@ const Tool = () => {
                     </div>
                   )}
                 </div>
-              </div>
+              )}
             </div>
           </div>
         </div>
