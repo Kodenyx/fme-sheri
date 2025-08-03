@@ -145,7 +145,11 @@ const Tool = () => {
         structureImprovements: data.structure_improvements || [],
         questions: data.questions || []
       });
-      setShowMakeover(true);
+      
+      // Use setTimeout to create a smooth transition
+      setTimeout(() => {
+        setShowMakeover(true);
+      }, 100);
       
       // Increment usage count and log usage
       await incrementUsage(email || undefined);
@@ -164,10 +168,12 @@ const Tool = () => {
   };
 
   const handleReset = () => {
-    setEmailContent("");
-    setMakeover("");
     setShowMakeover(false);
-    setAnalysis({ psychologicalTriggers: [], structureImprovements: [], questions: [] });
+    setTimeout(() => {
+      setEmailContent("");
+      setMakeover("");
+      setAnalysis({ psychologicalTriggers: [], structureImprovements: [], questions: [] });
+    }, 300);
   };
 
   const copyToClipboard = async () => {
@@ -291,6 +297,7 @@ const Tool = () => {
             </div>
 
             <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12">
+              {/* Always show both columns - prevents layout shift */}
               <div className="grid md:grid-cols-2 gap-8 mb-8">
                 <div>
                   <h3 className="text-2xl font-bold mb-4" style={{ color: '#3B1E5E' }}>Your Original Email</h3>
@@ -300,53 +307,58 @@ const Tool = () => {
                     onChange={(e) => setEmailContent(e.target.value)}
                     required
                     className="min-h-80 text-base border-2 rounded-xl focus:ring-2 border-gray-300 focus:border-gray-400"
+                    disabled={isSubmitting}
                   />
                 </div>
                 <div>
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="text-2xl font-bold" style={{ color: '#3B1E5E' }}>Your Improved Email</h3>
-                    {showMakeover && (
+                    <div className={`transition-opacity duration-300 ${showMakeover ? 'opacity-100' : 'opacity-0'}`}>
                       <Button
                         onClick={copyToClipboard}
                         variant="outline"
                         size="sm"
                         className="flex items-center gap-2 border-gray-300 text-gray-600"
+                        disabled={!showMakeover}
                       >
                         <Copy className="w-4 h-4" />
                         Copy
                       </Button>
-                    )}
+                    </div>
                   </div>
-                  <div className={`min-h-80 border-2 rounded-xl p-4 ${showMakeover ? '' : 'flex items-center justify-center'}`} 
+                  <div className="min-h-80 border-2 rounded-xl p-4 transition-all duration-300" 
                        style={{ 
                          backgroundColor: showMakeover ? '#ffffff' : '#f9fafb', 
-                         borderColor: '#d1d5db' 
+                         borderColor: showMakeover ? '#10b981' : '#d1d5db'
                        }}>
-                    {showMakeover ? (
-                      <div className="whitespace-pre-line text-sm leading-relaxed" style={{ color: '#3B1E5E' }}>
-                        {makeover}
-                      </div>
-                    ) : (
-                      <p className="text-center" style={{ color: '#89888E' }}>
-                        Your enhanced email will appear here...
-                      </p>
-                    )}
+                    <div className={`transition-all duration-500 ${showMakeover ? 'opacity-100 translate-y-0' : 'opacity-50 translate-y-4'}`}>
+                      {showMakeover && makeover ? (
+                        <div className="whitespace-pre-line text-sm leading-relaxed" style={{ color: '#3B1E5E' }}>
+                          {makeover}
+                        </div>
+                      ) : (
+                        <div className="h-full flex items-center justify-center">
+                          <p className="text-center" style={{ color: '#89888E' }}>
+                            {isSubmitting ? "Transforming your email..." : "Your enhanced email will appear here..."}
+                          </p>
+                        </div>
+                      )}
+                    </div>
                   </div>
                 </div>
               </div>
 
-              {/* Permanent subheadline message */}
-              {showMakeover && (
-                <div className="text-center mb-8">
-                  <p className="text-xl md:text-2xl italic" style={{ color: '#3B1E5E' }}>
-                    We handle the fix, you handle the final touch.
-                  </p>
-                </div>
-              )}
+              {/* Smooth transition for subheadline */}
+              <div className={`text-center mb-8 transition-all duration-500 ${showMakeover ? 'opacity-100 max-h-20' : 'opacity-0 max-h-0 overflow-hidden'}`}>
+                <p className="text-xl md:text-2xl italic" style={{ color: '#3B1E5E' }}>
+                  We handle the fix, you handle the final touch.
+                </p>
+              </div>
               
-              {!showMakeover && (
-                <form onSubmit={handleSubmit}>
-                  <div className="text-center">
+              {/* Submit button - always visible but changes content */}
+              <div className="text-center mb-8">
+                {!showMakeover ? (
+                  <form onSubmit={handleSubmit}>
                     <Button 
                       type="submit"
                       disabled={isSubmitting || !emailContent.trim()}
@@ -362,66 +374,67 @@ const Tool = () => {
                         </>
                       )}
                     </Button>
-                  </div>
-                </form>
-              )}
+                  </form>
+                ) : (
+                  <Button 
+                    onClick={handleReset}
+                    variant="outline"
+                    className="border-2 py-3 px-8 rounded-full border-gray-300 text-gray-600 transition-all duration-300"
+                  >
+                    Enhance Another Email
+                  </Button>
+                )}
+              </div>
 
-              {showMakeover && (
-                <>
-                  <div className="rounded-2xl p-8 mt-12" style={{ backgroundColor: '#f9fafb' }}>
-                    <h2 className="text-3xl font-bold mb-8" style={{ color: '#3B1E5E' }}>What Changed & Why</h2>
-                    
-                    <div className="grid md:grid-cols-2 gap-8">
-                      <div>
-                        <h3 className="text-xl font-semibold mb-6" style={{ color: '#E19013' }}>Psychological Triggers Applied:</h3>
-                        <div className="space-y-3">
-                          {analysis.psychologicalTriggers.map((trigger, index) => (
-                            <div key={index} className="flex items-start gap-3">
-                              <CheckCircle2 className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: '#E19013' }} />
-                              <span style={{ color: '#3B1E5E' }}>{trigger}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                      
-                      <div>
-                        <h3 className="text-xl font-semibold mb-6" style={{ color: '#E19013' }}>Structure Improvements:</h3>
-                        <div className="space-y-3">
-                          {analysis.structureImprovements.map((improvement, index) => (
-                            <div key={index} className="flex items-start gap-3">
-                              <CheckCircle2 className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: '#E19013' }} />
-                              <span style={{ color: '#3B1E5E' }}>{improvement}</span>
-                            </div>
-                          ))}
-                        </div>
+              {/* Analysis section with smooth reveal */}
+              <div className={`transition-all duration-700 ${showMakeover ? 'opacity-100 max-h-none' : 'opacity-0 max-h-0 overflow-hidden'}`}>
+                <div className="rounded-2xl p-8" style={{ backgroundColor: '#f9fafb' }}>
+                  <h2 className="text-3xl font-bold mb-8" style={{ color: '#3B1E5E' }}>What Changed & Why</h2>
+                  
+                  <div className="grid md:grid-cols-2 gap-8">
+                    <div>
+                      <h3 className="text-xl font-semibold mb-6" style={{ color: '#E19013' }}>Psychological Triggers Applied:</h3>
+                      <div className="space-y-3">
+                        {analysis.psychologicalTriggers.map((trigger, index) => (
+                          <div key={index} className="flex items-start gap-3 animate-fadeIn" style={{ animationDelay: `${index * 100}ms` }}>
+                            <CheckCircle2 className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: '#E19013' }} />
+                            <span style={{ color: '#3B1E5E' }}>{trigger}</span>
+                          </div>
+                        ))}
                       </div>
                     </div>
-
-                    {analysis.questions && analysis.questions.length > 0 && (
-                      <div className="mt-8">
-                        <h3 className="text-xl font-semibold mb-4" style={{ color: '#E19013' }}>Questions for Better Results:</h3>
-                        <div className="space-y-2">
-                          {analysis.questions.map((question, index) => (
-                            <div key={index} className="p-3 rounded-lg" style={{ backgroundColor: '#fff3cd', color: '#856404' }}>
-                              {question}
-                            </div>
-                          ))}
-                        </div>
+                    
+                    <div>
+                      <h3 className="text-xl font-semibold mb-6" style={{ color: '#E19013' }}>Structure Improvements:</h3>
+                      <div className="space-y-3">
+                        {analysis.structureImprovements.map((improvement, index) => (
+                          <div key={index} className="flex items-start gap-3 animate-fadeIn" style={{ animationDelay: `${(index + analysis.psychologicalTriggers.length) * 100}ms` }}>
+                            <CheckCircle2 className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: '#E19013' }} />
+                            <span style={{ color: '#3B1E5E' }}>{improvement}</span>
+                          </div>
+                        ))}
                       </div>
-                    )}
+                    </div>
                   </div>
-                  
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-                    <Button 
-                      onClick={handleReset}
-                      variant="outline"
-                      className="border-2 py-3 px-8 rounded-full border-gray-300 text-gray-600"
-                    >
-                      Enhance Another Email
-                    </Button>
-                  </div>
-                </>
-              )}
+
+                  {analysis.questions && analysis.questions.length > 0 && (
+                    <div className="mt-8 animate-fadeIn" style={{ animationDelay: '800ms' }}>
+                      <h3 className="text-xl font-semibold mb-4" style={{ color: '#E19013' }}>Questions for Better Results:</h3>
+                      <div className="space-y-2">
+                        {analysis.questions.map((question, index) => (
+                          <div key={index} className="p-3 rounded-lg animate-fadeIn" style={{ 
+                            backgroundColor: '#fff3cd', 
+                            color: '#856404',
+                            animationDelay: `${(index + 10) * 100}ms`
+                          }}>
+                            {question}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -445,6 +458,24 @@ const Tool = () => {
           />
         </>
       )}
+
+      <style jsx>{`
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(10px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        .animate-fadeIn {
+          animation: fadeIn 0.5s ease-out forwards;
+          opacity: 0;
+        }
+      `}</style>
     </div>
   );
 };
