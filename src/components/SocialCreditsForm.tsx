@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Upload, Gift } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
+import { useUsageTracking } from "@/hooks/useUsageTracking";
 
 interface SocialCreditsFormProps {
   email: string | null;
@@ -28,6 +29,7 @@ const SocialCreditsForm = ({
   const [previewUrl, setPreviewUrl] = useState<string>("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
+  const { createCheckoutSession } = useUsageTracking();
 
   const handleFileSelect = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
@@ -46,6 +48,19 @@ const SocialCreditsForm = ({
       reader.onload = (e) => setPreviewUrl(e.target?.result as string);
       reader.readAsDataURL(file);
     }
+  };
+
+  const handleUpgrade = async () => {
+    if (!email) {
+      toast({
+        title: "Email required",
+        description: "Please use the tool first to register your email",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    await createCheckoutSession(email);
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -84,10 +99,51 @@ const SocialCreditsForm = ({
     setIsSubmitting(true);
 
     try {
+      // Check if user already has a submission to prevent duplicates
+      const { data: existingSubmissions } = await supabase
+        .from('social_media_credits')
+        .select('id')
+        .eq('email', email)
+        .eq('status', 'approved');
+
+      // For free users, check if they already have any approved submission
+      if (subscriptionStatus === 'free' && existingSubmissions && existingSubmissions.length > 0) {
+        toast({
+          title: "Bonus already claimed",
+          description: "You've already claimed your one-time social bonus",
+          variant: "destructive",
+        });
+        setIsSubmitting(false);
+        return;
+      }
+
+      // For paid users, check if they claimed this month
+      if (subscriptionStatus === 'paid') {
+        const now = new Date();
+        const currentMonth = now.getMonth();
+        const currentYear = now.getFullYear();
+        
+        const monthlySubmissions = existingSubmissions?.filter(sub => {
+          const submissionDate = new Date(sub.created_at);
+          return submissionDate.getMonth() === currentMonth && 
+                 submissionDate.getFullYear() === currentYear;
+        });
+
+        if (monthlySubmissions && monthlySubmissions.length > 0) {
+          toast({
+            title: "Bonus already claimed",
+            description: "You've already claimed your social bonus this month",
+            variant: "destructive",
+          });
+          setIsSubmitting(false);
+          return;
+        }
+      }
+
       // Upload image (placeholder for now)
       const imageUrl = `placeholder-${Date.now()}`;
 
-      // Submit with instant approval and credit award
+      // Submit with instant approval and correct credit amount
       const { error } = await supabase
         .from('social_media_credits')
         .insert({
@@ -150,6 +206,7 @@ const SocialCreditsForm = ({
             <p className="text-gray-600 mb-4">{getInstructions()}</p>
             {subscriptionStatus === 'free' && oneTimeBonusClaimed && (
               <Button
+                onClick={handleUpgrade}
                 className="text-white font-bold"
                 style={{ backgroundColor: '#E19013' }}
               >
