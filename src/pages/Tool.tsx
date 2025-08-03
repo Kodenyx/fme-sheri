@@ -170,11 +170,10 @@ const Tool = () => {
 
   const handleReset = () => {
     setShowMakeover(false);
-    setTimeout(() => {
-      setEmailContent("");
-      setMakeover("");
-      setAnalysis({ psychologicalTriggers: [], structureImprovements: [], questions: [] });
-    }, 300);
+    // Clear content immediately, no timeout
+    setEmailContent("");
+    setMakeover("");
+    setAnalysis({ psychologicalTriggers: [], structureImprovements: [], questions: [] });
   };
 
   const copyToClipboard = async () => {
@@ -298,7 +297,7 @@ const Tool = () => {
             </div>
 
             <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12">
-              {/* Always show both columns - prevents layout shift */}
+              {/* Main content area - Fixed layout */}
               <div className="grid md:grid-cols-2 gap-8 mb-8">
                 <div>
                   <h3 className="text-2xl font-bold mb-4" style={{ color: '#3B1E5E' }}>Your Original Email</h3>
@@ -314,25 +313,24 @@ const Tool = () => {
                 <div>
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="text-2xl font-bold" style={{ color: '#3B1E5E' }}>Your Improved Email</h3>
-                    <div className={`transition-opacity duration-300 ${showMakeover ? 'opacity-100' : 'opacity-0'}`}>
-                      <Button
-                        onClick={copyToClipboard}
-                        variant="outline"
-                        size="sm"
-                        className="flex items-center gap-2 border-gray-300 text-gray-600"
-                        disabled={!showMakeover}
-                      >
-                        <Copy className="w-4 h-4" />
-                        Copy
-                      </Button>
-                    </div>
+                    <Button
+                      onClick={copyToClipboard}
+                      variant="outline"
+                      size="sm"
+                      className={`flex items-center gap-2 border-gray-300 text-gray-600 transition-opacity duration-300 ${
+                        showMakeover && makeover ? 'opacity-100' : 'opacity-0 pointer-events-none'
+                      }`}
+                    >
+                      <Copy className="w-4 h-4" />
+                      Copy
+                    </Button>
                   </div>
-                  <div className="min-h-80 border-2 rounded-xl p-4 transition-all duration-300" 
+                  <div className="min-h-80 border-2 rounded-xl p-4 transition-all duration-500" 
                        style={{ 
-                         backgroundColor: showMakeover ? '#ffffff' : '#f9fafb', 
-                         borderColor: showMakeover ? '#10b981' : '#d1d5db'
+                         backgroundColor: showMakeover && makeover ? '#ffffff' : '#f9fafb', 
+                         borderColor: showMakeover && makeover ? '#10b981' : '#d1d5db'
                        }}>
-                    <div className={`transition-all duration-500 ${showMakeover ? 'opacity-100 translate-y-0' : 'opacity-50 translate-y-4'}`}>
+                    <div className={`transition-all duration-500 ${showMakeover && makeover ? 'opacity-100' : 'opacity-50'}`}>
                       {showMakeover && makeover ? (
                         <div className="whitespace-pre-line text-sm leading-relaxed" style={{ color: '#3B1E5E' }}>
                           {makeover}
@@ -349,16 +347,18 @@ const Tool = () => {
                 </div>
               </div>
 
-              {/* Smooth transition for subheadline */}
-              <div className={`text-center mb-8 transition-all duration-500 ${showMakeover ? 'opacity-100 max-h-20' : 'opacity-0 max-h-0 overflow-hidden'}`}>
-                <p className="text-xl md:text-2xl italic" style={{ color: '#3B1E5E' }}>
+              {/* Fixed height subheadline area */}
+              <div className="text-center mb-8 h-12 flex items-center justify-center">
+                <p className={`text-xl md:text-2xl italic transition-opacity duration-500 ${
+                  showMakeover && makeover ? 'opacity-100' : 'opacity-0'
+                }`} style={{ color: '#3B1E5E' }}>
                   We handle the fix, you handle the final touch.
                 </p>
               </div>
               
-              {/* Submit button - always visible but changes content */}
+              {/* Fixed button area */}
               <div className="text-center mb-8">
-                {!showMakeover ? (
+                {!showMakeover || !makeover ? (
                   <form onSubmit={handleSubmit}>
                     <Button 
                       type="submit"
@@ -387,8 +387,12 @@ const Tool = () => {
                 )}
               </div>
 
-              {/* Analysis section with smooth reveal */}
-              <div className={`transition-all duration-700 ${showMakeover ? 'opacity-100 max-h-none' : 'opacity-0 max-h-0 overflow-hidden'}`}>
+              {/* Analysis section - Always present in DOM, just hidden */}
+              <div className={`transition-all duration-700 ${
+                showMakeover && makeover && (analysis.psychologicalTriggers.length > 0 || analysis.structureImprovements.length > 0) 
+                  ? 'opacity-100 max-h-none' 
+                  : 'opacity-0 max-h-0 overflow-hidden'
+              }`}>
                 <div className="rounded-2xl p-8" style={{ backgroundColor: '#f9fafb' }}>
                   <h2 className="text-3xl font-bold mb-8" style={{ color: '#3B1E5E' }}>What Changed & Why</h2>
                   
@@ -397,7 +401,9 @@ const Tool = () => {
                       <h3 className="text-xl font-semibold mb-6" style={{ color: '#E19013' }}>Psychological Triggers Applied:</h3>
                       <div className="space-y-3">
                         {analysis.psychologicalTriggers.map((trigger, index) => (
-                          <div key={index} className="flex items-start gap-3 animate-[fadeIn_0.5s_ease-out_forwards] opacity-0" style={{ animationDelay: `${index * 100}ms` }}>
+                          <div key={index} className={`flex items-start gap-3 transition-all duration-500 ${
+                            showMakeover ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
+                          }`} style={{ transitionDelay: `${index * 100}ms` }}>
                             <CheckCircle2 className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: '#E19013' }} />
                             <span style={{ color: '#3B1E5E' }}>{trigger}</span>
                           </div>
@@ -409,7 +415,9 @@ const Tool = () => {
                       <h3 className="text-xl font-semibold mb-6" style={{ color: '#E19013' }}>Structure Improvements:</h3>
                       <div className="space-y-3">
                         {analysis.structureImprovements.map((improvement, index) => (
-                          <div key={index} className="flex items-start gap-3 animate-[fadeIn_0.5s_ease-out_forwards] opacity-0" style={{ animationDelay: `${(index + analysis.psychologicalTriggers.length) * 100}ms` }}>
+                          <div key={index} className={`flex items-start gap-3 transition-all duration-500 ${
+                            showMakeover ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
+                          }`} style={{ transitionDelay: `${(index + analysis.psychologicalTriggers.length) * 100}ms` }}>
                             <CheckCircle2 className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: '#E19013' }} />
                             <span style={{ color: '#3B1E5E' }}>{improvement}</span>
                           </div>
@@ -419,14 +427,18 @@ const Tool = () => {
                   </div>
 
                   {analysis.questions && analysis.questions.length > 0 && (
-                    <div className="mt-8 animate-[fadeIn_0.5s_ease-out_forwards] opacity-0" style={{ animationDelay: '800ms' }}>
+                    <div className={`mt-8 transition-all duration-500 ${
+                      showMakeover ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
+                    }`} style={{ transitionDelay: '800ms' }}>
                       <h3 className="text-xl font-semibold mb-4" style={{ color: '#E19013' }}>Questions for Better Results:</h3>
                       <div className="space-y-2">
                         {analysis.questions.map((question, index) => (
-                          <div key={index} className="p-3 rounded-lg animate-[fadeIn_0.5s_ease-out_forwards] opacity-0" style={{ 
+                          <div key={index} className={`p-3 rounded-lg transition-all duration-500 ${
+                            showMakeover ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
+                          }`} style={{ 
                             backgroundColor: '#fff3cd', 
                             color: '#856404',
-                            animationDelay: `${(index + 10) * 100}ms`
+                            transitionDelay: `${(index + 10) * 100}ms`
                           }}>
                             {question}
                           </div>
