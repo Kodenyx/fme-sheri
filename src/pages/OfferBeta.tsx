@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -19,8 +18,10 @@ const OfferBeta = () => {
     setIsSubmitting(true);
 
     try {
-      // Store a placeholder email in localStorage for tool usage tracking
-      localStorage.setItem('userEmail', 'beta-user@example.com');
+      // Set beta user identifier in localStorage
+      const betaUserId = `beta-user-${Date.now()}`;
+      localStorage.setItem('userEmail', betaUserId);
+      localStorage.setItem('isBetaUser', 'true');
       
       toast({
         title: "Welcome to Beta! 🎉",

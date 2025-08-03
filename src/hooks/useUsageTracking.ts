@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
@@ -14,6 +13,7 @@ export interface UsageData {
   loading: boolean;
   monthlyLimit: number;
   effectiveMonthlyLimit: number;
+  isBetaUser: boolean;
 }
 
 export const useUsageTracking = () => {
@@ -28,11 +28,19 @@ export const useUsageTracking = () => {
     loading: true,
     monthlyLimit: 60,
     effectiveMonthlyLimit: 60,
+    isBetaUser: false,
   });
   const { toast } = useToast();
 
   const getStoredEmail = (): string | null => {
     return localStorage.getItem('userEmail');
+  };
+
+  const checkIfBetaUser = (): boolean => {
+    const isBeta = localStorage.getItem('isBetaUser') === 'true';
+    const email = getStoredEmail();
+    const isBetaEmail = email?.startsWith('beta-user-');
+    return isBeta || isBetaEmail || false;
   };
 
   const getLocalUsageCount = (): number => {
@@ -173,12 +181,13 @@ export const useUsageTracking = () => {
     const storedEmail = getStoredEmail();
     const localCount = getLocalUsageCount();
     const monthlyCount = getMonthlyUsage();
+    const isBetaUser = checkIfBetaUser();
     
     let actualCount = localCount;
     let isSubscribed = false;
     let bonusCredits = 0;
     
-    if (storedEmail) {
+    if (storedEmail && !isBetaUser) {
       const dbCount = await getUsageFromDatabase(storedEmail);
       actualCount = Math.max(localCount, dbCount);
       isSubscribed = await checkSubscription(storedEmail);
@@ -188,17 +197,22 @@ export const useUsageTracking = () => {
     // Calculate effective monthly limit (base limit + bonus credits)
     const effectiveMonthlyLimit = 60 + bonusCredits;
     
-    // Show email capture after 1st use when no email is stored
-    const needsEmailCapture = actualCount >= 1 && !storedEmail;
-    
-    // Show paywall logic:
-    // - For non-subscribers: after 5 uses
-    // - For subscribers: after effective monthly limit (60 + bonus credits)
+    // Beta users never need email capture or paywall
+    let needsEmailCapture = false;
     let needsPaywall = false;
-    if (!isSubscribed) {
-      needsPaywall = actualCount >= 5;
-    } else {
-      needsPaywall = monthlyCount >= effectiveMonthlyLimit;
+    
+    if (!isBetaUser) {
+      // Show email capture after 1st use when no email is stored
+      needsEmailCapture = actualCount >= 1 && !storedEmail;
+      
+      // Show paywall logic:
+      // - For non-subscribers: after 5 uses
+      // - For subscribers: after effective monthly limit (60 + bonus credits)
+      if (!isSubscribed) {
+        needsPaywall = actualCount >= 5;
+      } else {
+        needsPaywall = monthlyCount >= effectiveMonthlyLimit;
+      }
     }
     
     console.log('Usage tracking debug:', {
@@ -209,7 +223,8 @@ export const useUsageTracking = () => {
       storedEmail,
       needsEmailCapture,
       needsPaywall,
-      isSubscribed
+      isSubscribed,
+      isBetaUser
     });
     
     setUsageData({
@@ -223,6 +238,7 @@ export const useUsageTracking = () => {
       loading: false,
       monthlyLimit: 60,
       effectiveMonthlyLimit: effectiveMonthlyLimit,
+      isBetaUser,
     });
   };
 
@@ -234,7 +250,7 @@ export const useUsageTracking = () => {
     setLocalUsageCount(newCount);
     setMonthlyUsage(newMonthlyCount);
     
-    if (currentEmail) {
+    if (currentEmail && !usageData.isBetaUser) {
       await updateUsageInDatabase(currentEmail, newCount);
     }
     

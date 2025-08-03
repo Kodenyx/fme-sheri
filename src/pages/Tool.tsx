@@ -41,6 +41,7 @@ const Tool = () => {
     loading,
     monthlyLimit,
     effectiveMonthlyLimit,
+    isBetaUser,
     incrementUsage,
     setUserEmail,
     createCheckoutSession,
@@ -105,13 +106,13 @@ const Tool = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Check access control before processing
-    if (needsEmailCapture) {
+    // Check access control before processing (beta users skip these checks)
+    if (!isBetaUser && needsEmailCapture) {
       setShowEmailModal(true);
       return;
     }
     
-    if (needsPaywall) {
+    if (!isBetaUser && needsPaywall) {
       setShowPaywallModal(true);
       return;
     }
@@ -250,21 +251,28 @@ const Tool = () => {
                 <div className="flex items-center gap-4 bg-white/80 rounded-full px-6 py-3">
                   <BarChart3 className="w-5 h-5" style={{ color: '#E19013' }} />
                   <span style={{ color: '#3B1E5E' }}>
-                    {isSubscribed ? (
+                    {isBetaUser ? (
+                      <strong>Beta Access - Unlimited</strong>
+                    ) : isSubscribed ? (
                       <strong>{monthlyUsage}/{effectiveMonthlyLimit} this month</strong>
                     ) : (
                       <>Uses: <strong>{usageCount}</strong> / 5 free</>
                     )}
                   </span>
-                  {bonusCredits > 0 && (
+                  {bonusCredits > 0 && !isBetaUser && (
                     <span className="text-sm bg-green-100 text-green-800 px-2 py-1 rounded-full">
                       +{bonusCredits} bonus
                     </span>
                   )}
-                  {email && (
+                  {email && !isBetaUser && (
                     <span className="text-sm text-gray-600">• {email}</span>
                   )}
-                  {isSubscribed && (
+                  {isBetaUser && (
+                    <span className="text-sm bg-blue-100 text-blue-800 px-2 py-1 rounded-full">
+                      Beta Access
+                    </span>
+                  )}
+                  {isSubscribed && !isBetaUser && (
                     <span className="text-sm bg-green-100 text-green-800 px-2 py-1 rounded-full">
                       Founders Program
                     </span>
@@ -410,20 +418,24 @@ const Tool = () => {
         </div>
       </div>
 
-      {/* Modals */}
-      <EmailCaptureModal
-        isOpen={showEmailModal}
-        onClose={() => setShowEmailModal(false)}
-        onEmailSubmit={handleEmailSubmit}
-        usageCount={usageCount}
-      />
+      {/* Modals - only show for non-beta users */}
+      {!isBetaUser && (
+        <>
+          <EmailCaptureModal
+            isOpen={showEmailModal}
+            onClose={() => setShowEmailModal(false)}
+            onEmailSubmit={handleEmailSubmit}
+            usageCount={usageCount}
+          />
 
-      <PaywallModal
-        isOpen={showPaywallModal}
-        onClose={() => setShowPaywallModal(false)}
-        onSubscribe={handleSubscribe}
-        usageCount={usageCount}
-      />
+          <PaywallModal
+            isOpen={showPaywallModal}
+            onClose={() => setShowPaywallModal(false)}
+            onSubscribe={handleSubscribe}
+            usageCount={usageCount}
+          />
+        </>
+      )}
     </div>
   );
 };
