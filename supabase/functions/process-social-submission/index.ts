@@ -36,7 +36,7 @@ serve(async (req) => {
         .from('social_media_credits')
         .update({
           status: 'approved',
-          credits_awarded: 15,
+          credits_awarded: 30,
           reviewed_at: new Date().toISOString()
         })
         .eq('id', submissionId)

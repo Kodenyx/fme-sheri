@@ -15,7 +15,7 @@ const SocialCredits = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submissions, setSubmissions] = useState<any[]>([]);
   const { toast } = useToast();
-  const { email } = useUsageTracking();
+  const { email, refreshUsageData } = useUsageTracking();
 
   const handleFileSelect = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
@@ -81,27 +81,31 @@ const SocialCredits = () => {
       // Upload image
       const imageUrl = await uploadImage(selectedFile);
 
-      // Submit for review
+      // Submit with instant approval and credit award
       const { error } = await supabase
         .from('social_media_credits')
         .insert({
           email: email,
           image_url: imageUrl,
-          status: 'pending',
-          credits_awarded: 0
+          status: 'approved',
+          credits_awarded: 30,
+          reviewed_at: new Date().toISOString()
         });
 
       if (error) throw error;
 
       toast({
-        title: "Submission received!",
-        description: "Your social media proof is under review. You'll get 15 bonus credits once approved!",
+        title: "30 bonus credits added! 🎉",
+        description: "Your social media proof has been approved and 30 bonus credits have been added to your account!",
       });
 
       // Reset form
       setSelectedFile(null);
       setPreviewUrl("");
       loadSubmissions();
+      
+      // Refresh usage data to update bonus credits
+      await refreshUsageData();
 
     } catch (error) {
       console.error('Error submitting proof:', error);
@@ -193,7 +197,7 @@ const SocialCredits = () => {
                       (Even small fixes can lead to big momentum. We'd love to celebrate yours.)</p>
                       <p>2. Tag @SheriOtto on Instagram or LinkedIn</p>
                       <p>3. Upload a screenshot below</p>
-                      <p>4. Get 30 bonus credits once approved!</p>
+                      <p>4. Get 30 bonus credits instantly!</p>
                     </div>
                   </div>
 
@@ -241,7 +245,7 @@ const SocialCredits = () => {
                     className="w-full text-white font-bold text-lg py-3 rounded-full"
                     style={{ backgroundColor: '#E19013' }}
                   >
-                    {isSubmitting ? "Submitting..." : "Submit for 30 Bonus Credits"}
+                    {isSubmitting ? "Adding Credits..." : "Get 30 Instant Bonus Credits"}
                   </Button>
                 </form>
               </CardContent>
@@ -273,7 +277,7 @@ const SocialCredits = () => {
                         
                         {submission.status === 'approved' && (
                           <p className="text-sm text-green-600 font-medium">
-                            +15 bonus credits awarded!
+                            +30 bonus credits awarded!
                           </p>
                         )}
                         

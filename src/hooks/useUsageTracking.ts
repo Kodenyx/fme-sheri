@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
@@ -145,8 +146,8 @@ export const useUsageTracking = () => {
 
       if (submissionsError) throw submissionsError;
 
-      // Calculate total bonus credits (15 per approved submission)
-      const totalBonusCredits = (approvedSubmissions || []).length * 15;
+      // Calculate total bonus credits (30 per approved submission)
+      const totalBonusCredits = (approvedSubmissions || []).length * 30;
 
       // Update user_usage_tracking with the total bonus credits
       const { error: updateError } = await supabase
