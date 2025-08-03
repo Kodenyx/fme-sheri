@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
@@ -211,12 +210,13 @@ export const useUsageTracking = () => {
       // Show email capture after 1st use when no email is stored
       needsEmailCapture = actualCount >= 1 && !storedEmail;
       
-      // Show paywall logic:
-      // - For non-subscribers: after 5 uses
-      // - For subscribers: after effective monthly limit (60 + bonus credits)
+      // Fixed paywall logic: Users with bonus credits get extended free access
       if (!isSubscribed) {
-        needsPaywall = actualCount >= 5;
+        // For non-subscribers: check total usage against free limit + bonus credits
+        const freeLimit = 5 + bonusCredits; // 5 free uses + any bonus credits earned
+        needsPaywall = actualCount >= freeLimit;
       } else {
+        // For subscribers: use monthly limit system
         needsPaywall = monthlyCount >= effectiveMonthlyLimit;
       }
     }
@@ -230,7 +230,8 @@ export const useUsageTracking = () => {
       needsEmailCapture,
       needsPaywall,
       isSubscribed,
-      isBetaUser
+      isBetaUser,
+      freeLimit: 5 + bonusCredits
     });
     
     setUsageData({
