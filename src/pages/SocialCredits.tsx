@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -167,10 +166,10 @@ const SocialCredits = () => {
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: '#3B1E5E' }}>
-              Earn <span style={{ color: '#E19013' }}>15 Bonus Credits</span>
+              Earn <span style={{ color: '#E19013' }}>30 Bonus Credits</span>
             </h1>
             <p className="text-xl md:text-2xl max-w-3xl mx-auto" style={{ color: '#3B1E5E' }}>
-              Tag us on social media and get 15 extra email makeovers per month!
+              Tag us on social media and get 30 extra email fixes per month!
             </p>
           </div>
 
@@ -190,10 +189,11 @@ const SocialCredits = () => {
                       How to earn credits:
                     </label>
                     <div className="bg-blue-50 p-4 rounded-lg space-y-2 text-sm" style={{ color: '#3B1E5E' }}>
-                      <p>1. Post about FixMyEmail on any social platform</p>
-                      <p>2. Tag us or mention our tool</p>
+                      <p>1. Share what you liked about the tool or what aspect of your email was improved for you!<br />
+                      (Even small fixes can lead to big momentum. We'd love to celebrate yours.)</p>
+                      <p>2. Tag @SheriOtto on Instagram or LinkedIn</p>
                       <p>3. Upload a screenshot below</p>
-                      <p>4. Get 15 bonus credits once approved!</p>
+                      <p>4. Get 30 bonus credits once approved!</p>
                     </div>
                   </div>
 
@@ -241,7 +241,7 @@ const SocialCredits = () => {
                     className="w-full text-white font-bold text-lg py-3 rounded-full"
                     style={{ backgroundColor: '#E19013' }}
                   >
-                    {isSubmitting ? "Submitting..." : "Submit for 15 Bonus Credits"}
+                    {isSubmitting ? "Submitting..." : "Submit for 30 Bonus Credits"}
                   </Button>
                 </form>
               </CardContent>
