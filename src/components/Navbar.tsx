@@ -35,6 +35,10 @@ const Navbar = ({ onTestimonialsClick, onTryToolClick }: NavbarProps = {}) => {
     }
   };
 
+  const handleEarnCreditsClick = () => {
+    navigate('/social-credits');
+  };
+
   return (
     <nav className="fixed top-0 w-full bg-black/90 backdrop-blur-md z-50 shadow-sm">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
@@ -52,6 +56,12 @@ const Navbar = ({ onTestimonialsClick, onTryToolClick }: NavbarProps = {}) => {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-6">
+          <button 
+            onClick={handleEarnCreditsClick}
+            className="text-white hover:opacity-80 transition-opacity"
+          >
+            Earn Credits
+          </button>
           {onTestimonialsClick && (
             <button 
               onClick={handleTestimonialsClick}
@@ -80,6 +90,12 @@ const Navbar = ({ onTestimonialsClick, onTryToolClick }: NavbarProps = {}) => {
             </SheetTrigger>
             <SheetContent>
               <div className="flex flex-col space-y-4 mt-8">
+                <button 
+                  onClick={handleEarnCreditsClick}
+                  className="text-left hover:opacity-80 transition-opacity"
+                >
+                  Earn Credits
+                </button>
                 {onTestimonialsClick && (
                   <button 
                     onClick={handleTestimonialsClick}
