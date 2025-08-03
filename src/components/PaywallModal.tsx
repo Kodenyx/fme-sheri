@@ -24,6 +24,7 @@ const PaywallModal = ({
 }: PaywallModalProps) => {
   const features = [
     "60 optimized rewrites/month",
+    "Monthly social share bonus: +30 credits",
     "Proven conversion triggers + sales frameworks",
     "Bonus: FixMyEmail Pro mini-course - lifetime access",
     "Priority support & feature feedback access"
@@ -38,11 +39,18 @@ const PaywallModal = ({
               <CreditCard className="h-8 w-8 text-white" />
             </div>
             <DialogTitle className="text-center text-3xl font-bold text-white mb-2">
-              You're Already In – Let It Compound
+              You've Used Your Free Credits
             </DialogTitle>
             <DialogDescription className="text-center text-lg mb-4" style={{ color: '#A9D6D4' }}>
-              Because you made it this far, you've unlocked Founders Access at our lowest rate ever.
+              Want more email fixes? Get unlimited access with our Founders rate.
             </DialogDescription>
+            
+            {/* Social bonus reminder */}
+            <div className="flex items-center justify-center gap-2 mb-4">
+              <span className="text-sm font-medium" style={{ color: '#A9D6D4' }}>
+                💡 Tip: Share on social media for +10 bonus credits (one-time)
+              </span>
+            </div>
             
             {/* Urgency Badge */}
             <div className="flex items-center justify-center gap-2 mb-4">

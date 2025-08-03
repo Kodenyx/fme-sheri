@@ -62,6 +62,7 @@ export type Database = {
       social_media_credits: {
         Row: {
           created_at: string
+          credit_type: string | null
           credits_awarded: number
           email: string
           id: string
@@ -76,6 +77,7 @@ export type Database = {
         }
         Insert: {
           created_at?: string
+          credit_type?: string | null
           credits_awarded?: number
           email: string
           id?: string
@@ -90,6 +92,7 @@ export type Database = {
         }
         Update: {
           created_at?: string
+          credit_type?: string | null
           credits_awarded?: number
           email?: string
           id?: string
@@ -176,7 +179,10 @@ export type Database = {
           created_at: string
           email: string
           id: string
+          last_monthly_claim: string | null
           last_used_at: string
+          one_time_bonus_claimed: boolean | null
+          subscription_status: string | null
           updated_at: string
           usage_count: number
           user_id: string | null
@@ -186,7 +192,10 @@ export type Database = {
           created_at?: string
           email: string
           id?: string
+          last_monthly_claim?: string | null
           last_used_at?: string
+          one_time_bonus_claimed?: boolean | null
+          subscription_status?: string | null
           updated_at?: string
           usage_count?: number
           user_id?: string | null
@@ -196,7 +205,10 @@ export type Database = {
           created_at?: string
           email?: string
           id?: string
+          last_monthly_claim?: string | null
           last_used_at?: string
+          one_time_bonus_claimed?: boolean | null
+          subscription_status?: string | null
           updated_at?: string
           usage_count?: number
           user_id?: string | null

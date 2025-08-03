@@ -126,39 +126,22 @@ export const useUsageTracking = () => {
     }
   };
 
-  const getBonusCredits = async (email: string): Promise<number> => {
-    try {
-      const { data, error } = await supabase
-        .from('user_usage_tracking')
-        .select('bonus_credits')
-        .eq('email', email)
-        .single();
-      
-      if (error && error.code !== 'PGRST116') {
-        console.error('Error fetching bonus credits:', error);
-        return 0;
-      }
-      
-      return data?.bonus_credits || 0;
-    } catch (error) {
-      console.error('Error fetching bonus credits:', error);
-      return 0;
-    }
-  };
-
   const updateBonusCreditsFromApprovals = async (email: string): Promise<number> => {
     try {
       // Get all approved submissions for this email
       const { data: approvedSubmissions, error: submissionsError } = await supabase
         .from('social_media_credits')
-        .select('*')
+        .select('credits_awarded')
         .eq('email', email)
         .eq('status', 'approved');
 
       if (submissionsError) throw submissionsError;
 
-      // Calculate total bonus credits (30 per approved submission)
-      const totalBonusCredits = (approvedSubmissions || []).length * 30;
+      // Calculate total bonus credits from approved submissions
+      const totalBonusCredits = (approvedSubmissions || []).reduce(
+        (sum, submission) => sum + (submission.credits_awarded || 0), 
+        0
+      );
 
       // Update user_usage_tracking with the total bonus credits
       const { error: updateError } = await supabase
@@ -186,8 +169,6 @@ export const useUsageTracking = () => {
     const monthlyCount = getMonthlyUsage();
     const isBetaUser = checkIfBetaUser();
     
-    console.log('LoadUsageData - Initial values:', { storedEmail, localCount, monthlyCount, isBetaUser });
-    
     let actualCount = localCount;
     let isSubscribed = false;
     let bonusCredits = 0;
@@ -200,10 +181,12 @@ export const useUsageTracking = () => {
     }
     
     // Calculate effective monthly limit (base limit + bonus credits)
-    const effectiveMonthlyLimit = 60 + bonusCredits;
+    const effectiveMonthlyLimit = 60 + (isSubscribed ? bonusCredits : 0);
     
-    // Calculate effective free limit for non-subscribers
-    const effectiveFreeLimit = 5 + bonusCredits;
+    // New credit structure: 5 base free + max 10 social bonus for free users
+    const baseFreeLimit = 5;
+    const maxSocialBonus = isSubscribed ? bonusCredits : Math.min(bonusCredits, 10);
+    const effectiveFreeLimit = baseFreeLimit + maxSocialBonus;
     
     // Beta users never need email capture or paywall
     let needsEmailCapture = false;
@@ -213,9 +196,9 @@ export const useUsageTracking = () => {
       // Show email capture after 1st use when no email is stored
       needsEmailCapture = actualCount >= 1 && !storedEmail;
       
-      // Fixed paywall logic: Users with bonus credits get extended free access
+      // Paywall logic based on new structure
       if (!isSubscribed) {
-        // For non-subscribers: check total usage against free limit + bonus credits
+        // For non-subscribers: check against free limit (5 + up to 10 social bonus)
         needsPaywall = actualCount >= effectiveFreeLimit;
       } else {
         // For subscribers: use monthly limit system
@@ -223,24 +206,24 @@ export const useUsageTracking = () => {
       }
     }
     
-    console.log('Usage tracking debug:', {
+    console.log('Updated usage tracking:', {
       actualCount,
       monthlyCount,
       bonusCredits,
-      effectiveMonthlyLimit,
+      maxSocialBonus,
       effectiveFreeLimit,
+      effectiveMonthlyLimit,
       storedEmail,
       needsEmailCapture,
       needsPaywall,
       isSubscribed,
-      isBetaUser,
-      remainingFreeUses: Math.max(0, effectiveFreeLimit - actualCount)
+      isBetaUser
     });
     
     setUsageData({
       usageCount: actualCount,
       monthlyUsage: monthlyCount,
-      bonusCredits: bonusCredits,
+      bonusCredits: maxSocialBonus,
       email: storedEmail,
       isSubscribed,
       needsEmailCapture,
