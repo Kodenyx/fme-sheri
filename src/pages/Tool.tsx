@@ -48,6 +48,10 @@ const Tool = () => {
     refreshUsageData
   } = useUsageTracking();
 
+  // Calculate display values
+  const effectiveFreeLimit = 5 + bonusCredits;
+  const remainingFreeUses = Math.max(0, effectiveFreeLimit - usageCount);
+
   const [showEmailModal, setShowEmailModal] = useState(false);
   const [showPaywallModal, setShowPaywallModal] = useState(false);
 
@@ -256,12 +260,17 @@ const Tool = () => {
                     ) : isSubscribed ? (
                       <strong>{monthlyUsage}/{effectiveMonthlyLimit} this month</strong>
                     ) : (
-                      <>Uses: <strong>{usageCount}</strong> / 5 free</>
+                      <>Uses: <strong>{usageCount}/{effectiveFreeLimit}</strong> {bonusCredits > 0 ? 'total free' : 'free'}</>
                     )}
                   </span>
                   {bonusCredits > 0 && !isBetaUser && (
                     <span className="text-sm bg-green-100 text-green-800 px-2 py-1 rounded-full">
-                      +{bonusCredits} bonus
+                      +{bonusCredits} earned
+                    </span>
+                  )}
+                  {!isSubscribed && !isBetaUser && remainingFreeUses > 0 && (
+                    <span className="text-sm text-green-600">
+                      {remainingFreeUses} remaining
                     </span>
                   )}
                   {email && !isBetaUser && (

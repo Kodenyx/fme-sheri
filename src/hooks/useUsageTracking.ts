@@ -202,6 +202,9 @@ export const useUsageTracking = () => {
     // Calculate effective monthly limit (base limit + bonus credits)
     const effectiveMonthlyLimit = 60 + bonusCredits;
     
+    // Calculate effective free limit for non-subscribers
+    const effectiveFreeLimit = 5 + bonusCredits;
+    
     // Beta users never need email capture or paywall
     let needsEmailCapture = false;
     let needsPaywall = false;
@@ -213,8 +216,7 @@ export const useUsageTracking = () => {
       // Fixed paywall logic: Users with bonus credits get extended free access
       if (!isSubscribed) {
         // For non-subscribers: check total usage against free limit + bonus credits
-        const freeLimit = 5 + bonusCredits; // 5 free uses + any bonus credits earned
-        needsPaywall = actualCount >= freeLimit;
+        needsPaywall = actualCount >= effectiveFreeLimit;
       } else {
         // For subscribers: use monthly limit system
         needsPaywall = monthlyCount >= effectiveMonthlyLimit;
@@ -226,12 +228,13 @@ export const useUsageTracking = () => {
       monthlyCount,
       bonusCredits,
       effectiveMonthlyLimit,
+      effectiveFreeLimit,
       storedEmail,
       needsEmailCapture,
       needsPaywall,
       isSubscribed,
       isBetaUser,
-      freeLimit: 5 + bonusCredits
+      remainingFreeUses: Math.max(0, effectiveFreeLimit - actualCount)
     });
     
     setUsageData({
@@ -300,5 +303,7 @@ export const useUsageTracking = () => {
     setUserEmail,
     createCheckoutSession,
     refreshUsageData: loadUsageData,
+    effectiveFreeLimit: 5 + usageData.bonusCredits,
+    remainingFreeUses: Math.max(0, (5 + usageData.bonusCredits) - usageData.usageCount),
   };
 };
