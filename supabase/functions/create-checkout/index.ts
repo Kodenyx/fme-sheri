@@ -41,7 +41,7 @@ serve(async (req) => {
           price_data: {
             currency: "usd",
             product_data: { 
-              name: "Subscribe to FixMyEmail - Founder's Program",
+              name: "FixMyEmail - Founder's Program",
               description: "Up to 60 email makeovers per month"
             },
             unit_amount: 997, // $9.97
