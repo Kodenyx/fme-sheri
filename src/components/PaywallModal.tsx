@@ -25,7 +25,7 @@ const PaywallModal = ({
   const features = [
     "60 optimized rewrites/month",
     "Proven conversion triggers + sales frameworks",
-    "Bonus: FixMyEmail Pro mini-course",
+    "Bonus: FixMyEmail Pro mini-course - lifetime access",
     "Priority support & feature feedback access"
   ];
 
