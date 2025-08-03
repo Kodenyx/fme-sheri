@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { CheckCircle2, Sparkles, Copy, BarChart3 } from "lucide-react";
@@ -396,7 +397,7 @@ const Tool = () => {
                       <h3 className="text-xl font-semibold mb-6" style={{ color: '#E19013' }}>Psychological Triggers Applied:</h3>
                       <div className="space-y-3">
                         {analysis.psychologicalTriggers.map((trigger, index) => (
-                          <div key={index} className="flex items-start gap-3 animate-fadeIn" style={{ animationDelay: `${index * 100}ms` }}>
+                          <div key={index} className="flex items-start gap-3 animate-[fadeIn_0.5s_ease-out_forwards] opacity-0" style={{ animationDelay: `${index * 100}ms` }}>
                             <CheckCircle2 className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: '#E19013' }} />
                             <span style={{ color: '#3B1E5E' }}>{trigger}</span>
                           </div>
@@ -408,7 +409,7 @@ const Tool = () => {
                       <h3 className="text-xl font-semibold mb-6" style={{ color: '#E19013' }}>Structure Improvements:</h3>
                       <div className="space-y-3">
                         {analysis.structureImprovements.map((improvement, index) => (
-                          <div key={index} className="flex items-start gap-3 animate-fadeIn" style={{ animationDelay: `${(index + analysis.psychologicalTriggers.length) * 100}ms` }}>
+                          <div key={index} className="flex items-start gap-3 animate-[fadeIn_0.5s_ease-out_forwards] opacity-0" style={{ animationDelay: `${(index + analysis.psychologicalTriggers.length) * 100}ms` }}>
                             <CheckCircle2 className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: '#E19013' }} />
                             <span style={{ color: '#3B1E5E' }}>{improvement}</span>
                           </div>
@@ -418,11 +419,11 @@ const Tool = () => {
                   </div>
 
                   {analysis.questions && analysis.questions.length > 0 && (
-                    <div className="mt-8 animate-fadeIn" style={{ animationDelay: '800ms' }}>
+                    <div className="mt-8 animate-[fadeIn_0.5s_ease-out_forwards] opacity-0" style={{ animationDelay: '800ms' }}>
                       <h3 className="text-xl font-semibold mb-4" style={{ color: '#E19013' }}>Questions for Better Results:</h3>
                       <div className="space-y-2">
                         {analysis.questions.map((question, index) => (
-                          <div key={index} className="p-3 rounded-lg animate-fadeIn" style={{ 
+                          <div key={index} className="p-3 rounded-lg animate-[fadeIn_0.5s_ease-out_forwards] opacity-0" style={{ 
                             backgroundColor: '#fff3cd', 
                             color: '#856404',
                             animationDelay: `${(index + 10) * 100}ms`
@@ -458,24 +459,6 @@ const Tool = () => {
           />
         </>
       )}
-
-      <style jsx>{`
-        @keyframes fadeIn {
-          from {
-            opacity: 0;
-            transform: translateY(10px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        .animate-fadeIn {
-          animation: fadeIn 0.5s ease-out forwards;
-          opacity: 0;
-        }
-      `}</style>
     </div>
   );
 };
