@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
@@ -40,6 +41,9 @@ export const useUsageTracking = () => {
     const isBeta = localStorage.getItem('isBetaUser') === 'true';
     const email = getStoredEmail();
     const isBetaEmail = email?.startsWith('beta-user-');
+    
+    console.log('Beta user check:', { isBeta, email, isBetaEmail, result: isBeta || isBetaEmail || false });
+    
     return isBeta || isBetaEmail || false;
   };
 
@@ -182,6 +186,8 @@ export const useUsageTracking = () => {
     const localCount = getLocalUsageCount();
     const monthlyCount = getMonthlyUsage();
     const isBetaUser = checkIfBetaUser();
+    
+    console.log('LoadUsageData - Initial values:', { storedEmail, localCount, monthlyCount, isBetaUser });
     
     let actualCount = localCount;
     let isSubscribed = false;
