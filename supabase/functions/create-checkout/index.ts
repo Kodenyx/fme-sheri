@@ -51,13 +51,38 @@ serve(async (req) => {
         },
       ],
       mode: "subscription",
-      success_url: `${req.headers.get("origin")}/tool?subscription=success`,
+      success_url: `${req.headers.get("origin")}/tool?subscription=success&email=${encodeURIComponent(email)}`,
       cancel_url: `${req.headers.get("origin")}/tool?subscription=cancelled`,
       metadata: {
         plan: "founders_program",
-        monthly_limit: "60"
+        monthly_limit: "60",
+        user_email: email
       }
     });
+
+    // Add user to GHL as a paid subscriber
+    try {
+      console.log("Adding paid subscriber to GHL:", email);
+      const ghlTagName = Deno.env.get("GHL_PAID_TAG_NAME");
+      
+      if (ghlTagName) {
+        const ghlResponse = await supabaseClient.functions.invoke('add-ghl-contact', {
+          body: {
+            email: email,
+            tagName: ghlTagName
+          }
+        });
+
+        if (ghlResponse.error) {
+          console.error('Failed to add paid subscriber to GHL:', ghlResponse.error);
+        } else {
+          console.log('Successfully added paid subscriber to GHL');
+        }
+      }
+    } catch (ghlError) {
+      console.error('GHL integration error for paid subscriber:', ghlError);
+      // Don't fail the checkout if GHL fails
+    }
 
     return new Response(JSON.stringify({ url: session.url }), {
       headers: { ...corsHeaders, "Content-Type": "application/json" },

@@ -71,6 +71,31 @@ const Tool = () => {
     }
   }, [searchParams, toast, refreshUsageData]);
 
+  const addToGHL = async (email: string, firstName?: string, isPaid: boolean = false) => {
+    try {
+      console.log('Adding to GHL:', { email, firstName, isPaid });
+      
+      const tagName = isPaid ? 'GHL_PAID_TAG_NAME' : 'GHL_TAG_NAME';
+      
+      const { data, error } = await supabase.functions.invoke('add-ghl-contact', {
+        body: {
+          email: email,
+          firstName: firstName,
+          tagName: tagName
+        }
+      });
+
+      if (error) {
+        console.error('Failed to add to GHL:', error);
+      } else {
+        console.log('Successfully added to GHL:', data);
+      }
+    } catch (error) {
+      console.error('GHL integration error:', error);
+      // Don't show error to user, just log it
+    }
+  };
+
   const logToolUsage = async (originalEmail: string, transformedEmail: string, emailCategory: string = 'ai-rewritten') => {
     const userEmail = email || 'anonymous@example.com';
     
@@ -208,8 +233,12 @@ const Tool = () => {
     }
   };
 
-  const handleEmailSubmit = (submittedEmail: string) => {
+  const handleEmailSubmit = async (submittedEmail: string, firstName?: string) => {
     setUserEmail(submittedEmail);
+    
+    // Add to GHL as a free user
+    await addToGHL(submittedEmail, firstName, false);
+    
     toast({
       title: "Email saved!",
       description: "You can now continue using the tool.",
