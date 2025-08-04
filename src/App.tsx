@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -15,7 +16,6 @@ import Modal1 from "./pages/Modal1";
 import Modal3 from "./pages/Modal3";
 import NotFound from "./pages/NotFound";
 import SocialCredits from "./pages/SocialCredits";
-import FounderModal from "./pages/FounderModal";
 
 const queryClient = new QueryClient();
 
@@ -51,7 +51,6 @@ const App = () => {
             <Route path="/modal" element={<Modal />} />
             <Route path="/modal1" element={<Modal1 />} />
             <Route path="/modal3" element={<Modal3 />} />
-            <Route path="/foundermodal" element={<FounderModal />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
