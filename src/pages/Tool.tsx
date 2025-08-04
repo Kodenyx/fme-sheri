@@ -58,35 +58,19 @@ const Tool = () => {
   const [showEmailModal, setShowEmailModal] = useState(false);
   const [showPaywallModal, setShowPaywallModal] = useState(false);
 
-  useEffect(() => {
-    const subscription = searchParams.get('subscription');
-    const tier = searchParams.get('tier');
-    
-    if (subscription === 'success') {
-      const tierMessage = tier === 'founders_program' 
-        ? "Welcome to the Founder's Program! 🎉" 
-        : "Welcome to unlimited access! 🎉";
-      
-      toast({
-        title: tierMessage,
-        description: "Your subscription is active. Enjoy unlimited email fixes!",
-      });
-      refreshUsageData();
-      refetchPricing(); // Refresh pricing to update seat count
-    } else if (subscription === 'cancelled') {
-      toast({
-        title: "Subscription cancelled",
-        description: "No worries! You can still use your remaining free uses.",
-      });
-    }
-  }, [searchParams, toast, refreshUsageData, refetchPricing]);
-
-  const addToGHL = async (email: string, firstName?: string, isPaid: boolean = false) => {
+  const addToGHL = async (email: string, firstName?: string, isPaid: boolean = false, tier?: string) => {
     try {
-      console.log('Adding to GHL:', { email, firstName, isPaid });
+      console.log('Adding to GHL:', { email, firstName, isPaid, tier });
       
-      // Use the actual environment variable names that will be resolved on the server
-      const tagName = isPaid ? 'GHL_PAID_TAG_NAME' : 'GHL_TAG_NAME';
+      // Determine tag name based on subscription type
+      let tagName;
+      if (isPaid && tier === 'founders_program') {
+        tagName = 'fme_paidfounder'; // Direct tag name for founders
+      } else if (isPaid) {
+        tagName = 'fme_paid'; // Direct tag name for regular paid
+      } else {
+        tagName = 'GHL_TAG_NAME'; // Environment variable name for free users
+      }
       
       const { data, error } = await supabase.functions.invoke('add-ghl-contact', {
         body: {
@@ -106,6 +90,33 @@ const Tool = () => {
       // Don't show error to user, just log it
     }
   };
+
+  useEffect(() => {
+    const subscription = searchParams.get('subscription');
+    const tier = searchParams.get('tier');
+    const subscriptionEmail = searchParams.get('email');
+    
+    if (subscription === 'success' && subscriptionEmail) {
+      // Add to GHL with paid tag after successful subscription
+      addToGHL(subscriptionEmail, undefined, true, tier || 'regular_program');
+      
+      const tierMessage = tier === 'founders_program' 
+        ? "Welcome to the Founder's Program! 🎉" 
+        : "Welcome to unlimited access! 🎉";
+      
+      toast({
+        title: tierMessage,
+        description: "Your subscription is active. Enjoy unlimited email fixes!",
+      });
+      refreshUsageData();
+      refetchPricing(); // Refresh pricing to update seat count
+    } else if (subscription === 'cancelled') {
+      toast({
+        title: "Subscription cancelled",
+        description: "No worries! You can still use your remaining free uses.",
+      });
+    }
+  }, [searchParams, toast, refreshUsageData, refetchPricing]);
 
   const logToolUsage = async (originalEmail: string, transformedEmail: string, emailCategory: string = 'ai-rewritten') => {
     const userEmail = email || 'anonymous@example.com';

@@ -114,41 +114,6 @@ serve(async (req) => {
       }
     }
 
-    // Add user to GHL with appropriate tag based on tier
-    try {
-      console.log("Adding subscriber to GHL:", email, currentTier.tier_name);
-      
-      // Use specific tag names based on the tier
-      let ghlTagName;
-      if (foundersAvailable) {
-        // For founder's program - use a specific founder tag
-        ghlTagName = "fme_paidfounder"; // Direct tag name instead of env variable
-      } else {
-        // For regular program - use regular paid tag
-        ghlTagName = "fme_paid"; // Direct tag name instead of env variable
-      }
-      
-      console.log('Selected GHL tag:', ghlTagName, 'for tier:', currentTier.tier_name);
-      
-      if (ghlTagName) {
-        const ghlResponse = await supabaseClient.functions.invoke('add-ghl-contact', {
-          body: {
-            email: email,
-            tagName: ghlTagName
-          }
-        });
-
-        if (ghlResponse.error) {
-          console.error('Failed to add subscriber to GHL:', ghlResponse.error);
-        } else {
-          console.log('Successfully added subscriber to GHL with tag:', ghlTagName);
-        }
-      }
-    } catch (ghlError) {
-      console.error('GHL integration error for subscriber:', ghlError);
-      // Don't fail the checkout if GHL fails
-    }
-
     return new Response(JSON.stringify({ url: session.url }), {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
       status: 200,
