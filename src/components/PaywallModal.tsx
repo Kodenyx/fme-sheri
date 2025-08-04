@@ -28,6 +28,11 @@ const PaywallModal: React.FC<PaywallModalProps> = ({
   isFoundersProgram = true,
   seatsRemaining = 30
 }) => {
+  const programName = isFoundersProgram ? "Founders Program" : "Premium Plan";
+  const statusText = isFoundersProgram 
+    ? `Limited Availability - only ${seatsRemaining} slots available.`
+    : "Founder's Program is now full - Premium Plan available";
+
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-md border-0 p-0 bg-transparent shadow-none">
@@ -42,7 +47,7 @@ const PaywallModal: React.FC<PaywallModalProps> = ({
             
             <div className="flex items-center justify-center gap-2 mb-6" style={{ color: '#E19013' }}>
               <Clock className="w-5 h-5" />
-              <span className="font-semibold">Limited Availability - only {seatsRemaining} slots available.</span>
+              <span className="font-semibold">{statusText}</span>
             </div>
           </DialogHeader>
 
@@ -74,10 +79,12 @@ const PaywallModal: React.FC<PaywallModalProps> = ({
                 <CheckCircle2 className="w-5 h-5 flex-shrink-0 mt-1" style={{ color: '#4ADE80' }} />
                 <span className="text-white">Priority support & future feedback access</span>
               </div>
-              <div className="flex items-start gap-3">
-                <CheckCircle2 className="w-5 h-5 flex-shrink-0 mt-1" style={{ color: '#4ADE80' }} />
-                <span className="text-white">Founders program access</span>
-              </div>
+              {isFoundersProgram && (
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 flex-shrink-0 mt-1" style={{ color: '#4ADE80' }} />
+                  <span className="text-white">Founders program access</span>
+                </div>
+              )}
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 flex-shrink-0 mt-1" style={{ color: '#4ADE80' }} />
                 <span className="text-white">Cancel anytime, no questions asked</span>
@@ -89,7 +96,7 @@ const PaywallModal: React.FC<PaywallModalProps> = ({
               className="w-full text-white font-bold text-xl py-6 px-12 rounded-full shadow-lg transform transition-all hover:scale-105 hover:opacity-90 border-0 mb-4"
               style={{ backgroundColor: '#E19013' }}
             >
-              Join Founders Program - {currentPrice}/month
+              Join {programName} - {currentPrice}/month
             </Button>
 
             <div className="text-center text-sm" style={{ color: '#A9D6D4' }}>
