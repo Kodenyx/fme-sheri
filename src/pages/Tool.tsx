@@ -298,31 +298,6 @@ const Tool = () => {
                 Give us your email. We'll make it convert better.
               </p>
               
-              {/* Pricing Alert - Only show when user has no remaining free uses and is not subscribed */}
-              {pricingData && !isBetaUser && !isSubscribed && remainingFreeUses === 0 && (
-                <div className="mt-6 max-w-2xl mx-auto">
-                  {isFoundersProgram ? (
-                    <div className="bg-green-50 border-2 border-green-200 rounded-lg p-4">
-                      <p className="text-green-800 font-semibold">
-                        🎉 Founder's Program Available: {currentPrice}/month
-                      </p>
-                      <p className="text-green-700 text-sm">
-                        Only {seatsRemaining} seats remaining at this price!
-                      </p>
-                    </div>
-                  ) : (
-                    <div className="bg-blue-50 border-2 border-blue-200 rounded-lg p-4">
-                      <p className="text-blue-800 font-semibold">
-                        Premium Plan: {currentPrice}/month
-                      </p>
-                      <p className="text-blue-700 text-sm">
-                        Founder's Program seats are now full
-                      </p>
-                    </div>
-                  )}
-                </div>
-              )}
-              
               {/* Usage Status */}
               <div className="mt-8 flex justify-center">
                 <div className="flex items-center gap-4 bg-white/80 rounded-full px-6 py-3">
