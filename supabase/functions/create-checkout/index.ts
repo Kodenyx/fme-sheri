@@ -15,7 +15,8 @@ serve(async (req) => {
 
   const supabaseClient = createClient(
     Deno.env.get("SUPABASE_URL") ?? "",
-    Deno.env.get("SUPABASE_ANON_KEY") ?? ""
+    Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? "",
+    { auth: { persistSession: false } }
   );
 
   try {
@@ -25,6 +26,35 @@ serve(async (req) => {
     const stripeKey = Deno.env.get("STRIPE_SECRET_KEY");
     if (!stripeKey) throw new Error("STRIPE_SECRET_KEY is not set");
 
+    // Check current pricing tier and availability
+    const { data: foundersProgram, error: foundersError } = await supabaseClient
+      .from('subscription_tiers')
+      .select('*')
+      .eq('tier_name', 'founders_program')
+      .single();
+
+    if (foundersError) throw foundersError;
+
+    const { data: regularProgram, error: regularError } = await supabaseClient
+      .from('subscription_tiers')
+      .select('*')
+      .eq('tier_name', 'regular_program')
+      .single();
+
+    if (regularError) throw regularError;
+
+    // Determine which tier to use
+    const foundersAvailable = foundersProgram.current_seats < foundersProgram.max_seats;
+    const currentTier = foundersAvailable ? foundersProgram : regularProgram;
+
+    console.log('Current tier selection:', {
+      tier: currentTier.tier_name,
+      price: currentTier.price_cents,
+      foundersSeats: foundersProgram.current_seats,
+      foundersMax: foundersProgram.max_seats,
+      foundersAvailable
+    });
+
     const stripe = new Stripe(stripeKey, { apiVersion: "2023-10-16" });
     const customers = await stripe.customers.list({ email, limit: 1 });
     let customerId;
@@ -32,6 +62,14 @@ serve(async (req) => {
     if (customers.data.length > 0) {
       customerId = customers.data[0].id;
     }
+
+    // Determine product name and description based on tier
+    const productName = foundersAvailable 
+      ? "FixMyEmail - Founder's Program" 
+      : "FixMyEmail - Premium Plan";
+    const productDescription = foundersAvailable 
+      ? "Up to 60 email makeovers per month - Founder's pricing!"
+      : "Up to 60 email makeovers per month";
 
     const session = await stripe.checkout.sessions.create({
       customer: customerId,
@@ -41,29 +79,47 @@ serve(async (req) => {
           price_data: {
             currency: "usd",
             product_data: { 
-              name: "FixMyEmail - Founder's Program",
-              description: "Up to 60 email makeovers per month"
+              name: productName,
+              description: productDescription
             },
-            unit_amount: 997, // $9.97
+            unit_amount: currentTier.price_cents,
             recurring: { interval: "month" },
           },
           quantity: 1,
         },
       ],
       mode: "subscription",
-      success_url: `${req.headers.get("origin")}/tool?subscription=success&email=${encodeURIComponent(email)}`,
+      success_url: `${req.headers.get("origin")}/tool?subscription=success&email=${encodeURIComponent(email)}&tier=${currentTier.tier_name}`,
       cancel_url: `${req.headers.get("origin")}/tool?subscription=cancelled`,
       metadata: {
-        plan: "founders_program",
+        plan: currentTier.tier_name,
         monthly_limit: "60",
-        user_email: email
+        user_email: email,
+        tier_id: currentTier.id
       }
     });
 
-    // Add user to GHL as a paid subscriber
+    // Reserve a seat if it's founders program (we'll confirm it in webhook/success)
+    if (foundersAvailable) {
+      const { error: updateError } = await supabaseClient
+        .from('subscription_tiers')
+        .update({ current_seats: foundersProgram.current_seats + 1 })
+        .eq('id', foundersProgram.id);
+
+      if (updateError) {
+        console.error('Error reserving founders seat:', updateError);
+        // Continue with checkout anyway, but log the error
+      } else {
+        console.log('Reserved founders seat, new count:', foundersProgram.current_seats + 1);
+      }
+    }
+
+    // Add user to GHL with appropriate tag
     try {
-      console.log("Adding paid subscriber to GHL:", email);
-      const ghlTagName = Deno.env.get("GHL_PAID_TAG_NAME");
+      console.log("Adding subscriber to GHL:", email, currentTier.tier_name);
+      const ghlTagName = foundersAvailable 
+        ? Deno.env.get("GHL_PAID_TAG_NAME")
+        : Deno.env.get("GHL_REGULAR_TAG_NAME");
       
       if (ghlTagName) {
         const ghlResponse = await supabaseClient.functions.invoke('add-ghl-contact', {
@@ -74,13 +130,13 @@ serve(async (req) => {
         });
 
         if (ghlResponse.error) {
-          console.error('Failed to add paid subscriber to GHL:', ghlResponse.error);
+          console.error('Failed to add subscriber to GHL:', ghlResponse.error);
         } else {
-          console.log('Successfully added paid subscriber to GHL');
+          console.log('Successfully added subscriber to GHL with tag:', ghlTagName);
         }
       }
     } catch (ghlError) {
-      console.error('GHL integration error for paid subscriber:', ghlError);
+      console.error('GHL integration error for subscriber:', ghlError);
       // Don't fail the checkout if GHL fails
     }
 
@@ -89,6 +145,7 @@ serve(async (req) => {
       status: 200,
     });
   } catch (error) {
+    console.error('Checkout error:', error);
     return new Response(JSON.stringify({ error: error.message }), {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
       status: 500,

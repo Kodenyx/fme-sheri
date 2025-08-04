@@ -9,6 +9,7 @@ import Navbar from "@/components/Navbar";
 import EmailCaptureModal from "@/components/EmailCaptureModal";
 import PaywallModal from "@/components/PaywallModal";
 import { useUsageTracking } from "@/hooks/useUsageTracking";
+import { usePricingTier } from "@/hooks/usePricingTier";
 
 interface RewriteResponse {
   rewritten_email: string;
@@ -48,6 +49,8 @@ const Tool = () => {
     refreshUsageData
   } = useUsageTracking();
 
+  const { pricingData, loading: pricingLoading, refetch: refetchPricing } = usePricingTier();
+
   // Calculate display values
   const effectiveFreeLimit = 5 + bonusCredits;
   const remainingFreeUses = Math.max(0, effectiveFreeLimit - usageCount);
@@ -57,19 +60,26 @@ const Tool = () => {
 
   useEffect(() => {
     const subscription = searchParams.get('subscription');
+    const tier = searchParams.get('tier');
+    
     if (subscription === 'success') {
+      const tierMessage = tier === 'founders_program' 
+        ? "Welcome to the Founder's Program! 🎉" 
+        : "Welcome to unlimited access! 🎉";
+      
       toast({
-        title: "Welcome to unlimited access! 🎉",
+        title: tierMessage,
         description: "Your subscription is active. Enjoy unlimited email fixes!",
       });
       refreshUsageData();
+      refetchPricing(); // Refresh pricing to update seat count
     } else if (subscription === 'cancelled') {
       toast({
         title: "Subscription cancelled",
         description: "No worries! You can still use your remaining free uses.",
       });
     }
-  }, [searchParams, toast, refreshUsageData]);
+  }, [searchParams, toast, refreshUsageData, refetchPricing]);
 
   const addToGHL = async (email: string, firstName?: string, isPaid: boolean = false) => {
     try {
@@ -247,11 +257,14 @@ const Tool = () => {
 
   const handleSubscribe = () => {
     if (email) {
-      createCheckoutSession(email);
+      // Refetch pricing before checkout to ensure current pricing
+      refetchPricing().then(() => {
+        createCheckoutSession(email);
+      });
     }
   };
 
-  if (loading) {
+  if (loading || pricingLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gradient-primary">
         <div className="text-center">
@@ -261,6 +274,10 @@ const Tool = () => {
       </div>
     );
   }
+
+  const currentPrice = pricingData?.currentTier?.price_display || "$9.97";
+  const isFoundersProgram = pricingData?.foundersProgram?.is_available || false;
+  const seatsRemaining = pricingData?.foundersProgram?.seats_remaining || 0;
 
   return (
     <div className="min-h-screen bg-gradient-primary">
@@ -279,6 +296,31 @@ const Tool = () => {
               <p className="text-xl md:text-2xl max-w-4xl mx-auto" style={{ color: '#3B1E5E' }}>
                 Give us your email. We'll make it convert better.
               </p>
+              
+              {/* Pricing Alert */}
+              {pricingData && (
+                <div className="mt-6 max-w-2xl mx-auto">
+                  {isFoundersProgram ? (
+                    <div className="bg-green-50 border-2 border-green-200 rounded-lg p-4">
+                      <p className="text-green-800 font-semibold">
+                        🎉 Founder's Program Available: {currentPrice}/month
+                      </p>
+                      <p className="text-green-700 text-sm">
+                        Only {seatsRemaining} seats remaining at this price!
+                      </p>
+                    </div>
+                  ) : (
+                    <div className="bg-blue-50 border-2 border-blue-200 rounded-lg p-4">
+                      <p className="text-blue-800 font-semibold">
+                        Premium Plan: {currentPrice}/month
+                      </p>
+                      <p className="text-blue-700 text-sm">
+                        Founder's Program seats are now full
+                      </p>
+                    </div>
+                  )}
+                </div>
+              )}
               
               {/* Usage Status */}
               <div className="mt-8 flex justify-center">
@@ -313,7 +355,7 @@ const Tool = () => {
                   )}
                   {isSubscribed && !isBetaUser && (
                     <span className="text-sm bg-green-100 text-green-800 px-2 py-1 rounded-full">
-                      Founders Program
+                      {isFoundersProgram ? "Founder's Program" : "Premium Plan"}
                     </span>
                   )}
                 </div>
@@ -483,6 +525,9 @@ const Tool = () => {
             onClose={() => setShowPaywallModal(false)}
             onSubscribe={handleSubscribe}
             usageCount={usageCount}
+            currentPrice={currentPrice}
+            isFoundersProgram={isFoundersProgram}
+            seatsRemaining={seatsRemaining}
           />
         </>
       )}

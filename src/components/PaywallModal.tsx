@@ -1,98 +1,111 @@
-
-import { Button } from "@/components/ui/button";
-import { CreditCard, Check, Clock } from "lucide-react";
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
-  DialogDescription,
 } from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
+import { CheckCircle2 } from "lucide-react";
+import React from "react";
 
 interface PaywallModalProps {
   isOpen: boolean;
   onClose: () => void;
   onSubscribe: () => void;
   usageCount: number;
+  currentPrice?: string;
+  isFoundersProgram?: boolean;
+  seatsRemaining?: number;
 }
 
-const PaywallModal = ({ 
+const PaywallModal: React.FC<PaywallModalProps> = ({ 
   isOpen, 
   onClose, 
   onSubscribe, 
-  usageCount 
-}: PaywallModalProps) => {
-  const features = [
-    "60 optimized rewrites/month",
-    "Monthly social share bonus: +30 credits",
-    "Proven conversion triggers + sales frameworks",
-    "Bonus: FixMyEmail Pro mini-course - lifetime access",
-    "Priority support & feature feedback access"
-  ];
-
+  usageCount, 
+  currentPrice = "$9.97",
+  isFoundersProgram = false,
+  seatsRemaining = 0
+}) => {
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-lg border-0 p-0 bg-transparent shadow-none">
-        <div className="rounded-3xl shadow-2xl overflow-hidden" style={{ backgroundColor: '#0D4049' }}>
-          <DialogHeader className="p-8 pb-4">
-            <div className="mx-auto h-16 w-16 rounded-full flex items-center justify-center mb-6" style={{ backgroundColor: '#E19013' }}>
-              <CreditCard className="h-8 w-8 text-white" />
-            </div>
-            <DialogTitle className="text-center text-3xl font-bold text-white mb-2">
-              You've Used Your Free Credits
-            </DialogTitle>
-            <DialogDescription className="text-center text-lg mb-4" style={{ color: '#A9D6D4' }}>
-              Want more email fixes? Get unlimited access with our Founders rate.
-            </DialogDescription>
-            
-            {/* Social bonus reminder */}
-            <div className="flex items-center justify-center gap-2 mb-4">
-              <span className="text-sm font-medium" style={{ color: '#A9D6D4' }}>
-                💡 Tip: Share on social media for +10 bonus credits (one-time)
-              </span>
-            </div>
-            
-            {/* Urgency Badge */}
-            <div className="flex items-center justify-center gap-2 mb-4">
-              <Clock className="w-4 h-4 text-orange-400" />
-              <span className="text-sm font-medium text-orange-400">
-                Only 30 spots. This rate will never return.
-              </span>
-            </div>
-          </DialogHeader>
-
-          <div className="px-8 pb-8">
-            <div className="bg-white/10 rounded-xl p-6 mb-6">
-              <div className="text-center mb-4">
-                <div className="flex items-center justify-center gap-2 mb-2">
-                  <span className="text-lg line-through text-gray-400">$19.97/month</span>
-                  <span className="text-3xl font-bold text-white">$9.97/month</span>
-                </div>
-                <div className="text-sm" style={{ color: '#A9D6D4' }}>Founders Rate</div>
-              </div>
-              
-              <div className="space-y-3">
-                {features.map((feature, index) => (
-                  <div key={index} className="flex items-center gap-3">
-                    <Check className="w-5 h-5 text-green-400 flex-shrink-0" />
-                    <span className="text-white text-sm">{feature}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <Button
-              onClick={onSubscribe}
-              className="w-full text-white font-bold text-xl py-6 px-12 rounded-full shadow-lg transform transition-all hover:scale-105 hover:opacity-90 border-0"
-              style={{ backgroundColor: '#E19013' }}
-            >
-              Claim My Founders Rate - $9.97/month
-            </Button>
-
-            <p className="text-center text-sm mt-4" style={{ color: '#A9D6D4' }}>
-              Special pricing • Limited time • Cancel anytime
+      <DialogContent className="max-w-md mx-auto">
+        <DialogHeader>
+          <DialogTitle className="text-2xl font-bold text-center" style={{ color: '#3B1E5E' }}>
+            {isFoundersProgram ? "🚀 Founder's Program" : "✨ Upgrade to Premium"}
+          </DialogTitle>
+        </DialogHeader>
+        
+        <div className="space-y-6 py-4">
+          <div className="text-center">
+            <p className="text-lg mb-4" style={{ color: '#3B1E5E' }}>
+              You've used all {usageCount} of your free email makeovers!
             </p>
+            
+            {isFoundersProgram ? (
+              <div className="bg-green-50 border-2 border-green-200 rounded-lg p-4 mb-4">
+                <p className="font-bold text-green-800 text-xl mb-2">
+                  Limited Time: {currentPrice}/month
+                </p>
+                <p className="text-green-700 text-sm">
+                  ⚡ Only {seatsRemaining} Founder's seats left!
+                </p>
+                <p className="text-green-700 text-xs mt-1">
+                  Price increases to $19.97/month when these fill up
+                </p>
+              </div>
+            ) : (
+              <div className="bg-blue-50 border-2 border-blue-200 rounded-lg p-4 mb-4">
+                <p className="font-bold text-blue-800 text-xl mb-2">
+                  Premium Plan: {currentPrice}/month
+                </p>
+                <p className="text-blue-700 text-sm">
+                  Founder's Program seats are now full
+                </p>
+              </div>
+            )}
           </div>
+
+          <div className="space-y-3">
+            <div className="flex items-center gap-3">
+              <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0" />
+              <span style={{ color: '#3B1E5E' }}>Unlimited email makeovers</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0" />
+              <span style={{ color: '#3B1E5E' }}>Advanced AI psychology insights</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0" />
+              <span style={{ color: '#3B1E5E' }}>Cancel anytime</span>
+            </div>
+            {isFoundersProgram && (
+              <div className="flex items-center gap-3">
+                <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0" />
+                <span style={{ color: '#3B1E5E' }}>🎯 Founder's pricing locked in forever</span>
+              </div>
+            )}
+          </div>
+
+          <Button 
+            onClick={onSubscribe}
+            className="w-full text-white font-bold py-3 rounded-lg"
+            style={{ backgroundColor: '#E19013' }}
+          >
+            {isFoundersProgram 
+              ? `Join Founder's Program - ${currentPrice}/mo`
+              : `Upgrade to Premium - ${currentPrice}/mo`
+            }
+          </Button>
+
+          <Button 
+            onClick={onClose}
+            variant="ghost"
+            className="w-full"
+            style={{ color: '#89888E' }}
+          >
+            Maybe later
+          </Button>
         </div>
       </DialogContent>
     </Dialog>
