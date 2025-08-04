@@ -85,6 +85,7 @@ const Tool = () => {
     try {
       console.log('Adding to GHL:', { email, firstName, isPaid });
       
+      // Use the actual environment variable names that will be resolved on the server
       const tagName = isPaid ? 'GHL_PAID_TAG_NAME' : 'GHL_TAG_NAME';
       
       const { data, error } = await supabase.functions.invoke('add-ghl-contact', {
