@@ -1,3 +1,4 @@
+
 import {
   Dialog,
   DialogContent,
@@ -36,7 +37,7 @@ const PaywallModal: React.FC<PaywallModalProps> = ({
               <CreditCard className="h-8 w-8 text-white" />
             </div>
             <DialogTitle className="text-center text-3xl font-bold text-white mb-2">
-              You've hit your free limit — but you're just getting started.
+              You've hit your free limit - but you're just getting started.
             </DialogTitle>
             
             <div className="flex items-center justify-center gap-2 mb-6" style={{ color: '#E19013' }}>
