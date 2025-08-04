@@ -298,8 +298,8 @@ const Tool = () => {
                 Give us your email. We'll make it convert better.
               </p>
               
-              {/* Pricing Alert */}
-              {pricingData && (
+              {/* Pricing Alert - Only show when user has no remaining free uses and is not subscribed */}
+              {pricingData && !isBetaUser && !isSubscribed && remainingFreeUses === 0 && (
                 <div className="mt-6 max-w-2xl mx-auto">
                   {isFoundersProgram ? (
                     <div className="bg-green-50 border-2 border-green-200 rounded-lg p-4">
