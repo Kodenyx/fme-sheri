@@ -114,12 +114,21 @@ serve(async (req) => {
       }
     }
 
-    // Add user to GHL with appropriate tag
+    // Add user to GHL with appropriate tag based on tier
     try {
       console.log("Adding subscriber to GHL:", email, currentTier.tier_name);
-      const ghlTagName = foundersAvailable 
-        ? Deno.env.get("GHL_PAID_TAG_NAME")
-        : Deno.env.get("GHL_REGULAR_TAG_NAME");
+      
+      // Use specific tag names based on the tier
+      let ghlTagName;
+      if (foundersAvailable) {
+        // For founder's program - use a specific founder tag
+        ghlTagName = "fme_paidfounder"; // Direct tag name instead of env variable
+      } else {
+        // For regular program - use regular paid tag
+        ghlTagName = "fme_paid"; // Direct tag name instead of env variable
+      }
+      
+      console.log('Selected GHL tag:', ghlTagName, 'for tier:', currentTier.tier_name);
       
       if (ghlTagName) {
         const ghlResponse = await supabaseClient.functions.invoke('add-ghl-contact', {
