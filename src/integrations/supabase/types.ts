@@ -116,6 +116,7 @@ export type Database = {
           subscribed: boolean
           subscription_end: string | null
           subscription_tier: string | null
+          subscription_tier_id: string | null
           updated_at: string
           user_id: string | null
         }
@@ -127,6 +128,7 @@ export type Database = {
           subscribed?: boolean
           subscription_end?: string | null
           subscription_tier?: string | null
+          subscription_tier_id?: string | null
           updated_at?: string
           user_id?: string | null
         }
@@ -138,8 +140,50 @@ export type Database = {
           subscribed?: boolean
           subscription_end?: string | null
           subscription_tier?: string | null
+          subscription_tier_id?: string | null
           updated_at?: string
           user_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "subscribers_subscription_tier_id_fkey"
+            columns: ["subscription_tier_id"]
+            isOneToOne: false
+            referencedRelation: "subscription_tiers"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      subscription_tiers: {
+        Row: {
+          created_at: string
+          current_seats: number
+          id: string
+          is_active: boolean
+          max_seats: number | null
+          price_cents: number
+          tier_name: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          current_seats?: number
+          id?: string
+          is_active?: boolean
+          max_seats?: number | null
+          price_cents: number
+          tier_name: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          current_seats?: number
+          id?: string
+          is_active?: boolean
+          max_seats?: number | null
+          price_cents?: number
+          tier_name?: string
+          updated_at?: string
         }
         Relationships: []
       }
