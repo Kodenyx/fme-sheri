@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
-import { CheckCircle2, Sparkles, Copy } from "lucide-react";
+import { CheckCircle2, Sparkles, Copy, Loader2 } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
@@ -15,6 +15,7 @@ interface RewriteResponse {
 const Contact = () => {
   const [emailContent, setEmailContent] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isTransitioning, setIsTransitioning] = useState(false);
   const [makeover, setMakeover] = useState("");
   const [showMakeover, setShowMakeover] = useState(false);
   const [analysis, setAnalysis] = useState({
@@ -50,7 +51,13 @@ const Contact = () => {
         structureImprovements: data.structure_improvements || [],
         questions: data.questions || []
       });
-      setShowMakeover(true);
+      
+      // Add smooth transition
+      setIsTransitioning(true);
+      setTimeout(() => {
+        setShowMakeover(true);
+        setIsTransitioning(false);
+      }, 300);
       
       toast({
         title: "Makeover Complete!",
@@ -70,10 +77,14 @@ const Contact = () => {
   };
 
   const handleReset = () => {
-    setEmailContent("");
-    setMakeover("");
-    setShowMakeover(false);
-    setAnalysis({ psychologicalTriggers: [], structureImprovements: [], questions: [] });
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setEmailContent("");
+      setMakeover("");
+      setShowMakeover(false);
+      setAnalysis({ psychologicalTriggers: [], structureImprovements: [], questions: [] });
+      setIsTransitioning(false);
+    }, 300);
   };
 
   const copyToClipboard = () => {
@@ -101,139 +112,156 @@ const Contact = () => {
             </p>
           </div>
 
-          <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12">
-            {!showMakeover ? (
-              <form onSubmit={handleSubmit} className="space-y-8">
-                <div className="grid md:grid-cols-2 gap-8">
-                  <div>
-                    <h3 className="text-2xl font-bold mb-4 text-gray-900">Your Original Email</h3>
-                    <Textarea 
-                      placeholder="Paste your email content here..."
-                      value={emailContent}
-                      onChange={(e) => setEmailContent(e.target.value)}
-                      required
-                      className="min-h-80 text-base border-2 border-gray-200 rounded-xl focus:border-blue-400 focus:ring-blue-400"
-                    />
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold mb-4 text-gray-900">Your Improved Email</h3>
-                    <div className="min-h-80 border-2 border-gray-200 rounded-xl p-4 bg-gray-50 flex items-center justify-center">
-                      <p className="text-gray-400 text-center">
-                        Your enhanced email will appear here...
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                
+          <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12 relative overflow-hidden">
+            {/* Loading Overlay */}
+            {(isTransitioning || isSubmitting) && (
+              <div className="absolute inset-0 bg-white/80 backdrop-blur-sm z-10 flex items-center justify-center">
                 <div className="text-center">
-                  <Button 
-                    type="submit"
-                    disabled={isSubmitting || !emailContent.trim()}
-                    className="bg-gradient-to-r from-[#818CF8] to-[#06B6D4] hover:from-[#6366F1] hover:to-[#0891B2] text-white font-bold text-xl py-6 px-12 rounded-full shadow-lg transform transition-all hover:scale-105"
-                  >
-                    {isSubmitting ? (
-                      "Enhancing Your Email..."
-                    ) : (
-                      <>
-                        <Sparkles className="mr-3 h-6 w-6" />
-                        Get My Email Enhancement
-                      </>
-                    )}
-                  </Button>
-                </div>
-              </form>
-            ) : (
-              <div className="space-y-8">
-                <div className="grid md:grid-cols-2 gap-8">
-                  <div>
-                    <h3 className="text-2xl font-bold mb-4 text-gray-900">Your Original Email</h3>
-                    <div className="min-h-80 border-2 border-gray-200 rounded-xl p-6 bg-gray-50">
-                      <div className="whitespace-pre-line text-gray-700 text-sm leading-relaxed">
-                        {emailContent}
-                      </div>
-                    </div>
-                  </div>
-                  <div>
-                    <div className="flex items-center justify-between mb-4">
-                      <h3 className="text-2xl font-bold text-gray-900">Your Improved Email</h3>
-                      <div className="flex items-center gap-2">
-                        <span className="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-medium flex items-center gap-1">
-                          <Sparkles className="w-4 h-4" />
-                          AI Enhanced
-                        </span>
-                        <Button
-                          onClick={copyToClipboard}
-                          variant="outline"
-                          size="sm"
-                          className="flex items-center gap-2"
-                        >
-                          <Copy className="w-4 h-4" />
-                          Copy
-                        </Button>
-                      </div>
-                    </div>
-                    <div className="min-h-80 border-2 border-blue-200 rounded-xl p-6 bg-blue-50">
-                      <div className="whitespace-pre-line text-gray-700 text-sm leading-relaxed">
-                        {makeover}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="bg-gray-50 rounded-2xl p-8 mt-12">
-                  <h2 className="text-3xl font-bold mb-8 text-gray-900">What Changed & Why</h2>
-                  
-                  <div className="grid md:grid-cols-2 gap-8">
-                    <div>
-                      <h3 className="text-xl font-semibold mb-6 text-blue-600">Psychological Triggers Applied:</h3>
-                      <div className="space-y-3">
-                        {analysis.psychologicalTriggers.map((trigger, index) => (
-                          <div key={index} className="flex items-start gap-3">
-                            <CheckCircle2 className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                            <span className="text-gray-700">{trigger}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                    
-                    <div>
-                      <h3 className="text-xl font-semibold mb-6 text-blue-600">Structure Improvements:</h3>
-                      <div className="space-y-3">
-                        {analysis.structureImprovements.map((improvement, index) => (
-                          <div key={index} className="flex items-start gap-3">
-                            <CheckCircle2 className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                            <span className="text-gray-700">{improvement}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-
-                  {analysis.questions && analysis.questions.length > 0 && (
-                    <div className="mt-8">
-                      <h3 className="text-xl font-semibold mb-4 text-blue-600">Questions for Better Results:</h3>
-                      <div className="space-y-2">
-                        {analysis.questions.map((question, index) => (
-                          <div key={index} className="p-3 rounded-lg bg-yellow-50 text-yellow-800">
-                            {question}
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-                </div>
-                
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button 
-                    onClick={handleReset}
-                    variant="outline"
-                    className="border-2 border-gray-300 text-gray-700 hover:bg-gray-50 py-3 px-8 rounded-full"
-                  >
-                    Enhance Another Email
-                  </Button>
+                  <Loader2 className="w-8 h-8 animate-spin mx-auto mb-4 text-blue-500" />
+                  <p className="text-lg font-medium text-gray-700">
+                    {isSubmitting ? "Enhancing your email..." : "Loading results..."}
+                  </p>
                 </div>
               </div>
             )}
+
+            <div className={`transition-all duration-300 ${isTransitioning ? 'opacity-0 scale-95' : 'opacity-100 scale-100'}`}>
+              {!showMakeover ? (
+                <form onSubmit={handleSubmit} className="space-y-8">
+                  <div className="grid md:grid-cols-2 gap-8">
+                    <div>
+                      <h3 className="text-2xl font-bold mb-4 text-gray-900">Your Original Email</h3>
+                      <Textarea 
+                        placeholder="Paste your email content here..."
+                        value={emailContent}
+                        onChange={(e) => setEmailContent(e.target.value)}
+                        required
+                        className="min-h-80 text-base border-2 border-gray-200 rounded-xl focus:border-blue-400 focus:ring-blue-400"
+                      />
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold mb-4 text-gray-900">Your Improved Email</h3>
+                      <div className="min-h-80 border-2 border-gray-200 rounded-xl p-4 bg-gray-50 flex items-center justify-center">
+                        <p className="text-gray-400 text-center">
+                          Your enhanced email will appear here...
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="text-center">
+                    <Button 
+                      type="submit"
+                      disabled={isSubmitting || !emailContent.trim()}
+                      className="bg-gradient-to-r from-[#818CF8] to-[#06B6D4] hover:from-[#6366F1] hover:to-[#0891B2] text-white font-bold text-xl py-6 px-12 rounded-full shadow-lg transform transition-all hover:scale-105"
+                    >
+                      {isSubmitting ? (
+                        <>
+                          <Loader2 className="mr-3 h-6 w-6 animate-spin" />
+                          Enhancing Your Email...
+                        </>
+                      ) : (
+                        <>
+                          <Sparkles className="mr-3 h-6 w-6" />
+                          Get My Email Enhancement
+                        </>
+                      )}
+                    </Button>
+                  </div>
+                </form>
+              ) : (
+                <div className="space-y-8">
+                  <div className="grid md:grid-cols-2 gap-8">
+                    <div>
+                      <h3 className="text-2xl font-bold mb-4 text-gray-900">Your Original Email</h3>
+                      <div className="min-h-80 border-2 border-gray-200 rounded-xl p-6 bg-gray-50">
+                        <div className="whitespace-pre-line text-gray-700 text-sm leading-relaxed">
+                          {emailContent}
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <div className="flex items-center justify-between mb-4">
+                        <h3 className="text-2xl font-bold text-gray-900">Your Improved Email</h3>
+                        <div className="flex items-center gap-2">
+                          <span className="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-medium flex items-center gap-1">
+                            <Sparkles className="w-4 h-4" />
+                            AI Enhanced
+                          </span>
+                          <Button
+                            onClick={copyToClipboard}
+                            variant="outline"
+                            size="sm"
+                            className="flex items-center gap-2"
+                          >
+                            <Copy className="w-4 h-4" />
+                            Copy
+                          </Button>
+                        </div>
+                      </div>
+                      <div className="min-h-80 border-2 border-blue-200 rounded-xl p-6 bg-blue-50">
+                        <div className="whitespace-pre-line text-gray-700 text-sm leading-relaxed">
+                          {makeover}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-gray-50 rounded-2xl p-8 mt-12">
+                    <h2 className="text-3xl font-bold mb-8 text-gray-900">What Changed & Why</h2>
+                    
+                    <div className="grid md:grid-cols-2 gap-8">
+                      <div>
+                        <h3 className="text-xl font-semibold mb-6 text-blue-600">Psychological Triggers Applied:</h3>
+                        <div className="space-y-3">
+                          {analysis.psychologicalTriggers.map((trigger, index) => (
+                            <div key={index} className="flex items-start gap-3">
+                              <CheckCircle2 className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                              <span className="text-gray-700">{trigger}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                      
+                      <div>
+                        <h3 className="text-xl font-semibold mb-6 text-blue-600">Structure Improvements:</h3>
+                        <div className="space-y-3">
+                          {analysis.structureImprovements.map((improvement, index) => (
+                            <div key={index} className="flex items-start gap-3">
+                              <CheckCircle2 className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                              <span className="text-gray-700">{improvement}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+
+                    {analysis.questions && analysis.questions.length > 0 && (
+                      <div className="mt-8">
+                        <h3 className="text-xl font-semibold mb-4 text-blue-600">Questions for Better Results:</h3>
+                        <div className="space-y-2">
+                          {analysis.questions.map((question, index) => (
+                            <div key={index} className="p-3 rounded-lg bg-yellow-50 text-yellow-800">
+                              {question}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                  
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <Button 
+                      onClick={handleReset}
+                      variant="outline"
+                      className="border-2 border-gray-300 text-gray-700 hover:bg-gray-50 py-3 px-8 rounded-full"
+                    >
+                      Enhance Another Email
+                    </Button>
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>
