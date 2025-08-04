@@ -1,3 +1,4 @@
+
 import {
   Dialog,
   DialogContent,
@@ -32,14 +33,14 @@ const PaywallModal: React.FC<PaywallModalProps> = ({
       <DialogContent className="max-w-md mx-auto">
         <DialogHeader>
           <DialogTitle className="text-2xl font-bold text-center" style={{ color: '#3B1E5E' }}>
-            {isFoundersProgram ? "🚀 Founder's Program" : "✨ Upgrade to Premium"}
+            You're Already In – Let It Compound
           </DialogTitle>
         </DialogHeader>
         
         <div className="space-y-6 py-4">
           <div className="text-center">
             <p className="text-lg mb-4" style={{ color: '#3B1E5E' }}>
-              You've used all {usageCount} of your free email makeovers!
+              You've used FixMyEmail {usageCount} times—on the {usageCount + 1}th, it's time to upgrade.
             </p>
             
             {isFoundersProgram ? (
