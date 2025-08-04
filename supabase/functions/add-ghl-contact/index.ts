@@ -32,14 +32,27 @@ serve(async (req) => {
       throw new Error("GHL_API_KEY and GHL_LOCATION_ID must be configured");
     }
 
-    logStep("Adding contact to GHL", { email, firstName, tagName });
+    // Resolve the tag name from environment variables
+    let actualTagName = "";
+    if (tagName === "GHL_TAG_NAME") {
+      actualTagName = Deno.env.get("GHL_TAG_NAME") || "";
+    } else if (tagName === "GHL_PAID_TAG_NAME") {
+      actualTagName = Deno.env.get("GHL_PAID_TAG_NAME") || "";
+    } else if (tagName === "GHL_REGULAR_TAG_NAME") {
+      actualTagName = Deno.env.get("GHL_REGULAR_TAG_NAME") || "";
+    } else {
+      // If it's not an environment variable name, use it directly
+      actualTagName = tagName;
+    }
+
+    logStep("Adding contact to GHL", { email, firstName, tagName, actualTagName });
 
     // Create or update contact in GHL
     const contactData = {
       email: email,
       locationId: ghlLocationId,
       ...(firstName && { firstName: firstName }),
-      ...(tagName && { tags: [tagName] })
+      ...(actualTagName && { tags: [actualTagName] })
     };
 
     const ghlResponse = await fetch("https://rest.gohighlevel.com/v1/contacts/", {
@@ -82,7 +95,7 @@ serve(async (req) => {
               },
               body: JSON.stringify({
                 ...(firstName && { firstName: firstName }),
-                ...(tagName && { tags: [tagName] })
+                ...(actualTagName && { tags: [actualTagName] })
               }),
             });
 
