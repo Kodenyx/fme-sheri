@@ -25,9 +25,9 @@ export const useUsageTracking = () => {
   // Check if user is beta user (client-side check for now)
   const isBetaUser = email?.startsWith('beta-user-') || localStorage.getItem('isBetaUser') === 'true';
 
-  // Calculate limits and access control
+  // Calculate limits and access control - changed from 2 to 1 free use before email capture
   const effectiveFreeLimit = 5 + bonusCredits;
-  const needsEmailCapture = !email && usageCount >= 2;
+  const needsEmailCapture = !email && usageCount >= 1; // Changed from 2 to 1
   const needsPaywall = email && !isSubscribed && usageCount >= effectiveFreeLimit;
 
   // Load initial data
@@ -35,7 +35,7 @@ export const useUsageTracking = () => {
     loadUsageData();
   }, []);
 
-  // Check for subscription success in URL and refresh data
+  // Check for subscription success in URL and refresh data - no toast logic
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const urlParams = new URLSearchParams(window.location.search);
@@ -50,6 +50,10 @@ export const useUsageTracking = () => {
         setTimeout(() => {
           loadUsageData();
         }, 1000);
+      } else if (subscriptionStatus === 'cancelled') {
+        // Clear URL params for cancelled too
+        const newUrl = window.location.pathname;
+        window.history.replaceState({}, document.title, newUrl);
       }
     }
   }, []);

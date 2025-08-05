@@ -100,23 +100,14 @@ const Tool = () => {
       // Add to GHL with paid tag after successful subscription
       addToGHL(subscriptionEmail, undefined, true, tier || 'regular_program');
       
-      const tierMessage = tier === 'founders_program' 
-        ? "Welcome to the Founder's Program! 🎉" 
-        : "Welcome to unlimited access! 🎉";
-      
-      toast({
-        title: tierMessage,
-        description: "Your subscription is active. Enjoy unlimited email fixes!",
-      });
+      // No toast - just refresh data silently
       refreshUsageData();
       refetchPricing(); // Refresh pricing to update seat count
     } else if (subscription === 'cancelled') {
-      toast({
-        title: "Subscription cancelled",
-        description: "No worries! You can still use your remaining free uses.",
-      });
+      // No toast - just refresh data silently
+      refreshUsageData();
     }
-  }, [searchParams, toast, refreshUsageData, refetchPricing]);
+  }, [searchParams, refreshUsageData, refetchPricing]);
 
   const logToolUsage = async (originalEmail: string, transformedEmail: string, emailCategory: string = 'ai-rewritten') => {
     const userEmail = email || 'anonymous@example.com';
