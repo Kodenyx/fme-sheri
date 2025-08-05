@@ -54,9 +54,7 @@ const EmailCaptureModal = ({
             <DialogTitle className="text-center text-3xl font-bold text-white mb-2">
               You're the kind of person who knows what works
             </DialogTitle>
-            <DialogDescription className="text-center text-lg" style={{ color: '#A9D6D4' }}>
-              You've already started optimizing for conversions. 
-              <br />
+            <DialogDescription className="text-center text-base" style={{ color: '#A9D6D4' }}>
               <em>Drop your name + email to continue improving your emails</em>
             </DialogDescription>
           </DialogHeader>
@@ -93,7 +91,7 @@ const EmailCaptureModal = ({
             </form>
 
             <p className="text-center text-sm mt-4" style={{ color: '#A9D6D4' }}>
-              FixMyEmail Pro unlocks after your 5th use. We'll send helpful tips to guide you along the way.
+              You'll receive helpful emails only. No fluff. Just fixes.
             </p>
           </div>
         </div>
