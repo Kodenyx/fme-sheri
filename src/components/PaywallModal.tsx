@@ -29,15 +29,27 @@ const PaywallModal: React.FC<PaywallModalProps> = ({
   seatsRemaining = 30
 }) => {
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleSubscribe = async () => {
     setIsLoading(true);
-    onSubscribe();
+    setError(null);
     
-    // Reset loading state after a short delay in case the redirect doesn't happen immediately
-    setTimeout(() => {
+    try {
+      await onSubscribe();
+    } catch (err) {
+      console.error('Checkout error:', err);
+      setError('Failed to start checkout. Please try again.');
       setIsLoading(false);
-    }, 3000);
+    }
+    
+    // Set a timeout to reset loading state in case redirect doesn't happen
+    setTimeout(() => {
+      if (isLoading) {
+        setError('Checkout is taking longer than expected. Please try again.');
+        setIsLoading(false);
+      }
+    }, 10000); // 10 second timeout
   };
 
   const programName = isFoundersProgram ? "Founders Program" : "Premium Plan";
@@ -102,6 +114,12 @@ const PaywallModal: React.FC<PaywallModalProps> = ({
                 <span className="text-white">Cancel anytime, no questions asked</span>
               </div>
             </div>
+
+            {error && (
+              <div className="mb-4 p-3 rounded-lg bg-red-500/20 border border-red-500/30">
+                <p className="text-red-200 text-sm text-center">{error}</p>
+              </div>
+            )}
 
             <Button 
               onClick={handleSubscribe}

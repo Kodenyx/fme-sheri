@@ -1,292 +1,147 @@
-import { useState, useEffect } from "react";
-import { supabase } from "@/integrations/supabase/client";
-import { useToast } from "@/hooks/use-toast";
 
-export interface UsageData {
-  usageCount: number;
-  monthlyUsage: number;
-  bonusCredits: number;
-  email: string | null;
-  isSubscribed: boolean;
-  needsEmailCapture: boolean;
-  needsPaywall: boolean;
-  loading: boolean;
-  monthlyLimit: number;
-  effectiveMonthlyLimit: number;
-  isBetaUser: boolean;
+import { useState, useEffect, useCallback } from 'react';
+import { supabase } from '@/integrations/supabase/client';
+
+interface UsageData {
+  total_usage: number;
+  monthly_usage: number;
+  bonus_credits: number;
+  email: string;
+  is_subscribed: boolean;
+  monthly_limit: number;
+  effective_monthly_limit: number;
 }
 
 export const useUsageTracking = () => {
-  const [usageData, setUsageData] = useState<UsageData>({
-    usageCount: 0,
-    monthlyUsage: 0,
-    bonusCredits: 0,
-    email: null,
-    isSubscribed: false,
-    needsEmailCapture: false,
-    needsPaywall: false,
-    loading: true,
-    monthlyLimit: 60,
-    effectiveMonthlyLimit: 60,
-    isBetaUser: false,
-  });
-  const { toast } = useToast();
+  const [usageCount, setUsageCount] = useState(0);
+  const [monthlyUsage, setMonthlyUsage] = useState(0);
+  const [bonusCredits, setBonusCredits] = useState(0);
+  const [email, setEmail] = useState<string | null>(null);
+  const [isSubscribed, setIsSubscribed] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [monthlyLimit, setMonthlyLimit] = useState(60);
+  const [effectiveMonthlyLimit, setEffectiveMonthlyLimit] = useState(60);
 
-  const getStoredEmail = (): string | null => {
-    return localStorage.getItem('userEmail');
-  };
+  // Check if user is beta user (client-side check for now)
+  const isBetaUser = email?.startsWith('beta-user-') || localStorage.getItem('isBetaUser') === 'true';
 
-  const checkIfBetaUser = (): boolean => {
-    const isBeta = localStorage.getItem('isBetaUser') === 'true';
-    const email = getStoredEmail();
-    const isBetaEmail = email?.startsWith('beta-user-');
-    
-    console.log('Beta user check:', { isBeta, email, isBetaEmail, result: isBeta || isBetaEmail || false });
-    
-    return isBeta || isBetaEmail || false;
-  };
+  // Calculate limits and access control
+  const effectiveFreeLimit = 5 + bonusCredits;
+  const needsEmailCapture = !email && usageCount >= 2;
+  const needsPaywall = email && !isSubscribed && usageCount >= effectiveFreeLimit;
 
-  const getLocalUsageCount = (): number => {
-    const stored = localStorage.getItem('toolUsageCount');
-    return stored ? parseInt(stored, 10) : 0;
-  };
-
-  const setLocalUsageCount = (count: number) => {
-    localStorage.setItem('toolUsageCount', count.toString());
-  };
-
-  const getMonthlyUsage = (): number => {
-    const currentMonth = new Date().getMonth();
-    const currentYear = new Date().getFullYear();
-    const key = `monthlyUsage_${currentYear}_${currentMonth}`;
-    const stored = localStorage.getItem(key);
-    return stored ? parseInt(stored, 10) : 0;
-  };
-
-  const setMonthlyUsage = (count: number) => {
-    const currentMonth = new Date().getMonth();
-    const currentYear = new Date().getFullYear();
-    const key = `monthlyUsage_${currentYear}_${currentMonth}`;
-    localStorage.setItem(key, count.toString());
-  };
-
-  const checkSubscription = async (email: string): Promise<boolean> => {
-    try {
-      const { data, error } = await supabase.functions.invoke('check-subscription', {
-        body: { email }
-      });
-      
-      if (error) {
-        console.error('Error checking subscription:', error);
-        return false;
-      }
-      
-      return data?.subscribed || false;
-    } catch (error) {
-      console.error('Error checking subscription:', error);
-      return false;
-    }
-  };
-
-  const getUsageFromDatabase = async (email: string): Promise<number> => {
-    try {
-      const { data, error } = await supabase
-        .from('user_usage_tracking')
-        .select('usage_count')
-        .eq('email', email)
-        .single();
-      
-      if (error && error.code !== 'PGRST116') {
-        console.error('Error fetching usage:', error);
-        return 0;
-      }
-      
-      return data?.usage_count || 0;
-    } catch (error) {
-      console.error('Error fetching usage:', error);
-      return 0;
-    }
-  };
-
-  const updateUsageInDatabase = async (email: string, newCount: number): Promise<void> => {
-    try {
-      const { error } = await supabase
-        .from('user_usage_tracking')
-        .upsert({
-          email,
-          usage_count: newCount,
-          last_used_at: new Date().toISOString(),
-        }, { onConflict: 'email' });
-      
-      if (error) {
-        console.error('Error updating usage:', error);
-      }
-    } catch (error) {
-      console.error('Error updating usage:', error);
-    }
-  };
-
-  const updateBonusCreditsFromApprovals = async (email: string): Promise<number> => {
-    try {
-      // Get all approved submissions for this email
-      const { data: approvedSubmissions, error: submissionsError } = await supabase
-        .from('social_media_credits')
-        .select('credits_awarded')
-        .eq('email', email)
-        .eq('status', 'approved');
-
-      if (submissionsError) throw submissionsError;
-
-      // Calculate total bonus credits from approved submissions
-      const totalBonusCredits = (approvedSubmissions || []).reduce(
-        (sum, submission) => sum + (submission.credits_awarded || 0), 
-        0
-      );
-
-      // Update user_usage_tracking with the total bonus credits
-      const { error: updateError } = await supabase
-        .from('user_usage_tracking')
-        .upsert({
-          email: email,
-          bonus_credits: totalBonusCredits,
-          last_used_at: new Date().toISOString(),
-        }, { onConflict: 'email' });
-
-      if (updateError) throw updateError;
-
-      return totalBonusCredits;
-    } catch (error) {
-      console.error('Error updating bonus credits:', error);
-      return 0;
-    }
-  };
-
-  const loadUsageData = async () => {
-    setUsageData(prev => ({ ...prev, loading: true }));
-    
-    const storedEmail = getStoredEmail();
-    const localCount = getLocalUsageCount();
-    const monthlyCount = getMonthlyUsage();
-    const isBetaUser = checkIfBetaUser();
-    
-    let actualCount = localCount;
-    let isSubscribed = false;
-    let bonusCredits = 0;
-    
-    if (storedEmail && !isBetaUser) {
-      const dbCount = await getUsageFromDatabase(storedEmail);
-      actualCount = Math.max(localCount, dbCount);
-      isSubscribed = await checkSubscription(storedEmail);
-      bonusCredits = await updateBonusCreditsFromApprovals(storedEmail);
-    }
-    
-    // Calculate effective monthly limit (base limit + bonus credits)
-    const effectiveMonthlyLimit = 60 + (isSubscribed ? bonusCredits : 0);
-    
-    // New credit structure: 5 base free + max 10 social bonus for free users
-    const baseFreeLimit = 5;
-    const maxSocialBonus = isSubscribed ? bonusCredits : Math.min(bonusCredits, 10);
-    const effectiveFreeLimit = baseFreeLimit + maxSocialBonus;
-    
-    // Beta users never need email capture or paywall
-    let needsEmailCapture = false;
-    let needsPaywall = false;
-    
-    if (!isBetaUser) {
-      // Show email capture after 1st use when no email is stored
-      needsEmailCapture = actualCount >= 1 && !storedEmail;
-      
-      // Paywall logic based on new structure
-      if (!isSubscribed) {
-        // For non-subscribers: check against free limit (5 + up to 10 social bonus)
-        needsPaywall = actualCount >= effectiveFreeLimit;
-      } else {
-        // For subscribers: use monthly limit system
-        needsPaywall = monthlyCount >= effectiveMonthlyLimit;
-      }
-    }
-    
-    console.log('Updated usage tracking:', {
-      actualCount,
-      monthlyCount,
-      bonusCredits,
-      maxSocialBonus,
-      effectiveFreeLimit,
-      effectiveMonthlyLimit,
-      storedEmail,
-      needsEmailCapture,
-      needsPaywall,
-      isSubscribed,
-      isBetaUser
-    });
-    
-    setUsageData({
-      usageCount: actualCount,
-      monthlyUsage: monthlyCount,
-      bonusCredits: maxSocialBonus,
-      email: storedEmail,
-      isSubscribed,
-      needsEmailCapture,
-      needsPaywall,
-      loading: false,
-      monthlyLimit: 60,
-      effectiveMonthlyLimit: effectiveMonthlyLimit,
-      isBetaUser,
-    });
-  };
-
-  const incrementUsage = async (email?: string) => {
-    const currentEmail = email || getStoredEmail();
-    const newCount = usageData.usageCount + 1;
-    const newMonthlyCount = usageData.monthlyUsage + 1;
-    
-    setLocalUsageCount(newCount);
-    setMonthlyUsage(newMonthlyCount);
-    
-    if (currentEmail && !usageData.isBetaUser) {
-      await updateUsageInDatabase(currentEmail, newCount);
-    }
-    
-    await loadUsageData();
-  };
-
-  const setUserEmail = (email: string) => {
-    localStorage.setItem('userEmail', email);
-    loadUsageData();
-  };
-
-  const createCheckoutSession = async (email: string) => {
-    try {
-      const { data, error } = await supabase.functions.invoke('create-checkout', {
-        body: { email }
-      });
-      
-      if (error) throw error;
-      
-      if (data?.url) {
-        window.open(data.url, '_blank');
-      }
-    } catch (error) {
-      console.error('Error creating checkout session:', error);
-      toast({
-        title: "Error",
-        description: "Failed to create checkout session. Please try again.",
-        variant: "destructive",
-      });
-    }
-  };
-
+  // Load initial data
   useEffect(() => {
     loadUsageData();
   }, []);
 
+  const loadUsageData = async () => {
+    try {
+      console.log('Loading usage data...');
+      const storedEmail = localStorage.getItem('userEmail');
+      
+      if (storedEmail) {
+        setEmail(storedEmail);
+        
+        // Check subscription status
+        const { data: subData, error: subError } = await supabase.functions.invoke('check-subscription', {
+          body: { email: storedEmail }
+        });
+        
+        if (!subError && subData) {
+          setIsSubscribed(subData.subscribed || false);
+        }
+      }
+
+      // Load usage from localStorage for now
+      const storedUsage = parseInt(localStorage.getItem('totalUsage') || '0');
+      const storedMonthlyUsage = parseInt(localStorage.getItem('monthlyUsage') || '0');
+      const storedBonusCredits = parseInt(localStorage.getItem('bonusCredits') || '0');
+      
+      setUsageCount(storedUsage);
+      setMonthlyUsage(storedMonthlyUsage);
+      setBonusCredits(storedBonusCredits);
+      
+      console.log('Usage data loaded:', { storedUsage, storedMonthlyUsage, storedBonusCredits, isSubscribed });
+    } catch (error) {
+      console.error('Error loading usage data:', error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const refreshUsageData = useCallback(() => {
+    loadUsageData();
+  }, []);
+
+  const incrementUsage = async (userEmail?: string) => {
+    try {
+      if (isBetaUser) {
+        console.log('Beta user - usage not tracked');
+        return;
+      }
+
+      const newTotalUsage = usageCount + 1;
+      const newMonthlyUsage = monthlyUsage + 1;
+      
+      setUsageCount(newTotalUsage);
+      setMonthlyUsage(newMonthlyUsage);
+      
+      // Store in localStorage
+      localStorage.setItem('totalUsage', newTotalUsage.toString());
+      localStorage.setItem('monthlyUsage', newMonthlyUsage.toString());
+      
+      console.log('Usage incremented:', { newTotalUsage, newMonthlyUsage });
+    } catch (error) {
+      console.error('Error incrementing usage:', error);
+    }
+  };
+
+  const setUserEmail = (newEmail: string) => {
+    setEmail(newEmail);
+    localStorage.setItem('userEmail', newEmail);
+  };
+
+  const createCheckoutSession = async (userEmail: string) => {
+    try {
+      console.log('Creating checkout session for:', userEmail);
+      
+      const { data, error } = await supabase.functions.invoke('create-checkout', {
+        body: { email: userEmail }
+      });
+
+      if (error) {
+        console.error('Checkout creation error:', error);
+        throw new Error(error.message || 'Failed to create checkout session');
+      }
+
+      if (data?.url) {
+        console.log('Redirecting to checkout:', data.url);
+        window.open(data.url, '_blank');
+      } else {
+        throw new Error('No checkout URL received');
+      }
+    } catch (error) {
+      console.error('Checkout error:', error);
+      throw error; // Re-throw to let the UI handle the error
+    }
+  };
+
   return {
-    ...usageData,
+    usageCount,
+    monthlyUsage,
+    bonusCredits,
+    email,
+    isSubscribed,
+    needsEmailCapture,
+    needsPaywall,
+    loading,
+    monthlyLimit,
+    effectiveMonthlyLimit,
+    isBetaUser,
     incrementUsage,
     setUserEmail,
     createCheckoutSession,
-    refreshUsageData: loadUsageData,
-    effectiveFreeLimit: 5 + usageData.bonusCredits,
-    remainingFreeUses: Math.max(0, (5 + usageData.bonusCredits) - usageData.usageCount),
+    refreshUsageData
   };
 };
