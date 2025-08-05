@@ -1,3 +1,4 @@
+
 import {
   Dialog,
   DialogContent,
@@ -91,11 +92,18 @@ const PaywallModal: React.FC<PaywallModalProps> = ({
           <div className="px-8 pb-8">
             <div className="rounded-xl p-6 mb-6 text-center" style={{ backgroundColor: 'rgba(169, 214, 212, 0.1)' }}>
               <div className="text-2xl mb-2" style={{ color: '#A9D6D4' }}>
-                <span className="line-through">$19.97</span>
-                <span className="text-4xl font-bold text-white ml-2">{currentPrice}</span>
+                {isFoundersProgram && (
+                  <>
+                    <span className="line-through">$19.97</span>
+                    <span className="text-4xl font-bold text-white ml-2">{currentPrice}</span>
+                  </>
+                )}
+                {!isFoundersProgram && (
+                  <span className="text-4xl font-bold text-white">{currentPrice}</span>
+                )}
               </div>
               <div className="text-lg" style={{ color: '#A9D6D4' }}>
-                per month • locked in.
+                {isFoundersProgram ? "per month • locked in." : "per month"}
               </div>
             </div>
 
@@ -110,7 +118,7 @@ const PaywallModal: React.FC<PaywallModalProps> = ({
               </div>
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 flex-shrink-0 mt-1" style={{ color: '#4ADE80' }} />
-                <span className="text-white">Bonus: Access to the FixMyEmail Pro Course</span>
+                <span className="text-white">Bonus: Lifetime access to the FixMyEmail Pro Course</span>
               </div>
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 flex-shrink-0 mt-1" style={{ color: '#4ADE80' }} />
@@ -152,7 +160,7 @@ const PaywallModal: React.FC<PaywallModalProps> = ({
 
             {!isLoading && (
               <div className="text-center text-sm" style={{ color: '#A9D6D4' }}>
-                Special pricing • Limited time • Cancel anytime
+                {isFoundersProgram ? "Special pricing • Limited time • Cancel anytime" : "Cancel anytime"}
               </div>
             )}
           </div>
