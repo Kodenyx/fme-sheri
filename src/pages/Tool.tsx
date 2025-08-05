@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { CheckCircle2, Sparkles, Copy, BarChart3, Loader2 } from "lucide-react";
@@ -62,14 +63,13 @@ const Tool = () => {
     try {
       console.log('Adding to GHL:', { email, firstName, isPaid, tier });
       
-      // Determine tag name based on subscription type
       let tagName;
       if (isPaid && tier === 'founders_program') {
-        tagName = 'fme_paidfounder'; // Direct tag name for founders
+        tagName = 'fme_paidfounder';
       } else if (isPaid) {
-        tagName = 'fme_paid'; // Direct tag name for regular paid
+        tagName = 'fme_paid';
       } else {
-        tagName = 'GHL_TAG_NAME'; // Environment variable name for free users
+        tagName = 'GHL_TAG_NAME';
       }
       
       const { data, error } = await supabase.functions.invoke('add-ghl-contact', {
@@ -87,7 +87,6 @@ const Tool = () => {
       }
     } catch (error) {
       console.error('GHL integration error:', error);
-      // Don't show error to user, just log it
     }
   };
 
@@ -97,15 +96,9 @@ const Tool = () => {
     const subscriptionEmail = searchParams.get('email');
     
     if (subscription === 'success' && subscriptionEmail) {
-      // Add to GHL with paid tag after successful subscription
       addToGHL(subscriptionEmail, undefined, true, tier || 'regular_program');
-      
-      // No toast - just refresh data silently
       refreshUsageData();
-      refetchPricing(); // Refresh pricing to update seat count
-    } else if (subscription === 'cancelled') {
-      // No toast - just refresh data silently
-      refreshUsageData();
+      refetchPricing();
     }
   }, [searchParams, refreshUsageData, refetchPricing]);
 
@@ -177,7 +170,6 @@ const Tool = () => {
 
       console.log('Function response:', data);
       
-      // Set all data at once to prevent multiple renders
       setMakeover(data.rewritten_email);
       setAnalysis({
         psychologicalTriggers: data.psychological_triggers || [],
@@ -185,7 +177,6 @@ const Tool = () => {
         questions: data.questions || []
       });
       
-      // Show results immediately without transition delay
       setShowMakeover(true);
       
       // Increment usage count and log usage
@@ -251,7 +242,6 @@ const Tool = () => {
   const handleEmailSubmit = async (submittedEmail: string, firstName?: string) => {
     setUserEmail(submittedEmail);
     
-    // Add to GHL as a free user
     await addToGHL(submittedEmail, firstName, false);
     
     toast({
@@ -262,7 +252,6 @@ const Tool = () => {
 
   const handleSubscribe = () => {
     if (email) {
-      // Refetch pricing before checkout to ensure current pricing
       refetchPricing().then(() => {
         createCheckoutSession(email);
       });
@@ -311,7 +300,7 @@ const Tool = () => {
                     {isBetaUser ? (
                       <strong>Beta Access - Unlimited</strong>
                     ) : isSubscribed ? (
-                      <strong>{monthlyUsage}/{effectiveMonthlyLimit} this month</strong>
+                      <strong>{usageCount}/{effectiveMonthlyLimit} this month</strong>
                     ) : (
                       <>Uses: <strong>{usageCount}/{effectiveFreeLimit}</strong> {bonusCredits > 0 ? 'total free' : 'free'}</>
                     )}
