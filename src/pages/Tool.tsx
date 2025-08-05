@@ -39,7 +39,7 @@ const Tool = () => {
     isSubscribed,
     needsEmailCapture,
     needsPaywall,
-    loading,
+    loading: usageLoading,
     monthlyLimit,
     effectiveMonthlyLimit,
     isBetaUser,
@@ -278,7 +278,7 @@ const Tool = () => {
     }
   };
 
-  if (loading || pricingLoading) {
+  if (usageLoading && !email) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gradient-primary">
         <div className="text-center">
