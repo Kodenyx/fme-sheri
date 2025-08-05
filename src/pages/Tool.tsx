@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { CheckCircle2, Sparkles, Copy, BarChart3, Loader2 } from "lucide-react";
@@ -141,6 +140,11 @@ const Tool = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
+    // Reset any previous state before starting
+    setShowMakeover(false);
+    setMakeover("");
+    setAnalysis({ psychologicalTriggers: [], structureImprovements: [], questions: [] });
+    
     // Ensure we're not already submitting
     if (isSubmitting) {
       console.log('Already submitting, ignoring duplicate submission');
@@ -148,6 +152,7 @@ const Tool = () => {
     }
     
     console.log('Starting email enhancement process...');
+    console.log('Current state:', { isSubmitting, showMakeover, emailContentLength: emailContent.length });
     
     // Check access control before processing (beta users skip these checks)
     if (!isBetaUser && needsEmailCapture) {
@@ -167,12 +172,15 @@ const Tool = () => {
 
     try {
       console.log('Calling rewrite-email function with content length:', emailContent.length);
+      console.log('User info:', { email, isSubscribed, isBetaUser });
       
       const { data, error } = await supabase.functions.invoke('rewrite-email', {
         body: {
           emailContent: emailContent
         },
       });
+
+      console.log('Raw response from function:', { data, error });
 
       if (error) {
         console.error('Supabase function error:', error);
@@ -182,9 +190,11 @@ const Tool = () => {
       console.log('Function response received:', data);
       
       if (!data || !data.rewritten_email) {
+        console.error('Invalid response structure:', data);
         throw new Error('Invalid response from email rewriter');
       }
       
+      console.log('Setting makeover and analysis...');
       setMakeover(data.rewritten_email);
       setAnalysis({
         psychologicalTriggers: data.psychological_triggers || [],
@@ -192,10 +202,11 @@ const Tool = () => {
         questions: data.questions || []
       });
       
+      console.log('Setting showMakeover to true...');
       setShowMakeover(true);
-      console.log('Set showMakeover to true');
       
       // Increment usage count and log usage
+      console.log('Incrementing usage...');
       await incrementUsage(email || undefined);
       await logToolUsage(emailContent, data.rewritten_email, 'ai-rewritten');
       
@@ -203,6 +214,12 @@ const Tool = () => {
       
     } catch (error) {
       console.error('Error during email makeover:', error);
+      
+      // Reset state on error
+      setShowMakeover(false);
+      setMakeover("");
+      setAnalysis({ psychologicalTriggers: [], structureImprovements: [], questions: [] });
+      
       toast({
         title: "Error",
         description: error instanceof Error ? error.message : "Something went wrong. Please try again.",
