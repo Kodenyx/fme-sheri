@@ -1,4 +1,3 @@
-
 import {
   Dialog,
   DialogContent,
@@ -7,7 +6,7 @@ import {
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { CheckCircle2, CreditCard, Clock, Loader2 } from "lucide-react";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 interface PaywallModalProps {
   isOpen: boolean;
@@ -31,6 +30,28 @@ const PaywallModal: React.FC<PaywallModalProps> = ({
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
+  // Reset loading state when modal opens/closes or when checkout completes
+  useEffect(() => {
+    if (!isOpen) {
+      setIsLoading(false);
+      setError(null);
+    }
+  }, [isOpen]);
+
+  // Reset loading state when user returns from checkout
+  useEffect(() => {
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === 'visible' && isLoading) {
+        // User returned to the page, reset loading state
+        setIsLoading(false);
+        setError(null);
+      }
+    };
+
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    return () => document.removeEventListener('visibilitychange', handleVisibilityChange);
+  }, [isLoading]);
+
   const handleSubscribe = async () => {
     setIsLoading(true);
     setError(null);
@@ -42,14 +63,6 @@ const PaywallModal: React.FC<PaywallModalProps> = ({
       setError('Failed to start checkout. Please try again.');
       setIsLoading(false);
     }
-    
-    // Set a timeout to reset loading state in case redirect doesn't happen
-    setTimeout(() => {
-      if (isLoading) {
-        setError('Checkout is taking longer than expected. Please try again.');
-        setIsLoading(false);
-      }
-    }, 10000); // 10 second timeout
   };
 
   const programName = isFoundersProgram ? "Founders Program" : "Premium Plan";
