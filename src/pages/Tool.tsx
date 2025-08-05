@@ -21,7 +21,6 @@ interface RewriteResponse {
 const Tool = () => {
   const [emailContent, setEmailContent] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isTransitioning, setIsTransitioning] = useState(false);
   const [makeover, setMakeover] = useState("");
   const [showMakeover, setShowMakeover] = useState(false);
   const [analysis, setAnalysis] = useState({
@@ -170,7 +169,6 @@ const Tool = () => {
     }
     
     setIsSubmitting(true);
-    setIsTransitioning(true);
 
     try {
       console.log('Calling rewrite-email function...');
@@ -188,9 +186,6 @@ const Tool = () => {
 
       console.log('Function response:', data);
       
-      // Add a small delay to ensure smooth transition
-      await new Promise(resolve => setTimeout(resolve, 500));
-      
       // Set all data at once to prevent multiple renders
       setMakeover(data.rewritten_email);
       setAnalysis({
@@ -199,11 +194,8 @@ const Tool = () => {
         questions: data.questions || []
       });
       
-      // Smooth transition to results
-      setIsTransitioning(false);
-      setTimeout(() => {
-        setShowMakeover(true);
-      }, 100);
+      // Show results immediately without transition delay
+      setShowMakeover(true);
       
       // Increment usage count and log usage
       await incrementUsage(email || undefined);
@@ -216,21 +208,16 @@ const Tool = () => {
         description: error instanceof Error ? error.message : "Something went wrong. Please try again.",
         variant: "destructive",
       });
-      setIsTransitioning(false);
     } finally {
       setIsSubmitting(false);
     }
   };
 
   const handleReset = () => {
-    setIsTransitioning(true);
-    setTimeout(() => {
-      setShowMakeover(false);
-      setEmailContent("");
-      setMakeover("");
-      setAnalysis({ psychologicalTriggers: [], structureImprovements: [], questions: [] });
-      setIsTransitioning(false);
-    }, 300);
+    setShowMakeover(false);
+    setEmailContent("");
+    setMakeover("");
+    setAnalysis({ psychologicalTriggers: [], structureImprovements: [], questions: [] });
   };
 
   const copyToClipboard = async () => {
@@ -365,167 +352,152 @@ const Tool = () => {
               </div>
             </div>
 
-            <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12 relative overflow-hidden">
-              {/* Loading Overlay */}
-              {(isTransitioning || isSubmitting) && (
-                <div className="absolute inset-0 bg-white/90 backdrop-blur-sm z-10 flex items-center justify-center">
-                  <div className="text-center">
-                    <Loader2 className="w-8 h-8 animate-spin mx-auto mb-4" style={{ color: '#E19013' }} />
-                    <p className="text-lg font-medium" style={{ color: '#3B1E5E' }}>
-                      {isSubmitting ? "Transforming your email..." : "Loading results..."}
-                    </p>
-                  </div>
+            <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12">
+              {/* Main content area */}
+              <div className="grid md:grid-cols-2 gap-8 mb-8">
+                <div>
+                  <h3 className="text-2xl font-bold mb-4" style={{ color: '#3B1E5E' }}>Your Original Email</h3>
+                  <Textarea 
+                    placeholder="Paste your email content here..."
+                    value={emailContent}
+                    onChange={(e) => setEmailContent(e.target.value)}
+                    required
+                    className="min-h-80 text-base border-2 rounded-xl focus:ring-2 border-gray-300 focus:border-gray-400"
+                    disabled={isSubmitting}
+                  />
                 </div>
-              )}
-
-              <div className={`transition-all duration-300 ${isTransitioning ? 'opacity-0 scale-95' : 'opacity-100 scale-100'}`}>
-                {/* Main content area */}
-                <div className="grid md:grid-cols-2 gap-8 mb-8">
-                  <div>
-                    <h3 className="text-2xl font-bold mb-4" style={{ color: '#3B1E5E' }}>Your Original Email</h3>
-                    <Textarea 
-                      placeholder="Paste your email content here..."
-                      value={emailContent}
-                      onChange={(e) => setEmailContent(e.target.value)}
-                      required
-                      className="min-h-80 text-base border-2 rounded-xl focus:ring-2 border-gray-300 focus:border-gray-400"
-                      disabled={isSubmitting}
-                    />
-                  </div>
-                  <div>
-                    <div className="flex items-center justify-between mb-4">
-                      <h3 className="text-2xl font-bold" style={{ color: '#3B1E5E' }}>Your Improved Email</h3>
-                      {showMakeover && makeover && (
-                        <Button
-                          onClick={copyToClipboard}
-                          variant="outline"
-                          size="sm"
-                          className="flex items-center gap-2 border-gray-300 text-gray-600"
-                        >
-                          <Copy className="w-4 h-4" />
-                          Copy
-                        </Button>
-                      )}
-                    </div>
-                    <div 
-                      className="min-h-80 border-2 rounded-xl p-4"
-                      style={{ 
-                        backgroundColor: showMakeover && makeover ? '#ffffff' : '#f9fafb', 
-                        borderColor: showMakeover && makeover ? '#10b981' : '#d1d5db'
-                      }}
-                    >
-                      {showMakeover && makeover ? (
-                        <div className="whitespace-pre-line text-sm leading-relaxed" style={{ color: '#3B1E5E' }}>
-                          {makeover}
-                        </div>
-                      ) : (
-                        <div className="h-full flex items-center justify-center">
-                          <p className="text-center" style={{ color: '#89888E' }}>
-                            Your enhanced email will appear here...
-                          </p>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                </div>
-
-                {/* Subheadline area */}
-                <div className="text-center mb-8">
-                  {showMakeover && makeover && (
-                    <p className="text-xl md:text-2xl italic" style={{ color: '#3B1E5E' }}>
-                      We handle the fix, you handle the final touch.
-                    </p>
-                  )}
-                </div>
-                
-                {/* Button area */}
-                <div className="text-center mb-8">
-                  {!showMakeover || !makeover ? (
-                    <form onSubmit={handleSubmit}>
-                      <Button 
-                        type="submit"
-                        disabled={isSubmitting || !emailContent.trim()}
-                        className="text-white font-bold text-xl py-6 px-12 rounded-full shadow-lg transform transition-all hover:scale-105 hover:opacity-90 disabled:opacity-50 disabled:transform-none"
-                        style={{ backgroundColor: '#E19013' }}
+                <div>
+                  <div className="flex items-center justify-between mb-4">
+                    <h3 className="text-2xl font-bold" style={{ color: '#3B1E5E' }}>Your Improved Email</h3>
+                    {showMakeover && makeover && (
+                      <Button
+                        onClick={copyToClipboard}
+                        variant="outline"
+                        size="sm"
+                        className="flex items-center gap-2 border-gray-300 text-gray-600"
                       >
-                        {isSubmitting ? (
-                          <>
-                            <Loader2 className="mr-3 h-6 w-6 animate-spin" />
-                            Fixing Your Email...
-                          </>
-                        ) : (
-                          <>
-                            <Sparkles className="mr-3 h-6 w-6" />
-                            Fix My Email
-                          </>
-                        )}
+                        <Copy className="w-4 h-4" />
+                        Copy
                       </Button>
-                    </form>
-                  ) : (
-                    <Button 
-                      onClick={handleReset}
-                      variant="outline"
-                      className="border-2 py-3 px-8 rounded-full border-gray-300 text-gray-600"
-                      disabled={isTransitioning}
-                    >
-                      Enhance Another Email
-                    </Button>
-                  )}
-                </div>
-
-                {/* Analysis section */}
-                {showMakeover && makeover && (analysis.psychologicalTriggers.length > 0 || analysis.structureImprovements.length > 0) && (
-                  <div className="rounded-2xl p-8" style={{ backgroundColor: '#f9fafb' }}>
-                    <h2 className="text-3xl font-bold mb-8" style={{ color: '#3B1E5E' }}>What Changed & Why</h2>
-                    
-                    <div className="grid md:grid-cols-2 gap-8">
-                      <div>
-                        <h3 className="text-xl font-semibold mb-6" style={{ color: '#E19013' }}>Psychological Triggers Applied:</h3>
-                        <div className="space-y-3">
-                          {analysis.psychologicalTriggers.map((trigger, index) => (
-                            <div key={index} className="flex items-start gap-3">
-                              <CheckCircle2 className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: '#E19013' }} />
-                              <span style={{ color: '#3B1E5E' }}>{trigger}</span>
-                            </div>
-                          ))}
-                        </div>
+                    )}
+                  </div>
+                  <div 
+                    className="min-h-80 border-2 rounded-xl p-4"
+                    style={{ 
+                      backgroundColor: showMakeover && makeover ? '#ffffff' : '#f9fafb', 
+                      borderColor: showMakeover && makeover ? '#10b981' : '#d1d5db'
+                    }}
+                  >
+                    {showMakeover && makeover ? (
+                      <div className="whitespace-pre-line text-sm leading-relaxed" style={{ color: '#3B1E5E' }}>
+                        {makeover}
                       </div>
-                      
-                      <div>
-                        <h3 className="text-xl font-semibold mb-6" style={{ color: '#E19013' }}>Structure Improvements:</h3>
-                        <div className="space-y-3">
-                          {analysis.structureImprovements.map((improvement, index) => (
-                            <div key={index} className="flex items-start gap-3">
-                              <CheckCircle2 className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: '#E19013' }} />
-                              <span style={{ color: '#3B1E5E' }}>{improvement}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-
-                    {analysis.questions && analysis.questions.length > 0 && (
-                      <div className="mt-8">
-                        <h3 className="text-xl font-semibold mb-4" style={{ color: '#E19013' }}>Questions for Better Results:</h3>
-                        <div className="space-y-2">
-                          {analysis.questions.map((question, index) => (
-                            <div 
-                              key={index} 
-                              className="p-3 rounded-lg" 
-                              style={{ 
-                                backgroundColor: '#fff3cd', 
-                                color: '#856404'
-                              }}
-                            >
-                              {question}
-                            </div>
-                          ))}
-                        </div>
+                    ) : (
+                      <div className="h-full flex items-center justify-center">
+                        <p className="text-center" style={{ color: '#89888E' }}>
+                          Your enhanced email will appear here...
+                        </p>
                       </div>
                     )}
                   </div>
+                </div>
+              </div>
+
+              {/* Subheadline area */}
+              <div className="text-center mb-8">
+                {showMakeover && makeover && (
+                  <p className="text-xl md:text-2xl italic" style={{ color: '#3B1E5E' }}>
+                    We handle the fix, you handle the final touch.
+                  </p>
                 )}
               </div>
+              
+              {/* Button area */}
+              <div className="text-center mb-8">
+                {!showMakeover || !makeover ? (
+                  <form onSubmit={handleSubmit}>
+                    <Button 
+                      type="submit"
+                      disabled={isSubmitting || !emailContent.trim()}
+                      className="text-white font-bold text-xl py-6 px-12 rounded-full shadow-lg transform transition-all hover:scale-105 hover:opacity-90 disabled:opacity-50 disabled:transform-none"
+                      style={{ backgroundColor: '#E19013' }}
+                    >
+                      {isSubmitting ? (
+                        <>
+                          <Loader2 className="mr-3 h-6 w-6 animate-spin" />
+                          Fixing Your Email...
+                        </>
+                      ) : (
+                        <>
+                          <Sparkles className="mr-3 h-6 w-6" />
+                          Fix My Email
+                        </>
+                      )}
+                    </Button>
+                  </form>
+                ) : (
+                  <Button 
+                    onClick={handleReset}
+                    variant="outline"
+                    className="border-2 py-3 px-8 rounded-full border-gray-300 text-gray-600"
+                  >
+                    Enhance Another Email
+                  </Button>
+                )}
+              </div>
+
+              {/* Analysis section */}
+              {showMakeover && makeover && (analysis.psychologicalTriggers.length > 0 || analysis.structureImprovements.length > 0) && (
+                <div className="rounded-2xl p-8" style={{ backgroundColor: '#f9fafb' }}>
+                  <h2 className="text-3xl font-bold mb-8" style={{ color: '#3B1E5E' }}>What Changed & Why</h2>
+                  
+                  <div className="grid md:grid-cols-2 gap-8">
+                    <div>
+                      <h3 className="text-xl font-semibold mb-6" style={{ color: '#E19013' }}>Psychological Triggers Applied:</h3>
+                      <div className="space-y-3">
+                        {analysis.psychologicalTriggers.map((trigger, index) => (
+                          <div key={index} className="flex items-start gap-3">
+                            <CheckCircle2 className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: '#E19013' }} />
+                            <span style={{ color: '#3B1E5E' }}>{trigger}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    <div>
+                      <h3 className="text-xl font-semibold mb-6" style={{ color: '#E19013' }}>Structure Improvements:</h3>
+                      <div className="space-y-3">
+                        {analysis.structureImprovements.map((improvement, index) => (
+                          <div key={index} className="flex items-start gap-3">
+                            <CheckCircle2 className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: '#E19013' }} />
+                            <span style={{ color: '#3B1E5E' }}>{improvement}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  {analysis.questions && analysis.questions.length > 0 && (
+                    <div className="mt-8">
+                      <h3 className="text-xl font-semibold mb-4" style={{ color: '#E19013' }}>Questions for Better Results:</h3>
+                      <div className="space-y-2">
+                        {analysis.questions.map((question, index) => (
+                          <div 
+                            key={index} 
+                            className="p-3 rounded-lg" 
+                            style={{ 
+                              backgroundColor: '#fff3cd', 
+                              color: '#856404'
+                            }}
+                          >
+                            {question}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              )}
             </div>
           </div>
         </div>

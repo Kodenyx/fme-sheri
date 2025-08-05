@@ -32,11 +32,12 @@ const PaywallModal: React.FC<PaywallModalProps> = ({
 
   const handleSubscribe = async () => {
     setIsLoading(true);
+    onSubscribe();
     
-    // Add a small delay to show loading state before redirect
+    // Reset loading state after a short delay in case the redirect doesn't happen immediately
     setTimeout(() => {
-      onSubscribe();
-    }, 300);
+      setIsLoading(false);
+    }, 3000);
   };
 
   const programName = isFoundersProgram ? "Founders Program" : "Premium Plan";
@@ -47,94 +48,82 @@ const PaywallModal: React.FC<PaywallModalProps> = ({
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-md border-0 p-0 bg-transparent shadow-none">
-        <div className="rounded-3xl shadow-2xl overflow-hidden relative" style={{ backgroundColor: '#0D4049' }}>
-          {/* Loading Overlay */}
-          {isLoading && (
-            <div className="absolute inset-0 bg-black/50 backdrop-blur-sm z-20 flex items-center justify-center">
-              <div className="text-center">
-                <Loader2 className="w-8 h-8 animate-spin mx-auto mb-4 text-white" />
-                <p className="text-white font-medium">Redirecting to secure checkout...</p>
+        <div className="rounded-3xl shadow-2xl overflow-hidden" style={{ backgroundColor: '#0D4049' }}>
+          <DialogHeader className="p-8 pb-4">
+            <div className="mx-auto h-16 w-16 rounded-full flex items-center justify-center mb-6" style={{ backgroundColor: '#E19013' }}>
+              <CreditCard className="h-8 w-8 text-white" />
+            </div>
+            <DialogTitle className="text-center text-3xl font-bold text-white mb-2">
+              You've hit your free limit - but you're just getting started.
+            </DialogTitle>
+            
+            <div className="flex items-center justify-center gap-2 mb-6" style={{ color: '#E19013' }}>
+              <Clock className="w-5 h-5" />
+              <span className="font-semibold">{statusText}</span>
+            </div>
+          </DialogHeader>
+
+          <div className="px-8 pb-8">
+            <div className="rounded-xl p-6 mb-6 text-center" style={{ backgroundColor: 'rgba(169, 214, 212, 0.1)' }}>
+              <div className="text-2xl mb-2" style={{ color: '#A9D6D4' }}>
+                <span className="line-through">$19.97</span>
+                <span className="text-4xl font-bold text-white ml-2">{currentPrice}</span>
+              </div>
+              <div className="text-lg" style={{ color: '#A9D6D4' }}>
+                per month • locked in.
               </div>
             </div>
-          )}
 
-          <div className={`transition-all duration-300 ${isLoading ? 'opacity-50' : 'opacity-100'}`}>
-            <DialogHeader className="p-8 pb-4">
-              <div className="mx-auto h-16 w-16 rounded-full flex items-center justify-center mb-6" style={{ backgroundColor: '#E19013' }}>
-                <CreditCard className="h-8 w-8 text-white" />
+            <div className="space-y-4 mb-6">
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="w-5 h-5 flex-shrink-0 mt-1" style={{ color: '#4ADE80' }} />
+                <span className="text-white">60 email makeovers per month</span>
               </div>
-              <DialogTitle className="text-center text-3xl font-bold text-white mb-2">
-                You've hit your free limit - but you're just getting started.
-              </DialogTitle>
-              
-              <div className="flex items-center justify-center gap-2 mb-6" style={{ color: '#E19013' }}>
-                <Clock className="w-5 h-5" />
-                <span className="font-semibold">{statusText}</span>
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="w-5 h-5 flex-shrink-0 mt-1" style={{ color: '#4ADE80' }} />
+                <span className="text-white">Advanced psychological triggers + proven sales frameworks</span>
               </div>
-            </DialogHeader>
-
-            <div className="px-8 pb-8">
-              <div className="rounded-xl p-6 mb-6 text-center" style={{ backgroundColor: 'rgba(169, 214, 212, 0.1)' }}>
-                <div className="text-2xl mb-2" style={{ color: '#A9D6D4' }}>
-                  <span className="line-through">$19.97</span>
-                  <span className="text-4xl font-bold text-white ml-2">{currentPrice}</span>
-                </div>
-                <div className="text-lg" style={{ color: '#A9D6D4' }}>
-                  per month • locked in.
-                </div>
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="w-5 h-5 flex-shrink-0 mt-1" style={{ color: '#4ADE80' }} />
+                <span className="text-white">Bonus: Access to the FixMyEmail Pro Course</span>
               </div>
-
-              <div className="space-y-4 mb-6">
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 flex-shrink-0 mt-1" style={{ color: '#4ADE80' }} />
-                  <span className="text-white">60 email makeovers per month</span>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 flex-shrink-0 mt-1" style={{ color: '#4ADE80' }} />
-                  <span className="text-white">Advanced psychological triggers + proven sales frameworks</span>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 flex-shrink-0 mt-1" style={{ color: '#4ADE80' }} />
-                  <span className="text-white">Bonus: Access to the FixMyEmail Pro Course</span>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 flex-shrink-0 mt-1" style={{ color: '#4ADE80' }} />
-                  <span className="text-white">Priority support & future feedback access</span>
-                </div>
-                {isFoundersProgram && (
-                  <div className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 flex-shrink-0 mt-1" style={{ color: '#4ADE80' }} />
-                    <span className="text-white">Founders program access</span>
-                  </div>
-                )}
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 flex-shrink-0 mt-1" style={{ color: '#4ADE80' }} />
-                  <span className="text-white">Cancel anytime, no questions asked</span>
-                </div>
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="w-5 h-5 flex-shrink-0 mt-1" style={{ color: '#4ADE80' }} />
+                <span className="text-white">Priority support & future feedback access</span>
               </div>
-
-              <Button 
-                onClick={handleSubscribe}
-                disabled={isLoading}
-                className="w-full text-white font-bold text-xl py-6 px-12 rounded-full shadow-lg transform transition-all hover:scale-105 hover:opacity-90 border-0 mb-4 disabled:opacity-70 disabled:transform-none"
-                style={{ backgroundColor: '#E19013' }}
-              >
-                {isLoading ? (
-                  <>
-                    <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-                    Setting up checkout...
-                  </>
-                ) : (
-                  `Join ${programName} - ${currentPrice}/month`
-                )}
-              </Button>
-
-              {!isLoading && (
-                <div className="text-center text-sm" style={{ color: '#A9D6D4' }}>
-                  Special pricing • Limited time • Cancel anytime
+              {isFoundersProgram && (
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 flex-shrink-0 mt-1" style={{ color: '#4ADE80' }} />
+                  <span className="text-white">Founders program access</span>
                 </div>
               )}
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="w-5 h-5 flex-shrink-0 mt-1" style={{ color: '#4ADE80' }} />
+                <span className="text-white">Cancel anytime, no questions asked</span>
+              </div>
             </div>
+
+            <Button 
+              onClick={handleSubscribe}
+              disabled={isLoading}
+              className="w-full text-white font-bold text-xl py-6 px-12 rounded-full shadow-lg transform transition-all hover:scale-105 hover:opacity-90 border-0 mb-4 disabled:opacity-70 disabled:transform-none"
+              style={{ backgroundColor: '#E19013' }}
+            >
+              {isLoading ? (
+                <>
+                  <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+                  Opening checkout...
+                </>
+              ) : (
+                `Join ${programName} - ${currentPrice}/month`
+              )}
+            </Button>
+
+            {!isLoading && (
+              <div className="text-center text-sm" style={{ color: '#A9D6D4' }}>
+                Special pricing • Limited time • Cancel anytime
+              </div>
+            )}
           </div>
         </div>
       </DialogContent>
