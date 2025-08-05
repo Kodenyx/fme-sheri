@@ -141,21 +141,32 @@ const Tool = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
+    // Ensure we're not already submitting
+    if (isSubmitting) {
+      console.log('Already submitting, ignoring duplicate submission');
+      return;
+    }
+    
+    console.log('Starting email enhancement process...');
+    
     // Check access control before processing (beta users skip these checks)
     if (!isBetaUser && needsEmailCapture) {
+      console.log('Need email capture');
       setShowEmailModal(true);
       return;
     }
     
     if (!isBetaUser && needsPaywall) {
+      console.log('Need paywall');
       setShowPaywallModal(true);
       return;
     }
     
     setIsSubmitting(true);
+    console.log('Set isSubmitting to true');
 
     try {
-      console.log('Calling rewrite-email function...');
+      console.log('Calling rewrite-email function with content length:', emailContent.length);
       
       const { data, error } = await supabase.functions.invoke('rewrite-email', {
         body: {
@@ -168,7 +179,11 @@ const Tool = () => {
         throw new Error(error.message || 'Failed to rewrite email');
       }
 
-      console.log('Function response:', data);
+      console.log('Function response received:', data);
+      
+      if (!data || !data.rewritten_email) {
+        throw new Error('Invalid response from email rewriter');
+      }
       
       setMakeover(data.rewritten_email);
       setAnalysis({
@@ -178,10 +193,13 @@ const Tool = () => {
       });
       
       setShowMakeover(true);
+      console.log('Set showMakeover to true');
       
       // Increment usage count and log usage
       await incrementUsage(email || undefined);
       await logToolUsage(emailContent, data.rewritten_email, 'ai-rewritten');
+      
+      console.log('Email enhancement completed successfully');
       
     } catch (error) {
       console.error('Error during email makeover:', error);
@@ -191,11 +209,14 @@ const Tool = () => {
         variant: "destructive",
       });
     } finally {
+      console.log('Setting isSubmitting to false');
       setIsSubmitting(false);
     }
   };
 
   const handleReset = () => {
+    console.log('Resetting tool state');
+    setIsSubmitting(false); // Ensure this is reset
     setShowMakeover(false);
     setEmailContent("");
     setMakeover("");
@@ -300,7 +321,7 @@ const Tool = () => {
                     {isBetaUser ? (
                       <strong>Beta Access - Unlimited</strong>
                     ) : isSubscribed ? (
-                      <strong>{usageCount}/{effectiveMonthlyLimit} this month</strong>
+                      <strong>{monthlyUsage || 0}/{effectiveMonthlyLimit} this month</strong>
                     ) : (
                       <>Uses: <strong>{usageCount}/{effectiveFreeLimit}</strong> {bonusCredits > 0 ? 'total free' : 'free'}</>
                     )}
