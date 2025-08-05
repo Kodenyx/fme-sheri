@@ -95,6 +95,7 @@ const Tool = () => {
     const subscriptionEmail = searchParams.get('email');
     
     if (subscription === 'success' && subscriptionEmail) {
+      console.log('Processing successful subscription for:', subscriptionEmail);
       addToGHL(subscriptionEmail, undefined, true, tier || 'regular_program');
       refreshUsageData();
       refetchPricing();
@@ -140,6 +141,18 @@ const Tool = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
+    console.log('Starting email enhancement process...');
+    console.log('Current state check:', { 
+      isSubmitting, 
+      showMakeover, 
+      emailContentLength: emailContent.length,
+      isSubscribed,
+      isBetaUser,
+      needsEmailCapture,
+      needsPaywall,
+      usageCount
+    });
+    
     // Reset any previous state before starting
     setShowMakeover(false);
     setMakeover("");
@@ -151,28 +164,28 @@ const Tool = () => {
       return;
     }
     
-    console.log('Starting email enhancement process...');
-    console.log('Current state:', { isSubmitting, showMakeover, emailContentLength: emailContent.length });
-    
     // Check access control before processing (beta users skip these checks)
-    if (!isBetaUser && needsEmailCapture) {
-      console.log('Need email capture');
-      setShowEmailModal(true);
-      return;
-    }
-    
-    if (!isBetaUser && needsPaywall) {
-      console.log('Need paywall');
-      setShowPaywallModal(true);
-      return;
+    if (!isBetaUser) {
+      console.log('Checking access control for non-beta user');
+      if (needsEmailCapture) {
+        console.log('Need email capture, showing modal');
+        setShowEmailModal(true);
+        return;
+      }
+      
+      if (needsPaywall) {
+        console.log('Need paywall, showing modal');
+        setShowPaywallModal(true);
+        return;
+      }
     }
     
     setIsSubmitting(true);
-    console.log('Set isSubmitting to true');
+    console.log('Set isSubmitting to true, proceeding with API call');
 
     try {
       console.log('Calling rewrite-email function with content length:', emailContent.length);
-      console.log('User info:', { email, isSubscribed, isBetaUser });
+      console.log('User info for API call:', { email, isSubscribed, isBetaUser });
       
       const { data, error } = await supabase.functions.invoke('rewrite-email', {
         body: {
@@ -180,21 +193,19 @@ const Tool = () => {
         },
       });
 
-      console.log('Raw response from function:', { data, error });
+      console.log('Raw response from function:', { data, error, hasData: !!data });
 
       if (error) {
         console.error('Supabase function error:', error);
         throw new Error(error.message || 'Failed to rewrite email');
       }
 
-      console.log('Function response received:', data);
-      
       if (!data || !data.rewritten_email) {
         console.error('Invalid response structure:', data);
         throw new Error('Invalid response from email rewriter');
       }
       
-      console.log('Setting makeover and analysis...');
+      console.log('Setting makeover and analysis with response data...');
       setMakeover(data.rewritten_email);
       setAnalysis({
         psychologicalTriggers: data.psychological_triggers || [],
@@ -206,11 +217,16 @@ const Tool = () => {
       setShowMakeover(true);
       
       // Increment usage count and log usage
-      console.log('Incrementing usage...');
+      console.log('Incrementing usage and logging...');
       await incrementUsage(email || undefined);
       await logToolUsage(emailContent, data.rewritten_email, 'ai-rewritten');
       
       console.log('Email enhancement completed successfully');
+      
+      toast({
+        title: "Success!",
+        description: "Your email has been enhanced successfully.",
+      });
       
     } catch (error) {
       console.error('Error during email makeover:', error);
@@ -233,7 +249,7 @@ const Tool = () => {
 
   const handleReset = () => {
     console.log('Resetting tool state');
-    setIsSubmitting(false); // Ensure this is reset
+    setIsSubmitting(false);
     setShowMakeover(false);
     setEmailContent("");
     setMakeover("");
@@ -308,7 +324,7 @@ const Tool = () => {
     );
   }
 
-  const currentPrice = pricingData?.currentTier?.price_display || "$9.97";
+  const currentPrice = pricingData?.currentTier?.price_display || "$19.97";
   const isFoundersProgram = pricingData?.foundersProgram?.is_available || false;
   const seatsRemaining = pricingData?.foundersProgram?.seats_remaining || 0;
 

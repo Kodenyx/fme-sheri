@@ -20,12 +20,14 @@ export const useUsageTracking = () => {
   const loadUsageData = async () => {
     try {
       setLoading(true);
+      console.log('Loading usage data...');
       
       // Check URL params for subscription status
       const urlParams = new URLSearchParams(window.location.search);
       const subscription = urlParams.get('subscription');
       
       if (subscription === 'success') {
+        console.log('Subscription success detected, clearing URL params and resetting usage');
         // Remove URL params
         const newUrl = window.location.pathname;
         window.history.replaceState({}, document.title, newUrl);
@@ -33,35 +35,45 @@ export const useUsageTracking = () => {
         // Clear old localStorage data for fresh start
         localStorage.removeItem('totalUsage');
         localStorage.removeItem('monthlyUsage');
+        localStorage.setItem('wasSubscribed', 'true');
         
         // Set as subscribed immediately
         setIsSubscribed(true);
         setUsageCount(0);
         setMonthlyUsage(0);
+        console.log('Reset usage counters for new subscription');
       }
       
       // Load stored email
       const storedEmail = localStorage.getItem('userEmail');
       setEmail(storedEmail);
+      console.log('Stored email:', storedEmail);
       
       // Check if beta user
       if (storedEmail) {
         const betaEmails = ['demo@kodenyx.com'];
-        setIsBetaUser(betaEmails.includes(storedEmail));
+        const isBeta = betaEmails.includes(storedEmail);
+        setIsBetaUser(isBeta);
+        console.log('Beta user status:', isBeta);
       }
       
       // Check subscription status if we have an email
       if (storedEmail && subscription !== 'success') {
+        console.log('Checking subscription status for:', storedEmail);
         const { data: subData, error: subError } = await supabase.functions.invoke('check-subscription', {
           body: { email: storedEmail }
         });
         
         if (!subError && subData) {
-          setIsSubscribed(subData.subscribed || false);
-          if (subData.subscribed) {
+          console.log('Subscription check result:', subData);
+          const isCurrentlySubscribed = subData.subscribed || false;
+          setIsSubscribed(isCurrentlySubscribed);
+          
+          if (isCurrentlySubscribed) {
             // For subscribers, reset counters if this is first time checking after subscription
             const wasSubscribed = localStorage.getItem('wasSubscribed') === 'true';
             if (!wasSubscribed) {
+              console.log('First time subscriber detected, resetting usage');
               localStorage.setItem('totalUsage', '0');
               localStorage.setItem('monthlyUsage', '0');
               localStorage.setItem('wasSubscribed', 'true');
@@ -70,6 +82,7 @@ export const useUsageTracking = () => {
             } else {
               // Load existing usage for returning subscribers
               const storedMonthly = parseInt(localStorage.getItem('monthlyUsage') || '0');
+              console.log('Loading existing monthly usage for subscriber:', storedMonthly);
               setUsageCount(storedMonthly);
               setMonthlyUsage(storedMonthly);
             }
@@ -78,14 +91,18 @@ export const useUsageTracking = () => {
             // Load free user usage
             const storedUsage = parseInt(localStorage.getItem('totalUsage') || '0');
             const storedBonusCredits = parseInt(localStorage.getItem('bonusCredits') || '0');
+            console.log('Loading free user usage:', storedUsage, 'bonus credits:', storedBonusCredits);
             setUsageCount(storedUsage);
             setBonusCredits(storedBonusCredits);
           }
+        } else {
+          console.error('Error checking subscription:', subError);
         }
       } else if (!storedEmail) {
         // No email stored - load free usage
         const storedUsage = parseInt(localStorage.getItem('totalUsage') || '0');
         const storedBonusCredits = parseInt(localStorage.getItem('bonusCredits') || '0');
+        console.log('No email stored, loading free usage:', storedUsage, 'bonus credits:', storedBonusCredits);
         setUsageCount(storedUsage);
         setBonusCredits(storedBonusCredits);
       }
@@ -94,6 +111,7 @@ export const useUsageTracking = () => {
       console.error('Error loading usage data:', error);
     } finally {
       setLoading(false);
+      console.log('Usage data loading complete');
     }
   };
 
@@ -102,33 +120,44 @@ export const useUsageTracking = () => {
   }, []);
 
   const refreshUsageData = () => {
+    console.log('Refreshing usage data...');
     loadUsageData();
   };
 
   const incrementUsage = async (userEmail?: string) => {
-    if (isBetaUser) return; // Beta users have unlimited usage
+    console.log('Incrementing usage, current state:', { isBetaUser, isSubscribed, usageCount, monthlyUsage });
+    
+    if (isBetaUser) {
+      console.log('Beta user - skipping usage increment');
+      return; // Beta users have unlimited usage
+    }
 
     if (isSubscribed) {
       // Subscribed users: increment monthly usage
       const newMonthlyUsage = monthlyUsage + 1;
+      console.log('Incrementing monthly usage for subscriber:', newMonthlyUsage);
       setMonthlyUsage(newMonthlyUsage);
       setUsageCount(newMonthlyUsage);
       localStorage.setItem('monthlyUsage', newMonthlyUsage.toString());
     } else {
       // Free users: increment total usage
       const newUsage = usageCount + 1;
+      console.log('Incrementing total usage for free user:', newUsage);
       setUsageCount(newUsage);
       localStorage.setItem('totalUsage', newUsage.toString());
     }
   };
 
   const setUserEmail = (newEmail: string) => {
+    console.log('Setting user email:', newEmail);
     setEmail(newEmail);
     localStorage.setItem('userEmail', newEmail);
     
     // Check if beta user
     const betaEmails = ['demo@kodenyx.com'];
-    setIsBetaUser(betaEmails.includes(newEmail));
+    const isBeta = betaEmails.includes(newEmail);
+    setIsBetaUser(isBeta);
+    console.log('Updated beta user status:', isBeta);
     
     // Refresh data to check subscription
     loadUsageData();
@@ -136,13 +165,18 @@ export const useUsageTracking = () => {
 
   const createCheckoutSession = async (userEmail: string) => {
     try {
+      console.log('Creating checkout session for:', userEmail);
       const { data, error } = await supabase.functions.invoke('create-checkout', {
         body: { email: userEmail }
       });
 
-      if (error) throw error;
+      if (error) {
+        console.error('Checkout session error:', error);
+        throw error;
+      }
 
       if (data?.url) {
+        console.log('Checkout session created successfully');
         // Open in same window for better UX
         window.location.href = data.url;
       }
@@ -155,6 +189,17 @@ export const useUsageTracking = () => {
   // Determine access control
   const needsEmailCapture = !email && usageCount >= 1;
   const needsPaywall = email && !isSubscribed && usageCount >= (5 + bonusCredits);
+
+  console.log('Current usage tracking state:', {
+    usageCount,
+    monthlyUsage,
+    email,
+    isSubscribed,
+    isBetaUser,
+    needsEmailCapture,
+    needsPaywall,
+    loading
+  });
 
   return {
     usageCount,
