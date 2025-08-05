@@ -1,5 +1,4 @@
 
-
 import { useState, useEffect, useCallback } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 
@@ -22,7 +21,6 @@ export const useUsageTracking = () => {
   const [loading, setLoading] = useState(true);
   const [monthlyLimit, setMonthlyLimit] = useState(60);
   const [effectiveMonthlyLimit, setEffectiveMonthlyLimit] = useState(60);
-  const [hasShownWelcomeToast, setHasShownWelcomeToast] = useState(false);
 
   // Check if user is beta user (client-side check for now)
   const isBetaUser = email?.startsWith('beta-user-') || localStorage.getItem('isBetaUser') === 'true';
@@ -37,24 +35,24 @@ export const useUsageTracking = () => {
     loadUsageData();
   }, []);
 
-  // Check for subscription success in URL and show welcome toast only once
+  // Check for subscription success in URL and refresh data
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const urlParams = new URLSearchParams(window.location.search);
       const subscriptionStatus = urlParams.get('subscription');
-      const welcomeToastShown = localStorage.getItem('welcomeToastShown');
       
-      if (subscriptionStatus === 'success' && !welcomeToastShown && !hasShownWelcomeToast && isSubscribed) {
-        // Set flags to prevent showing again
-        setHasShownWelcomeToast(true);
-        localStorage.setItem('welcomeToastShown', 'true');
-        
-        // Clear URL params to prevent re-triggering
+      if (subscriptionStatus === 'success') {
+        // Clear URL params and refresh data
         const newUrl = window.location.pathname;
         window.history.replaceState({}, document.title, newUrl);
+        
+        // Refresh usage data to get updated subscription status
+        setTimeout(() => {
+          loadUsageData();
+        }, 1000);
       }
     }
-  }, [isSubscribed, hasShownWelcomeToast]);
+  }, []);
 
   const loadUsageData = async () => {
     try {
@@ -138,7 +136,8 @@ export const useUsageTracking = () => {
 
       if (data?.url) {
         console.log('Redirecting to checkout:', data.url);
-        window.open(data.url, '_blank');
+        // Open in the same window instead of a new tab for better UX
+        window.location.href = data.url;
       } else {
         throw new Error('No checkout URL received');
       }
