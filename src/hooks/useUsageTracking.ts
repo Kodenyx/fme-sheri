@@ -46,6 +46,10 @@ export const useUsageTracking = () => {
         const newUrl = window.location.pathname;
         window.history.replaceState({}, document.title, newUrl);
         
+        // Reset usage count for new subscribers to show fresh monthly limit
+        localStorage.setItem('monthlyUsage', '0');
+        setMonthlyUsage(0);
+        
         // Refresh usage data to get updated subscription status
         setTimeout(() => {
           loadUsageData();
@@ -72,17 +76,37 @@ export const useUsageTracking = () => {
         });
         
         if (!subError && subData) {
-          setIsSubscribed(subData.subscribed || false);
+          const isCurrentlySubscribed = subData.subscribed || false;
+          setIsSubscribed(isCurrentlySubscribed);
+          
+          // If user just became subscribed, reset their monthly usage to show fresh start
+          const wasSubscribed = localStorage.getItem('wasSubscribed') === 'true';
+          if (isCurrentlySubscribed && !wasSubscribed) {
+            console.log('User just subscribed - resetting monthly usage');
+            localStorage.setItem('monthlyUsage', '0');
+            localStorage.setItem('wasSubscribed', 'true');
+          } else if (!isCurrentlySubscribed && wasSubscribed) {
+            localStorage.setItem('wasSubscribed', 'false');
+          } else if (isCurrentlySubscribed) {
+            localStorage.setItem('wasSubscribed', 'true');
+          }
         }
       }
 
       // Load usage from localStorage for now
       const storedUsage = parseInt(localStorage.getItem('totalUsage') || '0');
-      const storedMonthlyUsage = parseInt(localStorage.getItem('monthlyUsage') || '0');
+      let storedMonthlyUsage = parseInt(localStorage.getItem('monthlyUsage') || '0');
       const storedBonusCredits = parseInt(localStorage.getItem('bonusCredits') || '0');
       
-      setUsageCount(storedUsage);
-      setMonthlyUsage(storedMonthlyUsage);
+      // For subscribed users, show monthly usage instead of total usage
+      if (isSubscribed) {
+        setUsageCount(storedMonthlyUsage);
+        setMonthlyUsage(storedMonthlyUsage);
+      } else {
+        setUsageCount(storedUsage);
+        setMonthlyUsage(storedMonthlyUsage);
+      }
+      
       setBonusCredits(storedBonusCredits);
       
       console.log('Usage data loaded:', { storedUsage, storedMonthlyUsage, storedBonusCredits, isSubscribed });
