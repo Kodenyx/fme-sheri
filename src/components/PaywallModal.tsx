@@ -61,7 +61,20 @@ const PaywallModal: React.FC<PaywallModalProps> = ({
       await onSubscribe();
     } catch (err) {
       console.error('Checkout error:', err);
-      setError('Failed to start checkout. Please try again.');
+      
+      // Extract meaningful error message
+      let errorMessage = 'Failed to start checkout. Please try again.';
+      if (err instanceof Error) {
+        if (err.message.includes('Invalid email')) {
+          errorMessage = 'Please enter a valid email address to continue.';
+        } else if (err.message.includes('email_invalid')) {
+          errorMessage = 'The email address format is invalid. Please check and try again.';
+        } else {
+          errorMessage = err.message;
+        }
+      }
+      
+      setError(errorMessage);
       setIsLoading(false);
     }
   };

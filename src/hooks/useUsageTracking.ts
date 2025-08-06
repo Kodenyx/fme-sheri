@@ -49,7 +49,7 @@ export const useUsageTracking = () => {
       setEmail(storedEmail);
       console.log('Stored email:', storedEmail);
       
-      // Check if beta user
+      // Check if beta user and ensure proper email format
       if (storedEmail) {
         const betaEmails = ['demo@kodenyx.com'];
         const isBeta = betaEmails.includes(storedEmail);
@@ -150,6 +150,14 @@ export const useUsageTracking = () => {
 
   const setUserEmail = (newEmail: string) => {
     console.log('Setting user email:', newEmail);
+    
+    // Validate email format before setting
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(newEmail)) {
+      console.error('Invalid email format:', newEmail);
+      return;
+    }
+    
     setEmail(newEmail);
     localStorage.setItem('userEmail', newEmail);
     
@@ -166,6 +174,13 @@ export const useUsageTracking = () => {
   const createCheckoutSession = async (userEmail: string) => {
     try {
       console.log('Creating checkout session for:', userEmail);
+      
+      // Validate email format before sending to Stripe
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(userEmail)) {
+        throw new Error('Invalid email format. Please enter a valid email address.');
+      }
+      
       const { data, error } = await supabase.functions.invoke('create-checkout', {
         body: { email: userEmail }
       });
@@ -179,6 +194,8 @@ export const useUsageTracking = () => {
         console.log('Checkout session created successfully');
         // Open in same window for better UX
         window.location.href = data.url;
+      } else {
+        throw new Error('No checkout URL received');
       }
     } catch (error) {
       console.error('Error creating checkout session:', error);
