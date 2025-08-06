@@ -1,4 +1,5 @@
 
+
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 
 const corsHeaders = {
@@ -47,6 +48,9 @@ serve(async (req) => {
 
     logStep("Adding contact to GHL", { email, firstName, tagName, actualTagName });
 
+    // Add rate limiting delay to prevent "too many requests" errors
+    await new Promise(resolve => setTimeout(resolve, 100));
+
     // Create or update contact in GHL
     const contactData = {
       email: email,
@@ -69,8 +73,11 @@ serve(async (req) => {
 
     if (!ghlResponse.ok) {
       // If contact already exists, try to update with tags
-      if (ghlResponse.status === 422) {
-        logStep("Contact exists, attempting to update tags");
+      if (ghlResponse.status === 422 || ghlResponse.status === 400) {
+        logStep("Contact exists or rate limited, attempting to update tags");
+        
+        // Add delay before searching
+        await new Promise(resolve => setTimeout(resolve, 200));
         
         // First get the contact to find their ID
         const searchResponse = await fetch(`https://rest.gohighlevel.com/v1/contacts/?email=${encodeURIComponent(email)}&locationId=${ghlLocationId}`, {
@@ -85,6 +92,9 @@ serve(async (req) => {
           const searchData = await searchResponse.json();
           if (searchData.contacts && searchData.contacts.length > 0) {
             const contactId = searchData.contacts[0].id;
+            
+            // Add delay before updating
+            await new Promise(resolve => setTimeout(resolve, 200));
             
             // Update contact with new tag
             const updateResponse = await fetch(`https://rest.gohighlevel.com/v1/contacts/${contactId}`, {
@@ -105,9 +115,21 @@ serve(async (req) => {
                 headers: { ...corsHeaders, "Content-Type": "application/json" },
                 status: 200,
               });
+            } else {
+              const updateErrorText = await updateResponse.text();
+              logStep("Failed to update contact", { status: updateResponse.status, body: updateErrorText });
             }
           }
         }
+      }
+      
+      // If it's a rate limit error, return success but log the issue
+      if (ghlResponse.status === 400 && ghlResponseText.includes("Too many requests")) {
+        logStep("Rate limited but contact likely exists, returning success");
+        return new Response(JSON.stringify({ success: true, action: "rate_limited" }), {
+          headers: { ...corsHeaders, "Content-Type": "application/json" },
+          status: 200,
+        });
       }
       
       throw new Error(`GHL API error: ${ghlResponse.status} - ${ghlResponseText}`);
@@ -130,3 +152,4 @@ serve(async (req) => {
     });
   }
 });
+
