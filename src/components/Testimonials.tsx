@@ -1,4 +1,3 @@
-
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Quote, Star } from "lucide-react";
@@ -6,7 +5,7 @@ import { Quote, Star } from "lucide-react";
 const testimonials = [
   {
     name: "Rachel Pedersen",
-    role: "Social Media Expert",
+    role: "Social Media Expert", 
     company: "300K LinkedIn Followers",
     content: "I'm a total nerd for behavioral science... So when I saw how FixMyEmail instantly upgraded basic email copy into proven copy (backed by the science of human-behavior, too!), I fell in love.",
     image: "/placeholder.svg",
@@ -16,7 +15,7 @@ const testimonials = [
     name: "John Frydman",
     role: "Founder AI Expert",
     company: "Digismart.io",
-    content: "The output is really better than all the other methods/apps/GenAI that I have tested so far (and that's a lot of them)",
+    content: "Your tool is incredibly impressive and delivers results that are far superior to anything I've tested before. The quality of the output is exceptional, and it's clear that a lot of thought and expertise has gone into developing this solution.",
     image: "/placeholder.svg",
     rating: 5
   },
