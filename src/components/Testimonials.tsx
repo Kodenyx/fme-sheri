@@ -1,3 +1,4 @@
+
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Quote, Star } from "lucide-react";
@@ -31,7 +32,8 @@ const testimonials = [
     name: "Jacob Statler",
     role: "Founder",
     company: "Stat Digital",
-    content: "The hook plays into the desire and intent of the lead.",
+    content: null, // Video testimonial instead of text
+    videoUrl: "https://www.youtube.com/embed/5HheRJbi_f8",
     image: "/lovable-uploads/47345ca9-9387-4e41-9f19-956a9bddbce6.png",
     rating: 5
   },
@@ -93,14 +95,16 @@ const Testimonials = () => {
 
                 <CardContent className="p-8">
                   <div className="flex flex-col">
-                    {/* Quote icon */}
-                    <Quote className={`w-8 h-8 mb-4 ${
-                      index === 0 ? 'text-purple-400' : 
-                      index === 1 ? 'text-blue-400' :
-                      index === 2 ? 'text-pink-400' :
-                      index === 3 ? 'text-green-400' :
-                      'text-orange-400'
-                    }`} />
+                    {/* Quote icon - only show for text testimonials */}
+                    {testimonial.content && (
+                      <Quote className={`w-8 h-8 mb-4 ${
+                        index === 0 ? 'text-purple-400' : 
+                        index === 1 ? 'text-blue-400' :
+                        index === 2 ? 'text-pink-400' :
+                        index === 3 ? 'text-green-400' :
+                        'text-orange-400'
+                      }`} />
+                    )}
 
                     {/* Star rating */}
                     <div className="flex mb-4">
@@ -109,10 +113,23 @@ const Testimonials = () => {
                       ))}
                     </div>
 
-                    {/* Content */}
-                    <p className="text-gray-700 mb-6 italic text-lg leading-relaxed">
-                      "{testimonial.content}"
-                    </p>
+                    {/* Content - either text or video */}
+                    {testimonial.videoUrl ? (
+                      <div className="mb-6">
+                        <iframe
+                          src={testimonial.videoUrl}
+                          title={`Video testimonial from ${testimonial.name}`}
+                          className="w-full h-48 rounded-lg"
+                          frameBorder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                        />
+                      </div>
+                    ) : (
+                      <p className="text-gray-700 mb-6 italic text-lg leading-relaxed">
+                        "{testimonial.content}"
+                      </p>
+                    )}
 
                     {/* Author info */}
                     <div className="flex items-center">
