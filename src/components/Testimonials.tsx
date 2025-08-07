@@ -1,5 +1,3 @@
-
-
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Quote, Star } from "lucide-react";
@@ -22,20 +20,20 @@ const testimonials = [
     rating: 5
   },
   {
-    name: "Shriya Prasanna",
-    role: "Founder and CEO",
-    company: "Good On Digital",
-    content: "I was genuinely impressed by how the tool delivered a well-crafted message, backed with clear scientific reasoning. It builds instant trust.",
-    image: "/lovable-uploads/4cc94b8a-ffc5-423f-962d-6331db39af7a.png",
-    rating: 5
-  },
-  {
     name: "Jacob Statler",
     role: "Founder",
     company: "Stat Digital",
     content: null, // Video testimonial instead of text
     videoUrl: "https://www.youtube.com/embed/5HheRJbi_f8",
     image: "/lovable-uploads/47345ca9-9387-4e41-9f19-956a9bddbce6.png",
+    rating: 5
+  },
+  {
+    name: "Shriya Prasanna",
+    role: "Founder and CEO",
+    company: "Good On Digital",
+    content: "I was genuinely impressed by how the tool delivered a well-crafted message, backed with clear scientific reasoning. It builds instant trust.",
+    image: "/lovable-uploads/4cc94b8a-ffc5-423f-962d-6331db39af7a.png",
     rating: 5
   },
   {
