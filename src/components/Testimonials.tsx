@@ -16,7 +16,7 @@ const testimonials = [
     name: "John Frydman",
     role: "Founder AI Expert",
     company: "Digismart.io",
-    content: "The output is really better than all the other methods/apps/GenAI that I have tested so far",
+    content: "The output is really better than all the other methods/apps/GenAI that I have tested so far (and that's a lot of them)",
     image: "/placeholder.svg",
     rating: 5
   },
