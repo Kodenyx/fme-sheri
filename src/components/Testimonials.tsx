@@ -32,7 +32,7 @@ const testimonials = [
     role: "Founder",
     company: "Stat Digital",
     content: "The hook plays into the desire and intent of the lead.",
-    image: "/placeholder.svg",
+    image: "/lovable-uploads/47345ca9-9387-4e41-9f19-956a9bddbce6.png",
     rating: 5
   },
   {
