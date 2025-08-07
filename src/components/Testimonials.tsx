@@ -1,3 +1,4 @@
+
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Quote, Star } from "lucide-react";
@@ -40,6 +41,14 @@ const testimonials = [
     role: "Fractional Head of Growth",
     company: "Monetization for B2B/B2C Startups",
     content: "What a great tool! Dropped in an email and it definitely stepped it up for me. Can't wait to use it more!",
+    image: "/placeholder.svg",
+    rating: 5
+  },
+  {
+    name: "Julee Foster",
+    role: "That Email Chick",
+    company: "Ecommerce Retention & Automation Strategist",
+    content: "WOW. Your tool took my welcome email and tightened it up, made it more concise and persuasive - this is more concise changer! 🔥",
     image: "/placeholder.svg",
     rating: 5
   }
