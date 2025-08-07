@@ -1,4 +1,3 @@
-
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Quote, Star } from "lucide-react";
@@ -6,10 +5,10 @@ import { Quote, Star } from "lucide-react";
 const testimonials = [
   {
     name: "Rachel Pedersen",
-    role: "Social Media Expert",
+    role: "Social Media Expert", 
     company: "300K LinkedIn Followers",
     content: "I'm a total nerd for behavioral science... So when I saw how FixMyEmail instantly upgraded basic email copy into proven copy (backed by the science of human-behavior, too!), I fell in love.",
-    image: "/placeholder.svg",
+    image: "/lovable-uploads/784bb3b1-c0f2-4164-ac98-5216e724e0bc.png",
     rating: 5
   },
   {
