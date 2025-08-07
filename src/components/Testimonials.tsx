@@ -1,4 +1,3 @@
-
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Quote, Star } from "lucide-react";
@@ -25,7 +24,7 @@ const testimonials = [
     role: "Founder and CEO",
     company: "Good On Digital",
     content: "I was impressed by how the tool delivered a well-crafted message backed with scientific reasoning.",
-    image: "/placeholder.svg",
+    image: "/lovable-uploads/4cc94b8a-ffc5-423f-962d-6331db39af7a.png",
     rating: 5
   },
   {
