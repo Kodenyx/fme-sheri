@@ -38,6 +38,7 @@ const Navbar = ({ onTestimonialsClick, onTryToolClick, onFAQsClick }: NavbarProp
 
   const handleFAQsClick = () => {
     if (onFAQsClick) {
+      // If we're on the main page and have the callback, use it
       onFAQsClick();
     } else {
       // If we're not on the main page, navigate to it first
