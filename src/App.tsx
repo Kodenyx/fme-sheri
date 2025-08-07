@@ -14,6 +14,7 @@ import Auth from "./pages/Auth";
 import Modal from "./pages/Modal";
 import Modal1 from "./pages/Modal1";
 import Modal3 from "./pages/Modal3";
+import TagTest from "./pages/TagTest";
 import NotFound from "./pages/NotFound";
 import SocialCredits from "./pages/SocialCredits";
 
@@ -51,6 +52,7 @@ const App = () => {
             <Route path="/modal" element={<Modal />} />
             <Route path="/modal1" element={<Modal1 />} />
             <Route path="/modal3" element={<Modal3 />} />
+            <Route path="/tag-test" element={<TagTest />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
