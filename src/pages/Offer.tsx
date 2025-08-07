@@ -1,16 +1,19 @@
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Zap } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useNavigate } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Testimonials from "@/components/Testimonials";
+import FAQs from "@/components/FAQs";
 
 const Offer = () => {
   const [isRedirecting, setIsRedirecting] = useState(false);
   const { toast } = useToast();
   const navigate = useNavigate();
+  const testimonialsRef = useRef<HTMLDivElement>(null);
+  const faqsRef = useRef<HTMLDivElement>(null);
 
   const handleGetStarted = () => {
     setIsRedirecting(true);
@@ -26,10 +29,7 @@ const Offer = () => {
   };
 
   const scrollToTestimonials = () => {
-    const testimonialsElement = document.getElementById('testimonials');
-    if (testimonialsElement) {
-      testimonialsElement.scrollIntoView({ behavior: 'smooth' });
-    }
+    testimonialsRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
   const scrollToTryTool = () => {
@@ -39,9 +39,17 @@ const Offer = () => {
     }
   };
 
+  const scrollToFAQs = () => {
+    faqsRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <div className="min-h-screen bg-gradient-primary">
-      <Navbar onTestimonialsClick={scrollToTestimonials} onTryToolClick={scrollToTryTool} />
+      <Navbar 
+        onTestimonialsClick={scrollToTestimonials} 
+        onTryToolClick={scrollToTryTool}
+        onFAQsClick={scrollToFAQs}
+      />
       
       {/* Hero Section */}
       <section className="pt-32 pb-8">
@@ -99,8 +107,13 @@ const Offer = () => {
       </section>
 
       {/* Testimonials Section */}
-      <div id="testimonials">
+      <div ref={testimonialsRef} id="testimonials">
         <Testimonials />
+      </div>
+
+      {/* FAQs Section */}
+      <div ref={faqsRef} id="faqs">
+        <FAQs />
       </div>
     </div>
   );
