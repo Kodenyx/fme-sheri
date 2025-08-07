@@ -1,3 +1,4 @@
+
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Quote, Star } from "lucide-react";
@@ -48,7 +49,7 @@ const testimonials = [
     role: "That Email Chick",
     company: "Ecommerce Retention & Automation Strategist",
     content: "WOW. Your tool took my welcome email and tightened it up, made it more concise and persuasive - this is more concise changer! 🔥",
-    image: "/placeholder.svg",
+    image: "/lovable-uploads/84fc39ba-f8b3-48d1-9f0a-cf867fcf0603.png",
     rating: 5
   }
 ];
