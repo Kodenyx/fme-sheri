@@ -1,3 +1,4 @@
+
 import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -38,15 +39,21 @@ const Navbar = ({ onTestimonialsClick, onTryToolClick, onFAQsClick }: NavbarProp
   const handleFAQsClick = () => {
     if (onFAQsClick) {
       onFAQsClick();
+    } else {
+      // If we're not on the main page, navigate to it first
+      navigate('/', { replace: true });
+      // Then scroll after a brief delay to allow navigation
+      setTimeout(() => {
+        const faqsElement = document.querySelector('[data-section="faqs"]');
+        if (faqsElement) {
+          faqsElement.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
     }
   };
 
   const handleEarnCreditsClick = () => {
     navigate('/social-credits');
-  };
-
-  const handleFAQClick = () => {
-    navigate('/faq');
   };
 
   return (
@@ -73,7 +80,7 @@ const Navbar = ({ onTestimonialsClick, onTryToolClick, onFAQsClick }: NavbarProp
             Earn Credits
           </button>
           <button 
-            onClick={handleFAQClick}
+            onClick={handleFAQsClick}
             className="text-white hover:opacity-80 transition-opacity"
           >
             FAQs
@@ -84,14 +91,6 @@ const Navbar = ({ onTestimonialsClick, onTryToolClick, onFAQsClick }: NavbarProp
               className="text-white hover:opacity-80 transition-opacity"
             >
               Testimonials
-            </button>
-          )}
-          {onFAQsClick && (
-            <button 
-              onClick={handleFAQsClick}
-              className="text-white hover:opacity-80 transition-opacity"
-            >
-              FAQs
             </button>
           )}
           {onTryToolClick && (
@@ -121,7 +120,7 @@ const Navbar = ({ onTestimonialsClick, onTryToolClick, onFAQsClick }: NavbarProp
                   Earn Credits
                 </button>
                 <button 
-                  onClick={handleFAQClick}
+                  onClick={handleFAQsClick}
                   className="text-left hover:opacity-80 transition-opacity"
                 >
                   FAQs
@@ -132,14 +131,6 @@ const Navbar = ({ onTestimonialsClick, onTryToolClick, onFAQsClick }: NavbarProp
                     className="text-left hover:opacity-80 transition-opacity"
                   >
                     Testimonials
-                  </button>
-                )}
-                {onFAQsClick && (
-                  <button 
-                    onClick={handleFAQsClick}
-                    className="text-left hover:opacity-80 transition-opacity"
-                  >
-                    FAQs
                   </button>
                 )}
                 {onTryToolClick && (

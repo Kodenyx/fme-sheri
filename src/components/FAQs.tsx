@@ -47,7 +47,7 @@ const FAQs = () => {
   ];
 
   return (
-    <section className="py-16 px-4 md:px-8 bg-gradient-to-br from-purple-50 via-blue-50 to-pink-50">
+    <section className="py-16 px-4 md:px-8 bg-gradient-to-br from-purple-50 via-blue-50 to-pink-50" data-section="faqs">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 bg-gradient-to-r from-purple-600 via-blue-600 to-pink-600 bg-clip-text text-transparent">
           Frequently Asked Questions
