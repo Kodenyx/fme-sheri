@@ -38,26 +38,7 @@ const Navbar = ({ onTestimonialsClick, onTryToolClick, onFAQsClick }: NavbarProp
 
   const handleFAQsClick = () => {
     if (onFAQsClick) {
-      // If we're on the main page and have the callback, use it
       onFAQsClick();
-    } else {
-      // If we're not on the main page, navigate to it first
-      if (location.pathname !== '/') {
-        navigate('/');
-        // Then scroll after a brief delay to allow navigation
-        setTimeout(() => {
-          const faqsElement = document.querySelector('[data-section="faqs"]');
-          if (faqsElement) {
-            faqsElement.scrollIntoView({ behavior: 'smooth' });
-          }
-        }, 100);
-      } else {
-        // If we're already on the main page, just scroll
-        const faqsElement = document.querySelector('[data-section="faqs"]');
-        if (faqsElement) {
-          faqsElement.scrollIntoView({ behavior: 'smooth' });
-        }
-      }
     }
   };
 
@@ -88,18 +69,20 @@ const Navbar = ({ onTestimonialsClick, onTryToolClick, onFAQsClick }: NavbarProp
           >
             Earn Credits
           </button>
-          <button 
-            onClick={handleFAQsClick}
-            className="text-white hover:opacity-80 transition-opacity"
-          >
-            FAQs
-          </button>
           {onTestimonialsClick && (
             <button 
               onClick={handleTestimonialsClick}
               className="text-white hover:opacity-80 transition-opacity"
             >
               Testimonials
+            </button>
+          )}
+          {onFAQsClick && (
+            <button 
+              onClick={handleFAQsClick}
+              className="text-white hover:opacity-80 transition-opacity"
+            >
+              FAQs
             </button>
           )}
           {onTryToolClick && (
@@ -128,18 +111,20 @@ const Navbar = ({ onTestimonialsClick, onTryToolClick, onFAQsClick }: NavbarProp
                 >
                   Earn Credits
                 </button>
-                <button 
-                  onClick={handleFAQsClick}
-                  className="text-left hover:opacity-80 transition-opacity"
-                >
-                  FAQs
-                </button>
                 {onTestimonialsClick && (
                   <button 
                     onClick={handleTestimonialsClick}
                     className="text-left hover:opacity-80 transition-opacity"
                   >
                     Testimonials
+                  </button>
+                )}
+                {onFAQsClick && (
+                  <button 
+                    onClick={handleFAQsClick}
+                    className="text-left hover:opacity-80 transition-opacity"
+                  >
+                    FAQs
                   </button>
                 )}
                 {onTryToolClick && (

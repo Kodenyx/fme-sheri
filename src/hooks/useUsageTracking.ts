@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { usePricingTier } from './usePricingTier';
@@ -190,11 +191,11 @@ export const useUsageTracking = () => {
       }
 
       if (data?.url) {
-        console.log('Checkout session created successfully, redirecting to:', data.url);
-        // Use window.location.href for better compatibility instead of window.location.assign
+        console.log('Checkout session created successfully');
+        // Open in same window for better UX
         window.location.href = data.url;
       } else {
-        throw new Error('No checkout URL received from Stripe');
+        throw new Error('No checkout URL received');
       }
     } catch (error) {
       console.error('Error creating checkout session:', error);
