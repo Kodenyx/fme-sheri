@@ -16,7 +16,7 @@ const testimonials = [
     role: "Founder AI Expert",
     company: "Digismart.io",
     content: "The output is really better than all the other methods/apps/GenAI that I have tested so far (and that's a lot of them)",
-    image: "/placeholder.svg",
+    image: "/lovable-uploads/6c3da8c1-f9e4-4c30-9133-4baf3637ea18.png",
     rating: 5
   },
   {
