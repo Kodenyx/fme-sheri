@@ -1,4 +1,3 @@
-
 import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -41,14 +40,22 @@ const Navbar = ({ onTestimonialsClick, onTryToolClick, onFAQsClick }: NavbarProp
       onFAQsClick();
     } else {
       // If we're not on the main page, navigate to it first
-      navigate('/', { replace: true });
-      // Then scroll after a brief delay to allow navigation
-      setTimeout(() => {
+      if (location.pathname !== '/') {
+        navigate('/');
+        // Then scroll after a brief delay to allow navigation
+        setTimeout(() => {
+          const faqsElement = document.querySelector('[data-section="faqs"]');
+          if (faqsElement) {
+            faqsElement.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 100);
+      } else {
+        // If we're already on the main page, just scroll
         const faqsElement = document.querySelector('[data-section="faqs"]');
         if (faqsElement) {
           faqsElement.scrollIntoView({ behavior: 'smooth' });
         }
-      }, 100);
+      }
     }
   };
 
