@@ -7,9 +7,10 @@ import { useNavigate, useLocation } from "react-router-dom";
 interface NavbarProps {
   onTestimonialsClick?: () => void;
   onTryToolClick?: () => void;
+  onFAQsClick?: () => void;
 }
 
-const Navbar = ({ onTestimonialsClick, onTryToolClick }: NavbarProps = {}) => {
+const Navbar = ({ onTestimonialsClick, onTryToolClick, onFAQsClick }: NavbarProps = {}) => {
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -32,6 +33,12 @@ const Navbar = ({ onTestimonialsClick, onTryToolClick }: NavbarProps = {}) => {
   const handleTryToolClick = () => {
     if (onTryToolClick) {
       onTryToolClick();
+    }
+  };
+
+  const handleFAQsClick = () => {
+    if (onFAQsClick) {
+      onFAQsClick();
     }
   };
 
@@ -70,6 +77,14 @@ const Navbar = ({ onTestimonialsClick, onTryToolClick }: NavbarProps = {}) => {
               Testimonials
             </button>
           )}
+          {onFAQsClick && (
+            <button 
+              onClick={handleFAQsClick}
+              className="text-white hover:opacity-80 transition-opacity"
+            >
+              FAQs
+            </button>
+          )}
           {onTryToolClick && (
             <button 
               onClick={handleTryToolClick}
@@ -102,6 +117,14 @@ const Navbar = ({ onTestimonialsClick, onTryToolClick }: NavbarProps = {}) => {
                     className="text-left hover:opacity-80 transition-opacity"
                   >
                     Testimonials
+                  </button>
+                )}
+                {onFAQsClick && (
+                  <button 
+                    onClick={handleFAQsClick}
+                    className="text-left hover:opacity-80 transition-opacity"
+                  >
+                    FAQs
                   </button>
                 )}
                 {onTryToolClick && (
