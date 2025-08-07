@@ -81,7 +81,7 @@ const PaywallModal: React.FC<PaywallModalProps> = ({
 
   const programName = isFoundersProgram ? "Founders Program" : "Premium Plan";
   const statusText = isFoundersProgram 
-    ? `Limited Availability - only ${seatsRemaining} slots available.`
+    ? `Only 30 founder spots available - secure yours now`
     : "Founder's Program is now full - Premium Plan available";
 
   return (
@@ -95,57 +95,43 @@ const PaywallModal: React.FC<PaywallModalProps> = ({
             <DialogTitle className="text-center text-3xl font-bold text-white mb-2">
               You've hit your free limit - but you're just getting started.
             </DialogTitle>
-            
-            <div className="flex items-center justify-center gap-2 mb-6" style={{ color: '#E19013' }}>
-              <Clock className="w-5 h-5" />
-              <span className="font-semibold">{statusText}</span>
-            </div>
           </DialogHeader>
 
           <div className="px-8 pb-8">
-            <div className="rounded-xl p-6 mb-6 text-center" style={{ backgroundColor: 'rgba(169, 214, 212, 0.1)' }}>
-              <div className="text-2xl mb-2" style={{ color: '#A9D6D4' }}>
-                {isFoundersProgram && (
-                  <>
-                    <span className="line-through">$19.97</span>
-                    <span className="text-4xl font-bold text-white ml-2">{currentPrice}</span>
-                  </>
-                )}
-                {!isFoundersProgram && (
-                  <span className="text-4xl font-bold text-white">{currentPrice}</span>
-                )}
+            <div className="text-center mb-6">
+              <div className="text-lg mb-2" style={{ color: '#4ADE80' }}>
+                Put this on one line: <span className="text-4xl font-bold text-white">{currentPrice}/month</span> <span className="line-through text-2xl" style={{ color: '#A9D6D4' }}>$19.97</span>
               </div>
-              <div className="text-lg" style={{ color: '#A9D6D4' }}>
-                {isFoundersProgram ? "per month • locked in." : "per month"}
+              <div className="text-lg font-bold text-white mb-2">• locked in.</div>
+              <div className="text-lg font-bold mb-6" style={{ color: '#E19013' }}>
+                {statusText}
               </div>
             </div>
 
             <div className="space-y-4 mb-6">
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 flex-shrink-0 mt-1" style={{ color: '#4ADE80' }} />
-                <span className="text-white">60 email makeovers per month</span>
+                <span className="text-white">60 email makeovers/month</span>
               </div>
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 flex-shrink-0 mt-1" style={{ color: '#4ADE80' }} />
-                <span className="text-white">Advanced psychological triggers + proven sales frameworks</span>
+                <span className="text-white">Proven psychology + sales triggers</span>
               </div>
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 flex-shrink-0 mt-1" style={{ color: '#4ADE80' }} />
-                <span className="text-white">Bonus: Lifetime access to the FixMyEmail Pro Course</span>
+                <span className="text-white">"What Changed & Why" breakdown</span>
               </div>
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 flex-shrink-0 mt-1" style={{ color: '#4ADE80' }} />
-                <span className="text-white">Priority support & future feedback access</span>
+                <span className="text-white">Lifetime FixMyEmail Pro course access</span>
               </div>
-              {isFoundersProgram && (
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 flex-shrink-0 mt-1" style={{ color: '#4ADE80' }} />
-                  <span className="text-white">Founders program access</span>
-                </div>
-              )}
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 flex-shrink-0 mt-1" style={{ color: '#4ADE80' }} />
-                <span className="text-white">Cancel anytime, no questions asked</span>
+                <span className="text-white">Early access to new features</span>
+              </div>
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="w-5 h-5 flex-shrink-0 mt-1" style={{ color: '#4ADE80' }} />
+                <span className="text-white">Founders-only perks</span>
               </div>
             </div>
 
@@ -167,13 +153,13 @@ const PaywallModal: React.FC<PaywallModalProps> = ({
                   Opening checkout...
                 </>
               ) : (
-                `Join ${programName} - ${currentPrice}/month`
+                `[Join Founder's Program - ${currentPrice}/month]`
               )}
             </Button>
 
             {!isLoading && (
               <div className="text-center text-sm" style={{ color: '#A9D6D4' }}>
-                {isFoundersProgram ? "Special pricing • Limited time • Cancel anytime" : "Cancel anytime"}
+                Special pricing - Limited availability - Cancel anytime
               </div>
             )}
           </div>
