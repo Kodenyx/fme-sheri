@@ -1,3 +1,4 @@
+
 import {
   Dialog,
   DialogContent,
@@ -78,11 +79,6 @@ const PaywallModal: React.FC<PaywallModalProps> = ({
     }
   };
 
-  const programName = isFoundersProgram ? "Founders Program" : "Premium Plan";
-  const statusText = isFoundersProgram 
-    ? `Only 30 founder spots available - secure yours now`
-    : "Founder's Program is now full - Premium Plan available";
-
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-md border-0 p-0 bg-transparent shadow-none">
@@ -98,13 +94,27 @@ const PaywallModal: React.FC<PaywallModalProps> = ({
 
           <div className="px-8 pb-8">
             <div className="text-center mb-6">
-              <div className="text-lg mb-2" style={{ color: '#4ADE80' }}>
-                <span className="text-4xl font-bold text-white">{currentPrice}/month</span> <span className="line-through text-2xl" style={{ color: '#A9D6D4' }}>$19.97</span>
+              <div className="text-lg mb-2">
+                <span className="text-4xl font-bold text-white">{currentPrice}/month</span> 
+                {!isFoundersProgram && (
+                  <>
+                    {" "}
+                    <span className="line-through text-2xl" style={{ color: '#A9D6D4' }}>$39.97</span>
+                    <span className="text-white"> • full access</span>
+                  </>
+                )}
+                {isFoundersProgram && (
+                  <span className="line-through text-2xl" style={{ color: '#A9D6D4' }}> $19.97</span>
+                )}
               </div>
-              <div className="text-lg font-bold text-white mb-2">• locked in.</div>
-              <div className="text-lg font-bold mb-6" style={{ color: '#E19013' }}>
-                {statusText}
-              </div>
+              {isFoundersProgram && (
+                <>
+                  <div className="text-lg font-bold text-white mb-2">• locked in.</div>
+                  <div className="text-lg font-bold mb-6" style={{ color: '#E19013' }}>
+                    Only 30 founder spots available - secure yours now
+                  </div>
+                </>
+              )}
             </div>
 
             <div className="space-y-4 mb-6">
@@ -122,7 +132,9 @@ const PaywallModal: React.FC<PaywallModalProps> = ({
               </div>
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 flex-shrink-0 mt-1" style={{ color: '#4ADE80' }} />
-                <span className="text-white">Lifetime FixMyEmail Pro course access</span>
+                <span className="text-white">
+                  {isFoundersProgram ? "Lifetime FixMyEmail Pro course access" : "Lifetime FixMyEmail Pro course"}
+                </span>
               </div>
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 flex-shrink-0 mt-1" style={{ color: '#4ADE80' }} />
@@ -130,7 +142,9 @@ const PaywallModal: React.FC<PaywallModalProps> = ({
               </div>
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 flex-shrink-0 mt-1" style={{ color: '#4ADE80' }} />
-                <span className="text-white">Founders-only perks</span>
+                <span className="text-white">
+                  {isFoundersProgram ? "Founders-only perks" : "Cancel anytime, no questions asked"}
+                </span>
               </div>
             </div>
 
@@ -152,13 +166,18 @@ const PaywallModal: React.FC<PaywallModalProps> = ({
                   Opening checkout...
                 </>
               ) : (
-                `Join Founder's Program - ${currentPrice}/month`
+                isFoundersProgram 
+                  ? `Join Founder's Program - ${currentPrice}/month`
+                  : `Upgrade to Full Access - ${currentPrice}/month`
               )}
             </Button>
 
             {!isLoading && (
               <div className="text-center text-sm" style={{ color: '#A9D6D4' }}>
-                Special pricing - Limited availability - Cancel anytime
+                {isFoundersProgram 
+                  ? "Special pricing - Limited availability - Cancel anytime"
+                  : "No contract • Cancel anytime • Instant access"
+                }
               </div>
             )}
           </div>
