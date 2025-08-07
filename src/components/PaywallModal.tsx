@@ -1,4 +1,3 @@
-
 import {
   Dialog,
   DialogContent,
@@ -157,7 +156,7 @@ const PaywallModal: React.FC<PaywallModalProps> = ({
             <Button 
               onClick={handleSubscribe}
               disabled={isLoading}
-              className="w-full text-white font-bold text-xl py-6 px-12 rounded-full shadow-lg transform transition-all hover:scale-105 hover:opacity-90 border-0 mb-4 disabled:opacity-70 disabled:transform-none"
+              className="w-full text-white font-bold text-xl py-6 px-12 rounded-full shadow-lg transform transition-all hover:scale-105 hover:opacity-90 border-0 disabled:opacity-70 disabled:transform-none"
               style={{ backgroundColor: '#E19013' }}
             >
               {isLoading ? (
@@ -171,15 +170,6 @@ const PaywallModal: React.FC<PaywallModalProps> = ({
                   : `Upgrade to Full Access - ${currentPrice}/month`
               )}
             </Button>
-
-            {!isLoading && (
-              <div className="text-center text-sm" style={{ color: '#A9D6D4' }}>
-                {isFoundersProgram 
-                  ? "Special pricing - Limited availability - Cancel anytime"
-                  : "No contract • Cancel anytime • Instant access"
-                }
-              </div>
-            )}
           </div>
         </div>
       </DialogContent>
