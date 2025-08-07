@@ -1,4 +1,3 @@
-
 import {
   Dialog,
   DialogContent,
@@ -153,7 +152,7 @@ const PaywallModal: React.FC<PaywallModalProps> = ({
                   Opening checkout...
                 </>
               ) : (
-                `[Join Founder's Program - ${currentPrice}/month]`
+                `Join Founder's Program - ${currentPrice}/month`
               )}
             </Button>
 
