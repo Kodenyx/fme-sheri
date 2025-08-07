@@ -100,7 +100,7 @@ const PaywallModal: React.FC<PaywallModalProps> = ({
           <div className="px-8 pb-8">
             <div className="text-center mb-6">
               <div className="text-lg mb-2" style={{ color: '#4ADE80' }}>
-                Put this on one line: <span className="text-4xl font-bold text-white">{currentPrice}/month</span> <span className="line-through text-2xl" style={{ color: '#A9D6D4' }}>$19.97</span>
+                <span className="text-4xl font-bold text-white">{currentPrice}/month</span> <span className="line-through text-2xl" style={{ color: '#A9D6D4' }}>$19.97</span>
               </div>
               <div className="text-lg font-bold text-white mb-2">• locked in.</div>
               <div className="text-lg font-bold mb-6" style={{ color: '#E19013' }}>
