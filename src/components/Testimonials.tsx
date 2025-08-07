@@ -1,4 +1,3 @@
-
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Quote, Star } from "lucide-react";
@@ -33,6 +32,14 @@ const testimonials = [
     role: "Founder",
     company: "Stat Digital",
     content: "The hook plays into the desire and intent of the lead.",
+    image: "/placeholder.svg",
+    rating: 5
+  },
+  {
+    name: "Manali Hanamsagar",
+    role: "Fractional Head of Growth",
+    company: "Monetization for B2B/B2C Startups",
+    content: "What a great tool! Dropped in an email and it definitely stepped it up for me. Can't wait to use it more!",
     image: "/placeholder.svg",
     rating: 5
   }
@@ -72,7 +79,8 @@ const Testimonials = () => {
                   index === 0 ? 'bg-gradient-to-r from-purple-400 to-pink-400' : 
                   index === 1 ? 'bg-gradient-to-r from-blue-400 to-purple-400' :
                   index === 2 ? 'bg-gradient-to-r from-pink-400 to-yellow-400' :
-                  'bg-gradient-to-r from-green-400 to-blue-400'
+                  index === 3 ? 'bg-gradient-to-r from-green-400 to-blue-400' :
+                  'bg-gradient-to-r from-orange-400 to-red-400'
                 }`}></div>
 
                 <CardContent className="p-8">
@@ -82,7 +90,8 @@ const Testimonials = () => {
                       index === 0 ? 'text-purple-400' : 
                       index === 1 ? 'text-blue-400' :
                       index === 2 ? 'text-pink-400' :
-                      'text-green-400'
+                      index === 3 ? 'text-green-400' :
+                      'text-orange-400'
                     }`} />
 
                     {/* Star rating */}
@@ -105,7 +114,8 @@ const Testimonials = () => {
                           index === 0 ? 'bg-gradient-to-br from-purple-400 to-pink-400' : 
                           index === 1 ? 'bg-gradient-to-br from-blue-400 to-purple-400' :
                           index === 2 ? 'bg-gradient-to-br from-pink-400 to-yellow-400' :
-                          'bg-gradient-to-br from-green-400 to-blue-400'
+                          index === 3 ? 'bg-gradient-to-br from-green-400 to-blue-400' :
+                          'bg-gradient-to-br from-orange-400 to-red-400'
                         }`}>
                           {testimonial.name.split(' ').map(n => n[0]).join('')}
                         </AvatarFallback>
