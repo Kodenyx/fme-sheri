@@ -1,4 +1,3 @@
-
 import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -46,6 +45,10 @@ const Navbar = ({ onTestimonialsClick, onTryToolClick, onFAQsClick }: NavbarProp
     navigate('/social-credits');
   };
 
+  const handleFAQClick = () => {
+    navigate('/faq');
+  };
+
   return (
     <nav className="fixed top-0 w-full bg-black/90 backdrop-blur-md z-50 shadow-sm">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
@@ -68,6 +71,12 @@ const Navbar = ({ onTestimonialsClick, onTryToolClick, onFAQsClick }: NavbarProp
             className="text-white hover:opacity-80 transition-opacity"
           >
             Earn Credits
+          </button>
+          <button 
+            onClick={handleFAQClick}
+            className="text-white hover:opacity-80 transition-opacity"
+          >
+            FAQs
           </button>
           {onTestimonialsClick && (
             <button 
@@ -110,6 +119,12 @@ const Navbar = ({ onTestimonialsClick, onTryToolClick, onFAQsClick }: NavbarProp
                   className="text-left hover:opacity-80 transition-opacity"
                 >
                   Earn Credits
+                </button>
+                <button 
+                  onClick={handleFAQClick}
+                  className="text-left hover:opacity-80 transition-opacity"
+                >
+                  FAQs
                 </button>
                 {onTestimonialsClick && (
                   <button 
