@@ -41,7 +41,7 @@ const testimonials = [
     role: "Fractional Head of Growth",
     company: "Monetization for B2B/B2C Startups",
     content: "What a great tool! Dropped in an email and it definitely stepped it up for me. Can't wait to use it more!",
-    image: "/placeholder.svg",
+    image: "/lovable-uploads/727e447d-2de2-4b8a-be5e-d24d47e04d5d.png",
     rating: 5
   },
   {
