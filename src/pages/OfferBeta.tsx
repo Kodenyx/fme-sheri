@@ -1,4 +1,5 @@
-import { useState } from "react";
+
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Zap } from "lucide-react";
@@ -6,12 +7,21 @@ import { useToast } from "@/hooks/use-toast";
 import { useNavigate } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Testimonials from "@/components/Testimonials";
+import { isBetaExpired } from "@/utils/betaUtils";
 
 const OfferBeta = () => {
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
   const navigate = useNavigate();
+
+  // Check if beta has expired and redirect immediately
+  useEffect(() => {
+    if (isBetaExpired()) {
+      console.log('Beta period has expired, redirecting to main offer page');
+      navigate("/offer", { replace: true });
+    }
+  }, [navigate]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -58,6 +68,11 @@ const OfferBeta = () => {
       tryToolElement.scrollIntoView({ behavior: 'smooth' });
     }
   };
+
+  // If beta has expired, don't render anything (will redirect)
+  if (isBetaExpired()) {
+    return null;
+  }
 
   return (
     <div className="min-h-screen bg-gradient-primary">
