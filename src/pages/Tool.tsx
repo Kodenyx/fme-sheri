@@ -438,7 +438,7 @@ const Tool = () => {
               </div>
 
               {/* Subheadline area */}
-              <div className="text-center mb-8">
+              <div className="text-center mb-12">
                 {showMakeover && makeover && (
                   <p className="text-xl md:text-2xl italic" style={{ color: '#3B1E5E' }}>
                     We handle the fix, you handle the final touch.
@@ -447,7 +447,7 @@ const Tool = () => {
               </div>
               
               {/* Button area */}
-              <div className="text-center mb-8">
+              <div className="text-center mb-16">
                 {!showMakeover || !makeover ? (
                   <form onSubmit={handleSubmit}>
                     <Button 
@@ -470,22 +470,22 @@ const Tool = () => {
                     </Button>
                   </form>
                 ) : (
-                  <div className="space-y-4">
-                    <div className="text-center mb-4">
-                      <p className="text-lg mb-2" style={{ color: '#3B1E5E' }}>
-                        Got another email that needs fixing?
+                  <div className="space-y-8">
+                    <div className="text-center">
+                      <p className="text-2xl font-semibold mb-8" style={{ color: '#3B1E5E' }}>
+                        Want to keep the momentum going?
                       </p>
                     </div>
                     <Button 
                       onClick={handleReset}
-                      className="text-white font-bold text-xl py-6 px-12 rounded-full shadow-lg transform transition-all hover:scale-105 hover:opacity-90 mb-4"
+                      className="text-white font-bold text-2xl py-7 px-16 rounded-full shadow-lg transform transition-all hover:scale-105 hover:opacity-90 animate-pulse"
                       style={{ backgroundColor: '#E19013' }}
                     >
                       <RefreshCw className="mr-3 h-6 w-6" />
                       Enhance Another Email
                     </Button>
-                    <div className="text-center">
-                      <p className="text-sm" style={{ color: '#89888E' }}>
+                    <div className="text-center mt-6">
+                      <p className="text-base" style={{ color: '#89888E' }}>
                         Keep the momentum going - enhance more emails to boost your outreach game
                       </p>
                     </div>
