@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Zap } from "lucide-react";
@@ -76,7 +75,7 @@ const Offer = () => {
       </section>
 
       {/* CTA Section */}
-      <section id="try-tool" className="pb-20">
+      <section id="try-tool" className="pb-8">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto">
             <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12">
