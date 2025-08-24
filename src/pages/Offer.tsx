@@ -75,18 +75,18 @@ const Offer = () => {
               Cold Outreach | Promotional | Re-Engagement | Conversion
             </p>
 
-            <div className="space-y-4 max-w-2xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
               <Button 
                 onClick={handleGetStarted}
                 disabled={isRedirecting}
-                className="w-full text-white font-bold text-xl py-6 px-12 rounded-full shadow-lg transform transition-all hover:scale-105 hover:opacity-90"
+                className="text-white font-bold text-xl py-6 px-8 rounded-full shadow-lg transform transition-all hover:scale-105 hover:opacity-90"
                 style={{ backgroundColor: '#E19013' }}
               >
                 {isRedirecting ? (
                   "Getting Ready..."
                 ) : (
                   <>
-                    <Zap className="mr-3 h-6 w-6" />
+                    <Zap className="mr-2 h-6 w-6" />
                     Try FixMyEmail
                   </>
                 )}
@@ -94,9 +94,9 @@ const Offer = () => {
 
               <Button 
                 onClick={scrollToFAQs}
-                className="w-full bg-gray-100 text-gray-700 font-bold text-xl py-6 px-12 rounded-full shadow-lg transform transition-all hover:scale-105 hover:bg-gray-200"
+                className="bg-gray-100 text-gray-700 font-bold text-xl py-6 px-8 rounded-full shadow-lg transform transition-all hover:scale-105 hover:bg-gray-200"
               >
-                <HelpCircle className="mr-3 h-6 w-6" />
+                <HelpCircle className="mr-2 h-6 w-6" />
                 Learn More
               </Button>
             </div>
