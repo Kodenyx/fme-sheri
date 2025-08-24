@@ -1,6 +1,7 @@
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Zap } from "lucide-react";
+import { Zap, HelpCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useNavigate } from "react-router-dom";
 import Navbar from "@/components/Navbar";
@@ -67,8 +68,11 @@ const Offer = () => {
                 HubSpot
               </span>
             </h1>
-            <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto" style={{ color: '#3B1E5E' }}>
+            <p className="text-xl md:text-2xl mb-6 max-w-3xl mx-auto" style={{ color: '#3B1E5E' }}>
               An AI email conversion tool built by HubSpot's former demand lead.
+            </p>
+            <p className="text-lg mb-8" style={{ color: '#89888E' }}>
+              Cold Outreach | Promotional | Re-Engagement | Conversion
             </p>
           </div>
         </div>
@@ -85,25 +89,31 @@ const Offer = () => {
                 </h2>
               </div>
 
-              <Button 
-                onClick={handleGetStarted}
-                disabled={isRedirecting}
-                className="w-full text-white font-bold text-xl py-6 px-12 rounded-full shadow-lg transform transition-all hover:scale-105 hover:opacity-90"
-                style={{ backgroundColor: '#E19013' }}
-              >
-                {isRedirecting ? (
-                  "Getting Ready..."
-                ) : (
-                  <>
-                    <Zap className="mr-3 h-6 w-6" />
-                    Get Started Free
-                  </>
-                )}
-              </Button>
+              <div className="space-y-4">
+                <Button 
+                  onClick={handleGetStarted}
+                  disabled={isRedirecting}
+                  className="w-full text-white font-bold text-xl py-6 px-12 rounded-full shadow-lg transform transition-all hover:scale-105 hover:opacity-90"
+                  style={{ backgroundColor: '#E19013' }}
+                >
+                  {isRedirecting ? (
+                    "Getting Ready..."
+                  ) : (
+                    <>
+                      <Zap className="mr-3 h-6 w-6" />
+                      Try FixMyEmail
+                    </>
+                  )}
+                </Button>
 
-              <p className="text-center text-xs mt-8 mb-2" style={{ color: '#89888E' }}>
-                Cold Outreach | Promotional | Re-Engagement | Conversion
-              </p>
+                <Button 
+                  onClick={scrollToFAQs}
+                  className="w-full bg-gray-100 text-gray-700 font-bold text-xl py-6 px-12 rounded-full shadow-lg transform transition-all hover:scale-105 hover:bg-gray-200"
+                >
+                  <HelpCircle className="mr-3 h-6 w-6" />
+                  Learn More
+                </Button>
+              </div>
             </div>
           </div>
         </div>
