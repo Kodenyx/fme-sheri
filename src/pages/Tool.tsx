@@ -470,9 +470,9 @@ const Tool = () => {
                     </Button>
                   </form>
                 ) : (
-                  <div className="space-y-6">
+                  <div className="space-y-3">
                     <div className="text-center">
-                      <p className="text-2xl font-semibold mb-4" style={{ color: '#3B1E5E' }}>
+                      <p className="text-2xl font-semibold mb-2" style={{ color: '#3B1E5E' }}>
                         Want to keep the momentum going?
                       </p>
                     </div>
