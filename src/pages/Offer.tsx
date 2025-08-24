@@ -75,7 +75,12 @@ const Offer = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* Testimonials Section - Now above CTA */}
+      <div id="testimonials">
+        <Testimonials />
+      </div>
+
+      {/* CTA Section - Now below Testimonials */}
       <section id="try-tool" className="pb-20">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto">
@@ -109,11 +114,6 @@ const Offer = () => {
           </div>
         </div>
       </section>
-
-      {/* Testimonials Section */}
-      <div id="testimonials">
-        <Testimonials />
-      </div>
 
       {/* FAQs Section */}
       <div id="faqs">
