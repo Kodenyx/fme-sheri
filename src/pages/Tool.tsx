@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
-import { CheckCircle2, Sparkles, Copy, BarChart3, Loader2 } from "lucide-react";
+import { CheckCircle2, Sparkles, Copy, BarChart3, Loader2, RefreshCw } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
@@ -470,13 +470,24 @@ const Tool = () => {
                     </Button>
                   </form>
                 ) : (
-                  <Button 
-                    onClick={handleReset}
-                    variant="outline"
-                    className="border-2 py-3 px-8 rounded-full border-gray-300 text-gray-600"
-                  >
-                    Enhance Another Email
-                  </Button>
+                  <div className="space-y-4">
+                    <div className="text-center mb-6">
+                      <p className="text-lg mb-2" style={{ color: '#3B1E5E' }}>
+                        Got another email that needs fixing?
+                      </p>
+                      <p className="text-sm" style={{ color: '#89888E' }}>
+                        Keep the momentum going - enhance more emails to boost your outreach game
+                      </p>
+                    </div>
+                    <Button 
+                      onClick={handleReset}
+                      className="text-white font-bold text-lg py-4 px-10 rounded-full shadow-lg transform transition-all hover:scale-105 hover:opacity-90"
+                      style={{ backgroundColor: '#E19013' }}
+                    >
+                      <RefreshCw className="mr-3 h-5 w-5" />
+                      Enhance Another Email
+                    </Button>
+                  </div>
                 )}
               </div>
 
