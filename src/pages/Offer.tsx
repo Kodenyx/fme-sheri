@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Zap } from "lucide-react";
@@ -56,7 +55,7 @@ const Offer = () => {
       />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-2">
+      <section className="pt-32 pb-8">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <p className="text-xl md:text-2xl mb-6 font-medium" style={{ color: '#3B1E5E' }}>
@@ -76,10 +75,10 @@ const Offer = () => {
       </section>
 
       {/* CTA Section */}
-      <section id="try-tool" className="pb-2">
+      <section id="try-tool" className="pb-8">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto">
-            <div className="bg-white rounded-3xl shadow-2xl p-6 md:p-8">
+            <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12">
               <div className="text-center mb-8">
                 <h2 className="text-3xl font-bold mb-4" style={{ color: '#3B1E5E' }}>
                   Fix My Email Now!
@@ -89,7 +88,7 @@ const Offer = () => {
               <Button 
                 onClick={handleGetStarted}
                 disabled={isRedirecting}
-                className="w-full text-white font-bold text-xl py-4 px-12 rounded-full shadow-lg transform transition-all hover:scale-105 hover:opacity-90"
+                className="w-full text-white font-bold text-xl py-6 px-12 rounded-full shadow-lg transform transition-all hover:scale-105 hover:opacity-90"
                 style={{ backgroundColor: '#E19013' }}
               >
                 {isRedirecting ? (
@@ -102,7 +101,7 @@ const Offer = () => {
                 )}
               </Button>
 
-              <p className="text-center text-xs mt-4 mb-0" style={{ color: '#89888E' }}>
+              <p className="text-center text-xs mt-8 mb-2" style={{ color: '#89888E' }}>
                 Cold Outreach | Promotional | Re-Engagement | Conversion
               </p>
             </div>
@@ -111,7 +110,7 @@ const Offer = () => {
       </section>
 
       {/* Testimonials Section */}
-      <div id="testimonials" className="-mt-4 md:-mt-6">
+      <div id="testimonials">
         <Testimonials />
       </div>
 
