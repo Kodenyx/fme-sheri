@@ -56,7 +56,7 @@ const Offer = () => {
       />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-8">
+      <section className="pt-32 pb-16">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <p className="text-xl md:text-2xl mb-6 font-medium" style={{ color: '#3B1E5E' }}>
@@ -71,49 +71,34 @@ const Offer = () => {
             <p className="text-xl md:text-2xl mb-6 max-w-3xl mx-auto" style={{ color: '#3B1E5E' }}>
               An AI email conversion tool built by HubSpot's former demand lead.
             </p>
-            <p className="text-lg mb-8" style={{ color: '#89888E' }}>
+            <p className="text-lg mb-12" style={{ color: '#89888E' }}>
               Cold Outreach | Promotional | Re-Engagement | Conversion
             </p>
-          </div>
-        </div>
-      </section>
 
-      {/* CTA Section */}
-      <section id="try-tool" className="pb-8">
-        <div className="container mx-auto px-4">
-          <div className="max-w-2xl mx-auto">
-            <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12">
-              <div className="text-center mb-8">
-                <h2 className="text-3xl font-bold mb-4" style={{ color: '#3B1E5E' }}>
-                  Fix My Email Now!
-                </h2>
-              </div>
+            <div className="space-y-4 max-w-2xl mx-auto">
+              <Button 
+                onClick={handleGetStarted}
+                disabled={isRedirecting}
+                className="w-full text-white font-bold text-xl py-6 px-12 rounded-full shadow-lg transform transition-all hover:scale-105 hover:opacity-90"
+                style={{ backgroundColor: '#E19013' }}
+              >
+                {isRedirecting ? (
+                  "Getting Ready..."
+                ) : (
+                  <>
+                    <Zap className="mr-3 h-6 w-6" />
+                    Try FixMyEmail
+                  </>
+                )}
+              </Button>
 
-              <div className="space-y-4">
-                <Button 
-                  onClick={handleGetStarted}
-                  disabled={isRedirecting}
-                  className="w-full text-white font-bold text-xl py-6 px-12 rounded-full shadow-lg transform transition-all hover:scale-105 hover:opacity-90"
-                  style={{ backgroundColor: '#E19013' }}
-                >
-                  {isRedirecting ? (
-                    "Getting Ready..."
-                  ) : (
-                    <>
-                      <Zap className="mr-3 h-6 w-6" />
-                      Try FixMyEmail
-                    </>
-                  )}
-                </Button>
-
-                <Button 
-                  onClick={scrollToFAQs}
-                  className="w-full bg-gray-100 text-gray-700 font-bold text-xl py-6 px-12 rounded-full shadow-lg transform transition-all hover:scale-105 hover:bg-gray-200"
-                >
-                  <HelpCircle className="mr-3 h-6 w-6" />
-                  Learn More
-                </Button>
-              </div>
+              <Button 
+                onClick={scrollToFAQs}
+                className="w-full bg-gray-100 text-gray-700 font-bold text-xl py-6 px-12 rounded-full shadow-lg transform transition-all hover:scale-105 hover:bg-gray-200"
+              >
+                <HelpCircle className="mr-3 h-6 w-6" />
+                Learn More
+              </Button>
             </div>
           </div>
         </div>
