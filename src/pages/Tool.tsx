@@ -471,6 +471,11 @@ const Tool = () => {
                   </form>
                 ) : (
                   <div className="space-y-4">
+                    <div className="text-center mb-4">
+                      <p className="text-lg mb-2" style={{ color: '#3B1E5E' }}>
+                        Got another email that needs fixing?
+                      </p>
+                    </div>
                     <Button 
                       onClick={handleReset}
                       className="text-white font-bold text-xl py-6 px-12 rounded-full shadow-lg transform transition-all hover:scale-105 hover:opacity-90 mb-4"
@@ -480,9 +485,6 @@ const Tool = () => {
                       Enhance Another Email
                     </Button>
                     <div className="text-center">
-                      <p className="text-lg mb-2" style={{ color: '#3B1E5E' }}>
-                        Got another email that needs fixing?
-                      </p>
                       <p className="text-sm" style={{ color: '#89888E' }}>
                         Keep the momentum going - enhance more emails to boost your outreach game
                       </p>
