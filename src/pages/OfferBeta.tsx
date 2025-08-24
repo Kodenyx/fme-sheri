@@ -34,7 +34,7 @@ const OfferBeta = () => {
       localStorage.setItem('isBetaUser', 'true');
       
       toast({
-        title: "Welcome to Beta! 🎉",
+        title: "Welcome to Beta!",
         description: "You're all set! Redirecting you to the tool now...",
       });
       
@@ -143,7 +143,7 @@ const OfferBeta = () => {
               </form>
 
               <p className="text-center text-xs mt-8 mb-2" style={{ color: '#89888E' }}>
-                🧊 Cold Outreach | 📣 Promotional | 🔁 Re-Engagement | 🎯 Conversion
+                Cold Outreach | Promotional | Re-Engagement | Conversion
               </p>
             </div>
           </div>

@@ -17,7 +17,7 @@ const Offer = () => {
     setIsRedirecting(true);
     
     toast({
-      title: "Let's fix that email! 🎉",
+      title: "Let's fix that email!",
       description: "Redirecting you to the tool now...",
     });
     
@@ -103,7 +103,7 @@ const Offer = () => {
               </Button>
 
               <p className="text-center text-xs mt-8 mb-2" style={{ color: '#89888E' }}>
-                🧊 Cold Outreach | 📣 Promotional | 🔁 Re-Engagement | 🎯 Conversion
+                Cold Outreach | Promotional | Re-Engagement | Conversion
               </p>
             </div>
           </div>

@@ -55,10 +55,10 @@ const Navbar = ({ onTestimonialsClick, onTryToolClick, onFAQsClick }: NavbarProp
         >
           <img 
             src="/lovable-uploads/f0914198-3ee9-4b3b-968e-4dcac9907e0d.png" 
-            alt="Fix My Email Logo" 
+            alt="FixMyEmail Logo" 
             className="h-8 w-8"
           />
-          <span className="text-xl font-bold text-white">Fix My Email</span>
+          <span className="text-xl font-bold text-white">FixMyEmail</span>
         </div>
 
         {/* Desktop Navigation */}
