@@ -68,18 +68,15 @@ const Offer = () => {
                 HubSpot
               </span>
             </h1>
-            <p className="text-xl md:text-2xl mb-6 max-w-3xl mx-auto" style={{ color: '#3B1E5E' }}>
+            <p className="text-xl md:text-2xl mb-12 max-w-3xl mx-auto" style={{ color: '#3B1E5E' }}>
               An AI email conversion tool built by HubSpot's former demand lead.
             </p>
-            <p className="text-lg mb-12" style={{ color: '#89888E' }}>
-              Cold Outreach | Promotional | Re-Engagement | Conversion
-            </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
+            <div className="max-w-md mx-auto">
               <Button 
                 onClick={handleGetStarted}
                 disabled={isRedirecting}
-                className="text-white font-bold text-xl py-6 px-8 rounded-full shadow-lg transform transition-all hover:scale-105 hover:opacity-90"
+                className="w-full text-white font-bold text-xl py-6 px-8 rounded-full shadow-lg transform transition-all hover:scale-105 hover:opacity-90 mb-4"
                 style={{ backgroundColor: '#E19013' }}
               >
                 {isRedirecting ? (
@@ -92,13 +89,9 @@ const Offer = () => {
                 )}
               </Button>
 
-              <Button 
-                onClick={scrollToFAQs}
-                className="bg-gray-100 text-gray-700 font-bold text-xl py-6 px-8 rounded-full shadow-lg transform transition-all hover:scale-105 hover:bg-gray-200"
-              >
-                <HelpCircle className="mr-2 h-6 w-6" />
-                Learn More
-              </Button>
+              <p className="text-lg" style={{ color: '#89888E' }}>
+                Cold Outreach | Promotional | Re-Engagement | Conversion
+              </p>
             </div>
           </div>
         </div>
