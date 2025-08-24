@@ -471,7 +471,15 @@ const Tool = () => {
                   </form>
                 ) : (
                   <div className="space-y-4">
-                    <div className="text-center mb-6">
+                    <Button 
+                      onClick={handleReset}
+                      className="text-white font-bold text-xl py-6 px-12 rounded-full shadow-lg transform transition-all hover:scale-105 hover:opacity-90 mb-4"
+                      style={{ backgroundColor: '#E19013' }}
+                    >
+                      <RefreshCw className="mr-3 h-6 w-6" />
+                      Enhance Another Email
+                    </Button>
+                    <div className="text-center">
                       <p className="text-lg mb-2" style={{ color: '#3B1E5E' }}>
                         Got another email that needs fixing?
                       </p>
@@ -479,14 +487,6 @@ const Tool = () => {
                         Keep the momentum going - enhance more emails to boost your outreach game
                       </p>
                     </div>
-                    <Button 
-                      onClick={handleReset}
-                      className="text-white font-bold text-lg py-4 px-10 rounded-full shadow-lg transform transition-all hover:scale-105 hover:opacity-90"
-                      style={{ backgroundColor: '#E19013' }}
-                    >
-                      <RefreshCw className="mr-3 h-5 w-5" />
-                      Enhance Another Email
-                    </Button>
                   </div>
                 )}
               </div>
