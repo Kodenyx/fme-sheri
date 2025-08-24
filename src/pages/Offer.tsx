@@ -76,7 +76,7 @@ const Offer = () => {
               <Button 
                 onClick={handleGetStarted}
                 disabled={isRedirecting}
-                className="w-full text-white font-bold text-xl py-6 px-8 rounded-full shadow-lg transform transition-all hover:scale-105 hover:opacity-90 mb-4"
+                className="w-full text-white font-bold text-xl py-6 px-8 rounded-full shadow-lg transform transition-all hover:scale-105 hover:opacity-90 mb-6"
                 style={{ backgroundColor: '#E19013' }}
               >
                 {isRedirecting ? (
@@ -89,7 +89,7 @@ const Offer = () => {
                 )}
               </Button>
 
-              <p className="text-lg whitespace-nowrap" style={{ color: '#89888E' }}>
+              <p className="text-base whitespace-nowrap" style={{ color: '#89888E' }}>
                 Cold Outreach | Promotional | Re-Engagement | Conversion
               </p>
             </div>
