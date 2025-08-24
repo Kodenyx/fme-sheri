@@ -84,12 +84,12 @@ const Offer = () => {
                 ) : (
                   <>
                     <Zap className="mr-2 h-6 w-6" />
-                    Try FixMyEmail
+                    Fix My Email Now
                   </>
                 )}
               </Button>
 
-              <p className="text-lg" style={{ color: '#89888E' }}>
+              <p className="text-lg whitespace-nowrap" style={{ color: '#89888E' }}>
                 Cold Outreach | Promotional | Re-Engagement | Conversion
               </p>
             </div>
