@@ -66,15 +66,6 @@ const Testimonials = () => {
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-600 via-blue-600 to-pink-600 bg-clip-text text-transparent">
-            People Are Going Wild! 🔥
-          </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            See what happens when emails actually work
-          </p>
-        </div>
-
         {/* Masonry-style layout */}
         <div className="max-w-6xl mx-auto">
           <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
@@ -156,16 +147,6 @@ const Testimonials = () => {
               </Card>
             ))}
           </div>
-        </div>
-
-        {/* Fun CTA */}
-        <div className="text-center mt-16">
-          <p className="text-2xl font-bold text-gray-700 mb-4">
-            Ready to join the email revolution? 🚀
-          </p>
-          <p className="text-lg text-gray-600">
-            Your next email could be your best email yet!
-          </p>
         </div>
       </div>
     </section>
