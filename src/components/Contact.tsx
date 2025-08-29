@@ -1,11 +1,9 @@
-
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { CheckCircle2, Sparkles, Copy, Loader2 } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
-import PersonaSelector from "./PersonaSelector";
 
 interface RewriteResponse {
   rewritten_email: string;
@@ -16,7 +14,6 @@ interface RewriteResponse {
 
 const Contact = () => {
   const [emailContent, setEmailContent] = useState("");
-  const [selectedPersona, setSelectedPersona] = useState<'sheri' | 'harper'>('harper');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [makeover, setMakeover] = useState("");
@@ -33,12 +30,11 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      console.log('Calling rewrite-email function with persona:', selectedPersona);
+      console.log('Calling rewrite-email function...');
       
       const { data, error } = await supabase.functions.invoke('rewrite-email', {
         body: {
-          emailContent: emailContent,
-          persona: selectedPersona
+          emailContent: emailContent
         },
       });
 
@@ -64,8 +60,8 @@ const Contact = () => {
       }, 300);
       
       toast({
-        title: "Enhancement Complete!",
-        description: `Your email has been enhanced using ${selectedPersona === 'harper' ? "Harper's" : "Sheri Otto's"} methodology!`,
+        title: "Makeover Complete!",
+        description: "Your AI-enhanced email is ready!",
       });
       
     } catch (error) {
@@ -99,13 +95,6 @@ const Contact = () => {
     });
   };
 
-  const getPersonaDescription = () => {
-    if (selectedPersona === 'harper') {
-      return "Harper's warm, transparent approach - perfect for cold outreach and building trust through honesty and empathy.";
-    }
-    return "Sheri Otto's behaviorally precise method - ideal for high-impact conversions using emotional intelligence and psychological triggers.";
-  };
-
   return (
     <section id="tool" className="py-20 bg-gradient-to-br from-purple-50 via-blue-50 to-cyan-50">
       <div className="container mx-auto px-4">
@@ -118,8 +107,8 @@ const Contact = () => {
               </span>
             </h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto">
-              Choose your enhancement style, paste your email, and watch our AI apply proven 
-              behavioral psychology frameworks to make it more compelling and conversion-focused.
+              Paste your email below and watch our AI apply proven behavioral psychology 
+              frameworks to make it more compelling and conversion-focused.
             </p>
           </div>
 
@@ -130,7 +119,7 @@ const Contact = () => {
                 <div className="text-center">
                   <Loader2 className="w-8 h-8 animate-spin mx-auto mb-4 text-blue-500" />
                   <p className="text-lg font-medium text-gray-700">
-                    {isSubmitting ? `Enhancing with ${selectedPersona === 'harper' ? "Harper's" : "Sheri Otto's"} method...` : "Loading results..."}
+                    {isSubmitting ? "Enhancing your email..." : "Loading results..."}
                   </p>
                 </div>
               </div>
@@ -139,17 +128,6 @@ const Contact = () => {
             <div className={`transition-all duration-300 ${isTransitioning ? 'opacity-0 scale-95' : 'opacity-100 scale-100'}`}>
               {!showMakeover ? (
                 <form onSubmit={handleSubmit} className="space-y-8">
-                  <PersonaSelector 
-                    selectedPersona={selectedPersona}
-                    onPersonaChange={setSelectedPersona}
-                  />
-                  
-                  <div className="text-center mb-6">
-                    <p className="text-gray-600 italic max-w-3xl mx-auto">
-                      {getPersonaDescription()}
-                    </p>
-                  </div>
-
                   <div className="grid md:grid-cols-2 gap-8">
                     <div>
                       <h3 className="text-2xl font-bold mb-4 text-gray-900">Your Original Email</h3>
@@ -162,7 +140,7 @@ const Contact = () => {
                       />
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold mb-4 text-gray-900">Your Enhanced Email</h3>
+                      <h3 className="text-2xl font-bold mb-4 text-gray-900">Your Improved Email</h3>
                       <div className="min-h-80 border-2 border-gray-200 rounded-xl p-4 bg-gray-50 flex items-center justify-center">
                         <p className="text-gray-400 text-center">
                           Your enhanced email will appear here...
@@ -185,7 +163,7 @@ const Contact = () => {
                       ) : (
                         <>
                           <Sparkles className="mr-3 h-6 w-6" />
-                          Enhance My Email
+                          Get My Email Enhancement
                         </>
                       )}
                     </Button>
@@ -193,13 +171,6 @@ const Contact = () => {
                 </form>
               ) : (
                 <div className="space-y-8">
-                  <div className="text-center mb-6">
-                    <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium">
-                      <Sparkles className="w-4 h-4" />
-                      Enhanced with {selectedPersona === 'harper' ? "Harper's" : "Sheri Otto's"} Method
-                    </div>
-                  </div>
-
                   <div className="grid md:grid-cols-2 gap-8">
                     <div>
                       <h3 className="text-2xl font-bold mb-4 text-gray-900">Your Original Email</h3>
@@ -211,16 +182,22 @@ const Contact = () => {
                     </div>
                     <div>
                       <div className="flex items-center justify-between mb-4">
-                        <h3 className="text-2xl font-bold text-gray-900">Your Enhanced Email</h3>
-                        <Button
-                          onClick={copyToClipboard}
-                          variant="outline"
-                          size="sm"
-                          className="flex items-center gap-2"
-                        >
-                          <Copy className="w-4 h-4" />
-                          Copy
-                        </Button>
+                        <h3 className="text-2xl font-bold text-gray-900">Your Improved Email</h3>
+                        <div className="flex items-center gap-2">
+                          <span className="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-medium flex items-center gap-1">
+                            <Sparkles className="w-4 h-4" />
+                            AI Enhanced
+                          </span>
+                          <Button
+                            onClick={copyToClipboard}
+                            variant="outline"
+                            size="sm"
+                            className="flex items-center gap-2"
+                          >
+                            <Copy className="w-4 h-4" />
+                            Copy
+                          </Button>
+                        </div>
                       </div>
                       <div className="min-h-80 border-2 border-blue-200 rounded-xl p-6 bg-blue-50">
                         <div className="whitespace-pre-line text-gray-700 text-sm leading-relaxed">
@@ -235,9 +212,7 @@ const Contact = () => {
                     
                     <div className="grid md:grid-cols-2 gap-8">
                       <div>
-                        <h3 className="text-xl font-semibold mb-6 text-blue-600">
-                          {selectedPersona === 'harper' ? 'Harper\'s Techniques Applied:' : 'Psychological Triggers Applied:'}
-                        </h3>
+                        <h3 className="text-xl font-semibold mb-6 text-blue-600">Psychological Triggers Applied:</h3>
                         <div className="space-y-3">
                           {analysis.psychologicalTriggers.map((trigger, index) => (
                             <div key={index} className="flex items-start gap-3">
