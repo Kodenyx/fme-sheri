@@ -10,6 +10,7 @@ import EmailCaptureModal from "@/components/EmailCaptureModal";
 import PaywallModal from "@/components/PaywallModal";
 import { useUsageTracking } from "@/hooks/useUsageTracking";
 import { usePricingTier } from "@/hooks/usePricingTier";
+import PersonaSelector from "@/components/PersonaSelector";
 
 interface RewriteResponse {
   rewritten_email: string;
@@ -20,6 +21,7 @@ interface RewriteResponse {
 
 const Tool = () => {
   const [emailContent, setEmailContent] = useState("");
+  const [selectedPersona, setSelectedPersona] = useState<'sheri' | 'harper'>('harper');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [makeover, setMakeover] = useState("");
   const [showMakeover, setShowMakeover] = useState(false);
@@ -141,17 +143,7 @@ const Tool = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    console.log('Starting email enhancement process...');
-    console.log('Current state check:', { 
-      isSubmitting, 
-      showMakeover, 
-      emailContentLength: emailContent.length,
-      isSubscribed,
-      isBetaUser,
-      needsEmailCapture,
-      needsPaywall,
-      usageCount
-    });
+    console.log('Starting email enhancement process with persona:', selectedPersona);
     
     // Reset any previous state before starting
     setShowMakeover(false);
@@ -185,11 +177,12 @@ const Tool = () => {
 
     try {
       console.log('Calling rewrite-email function with content length:', emailContent.length);
-      console.log('User info for API call:', { email, isSubscribed, isBetaUser });
+      console.log('User info for API call:', { email, isSubscribed, isBetaUser, persona: selectedPersona });
       
       const { data, error } = await supabase.functions.invoke('rewrite-email', {
         body: {
-          emailContent: emailContent
+          emailContent: emailContent,
+          persona: selectedPersona
         },
       });
 
@@ -225,7 +218,7 @@ const Tool = () => {
       
       toast({
         title: "Success!",
-        description: "Your email has been enhanced successfully.",
+        description: `Your email has been enhanced using ${selectedPersona === 'harper' ? "Harper's" : "Sheri Otto's"} methodology.`,
       });
       
     } catch (error) {
@@ -242,7 +235,6 @@ const Tool = () => {
         variant: "destructive",
       });
     } finally {
-      console.log('Setting isSubmitting to false');
       setIsSubmitting(false);
     }
   };
@@ -312,6 +304,13 @@ const Tool = () => {
     }
   };
 
+  const getPersonaDescription = () => {
+    if (selectedPersona === 'harper') {
+      return "Harper's warm, transparent approach - perfect for cold outreach and building trust through honesty and empathy.";
+    }
+    return "Sheri Otto's behaviorally precise method - ideal for high-impact conversions using emotional intelligence and psychological triggers.";
+  };
+
   if (usageLoading && !email) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gradient-primary">
@@ -343,7 +342,7 @@ const Tool = () => {
                 </span>
               </h1>
               <p className="text-xl md:text-2xl max-w-4xl mx-auto" style={{ color: '#3B1E5E' }}>
-                Give us your email. We'll make it convert better.
+                Choose your enhancement style and watch AI transform your email.
               </p>
               
               {/* Usage Status */}
@@ -387,6 +386,18 @@ const Tool = () => {
             </div>
 
             <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12">
+              {/* Persona Selector */}
+              <PersonaSelector 
+                selectedPersona={selectedPersona}
+                onPersonaChange={setSelectedPersona}
+              />
+              
+              <div className="text-center mb-8">
+                <p className="text-gray-600 italic max-w-3xl mx-auto">
+                  {getPersonaDescription()}
+                </p>
+              </div>
+
               {/* Main content area */}
               <div className="grid md:grid-cols-2 gap-8 mb-8">
                 <div>
@@ -404,15 +415,22 @@ const Tool = () => {
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="text-2xl font-bold" style={{ color: '#3B1E5E' }}>Your Improved Email</h3>
                     {showMakeover && makeover && (
-                      <Button
-                        onClick={copyToClipboard}
-                        variant="outline"
-                        size="sm"
-                        className="flex items-center gap-2 border-gray-300 text-gray-600"
-                      >
-                        <Copy className="w-4 h-4" />
-                        Copy
-                      </Button>
+                      <>
+                        <div className="flex items-center gap-2">
+                          <span className="text-sm bg-blue-100 text-blue-800 px-2 py-1 rounded-full">
+                            {selectedPersona === 'harper' ? 'Harper Method' : 'Sheri Otto Method'}
+                          </span>
+                          <Button
+                            onClick={copyToClipboard}
+                            variant="outline"
+                            size="sm"
+                            className="flex items-center gap-2 border-gray-300 text-gray-600"
+                          >
+                            <Copy className="w-4 h-4" />
+                            Copy
+                          </Button>
+                        </div>
+                      </>
                     )}
                   </div>
                   <div 
@@ -441,7 +459,10 @@ const Tool = () => {
               <div className="text-center mb-12">
                 {showMakeover && makeover && (
                   <p className="text-xl md:text-2xl italic" style={{ color: '#3B1E5E' }}>
-                    We handle the fix, you handle the final touch.
+                    {selectedPersona === 'harper' 
+                      ? "Transparent, warm, and genuinely human." 
+                      : "We handle the fix, you handle the final touch."
+                    }
                   </p>
                 )}
               </div>
@@ -459,7 +480,7 @@ const Tool = () => {
                       {isSubmitting ? (
                         <>
                           <Loader2 className="mr-3 h-6 w-6 animate-spin" />
-                          Fixing Your Email...
+                          Enhancing with {selectedPersona === 'harper' ? "Harper's" : "Sheri Otto's"} Method...
                         </>
                       ) : (
                         <>
@@ -500,7 +521,9 @@ const Tool = () => {
                   
                   <div className="grid md:grid-cols-2 gap-8">
                     <div>
-                      <h3 className="text-xl font-semibold mb-6" style={{ color: '#E19013' }}>Psychological Triggers Applied:</h3>
+                      <h3 className="text-xl font-semibold mb-6" style={{ color: '#E19013' }}>
+                        {selectedPersona === 'harper' ? 'Harper\'s Techniques Applied:' : 'Psychological Triggers Applied:'}
+                      </h3>
                       <div className="space-y-3">
                         {analysis.psychologicalTriggers.map((trigger, index) => (
                           <div key={index} className="flex items-start gap-3">
