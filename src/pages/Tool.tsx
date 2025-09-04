@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { CheckCircle2, Sparkles, Copy, BarChart3, Loader2, RefreshCw } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useToast } from "@/hooks/use-toast";
@@ -20,6 +21,7 @@ interface RewriteResponse {
 
 const Tool = () => {
   const [emailContent, setEmailContent] = useState("");
+  const [emailCategory, setEmailCategory] = useState("Cold Outreach");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [makeover, setMakeover] = useState("");
   const [showMakeover, setShowMakeover] = useState(false);
@@ -189,7 +191,8 @@ const Tool = () => {
       
       const { data, error } = await supabase.functions.invoke('rewrite-email', {
         body: {
-          emailContent: emailContent
+          emailContent: emailContent,
+          emailCategory: emailCategory
         },
       });
 
@@ -219,7 +222,7 @@ const Tool = () => {
       // Increment usage count and log usage
       console.log('Incrementing usage and logging...');
       await incrementUsage(email || undefined);
-      await logToolUsage(emailContent, data.rewritten_email, 'ai-rewritten');
+      await logToolUsage(emailContent, data.rewritten_email, emailCategory);
       
       console.log('Email enhancement completed successfully');
       
@@ -252,6 +255,7 @@ const Tool = () => {
     setIsSubmitting(false);
     setShowMakeover(false);
     setEmailContent("");
+    setEmailCategory("Cold Outreach");
     setMakeover("");
     setAnalysis({ psychologicalTriggers: [], structureImprovements: [], questions: [] });
   };
@@ -382,6 +386,28 @@ const Tool = () => {
                       {isFoundersProgram ? "Founder's Program" : "Premium Plan"}
                     </span>
                   )}
+                </div>
+              </div>
+              
+              {/* Email Category Selection */}
+              <div className="mt-8 flex justify-center">
+                <div className="bg-white/80 rounded-2xl px-6 py-4 border border-gray-200">
+                  <div className="flex items-center gap-4">
+                    <label htmlFor="email-category" className="text-sm font-medium" style={{ color: '#3B1E5E' }}>
+                      Email Type:
+                    </label>
+                    <Select value={emailCategory} onValueChange={setEmailCategory}>
+                      <SelectTrigger className="w-48 bg-white border-gray-300 focus:border-gray-400">
+                        <SelectValue placeholder="Select email type" />
+                      </SelectTrigger>
+                      <SelectContent className="bg-white border-gray-300 shadow-lg z-50">
+                        <SelectItem value="Cold Outreach">Cold Outreach</SelectItem>
+                        <SelectItem value="Conversion">Conversion</SelectItem>
+                        <SelectItem value="Promotional">Promotional</SelectItem>
+                        <SelectItem value="Re-engagement">Re-engagement</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
                 </div>
               </div>
             </div>

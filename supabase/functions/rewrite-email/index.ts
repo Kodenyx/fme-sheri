@@ -793,9 +793,9 @@ serve(async (req) => {
     }
 
     const requestBody = await req.json();
-    console.log('Request body received:', { hasEmailContent: !!requestBody.emailContent });
+    console.log('Request body received:', { hasEmailContent: !!requestBody.emailContent, emailCategory: requestBody.emailCategory });
     
-    const { emailContent } = requestBody;
+    const { emailContent, emailCategory } = requestBody;
 
     if (!emailContent || emailContent.trim().length === 0) {
       console.error('No email content provided');
@@ -809,6 +809,26 @@ serve(async (req) => {
     }
 
     console.log('Making OpenAI API request...');
+
+    // Determine the specific prompt section based on email category
+    let categoryInstructions = "";
+    switch (emailCategory) {
+      case "Cold Outreach":
+        categoryInstructions = "Use the PREFERRED COLD EMAIL STRUCTURE AND EXACT LANGUAGE PATTERNS outlined in the cold outreach section.";
+        break;
+      case "Conversion":
+        categoryInstructions = "Use the conversion re-engagement framework to create urgency and drive action.";
+        break;
+      case "Promotional":
+        categoryInstructions = "Use the promotional email framework to highlight benefits and create desire.";
+        break;
+      case "Re-engagement":
+        categoryInstructions = "Use the nurture/warm email approach to reconnect and rebuild engagement.";
+        break;
+      default:
+        categoryInstructions = "Use the most appropriate framework based on the email content.";
+    }
+
     const response = await fetch('https://api.openai.com/v1/chat/completions', {
       method: 'POST',
       headers: {
@@ -821,7 +841,7 @@ serve(async (req) => {
           { role: 'system', content: SHERI_OTTO_PROMPT },
           { 
             role: 'user', 
-            content: `Transform this email using Sheri Otto's emotionally sharp, behaviorally precise voice. Focus on emotional resonance over polish, specific behavioral triggers, value-first approach, and confident autonomous CTAs. Make it feel emotionally intelligent, not corporate:\n\n${emailContent}` 
+            content: `Email Type: ${emailCategory}\n\nInstructions: ${categoryInstructions}\n\nPlease rewrite this email using the specific framework for ${emailCategory}:\n\n${emailContent}` 
           }
         ],
         temperature: 0.7,
