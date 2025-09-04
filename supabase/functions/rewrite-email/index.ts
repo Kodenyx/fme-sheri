@@ -627,6 +627,11 @@ WARM/NURTURE:
 - "Here's what I'd check if I were you."
 - "Reserve your seat here"
 
+CRITICAL FORMATTING RULES:
+- NEVER use em dashes (—) in any email makeovers
+- Use regular dashes (-) or periods instead
+- Keep punctuation simple and clean
+
 FORBIDDEN LANGUAGE (Never use):
 - "Join me for a strategic session"
 - "I'm excited to share"
