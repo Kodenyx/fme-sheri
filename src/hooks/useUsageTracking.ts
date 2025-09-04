@@ -49,10 +49,11 @@ export const useUsageTracking = () => {
       setEmail(storedEmail);
       console.log('Stored email:', storedEmail);
       
-      // Check if beta user and ensure proper email format
+      // Check if beta user or unlimited user and ensure proper email format
       if (storedEmail) {
         const betaEmails = ['demo@kodenyx.com', 'sheri@sheriotto.com'];
-        const isBeta = betaEmails.includes(storedEmail);
+        const unlimitedEmails = ['aarti.munjal@gmail.com'];
+        const isBeta = betaEmails.includes(storedEmail) || unlimitedEmails.includes(storedEmail);
         setIsBetaUser(isBeta);
         console.log('Beta user status:', isBeta);
       }
@@ -161,9 +162,10 @@ export const useUsageTracking = () => {
     setEmail(newEmail);
     localStorage.setItem('userEmail', newEmail);
     
-    // Check if beta user
+    // Check if beta user or unlimited user
     const betaEmails = ['demo@kodenyx.com', 'sheri@sheriotto.com'];
-    const isBeta = betaEmails.includes(newEmail);
+    const unlimitedEmails = ['aarti.munjal@gmail.com'];
+    const isBeta = betaEmails.includes(newEmail) || unlimitedEmails.includes(newEmail);
     setIsBetaUser(isBeta);
     console.log('Updated beta user status:', isBeta);
     
