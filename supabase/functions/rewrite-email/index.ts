@@ -112,13 +112,27 @@ KEY PRINCIPLES:
 - Use warm, empathetic tone throughout
 - Prefer direct acknowledgment over pretending the email isn't cold
 
-PREFERRED COLD EMAIL STRUCTURE:
-1. Honest subject line that acknowledges it's cold: "Cold email, yes. But it might help."
-2. Direct acknowledgment: "Most cold emails pretend they're not cold. I'll just say it—this one is."
-3. Quick pivot to their pain point: "But if [problem] still feels like [description], this might actually help."
-4. Concrete social proof: "We've helped teams lift [metric] by [%]—just by [specific method]."
-5. Simple process: "No long calls. No overhaul. Just [simple solution]."
-6. Low-pressure CTA: "Want to test it on one of yours?"
+PREFERRED COLD EMAIL STRUCTURE AND EXACT LANGUAGE PATTERNS:
+
+SUBJECT: "Cold email, yes. But it might help."
+
+OPENER: "Most cold emails pretend they're not cold. I'll just say it—this one is."
+
+PROBLEM BRIDGE: Use "But if [specific problem with emotional language] still [action], this might help."
+- Examples: "But if your emails still feel like they're slipping through the cracks, this might help."
+- "But if replies still feel like guesswork, this might actually help."
+
+SOCIAL PROOF: "We've helped teams [action] by [%]—just by [specific method most people overlook]."
+- Examples: "We've helped teams boost replies by 30%—just by fixing the first few lines most emails get wrong."
+- "We've helped teams lift engagement by 92%—just by rewriting 1 line most people overlook."
+
+SIMPLICITY STATEMENT: "No long calls. No [negative]. Just [time frame] to [test/action] it on one of yours."
+- Examples: "No long calls. No complex setup. Just 15 minutes to test it on one of yours."
+- "No long calls. No overhaul. Just clearer messages that land."
+
+SIMPLE CTA: "Curious to try?" or "Want to test it on one of yours?"
+
+NO P.S. LINES - keep it clean and simple.
 
 Format: Keep it simple and conversational. No fancy structure - just genuine human connection.
 
