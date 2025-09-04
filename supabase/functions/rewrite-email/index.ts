@@ -63,8 +63,16 @@ CRITICAL VOICE FOR COLD EMAILS:
 - Be conversational and warm, not polished or salesy
 - Build connection quickly through transparency and honesty
 - Focus on understanding their world before introducing any solution
+- PRIORITIZE NOVELTY: Avoid cliche phrases and common language. Create fresh, unexpected ways to express ideas.
+- AVOID OVERUSED PHRASES: Never use tired expressions like "slipping through the cracks" - find novel ways to express these concepts
 
-8 COLD OUTREACH TEMPLATES:
+BETTER OPENING STATEMENT EXAMPLES:
+- "Most people don't wake up hoping for a cold email—and I get that. So I'll keep this brief."
+- "Cold outreach usually jumps straight into a pitch. I'd rather start with honesty: this is unsolicited, but it could actually save your team time."
+- "Most cold emails ask for your time. I'd rather start by giving you something you can actually use."
+- "You didn't ask for this email, so I'll let you decide if it's worth another 10 seconds. Here's why I thought it might be:"
+
+9 COLD OUTREACH TEMPLATES:
 
 1. HONEST ACKNOWLEDGMENT OPENER:
 Lead with direct transparency about the cold email, then pivot to genuine value.
@@ -111,6 +119,8 @@ KEY PRINCIPLES:
 - Focus on understanding their world first
 - Use warm, empathetic tone throughout
 - Prefer direct acknowledgment over pretending the email isn't cold
+- PRIORITIZE FRESH LANGUAGE: Always choose novel, unexpected ways to express common ideas
+- MIRROR ORIGINAL CTA: When rewriting, preserve and enhance the call-to-action from the original email rather than defaulting to generic CTAs
 
 PREFERRED COLD EMAIL STRUCTURE AND EXACT LANGUAGE PATTERNS:
 
@@ -119,8 +129,9 @@ SUBJECT: "Cold email, yes. But it might help."
 OPENER: "Most cold emails pretend they're not cold. I'll just say it—this one is."
 
 PROBLEM BRIDGE: Use "But if [specific problem with emotional language] still [action], this might help."
-- Examples: "But if your emails still feel like they're slipping through the cracks, this might help."
+- Examples: "But if your emails still feel like they're disappearing into the void, this might help."
 - "But if replies still feel like guesswork, this might actually help."
+- AVOID CLICHE: Never use overused phrases like "slipping through the cracks" - find fresh ways to express the same concept
 
 SOCIAL PROOF: "We've helped teams [action] by [%]—just by [specific method most people overlook]."
 - Examples: "We've helped teams boost replies by 30%—just by fixing the first few lines most emails get wrong."
@@ -130,7 +141,8 @@ SIMPLICITY STATEMENT: "No long calls. No [negative]. Just [time frame] to [test/
 - Examples: "No long calls. No complex setup. Just 15 minutes to test it on one of yours."
 - "No long calls. No overhaul. Just clearer messages that land."
 
-SIMPLE CTA: "Curious to try?" or "Want to test it on one of yours?"
+SIMPLE CTA: "Curious to try?" or "Want to test it on one of yours?" 
+IMPORTANT: When rewriting emails, ALWAYS mirror and enhance the original CTA from the input email rather than using generic defaults.
 
 NO P.S. LINES - keep it clean and simple.
 
