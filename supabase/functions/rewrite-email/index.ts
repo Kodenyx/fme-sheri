@@ -55,7 +55,13 @@ CRITICAL VOICE REQUIREMENTS:
 5. EMAIL TYPE SPECIFIC RULES:
 
 FOR COLD OUTREACH:
-Use a warm, empathetic, and transparent approach that immediately disarms the reader and builds genuine human connection.
+🔥 CRITICAL FOUNDATION PRINCIPLES - NON-NEGOTIABLE:
+
+ANCHOR PRINCIPLE #1: ACKNOWLEDGE COLD NATURE HONESTLY
+Every cold email MUST start by transparently acknowledging it's unsolicited. This is the trust-builder that prevents the entire message from feeling generic or robotic. The reader already knows it's a cold email - pretending otherwise destroys credibility.
+
+ANCHOR PRINCIPLE #2: MIRROR READER'S THOUGHTS
+The opening must sound like you're finishing a thought the reader is already having. Mirror their internal dialogue about receiving cold emails. Make them think "finally, someone who gets it."
 
 CRITICAL VOICE FOR COLD EMAILS:
 - Lead with empathy and vulnerability - name the elephant in the room
@@ -66,7 +72,7 @@ CRITICAL VOICE FOR COLD EMAILS:
 - PRIORITIZE NOVELTY: Avoid cliche phrases and common language. Create fresh, unexpected ways to express ideas.
 - AVOID OVERUSED PHRASES: Never use tired expressions like "slipping through the cracks" - find novel ways to express these concepts
 
-BETTER OPENING STATEMENT EXAMPLES:
+PREFERRED OPENING STATEMENT PATTERNS (choose the most fitting):
 - "Most people don't wake up hoping for a cold email—and I get that. So I'll keep this brief."
 - "Cold outreach usually jumps straight into a pitch. I'd rather start with honesty: this is unsolicited, but it could actually save your team time."
 - "Most cold emails ask for your time. I'd rather start by giving you something you can actually use."
@@ -163,16 +169,6 @@ Before finalizing, validate:
 - Would a real person feel safer opening this?
 - Is it clear, brief, novel, and natural?
 
-AI VALIDATION CHECKPOINTS:
-Before finalizing any cold email opener, confirm:
-✓ Did I acknowledge the cold nature honestly?
-✓ Did I lower tension instead of raising it?
-✓ Is it 1–2 sentences max for the opener?
-✓ Does it sound novel and human, not generic or robotic?
-✓ Does it mirror what the reader is likely thinking?
-✓ Does it reflect at least one behavioral science principle?
-✓ ALWAYS mirror and enhance the original CTA from the input email rather than using generic defaults.
-
 DYNAMIC OPENER SELECTION:
 Instead of using rigid templates, intelligently select from these opener examples based on the email's tone, value proposition, and audience:
 - "Most people don't wake up hoping for a cold email—and I get that. So I'll keep this brief."
@@ -180,8 +176,6 @@ Instead of using rigid templates, intelligently select from these opener example
 - "Most cold emails ask for your time. I'd rather start by giving you something you can actually use."
 - "You didn't ask for this email, so I'll let you decide if it's worth another 10 seconds. Here's why I thought it might be:"
 - "Most cold emails pretend they're not cold. I'll just say it—this one is."
-
-Apply this Remix Recipe process to create psychologically intelligent, strategically varied cold email openers that feel fresh and human while maintaining conversion effectiveness.
 
 Format: Keep it simple and conversational. No fancy structure - just genuine human connection.
 
@@ -863,7 +857,31 @@ serve(async (req) => {
     let categoryInstructions = "";
     switch (emailCategory) {
       case "Cold Outreach":
-        categoryInstructions = "Use the PREFERRED COLD EMAIL STRUCTURE AND EXACT LANGUAGE PATTERNS outlined in the cold outreach section.";
+        categoryInstructions = `CRITICAL REQUIREMENTS FOR COLD EMAILS:
+
+1. ANCHOR PRINCIPLE #1: ACKNOWLEDGE COLD NATURE HONESTLY
+   - Every cold email MUST start by transparently acknowledging it's unsolicited
+   - This is the trust-builder that prevents the entire message from feeling generic or robotic
+   - The reader already knows it's a cold email - pretending otherwise destroys credibility
+
+2. ANCHOR PRINCIPLE #2: MIRROR READER'S THOUGHTS  
+   - The opening must sound like you're finishing a thought the reader is already having
+   - Mirror their internal dialogue about receiving cold emails
+   - Make them think "finally, someone who gets it"
+
+3. USE ONLY THESE PREFERRED OPENER PATTERNS (choose the most fitting):
+   - "Most people don't wake up hoping for a cold email—and I get that. So I'll keep this brief."
+   - "Cold outreach usually jumps straight into a pitch. I'd rather start with honesty: this is unsolicited, but it could actually save your team time."
+   - "Most cold emails ask for your time. I'd rather start by giving you something you can actually use."
+   - "You didn't ask for this email, so I'll let you decide if it's worth another 10 seconds. Here's why I thought it might be:"
+
+4. MANDATORY VALIDATION - Before finalizing, confirm EVERY checkpoint:
+   ✓ Did I acknowledge the cold nature honestly?
+   ✓ Did I lower tension instead of raising it?
+   ✓ Is it 1–2 sentences max for the opener?
+   ✓ Does it sound novel and human, not generic or robotic?
+   ✓ Does it mirror what the reader is likely thinking?
+   ✓ Does it reflect at least one behavioral science principle?`;
         break;
       case "Conversion":
         categoryInstructions = "Use the conversion re-engagement framework to create urgency and drive action.";
@@ -890,7 +908,41 @@ serve(async (req) => {
           { role: 'system', content: SHERI_OTTO_PROMPT },
           { 
             role: 'user', 
-            content: `Email Type: ${emailCategory}\n\nInstructions: ${categoryInstructions}\n\nPlease rewrite this email using the specific framework for ${emailCategory}:\n\n${emailContent}` 
+            content: emailCategory === "Cold Outreach" 
+              ? `EMAIL TYPE: COLD OUTREACH
+
+${categoryInstructions}
+
+ORIGINAL EMAIL TO REWRITE:
+${emailContent}
+
+VALIDATION PROCESS:
+Before providing your final rewritten email, you MUST explicitly confirm each AI checkpoint:
+
+1. Acknowledge cold nature honestly: [Yes/No + explanation]
+2. Lower tension instead of raising it: [Yes/No + explanation]  
+3. 1–2 sentences max for opener: [Yes/No + count]
+4. Novel and human, not generic/robotic: [Yes/No + explanation]
+5. Mirrors reader's likely thoughts: [Yes/No + explanation]
+6. Reflects behavioral science principle: [Yes/No + which principle]
+
+Only after confirming ALL checkpoints, provide the final rewritten email using this exact JSON format:
+
+{
+  "rewritten_email": "[The complete rewritten email]",
+  "psychological_triggers": "[List the specific behavioral triggers used]",
+  "structure_improvements": "[Explain how the structure was improved]",
+  "questions": "[Any clarifying questions]",
+  "checkpoint_validation": {
+    "acknowledges_cold_nature": "[Yes/No + brief explanation]",
+    "lowers_tension": "[Yes/No + brief explanation]",
+    "opener_length": "[sentence count + confirmation]", 
+    "novel_and_human": "[Yes/No + brief explanation]",
+    "mirrors_thoughts": "[Yes/No + brief explanation]",
+    "behavioral_principle": "[Which principle + brief explanation]"
+  }
+}`
+              : `Email Type: ${emailCategory}\n\nInstructions: ${categoryInstructions}\n\nPlease rewrite this email using the specific framework for ${emailCategory}:\n\n${emailContent}`
           }
         ],
         temperature: 0.7,
