@@ -890,7 +890,200 @@ serve(async (req) => {
         categoryInstructions = "Use the promotional email framework to highlight benefits and create desire.";
         break;
       case "Re-engagement":
-        categoryInstructions = "Use the nurture/warm email approach to reconnect and rebuild engagement.";
+        categoryInstructions = `FOR RE-ENGAGEMENT EMAILS - COMPREHENSIVE FRAMEWORK:
+
+Your task is to optimize re-engagement. The recipient has previously interacted, shown interest, or subscribed, but has since gone quiet or disengaged. Your goal is to spark renewed attention, reduce re-entry friction, and reestablish message relevance without sounding pushy or starting from scratch.
+
+CORE GUIDELINES:
+1. RESPECT ORIGINAL TONE
+   - Match the tone of the input draft
+   - Do not force tone changes (e.g., casual → formal)
+   - Maintain natural rhythm and cadence
+   - Output should feel like an improved version of the sender's voice, not a rewrite in a new personality
+
+2. DETECT AND APPLY BEST-FIT FORMAT
+   Choose one structure below based on context, user goal, and input length:
+
+FORMAT 1: SHORT & DIRECT ("9-Word Emails")
+Psychology: Micro-commitment, low friction, pattern interrupt
+Best for: Cold leads, inactive subscribers, contacts who haven't responded in 30–90+ days
+Goal: Trigger curiosity or an open loop or action without feeling pushy
+Send Timing: Mid-week mornings (Tuesday–Thursday). Resend to non-opens in 48 hours with a new subject line.
+
+Template Framework:
+Subject Line Options:
+- Quick question
+- Thought of you
+- One thing I'm curious about
+
+Body Examples:
+- Would [desired outcome] help you right now?
+- Are you still interested in [solving X pain]?
+- Want help with [insert big result or bottleneck]?
+
+No sign-off. Footer should be pushed far down the page with returns for stealth delivery.
+
+FORMAT 2: OFFER-BASED EMAILS (Action-Driven, Scarcity-Based)
+Psychology: Scarcity, exclusivity, specificity, urgency
+Best for: Lukewarm leads, recent webinar signups, high-intent non-converters
+Goal: Convert interest into booked calls, program sign-ups, or demos
+Send Timing: Monday (Initial), Wednesday (Resend non-opens), Friday (Last Call)
+
+Template Framework:
+Subject Line Options:
+- [#] spots for [ideal outcome]
+- Are you one of the [target number]?
+- Ready to [insert transformation]?
+
+Body Template:
+I'm opening up [#] spots for [type of person] who wants to [result they care about].
+
+This is for:
+- [Struggle or signal #1]
+- [Struggle or signal #2]
+- [Struggle or signal #3]
+
+Sound like you?
+Reply "[SHORT CTA]" or click here to claim your spot: [link]
+
+Repeat mid-week with a new subject line. Rotate between "what," "who it's for," and "benefit" framing.
+
+FORMAT 3: PROBLEM-SOLUTION EMAILS (Empathetic, Trust-Building)
+Psychology: Emotional resonance, validation, relatability, logical resolution
+Best for: Cold or skeptical leads, top-of-funnel educational sequences, and nurture campaigns
+Goal: Create trust and connection, build readiness for action
+Send Timing: Fridays or Sundays for reflection, or Monday morning for re-engagement
+
+Template Framework:
+Subject Line Options:
+- [Pain point] holding you back?
+- Still feeling [insert common challenge]?
+- This might be costing you [desirable result]
+
+Body Template:
+Feeling [insert pain/emotion]? You're not alone. Many [insert audience type] deal with this every day – and it's not about working harder.
+
+It's often caused by:
+- [Root cause #1]
+- [Root cause #2]
+- [Root cause #3]
+
+The good news? There's a system to fix this – one that [insert clear benefit or result].
+
+Let's chat about what that could look like for you.
+Reply "[CTA WORD]" if you're open to exploring this.
+
+STRUCTURE & EXAMPLES:
+
+SUBJECT LINE:
+- Use curiosity, relevance, or soft urgency
+- Avoid hype or clickbait
+Examples: "Still need help with [X]?", "Quick check-in", "This might be better timing."
+
+INTRO LINE (Signal Mirror):
+- Assume familiarity—no reintroduction
+- Name delay or silence without blame
+Examples: "Meant to follow up earlier on this.", "Just picking the thread back up…", "You might've intended to revisit this—no pressure if not."
+
+ROOT CAUSE REFRAME (Reposition the Pause):
+- Present disengagement as a moment mismatch, not rejection
+- Lead with permission and insight
+Examples: "Life happens—your easy button to rebook.", "Missed the demo? Here's the short version.", "Still curious? Watch the 90-second recap.", "You've had a lot going on. This might be more relevant today."
+
+BRIDGE TO SOLUTION / OFFER:
+- Position the offer as helpful, not a hard pitch
+- Anchor the tool/resource as a way to restart momentum
+Examples: "That's why I built [tool/resource/process]—to re-spark momentum when things go quiet.", "This might help pick the thread back up—without starting from scratch."
+
+BENEFIT SNAPSHOT (Make It Tangible):
+- Focus on ease, speed, or clarity
+- Use outcome-driven language with low friction
+Examples: "Takes less than 3 minutes to get started.", "See what was missing in just one step.", "No overhaul—just a clearer next move."
+
+MICRO CTA (Frictionless Re-entry):
+- Invite light engagement, not a big ask
+- Keep it reply-based or a single link
+Examples: "Reply 'SHOW ME' if you're curious.", "Want to see how this works now? Just say 'INTERESTED.'", "If you're open, I can walk you through it."
+
+P.S. LINE (Optional, Use When Helpful):
+- Reinforce usefulness for re-engagement moments
+- Use social proof or context-specific relevance
+Examples: "Used by teams to re-engage leads post-demo, post-webinar, or after stalled outreach.", "Often helps contacts rejoin the conversation—without having to start over.", "This is how most teams reignite quiet leads without chasing."
+
+FORMATTING INSTRUCTIONS:
+- Use short paragraphs, 1–3 sentences each
+- Insert line breaks or bullets to improve clarity where needed
+- Use natural language structure with no jargon or filler
+- Avoid formal intros or long wind-ups—assume the recipient remembers the sender
+
+🚫 DO NOT:
+- Add hype or pushy persuasion
+- Use "Hi, I'm [Name] and I do…" intros
+- Write long blocks of text or overexplain
+- Rebuild brand familiarity unless the input draft indicates it's needed
+
+OPTIMIZING FOR:
+- Behavioral alignment
+- Natural tone and pacing
+- Message-stage fit
+- Relevance over repetition
+- Clear, low-pressure action
+- Signal-aware re-entry
+
+FINAL NOTE FOR RE-ENGAGEMENT:
+When optimizing a re-engagement email:
+
+1. ACKNOWLEDGE PRIOR CONTACT WITHOUT PRESSURE
+   Use phrases like: "Meant to follow up…", "Might've been the wrong time", "Picking this back up…"
+
+2. INTRO LINES = FAMILIARITY, NOT FORMALITY
+   Mirror common delay behavior: Ghosting, Postponing, Passive interest
+
+3. REFRAME THE SILENCE
+   Assume timing mismatch, not disinterest: "It wasn't a no—just not now.", "Right message, wrong moment."
+
+4. AVOID REINTRODUCTIONS
+   Assume the reader remembers enough. Do not restate who the sender is unless prompted.
+
+5. P.S. LINES = REACTIVATION MOMENTS
+   Use to reference common funnel stalls: "Used after quiet demo leads…", "Great for reviving high-fit prospects who ghosted…"`;
+        
+        // Add re-engagement specific validation to userMessage for this category
+        if (emailCategory === "Re-engagement") {
+          userMessage += `
+
+CRITICAL RE-ENGAGEMENT VALIDATION CHECKPOINTS:
+Before finalizing your rewritten email, you MUST validate these specific checkpoints:
+
+1. TONE RESPECT CHECK: ✓ 
+   - Does the rewritten email match the original tone and voice?
+   - Have I preserved the sender's natural rhythm and cadence?
+   - Does this feel like an improved version of their voice, not a personality change?
+
+2. FORMAT FIT CHECK: ✓
+   - Have I selected the most appropriate format (Short & Direct, Offer-Based, or Problem-Solution)?
+   - Does the chosen format align with the context, goal, and audience engagement level?
+   - Is the structure optimized for the specific re-engagement scenario?
+
+3. PSYCHOLOGY ALIGNMENT CHECK: ✓
+   - Have I applied the correct psychological triggers for re-engagement (curiosity, relevance, soft urgency)?
+   - Am I repositioning disengagement as timing mismatch, not rejection?
+   - Does the message reduce re-entry friction?
+
+4. STRUCTURE ADHERENCE CHECK: ✓
+   - Does the intro assume familiarity without formal reintroduction?
+   - Have I acknowledged prior contact without pressure?
+   - Is the CTA frictionless and low-pressure?
+   - Does the P.S. reinforce reactivation value when used?
+
+5. RE-ENGAGEMENT SPECIFIC CHECK: ✓
+   - Am I mirroring delay behavior without blame?
+   - Have I avoided pushy or guilt-inducing language?
+   - Does this spark renewed attention without starting from scratch?
+   - Is the message relevant to their current moment, not just past interest?
+
+RESPOND WITH: Your rewritten email followed by a brief validation summary confirming each checkpoint was met.`;
+        }
         break;
       default:
         categoryInstructions = "Use the most appropriate framework based on the email content.";
