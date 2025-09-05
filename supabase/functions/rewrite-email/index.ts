@@ -1047,10 +1047,65 @@ When optimizing a re-engagement email:
 
 5. P.S. LINES = REACTIVATION MOMENTS
    Use to reference common funnel stalls: "Used after quiet demo leads…", "Great for reviving high-fit prospects who ghosted…"`;
-        
-        // Add re-engagement specific validation to userMessage for this category
-        if (emailCategory === "Re-engagement") {
-          userMessage += `
+        break;
+      default:
+        categoryInstructions = "Use the most appropriate framework based on the email content.";
+    }
+
+    const response = await fetch('https://api.openai.com/v1/chat/completions', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${openAIApiKey}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        model: 'gpt-4o',
+        messages: [
+          { role: 'system', content: SHERI_OTTO_PROMPT },
+          { 
+            role: 'user', 
+            content: (() => {
+              if (emailCategory === "Cold Outreach") {
+                return `EMAIL TYPE: COLD OUTREACH
+
+${categoryInstructions}
+
+ORIGINAL EMAIL TO REWRITE:
+${emailContent}
+
+VALIDATION PROCESS:
+Before providing your final rewritten email, you MUST explicitly confirm each AI checkpoint:
+
+1. Acknowledge cold nature honestly: [Yes/No + explanation]
+2. Lower tension instead of raising it: [Yes/No + explanation]  
+3. 1–2 sentences max for opener: [Yes/No + count]
+4. Novel and human, not generic/robotic: [Yes/No + explanation]
+5. Mirrors reader's likely thoughts: [Yes/No + explanation]
+6. Reflects behavioral science principle: [Yes/No + which principle]
+
+Only after confirming ALL checkpoints, provide the final rewritten email using this exact JSON format:
+
+{
+  "rewritten_email": "[The complete rewritten email]",
+  "psychological_triggers": "[List the specific behavioral triggers used]",
+  "structure_improvements": "[Explain how the structure was improved]",
+  "questions": "[Any clarifying questions]",
+  "checkpoint_validation": {
+    "acknowledges_cold_nature": "[Yes/No + brief explanation]",
+    "lowers_tension": "[Yes/No + brief explanation]",
+    "opener_length": "[sentence count + confirmation]", 
+    "novel_and_human": "[Yes/No + brief explanation]",
+    "mirrors_thoughts": "[Yes/No + brief explanation]",
+    "behavioral_principle": "[Which principle + brief explanation]"
+  }
+}`;
+              } else if (emailCategory === "Re-engagement") {
+                return `Email Type: ${emailCategory}
+
+${categoryInstructions}
+
+ORIGINAL EMAIL TO REWRITE:
+${emailContent}
 
 CRITICAL RE-ENGAGEMENT VALIDATION CHECKPOINTS:
 Before finalizing your rewritten email, you MUST validate these specific checkpoints:
@@ -1083,59 +1138,10 @@ Before finalizing your rewritten email, you MUST validate these specific checkpo
    - Is the message relevant to their current moment, not just past interest?
 
 RESPOND WITH: Your rewritten email followed by a brief validation summary confirming each checkpoint was met.`;
-        }
-        break;
-      default:
-        categoryInstructions = "Use the most appropriate framework based on the email content.";
-    }
-
-    const response = await fetch('https://api.openai.com/v1/chat/completions', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${openAIApiKey}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        model: 'gpt-4o',
-        messages: [
-          { role: 'system', content: SHERI_OTTO_PROMPT },
-          { 
-            role: 'user', 
-            content: emailCategory === "Cold Outreach" 
-              ? `EMAIL TYPE: COLD OUTREACH
-
-${categoryInstructions}
-
-ORIGINAL EMAIL TO REWRITE:
-${emailContent}
-
-VALIDATION PROCESS:
-Before providing your final rewritten email, you MUST explicitly confirm each AI checkpoint:
-
-1. Acknowledge cold nature honestly: [Yes/No + explanation]
-2. Lower tension instead of raising it: [Yes/No + explanation]  
-3. 1–2 sentences max for opener: [Yes/No + count]
-4. Novel and human, not generic/robotic: [Yes/No + explanation]
-5. Mirrors reader's likely thoughts: [Yes/No + explanation]
-6. Reflects behavioral science principle: [Yes/No + which principle]
-
-Only after confirming ALL checkpoints, provide the final rewritten email using this exact JSON format:
-
-{
-  "rewritten_email": "[The complete rewritten email]",
-  "psychological_triggers": "[List the specific behavioral triggers used]",
-  "structure_improvements": "[Explain how the structure was improved]",
-  "questions": "[Any clarifying questions]",
-  "checkpoint_validation": {
-    "acknowledges_cold_nature": "[Yes/No + brief explanation]",
-    "lowers_tension": "[Yes/No + brief explanation]",
-    "opener_length": "[sentence count + confirmation]", 
-    "novel_and_human": "[Yes/No + brief explanation]",
-    "mirrors_thoughts": "[Yes/No + brief explanation]",
-    "behavioral_principle": "[Which principle + brief explanation]"
-  }
-}`
-              : `Email Type: ${emailCategory}\n\nInstructions: ${categoryInstructions}\n\nPlease rewrite this email using the specific framework for ${emailCategory}:\n\n${emailContent}`
+              } else {
+                return `Email Type: ${emailCategory}\n\nInstructions: ${categoryInstructions}\n\nPlease rewrite this email using the specific framework for ${emailCategory}:\n\n${emailContent}`;
+              }
+            })()
           }
         ],
         temperature: 0.7,
