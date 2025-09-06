@@ -399,33 +399,35 @@ AVOID IN RE-ENGAGEMENT:
 
 **EXAMPLE OUTPUTS:**
 
-Pattern 1 (Behavior-First - 67 words):
-Subject: Curious if now's your moment?
+Pattern 1 (Win-Back - 67 words):
+Subject: Better timing this time?
 
 Hey [First Name],
 
-You leaned in — then paused. Totally fair.
+You leaned in a while back—then life happened. Totally get it.
 
-Since then, we've helped teams like yours unlock 8–12 hours a week just by automating one manual workflow. No overhaul. No friction. Just traction.
+Since then, we've helped a few teams restart cold outreach by fixing just one thing: the message misalignment in the first few lines.
 
-Want to see what that might look like in your setup?
+No overhaul. No long calls. Just a 15-minute peek at how the rewrite works.
 
-P.S. Most teams use this after stalled projects — to reset momentum without starting over.
+Want me to show you what that could look like for your team?
+
+P.S. Most teams use this when post-demo leads go quiet. Might be useful here too.
 
 — Sheri
 
-Pattern 2 (Solution-Focused - 76 words):
-Subject: Tired of tools that almost work?
+Pattern 2 (Value-Reminder - 74 words):
+Subject: You didn't ask for this, but it might help
 
 Hey [First Name],
 
-Your stack isn't broken — but it's not quite doing the job.
+You didn't ask for this email—so I'll let you decide if it's worth another 10 seconds.
 
-We've felt that, so we rebuilt the AI layer: dashboards that finally click, automations that actually save time.
+We've helped a few teams fix reply-killing intros in their cold emails. One tiny tweak = 30% more responses.
 
-Teams like yours are saving 8+ hours/week — without changing platforms.
+Since you showed interest before, thought this might be relevant for your team.
 
-Want a quick peek at how?
+Want me to show you how that looks on one of yours?
 
 – Sheri
 
