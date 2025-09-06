@@ -21,7 +21,13 @@ interface RewriteResponse {
 
 const Tool = () => {
   const [emailContent, setEmailContent] = useState("");
-  const [emailCategory, setEmailCategory] = useState("Cold Outreach");
+  const [emailCategory, setEmailCategory] = useState(() => {
+    try {
+      return sessionStorage.getItem("emailToolCategory") || "Cold Outreach";
+    } catch {
+      return "Cold Outreach";
+    }
+  });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [makeover, setMakeover] = useState("");
   const [showMakeover, setShowMakeover] = useState(false);
@@ -152,7 +158,8 @@ const Tool = () => {
       isBetaUser,
       needsEmailCapture,
       needsPaywall,
-      usageCount
+      usageCount,
+      emailCategory
     });
     
     // Reset any previous state before starting
@@ -255,7 +262,6 @@ const Tool = () => {
     setIsSubmitting(false);
     setShowMakeover(false);
     setEmailContent("");
-    setEmailCategory("Cold Outreach");
     setMakeover("");
     setAnalysis({ psychologicalTriggers: [], structureImprovements: [], questions: [] });
   };
@@ -396,7 +402,7 @@ const Tool = () => {
                     <label htmlFor="email-category" className="text-sm font-medium" style={{ color: '#3B1E5E' }}>
                       Email Type:
                     </label>
-                    <Select value={emailCategory} onValueChange={setEmailCategory}>
+                    <Select value={emailCategory} onValueChange={(value) => { setEmailCategory(value); try { sessionStorage.setItem('emailToolCategory', value); } catch {} }}>
                       <SelectTrigger className="w-48 bg-white border-gray-300 focus:border-gray-400">
                         <SelectValue placeholder="Select email type" />
                       </SelectTrigger>
