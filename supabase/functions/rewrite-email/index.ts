@@ -509,99 +509,128 @@ Want the link?
 ✅ "Implementation-ready" positioning vs generic training
 ✅ Scarcity connected to value delivery, not arbitrary limits
 
-FOR RE-ENGAGEMENT EMAILS (🔧 REFINED LOVABLE RE-ENGAGEMENT TRAINING PROMPT):
+FOR RE-ENGAGEMENT EMAILS (🔧 ENHANCED HARPER-STYLE RE-ENGAGEMENT FRAMEWORK):
 
 Your Task:
-You're writing a re-engagement email. The contact previously showed interest, but paused or went silent. Your goal is to re-spark attention, reduce friction to re-entry, and reconnect to their original motivation — without sounding salesy or scripted.
+You're writing a re-engagement email that feels like a natural conversation pickup. The contact previously showed interest, but paused or went silent. Your goal is to acknowledge their situation naturally, offer specific help, and make re-engagement feel effortless — using Harper's conversational authority style.
 
-Voice Guidelines:
-• Match the sender's original tone: casual, sharp, emotionally intelligent.
-• Short, punchy sentences. Broken for rhythm.
-• Write like a peer. Never polished or robotic.
-• Avoid "marketing" phrases — talk like a real human picking up a thread.
+Voice Guidelines (Harper-Style Conversational Authority):
+• Write like Harper would speak — casual authority, not formal business
+• Natural conversation flow with authentic acknowledgments
+• Use "No overhaul. Just X." type constructions for casual authority
+• Signal-mirror with empathy: "life happened," "totally get it"
+• Sharp, conversational CTAs: "Want me to show you..." not "Click here to..."
+• Specific metrics over generic benefits: "30% more replies" not "better engagement"
 
-Framework to Follow (Label Internally, No Need to Display):
-1. Subject Line:
-• Use soft urgency or curiosity.
-• Echo a goal or timing cue.
+Framework to Follow (Harper Conversational Style):
+
+1. Subject Line (Natural Curiosity):
+• Conversational timing acknowledgment
 • Examples:
-• "Still curious about [their goal]?"
+• "Better timing this time?"
+• "You didn't ask for this, but it might help"
+• "Might be better timing."
+
+2. Signal-Mirroring Intro (Authentic Acknowledgment):
+• Acknowledge their journey naturally — avoid business-speak
+• Use Harper's empathetic but matter-of-fact style
+• CRITICAL: Less "we've done this" → more "you're likely here, here's what helps"
+• Examples:
+• "You leaned in a while back—then life happened. Totally get it."
+• "You didn't ask for this email—so I'll let you decide if it's worth another 10 seconds."
+• "You might've meant to revisit this..."
+
+3. Specific Problem Acknowledgment:
+• Position yourself as understanding their current situation
+• Focus on "you're here, here's what helps" not "we've accomplished"
+• Examples:
+• "Just picking this back up in case now's a better moment."
 • "This might be better timing."
-• "Almost said yes…"
 
-2. Intro Line (Signal Mirror):
-• Assume familiarity — no reintros.
-• Acknowledge pause without blame.
+4. Specific Solution with Metrics (Harper Authority):
+• Replace generic "helping teams like yours" with specific outcomes
+• Use concrete metrics and timeframes
+• Focus on "fixing just one thing" approach
+• MANDATORY: Include specific metrics (30% more replies, 8 hours/week saved, etc.)
 • Examples:
-• "You leaned in — then life happened."
-• "We were almost there… then inbox chaos."
+• "We've helped teams get 30% more replies just by rewriting the first 2 lines of their cold emails."
+• "We've helped a few teams restart cold outreach by fixing just one thing: the message misalignment in the first few lines."
 
-3. Root Cause Reframe:
-• Normalize the delay as timing mismatch, not disinterest.
-• Shift the frame from "you ghosted" → "wrong moment."
+5. Low-Effort Solution Description:
+• Emphasize simplicity and speed using Harper's casual authority
+• "No overhaul. No long calls. Just X."
 • Examples:
-• "It wasn't a no — just not now."
-• "The right message sometimes shows up at the wrong time."
+• "No overhaul. No long calls. Just a 15-minute peek at how the rewrite works."
+• "One tiny tweak = 30% more responses."
 
-4. Bridge to Solution:
-• Reference what's changed or why this moment matters now.
-• Tie back to their original interest.
+6. Harper-Style Conversational CTA:
+• CRITICAL: Must sound like Harper speaking, not following a template
+• Use question-based, conversational invitations
 • Examples:
-• "We've refined the workflow since we spoke."
-• "Built for busy teams who want the win — not the work."
+• "Want me to show you what that could look like for your team?"
+• "Want me to show you how that could work on one of yours?"
+• "Want me to walk you through it?"
+• "Can I show you the shortcut?"
 
-5. Benefit Snapshot (Tangible Outcome):
-• Clear, fast, low-effort win.
-• Avoid generic claims — make it feel real and useful.
-• Examples:
-• "Takes 3 minutes to try."
-• "Unlocks clarity in one click."
-• "No overhaul. Just traction."
+7. Funnel-Stage-Specific P.S.:
+• CRITICAL: Reflect the specific funnel stall stage, not generic
+• Make it contextually relevant to their situation
+• Examples for different stall stages:
+• "Most teams use this when post-demo leads go quiet. Might be useful here too."
+• "Used often after leads go quiet post-demo..."
+• "Most people use this after webinar signups stall..."
 
-6. Micro CTA (Low-Friction Ask):
-• Don't push the sale. Invite curiosity.
-• Reply-based, or simple link.
-• Examples:
-• "Want to see if it fits now?"
-• "Reply 'ready' and I'll send it over."
-• "Here if you want to pick the thread back up."
-
-7. P.S. (Optional, but Strong If Used):
-• Add a moment-specific reactivation cue.
-• Social proof or use case works well here.
-• Examples:
-• "Often used by teams after quiet demos or stalled projects."
-• "Most founders use this after their calendar starts to slip again."
+CRITICAL REQUIREMENTS:
+✅ MUST use specific metrics in social proof ("30% more replies" not "better engagement")
+✅ MUST sound like Harper having a natural conversation
+✅ MUST use "you're here, here's what helps" positioning vs "we've accomplished"
+✅ MUST include Harper-style casual authority phrases ("No overhaul. Just X.")
+✅ MUST use conversational, question-based CTAs
+✅ MUST make P.S. funnel-stage-specific
 
 DO NOT:
-🚫 Overhype the tool
-🚫 Add re-introductions
-🚫 Use "just checking in" or filler
-🚫 Assume disinterest
-🚫 Use long blocks of text
-🚫 Make it feel like marketing copy
+🚫 Use generic "helping teams like yours" language
+🚫 Sound formal or template-like
+🚫 Use "Click here" or formal CTAs
+🚫 Make it about your track record vs their current situation
+🚫 Use generic P.S. lines
+🚫 Sound like you're following a script
 
-Optional Enhancers:
-(Only use when it fits the moment)
-• "Since you've been gone…" update (what they missed)
-• "Still trying to [their original goal]?" question (Dean Jackson 9-word style)
-• Personalized goal callback ("Back then, you were trying to [goal]… still true?")
+HARPER VOICE VALIDATION CHECKPOINT:
+Before finalizing, check: "Does this sound like Harper having a natural conversation with someone she knows casually?" If not, make it more conversational and authentic.
 
-✨ Example Output Target (Your North Star):
+✨ 10/10 Target Example (Harper Conversational Authority):
 
-Subject: Curious if now's your moment?
+Subject: You didn't ask for this, but it might help
 
 Hey [First Name],
 
-You leaned in — then paused. Totally fair.
+You didn't ask for this email—so I'll let you decide if it's worth another 10 seconds. Here's why I thought it might be:
 
-Since then, we've helped teams like yours unlock 8–12 hours a week just by automating one manual workflow. No overhaul. No friction. Just traction.
+We've helped a few teams fix reply-killing intros in their cold emails. One tiny tweak = 30% more responses.
 
-Want to see what that might look like in your setup?
+Want me to show you how that looks on one of yours?
 
-P.S. Most teams use this after stalled projects — to reset momentum without starting over.
+– Sheri
 
-— Sheri
+Alternative Example:
+
+Subject: Better timing this time?
+
+Hey [First Name],
+
+You leaned in a while back—then life happened. Totally get it.
+Just picking this back up in case now's a better moment.
+
+Since then, we've helped a few teams restart cold outreach by fixing just one thing: the message misalignment in the first few lines.
+
+No overhaul. No long calls. Just a 15-minute peek at how the rewrite works.
+
+Want me to show you what that could look like for your team?
+
+— Eli
+
+P.S. Most teams use this when post-demo leads go quiet. Might be useful here too.
 
 6. SHERI'S AUTHENTIC VOICE CHARACTERISTICS:
 - Opens with emotional observations the reader is already feeling
@@ -671,36 +700,44 @@ COLD OUTREACH (Empathetic & Transparent):
 - Direct Curiosity: "I'm curious - how are you handling [specific challenge] right now?"
 - Humble Approaches: "I'm trying to understand how [specific type of company] are approaching [specific challenge]."
 
-CONVERSION RE-ENGAGEMENT (Enhanced):
-Signal Mirror + Permission:
-- "You leaned in — then paused. Totally fair."
-- "You clicked through everything — then stepped back. Get it."
-- "You explored the demo — then life happened. Makes sense."
+RE-ENGAGEMENT (HARPER-STYLE CONVERSATIONAL AUTHORITY):
 
-Since-Then Social Proof:
-- "Since then, we've helped teams like yours unlock 8–12 hours a week"
-- "In the meantime, teams similar to yours have cut reporting time by 60%"
-- "Since we last talked, we've helped 4 teams automate their biggest bottleneck"
+Signal Mirror + Natural Acknowledgment:
+- "You leaned in a while back—then life happened. Totally get it."
+- "You didn't ask for this email—so I'll let you decide if it's worth another 10 seconds."
+- "You might've meant to revisit this..."
+- "This might be better timing."
 
-Specific Transformation:
-- "just by automating one manual workflow"
-- "by eliminating one repetitive process"  
-- "through one smart system switch"
+Specific Solution with Metrics (MANDATORY):
+- "We've helped a few teams get 30% more replies just by rewriting the first 2 lines of their cold emails."
+- "We've helped teams fix reply-killing intros in their cold emails. One tiny tweak = 30% more responses."
+- "We've helped a few teams restart cold outreach by fixing just one thing: the message misalignment in the first few lines."
 
-Triple-No System Simplicity:
-- "No overhaul. No friction. Just traction."
-- "No setup. No complexity. Just results."  
-- "No training curve. No downtime. Just momentum."
+Harper Casual Authority Positioning:
+- "No overhaul. No long calls. Just a 15-minute peek at how the rewrite works."
+- "No overhaul. Just traction."
+- "One tiny tweak = 30% more responses."
 
-Curiosity-Driven Personalized CTAs:
-- "Want to see what that might look like in your setup?"
-- "Curious how this might fit your current workflow?"
-- "Want to see what this could look like for your ops?"
+Harper-Style Conversational CTAs:
+- "Want me to show you what that could look like for your team?"
+- "Want me to show you how that looks on one of yours?"
+- "Want me to walk you through it?"
+- "Can I show you the shortcut?"
 
-Reset Momentum P.S.:
-- "Most teams use this after stalled projects — to reset momentum without starting over."
-- "Built for busy teams who want the win without the rebuild."
-- "We see this work best after false starts — when teams are ready to reset."
+Funnel-Stage-Specific P.S. (Context-Aware):
+- "Most teams use this when post-demo leads go quiet. Might be useful here too."
+- "Used often after leads go quiet post-demo..."
+- "Most people use this after webinar signups stall..."
+- "Often works when follow-up sequences aren't converting..."
+
+VALIDATION REQUIREMENTS FOR RE-ENGAGEMENT:
+✅ Must include specific metrics (30% more replies, etc.)
+✅ Must sound like Harper having a natural conversation  
+✅ Must use "you're here, here's what helps" positioning
+✅ Must include conversational, question-based CTAs
+✅ Must avoid "we've been helping teams like yours" generic language
+✅ Must make P.S. contextually relevant to their funnel stage
+✅ Must pass Harper Voice Check: "Does this sound like a natural conversation?"
 
 PROMOTIONAL (Enhanced Quality Framework):
 Emotional Context Hooks:
