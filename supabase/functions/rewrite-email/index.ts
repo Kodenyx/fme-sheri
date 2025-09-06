@@ -1107,37 +1107,59 @@ ${categoryInstructions}
 ORIGINAL EMAIL TO REWRITE:
 ${emailContent}
 
-CRITICAL RE-ENGAGEMENT VALIDATION CHECKPOINTS:
-Before finalizing your rewritten email, you MUST validate these specific checkpoints:
+MANDATORY FORMAT SELECTION:
+You MUST analyze the original email context and choose ONE of these three strategic formats:
 
-1. TONE RESPECT CHECK: ✓ 
-   - Does the rewritten email match the original tone and voice?
-   - Have I preserved the sender's natural rhythm and cadence?
-   - Does this feel like an improved version of their voice, not a personality change?
+FORMAT 1: SHORT & DIRECT (45-60 words)
+Use for: Busy executives, decision-makers who paused due to priorities
+Structure: Mirror action + validation → Specific outcome since pause → Simple CTA → Optional P.S.
 
-2. FORMAT FIT CHECK: ✓
-   - Have I selected the most appropriate format (Short & Direct, Offer-Based, or Problem-Solution)?
-   - Does the chosen format align with the context, goal, and audience engagement level?
-   - Is the structure optimized for the specific re-engagement scenario?
+FORMAT 2: OFFER-BASED (60-75 words)  
+Use for: Price-sensitive prospects, those who paused at cost/value stage
+Structure: Acknowledge pause → Time-sensitive value opportunity → Clear offer with deadline → Action CTA
 
-3. PSYCHOLOGY ALIGNMENT CHECK: ✓
-   - Have I applied the correct psychological triggers for re-engagement (curiosity, relevance, soft urgency)?
-   - Am I repositioning disengagement as timing mismatch, not rejection?
-   - Does the message reduce re-entry friction?
+FORMAT 3: PROBLEM-SOLUTION (70-90 words)
+Use for: Teams facing ongoing pain points, competitive evaluation situations  
+Structure: Validate current reality → Bridge to specific solution → Social proof with metrics → Exploration invitation
 
-4. STRUCTURE ADHERENCE CHECK: ✓
-   - Does the intro assume familiarity without formal reintroduction?
-   - Have I acknowledged prior contact without pressure?
-   - Is the CTA frictionless and low-pressure?
-   - Does the P.S. reinforce reactivation value when used?
+CRITICAL ORIGINALITY REQUIREMENTS:
+You MUST NOT use these overused phrases verbatim:
+- "You leaned in — then paused. Totally fair."
+- "Since then, we've helped teams like yours unlock 8–12 hours a week"
+- "No overhaul. No friction. Just traction."
+- "Want to see what that might look like in your setup?"
+- "Most teams use this after stalled projects — to reset momentum without starting over."
+- "You clicked through everything — then stepped back. Get it."
+- "Your stack isn't broken — but it's not quite doing the job."
 
-5. RE-ENGAGEMENT SPECIFIC CHECK: ✓
-   - Am I mirroring delay behavior without blame?
-   - Have I avoided pushy or guilt-inducing language?
-   - Does this spark renewed attention without starting from scratch?
-   - Is the message relevant to their current moment, not just past interest?
+Instead, create original variations that capture the same psychological principles using completely fresh language.
 
-RESPOND WITH: Your rewritten email followed by a brief validation summary confirming each checkpoint was met.`;
+MANDATORY VALIDATION CHECKPOINTS:
+Before finalizing, you MUST validate these 5 specific checkpoints:
+
+1. TONE RESPECT: Does this acknowledge their pause without making them feel bad?
+2. FORMAT FIT: Does the chosen format match their likely reason for pausing?
+3. PSYCHOLOGY ALIGNMENT: Are we addressing the right psychological barrier?
+4. STRUCTURE ADHERENCE: Does it follow the format's specific structure requirements?
+5. RE-ENGAGEMENT SPECIFIC: Is this clearly different from initial outreach or nurture content?
+
+You MUST output a properly formatted JSON response with this exact structure:
+{
+  "rewritten_email": "your rewritten email here",
+  "format_used": "Short & Direct" | "Offer-Based" | "Problem-Solution",
+  "format_rationale": "why this format was chosen based on context clues",
+  "psychological_triggers": ["list of triggers used"],
+  "structure_improvements": ["list of improvements made"],
+  "clarifying_questions": ["any questions for better optimization"],
+  "originality_note": "explanation of how this avoids formulaic language and creates fresh expressions",
+  "validation_checklist": {
+    "tone_respect": "explanation of how this acknowledges pause without guilt",
+    "format_fit": "explanation of format choice match to context", 
+    "psychology_alignment": "explanation of psychological barrier being addressed",
+    "structure_adherence": "confirmation of format structure compliance",
+    "re_engagement_specific": "explanation of how this differs from initial outreach"
+  }
+}`;
               } else {
                 return `Email Type: ${emailCategory}\n\nInstructions: ${categoryInstructions}\n\nPlease rewrite this email using the specific framework for ${emailCategory}:\n\n${emailContent}`;
               }
