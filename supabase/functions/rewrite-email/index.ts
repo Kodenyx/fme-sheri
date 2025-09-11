@@ -1055,33 +1055,33 @@ Before finalizing, check:
 
 **EXAMPLE OUTPUTS:**
 
-Pattern 1 (Signal Mirror - 68 words):
+Pattern 1 (Loss Aversion + Specific Social Proof - 74 words):
 Subject: You've been looking at this for a while
 
 Hey [First Name],
 
-You've been circling back to this for a few weeks now. Totally get it—big decisions take time.
+You've been circling back to this for weeks. I get it—feels like a big leap.
 
-Most teams at this stage are wondering: "Will this actually move the needle, or is it just another tool?"
+Here's what's happening: every day you wait, leads are slipping through cracks you can't even see. A 40-person agency I work with was losing $30K monthly before fixing this.
 
-Fair question. Teams using this approach are closing 30% more deals in their existing pipeline.
+They went from 23% close rate to 41% in six weeks. Same leads, better system.
 
-Want me to show you what that looks like in your CRM?
+Want me to walk you through their exact setup? Takes 12 minutes.
 
 — Sheri
 
-Pattern 2 (Friction Address - 72 words):
-Subject: Not sure if now's the right time?
+Pattern 2 (Future Pacing + Authentic Harper Warmth - 69 words):
+Subject: What if this was working by Friday?
 
 Hey [First Name],
 
-You downloaded the guide, then... life happened. Totally fair.
+Downloaded the guide, then got pulled into fires. Story of our lives, right?
 
-Most teams tell us: "This looks great, but we're in the middle of [Q4/hiring/transition]."
+Picture this: next Friday, you're watching deals close that would've ghosted before. No more "following up on my follow-up" emails. Just clear next steps and momentum.
 
-Here's the thing: teams using this during transitions actually see better results—less baggage, fresh momentum.
+The 3 companies that started mid-chaos? They're our biggest success stories.
 
-Want to see what a 15-minute setup looks like? No long calls, just clarity.
+Ready to see what week one looks like?
 
 — Sheri`;
         break;
