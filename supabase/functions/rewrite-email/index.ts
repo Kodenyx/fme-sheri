@@ -981,109 +981,103 @@ serve(async (req) => {
    ✓ Does it reflect at least one behavioral science principle?`;
         break;
       case "Conversion":
-        categoryInstructions = `## CONVERSION CATEGORY
+        categoryInstructions = `## CONVERSION CATEGORY - 95% FRAMEWORK ADHERENCE
 
-**BEHAVIORAL SCIENCE PRINCIPLES BASE:**
-You are analyzing a conversion-focused email, designed to drive action such as:
-- Booking a sales call
-- Booking a demo  
-- Starting a free trial
-- Advancing to the next step in a sales conversation
+**MANDATORY BEHAVIORAL SCIENCE INTEGRATION:**
+Every conversion email MUST incorporate 2-3 behavioral principles. Not optional. Required.
 
-NOTE: Emails perform better when they mirror behavior and relieve decision pressure, so aim to do that in these conversion emails.
+**REQUIRED COMBINATION PATTERNS:**
+Pattern A: Loss Aversion + Social Proof + Future Pacing
+Pattern B: Loss Aversion + Anchoring + Social Proof
+Pattern C: Social Proof + Future Pacing + Information Gap
 
-**INPUT ANALYSIS FRAMEWORK:**
-Assess the following before rewriting:
-1. **Primary Conversion Goal**: What specific action are we driving?
-2. **Framing & Offer Type**: How is the value positioned?
-3. **Audience Emotional State & Readiness**: Where are they in the decision process?
-4. **Email Structure & Style**: What's the current approach?
-5. **Tone & Trust Level**: How does it feel to receive this?
+**LOSS AVERSION ENFORCEMENT (CRITICAL - WAS MISSING):**
+Every email MUST include specific loss aversion with:
+- Concrete dollar amounts: "$30K monthly," "$180K annually"
+- Specific timeframes: "every week you wait," "each month that passes"
+- Quantified opportunity cost: "23% vs 41% close rate"
+- Formula: "While you [hesitate/wait/decide], [specific cost] is happening"
 
-**BEHAVIORAL STRATEGY:**
-Based on your analysis, select the best-fit behavioral science principle(s) that will most increase conversion by enhancing message resonance, CTA clarity, and emotional motivation.
+**SYSTEM SNAPSHOT REQUIREMENTS (ENHANCED):**
+Replace vague references with MANDATORY specific anchors:
+✓ Company size: "40-person SaaS team," "3 agencies," "6-figure company"
+✓ Timeframe: "6 weeks," "Q4," "last 90 days"  
+✓ Measurable results: "23% to 41%," "30% more deals," "$30K savings"
+✓ Industry context: "B2B SaaS," "agency," "e-commerce"
 
-**PRINCIPLES TO CHOOSE FROM:**
-- Loss Aversion
-- Anchoring
-- Commitment & Consistency
-- Reciprocity
-- Information Gap
-- Social Proof
-- Scarcity or Urgency
-- Autonomy Bias
-- Fresh Start Effect
-- Processing Fluency / Cognitive Fluency
-- Salience
-- Emotion
-- Exclusivity
-- Authority principle
-- Labeling
+**VALIDATION CHECKPOINTS (MANDATORY):**
+Before output, confirm ALL elements:
+□ Loss Aversion with specific dollar/time cost? 
+□ Social Proof with concrete anchors (company size + results)?
+□ System Snapshot with measurable specifics?
+□ 2-3 behavioral principles integrated?
+□ Harper authenticity maintained?
 
-**CONVERSION SIGNAL EMAIL STRUCTURE:**
-1. **Signal Mirror**: Name what they've likely done (visited, clicked, ghosted)
-2. **Address Internal Friction**: Reflect what might be holding them back (e.g., "not sure if now's the right time," "unclear if this is the right fit," "too many moving pieces")
-3. **System Snapshot**: Introduce the system that solves that specific hesitation
-4. **Trust Builder**: Drop proof or social norm (e.g., "teams using this framework are seeing 2x the close rate")
-5. **Low Friction CTA**: Emphasize clarity, speed, and relevance
+**CONVERSION SIGNAL EMAIL STRUCTURE (ENHANCED):**
+1. **Signal Mirror**: Name specific behavior (visited, downloaded, clicked, ghosted)
+2. **Loss Aversion Hook**: Immediate cost of inaction with numbers
+3. **System Snapshot**: Specific anchor + measurable result
+4. **Social Proof**: Concrete company details + transformation
+5. **Future Pacing**: Specific timeline + outcome
+6. **Low Friction CTA**: Value-specific question
 
-**CTA REVOLUTION:**
-Avoid generic CTAs like:
-- "Schedule a quick call"
-- "Book a demo to learn more"
+**MANDATORY EXAMPLE PATTERNS:**
 
-Instead, favor value-revealing questions:
-- "Want me to show you the top 3 signals your CRM is hiding?"
-- "Let's spend 10 minutes identifying where your best leads stalled"
-- "I'll walk you through how to fix your follow-up—no new traffic required"
-
-**HARPER TONE FOR CONVERSION:**
-Tone should be: Calm, specific, 1:1 emotional truth, grounded in lived B2B moments.
-
-Conversion-specific openers that mirror micro-moments of uncertainty:
-- "They asked for the deck. Then never opened it."
-- "You've got 17 warm leads and no idea what to say next."
-- "The trial ended. They didn't convert. And you're stuck on how to ask why."
-- "This could work. You're just not sure if they think so."
-- "You're circling the CTA like it's a trap. It's not. But it feels like one."
-
-**CONVERSION FRICTION FILTER:**
-Before finalizing, check:
-1. Is the CTA too vague, risky, or high-commitment for the context?
-2. Are we asking too much without clarity?
-3. Does the message build momentum or trigger decision fatigue?
-
-**EXAMPLE OUTPUTS:**
-
-Pattern 1 (Loss Aversion + Specific Social Proof - 74 words):
-Subject: You've been looking at this for a while
+Pattern 1 (Loss Aversion + Social Proof + Future Pacing - 78 words):
+Subject: $180K is walking out the door
 
 Hey [First Name],
 
 You've been circling back to this for weeks. I get it—feels like a big leap.
 
-Here's what's happening: every day you wait, leads are slipping through cracks you can't even see. A 40-person agency I work with was losing $30K monthly before fixing this.
+Here's what's happening: every week you wait, $7K in potential revenue is walking out the door. A 40-person SaaS team I work with was bleeding $30K monthly before fixing this gap.
 
-They went from 23% close rate to 41% in six weeks. Same leads, better system.
+They went from 23% close rate to 41% in 6 weeks. Same leads, better system.
 
-Want me to walk you through their exact setup? Takes 12 minutes.
+Want me to walk you through their exact 90-day playbook? Takes 12 minutes.
 
 — Sheri
 
-Pattern 2 (Future Pacing + Authentic Harper Warmth - 69 words):
+Pattern 2 (Anchoring + Future Pacing + Social Proof - 71 words):
 Subject: What if this was working by Friday?
 
 Hey [First Name],
 
 Downloaded the guide, then got pulled into fires. Story of our lives, right?
 
-Picture this: next Friday, you're watching deals close that would've ghosted before. No more "following up on my follow-up" emails. Just clear next steps and momentum.
+Picture this: next Friday, you're watching deals close that would've ghosted before. No more "following up on my follow-up" emails.
 
-The 3 companies that started mid-chaos? They're our biggest success stories.
+The 3 B2B agencies that started mid-chaos? They're hitting 35%+ close rates within 8 weeks.
 
 Ready to see what week one looks like?
 
-— Sheri`;
+— Sheri
+
+Pattern 3 (All Three Principles - Loss + Social + Future - 82 words):
+Subject: Every month you wait costs $25K
+
+Hey [First Name],
+
+You've been researching this for months. Here's the hard truth: every month you wait, $25K in pipeline value slips away untracked.
+
+A 60-person agency I work with was losing exactly that—$25K monthly—before implementing this system. Now they're at 38% close rate vs their old 19%.
+
+Imagine: 90 days from now, your Q1 pipeline is predictable, not hopeful.
+
+Want to see their exact 90-day transformation roadmap?
+
+— Sheri
+
+**BEHAVIORAL SCIENCE INTEGRATION FORMULAS:**
+- Loss Aversion: "Every [timeframe], [specific cost] is [specific consequence]"
+- Social Proof: "[Specific company size] + [specific industry] + [measurable result]"
+- Future Pacing: "[Specific timeframe] + [specific outcome] + [emotional state]"
+
+**FORBIDDEN ELEMENTS:**
+❌ Vague social proof: "clients," "companies," "teams"
+❌ Generic CTAs: "schedule a call," "book a demo"
+❌ Missing loss aversion components
+❌ Weak system snapshots without specific anchors`;
         break;
       case "Promotional":
         categoryInstructions = "Use the promotional email framework to highlight benefits and create desire.";
