@@ -419,7 +419,7 @@ Signal Mirror + Permission:
 - "You explored the demo — then life happened. Makes sense."
 
 Since-Then Social Proof:
-- "Since then, we've helped teams like yours unlock 8–12 hours a week"
+- "Since then, a 15-person marketing ops team selling to SMBs unlocked 30% more efficiency in Q1—just by automating one step in their follow-up"
 - "In the meantime, teams similar to yours have cut reporting time by 60%"
 - "Since we last talked, we've helped 4 teams automate their biggest bottleneck"
 
@@ -923,7 +923,7 @@ Subject: Curious if now's your moment?
 
 You leaned in — then paused. Totally fair.
 
-Since then, we've helped teams like yours unlock 8–12 hours a week just by automating one manual workflow. No overhaul. No friction. Just traction.
+Since then, a 15-person marketing ops team selling to SMBs unlocked 30% more efficiency in Q1—just by automating one step in their follow-up. No overhaul. No friction. Just traction.
 
 Want to see what that might look like in your setup?
 
@@ -957,7 +957,7 @@ Subject: Still curious about AI for your ops?
 
 You leaned in — then life happened. Happens to the best of us.
 
-We've quietly helped 4 teams unlock 10+ hours/week since we last talked — just by simplifying one workflow.
+A 25-person sales ops team targeting enterprise clients quietly unlocked 10+ hours/week since we last talked — just by automating one workflow in their CRM.
 
 No overhaul. No friction. Just traction.
 
@@ -1114,6 +1114,8 @@ Subject: You downloaded the guide. Then… silence.
 Hey [First Name],
 
 You downloaded the framework last week, then got pulled into Q4 fires. Story of every growth leader's life.
+
+Totally normal. Most teams stall here — not because they don't care, but because it's hard to know where to start.
 
 Most teams stall here because they're waiting for the "perfect" time to implement. Meanwhile, 4 hours weekly disappear into manual lead research that could be automated, and qualified prospects drift to competitors while you're stuck in decision loops.
 
