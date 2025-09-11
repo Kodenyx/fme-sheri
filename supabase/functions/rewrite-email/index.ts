@@ -1320,8 +1320,6 @@ IMPORTANT: Ensure the JSON is properly formatted and escaped.`
   }
 });
 
-**CONTEXT:**
-This framework is designed for conversion emails that reduce decision pressure, mirror prospect behavior, and build trust. Ideal for B2B audiences evaluating next steps (booking, trials, demos).
 
 **BEFORE GENERATING, CONFIRM THE FOLLOWING:**
 - Signal Mirror is tied to recent user behavior (download, demo, etc.)
