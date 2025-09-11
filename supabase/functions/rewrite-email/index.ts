@@ -981,7 +981,109 @@ serve(async (req) => {
    ✓ Does it reflect at least one behavioral science principle?`;
         break;
       case "Conversion":
-        categoryInstructions = "Use the conversion re-engagement framework to create urgency and drive action.";
+        categoryInstructions = `## CONVERSION CATEGORY
+
+**BEHAVIORAL SCIENCE PRINCIPLES BASE:**
+You are analyzing a conversion-focused email, designed to drive action such as:
+- Booking a sales call
+- Booking a demo  
+- Starting a free trial
+- Advancing to the next step in a sales conversation
+
+NOTE: Emails perform better when they mirror behavior and relieve decision pressure, so aim to do that in these conversion emails.
+
+**INPUT ANALYSIS FRAMEWORK:**
+Assess the following before rewriting:
+1. **Primary Conversion Goal**: What specific action are we driving?
+2. **Framing & Offer Type**: How is the value positioned?
+3. **Audience Emotional State & Readiness**: Where are they in the decision process?
+4. **Email Structure & Style**: What's the current approach?
+5. **Tone & Trust Level**: How does it feel to receive this?
+
+**BEHAVIORAL STRATEGY:**
+Based on your analysis, select the best-fit behavioral science principle(s) that will most increase conversion by enhancing message resonance, CTA clarity, and emotional motivation.
+
+**PRINCIPLES TO CHOOSE FROM:**
+- Loss Aversion
+- Anchoring
+- Commitment & Consistency
+- Reciprocity
+- Information Gap
+- Social Proof
+- Scarcity or Urgency
+- Autonomy Bias
+- Fresh Start Effect
+- Processing Fluency / Cognitive Fluency
+- Salience
+- Emotion
+- Exclusivity
+- Authority principle
+- Labeling
+
+**CONVERSION SIGNAL EMAIL STRUCTURE:**
+1. **Signal Mirror**: Name what they've likely done (visited, clicked, ghosted)
+2. **Address Internal Friction**: Reflect what might be holding them back (e.g., "not sure if now's the right time," "unclear if this is the right fit," "too many moving pieces")
+3. **System Snapshot**: Introduce the system that solves that specific hesitation
+4. **Trust Builder**: Drop proof or social norm (e.g., "teams using this framework are seeing 2x the close rate")
+5. **Low Friction CTA**: Emphasize clarity, speed, and relevance
+
+**CTA REVOLUTION:**
+Avoid generic CTAs like:
+- "Schedule a quick call"
+- "Book a demo to learn more"
+
+Instead, favor value-revealing questions:
+- "Want me to show you the top 3 signals your CRM is hiding?"
+- "Let's spend 10 minutes identifying where your best leads stalled"
+- "I'll walk you through how to fix your follow-up—no new traffic required"
+
+**HARPER TONE FOR CONVERSION:**
+Tone should be: Calm, specific, 1:1 emotional truth, grounded in lived B2B moments.
+
+Conversion-specific openers that mirror micro-moments of uncertainty:
+- "They asked for the deck. Then never opened it."
+- "You've got 17 warm leads and no idea what to say next."
+- "The trial ended. They didn't convert. And you're stuck on how to ask why."
+- "This could work. You're just not sure if they think so."
+- "You're circling the CTA like it's a trap. It's not. But it feels like one."
+
+**CONVERSION FRICTION FILTER:**
+Before finalizing, check:
+1. Is the CTA too vague, risky, or high-commitment for the context?
+2. Are we asking too much without clarity?
+3. Does the message build momentum or trigger decision fatigue?
+
+**EXAMPLE OUTPUTS:**
+
+Pattern 1 (Signal Mirror - 68 words):
+Subject: You've been looking at this for a while
+
+Hey [First Name],
+
+You've been circling back to this for a few weeks now. Totally get it—big decisions take time.
+
+Most teams at this stage are wondering: "Will this actually move the needle, or is it just another tool?"
+
+Fair question. Teams using this approach are closing 30% more deals in their existing pipeline.
+
+Want me to show you what that looks like in your CRM?
+
+— Sheri
+
+Pattern 2 (Friction Address - 72 words):
+Subject: Not sure if now's the right time?
+
+Hey [First Name],
+
+You downloaded the guide, then... life happened. Totally fair.
+
+Most teams tell us: "This looks great, but we're in the middle of [Q4/hiring/transition]."
+
+Here's the thing: teams using this during transitions actually see better results—less baggage, fresh momentum.
+
+Want to see what a 15-minute setup looks like? No long calls, just clarity.
+
+— Sheri`;
         break;
       case "Promotional":
         categoryInstructions = "Use the promotional email framework to highlight benefits and create desire.";
