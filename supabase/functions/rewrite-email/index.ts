@@ -817,30 +817,54 @@ VALIDATION REQUIREMENTS FOR RE-ENGAGEMENT:
 ✅ Must make P.S. contextually relevant to their funnel stage
 ✅ Must pass Harper Voice Check: "Does this sound like a natural conversation?"
 
+✅ LOVABLE PROMOTIONAL EMAIL PROMPT
+
+⸻
+
 PROMOTIONAL (Enhanced for Conversion)
 
 USE THIS WHEN:
-You're promoting a time-sensitive offer — like a limited trial, cohort, launch window, workshop, bonus, or enrollment period — and want the reader to take immediate action.
+You're promoting a time-sensitive offer — like a limited trial, live cohort, launch window, workshop, bonus, or enrollment period — and want the reader to take immediate action.
 
 ⸻
 
 🔍 PRE-WRITING CLARITY (Answer First):
 
-Before generating, answer:
+Before generating the email, answer:
 	1.	What is the exact offer?
-(e.g., live AI workshop, swipe file, lead follow-up engine, bonus playbook, onboarding session)
+(e.g., live AI workshop, bonus swipe file, follow-up engine, onboarding call, audit session)
 	2.	What makes this timely?
-(e.g., capped seats, pre-Q4 planning, beta closing, decision deadline)
+(e.g., capped at 50, closing this Friday, tied to Q4 planning, beta ends soon)
 	3.	What tangible transformation is possible?
-(e.g., 10 hours/week saved, 40% reduction in manual ops, 2x faster follow-ups, automated outreach in 7 days)
+(e.g., save 10+ hours/week, automate follow-up, reduce ops overhead by 40%)
 	4.	What will they regret if they wait?
-(e.g., still stuck in manual work, team burnout, missed launch window)
-	5.	How ready is this reader?
-(e.g., curious skeptic, delayed decision-maker, warm lead, past buyer)
+(e.g., team stays stuck in manual work, pipeline slows, opportunity window closes)
+	5.	How warm is this reader?
+(e.g., curious prospect, warm lead, download re-engagement, past client)
 
 ⸻
 
-✍️ WRITE THE EMAIL (80–120 words):
+📩 WRITE THE SUBJECT LINE
+
+Choose a subject line that reflects:
+	•	A specific benefit
+	•	A time-sensitive opportunity
+	•	Or a relatable frustration
+(Avoid hype or vague FOMO.)
+
+Subject Line Examples:
+
+• Pain-based:
+→ Still wasting hours on manual tasks?
+→ Overwhelmed? This 60-minute AI session might fix it.
+
+• Specific value:
+→ Trim 10+ hours/week using AI (live session)
+→ What 50 teams are doing with AI next week
+
+⸻
+
+✍️ WRITE THE EMAIL (80–120 words)
 
 Use the structure below:
 
@@ -848,62 +872,94 @@ Use the structure below:
 
 1. [Hook – Choose a Hook Archetype Based on Reader State]
 
-Pick from one of these styles:
-	•	Pattern interrupt: "Another AI webinar? Yeah, we rolled our eyes too—until we built this."
-	•	Contrarian truth: "Most automations break your business faster. Ours fixes what's slowing it down."
-	•	Relatable pain: "Your team's buried. Your inbox is worse. Manual work? Still winning."
-	•	Future pacing: "Next week, your lead follow-up could be running while you sleep."
+Start with one of these hook types:
+	•	Pattern interrupt:
+→ "Another AI webinar? Yeah, we rolled our eyes too—until we built this."
+	•	Contrarian truth:
+→ "Most automations break your systems faster. Ours fixes what's slowing you down."
+	•	Relatable pain:
+→ "Your team's buried. Your inbox is worse. Manual work? Still winning."
+	•	Future pacing:
+→ "By next week, your lead follow-up could be running while you sleep."
 
 ⸻
 
 2. [Offer Clarity – What They'll Get + What It Fixes]
 
-State what the reader will walk away with and what problem it solves. Be tangible.
+Be clear and specific. Say what the reader will walk away with and what problem it solves.
+Use examples of real workflows or outcomes.
+
+Examples:
 
 "In 60 minutes, we'll help you map 3 automations—like lead scoring, follow-up reminders, and onboarding workflows—tailored to your team."
-"You'll walk away with a prebuilt system to eliminate the 5 most manual steps in your funnel."
+
+"You'll walk away with a prebuilt system to eliminate your 5 most time-consuming manual tasks—like proposal creation, client onboarding, or internal handoffs."
 
 ⸻
 
 3. [Reason Why – Real Rationale for Scarcity or Timing]
 
-"We're capping it at 50 because we're onboarding live."
-"Only open this week so you can roll it out before Q4."
-"Beta access closes Friday to finalize our case study cohort."
+Offer a logical reason for the limited window, cohort size, or urgency.
+
+Examples:
+
+"We're capping it at 50 spots to keep the session interactive."
+"Only open this week so teams can roll it out before Q4."
+"Beta access closes Friday—we're finalizing the case study cohort."
 
 ⸻
 
 4. [Anticipated Regret + Future Pacing]
 
-"Most teams wait until they're overwhelmed. By next week, you could have a 20% time savings already running."
-"Ignore this, and your team's still stuck manually chasing leads next month."
+Blend light FOMO with a vision of what life looks like if they act now.
+
+Examples:
+
+"Most teams wait until they're overwhelmed. By next week, you could already have a smoother workflow running."
+"Ignore this, and your ops team is still manually chasing leads next quarter."
 
 ⸻
 
 5. [CTA – Mirror the Benefit + Reduce Friction]
 
-Use benefit-matching CTA language with optional low-friction or choice-based framing:
-	•	→ Map your automations now
-	•	→ Claim your onboarding spot (no signup needed)
-	•	→ Want the fast version or full walkthrough? Pick one.
-	•	→ See what this could unlock for your team
+Use a CTA that matches the benefit and lowers commitment friction. Offer choice-based language when helpful.
+
+CTA Templates:
+
+• Mirror the benefit:
+→ Map your automations in the session
+→ Start cutting manual work next week
+→ Build your lead engine live
+
+• Add urgency or scarcity:
+→ Claim one of 50 spots (before it closes)
+→ Save your 60-minute AI seat
+
+• Reduce friction or add optionality:
+→ See how it works (no signup needed)
+→ Want the 4-minute demo or full walkthrough? Pick one.
+→ Grab your walkthrough — no pressure
 
 ⸻
 
-6. [Optional – Light Social Proof]
+6. [Optional – Light Social Proof or Peer Relevance]
 
-"Last time, 47 founders joined. Most were in the same bottleneck you're in now."
-"Used by consulting and SaaS teams to reclaim 10+ hours/week."
+Use peer examples or past success to build credibility without bragging.
+
+Examples:
+
+"Last time, 47 founders joined. Most were stuck in the same place you are now."
+"Used by consulting, SaaS, and ops teams to reclaim 10+ hours/week—without hiring."
 
 ⸻
 
 ✅ FINAL FILTERS:
 
-✅ Is the offer specific, with examples of what's included or what problem it solves?
-✅ Is the hook scroll-stopping, not just soft empathy?
-✅ Does the urgency feel logical and respectful (not just hype)?
-✅ Is the CTA behaviorally optimized and easy to act on?
-✅ Would someone skimming see a clear win within 3 seconds?
+✅ Is the subject line specific or curiosity-triggering?
+✅ Is the offer clear and outcome-based (with examples of workflows or results)?
+✅ Is the urgency grounded in logic (not artificial FOMO)?
+✅ Does the CTA mirror the benefit and feel easy to say yes to?
+✅ Would a busy reader skimming this see a clear, valuable win in the first 3 lines?
 
 ⸻
 
