@@ -817,74 +817,95 @@ VALIDATION REQUIREMENTS FOR RE-ENGAGEMENT:
 ✅ Must make P.S. contextually relevant to their funnel stage
 ✅ Must pass Harper Voice Check: "Does this sound like a natural conversation?"
 
-PROMOTIONAL (Enhanced for Conversion):
+PROMOTIONAL (Enhanced for Conversion)
 
 USE THIS WHEN:
 You're promoting a time-sensitive offer — like a limited trial, cohort, launch window, workshop, bonus, or enrollment period — and want the reader to take immediate action.
 
-PRE-WRITING CLARITY (Answer First):
-Before generating, answer:
-1. What is the exact offer?
-(e.g., live AI workshop, swipe file, audit, tool access, bonus system)
-2. What makes this timely?
-(e.g., capped cohort size, Q4 planning, beta window closing, seasonal need)
-3. What transformation is possible?
-(e.g., 10 hours/week saved, 25% faster workflows, 2x email response rates)
-4. What will they regret if they wait?
-(e.g., still stuck in busywork, more follow-ups lost, another launch missed)
-5. How ready is this reader?
-(e.g., cold lead, warm prospect, past buyer — tone should reflect trust level)
+⸻
 
-WRITE THE EMAIL (80–120 words):
+🔍 PRE-WRITING CLARITY (Answer First):
+
+Before generating, answer:
+	1.	What is the exact offer?
+(e.g., live AI workshop, swipe file, lead follow-up engine, bonus playbook, onboarding session)
+	2.	What makes this timely?
+(e.g., capped seats, pre-Q4 planning, beta closing, decision deadline)
+	3.	What tangible transformation is possible?
+(e.g., 10 hours/week saved, 40% reduction in manual ops, 2x faster follow-ups, automated outreach in 7 days)
+	4.	What will they regret if they wait?
+(e.g., still stuck in manual work, team burnout, missed launch window)
+	5.	How ready is this reader?
+(e.g., curious skeptic, delayed decision-maker, warm lead, past buyer)
+
+⸻
+
+✍️ WRITE THE EMAIL (80–120 words):
 
 Use the structure below:
 
-1. [Hook – Acknowledge Current State or Contrarian Insight]
-Open with a grounded, emotionally true statement.
-Examples:
-- "Your team's already stretched. But your manual tasks? Still multiplying."
-- "You probably weren't looking for another AI offer. This one might actually help."
+⸻
 
-2. [Offer Clarity – What They Get + What It Solves]
-Be tangible. Skip fluff like "get access."
-Examples:
-- "This week only, we're opening up 1:1 onboarding for our plug-and-play AI automations—already cutting 10+ hours/week for lean B2B teams."
-- "You'll walk away with a fully built lead follow-up engine—no coding, no guessing."
+1. [Hook – Choose a Hook Archetype Based on Reader State]
 
-3. [Reason Why – Real Rationale for the Deadline or Scarcity]
-Make urgency feel respectful, not pushy.
-Examples:
-- "We're capping it at 20 seats to run onboarding live."
-- "This closes Friday so teams can implement before Q4 review cycles."
+Pick from one of these styles:
+	•	Pattern interrupt: "Another AI webinar? Yeah, we rolled our eyes too—until we built this."
+	•	Contrarian truth: "Most automations break your business faster. Ours fixes what's slowing it down."
+	•	Relatable pain: "Your team's buried. Your inbox is worse. Manual work? Still winning."
+	•	Future pacing: "Next week, your lead follow-up could be running while you sleep."
 
-4. [Anticipated Regret + Future Pacing – What Happens If They Wait vs. Act]
-Blend loss aversion with future benefit.
-Examples:
-- "Most teams wait until they're overwhelmed. By next week, this could already be saving you 10 hours."
-- "Ignore this, and those follow-ups keep slipping through the cracks."
+⸻
 
-5. [CTA – Behaviorally Optimized Action Line]
-Mirror the offer + reduce friction.
-Examples:
-- "→ Grab your slot before onboarding closes"
-- "→ See the system in action (4-minute walkthrough)"
-- "→ Start cutting your manual tasks today"
+2. [Offer Clarity – What They'll Get + What It Fixes]
 
-Bonus: Offer CTA choices when possible.
-- "Want the fast overview or the full demo? Pick one below."
+State what the reader will walk away with and what problem it solves. Be tangible.
 
-6. [Optional – Light Social Proof or Peer Relevance]
-Build trust without bragging.
-Examples:
-- "Last time, 47 founders joined. Most were in the same boat you're in now."
-- "Used by SaaS, consulting, and agency teams to cut manual ops without hiring."
+"In 60 minutes, we'll help you map 3 automations—like lead scoring, follow-up reminders, and onboarding workflows—tailored to your team."
+"You'll walk away with a prebuilt system to eliminate the 5 most manual steps in your funnel."
 
-FINAL FILTERS:
-✅ Is the offer specific and tangible within the first 3 lines?
-✅ Does the urgency feel helpful (not hype)?
+⸻
+
+3. [Reason Why – Real Rationale for Scarcity or Timing]
+
+"We're capping it at 50 because we're onboarding live."
+"Only open this week so you can roll it out before Q4."
+"Beta access closes Friday to finalize our case study cohort."
+
+⸻
+
+4. [Anticipated Regret + Future Pacing]
+
+"Most teams wait until they're overwhelmed. By next week, you could have a 20% time savings already running."
+"Ignore this, and your team's still stuck manually chasing leads next month."
+
+⸻
+
+5. [CTA – Mirror the Benefit + Reduce Friction]
+
+Use benefit-matching CTA language with optional low-friction or choice-based framing:
+	•	→ Map your automations now
+	•	→ Claim your onboarding spot (no signup needed)
+	•	→ Want the fast version or full walkthrough? Pick one.
+	•	→ See what this could unlock for your team
+
+⸻
+
+6. [Optional – Light Social Proof]
+
+"Last time, 47 founders joined. Most were in the same bottleneck you're in now."
+"Used by consulting and SaaS teams to reclaim 10+ hours/week."
+
+⸻
+
+✅ FINAL FILTERS:
+
+✅ Is the offer specific, with examples of what's included or what problem it solves?
+✅ Is the hook scroll-stopping, not just soft empathy?
+✅ Does the urgency feel logical and respectful (not just hype)?
 ✅ Is the CTA behaviorally optimized and easy to act on?
-✅ Would someone skimming instantly grasp the benefit?
-✅ Does the tone feel calm, helpful, and smart—not pushy or generic?
+✅ Would someone skimming see a clear win within 3 seconds?
+
+⸻
 
 RE-ENGAGEMENT (Refined):
 - "Still curious about [their goal]?"
