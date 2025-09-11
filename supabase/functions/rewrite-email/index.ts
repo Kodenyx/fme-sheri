@@ -981,103 +981,135 @@ serve(async (req) => {
    ✓ Does it reflect at least one behavioral science principle?`;
         break;
       case "Conversion":
-        categoryInstructions = `## CONVERSION CATEGORY - 95% FRAMEWORK ADHERENCE
+        categoryInstructions = `## CONVERSION CATEGORY - 95% FRAMEWORK ADHERENCE WITH ENHANCED VALIDATION
 
-**MANDATORY BEHAVIORAL SCIENCE INTEGRATION:**
-Every conversion email MUST incorporate 2-3 behavioral principles. Not optional. Required.
+**CRITICAL PRE-OUTPUT VALIDATION CHECKPOINTS (MANDATORY):**
+Before generating any email, validate ALL requirements:
+□ Compound loss calculation included? (immediate + cumulative impact)
+□ 3+ specific descriptors in social proof? (size + type + market + context)
+□ Timeline anchored to business context? (not just "6 weeks" but "6 weeks after Q4 implementation")
+□ All behavioral science elements have specific metrics?
+□ Industry/business type specificity present in social proof?
+□ Loss aversion includes both immediate AND compound impact?
 
-**REQUIRED COMBINATION PATTERNS:**
-Pattern A: Loss Aversion + Social Proof + Future Pacing
-Pattern B: Loss Aversion + Anchoring + Social Proof
-Pattern C: Social Proof + Future Pacing + Information Gap
+**ENHANCED BEHAVIORAL SCIENCE INTEGRATION (ALL THREE REQUIRED):**
+Every conversion email MUST incorporate ALL THREE principles with specific validation:
 
-**LOSS AVERSION ENFORCEMENT (CRITICAL - WAS MISSING):**
-Every email MUST include specific loss aversion with:
-- Concrete dollar amounts: "$30K monthly," "$180K annually"
-- Specific timeframes: "every week you wait," "each month that passes"
-- Quantified opportunity cost: "23% vs 41% close rate"
-- Formula: "While you [hesitate/wait/decide], [specific cost] is happening"
+**1. ENHANCED LOSS AVERSION (COMPOUND CALCULATION REQUIRED):**
+MANDATORY Formula: [Immediate Loss] + [Compound Calculation] + [Business Timeline Context]
+- Immediate cost: "$7K per week you wait"
+- Compound calculation: "which compounds to $91K over a quarter"
+- Business context: "during peak Q1 sales season"
+- Enhanced Examples:
+  • "$7K per week you wait = $91K lost this quarter during peak season"
+  • "$15K monthly while this sits on your desk = $180K annual impact on pipeline"
+  • "$25K monthly pipeline value slips away = $300K revenue shortfall by year-end"
 
-**SYSTEM SNAPSHOT REQUIREMENTS (ENHANCED):**
-Replace vague references with MANDATORY specific anchors:
-✓ Company size: "40-person SaaS team," "3 agencies," "6-figure company"
-✓ Timeframe: "6 weeks," "Q4," "last 90 days"  
-✓ Measurable results: "23% to 41%," "30% more deals," "$30K savings"
-✓ Industry context: "B2B SaaS," "agency," "e-commerce"
+**2. ENHANCED SOCIAL PROOF (6+ DESCRIPTORS REQUIRED):**
+MANDATORY Formula: [Company Size] + [Business Type] + [Target Market] + [Specific Challenge] + [Exact Metrics] + [Timeline Context] + [Implementation Context]
+- Must include: Business type + size + target market + specific challenge + exact metric + timeline anchor + implementation context
+- Enhanced Example: "A 40-person B2B SaaS team selling marketing automation to agencies was losing $30K monthly in Q4 due to poor lead qualification, but after implementing our December playbook, they went from 23% to 41% close rates in 6 weeks"
+- Enhanced Validation: Must include minimum 6 specific descriptors
 
-**VALIDATION CHECKPOINTS (MANDATORY):**
-Before output, confirm ALL elements:
-□ Loss Aversion with specific dollar/time cost? 
-□ Social Proof with concrete anchors (company size + results)?
-□ System Snapshot with measurable specifics?
-□ 2-3 behavioral principles integrated?
-□ Harper authenticity maintained?
+**3. ENHANCED FUTURE PACING (BUSINESS CONTEXT REQUIRED):**
+MANDATORY Formula: [Specific Outcome] + [Implementation Timeframe] + [Business Context]
+- Must anchor to business contexts: quarters, seasons, launches, planning cycles
+- Enhanced Examples:
+  • "Want to see how their Q4 playbook could work for your team?"
+  • "By your Q1 planning session, this system could already be driving results"
+  • "Picture your pipeline review next month showing 35%+ close rates"
 
-**CONVERSION SIGNAL EMAIL STRUCTURE (ENHANCED):**
-1. **Signal Mirror**: Name specific behavior (visited, downloaded, clicked, ghosted)
-2. **Loss Aversion Hook**: Immediate cost of inaction with numbers
-3. **System Snapshot**: Specific anchor + measurable result
-4. **Social Proof**: Concrete company details + transformation
-5. **Future Pacing**: Specific timeline + outcome
-6. **Low Friction CTA**: Value-specific question
+**ENHANCED SYSTEM SNAPSHOT REQUIREMENTS (MANDATORY 6+ ELEMENTS):**
+Replace ALL vague references with specific anchors:
+✓ Company size: "40-person," "3-agency," "60-person team"
+✓ Business type: "B2B SaaS," "marketing agency," "e-commerce platform"
+✓ Target market: "selling to agencies," "serving SMBs," "targeting enterprise"
+✓ Specific challenge: "poor lead qualification," "pipeline leakage," "long sales cycles"
+✓ Exact metrics: "23% to 41%," "$30K monthly savings," "8-week transformation"
+✓ Timeline anchor: "Q4 implementation," "December playbook," "6-week sprint"
+✓ Implementation context: "mid-planning cycle," "during scale-up," "post-funding round"
 
-**MANDATORY EXAMPLE PATTERNS:**
+**ENHANCED VALIDATION FORMULAS (MANDATORY COMPLIANCE):**
+- Loss Aversion Formula: [Immediate Loss ($X/timeframe)] + [Compound Impact ($Y/period)] + [Business Context (Q1/Q4/season)]
+- Social Proof Formula: [Size] + [Type] + [Market] + [Challenge] + [Metrics] + [Timeline] + [Context] (minimum 6 elements)
+- Timeline Anchor Formula: [Timeframe] + [Business Context] (quarters/seasons/milestones/planning cycles)
 
-Pattern 1 (Loss Aversion + Social Proof + Future Pacing - 78 words):
-Subject: $180K is walking out the door
+**CONVERSION SIGNAL EMAIL STRUCTURE (ENHANCED WITH VALIDATION):**
+1. **Signal Mirror**: Name specific behavior with business context
+2. **Enhanced Loss Aversion Hook**: Immediate + compound cost with business timeline
+3. **Enhanced System Snapshot**: 6+ specific descriptors required
+4. **Enhanced Social Proof**: Company details + transformation + business context
+5. **Enhanced Future Pacing**: Specific timeline + business context + outcome
+6. **Low Friction CTA**: Value-specific question with business relevance
 
-Hey [First Name],
+**ENHANCED EXAMPLE PATTERNS (MEETING ALL VALIDATION CHECKPOINTS):**
 
-You've been circling back to this for weeks. I get it—feels like a big leap.
-
-Here's what's happening: every week you wait, $7K in potential revenue is walking out the door. A 40-person SaaS team I work with was bleeding $30K monthly before fixing this gap.
-
-They went from 23% close rate to 41% in 6 weeks. Same leads, better system.
-
-Want me to walk you through their exact 90-day playbook? Takes 12 minutes.
-
-— Sheri
-
-Pattern 2 (Anchoring + Future Pacing + Social Proof - 71 words):
-Subject: What if this was working by Friday?
-
-Hey [First Name],
-
-Downloaded the guide, then got pulled into fires. Story of our lives, right?
-
-Picture this: next Friday, you're watching deals close that would've ghosted before. No more "following up on my follow-up" emails.
-
-The 3 B2B agencies that started mid-chaos? They're hitting 35%+ close rates within 8 weeks.
-
-Ready to see what week one looks like?
-
-— Sheri
-
-Pattern 3 (All Three Principles - Loss + Social + Future - 82 words):
-Subject: Every month you wait costs $25K
+Pattern 1 (Enhanced Loss Aversion + Social Proof + Future Pacing - 89 words):
+Subject: Every week you wait costs $7K
 
 Hey [First Name],
 
-You've been researching this for months. Here's the hard truth: every month you wait, $25K in pipeline value slips away untracked.
+You've been circling back to this, trying to decide. Totally normal.
 
-A 60-person agency I work with was losing exactly that—$25K monthly—before implementing this system. Now they're at 38% close rate vs their old 19%.
+Here's what's happening: every week you wait, $7K in potential revenue slips away, which compounds to $91K lost this quarter. A 40-person B2B SaaS team selling marketing automation to agencies was losing $30K monthly during Q4 due to poor lead qualification before closing this gap.
 
-Imagine: 90 days from now, your Q1 pipeline is predictable, not hopeful.
+They transformed from a 23% close rate to 41% in just 6 weeks after implementing their December playbook.
 
-Want to see their exact 90-day transformation roadmap?
+Want to see how their 90-day Q1 playbook could work for your team? Takes just 12 minutes.
 
 — Sheri
 
-**BEHAVIORAL SCIENCE INTEGRATION FORMULAS:**
-- Loss Aversion: "Every [timeframe], [specific cost] is [specific consequence]"
-- Social Proof: "[Specific company size] + [specific industry] + [measurable result]"
-- Future Pacing: "[Specific timeframe] + [specific outcome] + [emotional state]"
+Pattern 2 (Enhanced Compound Loss + Social Proof + Business Context - 92 words):
+Subject: $180K revenue gap by year-end
 
-**FORBIDDEN ELEMENTS:**
-❌ Vague social proof: "clients," "companies," "teams"
-❌ Generic CTAs: "schedule a call," "book a demo"
-❌ Missing loss aversion components
-❌ Weak system snapshots without specific anchors`;
+Hey [First Name],
+
+Downloaded the framework, then got pulled back into fires. Story of every growth leader's life.
+
+The math is simple: $15K monthly while this sits on your desk equals $180K annual pipeline impact. A 35-person e-commerce platform targeting mid-market retailers was hemorrhaging exactly that—$15K monthly—during their Q3 scale-up phase due to conversion bottlenecks.
+
+After implementing our September automation playbook, they went from 19% to 34% close rates in 8 weeks.
+
+Picture your Q4 planning session showing predictable 30%+ conversion rates instead of hopeful projections.
+
+Ready to see their exact implementation roadmap?
+
+— Sheri
+
+Pattern 3 (All Enhanced Principles + Maximum Context - 95 words):
+Subject: $300K revenue shortfall by Q1
+
+Hey [First Name],
+
+You've been evaluating this since Q3 planning. Here's the compound reality: $25K monthly pipeline value slipping away untracked equals a $300K revenue shortfall by Q1 review.
+
+A 60-person marketing agency serving SaaS startups was losing exactly that—$25K monthly—during their post-funding growth phase due to pipeline leakage before implementing our system. After their October playbook launch, they went from 19% to 38% close rates in 6 weeks.
+
+Imagine your Q1 board meeting: predictable pipeline, not crossed fingers.
+
+Want to see their exact 90-day transformation playbook that could work for your Q4 sprint?
+
+— Sheri
+
+**ENHANCED BEHAVIORAL SCIENCE INTEGRATION FORMULAS (MANDATORY COMPLIANCE):**
+- Enhanced Loss Aversion: "Every [timeframe], [immediate cost] [compounds to [cumulative cost] over [business period] during [business context]"
+- Enhanced Social Proof: "[Company size] + [business type] + [target market] + [specific challenge] + [exact metrics] + [timeline context] + [implementation context]"
+- Enhanced Future Pacing: "[Specific timeframe] + [business context (Q1/Q4/planning)] + [specific outcome] + [emotional certainty]"
+
+**ENHANCED VALIDATION REQUIREMENTS:**
+✅ MUST include compound loss calculation (immediate + cumulative)
+✅ MUST include 6+ specific descriptors in social proof
+✅ MUST anchor timelines to business contexts (quarters/seasons/milestones)
+✅ MUST validate all behavioral science elements have specific metrics
+✅ MUST ensure industry/business type specificity in every social proof
+
+**FORBIDDEN ELEMENTS (ENHANCED):**
+❌ Vague social proof: "clients," "companies," "teams" without 6+ descriptors
+❌ Generic CTAs: "schedule a call," "book a demo" without business context
+❌ Missing compound loss aversion calculations
+❌ Timeline anchors without business context ("6 weeks" vs "6 weeks after Q4 implementation")
+❌ Social proof without industry/business type specificity
+❌ Loss aversion without both immediate AND cumulative impact`;
         break;
       case "Promotional":
         categoryInstructions = "Use the promotional email framework to highlight benefits and create desire.";
