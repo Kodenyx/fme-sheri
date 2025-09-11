@@ -1083,9 +1083,10 @@ This framework is designed for conversion emails that reduce decision pressure, 
 **CONVERSION EMAIL STRUCTURE:**
 1. **Signal Mirror** — Call out their current behavior (e.g., "You downloaded the guide. Then… silence.")
 2. **Friction Reflection** — Acknowledge internal tension or hesitation
-3. **System Snapshot** — Show a solution or new approach tied to their friction
-4. **Trust Builder** — Add emotionally resonant proof or relatable stat
-5. **CTA** — Make it specific, low-friction, and valuable (no vague "book a call")
+3. **Loss Aversion (Soft)** — Highlight quiet opportunity cost without drama (e.g., "Meanwhile, 3 hours weekly disappear into manual follow-up work that could be automated.")
+4. **System Snapshot** — Show a solution or new approach tied to their friction
+5. **Trust Builder** — Add emotionally resonant proof or relatable stat
+6. **CTA** — Make it specific, low-friction, and valuable (no vague "book a call")
 
 **CTA Examples:**
 - "Want me to show you the 3 hidden signals in your CRM?"
@@ -1114,7 +1115,7 @@ Hey [First Name],
 
 You downloaded the framework last week, then got pulled into Q4 fires. Story of every growth leader's life.
 
-Most teams stall here because they're waiting for the "perfect" time to implement. Meanwhile, deals slip through cracks in your current system.
+Most teams stall here because they're waiting for the "perfect" time to implement. Meanwhile, 4 hours weekly disappear into manual lead research that could be automated, and qualified prospects drift to competitors while you're stuck in decision loops.
 
 One simple tweak could stop the leak: better lead scoring in your CRM.
 
@@ -1128,6 +1129,8 @@ Subject: Why your follow-ups aren't working
 Hey [First Name],
 
 You rewrote the follow-up 3 times… then never sent it.
+
+Every week, that same cycle steals 2 hours you could spend on high-value prospects. The mental energy alone is exhausting—crafting the "perfect" message while warm leads cool off.
 
 Here's what's happening: you're optimizing message instead of timing. A 75-person fintech company selling to CFOs was doing the same thing—perfect emails, terrible timing. Their reps were sending follow-ups during month-end close when CFOs don't even check non-urgent emails.
 
@@ -1143,6 +1146,8 @@ Subject: Reset your outreach (without starting over)
 Hey [First Name],
 
 Your outreach isn't broken—it's just missing one piece.
+
+Right now, your team spends 6 hours weekly guessing when prospects might respond. That's 24 hours monthly of capacity that could go toward closing warm deals instead of chasing cold ones.
 
 Most teams focus on crafting perfect messages but ignore the data telling them when prospects are actually ready to engage. It's like sending birthday invitations on random days.
 
