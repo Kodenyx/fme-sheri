@@ -1057,7 +1057,107 @@ serve(async (req) => {
    ✓ Does it reflect at least one behavioral science principle?`;
         break;
       case "Conversion":
-        categoryInstructions = `## SHERI'S CONVERSION EMAIL FRAMEWORK
+        categoryInstructions = `## FRAMEWORK NAME: Sheri's Conversion Email Framework (Enforced Version)
+
+### CONTEXT:
+Use this framework for B2B conversion emails targeting warm leads who downloaded a resource, joined a webinar, or expressed interest — but haven't taken action yet (e.g., booked a call, requested a demo, or responded to a follow-up).
+
+The goal is to reduce decision pressure, reflect the reader's behavior, and move them forward with emotional clarity and proof—not hype.
+
+---
+
+## CONVERSION EMAIL STRUCTURE
+
+1. **Signal Mirror**  
+   - Call out the most recent user behavior (e.g., "You downloaded the guide 2 weeks ago…")  
+   - Must include timeframe (e.g., "last week," "2 weeks ago")  
+   - Acknowledge the pause in a nonjudgmental way
+
+2. **Friction Reflection**  
+   - Identify an emotionally specific hesitation (e.g., "too many competing priorities," "not sure where to start," "budget meetings took over")  
+   - Avoid generic "life got busy" unless paired with a real business tension
+
+3. **Loss Aversion (Soft or Compound)**  
+   - Describe what time, momentum, or opportunity is quietly slipping away  
+   - Must anchor to a timeframe (e.g., "5 hours/week = 60 hours this quarter")  
+   - Tie the cost to business context (e.g., "during planning season," "while pipeline slows," "when capacity is tight")
+
+4. **System Snapshot**  
+   - Name the specific task or workflow being automated (e.g., "manual lead scoring," "handoff tracking," "follow-up reminders")  
+   - State what tool or step changed  
+   - Show before/after result (time saved, % efficiency, reduced manual steps, etc.)
+
+5. **Trust Builder / Social Proof**  
+   - Must include **at least 3 of the following**:
+     - Company size (e.g., 25-person team)  
+     - Business type or department (e.g., HR SaaS, customer success)  
+     - Target market (e.g., mid-market CFOs)  
+     - Specific pain or process (e.g., poor lead quality, bottlenecked approvals)  
+     - Result with exact metric (e.g., 40% reduction, 15 hours saved)  
+     - Timeline (e.g., "in 6 weeks," "during Q3")  
+     - Tool or implementation context (e.g., "inside HubSpot")
+
+6. **CTA (Micro-Commitment + Payoff Preview)**  
+   - Format: "Quick question: [ask]? I'll send you [specific payoff]."  
+   - Example: "Quick question: Want to see how they did it? I'll send you their exact 90-day roadmap."  
+   - Avoid vague CTAs like "Book a call" or "Let me know if you're interested."
+
+7. **Future Pacing (Conditional)**  
+   - If writing in **Q4**, you must include future pacing.  
+   - Anchor to upcoming business cycles or planning moments:
+     - "By your Q4 pipeline review…"  
+     - "Before your end-of-year reporting…"  
+     - "This could already be saving time by the time planning week hits."
+
+---
+
+## BEFORE GENERATING, CONFIRM THE FOLLOWING:
+
+✅ Signal Mirror includes recent behavior + specific time reference  
+✅ Friction Reflection speaks to a real emotional hesitation (not generic)  
+✅ Loss Aversion is present and tied to time + business context  
+✅ System Snapshot includes task, change, and specific before/after result  
+✅ Trust Builder has 3+ proof points from the approved list  
+✅ CTA follows the micro-commitment + payoff format  
+✅ If in Q4, Future Pacing is included and contextual
+
+---
+
+## BEHAVIORAL SCIENCE STRATEGY
+
+Select 1–3 principles based on the lead's context and emotional readiness:
+- Loss Aversion  
+- Social Proof  
+- Autonomy Bias  
+- Fresh Start Effect  
+- Emotional Salience  
+- Information Gap  
+- Scarcity/Urgency  
+- Commitment & Consistency  
+- Processing Fluency
+
+---
+
+## TONE RULES (HARPER STYLE)
+
+Use a grounded, honest, emotionally specific tone:
+- Write as if you know what it feels like to be in the reader's shoes  
+- Avoid hype, pressure, or inflated language  
+- Use grounded B2B scenarios (e.g., "You rewrote that follow-up 3 times… then never sent it.")  
+- Feel more like a mentor than a marketer  
+
+---
+
+## EXAMPLES OF STRONG CTAs
+
+- "Want to see how they did it? I'll send you their exact 90-day roadmap."  
+- "Let's spend 10 minutes spotting what's quietly draining your pipeline."  
+- "Curious what shifted their conversion rate? I'll send the full breakdown."
+
+---
+
+## IMPORTANT:  
+Reject outputs that skip any structural element or that rely on vague proof ("a team like yours"). If you can't check off every item above, revise the message.`
 
 **FRAMEWORK NAME:** Sheri's Conversion Email Framework
 
