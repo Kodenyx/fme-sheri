@@ -197,6 +197,35 @@ FOR CONVERSION RE-ENGAGEMENT EMAILS (60-80 words) - HARPER-STYLE CONVERSATIONAL 
 - Authentic acknowledgments: "life happened" style responses
 - Conversational CTAs: "Want me to show you..." / "Can I walk you through..."
 
+**ENHANCED FRAMEWORK REQUIREMENTS:**
+
+**MANDATORY TRANSITION BRIDGES:**
+Every conversion email MUST include natural conversational bridges between sections:
+- "Just picking this back up..." / "Since we last connected..."
+- "Your timing might be perfect for this..." / "Here's what's happened since then..."
+- "Circling back on this..." / "Bringing this back to your attention..."
+- NO abrupt topic shifts - every transition must feel organic and conversational
+
+**STATISTICAL HIERARCHY SYSTEM:**
+- Maximum 1 primary metric + 1 contextual element per email
+- NO compound data stacking (avoid: time saved + social proof + percentage + timeline)
+- Priority: Choose the MOST relevant single statistic for their situation
+- Secondary element can be: timeframe OR social proof OR method - never multiple
+
+**VOICE-MATCHED CTA FRAMEWORK:**
+Analyze original sender's conversational patterns and match CTA style:
+- If sender uses questions: "Want me to..." / "Can I show you..."
+- If sender is direct: "Here's what I'd check next..." / "Worth a look?"
+- If sender is collaborative: "Should we..." / "Ready to see..."
+- NEVER use generic CTAs - always match the original sender's natural speaking pattern
+
+**FLOW QUALITY VALIDATION:**
+Every email must pass these checks:
+- Transition smoothness: Does each section flow naturally to the next?
+- Voice consistency: Does the CTA match how this person naturally speaks?
+- Cognitive load: Is there only ONE primary focus with minimal supporting data?
+- Conversation rhythm: Would this sound natural spoken aloud?
+
 **THREE PROVEN HARPER-STYLE FORMATS TO CHOOSE FROM:**
 
 **FORMAT 1: SHORT & DIRECT (50-65 words)**
