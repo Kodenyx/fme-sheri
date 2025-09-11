@@ -817,37 +817,59 @@ VALIDATION REQUIREMENTS FOR RE-ENGAGEMENT:
 ✅ Must make P.S. contextually relevant to their funnel stage
 ✅ Must pass Harper Voice Check: "Does this sound like a natural conversation?"
 
-PROMOTIONAL (Enhanced Quality Framework):
-Emotional Context Hooks:
-- "You've likely seen your feed flooded with 'AI' this and 'strategy' that — but here's something real"
-- "Everyone's promising quick fixes, but here's what actually works"
-- "Tired of tools that sound good but don't deliver? Here's the exception"
+PROMOTIONAL (Lovable Promotional Email Prompt - Sherry Framework Upgrade):
 
-Clarity of Offer (Enhanced):
-- "A live workshop built to help you map 3 high-impact automations for your business in under 60 minutes"
-- "Walk away with 5 ready-to-implement systems that save 10+ hours weekly"
-- "Get the exact framework that helped 200+ teams cut manual work by 40%"
+USE THIS WHEN:
+You're writing a promotional email to drive immediate action for a time-sensitive offer—such as a product discount, limited-time workshop, launch window, enrollment period, or bonus upgrade.
 
-Reason Why (Value-Driven):
-- "We're only inviting 50 people so we can tailor the session to your ops"
-- "Limited to 30 seats because we're providing 1:1 implementation support"
-- "Small cohort only — so you get real answers to your specific situation"
+GOAL:
+Drive clear action (purchase, sign-up, booking) by blending calm urgency, grounded value, and strategic behavioral nudges.
 
-Future Pacing (Concrete):
-- "By next week, this could already be in place"
-- "In 48 hours, you could have your first automation running"
-- "By Friday, you'll know exactly which processes to tackle first"
+PRE-WRITING CLARITY (Answer First):
+Before writing, answer briefly:
+1. What is the specific offer? (Be tangible: workshop, strategy call, swipe file, etc.)
+2. Why now? (e.g., Q4 planning, live cohort, launch window closing, beta group cap)
+3. What will the reader miss if they wait?
+4. What will their life look like if they act now?
+5. What's their emotional state? (Curious? Overwhelmed? Stuck in indecision?)
+6. How warm is this audience? (Cold lead, warm list, previous buyer?)
 
-Question-Based CTAs:
-- "Want the link?"
-- "Want in?"
-- "Ready to grab your spot?"
-- "Want early access or prefer the replay link?"
+PROMPT STRUCTURE (80–120 words):
 
-Quality Positioning:
-- "This isn't another slide deck — it's implementation-ready"
-- "No theory. Just systems that work"
-- "Built for teams who want results, not more information"
+1. [Hook – Emotional Reality or Contrarian Insight]
+Open with a grounded observation that reflects their headspace. Think:
+- "Your calendar's full. But so is your to-do list."
+- "You probably weren't looking for another event this week… but this one's different."
+
+2. [Offer Clarity – What, Why, What They Get]
+Clearly state the offer and why it matters. Be specific:
+- "This Friday, we're running a live workshop to help B2B teams spot hidden bottlenecks, automate manual tasks, and reclaim 10+ hours a week—without hiring."
+
+3. [Reason Why – Explain the Timing/Urgency]
+Ground the urgency in context or logic:
+- "We're capping it at 20 because we're onboarding live."
+- "It's part of our Q4 planning sprint—this only happens once a year."
+
+4. [Anticipated Regret + Future Pacing – What's at Stake + What's Possible]
+- "Most founders wait until they're buried. But this could be saving you time by next week."
+- "If you wait, you'll still be stuck firefighting this next quarter."
+
+5. [CTA – Behaviorally-Optimized Call-to-Action]
+Use CTA language that reduces friction and mirrors the offer:
+- "Grab your seat before it fills"
+- "Want the 4-minute walkthrough or the full playbook?"
+- "See if you qualify—no payment needed"
+
+6. [Optional – Social Proof Layer or Insight Reframe]
+- "Last time we ran this, 17 founders implemented it in under a week."
+- "You're not the only one stuck—most teams automate in the wrong order. This fixes that."
+
+FINAL FILTERS BEFORE YOU HIT SEND:
+✅ Is the CTA clear, specific, and easy to act on?
+✅ Is the urgency believable (not just fake FOMO)?
+✅ Does the offer feel timely, relevant, and low-friction?
+✅ Is the tone calm, grounded, and written like 1:1 conversation?
+✅ Would someone skimming know what the benefit is by line 2?
 
 RE-ENGAGEMENT (Refined):
 - "Still curious about [their goal]?"
