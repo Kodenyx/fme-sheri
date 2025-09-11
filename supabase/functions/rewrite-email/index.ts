@@ -1129,9 +1129,9 @@ Hey [First Name],
 
 You rewrote the follow-up 3 times… then never sent it.
 
-Here's what's happening: you're optimizing message instead of timing. A B2B team I worked with was doing the same thing—perfect emails, terrible timing.
+Here's what's happening: you're optimizing message instead of timing. A 75-person fintech company selling to CFOs was doing the same thing—perfect emails, terrible timing. Their reps were sending follow-ups during month-end close when CFOs don't even check non-urgent emails.
 
-One small system change: they started tracking engagement windows. 34% more responses in 6 weeks.
+One small system change: they started tracking engagement windows based on their prospects' quarterly cycles. 34% more responses in 6 weeks, plus $180K in pipeline that would've gone cold.
 
 Let's spend 10 mins spotting what's quietly draining your pipeline.
 
@@ -1146,7 +1146,7 @@ Your outreach isn't broken—it's just missing one piece.
 
 Most teams focus on crafting perfect messages but ignore the data telling them when prospects are actually ready to engage. It's like sending birthday invitations on random days.
 
-A SaaS team fixed this with one simple tracking system. Their close rate jumped from 19% to 31% in 8 weeks.
+A 40-person marketing automation company targeting e-commerce brands fixed this with one simple tracking system. They were losing $85K quarterly because their reps were hitting prospects during holiday inventory season when decision-making freezes. Their close rate jumped from 19% to 31% in 8 weeks once they aligned outreach with their prospects' buying cycles.
 
 Quick question: Want to see how they did it? I'll send you their exact playbook.
 
