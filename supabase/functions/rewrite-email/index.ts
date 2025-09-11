@@ -1320,8 +1320,6 @@ IMPORTANT: Ensure the JSON is properly formatted and escaped.`
   }
 });
 
-
-**BEFORE GENERATING, CONFIRM THE FOLLOWING:**
 - Signal Mirror is tied to recent user behavior (download, demo, etc.)
 - Friction Reflection addresses a likely hesitation (overwhelm, timing, prioritization)
 - Loss Aversion is present (soft or compound, with timeframe context)
