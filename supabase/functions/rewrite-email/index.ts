@@ -1057,66 +1057,46 @@ serve(async (req) => {
    ✓ Does it reflect at least one behavioral science principle?`;
         break;
       case "Conversion":
-        categoryInstructions = `## CONVERSION CATEGORY - 95% FRAMEWORK ADHERENCE WITH ENHANCED VALIDATION
+        categoryInstructions = `## SHERI'S CONVERSION EMAIL FRAMEWORK
 
-**CRITICAL PRE-OUTPUT VALIDATION CHECKPOINTS (MANDATORY):**
-Before generating any email, validate ALL requirements:
-□ Compound loss calculation included? (immediate + cumulative impact)
-□ 3+ specific descriptors in social proof? (size + type + market + context)
-□ Timeline anchored to business context? (not just "6 weeks" but "6 weeks after Q4 implementation")
-□ All behavioral science elements have specific metrics?
-□ Industry/business type specificity present in social proof?
-□ Loss aversion includes both immediate AND compound impact?
+**FRAMEWORK NAME:** Sheri's Conversion Email Framework
 
-**ENHANCED BEHAVIORAL SCIENCE INTEGRATION (ALL THREE REQUIRED):**
-Every conversion email MUST incorporate ALL THREE principles with specific validation:
+**CONTEXT:**
+This framework is designed for conversion emails that reduce decision pressure, mirror prospect behavior, and build trust. Ideal for B2B audiences evaluating next steps (booking, trials, demos).
 
-**1. ENHANCED LOSS AVERSION (COMPOUND CALCULATION REQUIRED):**
-MANDATORY Formula: [Immediate Loss] + [Compound Calculation] + [Business Timeline Context]
-- Immediate cost: "$7K per week you wait"
-- Compound calculation: "which compounds to $91K over a quarter"
-- Business context: "during peak Q1 sales season"
-- Enhanced Examples:
-  • "$7K per week you wait = $91K lost this quarter during peak season"
-  • "$15K monthly while this sits on your desk = $180K annual impact on pipeline"
-  • "$25K monthly pipeline value slips away = $300K revenue shortfall by year-end"
+**BEHAVIORAL STRATEGY:**
+- Identify the primary conversion goal
+- Match the reader's emotional state and readiness
+- Apply relevant behavioral principles based on the message type
 
-**2. ENHANCED SOCIAL PROOF (6+ DESCRIPTORS REQUIRED):**
-MANDATORY Formula: [Company Size] + [Business Type] + [Target Market] + [Specific Challenge] + [Exact Metrics] + [Timeline Context] + [Implementation Context]
-- Must include: Business type + size + target market + specific challenge + exact metric + timeline anchor + implementation context
-- Enhanced Example: "A 40-person B2B SaaS team selling marketing automation to agencies was losing $30K monthly in Q4 due to poor lead qualification, but after implementing our December playbook, they went from 23% to 41% close rates in 6 weeks"
-- Enhanced Validation: Must include minimum 6 specific descriptors
+**CORE PRINCIPLES (Choose 1–3):**
+- Loss Aversion
+- Social Proof
+- Autonomy Bias
+- Cognitive Fluency
+- Emotional Salience
+- Fresh Start Effect
+- Commitment & Consistency
+- Information Gap
+- Scarcity/Urgency
 
-**3. ENHANCED FUTURE PACING (BUSINESS CONTEXT REQUIRED):**
-MANDATORY Formula: [Specific Outcome] + [Implementation Timeframe] + [Business Context]
-- Must anchor to business contexts: quarters, seasons, launches, planning cycles
-- Enhanced Examples:
-  • "Want to see how their Q4 playbook could work for your team?"
-  • "By your Q1 planning session, this system could already be driving results"
-  • "Picture your pipeline review next month showing 35%+ close rates"
+**CONVERSION EMAIL STRUCTURE:**
+1. **Signal Mirror** — Call out their current behavior (e.g., "You downloaded the guide. Then… silence.")
+2. **Friction Reflection** — Acknowledge internal tension or hesitation
+3. **System Snapshot** — Show a solution or new approach tied to their friction
+4. **Trust Builder** — Add emotionally resonant proof or relatable stat
+5. **CTA** — Make it specific, low-friction, and valuable (no vague "book a call")
 
-**ENHANCED SYSTEM SNAPSHOT REQUIREMENTS (MANDATORY 6+ ELEMENTS):**
-Replace ALL vague references with specific anchors:
-✓ Company size: "40-person," "3-agency," "60-person team"
-✓ Business type: "B2B SaaS," "marketing agency," "e-commerce platform"
-✓ Target market: "selling to agencies," "serving SMBs," "targeting enterprise"
-✓ Specific challenge: "poor lead qualification," "pipeline leakage," "long sales cycles"
-✓ Exact metrics: "23% to 41%," "$30K monthly savings," "8-week transformation"
-✓ Timeline anchor: "Q4 implementation," "December playbook," "6-week sprint"
-✓ Implementation context: "mid-planning cycle," "during scale-up," "post-funding round"
+**CTA Examples:**
+- "Want me to show you the 3 hidden signals in your CRM?"
+- "Let's spend 10 mins spotting what's quietly draining your pipeline."
 
-**ENHANCED VALIDATION FORMULAS (MANDATORY COMPLIANCE):**
-- Loss Aversion Formula: [Immediate Loss ($X/timeframe)] + [Compound Impact ($Y/period)] + [Business Context (Q1/Q4/season)]
-- Social Proof Formula: [Size] + [Type] + [Market] + [Challenge] + [Metrics] + [Timeline] + [Context] (minimum 6 elements)
-- Timeline Anchor Formula: [Timeframe] + [Business Context] (quarters/seasons/milestones/planning cycles)
+**TONE RULES (Harper Style):**
+- Calm, emotionally specific, grounded in real B2B moments
+- Avoid hype, fear, or inflated promises
+- Use micro-moments and sensory language ("You rewrote the follow-up 3 times… then never sent it.")
 
-**CONVERSION SIGNAL EMAIL STRUCTURE (ENHANCED WITH VALIDATION):**
-1. **Signal Mirror**: Name specific behavior with business context
-2. **Enhanced Loss Aversion Hook**: Immediate + compound cost with business timeline
-3. **Enhanced System Snapshot**: 6+ specific descriptors required
-4. **Enhanced Social Proof**: Company details + transformation + business context
-5. **Enhanced Future Pacing**: Specific timeline + business context + outcome
-6. **Enhanced CTA Framework: Micro-Commitment + Payoff Preview**
+**ENHANCED CTA FRAMEWORK: Micro-Commitment + Payoff Preview**
    - Start with low-stakes question or micro-commitment
    - Follow immediately with specific payoff preview
    - Format: "Quick question: [micro-commitment]? I'll send you [specific payoff preview]."
@@ -1125,74 +1105,59 @@ Replace ALL vague references with specific anchors:
      * "30-second question: Ready for the breakdown? I'll share the 3-step framework they used."
      * "Two-minute question: Curious about their results? I'll send you the complete case study with screenshots."
 
-**ENHANCED EXAMPLE PATTERNS (MEETING ALL VALIDATION CHECKPOINTS):**
+**EXAMPLE PATTERNS:**
 
-Pattern 1 (Enhanced Loss Aversion + Social Proof + Future Pacing - 89 words):
-Subject: Every week you wait costs $7K
-
-Hey [First Name],
-
-You've been circling back to this, trying to decide. Totally normal.
-
-Here's what's happening: every week you wait, $7K in potential revenue slips away, which compounds to $91K lost this quarter. A 40-person B2B SaaS team selling marketing automation to agencies was losing $30K monthly during Q4 due to poor lead qualification before closing this gap.
-
-They transformed from a 23% close rate to 41% in just 6 weeks after implementing their December playbook.
-
-Want to see how their 90-day Q1 playbook could work for your team? Takes just 12 minutes.
-
-— Sheri
-
-Pattern 2 (Enhanced Compound Loss + Social Proof + Business Context - 92 words):
-Subject: $180K revenue gap by year-end
+Pattern 1 (Signal Mirror + Friction Reflection - 78 words):
+Subject: You downloaded the guide. Then… silence.
 
 Hey [First Name],
 
-Downloaded the framework, then got pulled back into fires. Story of every growth leader's life.
+You downloaded the framework last week, then got pulled into Q4 fires. Story of every growth leader's life.
 
-The math is simple: $15K monthly while this sits on your desk equals $180K annual pipeline impact. A 35-person e-commerce platform targeting mid-market retailers was hemorrhaging exactly that—$15K monthly—during their Q3 scale-up phase due to conversion bottlenecks.
+Most teams stall here because they're waiting for the "perfect" time to implement. Meanwhile, deals slip through cracks in your current system.
 
-After implementing our September automation playbook, they went from 19% to 34% close rates in 8 weeks.
+One simple tweak could stop the leak: better lead scoring in your CRM.
 
-Picture your Q4 planning session showing predictable 30%+ conversion rates instead of hopeful projections.
-
-Ready to see their exact implementation roadmap?
+Want me to show you the 3 hidden signals that predict which leads will actually close?
 
 — Sheri
 
-Pattern 3 (All Enhanced Principles + Maximum Context - 95 words):
-Subject: $300K revenue shortfall by Q1
+Pattern 2 (System Snapshot + Trust Builder - 82 words):
+Subject: Why your follow-ups aren't working
 
 Hey [First Name],
 
-You've been evaluating this since Q3 planning. Here's the compound reality: $25K monthly pipeline value slipping away untracked equals a $300K revenue shortfall by Q1 review.
+You rewrote the follow-up 3 times… then never sent it.
 
-A 60-person marketing agency serving SaaS startups was losing exactly that—$25K monthly—during their post-funding growth phase due to pipeline leakage before implementing our system. After their October playbook launch, they went from 19% to 38% close rates in 6 weeks.
+Here's what's happening: you're optimizing message instead of timing. A B2B team I worked with was doing the same thing—perfect emails, terrible timing.
 
-Imagine your Q1 board meeting: predictable pipeline, not crossed fingers.
+One small system change: they started tracking engagement windows. 34% more responses in 6 weeks.
 
-Want to see their exact 90-day transformation playbook that could work for your Q4 sprint?
+Let's spend 10 mins spotting what's quietly draining your pipeline.
 
 — Sheri
 
-**ENHANCED BEHAVIORAL SCIENCE INTEGRATION FORMULAS (MANDATORY COMPLIANCE):**
-- Enhanced Loss Aversion: "Every [timeframe], [immediate cost] [compounds to [cumulative cost] over [business period] during [business context]"
-- Enhanced Social Proof: "[Company size] + [business type] + [target market] + [specific challenge] + [exact metrics] + [timeline context] + [implementation context]"
-- Enhanced Future Pacing: "[Specific timeframe] + [business context (Q1/Q4/planning)] + [specific outcome] + [emotional certainty]"
+Pattern 3 (Fresh Start + Emotional Salience - 85 words):
+Subject: Reset your outreach (without starting over)
 
-**ENHANCED VALIDATION REQUIREMENTS:**
-✅ MUST include compound loss calculation (immediate + cumulative)
-✅ MUST include 6+ specific descriptors in social proof
-✅ MUST anchor timelines to business contexts (quarters/seasons/milestones)
-✅ MUST validate all behavioral science elements have specific metrics
-✅ MUST ensure industry/business type specificity in every social proof
+Hey [First Name],
 
-**FORBIDDEN ELEMENTS (ENHANCED):**
-❌ Vague social proof: "clients," "companies," "teams" without 6+ descriptors
-❌ Generic CTAs: "schedule a call," "book a demo" without business context
-❌ Missing compound loss aversion calculations
-❌ Timeline anchors without business context ("6 weeks" vs "6 weeks after Q4 implementation")
-❌ Social proof without industry/business type specificity
-❌ Loss aversion without both immediate AND cumulative impact`;
+Your outreach isn't broken—it's just missing one piece.
+
+Most teams focus on crafting perfect messages but ignore the data telling them when prospects are actually ready to engage. It's like sending birthday invitations on random days.
+
+A SaaS team fixed this with one simple tracking system. Their close rate jumped from 19% to 31% in 8 weeks.
+
+Quick question: Want to see how they did it? I'll send you their exact playbook.
+
+— Sheri
+
+**IMPLEMENTATION GUIDELINES:**
+- Choose 1-3 behavioral principles that best match the prospect's current state
+- Keep language natural and conversational, not formulaic
+- Focus on specific, actionable outcomes rather than generic benefits
+- Use real moments and micro-tensions the reader recognizes
+- Make the CTA curious and valuable, not pushy or generic`;
         break;
       case "Promotional":
         categoryInstructions = "Use the promotional email framework to highlight benefits and create desire.";
