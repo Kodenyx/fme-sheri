@@ -1159,7 +1159,166 @@ Use a grounded, honest, emotionally specific tone:
 ## IMPORTANT:  
 Reject outputs that skip any structural element or that rely on vague proof ("a team like yours"). If you can't check off every item above, revise the message.`
 
-**FRAMEWORK NAME:** Sheri's Conversion Email Framework
+        break;
+      case "Promotional":
+        categoryInstructions = "Use the promotional email framework to highlight benefits and create desire.";
+        break;
+      case "Re-engagement":
+        categoryInstructions = `FOR RE-ENGAGEMENT EMAILS - HARPER-STYLE CONVERSATIONAL FRAMEWORK:
+
+CRITICAL INSTRUCTION: You MUST write like Harper speaking naturally, not following a template. This should sound like a real person having a conversation, not corporate copy.
+
+MANDATORY HARPER VOICE REQUIREMENTS:
+1. **Natural Conversational Flow**: Write like Harper would speak - casual, confident, human
+2. **"You're Here, Here's What Helps" Positioning**: NEVER say "we've done this" - always focus on what helps the reader
+3. **Authentic Signal Mirroring**: Use natural phrases like "You might've meant to revisit this..." or "This might be better timing"
+4. **Casual Authority Tone**: Use "No overhaul. No long calls. Just X." style confidence
+5. **Harper-Style CTAs**: "Want me to show you..." / "Can I walk you through..." (conversational questions, not formal requests)
+
+HARPER VOICE PATTERNS TO USE:
+- "You leaned in — then paused. Totally fair."
+- "You explored the demo — then life happened. Makes sense."
+
+Since-Then Social Proof:
+- "Since then, a 15-person marketing ops team selling to SMBs unlocked 30% more efficiency in Q1—just by automating one step in their follow-up"
+- "In the meantime, teams similar to yours have cut reporting time by 60%"
+- "Since we last talked, we've helped 4 teams automate their biggest bottleneck"
+
+CRITICAL VOICE REQUIREMENTS:
+- Use specific "mirror moments" like "You tried the demo... then got pulled into sprint planning"
+- Include emotional acknowledgments like "It's the busiest quarter of the year. I get it."
+- Position as a helper, not seller: "here's what helps" not "here's what we offer"
+- Sound like someone who's been in their shoes
+
+FRAMEWORK STRUCTURE:
+1. **Signal Mirror**: Acknowledge their engagement, then the pause
+2. **Validation**: Normalize their behavior/situation  
+3. **Fresh Evidence**: New social proof since they last engaged
+4. **Value Bridge**: Connect their stall point to a solution
+5. **Conversational CTA**: Ask a question that leads to value
+
+EXAMPLE STARTERS:
+- "You checked out the demo 2 weeks ago... then budget meetings happened."
+- "You joined the webinar last month — then Q4 chaos hit."
+
+EXAMPLE VALIDATION:
+- "Happens to the best of us. Q4 = survival mode."
+- "Totally fair. Rolling out new tools during busy season feels risky."
+
+EXAMPLE FRESH EVIDENCE:
+- "Since then, 3 teams like yours automated their biggest workflow bottleneck"
+- "In the meantime, we've helped teams cut manual work by 40%"
+
+EXAMPLE VALUE BRIDGE:
+- "The thing is, most teams wait for the 'perfect' timing... which never comes"
+- "Here's what's interesting: the teams moving now are the ones who'll have breathing room by January"
+
+EXAMPLE CONVERSATIONAL CTA:
+- "Want me to show you what they automated first?"
+- "Curious how they're already saving 6 hours a week?"
+
+VALIDATION CHECKLIST:
+1. Does it sound like Harper having a real conversation?
+2. Does it acknowledge their behavior without judgment?  
+3. Are CTAs conversational questions like "Want me to show you..."?
+4. Does the P.S. specify the exact funnel stall stage?
+5. Is the tone casual authority, not corporate?
+
+ORIGINALITY REQUIREMENT:
+- You MUST create fresh, natural language
+- NEVER use the exact example phrases verbatim
+- Draw inspiration from the patterns but make it sound genuinely conversational
+- Each email should feel like Harper speaking in the moment, not reciting a script`;
+        break;
+      default:
+        categoryInstructions = "Use the most appropriate framework based on the email content.";
+    }
+
+    const response = await fetch('https://api.openai.com/v1/chat/completions', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${openAIApiKey}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        model: 'gpt-4o',
+        messages: [
+          { 
+            role: 'system', 
+            content: `You are an expert email copywriter specializing in conversion-focused emails.
+
+${categoryInstructions}
+
+CRITICAL WRITING INSTRUCTIONS:
+1. NEVER include placeholder text like [First Name] in the output
+2. Write as if speaking to a real person - use actual conversational language
+3. Be specific and actionable, not generic
+4. Focus on behavioral psychology and emotional triggers
+5. Always end with a clear, compelling call-to-action
+
+VALIDATION INSTRUCTIONS:
+Your response MUST be valid JSON with these exact fields:
+{
+  "rewrittenEmail": "The complete rewritten email with subject line",
+  "psychologicalTriggers": "List of behavioral psychology principles used",
+  "structureImprovements": "Explanation of how the structure was improved",
+  "clarifyingQuestions": "Any questions that would help improve the email further (optional)"
+}
+
+IMPORTANT: Ensure the JSON is properly formatted and escaped.` 
+          },
+          { role: 'user', content: `Please rewrite this email using the ${emailCategory} framework:\n\n${emailContent}` }
+        ],
+        max_tokens: 2000,
+        temperature: 0.7
+      }),
+    });
+
+    console.log('OpenAI API response status:', response.status);
+
+    if (!response.ok) {
+      const errorText = await response.text();
+      console.error('OpenAI API error:', errorText);
+      throw new Error(`OpenAI API error: ${response.status} ${errorText}`);
+    }
+
+    const data = await response.json();
+    console.log('Successfully parsed JSON response');
+
+    const content = data.choices[0].message.content;
+    
+    try {
+      const parsedResponse = JSON.parse(content);
+      
+      return new Response(JSON.stringify(parsedResponse), {
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
+    } catch (parseError) {
+      console.error('Error parsing OpenAI response as JSON:', parseError);
+      console.log('Raw response:', content);
+      
+      // Return a structured response even if parsing fails
+      return new Response(JSON.stringify({
+        rewrittenEmail: content,
+        psychologicalTriggers: "Unable to parse structured response",
+        structureImprovements: "Unable to parse structured response",
+        clarifyingQuestions: "Unable to parse structured response"
+      }), {
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
+    }
+
+  } catch (error: any) {
+    console.error('Error in rewrite-email function:', error);
+    return new Response(
+      JSON.stringify({ error: error.message }),
+      {
+        status: 500,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      }
+    );
+  }
+});
 
 **CONTEXT:**
 This framework is designed for conversion emails that reduce decision pressure, mirror prospect behavior, and build trust. Ideal for B2B audiences evaluating next steps (booking, trials, demos).
