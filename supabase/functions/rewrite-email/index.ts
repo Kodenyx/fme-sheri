@@ -1064,6 +1064,24 @@ serve(async (req) => {
 **CONTEXT:**
 This framework is designed for conversion emails that reduce decision pressure, mirror prospect behavior, and build trust. Ideal for B2B audiences evaluating next steps (booking, trials, demos).
 
+**BEFORE GENERATING, CONFIRM THE FOLLOWING:**
+- Signal Mirror is tied to recent user behavior (download, demo, etc.)
+- Friction Reflection addresses a likely hesitation (overwhelm, timing, prioritization)
+- Loss Aversion is present (soft or compound, with timeframe context)
+- System Snapshot includes a task, tool/process, and business result
+- Trust Builder includes 3+ proof points: company size, market, pain, metric, timeline, context
+- CTA is a micro-commitment with a payoff preview
+
+**IF RELEVANT, ADD FUTURE PACING LIKE:**
+"By your Q4 planning cycle…"  
+"By your next pipeline review…"  
+"This could already be saving hours by the time your October reports are due."
+
+**IN THE SYSTEM SNAPSHOT, DESCRIBE:**
+- What was automated?
+- What tool or step changed?
+- What was the before/after result?
+
 **BEHAVIORAL STRATEGY:**
 - Identify the primary conversion goal
 - Match the reader's emotional state and readiness
