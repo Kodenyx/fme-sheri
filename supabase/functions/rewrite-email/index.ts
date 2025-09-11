@@ -1116,7 +1116,14 @@ Replace ALL vague references with specific anchors:
 3. **Enhanced System Snapshot**: 6+ specific descriptors required
 4. **Enhanced Social Proof**: Company details + transformation + business context
 5. **Enhanced Future Pacing**: Specific timeline + business context + outcome
-6. **Low Friction CTA**: Value-specific question with business relevance
+6. **Enhanced CTA Framework: Micro-Commitment + Payoff Preview**
+   - Start with low-stakes question or micro-commitment
+   - Follow immediately with specific payoff preview
+   - Format: "Quick question: [micro-commitment]? I'll send you [specific payoff preview]."
+   - Examples:
+     * "Quick question: Want to see how they did it? I'll send you their exact 90-day roadmap."
+     * "30-second question: Ready for the breakdown? I'll share the 3-step framework they used."
+     * "Two-minute question: Curious about their results? I'll send you the complete case study with screenshots."
 
 **ENHANCED EXAMPLE PATTERNS (MEETING ALL VALIDATION CHECKPOINTS):**
 
