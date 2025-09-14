@@ -1123,8 +1123,7 @@ Subject: Only 50 seats. Built for your next big move.
 You've likely seen your feed flooded with "AI" this and "strategy" that — but here's something real:
 A live workshop built to help you map 3 high-impact automations for your business in under 60 minutes.
 
-Why now?
-We're only inviting 50 people so we can tailor the session to your ops. This isn't another slide deck — it's implementation-ready.
+We're capping it at 50 to keep the session hands-on and make sure you leave with workflows already mapped. This isn't another slide deck — it's implementation-ready.
 
 By next week, this could already be in place.
 
