@@ -961,15 +961,21 @@ Examples:
 
 ⸻
 
-3. [Reason Why – Real Rationale for Scarcity or Timing]
+3. [Contextual Timing – Replace "Why now?" with Value-Driven Urgency]
 
-Offer a logical reason for the limited window, cohort size, or urgency.
+Instead of opening with "Why now?", weave urgency into the sentence naturally. Make it feel smart, respectful, and relevant — not generic.
 
-Examples:
+✅ Do this:
+	•	Start with a cause-and-effect phrase (e.g., "To keep it hands-on…" or "This cohort is designed for…")
+	•	Tie urgency to outcomes, not scarcity
 
-"We're capping it at 50 spots to keep the session interactive."
-"Only open this week so teams can roll it out before Q4."
-"Beta access closes Friday—we're finalizing the case study cohort."
+✅ Examples to use instead of "Why now?":
+	•	"We're capping it at 50 to keep the session hands-on and make sure you leave with workflows already mapped."
+	•	"This cohort is designed to get you up and running before Q4 planning hits."
+	•	"We're running it live so you can ask questions and leave with your first automation built."
+	•	"Beta closes Friday so we can finalize results for the first case study cohort."
+	•	"We limit it to 50 so we can offer real support—not just slides."
+	•	"The goal is to leave the session with your next 3 systems in motion—so we're keeping it small."
 
 ⸻
 
