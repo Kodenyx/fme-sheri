@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { usePricingTier } from './usePricingTier';
+import { useUnlimitedUsers } from './useUnlimitedUsers';
 
 export const useUsageTracking = () => {
   const [usageCount, setUsageCount] = useState(0);
@@ -14,6 +15,7 @@ export const useUsageTracking = () => {
   const [isBetaUser, setIsBetaUser] = useState(false);
   
   const { pricingData } = usePricingTier();
+  const { unlimitedEmails } = useUnlimitedUsers();
 
   const effectiveMonthlyLimit = pricingData?.foundersProgram?.is_available ? 60 : monthlyLimit;
 
@@ -51,9 +53,7 @@ export const useUsageTracking = () => {
       
       // Check if beta user or unlimited user and ensure proper email format
       if (storedEmail) {
-        const betaEmails = ['demo@kodenyx.com', 'sheri@sheriotto.com'];
-        const unlimitedEmails = ['aarti.munjal@gmail.com'];
-        const isBeta = betaEmails.includes(storedEmail) || unlimitedEmails.includes(storedEmail);
+        const isBeta = unlimitedEmails.includes(storedEmail);
         setIsBetaUser(isBeta);
         console.log('Beta user status:', isBeta);
       }
@@ -163,9 +163,7 @@ export const useUsageTracking = () => {
     localStorage.setItem('userEmail', newEmail);
     
     // Check if beta user or unlimited user
-    const betaEmails = ['demo@kodenyx.com', 'sheri@sheriotto.com'];
-    const unlimitedEmails = ['aarti.munjal@gmail.com'];
-    const isBeta = betaEmails.includes(newEmail) || unlimitedEmails.includes(newEmail);
+    const isBeta = unlimitedEmails.includes(newEmail);
     setIsBetaUser(isBeta);
     console.log('Updated beta user status:', isBeta);
     

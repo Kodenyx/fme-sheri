@@ -217,6 +217,33 @@ export type Database = {
         }
         Relationships: []
       }
+      unlimited_users: {
+        Row: {
+          created_at: string
+          email: string
+          id: string
+          is_active: boolean
+          reason: string | null
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          id?: string
+          is_active?: boolean
+          reason?: string | null
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          id?: string
+          is_active?: boolean
+          reason?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
       user_usage_tracking: {
         Row: {
           bonus_credits: number
