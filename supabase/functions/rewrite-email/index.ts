@@ -141,6 +141,7 @@ Analyze the input email to determine the optimal psychological approach:
 - CLARITY: Cutting through noise with straightforward value
 - RECIPROCITY: Leading with value before making any ask
 - AUTONOMY: Giving them complete control and choice
+- OPENER VARIATION: Rotate opener tone and structure across outputs — avoid reusing the same 1–3 lines. Vary phrasing, rhythm, templates, and behavioral levers to keep each message fresh and human.
 
 STEP 2: LAYER BEHAVIORAL SCIENCE
 Apply appropriate psychological triggers based on the core angle:
@@ -1168,7 +1169,8 @@ serve(async (req) => {
    ✓ Is it 1–2 sentences max for the opener?
    ✓ Does it sound novel and human, not generic or robotic?
    ✓ Does it mirror what the reader is likely thinking?
-   ✓ Does it reflect at least one behavioral science principle?`;
+   ✓ Does it reflect at least one behavioral science principle?
+   ✓ Did I vary the opener's phrasing, rhythm, and framing (vs past outputs), while keeping the strategy intact?`;
         break;
       case "Conversion":
         categoryInstructions = `## FRAMEWORK NAME: Sheri's Conversion Email Framework (Enforced Version)
