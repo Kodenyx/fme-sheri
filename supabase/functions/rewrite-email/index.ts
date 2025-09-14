@@ -520,84 +520,135 @@ Want me to show you how that looks on one of yours?
 
 – Sheri
 
-FOR PROMOTIONAL EMAILS (80-120 words) - ENHANCED WITH QUALITY FRAMEWORK:
+FOR PROMOTIONAL EMAILS (80–120 words) – ENHANCED WITH QUALITY FRAMEWORK (v2)
 
-**PROMOTIONAL STRATEGY:**
+⸻
+
+PROMOTIONAL STRATEGY:
+
 Promotional emails must reflect 4 conversion principles with enhanced quality standards based on successful examples:
 
-**1. CLARITY OF OFFER (First 2-3 Lines) - ENHANCED**
+⸻
+
+1. CLARITY OF OFFER (First 2–3 Lines) – ENHANCED
+
 Recipients must immediately know:
-- What the specific transformation or outcome is (not just "get access")
-- Concrete deliverable with time frame (e.g., "map 3 high-impact automations for your business in under 60 minutes")
-- What makes this different from everything else they've seen
-- Use specificity over generic benefits ("Get the full strategy + swipe files" → "A live workshop built to help you map X outcome in Y timeframe")
+	•	What the specific transformation or outcome is (not just "get access")
+	•	Concrete deliverable with timeframe
+(e.g., "map 3 high-impact automations for your business in under 60 minutes")
+	•	What makes this different from everything else they've seen
+	•	Use specificity over generic benefits
+("Get the full strategy + swipe files" → "A live workshop built to help you map X outcome in Y timeframe")
 
-**2. REASON WHY THEORY - ENHANCED**
+NEW UPGRADE →
+If the offer includes automation, time savings, or workflow improvement, include 2–3 concrete examples (e.g., "lead follow-up," "internal handoffs," "client onboarding") to show exactly what tasks or pain points are being addressed.
+
+⸻
+
+2. REASON WHY THEORY – ENHANCED
+
 Include believable, contextual rationale for why offer exists now:
-- Connect scarcity to value delivery: "We're only inviting 50 people so we can tailor the session to your ops"
-- Frame limitations as quality enhancement, not artificial scarcity
-- Examples: "This isn't another slide deck — it's implementation-ready"
-- Avoid generic "limited time" — use specific context like "testing with early adopters," "before wide release," "intimate setting for customization"
+	•	Connect scarcity to value delivery:
+"We're only inviting 50 people so we can tailor the session to your ops"
+	•	Frame limitations as quality-enhancing, not arbitrary
+	•	Examples:
+	•	"This isn't another slide deck — it's implementation-ready"
+	•	"We're testing this with early adopters before the wider rollout"
+	•	"Small group = personalized automation mapping"
 
-**3. ANTICIPATED REGRET + FUTURE PACING - ENHANCED**
-Trigger cost of inaction with concrete future state:
-- Specific timeframe future pacing: "By next week, this could already be in place"
-- Paint clear before/after: "Most people wait until it's too late, but..."
-- Connect to their current reality: "You've likely seen your feed flooded with 'AI' this and 'strategy' that — but here's something real"
-- Make the future state tangible and immediate
+⸻
 
-**4. BEHAVIORAL CTA ARCHITECTURE - ENHANCED**
-Use autonomy-driven, question-based framing:
-- Start with question: "Want the link?" / "Want in?" 
-- Follow with clear action: "Grab your seat here"
-- Avoid demanding language ("Register now") — use curiosity-driven invitations
-- Create choice architecture when possible: "Want early access or prefer the replay link?"
-- Reduce commitment friction with soft language that maintains urgency
+3. ANTICIPATED REGRET + FUTURE PACING – ENHANCED
 
-**ENHANCED PROMOTIONAL STRUCTURE (80-120 words):**
-1. **Emotional Context Hook**: Acknowledge their current reality/frustration
-2. **Clarity of Offer**: Specific transformation + timeframe + what makes it different
-3. **Reason Why**: Contextual explanation for limitation/timing that enhances value
-4. **Future Pacing**: Concrete "by X time, this could be..." statement
-5. **Question-Based CTA**: Curiosity-driven question followed by clear action
-6. **Social Proof Element** (optional): Others already taking action
+Trigger cost of inaction with a concrete future state:
+	•	Future pacing with timeframe:
+"By next week, this could already be in place"
+	•	Paint a clear before/after:
+"Most people wait until it's too late, but…"
+	•	Connect to the reader's reality:
+"You've likely seen your feed flooded with 'AI' this and 'strategy' that — but here's something real"
 
-**ENHANCED BEHAVIORAL SCIENCE PRINCIPLES FOR PROMOTIONAL:**
-- **Emotional Context Setting**: Acknowledge current market noise/frustration
-- **Transformation Specificity**: Concrete outcomes with timeframes
-- **Value-Driven Scarcity**: Limitations that enhance value delivery
-- **Contextual Reason Why**: Logical, believable rationale for timing
-- **Future State Visualization**: Specific "by next week" future pacing
-- **Question-Based Autonomy**: CTAs that start with questions to reduce resistance
-- **Implementation Reality**: Position as "implementation-ready" vs generic training
-- **Quality Over Quantity Positioning**: Small group for better outcomes
+NEW UPGRADE →
+If applicable, quantify the transformation (e.g., "10+ hours saved per week," "40% reduction in manual steps") to increase perceived value and urgency.
 
-**PROMOTIONAL EXAMPLE (Enhanced Quality - 89 words):**
-Subject: Only 50 seats. Built for your next big move.
+⸻
 
-Hey {{firstName}},
+4. BEHAVIORAL CTA ARCHITECTURE – ENHANCED
 
-You've likely seen your feed flooded with "AI" this and "strategy" that — but here's something real:
-A live workshop built to help you map 3 high-impact automations for your business in under 60 minutes.
+Use autonomy-driven, low-friction, benefit-mirroring CTA formats:
+	•	Start with a soft question:
+"Want the link?" / "Want in?"
+	•	Follow with clear action:
+"Grab your seat here"
 
-Why now?
-We're only inviting 50 people so we can tailor the session to your ops. This isn't another slide deck — it's implementation-ready.
+NEW UPGRADE → Use CTA styles from the categories below:
 
-By next week, this could already be in place.
+➤ CTA Examples – Mirror the Benefit:
+	•	→ Map your automations
+	•	→ Start cutting manual work next week
+	•	→ Build your lead engine live
 
-Want the link?
+➤ CTA Examples – Reduce Friction:
+	•	→ See how it works (no signup needed)
+	•	→ Grab your walkthrough — no pressure
+	•	→ Want the 4-minute demo or the full playbook?
 
-→ Grab your seat here
+➤ CTA Examples – Add Scarcity/Timing:
+	•	→ Claim one of 50 spots (before it closes)
+	•	→ Save your seat before we go live
 
-— Sheri
+Avoid generic CTAs like "Click here" or "Register now." Make it match the promise and feel low-commitment.
 
-**QUALITY CHECKLIST FOR PROMOTIONAL:**
-✅ Opens with emotional context/market reality
-✅ Specific transformation with timeframe (not vague benefits)
-✅ Contextual reason why that enhances value
-✅ Concrete future pacing with specific timeline
-✅ Question-based CTA with clear action
-✅ "Implementation-ready" positioning vs generic training
+⸻
+
+🔑 SUBJECT LINE PROMPTS (NEW SECTION)
+
+Choose a subject line that reflects:
+	•	A pain point or urgency
+	•	A tangible transformation
+	•	Or a smart contrarian POV
+
+Subject Line Examples:
+	•	Still buried in manual work?
+	•	Trim 10+ hours/week using AI (live session)
+	•	Overwhelmed? This 60-minute AI sprint might fix it.
+	•	What 50 teams are doing with AI next week
+	•	Only 50 spots. Built to move the needle.
+
+⸻
+
+✍️ ENHANCED PROMOTIONAL STRUCTURE (80–120 words)
+	1.	Emotional Context Hook – Acknowledge their current reality/frustration
+	2.	Clarity of Offer – Specific transformation + timeframe + task examples + what makes it different
+	3.	Reason Why – Logical explanation for timing or limitation that enhances value
+	4.	Future Pacing – "By next week, this could already be running…"
+	5.	Behavioral CTA – Question-based + action line (mirror the offer, reduce friction, or present a choice)
+	6.	Social Proof (Optional) – Others already taking action or peer context
+
+⸻
+
+🔎 ENHANCED BEHAVIORAL SCIENCE PRINCIPLES (INTEGRATED)
+	•	Emotional Context Setting
+	•	Transformation Specificity (with workflow examples)
+	•	Scarcity for Value (not pressure)
+	•	Believable Reason Why
+	•	Concrete Future Pacing (with quantifiable outcomes)
+	•	Question-Based Autonomy CTAs
+	•	Implementation Reality Framing
+	•	Small Cohort Framing = Quality Over Quantity
+
+⸻
+
+✅ PROMOTIONAL QUALITY CHECKLIST
+
+✅ Opens with grounded emotional context or insight
+✅ Specific transformation with task examples + timeframe
+✅ Contextual "Reason Why" that enhances value
+✅ Concrete future pacing ("by next week…")
+✅ CTA mirrors benefit, reduces friction, or offers choices
+✅ "Implementation-ready" vs. generic training
+✅ Scarcity tied to delivery quality
+✅ Subject line matches pain, benefit, or urgency
 ✅ Scarcity connected to value delivery, not arbitrary limits
 
 FOR RE-ENGAGEMENT EMAILS (🔧 ENHANCED HARPER-STYLE RE-ENGAGEMENT FRAMEWORK):
