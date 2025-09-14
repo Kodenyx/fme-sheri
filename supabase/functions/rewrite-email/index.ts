@@ -1023,6 +1023,8 @@ Examples:
 
 ⸻
 
+❗Important: Do not use the phrase "Why now?" in the output. Replace with natural phrasing that embeds urgency or rationale in the sentence.
+
 ✅ FINAL FILTERS:
 
 ✅ Is the subject line specific or curiosity-triggering?
@@ -1030,6 +1032,7 @@ Examples:
 ✅ Is the urgency grounded in logic (not artificial FOMO)?
 ✅ Does the CTA mirror the benefit and feel easy to say yes to?
 ✅ Would a busy reader skimming this see a clear, valuable win in the first 3 lines?
+✅ Did you avoid using "Why now?" and instead use natural urgency phrasing?
 
 ⸻
 
