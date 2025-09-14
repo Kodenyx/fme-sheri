@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { usePricingTier } from './usePricingTier';
@@ -15,7 +14,7 @@ export const useUsageTracking = () => {
   const [isBetaUser, setIsBetaUser] = useState(false);
   
   const { pricingData } = usePricingTier();
-  const { unlimitedEmails } = useUnlimitedUsers();
+  const { isUnlimitedUser } = useUnlimitedUsers();
 
   const effectiveMonthlyLimit = pricingData?.foundersProgram?.is_available ? 60 : monthlyLimit;
 
@@ -53,7 +52,7 @@ export const useUsageTracking = () => {
       
       // Check if beta user or unlimited user and ensure proper email format
       if (storedEmail) {
-        const isBeta = unlimitedEmails.includes(storedEmail);
+        const isBeta = isUnlimitedUser(storedEmail);
         setIsBetaUser(isBeta);
         console.log('Beta user status:', isBeta);
       }
@@ -162,8 +161,8 @@ export const useUsageTracking = () => {
     setEmail(newEmail);
     localStorage.setItem('userEmail', newEmail);
     
-    // Check if beta user or unlimited user
-    const isBeta = unlimitedEmails.includes(newEmail);
+    // Check if beta user or unlimited user using the hook
+    const isBeta = isUnlimitedUser(newEmail);
     setIsBetaUser(isBeta);
     console.log('Updated beta user status:', isBeta);
     

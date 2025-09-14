@@ -7,32 +7,42 @@ export const useUnlimitedUsers = () => {
 
   const fetchUnlimitedUsers = async () => {
     try {
+      setLoading(true);
       const { data, error } = await supabase
         .from('unlimited_users')
         .select('email')
         .eq('is_active', true);
-
-      if (error) {
-        console.error('Error fetching unlimited users:', error);
-        return;
+      
+      if (!error && data) {
+        const emails = data.map(user => user.email);
+        setUnlimitedEmails(emails);
+        console.log('Fetched unlimited users:', emails);
+        return emails;
       }
-
-      const emails = data?.map(user => user.email) || [];
-      setUnlimitedEmails(emails);
     } catch (error) {
-      console.error('Error in fetchUnlimitedUsers:', error);
+      console.error('Error fetching unlimited users:', error);
     } finally {
       setLoading(false);
     }
+    return [];
   };
 
   useEffect(() => {
     fetchUnlimitedUsers();
   }, []);
 
+  const isUnlimitedUser = (email: string) => {
+    return unlimitedEmails.includes(email);
+  };
+
+  const refreshUnlimitedUsers = () => {
+    fetchUnlimitedUsers();
+  };
+
   return {
     unlimitedEmails,
     loading,
-    refresh: fetchUnlimitedUsers
+    isUnlimitedUser,
+    refreshUnlimitedUsers
   };
 };
