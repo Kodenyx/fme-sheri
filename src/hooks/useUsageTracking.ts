@@ -204,7 +204,7 @@ export const useUsageTracking = () => {
 
   // Determine access control
   const needsEmailCapture = !email && usageCount >= 1;
-  const needsPaywall = email && !isSubscribed && usageCount >= (5 + bonusCredits);
+  const needsPaywall = email && !isSubscribed && !isBetaUser && usageCount >= (5 + bonusCredits);
 
   console.log('Current usage tracking state:', {
     usageCount,
