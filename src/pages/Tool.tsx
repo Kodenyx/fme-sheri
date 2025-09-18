@@ -235,7 +235,7 @@ const Tool = () => {
       
       toast({
         title: "Success!",
-        description: "Your email has been enhanced successfully.",
+        description: "Your email has been enhanced successfully. We handle the fix, you handle the final touch.",
       });
       
     } catch (error) {
@@ -469,14 +469,6 @@ const Tool = () => {
                 </div>
               </div>
 
-              {/* Subheadline area */}
-              <div className="text-center mb-12">
-                {showMakeover && makeover && (
-                  <p className="text-xl md:text-2xl italic" style={{ color: '#3B1E5E' }}>
-                    We handle the fix, you handle the final touch.
-                  </p>
-                )}
-              </div>
               
               {/* Button area */}
               <div className="text-center mb-16">
@@ -503,12 +495,7 @@ const Tool = () => {
                   </form>
                 ) : (
                   <div className="space-y-3">
-                    <div className="text-center">
-                      <p className="text-2xl font-semibold mb-2" style={{ color: '#3B1E5E' }}>
-                        Want to keep the momentum going?
-                      </p>
-                    </div>
-                    <Button 
+                    <Button
                       onClick={handleReset}
                       className="text-white font-bold text-2xl py-7 px-16 rounded-full shadow-lg transform transition-all hover:scale-105 hover:opacity-90 animate-pulse"
                       style={{ backgroundColor: '#E19013' }}
@@ -528,6 +515,26 @@ const Tool = () => {
               {/* Analysis section */}
               {showMakeover && makeover && (analysis.psychologicalTriggers.length > 0 || analysis.structureImprovements.length > 0) && (
                 <div className="rounded-2xl p-8" style={{ backgroundColor: '#f9fafb' }}>
+                  {analysis.questions && analysis.questions.length > 0 && (
+                    <div className="mb-8">
+                      <h3 className="text-xl font-semibold mb-4" style={{ color: '#E19013' }}>Questions for Better Results:</h3>
+                      <div className="space-y-2">
+                        {analysis.questions.map((question, index) => (
+                          <div 
+                            key={index} 
+                            className="p-3 rounded-lg" 
+                            style={{ 
+                              backgroundColor: '#fff3cd', 
+                              color: '#856404'
+                            }}
+                          >
+                            {question}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
                   <h2 className="text-3xl font-bold mb-8" style={{ color: '#3B1E5E' }}>What Changed & Why</h2>
                   
                   <div className="grid md:grid-cols-2 gap-8">
@@ -555,26 +562,6 @@ const Tool = () => {
                       </div>
                     </div>
                   </div>
-
-                  {analysis.questions && analysis.questions.length > 0 && (
-                    <div className="mt-8">
-                      <h3 className="text-xl font-semibold mb-4" style={{ color: '#E19013' }}>Questions for Better Results:</h3>
-                      <div className="space-y-2">
-                        {analysis.questions.map((question, index) => (
-                          <div 
-                            key={index} 
-                            className="p-3 rounded-lg" 
-                            style={{ 
-                              backgroundColor: '#fff3cd', 
-                              color: '#856404'
-                            }}
-                          >
-                            {question}
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
                 </div>
               )}
             </div>
