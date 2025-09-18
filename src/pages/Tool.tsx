@@ -352,9 +352,6 @@ const Tool = () => {
                   in Under 3 Seconds
                 </span>
               </h1>
-              <p className="text-xl md:text-2xl max-w-4xl mx-auto" style={{ color: '#3B1E5E' }}>
-                Give us your email. We'll make it convert better.
-              </p>
               
               {/* Usage Status and Email Category Selection - Side by Side */}
               <div className="mt-8 flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-8 max-w-4xl mx-auto">
@@ -396,23 +393,21 @@ const Tool = () => {
                 </div>
                 
                 {/* Email Category Selection */}
-                <div className="flex-1 bg-white/80 rounded-2xl px-6 py-4 border border-gray-200 min-w-0">
-                  <div className="flex items-center justify-center gap-4">
-                    <label htmlFor="email-category" className="text-sm font-medium flex-shrink-0" style={{ color: '#3B1E5E' }}>
-                      Email Type:
-                    </label>
-                    <Select value={emailCategory} onValueChange={(value) => { setEmailCategory(value); try { sessionStorage.setItem('emailToolCategory', value); } catch {} }}>
-                      <SelectTrigger className="w-48 bg-white border-gray-300 focus:border-gray-400">
-                        <SelectValue placeholder="Select email type" />
-                      </SelectTrigger>
-                      <SelectContent className="bg-white border-gray-300 shadow-lg z-50">
-                        <SelectItem value="Cold Outreach">Cold Outreach</SelectItem>
-                        <SelectItem value="Conversion">Conversion</SelectItem>
-                        <SelectItem value="Promotional">Promotional</SelectItem>
-                        <SelectItem value="Re-engagement">Re-engagement</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
+                <div className="flex-1 flex items-center justify-center gap-4 bg-white/80 rounded-full px-6 py-3 min-w-0">
+                  <label htmlFor="email-category" className="text-sm font-medium flex-shrink-0" style={{ color: '#3B1E5E' }}>
+                    Email Type:
+                  </label>
+                  <Select value={emailCategory} onValueChange={(value) => { setEmailCategory(value); try { sessionStorage.setItem('emailToolCategory', value); } catch {} }}>
+                    <SelectTrigger className="w-48 bg-white border-gray-300 focus:border-gray-400">
+                      <SelectValue placeholder="Select email type" />
+                    </SelectTrigger>
+                    <SelectContent className="bg-white border-gray-300 shadow-lg z-50">
+                      <SelectItem value="Cold Outreach">Cold Outreach</SelectItem>
+                      <SelectItem value="Conversion">Conversion</SelectItem>
+                      <SelectItem value="Promotional">Promotional</SelectItem>
+                      <SelectItem value="Re-engagement">Re-engagement</SelectItem>
+                    </SelectContent>
+                  </Select>
                 </div>
               </div>
             </div>
