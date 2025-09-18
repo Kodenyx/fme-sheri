@@ -356,8 +356,9 @@ const Tool = () => {
                 Give us your email. We'll make it convert better.
               </p>
               
-              {/* Usage Status */}
-              <div className="mt-8 flex justify-center">
+              {/* Usage Status and Email Category Selection - Side by Side */}
+              <div className="mt-8 flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-8">
+                {/* Usage Status */}
                 <div className="flex items-center gap-4 bg-white/80 rounded-full px-6 py-3">
                   <BarChart3 className="w-5 h-5" style={{ color: '#E19013' }} />
                   <span style={{ color: '#3B1E5E' }}>
@@ -393,10 +394,8 @@ const Tool = () => {
                     </span>
                   )}
                 </div>
-              </div>
-              
-              {/* Email Category Selection */}
-              <div className="mt-8 flex justify-center">
+                
+                {/* Email Category Selection */}
                 <div className="bg-white/80 rounded-2xl px-6 py-4 border border-gray-200">
                   <div className="flex items-center gap-4">
                     <label htmlFor="email-category" className="text-sm font-medium" style={{ color: '#3B1E5E' }}>
