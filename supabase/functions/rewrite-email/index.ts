@@ -881,136 +881,155 @@ VALIDATION REQUIREMENTS FOR RE-ENGAGEMENT:
 ✅ Must make P.S. contextually relevant to their funnel stage
 ✅ Must pass Harper Voice Check: "Does this sound like a natural conversation?"
 
-✅ LOVABLE PROMOTIONAL EMAIL PROMPT (FINAL UPGRADED VERSION)
+✅ LOVABLE PROMOTIONAL EMAIL FRAMEWORK (V3 - FINAL)
 
-🧠 USE THIS WHEN:
+🧠 WHEN TO USE THIS
 
-You're writing a promotional email for a time-sensitive offer — like a live event, bonus, cohort, tool, or free walkthrough — and want the reader to say yes based on clear value, believable urgency, and real transformation.
+Use this prompt to write promotional emails for time-sensitive offers — including live sessions, limited-time bonuses, cohort enrollments, trials, or upgrades.
+
+The goal is to drive immediate, low-friction action by:
+	•	Clarifying the outcome
+	•	Explaining why it's available now
+	•	Painting a near-term transformation
+	•	Showing what they lose by waiting
+	•	Proving others are already acting
+	•	Mirroring the benefit in the CTA
+	•	Sounding calm, grounded, and real
 
 ⸻
 
-🔍 PRE-WRITING CLARITY (Answer First):
-	1.	What's the exact offer?
-(e.g., live AI sprint, onboarding bonus, swipe file, audit session)
-	2.	What's the clear benefit or transformation?
-(e.g., 3 mapped automations, 10+ saved hours/week, smoother follow-up, less ops drag)
-	3.	What makes this offer DIFFERENT?
-(e.g., hands-on vs. passive webinar, built by ops experts, built-for-you mapping, no fluff)
-	4.	What makes this timely?
-(e.g., capped at 50, Q4 planning, early access ends Friday, new release window)
-	5.	What will they REGRET if they wait?
-(e.g., hours lost to manual work, pipeline delay, momentum stalls, team burnout)
-	6.	What peer validation or SOCIAL PROOF can you include?
-(e.g., 47 teams used this, SaaS and service companies already seeing results)
-	7.	How warm is this reader?
-(e.g., cold prospect, re-engaged download, past buyer, referred contact)
-	8.	List 1–2 specific workflow examples your ICP would care about
-(e.g., follow-up triggers in HubSpot, client handoffs in Airtable, cold email tracking)
+🔍 PRE-WRITING QUESTIONS (REQUIRED)
+	1.	What is the exact offer?
+(e.g., live AI sprint, swipe file, audit call, onboarding bonus)
+	2.	What makes it timely?
+(e.g., only 50 seats, closes Friday, beta ending, Q4 prep)
+	3.	What specific result will they walk away with?
+(e.g., 3 mapped automations, lead scoring system, 10+ hours saved/week)
+	4.	What's the cost of inaction?
+(e.g., more wasted time, delays continue, pipeline still leaks)
+	5.	What social proof can we include?
+(e.g., "Used by 47 SaaS founders," "Saved 12+ hours/week")
+	6.	How warm is this lead?
+(e.g., cold lead, curious prospect, past buyer, re-engagement)
 
 ⸻
 
 ✍️ EMAIL STRUCTURE (80–120 words)
 
-1. [HOOK – Pain, Curiosity, or Pattern Interrupt]
-Lead with a tension-filled question, unmet goal, or pattern-breaking line.
+1. HOOK → Emotional Tension + Curiosity
+Start with a subject line and opening that names a relatable frustration or unmet goal — and points to a better way.
 
 ✅ Examples:
-	•	"Still buried in manual work? This 60-minute sprint might fix it."
-	•	"You didn't ask for this — but it might buy back your time next week."
-	•	"Another AI session? We hated them too — so we rebuilt the format."
-	•	"You're doing everything right — except reclaiming your time."
+	•	"Still buried in manual work? This 60-minute session fixes that."
+	•	"Another AI webinar? We rolled our eyes too — until we built this."
 
 ⸻
 
-2. [CLARITY OF OFFER – What They'll Get + What It Fixes]
-Be ultra-specific. What exactly will they walk away with? What pain does it solve?
+2. OFFER CLARITY → What They'll Walk Away With
+Describe the offer in plain language. State exactly what they'll get and what pain it solves.
 
 ✅ Examples:
-	•	"In under 60 minutes, you'll map 3 automations — like [workflow A] and [workflow B] — based on your team's setup."
-	•	"You'll walk away with plug-and-play systems that reclaim 10+ hours/week — no new hire needed."
+	•	"In 60 minutes, you'll map 3 automations — like lead scoring, onboarding triggers, and follow-up workflows — tailored to your ops bottlenecks."
+	•	"You'll walk away with plug-and-play systems that free up 10+ hours a week — no hiring needed."
+
+📌 MANDATORY: Include 2–3 specific automation or workflow examples.
 
 ⸻
 
-3. [REASON WHY – Logical Urgency / Timing]
-Why this offer now? Tie it to cohort size, timing windows, planning cycles, etc. No vague urgency.
+3. REASON WHY → Logical Rationale for the Timing
+Explain why the offer exists now. Tie it to real-world constraints or business logic — not artificial urgency.
 
 ✅ Examples:
-	•	"We're capping it at 50 to keep it hands-on and support real workflow mapping."
-	•	"This sprint is designed to get you live before Q4 planning hits."
-	•	"We're finalizing the early access group this week — beta closes Friday."
+	•	"We're capping it at 50 to keep it hands-on and focused."
+	•	"This cohort is designed to help you go live before Q4 planning."
+	•	"Beta closes Friday — we're finalizing the case study group."
 
 ⸻
 
-4. [FUTURE PACING – Near-Term 'After' State]
-Paint a vivid picture of what their world looks like within 7–10 days.
+4. FUTURE PACING → Near-Term Transformation
+Paint a believable "after state" they could reach within a week if they take action.
 
 ✅ Examples:
-	•	"By next week, your team could already be running smoother handoffs and follow-ups."
-	•	"In days, your lead scoring and follow-up reminders could be running in the background."
+	•	"By next week, your CRM could be scoring leads while your team closes deals."
+	•	"In days, your follow-ups and reminders could be running automatically — no extra ops drag."
 
 ⸻
 
-5. [ANTICIPATED REGRET – Cost of Delay]
-Name what they lose by waiting. Highlight the hidden cost.
+5. ANTICIPATED REGRET → Cost of Delay
+Call out what they lose by waiting. Show how the problem compounds or stays stuck.
 
 ✅ Examples:
-	•	"Every week delayed is another 5 hours lost to manual work."
-	•	"Skip this, and your ops team is still chasing leads manually next month."
+	•	"Most teams wait until they're overwhelmed. That's when it's too late."
+	•	"Skip this, and you'll still be buried in the same manual work next month."
 
 ⸻
 
-6. [SOCIAL PROOF / ADOPTION SIGNAL]
-Show that others have already acted — or that this isn't unproven.
+6. SOCIAL PROOF → Show Others Are Acting
+Use names, numbers, or segments to show others are winning.
 
 ✅ Examples:
-	•	"Last cohort: 47 founders joined — most were stuck in the same spot you are now."
-	•	"Teams like NimbusHR and CloudPilot saw 28% faster deals in 90 days."
+	•	"Last cohort: 47 founders joined — most were stuck in the same place you are now."
+	•	"Used by SaaS teams like NimbusHR and CloudPilot to reclaim 10+ hours/week."
+
+📌 MANDATORY: Include one adoption or trust signal.
 
 ⸻
 
-7. [CTA – Mirrors the Benefit + Reduces Friction]
-Your CTA should reflect the outcome. Bonus: Give a simple choice if appropriate.
+7. CTA → Mirrors the Payoff + Reduces Friction
+Make the CTA reflect what they get, not just what they do. Use clarity, choice, and ease.
 
 ✅ Examples:
-	•	"→ Save your 60-minute AI seat (spots filling)"
-	•	"→ Claim your system — and stop wasting 10+ hours/week"
-	•	"→ Want the 4-minute demo or full walkthrough? Pick one."
-	•	"→ Grab your spot — walk away with 3 automations mapped"
+	•	"→ Walk away with your first automation live"
+	•	"→ Save your seat — start freeing up 10+ hours this week"
+	•	"→ Want the 4-minute demo or the full walkthrough?"
+
+📌 MANDATORY: CTA must mirror the benefit, and reduce mental load.
 
 ⸻
 
 ✅ FINAL CHECKLIST
-	•	✅ Is the subject line scroll-stopping or emotionally relevant?
-	•	✅ Is the offer outcome-based and specific?
-	•	✅ Is there a clear, logical reason for timing (no hype)?
-	•	✅ Is a near-term transformation painted (7–14 days)?
-	•	✅ Is the cost of delay clearly implied or stated?
-	•	✅ Is peer validation or adoption included?
-	•	✅ Does the CTA mirror the result, not just the action?
-	•	✅ Tone is calm, specific, B2B grounded — not hypey or vague.
+	•	Subject line = scroll-stopping + pain-based or benefit-based
+	•	Offer = outcome-based and includes 2–3 examples
+	•	Urgency = logical and tied to value (not fake FOMO)
+	•	Future = clear near-term transformation within 7–10 days
+	•	Regret = cost of delay is specific and emotional
+	•	Proof = others are using this and it works
+	•	CTA = payoff-focused, low friction, emotionally safe
+	•	Tone = calm, clear, peer-to-peer, grounded in B2B pain
 
 ⸻
 
-🧠 BEHAVIORAL PRINCIPLES BAKED IN:
-	•	Reason Why Theory
-	•	Loss Aversion
-	•	Social Proof
-	•	Scarcity (when real)
-	•	Processing Fluency
-	•	Temporal Anchoring
-	•	CTA Framing (mirrors benefit, soft choice framing)
+🧠 TONE & VOICE REQUIREMENTS
+
+Write in a grounded, emotionally intelligent, founder-to-founder tone.
+
+"You rewrote that follow-up three times… then never sent it."
+"You keep checking the CRM like it's going to magically fix itself."
+"This isn't another slide deck — it's friction removed."
+
+Avoid fluff, corporate language, or vague FOMO. Be real. Be helpful.
 
 ⸻
 
-❌ NEVER USE THESE PHRASES:
+❌ FORBIDDEN PHRASES
 	•	"Why now?"
 	•	"I'm excited to share…"
 	•	"Packed with insights"
-	•	"Join us for a strategic session"
-	•	"Value-packed training"
-	•	"Time is running out!"
-	•	Corporate buzzwords / vague CTAs ("Click here to register")
-	•	Pleading tone ("You don't want to miss this!")
+	•	"Join me for a value-packed session"
+	•	"Strategic session to unlock X"
+	•	Artificial urgency like "Time's running out!" without a reason
+
+⸻
+
+🧠 BEHAVIORAL SCIENCE LEVERS (BAKED IN)
+	•	Reason Why Theory → logical urgency
+	•	Loss Aversion → cost of delay
+	•	Social Proof → trust + momentum
+	•	Processing Fluency → simple, clear copy
+	•	CTA Architecture → mirrors the payoff
+	•	Fresh Start Effect → tied to calendar moments (Q4, hiring, budget)
+	•	Choice Framing → CTA offers agency when relevant
+	•	Salience → outcomes visible in first 3 lines
 
 CRITICAL FORMATTING RULES:
 - NEVER use em dashes (—) in any email makeovers
