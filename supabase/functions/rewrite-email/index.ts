@@ -881,155 +881,95 @@ VALIDATION REQUIREMENTS FOR RE-ENGAGEMENT:
 ✅ Must make P.S. contextually relevant to their funnel stage
 ✅ Must pass Harper Voice Check: "Does this sound like a natural conversation?"
 
-✅ LOVABLE PROMOTIONAL EMAIL FRAMEWORK (V3 - FINAL)
+🔁 UPGRADED LOVABLE PROMOTIONAL EMAIL PROMPT
 
-🧠 WHEN TO USE THIS
-
-Use this prompt to write promotional emails for time-sensitive offers — including live sessions, limited-time bonuses, cohort enrollments, trials, or upgrades.
-
-The goal is to drive immediate, low-friction action by:
-	•	Clarifying the outcome
-	•	Explaining why it's available now
-	•	Painting a near-term transformation
-	•	Showing what they lose by waiting
-	•	Proving others are already acting
-	•	Mirroring the benefit in the CTA
-	•	Sounding calm, grounded, and real
+(Direct Replacement — Layer 1 + Layer 2 baked in)
 
 ⸻
 
-🔍 PRE-WRITING QUESTIONS (REQUIRED)
+✅ WHEN TO USE:
+
+Use this when you're writing a time-sensitive promotional email to drive immediate action (live workshop, cohort, audit, limited trial, bonus, etc.) — and want it to convert based on clarity, urgency, and conviction.
+
+⸻
+
+🔍 BEFORE WRITING — ANSWER THESE:
 	1.	What is the exact offer?
-(e.g., live AI sprint, swipe file, audit call, onboarding bonus)
-	2.	What makes it timely?
-(e.g., only 50 seats, closes Friday, beta ending, Q4 prep)
-	3.	What specific result will they walk away with?
-(e.g., 3 mapped automations, lead scoring system, 10+ hours saved/week)
-	4.	What's the cost of inaction?
-(e.g., more wasted time, delays continue, pipeline still leaks)
-	5.	What social proof can we include?
-(e.g., "Used by 47 SaaS founders," "Saved 12+ hours/week")
-	6.	How warm is this lead?
-(e.g., cold lead, curious prospect, past buyer, re-engagement)
+(e.g., 60-min AI sprint, automation audit, onboarding bonus, swipe file)
+	2.	What makes this timely?
+(e.g., capped seats, ends Friday, pre-Q4, limited capacity)
+	3.	What tangible result will they walk away with?
+(e.g., 3 mapped automations, 10+ hours saved/week, less ops drag)
+	4.	What's at risk if they delay?
+(e.g., missed deal flow, manual chaos continues, bottlenecks repeat)
+	5.	Who else has done this successfully?
+(e.g., "47 SaaS founders last quarter," "cut 40% manual ops in 6 weeks")
+	6.	What emotional state is this reader in?
+(e.g., skeptical, curious, busy, overwhelmed, delayed decision-maker)
 
 ⸻
 
-✍️ EMAIL STRUCTURE (80–120 words)
-
-1. HOOK → Emotional Tension + Curiosity
-Start with a subject line and opening that names a relatable frustration or unmet goal — and points to a better way.
-
-✅ Examples:
-	•	"Still buried in manual work? This 60-minute session fixes that."
-	•	"Another AI webinar? We rolled our eyes too — until we built this."
-
-⸻
-
-2. OFFER CLARITY → What They'll Walk Away With
-Describe the offer in plain language. State exactly what they'll get and what pain it solves.
-
-✅ Examples:
-	•	"In 60 minutes, you'll map 3 automations — like lead scoring, onboarding triggers, and follow-up workflows — tailored to your ops bottlenecks."
-	•	"You'll walk away with plug-and-play systems that free up 10+ hours a week — no hiring needed."
-
-📌 MANDATORY: Include 2–3 specific automation or workflow examples.
-
-⸻
-
-3. REASON WHY → Logical Rationale for the Timing
-Explain why the offer exists now. Tie it to real-world constraints or business logic — not artificial urgency.
-
-✅ Examples:
-	•	"We're capping it at 50 to keep it hands-on and focused."
-	•	"This cohort is designed to help you go live before Q4 planning."
-	•	"Beta closes Friday — we're finalizing the case study group."
+🧠 LAYER 1 STRUCTURE (Base Email — 80–120 words)
+	1.	[HOOK → Pain + Curiosity]
+Name a relatable frustration. Create tension. Hint at a real fix.
+	•	"Still rewriting the same email every week? Let AI handle it in 60 minutes."
+	2.	[CLARITY → What They'll Get + What It Fixes]
+Spell out exactly what's included and what problem it solves.
+	•	"In 60 minutes, map 3 automations like lead scoring and follow-up — built for your ops."
+	3.	[REASON WHY → Why It Exists Now]
+Ground urgency in logic. Avoid artificial FOMO.
+	•	"We're capping it at 50 to keep it implementation-ready — not another slide deck."
+	4.	[FUTURE PACING → Life After This]
+Paint the transformation in 7–10 days.
+	•	"By next week, your team could already be running smoother handoffs — no extra hires."
+	5.	[REGRET → Cost of Delay]
+Show what hurts if they wait. Tap loss aversion.
+	•	"Skip this, and you're still wasting 10+ hours/week on manual work next month."
+	6.	[SOCIAL PROOF]
+Signal others are acting. Bonus if they match the reader's segment.
+	•	"47 founders joined last sprint — most were where you are now."
+	7.	[CTA → Mirror the Outcome]
+CTA should reflect the benefit. Reduce friction.
+	•	"→ Grab your seat — map your first automation live"
 
 ⸻
 
-4. FUTURE PACING → Near-Term Transformation
-Paint a believable "after state" they could reach within a week if they take action.
+🧠 LAYER 2 UPGRADES (Emotional Clarity + Salience)
 
-✅ Examples:
-	•	"By next week, your CRM could be scoring leads while your team closes deals."
-	•	"In days, your follow-ups and reminders could be running automatically — no extra ops drag."
+Add these instructions after generating the first draft:
 
-⸻
-
-5. ANTICIPATED REGRET → Cost of Delay
-Call out what they lose by waiting. Show how the problem compounds or stays stuck.
-
-✅ Examples:
-	•	"Most teams wait until they're overwhelmed. That's when it's too late."
-	•	"Skip this, and you'll still be buried in the same manual work next month."
+Now revise the email to upgrade emotional clarity and conversion. Apply these 4 punch-ups:
+	1.	Identity Hook — Lead with a "you do this, but…" insight. Call out how smart readers get stuck.
+	•	"You keep checking your CRM like it's going to fix itself — time to change that."
+	2.	Visceral Regret Line — Add a line that makes inaction hurt:
+	•	"Every week you delay, you lose 5+ hours you'll never get back."
+	3.	High-Stakes Future Pacing — Swap soft transformation for one with revenue/time/stress at stake.
+	•	"By next week, your follow-ups could be running — while you focus on closing."
+	4.	Founder-Real CTA — End with a CTA that sounds like it came from a sharp founder, not a marketer.
+	•	"→ Save your spot — and buy back your next 10 hours"
 
 ⸻
 
-6. SOCIAL PROOF → Show Others Are Acting
-Use names, numbers, or segments to show others are winning.
+✨ TONE GUIDANCE:
 
-✅ Examples:
-	•	"Last cohort: 47 founders joined — most were stuck in the same place you are now."
-	•	"Used by SaaS teams like NimbusHR and CloudPilot to reclaim 10+ hours/week."
+Keep tone calm, clear, conviction-led. Speak like a sharp operator or trusted peer — not a hyped-up marketer.
+	•	"You've done the work. But the systems are still manual."
+	•	"You're not lazy. You're stuck in tools that weren't built for speed."
 
-📌 MANDATORY: Include one adoption or trust signal.
-
-⸻
-
-7. CTA → Mirrors the Payoff + Reduces Friction
-Make the CTA reflect what they get, not just what they do. Use clarity, choice, and ease.
-
-✅ Examples:
-	•	"→ Walk away with your first automation live"
-	•	"→ Save your seat — start freeing up 10+ hours this week"
-	•	"→ Want the 4-minute demo or the full walkthrough?"
-
-📌 MANDATORY: CTA must mirror the benefit, and reduce mental load.
+Avoid:
+	•	"Excited to share…"
+	•	"Packed with insights…"
+	•	"Unlock your potential…"
 
 ⸻
 
-✅ FINAL CHECKLIST
-	•	Subject line = scroll-stopping + pain-based or benefit-based
-	•	Offer = outcome-based and includes 2–3 examples
-	•	Urgency = logical and tied to value (not fake FOMO)
-	•	Future = clear near-term transformation within 7–10 days
-	•	Regret = cost of delay is specific and emotional
-	•	Proof = others are using this and it works
-	•	CTA = payoff-focused, low friction, emotionally safe
-	•	Tone = calm, clear, peer-to-peer, grounded in B2B pain
-
-⸻
-
-🧠 TONE & VOICE REQUIREMENTS
-
-Write in a grounded, emotionally intelligent, founder-to-founder tone.
-
-"You rewrote that follow-up three times… then never sent it."
-"You keep checking the CRM like it's going to magically fix itself."
-"This isn't another slide deck — it's friction removed."
-
-Avoid fluff, corporate language, or vague FOMO. Be real. Be helpful.
-
-⸻
-
-❌ FORBIDDEN PHRASES
-	•	"Why now?"
-	•	"I'm excited to share…"
-	•	"Packed with insights"
-	•	"Join me for a value-packed session"
-	•	"Strategic session to unlock X"
-	•	Artificial urgency like "Time's running out!" without a reason
-
-⸻
-
-🧠 BEHAVIORAL SCIENCE LEVERS (BAKED IN)
-	•	Reason Why Theory → logical urgency
-	•	Loss Aversion → cost of delay
-	•	Social Proof → trust + momentum
-	•	Processing Fluency → simple, clear copy
-	•	CTA Architecture → mirrors the payoff
-	•	Fresh Start Effect → tied to calendar moments (Q4, hiring, budget)
-	•	Choice Framing → CTA offers agency when relevant
-	•	Salience → outcomes visible in first 3 lines
+✅ FINAL FILTERS:
+	•	Is the hook emotionally resonant, not generic?
+	•	Is the offer clear, specific, and outcome-based?
+	•	Is the urgency logical and grounded?
+	•	Is the regret visceral, not just implied?
+	•	Is the CTA benefit-driven and friction-free?
+	•	Does the tone feel like a sharp peer, not a coach or salesperson?
 
 CRITICAL FORMATTING RULES:
 - NEVER use em dashes (—) in any email makeovers
