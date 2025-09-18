@@ -447,7 +447,7 @@ const Tool = () => {
                     )}
                   </div>
                   <div 
-                    className="min-h-80 border-2 rounded-xl p-4"
+                    className="min-h-80 border-2 rounded-xl p-4 overflow-y-auto"
                     style={{ 
                       backgroundColor: showMakeover && makeover ? '#ffffff' : '#f9fafb', 
                       borderColor: showMakeover && makeover ? '#10b981' : '#d1d5db'
