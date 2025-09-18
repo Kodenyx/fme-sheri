@@ -357,11 +357,11 @@ const Tool = () => {
               </p>
               
               {/* Usage Status and Email Category Selection - Side by Side */}
-              <div className="mt-8 flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-8">
+              <div className="mt-8 flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-8 max-w-4xl mx-auto">
                 {/* Usage Status */}
-                <div className="flex items-center gap-4 bg-white/80 rounded-full px-6 py-3">
-                  <BarChart3 className="w-5 h-5" style={{ color: '#E19013' }} />
-                  <span style={{ color: '#3B1E5E' }}>
+                <div className="flex-1 flex items-center justify-center gap-4 bg-white/80 rounded-full px-6 py-3 min-w-0">
+                  <BarChart3 className="w-5 h-5 flex-shrink-0" style={{ color: '#E19013' }} />
+                  <span style={{ color: '#3B1E5E' }} className="truncate">
                     {isBetaUser ? (
                       <strong>Beta Access - Unlimited</strong>
                     ) : isSubscribed ? (
@@ -371,34 +371,34 @@ const Tool = () => {
                     )}
                   </span>
                   {bonusCredits > 0 && !isBetaUser && (
-                    <span className="text-sm bg-green-100 text-green-800 px-2 py-1 rounded-full">
+                    <span className="text-sm bg-green-100 text-green-800 px-2 py-1 rounded-full flex-shrink-0">
                       +{bonusCredits} earned
                     </span>
                   )}
                   {!isSubscribed && !isBetaUser && remainingFreeUses > 0 && (
-                    <span className="text-sm text-green-600">
+                    <span className="text-sm text-green-600 flex-shrink-0">
                       {remainingFreeUses} remaining
                     </span>
                   )}
                   {email && !isBetaUser && (
-                    <span className="text-sm text-gray-600">• {email}</span>
+                    <span className="text-sm text-gray-600 truncate">• {email}</span>
                   )}
                   {isBetaUser && (
-                    <span className="text-sm bg-blue-100 text-blue-800 px-2 py-1 rounded-full">
+                    <span className="text-sm bg-blue-100 text-blue-800 px-2 py-1 rounded-full flex-shrink-0">
                       Beta Access
                     </span>
                   )}
                   {isSubscribed && !isBetaUser && (
-                    <span className="text-sm bg-green-100 text-green-800 px-2 py-1 rounded-full">
+                    <span className="text-sm bg-green-100 text-green-800 px-2 py-1 rounded-full flex-shrink-0">
                       {isFoundersProgram ? "Founder's Program" : "Premium Plan"}
                     </span>
                   )}
                 </div>
                 
                 {/* Email Category Selection */}
-                <div className="bg-white/80 rounded-2xl px-6 py-4 border border-gray-200">
-                  <div className="flex items-center gap-4">
-                    <label htmlFor="email-category" className="text-sm font-medium" style={{ color: '#3B1E5E' }}>
+                <div className="flex-1 bg-white/80 rounded-2xl px-6 py-4 border border-gray-200 min-w-0">
+                  <div className="flex items-center justify-center gap-4">
+                    <label htmlFor="email-category" className="text-sm font-medium flex-shrink-0" style={{ color: '#3B1E5E' }}>
                       Email Type:
                     </label>
                     <Select value={emailCategory} onValueChange={(value) => { setEmailCategory(value); try { sessionStorage.setItem('emailToolCategory', value); } catch {} }}>
