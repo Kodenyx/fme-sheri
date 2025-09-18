@@ -881,163 +881,134 @@ VALIDATION REQUIREMENTS FOR RE-ENGAGEMENT:
 ✅ Must make P.S. contextually relevant to their funnel stage
 ✅ Must pass Harper Voice Check: "Does this sound like a natural conversation?"
 
-✅ LOVABLE PROMOTIONAL EMAIL PROMPT (Upgraded Version)
+✅ LOVABLE PROMOTIONAL EMAIL PROMPT (Final Upgraded Version)
 
 🧠 USE THIS WHEN:
 
-You're promoting a time-sensitive offer (like a limited trial, live cohort, workshop, bonus, or enrollment window) and want the reader to take immediate action with clarity, trust, and urgency.
+You're writing a promotional email to drive immediate action for a time-sensitive offer — like a live event, bonus, enrollment window, trial, or limited-time upgrade — and want the reader to say yes based on clear value, emotional clarity, and real urgency.
 
 ⸻
 
-🔍 PRE-WRITING CLARITY QUESTIONS:
-
-Answer these before generating:
+🔍 PRE-WRITING CLARITY QUESTIONS (Answer First):
 	1.	What is the exact offer?
-(e.g., live AI sprint, onboarding bonus, swipe file, follow-up engine, audit session)
+(e.g., live AI sprint, onboarding bonus, swipe file, automation audit, cohort seat)
 	2.	What makes this timely?
-(e.g., capped at 50, closing Friday, beta cohort ends soon, tied to Q4 prep)
-	3.	What tangible transformation is possible?
-(e.g., save 10+ hours/week, automate lead scoring, reclaim ops bandwidth, reduce delays by 40%)
+(e.g., capped seats, cohort closes Friday, pre-Q4 planning, early access ends soon)
+	3.	What specific outcome will they walk away with?
+(e.g., 3 mapped automations, follow-up system, swipe file, 5 saved hours/week)
 	4.	What will they regret if they wait?
-(e.g., hours wasted, momentum lost, Q4 bottlenecks repeat, pipeline slows again)
-	5.	What adoption signal or social proof can we share?
-(e.g., "Used by 47 SaaS founders last quarter," "Teams saved 12+ hours/week")
+(e.g., hours lost to manual work, pipeline still leaks, same bottlenecks repeat)
+	5.	What adoption signal or social proof can you share?
+(e.g., "47 SaaS founders used it last quarter," "Teams saved 12+ hours/week")
 	6.	How warm is this reader?
-(e.g., cold lead, engaged prospect, download re-engagement, referral, past client)
+(e.g., cold lead, engaged prospect, past buyer, re-engagement)
 
 ⸻
 
 ✍️ EMAIL STRUCTURE (80–120 words)
 
-Use this format:
+1. [HOOK → Tension + Curiosity]
+Create a scroll-stopping subject + opening line that names a relatable pain, tension, or unmet goal — and hints at the solution.
+
+✅ Examples:
+	•	"Still buried in manual work? This 60-minute session changes that."
+	•	"Another AI webinar? We rolled our eyes too—until we built this."
 
 ⸻
 
-1. [Hook – Pain → Solution]
+2. [CLARITY OF OFFER → What They'll Get + What It Fixes]
+Be ultra-specific about the offer and what outcome they'll walk away with. Say exactly what they'll receive, how long it takes, and what it helps them solve.
 
-Create emotional tension + curiosity.
-Name the real pain. Show a specific solution or shift.
-
-Examples:
-• "Still buried in manual follow-up? Here's how 47 teams fixed it in 60 minutes."
-• "Another AI webinar? We rolled our eyes too — until we built this instead."
+✅ Examples:
+	•	"In 60 minutes, you'll map 3 automations — like lead scoring, onboarding, or follow-up — tailored to your ops bottlenecks."
+	•	"Walk away with prebuilt systems that save 10+ hours/week — without hiring."
 
 ⸻
 
-2. [Offer Clarity – What They'll Walk Away With]
+3. [REASON WHY → Timely, Logical Rationale]
+Explain why this is available now — in a grounded, helpful way. Tie it to your schedule, capacity, cohort size, or business cycle. Avoid vague urgency.
 
-State the value clearly. Describe the exact outcome and what it fixes. Use examples of workflows when possible.
-
-Examples:
-• "In 60 minutes, you'll map 3 automations — like lead scoring, onboarding, or follow-up — tailored to your business."
-• "You'll walk away with plug-and-play systems that reclaim 10+ hours/week without hiring."
-
-⸻
-
-3. [Reason Why – Logical Rationale for Timing]
-
-Use a value-driven, natural explanation for urgency or limitation. Never open with "Why now?"
-
-Examples:
-• "We're capping it at 50 seats to keep the session hands-on and leave time for workflow mapping."
-• "This cohort is designed to give you working systems before Q4 planning begins."
-• "Beta closes Friday — we're finalizing the case study group."
+✅ Examples:
+	•	"We're capping it at 50 to keep it hands-on and give real workflow support."
+	•	"This session is designed to get you live before Q4 planning hits."
+	•	"Beta closes Friday — we're finalizing the case study group."
 
 ⸻
 
-4. [Future Pacing – Vivid After State]
+4. [FUTURE PACING → Near-Term Transformation]
+Paint a vivid, believable picture of what their life looks like 7–14 days after they say yes.
 
-Paint a near-term transformation. Anchor what's possible within 7 days.
-
-Examples:
-• "By next week, you could already be running smoother handoffs and follow-ups — with less ops drag."
-• "In days, your CRM could be scoring leads automatically while your team closes deals."
-
-⸻
-
-5. [Anticipated Regret – Cost of Waiting]
-
-Name what they'll lose if they don't act. Tie it to something they care about (time, money, pipeline).
-
-Examples:
-• "Most teams wait until they're overwhelmed. That's when it's too late."
-• "Skip this, and those 5 hours/week keep slipping away while your competitors move faster."
+✅ Examples:
+	•	"By next week, your CRM could be scoring leads while your team closes deals."
+	•	"In days, your handoffs and reminders could be running automatically — without extra ops overhead."
 
 ⸻
 
-6. [Social Proof or Adoption Signal]
+5. [ANTICIPATED REGRET → Cost of Delay]
+Call out what they stand to lose if they wait — time, energy, opportunity, pipeline.
 
-Build trust by showing others already acting or succeeding.
-
-Examples:
-• "Last cohort: 47 founders joined — most in the same spot you are now."
-• "Teams like NimbusHR and CloudPilot saw 28% faster deals in 90 days."
-
-⸻
-
-7. [CTA – Mirror the Benefit]
-
-Make your CTA outcome-oriented, not just action-based. Mirror the transformation.
-
-Examples:
-• "→ Walk away with your first automation live"
-• "→ Save your 60-minute AI seat (spots filling)"
-• "→ Claim your system — stop wasting 10+ hours/week"
+✅ Examples:
+	•	"Every quarter you delay, the same bottlenecks quietly drain your pipeline."
+	•	"Skip this, and your ops team is still chasing leads manually next month."
 
 ⸻
 
-✅ FINAL CHECKLIST
+6. [SOCIAL PROOF → Adoption Signal]
+Signal that others like them are already acting — or that this solution is proven.
 
-✅ Strong hook that creates tension and curiosity
-✅ Clear value — outcome and problem solved
-✅ Logical reason for offer timing (no "Why now?")
-✅ Vivid future benefit if they act today
-✅ Clear cost of inaction
-✅ Concrete adoption signal or proof
-✅ CTA mirrors the benefit, not just the click
-✅ Calm, clear, conversational tone — grounded in real B2B moments
+✅ Examples:
+	•	"Last cohort: 47 founders joined — most were stuck in the same place you are now."
+	•	"Used by SaaS and services teams to reclaim 10+ hours/week — without increasing headcount."
 
 ⸻
 
-RE-ENGAGEMENT (Refined):
-- "Still curious about [their goal]?"
-- "This might be better timing."
-- "Almost said yes…"
-- "You leaned in — then life happened."
-- "We were almost there… then inbox chaos."
-- "It wasn't a no — just not now."
-- "The right message sometimes shows up at the wrong time."
-- "We've refined the workflow since we spoke."
-- "Takes 3 minutes to try."
-- "Want to see if it fits now?"
-- "Reply 'ready' and I'll send it over."
-- "Here if you want to pick the thread back up."
+7. [CTA → Mirrors Benefit + Reduces Friction]
+Make your call-to-action reflect the outcome, not just the task. Use language that implies ease, clarity, or choice.
 
-WARM/NURTURE:
-- "Ever feel like you've done everything right — but the numbers still don't move?"
-- "You've built the strategy. Poured hours into the content. But..."
-- "The results still don't reflect the work."
-- "Right before everything clicks."
-- "Here's what I'd check if I were you."
-- "Reserve your seat here"
+✅ Examples:
+	•	"→ Walk away with your first automation live"
+	•	"→ Save your 60-minute AI seat (spots filling)"
+	•	"→ Claim your system — and cut 10+ hours/week starting next week"
+	•	"→ Want the 4-minute demo or full walkthrough? Pick one."
+
+⸻
+
+✅ FINAL FILTERS:
+	•	✅ Is the subject line tension-based or curiosity-triggering?
+	•	✅ Is the offer outcome-based and specific (including examples)?
+	•	✅ Is the urgency grounded in logic (not artificial FOMO)?
+	•	✅ Is there a clear "after state" painted within 7–10 days?
+	•	✅ Is the cost of delay clearly implied?
+	•	✅ Is there social proof or adoption signaling from similar peers?
+	•	✅ Does the CTA mirror the benefit and reduce friction?
+	•	✅ Does the tone feel calm, direct, and grounded in real B2B pain?
+
+⸻
+
+📢 FORBIDDEN PHRASES:
+
+❌ "Why now?"
+❌ "I'm excited to share…"
+❌ "Join me for a value-packed session"
+❌ "Packed with insights…"
+❌ "Strategic session to unlock X…"
+❌ Overused urgency like "Time's running out!" without cause
+
+⸻
+
+🧠 BEHAVIORAL SCIENCE LEVERS BAKED IN:
+	•	Reason Why Theory (logical urgency)
+	•	Loss Aversion (cost of delay)
+	•	Processing Fluency (clear, easy copy)
+	•	Scarcity (when true)
+	•	Fresh Start Effect / Temporal Landmarks
+	•	Social Proof
+	•	CTA Framing (mirrors benefit, uses choice)
 
 CRITICAL FORMATTING RULES:
 - NEVER use em dashes (—) in any email makeovers
 - Use regular dashes (-) or periods instead
 - Keep punctuation simple and clean
-
-FORBIDDEN LANGUAGE (Never use):
-- "Join me for a strategic session"
-- "I'm excited to share"
-- Generic webinar language
-- "Packed with value" or "actionable insights"
-- Corporate buzzwords
-- Soft, pleading CTAs
-- "I'm not here to convince you" (too passive)
-- Overly familiar language in cold emails
-- Assumptive language in cold emails
-- "Want to have a look?" (too soft for promotional)
-- "This isn't just another program" (vague category copy)
 - Vague phrases like "elevate your operations," "unlock a window," or "the right time"
 - Aggressive language like "Don't miss this opportunity" or "Still holding back?"
 - Generic benefits ("improve efficiency," "boost productivity")
