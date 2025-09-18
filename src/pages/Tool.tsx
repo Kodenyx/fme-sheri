@@ -397,7 +397,7 @@ const Tool = () => {
                 
                 {/* Email Category Selection */}
                 <div className="flex-1 flex items-center justify-center gap-4 bg-white/80 rounded-full px-6 py-3 min-w-0 h-12">
-                  <label htmlFor="email-category" className="text-sm font-medium flex-shrink-0" style={{ color: '#3B1E5E' }}>
+                  <label htmlFor="email-category" className="text-sm font-bold flex-shrink-0" style={{ color: '#3B1E5E' }}>
                     Email Type:
                   </label>
                   <Select value={emailCategory} onValueChange={(value) => { setEmailCategory(value); try { sessionStorage.setItem('emailToolCategory', value); } catch {} }}>
