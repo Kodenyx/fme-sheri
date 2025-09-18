@@ -881,7 +881,7 @@ VALIDATION REQUIREMENTS FOR RE-ENGAGEMENT:
 ✅ Must make P.S. contextually relevant to their funnel stage
 ✅ Must pass Harper Voice Check: "Does this sound like a natural conversation?"
 
-✅ LOVABLE PROMOTIONAL EMAIL PROMPT (Final Upgraded Version)
+LOVABLE PROMOTIONAL EMAIL PROMPT (Final v2.1 – Full Upgrade)
 
 🧠 USE THIS WHEN:
 
@@ -937,6 +937,7 @@ Explain why this is available now — in a grounded, helpful way. Tie it to your
 
 4. [FUTURE PACING → Near-Term Transformation]
 Paint a vivid, believable picture of what their life looks like 7–14 days after they say yes.
+❌ Never say "this could already be in place" — name the actual transformation.
 
 ✅ Examples:
 	•	"By next week, your CRM could be scoring leads while your team closes deals."
@@ -963,7 +964,8 @@ Signal that others like them are already acting — or that this solution is pro
 ⸻
 
 7. [CTA → Mirrors Benefit + Reduces Friction]
-Make your call-to-action reflect the outcome, not just the task. Use language that implies ease, clarity, or choice.
+Make your call-to-action reflect the outcome, not just the task.
+📌 CTA Prompt Guardrail: Is this a mirror of the benefit, not just a generic action?
 
 ✅ Examples:
 	•	"→ Walk away with your first automation live"
@@ -973,15 +975,16 @@ Make your call-to-action reflect the outcome, not just the task. Use language th
 
 ⸻
 
-✅ FINAL FILTERS:
+✅ FINAL CHECKLIST
 	•	✅ Is the subject line tension-based or curiosity-triggering?
-	•	✅ Is the offer outcome-based and specific (including examples)?
-	•	✅ Is the urgency grounded in logic (not artificial FOMO)?
-	•	✅ Is there a clear "after state" painted within 7–10 days?
-	•	✅ Is the cost of delay clearly implied?
-	•	✅ Is there social proof or adoption signaling from similar peers?
-	•	✅ Does the CTA mirror the benefit and reduce friction?
-	•	✅ Does the tone feel calm, direct, and grounded in real B2B pain?
+	•	✅ Is the offer outcome-based and specific (with clear examples)?
+	•	✅ Is the urgency grounded in logic, not artificial FOMO?
+	•	✅ Does the future pacing name real systems or results (not vague phrases like "this could be in place")?
+	•	✅ Is the cost of delay concrete and emotionally felt (e.g. lost hours, lost pipeline)?
+	•	✅ Is there social proof or adoption signal from similar buyers?
+	•	✅ Does the CTA mirror the benefit (not just "book" or "register")?
+	•	✅ Does the CTA reduce friction with clear, low-commitment language?
+	•	✅ Does the tone feel calm, clear, grounded, and emotionally intelligent?
 
 ⸻
 
@@ -992,18 +995,19 @@ Make your call-to-action reflect the outcome, not just the task. Use language th
 ❌ "Join me for a value-packed session"
 ❌ "Packed with insights…"
 ❌ "Strategic session to unlock X…"
-❌ Overused urgency like "Time's running out!" without cause
+❌ Generic CTA like "Book now" or "Register here"
+❌ Vague phrases like "This could already be in place…"
 
 ⸻
 
-🧠 BEHAVIORAL SCIENCE LEVERS BAKED IN:
+🧠 BEHAVIORAL SCIENCE LEVERS (BAKED IN):
 	•	Reason Why Theory (logical urgency)
 	•	Loss Aversion (cost of delay)
-	•	Processing Fluency (clear, easy copy)
-	•	Scarcity (when true)
+	•	Processing Fluency (simple, clear structure)
+	•	Scarcity (if true)
 	•	Fresh Start Effect / Temporal Landmarks
 	•	Social Proof
-	•	CTA Framing (mirrors benefit, uses choice)
+	•	CTA Architecture (mirrors benefit + softens friction)
 
 CRITICAL FORMATTING RULES:
 - NEVER use em dashes (—) in any email makeovers
