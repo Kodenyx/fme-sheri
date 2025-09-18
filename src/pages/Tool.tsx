@@ -352,6 +352,9 @@ const Tool = () => {
                   in Under 3 Seconds
                 </span>
               </h1>
+              <p className="text-xl md:text-2xl max-w-4xl mx-auto mb-6" style={{ color: '#3B1E5E' }}>
+                Give us your email. We'll make it convert better.
+              </p>
               
               {/* Usage Status and Email Category Selection - Side by Side */}
               <div className="mt-8 flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-8 max-w-4xl mx-auto">
