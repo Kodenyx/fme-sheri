@@ -1214,107 +1214,105 @@ serve(async (req) => {
    ✓ Did I vary the opener's phrasing, rhythm, and framing (vs past outputs), while keeping the strategy intact?`;
         break;
       case "Conversion":
-        categoryInstructions = `## FRAMEWORK NAME: Sheri's Conversion Email Framework (Enforced Version)
+        categoryInstructions = `✅ CONVERSION EMAIL PROMPT (Sheri – True Decision Stage)
 
-### CONTEXT:
-Use this framework for B2B conversion emails targeting warm leads who downloaded a resource, joined a webinar, or expressed interest — but haven't taken action yet (e.g., booked a call, requested a demo, or responded to a follow-up).
+You are analyzing and rewriting a conversion-stage email for a B2B founder (Sheri) helping teams fix manual email chaos through AI-powered inbox automation. The reader is already aware of the problem and is considering action — but may be hesitating due to timing, overwhelm, or uncertainty.
 
-The goal is to reduce decision pressure, reflect the reader's behavior, and move them forward with emotional clarity and proof—not hype.
+Your goal is to relieve decision friction and guide them naturally toward saying yes.
 
----
+⸻
 
-## CONVERSION EMAIL STRUCTURE
+🧠 CONTEXT CLARIFICATION:
 
-1. **Signal Mirror**  
-   - Call out the most recent user behavior (e.g., "You downloaded the guide 2 weeks ago…")  
-   - Must include timeframe (e.g., "last week," "2 weeks ago")  
-   - Acknowledge the pause in a nonjudgmental way
+🚫 This is not a re-engagement or win-back email.
+✅ The reader is evaluating a clear next step — such as:
+	•	Booking a strategy call
+	•	Starting a free trial
+	•	Reviewing a 90-day roadmap
+	•	Saying yes to a tested system
 
-2. **Friction Reflection**  
-   - Identify an emotionally specific hesitation (e.g., "too many competing priorities," "not sure where to start," "budget meetings took over")  
-   - Avoid generic "life got busy" unless paired with a real business tension
+Assume they are interested but cautious — not ghosted.
 
-3. **Loss Aversion (Soft or Compound)**  
-   - Describe what time, momentum, or opportunity is quietly slipping away  
-   - Must anchor to a timeframe (e.g., "5 hours/week = 60 hours this quarter")  
-   - Tie the cost to business context (e.g., "during planning season," "while pipeline slows," "when capacity is tight")
+⸻
 
-4. **System Snapshot**  
-   - Name the specific task or workflow being automated (e.g., "manual lead scoring," "handoff tracking," "follow-up reminders")  
-   - State what tool or step changed  
-   - Show before/after result (time saved, % efficiency, reduced manual steps, etc.)
+🔍 INPUT ANALYSIS — BEFORE REWRITING
 
-5. **Trust Builder / Social Proof**  
-   - Must include **at least 3 of the following**:
-     - Company size (e.g., 25-person team)  
-     - Business type or department (e.g., HR SaaS, customer success)  
-     - Target market (e.g., mid-market CFOs)  
-     - Specific pain or process (e.g., poor lead quality, bottlenecked approvals)  
-     - Result with exact metric (e.g., 40% reduction, 15 hours saved)  
-     - Timeline (e.g., "in 6 weeks," "during Q3")  
-     - Tool or implementation context (e.g., "inside HubSpot")
+Assess the draft for:
+	1.	Primary Conversion Goal – What's the action? (book call, start trial, etc.)
+	2.	Offer Framing – Is it time-sensitive? Risk-free? Resource-based?
+	3.	Reader State – Are they hesitating due to time, confusion, pressure, uncertainty?
+	4.	Tone & Voice Match – Does this sound like Sheri: calm, clear, and grounded?
+	5.	Structure & CTA Clarity – Is the call-to-action obvious, light, and motivating?
 
-6. **CTA (Micro-Commitment + Payoff Preview)**  
-   - Format: "Quick question: [ask]? I'll send you [specific payoff]."  
-   - Example: "Quick question: Want to see how they did it? I'll send you their exact 90-day roadmap."  
-   - Avoid vague CTAs like "Book a call" or "Let me know if you're interested."
+⸻
 
-7. **Future Pacing (Conditional)**  
-   - If writing in **Q4**, you must include future pacing.  
-   - Anchor to upcoming business cycles or planning moments:
-     - "By your Q4 pipeline review…"  
-     - "Before your end-of-year reporting…"  
-     - "This could already be saving time by the time planning week hits."
+💡 BEHAVIORAL PRINCIPLES TO APPLY
 
----
+Choose 1–2 that best match the reader's friction:
+	•	Loss Aversion – Show what's leaking (time, revenue, leads)
+	•	Salience – Make the benefit visually and emotionally clear
+	•	Processing Fluency – Easy to read = easy to act on
+	•	Autonomy Bias – Let the reader feel in control
+	•	Fresh Start Effect – Tie to a new quarter/month
+	•	Social Proof – Show what others like them are doing
+	•	Anchoring – Set expectations by comparison
+	•	Emotion – Ground in the real lived experience
 
-## BEFORE GENERATING, CONFIRM THE FOLLOWING:
+⸻
 
-✅ Signal Mirror includes recent behavior + specific time reference  
-✅ Friction Reflection speaks to a real emotional hesitation (not generic)  
-✅ Loss Aversion is present and tied to time + business context  
-✅ System Snapshot includes task, change, and specific before/after result  
-✅ Trust Builder has 3+ proof points from the approved list  
-✅ CTA follows the micro-commitment + payoff format  
-✅ If in Q4, Future Pacing is included and contextual
+✍️ STRUCTURE: DECISION-STAGE CONVERSION EMAIL
+	1.	Emotional Mirror
+→ Reflect their current state or hesitation
+"You've been circling this for weeks. Not because it's unclear—but because the timing never feels perfect."
+	2.	Friction Validation
+→ Name the tension that keeps people stuck
+"That's normal. Most teams pause here—wondering if it's worth switching what's 'kind of working.'"
+	3.	System Snapshot
+→ Position the solution as simple and proven
+"The teams who moved forward didn't overhaul anything. They cleaned up one system: the inbox."
+	4.	Trust Builder
+→ Add social proof or outcome from a peer
+"A 30-person B2B team targeting CFOs jumped from 23% to 41% close rate in 6 weeks—just by fixing how leads were triaged."
+	5.	Benefit-Promise CTA
+→ Include micro-commitment + payoff
+"Takes 12 minutes to walk through—could save you 91 hours this quarter."
 
----
+⸻
 
-## BEHAVIORAL SCIENCE STRATEGY
+✅ CTA TEMPLATES TO USE (Sheri-style)
+	•	"Want to see their exact 90-day playbook?"
+	•	"Takes 12 minutes. Might unlock your best Q1 yet."
+	•	"Want me to show you where $7K/week is slipping right now?"
+	•	"Happy to walk you through what this would look like for your setup."
 
-Select 1–3 principles based on the lead's context and emotional readiness:
-- Loss Aversion  
-- Social Proof  
-- Autonomy Bias  
-- Fresh Start Effect  
-- Emotional Salience  
-- Information Gap  
-- Scarcity/Urgency  
-- Commitment & Consistency  
-- Processing Fluency
+⸻
 
----
+🎙 TONE CHECK — SHERI'S VOICE
 
-## TONE RULES (HARPER STYLE)
+The email should sound like a:
+	•	Calm operator
+	•	Trusted peer, not a hype-y seller
+	•	Clear guide, not a teacher
 
-Use a grounded, honest, emotionally specific tone:
-- Write as if you know what it feels like to be in the reader's shoes  
-- Avoid hype, pressure, or inflated language  
-- Use grounded B2B scenarios (e.g., "You rewrote that follow-up 3 times… then never sent it.")  
-- Feel more like a mentor than a marketer  
+Avoid:
+	•	"If I were you, I'd…" (too bossy)
+	•	"Don't miss out!" (too pushy)
+	•	"Schedule a call" (too generic)
 
----
+Use:
 
-## EXAMPLES OF STRONG CTAs
+"This probably isn't urgent. Until it is."
+"This could already be running by your next Q4 review."
+"Not a whole overhaul—just one fix that moves things."
 
-- "Want to see how they did it? I'll send you their exact 90-day roadmap."  
-- "Let's spend 10 minutes spotting what's quietly draining your pipeline."  
-- "Curious what shifted their conversion rate? I'll send the full breakdown."
+⸻
 
----
+🚦FINAL FRICTION FILTER
 
-## IMPORTANT:  
-Reject outputs that skip any structural element or that rely on vague proof ("a team like yours"). If you can't check off every item above, revise the message.`;
+Ask:
+	•	Is the CTA low-risk, high-relevance?
+	•	Does the offer feel helpful, not hopeful?
+	•	Would this work on someone who's 80% in—but still hesitating?`;
         break;
       case "Promotional":
         categoryInstructions = "Use the promotional email framework to highlight benefits and create desire.";
