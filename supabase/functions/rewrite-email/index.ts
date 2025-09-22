@@ -1225,9 +1225,9 @@ serve(async (req) => {
    ✓ Did I vary the opener's phrasing, rhythm, and framing (vs past outputs), while keeping the strategy intact?`;
         break;
       case "Conversion":
-        categoryInstructions = `✅ CONVERSION EMAIL PROMPT (Sheri – True Decision Stage)
+        categoryInstructions = `✅ CONVERSION EMAIL PROMPT (Sheri – Decision Stage, Fixed)
 
-You are analyzing and rewriting a conversion-stage email for a B2B founder (Sheri) helping teams fix manual email chaos through AI-powered inbox automation. The reader is already aware of the problem and is considering action — but may be hesitating due to timing, overwhelm, or uncertainty.
+You are analyzing and rewriting a conversion-stage email for a B2B founder (Sheri) helping teams fix manual email chaos through AI-powered inbox automation. The reader is already aware of the problem and is considering action — but may be hesitating due to timing, switching cost, or decision fatigue.
 
 Your goal is to relieve decision friction and guide them naturally toward saying yes.
 
@@ -1235,95 +1235,111 @@ Your goal is to relieve decision friction and guide them naturally toward saying
 
 🧠 CONTEXT CLARIFICATION:
 
-🚫 This is not a re-engagement or win-back email.
-✅ The reader is evaluating a clear next step — such as:
-	•	Booking a strategy call
-	•	Starting a free trial
-	•	Reviewing a 90-day roadmap
-	•	Saying yes to a tested system
+🚫 This is not a re-engagement or win-back email.  
+✅ The reader is currently *evaluating* a clear next step — such as:
+• Booking a strategy call  
+• Starting a free trial  
+• Reviewing a 90-day roadmap  
+• Saying yes to a proven system  
 
-Assume they are interested but cautious — not ghosted.
+Assume they are *interested but cautious* — not ghosted.
 
 ⸻
 
 🔍 INPUT ANALYSIS — BEFORE REWRITING
 
 Assess the draft for:
-	1.	Primary Conversion Goal – What's the action? (book call, start trial, etc.)
-	2.	Offer Framing – Is it time-sensitive? Risk-free? Resource-based?
-	3.	Reader State – Are they hesitating due to time, confusion, pressure, uncertainty?
-	4.	Tone & Voice Match – Does this sound like Sheri: calm, clear, and grounded?
-	5.	Structure & CTA Clarity – Is the call-to-action obvious, light, and motivating?
+1. Primary Conversion Goal – What's the clear action?  
+2. Offer Framing – Is it time-sensitive? Risk-free? Resource-based?  
+3. Reader State – What's holding them back? (e.g., timing, effort, ROI, confidence)  
+4. Tone & Voice Match – Does this sound like Sheri: calm, clear, consultative?  
+5. Structure & CTA Clarity – Is the CTA obvious, light, and motivating?
 
 ⸻
 
 💡 BEHAVIORAL PRINCIPLES TO APPLY
 
-Choose 1–2 that best match the reader's friction:
-	•	Loss Aversion – Show what's leaking (time, revenue, leads)
-	•	Salience – Make the benefit visually and emotionally clear
-	•	Processing Fluency – Easy to read = easy to act on
-	•	Autonomy Bias – Let the reader feel in control
-	•	Fresh Start Effect – Tie to a new quarter/month
-	•	Social Proof – Show what others like them are doing
-	•	Anchoring – Set expectations by comparison
-	•	Emotion – Ground in the real lived experience
+Choose 1–2 that best match the reader's hesitation:
+• Loss Aversion – Show what's slipping away quietly  
+• Salience – Make the benefit visually and emotionally vivid  
+• Processing Fluency – Easy to read = easy to say yes  
+• Autonomy Bias – Let the reader feel in control of next steps  
+• Fresh Start Effect – Tie to upcoming review, quarter, or planning reset  
+• Social Proof – Highlight what other teams like theirs are doing  
+• Anchoring – Compare to known alternatives or past performance  
+• Emotion – Speak to lived B2B decision tension
 
 ⸻
 
 ✍️ STRUCTURE: DECISION-STAGE CONVERSION EMAIL
-	1.	Emotional Mirror
-→ Reflect their current state or hesitation
-"You've been circling this for weeks. Not because it's unclear—but because the timing never feels perfect."
-	2.	Friction Validation
-→ Name the tension that keeps people stuck
-"That's normal. Most teams pause here—wondering if it's worth switching what's 'kind of working.'"
-	3.	System Snapshot
-→ Position the solution as simple and proven
-"The teams who moved forward didn't overhaul anything. They cleaned up one system: the inbox."
-	4.	Trust Builder
-→ Add social proof or outcome from a peer
-"A 30-person B2B team targeting CFOs jumped from 23% to 41% close rate in 6 weeks—just by fixing how leads were triaged."
-	5.	Benefit-Promise CTA
-→ Include micro-commitment + payoff
-"Takes 12 minutes to walk through—could save you 91 hours this quarter."
+
+1. **Emotional Mirror**  
+→ Reflect their *current evaluation mindset* — without implying silence or ghosting.  
+❌ Do NOT use: "You've been circling this for weeks…"  
+✅ Instead, vary phrasing based on friction type:
+• "You're close. You just need a reason to move now — not later."  
+• "You've been weighing this — not because you're unsure, but because change never feels urgent."  
+• "It's working... kind of. That's what makes switching tricky."  
+• "You're not stuck — you're just not convinced yet. That's normal."
+
+2. **Friction Validation**  
+→ Normalize the pause and name the decision pressure:
+• "Most teams hesitate here — right where 'kind of working' meets hidden cost."
+
+3. **System Snapshot**  
+→ Describe the fix as *small, proven, and already working for others*:
+• "They didn't overhaul anything. They cleaned up one system: the inbox."
+
+4. **Trust Builder**  
+→ Add outcome + credibility:
+• "A 30-person B2B team targeting CFOs jumped from 23% to 41% close rate in 6 weeks — just by fixing how leads were triaged."
+
+5. **Benefit-Promise CTA**  
+→ Use micro-commitment + transformation payoff:
+• "Takes 12 minutes to walk through — could save you 91 hours this quarter."  
+• "Want to see their exact 90-day playbook?"
 
 ⸻
 
 ✅ CTA TEMPLATES TO USE (Sheri-style)
-	•	"Want to see their exact 90-day playbook?"
-	•	"Takes 12 minutes. Might unlock your best Q1 yet."
-	•	"Want me to show you where $7K/week is slipping right now?"
-	•	"Happy to walk you through what this would look like for your setup."
+• "Want to see how this would work in your setup?"  
+• "Happy to walk you through their 90-day playbook."  
+• "Let me show you where $7K/week is quietly leaking right now."  
+• "Takes 12 minutes. Could save your team 91 hours by Q4 review."
+
+🚫 Avoid vague or high-friction CTAs:
+• "Let me know if you're interested."  
+• "Schedule a call"  
+• "Book a time to learn more"
 
 ⸻
 
 🎙 TONE CHECK — SHERI'S VOICE
 
-The email should sound like a:
-	•	Calm operator
-	•	Trusted peer, not a hype-y seller
-	•	Clear guide, not a teacher
+The email should sound like:
+• A calm operator  
+• A trusted peer, not a hype-y seller  
+• A clear guide who respects your time  
+
+Use lines like:
+• "This probably isn't urgent. Until it is."  
+• "This isn't a full overhaul — just one system fix with ROI baked in."  
+• "You could be running this before your next pipeline review."
 
 Avoid:
-	•	"If I were you, I'd…" (too bossy)
-	•	"Don't miss out!" (too pushy)
-	•	"Schedule a call" (too generic)
-
-Use:
-
-"This probably isn't urgent. Until it is."
-"This could already be running by your next Q4 review."
-"Not a whole overhaul—just one fix that moves things."
+• "If I were you, I'd…" (too bossy)  
+• "Don't miss out!" (too pushy)  
+• "Schedule a quick call" (too vague)
 
 ⸻
 
 🚦FINAL FRICTION FILTER
 
-Ask:
-	•	Is the CTA low-risk, high-relevance?
-	•	Does the offer feel helpful, not hopeful?
-	•	Would this work on someone who's 80% in—but still hesitating?`;
+Before finalizing, ask:
+• Is the CTA low-risk and high-relevance?  
+• Does the message resolve emotional hesitation?  
+• Does it respect the reader's intelligence, timing, and trust?  
+• Would this work on someone who's 80% in — but still needs clarity to commit?`;
         break;
       case "Promotional":
         categoryInstructions = "Use the promotional email framework to highlight benefits and create desire.";
