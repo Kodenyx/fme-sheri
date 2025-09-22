@@ -1531,6 +1531,27 @@ You MUST output a properly formatted JSON response with this exact structure:
     "re_engagement_specific": "explanation of how this differs from initial outreach"
   }
 }`;
+              } else if (emailCategory === "Conversion") {
+                return `Email Type: ${emailCategory}
+
+${categoryInstructions}
+
+ORIGINAL EMAIL TO REWRITE:
+${emailContent}
+
+MANDATORY CONVERSION-SPECIFIC OUTPUT FORMAT:
+{
+  "rewritten_email": "your rewritten email here",
+  "psychological_triggers": ["list specific behavioral science principles used"],
+  "structure_improvements": ["list how structure/flow was improved using Sheri's frameworks"],
+  "questions": ["list any clarifying questions if optimization could be improved"],
+  "conversion_validation": {
+    "decision_friction_relief": "confirmation that decision friction was addressed",
+    "hesitation_handling": "confirmation that timing/overwhelm concerns were addressed",
+    "natural_progression": "confirmation that the email guides naturally toward yes",
+    "voice_authenticity": "confirmation that Sheri's voice is maintained"
+  }
+}`;
               } else {
                 return `Email Type: ${emailCategory}\n\nInstructions: ${categoryInstructions}\n\nPlease rewrite this email using the specific framework for ${emailCategory}:\n\n${emailContent}`;
               }
