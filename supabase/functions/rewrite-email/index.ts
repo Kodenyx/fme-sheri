@@ -1225,7 +1225,7 @@ serve(async (req) => {
    ✓ Did I vary the opener's phrasing, rhythm, and framing (vs past outputs), while keeping the strategy intact?`;
         break;
       case "Conversion":
-        categoryInstructions = `✅ CONVERSION EMAIL PROMPT (Sheri – Decision Stage, Fixed)
+        categoryInstructions = `✅ CONVERSION EMAIL PROMPT (Sheri – Decision Stage, Fixed v2)
 
 You are analyzing and rewriting a conversion-stage email for a B2B founder (Sheri) helping teams fix manual email chaos through AI-powered inbox automation. The reader is already aware of the problem and is considering action — but may be hesitating due to timing, switching cost, or decision fatigue.
 
@@ -1273,14 +1273,17 @@ Choose 1–2 that best match the reader's hesitation:
 
 ✍️ STRUCTURE: DECISION-STAGE CONVERSION EMAIL
 
-1. **Emotional Mirror**  
-→ Reflect their *current evaluation mindset* — without implying silence or ghosting.  
-❌ Do NOT use: "You've been circling this for weeks…"  
-✅ Instead, vary phrasing based on friction type:
-• "You're close. You just need a reason to move now — not later."  
-• "You've been weighing this — not because you're unsure, but because change never feels urgent."  
-• "It's working... kind of. That's what makes switching tricky."  
-• "You're not stuck — you're just not convinced yet. That's normal."
+1. **Emotional Mirror (Conversion Opener)**  
+→ Start with a 1-line micro-moment that mirrors what the reader feels *in the middle of deciding* — not ghosting.  
+❌ Do NOT use: "You've been circling this for weeks…" or "life happened."  
+✅ Instead, vary phrasing based on decision friction (timing, switching cost, perfectionism, mental load).  
+
+Frame openers like:
+• "You know the moment when ___ (real B2B scenario)?"  
+• "You've rewritten ___ three times… then never sent it."  
+• "They booked the demo. You showed up. And then ___."  
+• "It's been two weeks since ___ and you're still not sure what to do."  
+• "You keep checking ___ like it's going to suddenly solve itself."
 
 2. **Friction Validation**  
 → Normalize the pause and name the decision pressure:
@@ -1291,8 +1294,10 @@ Choose 1–2 that best match the reader's hesitation:
 • "They didn't overhaul anything. They cleaned up one system: the inbox."
 
 4. **Trust Builder**  
-→ Add outcome + credibility:
-• "A 30-person B2B team targeting CFOs jumped from 23% to 41% close rate in 6 weeks — just by fixing how leads were triaged."
+→ Add credibility. Rotate proof formats to avoid repetition:
+• Peer stat: "A 30-person SaaS team jumped from 23% to 41% close rate in 6 weeks."  
+• Trend: "Teams fixing this see double-digit lift within 30 days."  
+• Norm: "Most ops teams using this framework double follow-up speed."
 
 5. **Benefit-Promise CTA**  
 → Use micro-commitment + transformation payoff:
@@ -1304,13 +1309,13 @@ Choose 1–2 that best match the reader's hesitation:
 ✅ CTA TEMPLATES TO USE (Sheri-style)
 • "Want to see how this would work in your setup?"  
 • "Happy to walk you through their 90-day playbook."  
-• "Let me show you where $7K/week is quietly leaking right now."  
-• "Takes 12 minutes. Could save your team 91 hours by Q4 review."
+• "Takes 12 minutes. Could save your team 91 hours by Q4 review."  
+• "Want me to show you where $7K/week is quietly leaking right now?"
 
 🚫 Avoid vague or high-friction CTAs:
-• "Let me know if you're interested."  
 • "Schedule a call"  
-• "Book a time to learn more"
+• "Book a time to learn more"  
+• "Let me know if you're interested"
 
 ⸻
 
@@ -1319,17 +1324,17 @@ Choose 1–2 that best match the reader's hesitation:
 The email should sound like:
 • A calm operator  
 • A trusted peer, not a hype-y seller  
-• A clear guide who respects your time  
+• A clear guide who respects time and attention  
 
 Use lines like:
 • "This probably isn't urgent. Until it is."  
 • "This isn't a full overhaul — just one system fix with ROI baked in."  
 • "You could be running this before your next pipeline review."
 
-Avoid:
-• "If I were you, I'd…" (too bossy)  
-• "Don't miss out!" (too pushy)  
-• "Schedule a quick call" (too vague)
+❌ DO NOT use re-engagement phrases:
+• "Life happened"  
+• "Just circling back"  
+• "You paused…"
 
 ⸻
 
@@ -1337,7 +1342,7 @@ Avoid:
 
 Before finalizing, ask:
 • Is the CTA low-risk and high-relevance?  
-• Does the message resolve emotional hesitation?  
+• Does the message resolve decision hesitation (not inactivity)?  
 • Does it respect the reader's intelligence, timing, and trust?  
 • Would this work on someone who's 80% in — but still needs clarity to commit?`;
         break;
