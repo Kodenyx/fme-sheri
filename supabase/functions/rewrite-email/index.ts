@@ -1274,16 +1274,17 @@ Choose 1–2 that best match the reader's hesitation:
 ✍️ STRUCTURE: DECISION-STAGE CONVERSION EMAIL
 
 1. **Emotional Mirror (Conversion Opener)**  
-→ Start with a 1-line micro-moment that mirrors what the reader feels *in the middle of deciding* — not ghosting.  
-❌ Do NOT use: "You've been circling this for weeks…" or "life happened."  
-✅ Instead, vary phrasing based on decision friction (timing, switching cost, perfectionism, mental load).  
+→ Rotate openers so they do not repeat across outputs. Always tie to decision friction (timing, ROI uncertainty, mental load, switching cost) — never to inactivity.  
+Keep it specific: inbox chaos, delayed follow-ups, or pipeline review pressure.  
+Use conversational phrasing, grounded in real B2B micro-moments.  
 
-Frame openers like:
-• "You know the moment when ___ (real B2B scenario)?"  
-• "You've rewritten ___ three times… then never sent it."  
-• "They booked the demo. You showed up. And then ___."  
-• "It's been two weeks since ___ and you're still not sure what to do."  
-• "You keep checking ___ like it's going to suddenly solve itself."
+❌ Do NOT use: "You've been circling this for weeks…" or "life happened."  
+✅ Frame openers with variety:
+• "You know the moment when your inbox hits 47 unread and you just... close the laptop?"  
+• "You've rewritten that follow-up three times... then never sent it."  
+• "They booked the demo. You showed up. And then radio silence for two weeks."  
+• "It's 4 PM, pipeline review is tomorrow, and you're still manually sorting leads."  
+• "You keep checking if that warm lead replied like it's going to suddenly solve itself."
 
 2. **Friction Validation**  
 → Normalize the pause and name the decision pressure:
@@ -1294,13 +1295,19 @@ Frame openers like:
 • "They didn't overhaul anything. They cleaned up one system: the inbox."
 
 4. **Trust Builder**  
-→ Add credibility. Rotate proof formats to avoid repetition:
+→ Rotate proof examples across outputs. Do not repeat the same stat or case twice.  
+Options: quantified outcome, anecdotal story, industry benchmark, or peer norm.  
+Prefer narrative proof over bullet-point lists when possible.  
+
 • Peer stat: "A 30-person SaaS team jumped from 23% to 41% close rate in 6 weeks."  
 • Trend: "Teams fixing this see double-digit lift within 30 days."  
+• Story: "Last month, a founder told me: 'I got my Fridays back. No more lead panic.'"  
 • Norm: "Most ops teams using this framework double follow-up speed."
 
 5. **Benefit-Promise CTA**  
-→ Use micro-commitment + transformation payoff:
+→ Integrate CTA with proof so it doesn't feel bolted on. Always combine time cost + payoff preview.  
+Example: "Takes 12 minutes — could free 91 hours before your Q4 review. Want to see inside your setup?"  
+
 • "Takes 12 minutes to walk through — could save you 91 hours this quarter."  
 • "Want to see their exact 90-day playbook?"
 
@@ -1338,13 +1345,13 @@ Use lines like:
 
 ⸻
 
-🚦FINAL FRICTION FILTER
+🚦 FINAL FRICTION FILTER
 
 Before finalizing, ask:
-• Is the CTA low-risk and high-relevance?  
-• Does the message resolve decision hesitation (not inactivity)?  
+• Is the CTA low-risk, high-relevance, and vivid?  
+• Does the message resolve live decision hesitation (not inactivity)?  
 • Does it respect the reader's intelligence, timing, and trust?  
-• Would this work on someone who's 80% in — but still needs clarity to commit?`;
+• Would this still feel fresh if the reader saw 3–4 emails like it?`;
         break;
       case "Promotional":
         categoryInstructions = "Use the promotional email framework to highlight benefits and create desire.";
