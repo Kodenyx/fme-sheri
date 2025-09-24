@@ -1677,7 +1677,7 @@ MANDATORY CONVERSION-SPECIFIC OUTPUT FORMAT:
     console.error('Unexpected error in rewrite-email function:', error);
     return new Response(
       JSON.stringify({ 
-        error: error.message || 'Failed to rewrite email',
+        error: error instanceof Error ? error.message : 'Failed to rewrite email',
         details: 'An unexpected error occurred. Please try again.'
       }), 
       {
