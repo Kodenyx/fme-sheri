@@ -1295,11 +1295,24 @@ Position the solution as simple, proven, and low-effort:
 ⸻
 
 4. Trust Builder
-Always vary proof examples across outputs. Do not reuse the same stat more than once in a sequence. Approved proof types include:
-	•	Quantified outcome: "A 30-person SaaS team jumped from 23% to 41% close rate in 6 weeks."
-	•	Anecdotal story: "One RevOps lead told me they cut triage time by 40% in just 6 weeks."
-	•	Industry benchmark: "Most SaaS teams see a 30%+ lift once inbox triage is automated."
-	•	Peer norm: "Teams your size typically cut 10+ hours/week within 30 days."
+🚨 CRITICAL: NEVER repeat the same numbers, companies, or timeframes across outputs. Generate fresh, believable examples every time.
+
+Always vary proof examples across outputs. Choose ONE proof type and create unique details:
+
+	•	Quantified outcome format: "A [size]-person [industry] team jumped from [X]% to [Y]% [metric] in [timeframe]."
+		Examples to inspire (DO NOT copy): 
+		- "A 15-person logistics company went from 18% to 47% email response rate in 8 weeks"
+		- "A 45-person fintech startup increased conversion from 31% to 58% in 12 weeks"
+		- "A 22-person marketing agency boosted close rate from 29% to 52% in 5 weeks"
+
+	•	Anecdotal story format: "One [role] told me they [specific improvement] in [timeframe]."
+		Examples to inspire (DO NOT copy):
+		- "One sales director told me they eliminated 15 hours of weekly email sorting in 4 weeks"
+		- "One operations manager said they reduced response time by 65% in 6 weeks"
+		- "One founder mentioned they cut email overhead by 8 hours per week in 30 days"
+
+	•	Industry benchmark format: "Most [industry/size] teams see [improvement] once [specific system] is [action]."
+	•	Peer norm format: "Teams your size typically [improvement] within [timeframe]."
 
 Prefer narrative proof (mini case story) over bullet-point lists when possible.
 
@@ -1308,10 +1321,14 @@ Prefer narrative proof (mini case story) over bullet-point lists when possible.
 5. Benefit-Promise CTA
 Integrate the CTA with proof so it feels natural. Always combine time cost + payoff preview.
 
-Examples:
-	•	"Takes 12 minutes — could free 91 hours before your Q4 review. Want me to show you inside your setup?"
-	•	"Want me to walk you through your top 3 time-sinks this week?"
-	•	"Happy to walk you through their 90-day playbook."
+🚨 NEVER use the same time/benefit combinations. Generate fresh numbers every time.
+
+Format: "Takes [X] minutes — could [specific benefit] by [timeframe]. [Consultative question]?"
+
+Examples to inspire (DO NOT copy exact numbers):
+	•	"Takes 8 minutes — could save 15 hours weekly before your next review. Want me to show you inside your setup?"
+	•	"Takes 15 minutes — could eliminate 6 hours of email chaos this month. Want me to walk you through your top 3 time-sinks?"
+	•	"Takes 10 minutes — could free up 25+ hours quarterly. Happy to walk you through their proven playbook?"
 
 ⸻
 
