@@ -1225,103 +1225,108 @@ serve(async (req) => {
    ✓ Did I vary the opener's phrasing, rhythm, and framing (vs past outputs), while keeping the strategy intact?`;
         break;
       case "Conversion":
-        categoryInstructions = `✅ CONVERSION EMAIL PROMPT (Sheri – Decision Stage, Fixed v4.3)
+        categoryInstructions = `✅ CONVERSION EMAIL PROMPT (Sheri – Decision Stage, Fixed v4.4)
 
-Core Purpose: Rewrite conversion-stage emails for Sheri. Audience is aware of the problem and evaluating action, but hesitating due to timing, ROI confidence, or decision fatigue.
-Goal: Relieve decision friction and guide them naturally toward yes — while preserving the theme and details of the input draft.
+Core Purpose: Rewrite conversion-stage emails for Sheri. Audience is already aware of the problem and considering action, but hesitating due to timing, ROI confidence, or decision fatigue.
+Goal: Relieve decision friction and guide them naturally toward yes — while preserving the input theme and details.
 
 ⸻
 
 🧠 CONTEXT CLARIFICATION
-	•	🚫 Not re-engagement.
-	•	✅ Reader is mid-decision, not ghosted.
-	•	Preserve input's theme (growth, pipeline, support, inbox, etc.). Do NOT drift to unrelated themes.
-	•	Conversion emails = show one small, proven fix → tie to payoff.
+• 🚫 Not a re-engagement or win-back email.
+• ✅ Reader is evaluating a clear next step (book call, start trial, review roadmap).
+• Assume they are interested but cautious — not ghosted.
+• Mandatory Rule: Preserve the input's theme (growth, pipeline, inbox, support, retention, etc.).
+• Do NOT default back to "inbox chaos" unless that was in the input.
 
 ⸻
 
 🔍 INPUT ANALYSIS
 
-Before rewriting, identify:
-	1.	Conversion Goal (what's the action?)
-	2.	Offer Framing (risk-free, fast, resource-based)
-	3.	Reader Friction (timing, ROI, effort, confidence)
-	4.	Tone Match (Sheri: calm, consultative, grounded)
-	5.	CTA Clarity (is it obvious, light, motivating?)
+Before rewriting, assess:
+1. Conversion Goal — what's the action?
+2. Offer Framing — time-sensitive, risk-free, or resource-based?
+3. Reader Friction — timing, ROI, effort, confidence?
+4. Tone Match — Sheri's calm, clear, consultative voice.
+5. CTA Clarity — is the action obvious, light, and motivating?
 
 ⸻
 
-💡 BEHAVIORAL PRINCIPLES TO APPLY
+💡 BEHAVIORAL PRINCIPLES
 
-Choose 1–2 that fit the draft:
-	•	Loss Aversion (time, deals, churn slipping away)
-	•	Salience (make benefit vivid: hours, deals, speed)
-	•	Processing Fluency (short, easy to read = easy to act on)
-	•	Autonomy Bias (reader feels in control: "Want me to show you…?")
-	•	Fresh Start Effect (tie to review, quarter reset)
-	•	Social Proof (peer ops lead, team example, benchmark)
+Apply 1–2 that best match the hesitation:
+• Loss Aversion — highlight what's slipping away.
+• Salience — make benefits vivid, personal, measurable.
+• Processing Fluency — easy to read = easy to act on.
+• Autonomy Bias — let reader feel in control.
+• Fresh Start Effect — tie to quarter, review, or reset.
+• Social Proof — peer anecdotes, benchmarks, or norms.
+• Anchoring — compare to alternatives or past performance.
+• Emotion — reflect lived B2B decision tension.
 
 ⸻
 
 ✍️ STRUCTURE: DECISION-STAGE CONVERSION EMAIL
-	1.	Emotional Mirror (Conversion Opener)
-	•	Mirror a decision-friction moment. No ghosting language.
-	•	Examples:
-	•	"You refresh the pipeline report — and nothing's moved."
-	•	"You've rewritten that follow-up three times… then never sent it."
-	•	"Support tickets pile up, and the backlog never shrinks."
-	2.	Friction Validation
-	•	Normalize hesitation: "Most teams pause here — where 'kind of working' hides real cost."
-	3.	System Snapshot
-	•	Show the fix as simple, proven, and specific.
-	•	Replace vague terms ("imagine a system") with grounded micro-fixes: inbox triage, handoffs, follow-up lag.
-	4.	Trust Builder (with Anti-Repetition Rule)
-	•	Vary proof format every output:
-	•	Anecdote: "One ops lead told me…"
-	•	Peer Norm: "Most RevOps teams using this framework cut lag in half."
-	•	Benchmark: "Industry data shows response speed doubles when follow-ups tighten."
-	•	Always include cause + effect (e.g., "handoff delays → 30% faster cycle").
-	5.	Benefit-Promise CTA
-	•	Single CTA only (no stacking).
-	•	Format: "Takes [X] minutes — could [payoff] by [timeframe]. Want me to show you?"
-	•	Rotate timeframes (weekly, monthly, quarterly). Rotate payoffs (hours, deals, replies, revenue).
+1. Emotional Mirror (Opener)
+• Mirror a decision-friction moment (not ghosting).
+• Example:
+  "You refresh the pipeline report — and nothing's moved."
+  "You've rewritten that follow-up three times… then never sent it."
+  "Support tickets pile up, and the backlog never shrinks."
+2. Friction Validation
+• Normalize hesitation: "Most teams pause here — where 'kind of working' hides real cost."
+3. System Snapshot
+• Present the fix as simple, specific, and proven.
+• Replace vague terms ("imagine a system," "elevate") with grounded micro-fixes (handoffs, follow-up lag, inbox triage, ticket backlog).
+4. Trust Builder (Anti-Repetition Rule)
+• Rotate proof formats (anecdote, peer norm, benchmark, quantified outcome).
+• Always show cause → effect (e.g., "handoffs → 30% faster cycle").
+• Never reuse the same % jump + team size + timeframe pattern.
+5. Benefit-Promise CTA
+• Single CTA only. No stacked asks.
+• Format: "Takes [X] minutes — could [specific payoff] by [timeframe]. Want me to show you?"
+• Rotate timeframes (weekly, monthly, quarterly). Rotate payoffs (hours saved, deals closed, replies, revenue).
 
 ⸻
 
 📧 SUBJECT LINE RULES
-	•	6–10 words, conversational, not hype.
-	•	Always tie pain + payoff (e.g., "Growth stalled? One tweak could free 20 hours").
-	•	Rotate formats: pain-driven, gain-driven, curiosity-driven.
+• 6–10 words, conversational, not hype.
+• Always pair pain + payoff (e.g., "Pipeline stalled? One tweak could free 20 hours").
+• Rotate formats: pain-driven, gain-driven, curiosity-driven, benchmark-driven.
+• Anchor to an operational system or metric (pipeline, inbox, tickets, retention). Avoid mindset-only framings.
 
 ⸻
 
 🎙 TONE CHECK — SHERI'S VOICE
-	•	Calm operator. Trusted peer. Clear guide.
-	•	Grounded in lived B2B moments.
-	•	Use plain, specific language: "handoffs that take 3 days instead of 3 hours."
-	•	❌ Avoid vagueness ("elevate," "streamline"), ❌ Avoid re-engagement phrasing.
+• Calm operator. Trusted peer. Clear guide.
+• Grounded in lived B2B moments.
+• Use plain specifics: "handoffs that take 3 days instead of 3 hours."
+• Avoid vendor hype: "streamline," "elevate," "cutting-edge."
+• Avoid re-engagement phrasing: "life happened," "just circling back."
 
 ⸻
 
 🚦 FINAL FRICTION FILTER
 
 Before finalizing, ask:
-	•	Does opener mirror decision friction (not inactivity)?
-	•	Is proof fresh, grounded, and specific?
-	•	Is CTA single, vivid, and consultative?
-	•	Does subject combine pain + payoff?
-	•	Would this feel fresh if seen in sequence with 3 other emails?
+• Does the opener mirror a decision-friction moment?
+• Is proof specific, fresh, and cause-driven?
+• Is there one clear CTA with sharp payoff + consistent timeframe?
+• Does subject line tie pain + payoff, anchored to a system/metric?
+• Would this email still feel fresh if read alongside 3 others in sequence?
 
 ⸻
 
-👉 Biggest upgrades from v4 → v4.3:
-	1.	Ban vague copy (no "imagine," no "elevate," no "streamline" without proof).
-	2.	Cause + effect rule for all proof (specific breakdown → measurable outcome).
-	3.	Single CTA rule (no double closings).
-	4.	Subject must tie pain + payoff (not just pain).
-	5.	Rotate proof/payoff/timeframe explicitly to kill repetition.
+👉 Major Upgrades in v4.4:
+1. Timeframe consistency rule (no mixing 15 minutes + 20 minutes).
+2. Sharp payoff rule (deals, hours, lag — not vague "efficiency").
+3. Subject anchoring rule (always tied to a system/metric).
+4. Proof causality lock (always fix → outcome).
+5. One CTA rule reinforced (no double closings).
 
-⸻`;
+⸻
+
+⚡ This prompt ensures Lovable outputs emails that score 9+ by keeping them specific, measurable, and Sheri-style — while avoiding vague or repetitive patterns.`;
         break;
       case "Promotional":
         categoryInstructions = "Use the promotional email framework to highlight benefits and create desire.";
