@@ -1225,7 +1225,7 @@ serve(async (req) => {
    ✓ Did I vary the opener's phrasing, rhythm, and framing (vs past outputs), while keeping the strategy intact?`;
         break;
       case "Conversion":
-        categoryInstructions = `✅ CONVERSION EMAIL PROMPT (Sheri – Decision Stage, v4.5)
+        categoryInstructions = `✅ CONVERSION EMAIL PROMPT (Sheri – Decision Stage, v4.6)
 
 Core Purpose: Rewrite conversion-stage emails for Sheri. Audience is already aware of the problem and considering action, but hesitating due to timing, ROI confidence, or decision fatigue.
 Goal: Relieve decision friction and guide them naturally toward yes — while preserving the input theme and details.
@@ -1275,50 +1275,57 @@ Apply 1–2 that best match the hesitation:
   "Support tickets pile up, and the backlog never shrinks."
 2. Friction Validation
 • Normalize hesitation: "Most teams pause here — where 'kind of working' hides real cost."
+• 🚫 BANNED FLUFFY PHRASES: "lingers longer," "familiar spot," "almost there," anything that sounds like life coaching vs. ops friction.
+• ✅ Keep grounded in operational moments vs generic reassurance.
 3. System Snapshot
 • Present the fix as simple, specific, and proven.
 • Replace vague terms ("imagine a system," "elevate") with grounded micro-fixes (handoffs, follow-up lag, inbox triage, ticket backlog).
-4. Trust Builder (Enhanced Causality Rule)
+4. Trust Builder (ONE Proof Rule)
+• 🚫 ABSOLUTE RULE: ONE proof point only. No stacking stats back-to-back. If you have two good stats, pick the stronger one.
 • 🚫 NEVER use "we/our system." Frame outcomes through peer anecdotes or cause-effect stories.
 • ✅ Use: "One ops lead told me...", "Most RevOps teams who fixed this...", "Teams that streamlined handoffs..."
 • Every proof MUST include operational breakdown: "Fixing SDR→AE handoffs cut cycle times by 30%" not "efficiency improved 30%"
 • Rotate proof formats (anecdote, peer norm, benchmark, quantified outcome).
 • Never reuse the same % jump + team size + timeframe pattern.
-5. Benefit-Promise CTA (Single CTA Rule)
+5. Benefit-Promise CTA (Setup-Specific Format)
 • 🚫 ABSOLUTE PROHIBITION: No stacked asks. Only ONE CTA per email.
-• ✅ Format: "Worth [X] minutes — could [specific payoff] by [timeframe]. Want me to show you?"
-• Example: "Worth 20 minutes — could mean hitting Q4 targets. Want me to show you?"
+• ✅ Setup-specific format: "Worth [X] minutes — could [specific payoff] by [timeframe]. Want me to walk you through what that would look like in your setup?"
+• Example: "Worth 20 minutes — could mean hitting Q4 targets. Want me to walk you through what that would look like in your setup?"
 • Rotate timeframes (weekly, monthly, quarterly). Rotate payoffs (hours saved, deals closed, replies, revenue).
 
 ⸻
 
-📧 SUBJECT LINE RULES
-• 6–10 words, conversational, not hype.
-• Always pair pain + payoff (e.g., "Pipeline stalled? One tweak could free 20 hours").
+📧 SUBJECT LINE RULES (Anti-Mindset Coaching)
+• 🚫 BANNED: Mindset/coaching framings ("decision mode," "stuck thinking," "analysis paralysis," anything therapy-sounding).
+• ✅ MANDATORY: Always anchor to systems/metrics (pipeline, handoffs, lag, hours, deals, cycle time, backlog).
+• 6–10 words, tie pain + payoff with operational specificity.
+• Examples: "Pipeline stuck? Handoffs could free 10 hours a week", "3-day lag → same-day close?"
+• Quality check: "Does this sound like ops pain or life coaching?"
 • Rotate formats: pain-driven, gain-driven, curiosity-driven, benchmark-driven.
-• Anchor to an operational system or metric (pipeline, inbox, tickets, retention). Avoid mindset-only framings.
 
 ⸻
 
-🎙 TONE CHECK — SHERI'S VOICE (Anti-Vendor Drift)
-• Calm peer-guide. Trusted operator. Never vendor/platform-centric.
-• 🚫 BANNED PHRASES: "we/our system," "our platform," "we help companies," any solution-selling language.
+🎙 TONE CHECK — SHERI'S VOICE (Anti-Vendor & Anti-Fluff)
+• Sharp peer-guide. Trusted operator. Grounded in lived ops tension.
+• 🚫 BANNED VENDOR PHRASES: "we/our system," "our platform," "we help companies," any solution-selling language.
+• 🚫 BANNED FLUFFY PHRASES: "lingers longer," "familiar spot," "almost there," anything that sounds marketing vs. operational friction.
 • ✅ Keep focus on reader's lived friction and small, proven fixes.
 • Grounded in lived B2B moments: "handoffs that take 3 days instead of 3 hours."
 • Avoid vendor hype: "streamline," "elevate," "cutting-edge."
 • Avoid re-engagement phrasing: "life happened," "just circling back."
+• Tone check: "Does this sound like lived ops friction or marketing copy?"
 
 ⸻
 
-🚦 FINAL QUALITY FILTER
+🚦 PRECISION QUALITY FILTER
 
-Before finalizing, check for the 4 critical weaknesses:
-1. Vendor Drift: Does it avoid "we/our" and stay peer-focused?
-2. Proof Causality: Does every stat include cause → operational effect?
-3. Single CTA: Is there exactly one consultative ask?
-4. Tone Drift: Does it maintain peer-guide vs. platform-selling voice?
+Before finalizing, check for these 4 critical drift patterns:
+1. **Subject Line Drift**: Does it ban mindset coaching and anchor to systems/metrics?
+2. **Proof Stacking**: Is there exactly ONE proof point with operational causality?
+3. **Tone Drift**: Does it avoid fluffy language and stay grounded in ops tension?
+4. **CTA Generic**: Does it use setup-specific consultative language vs. generic "show you how"?
 
-Then verify:
+Then verify overall quality:
 • Does the opener mirror a decision-friction moment?
 • Is proof specific, fresh, and operationally broken down?
 • Is there one clear CTA with sharp payoff + consistent timeframe?
@@ -1327,16 +1334,16 @@ Then verify:
 
 ⸻
 
-👉 Major Upgrades in v4.5:
-1. Anti-vendor drift rule (no "we/our system" language).
-2. Enhanced proof causality (operational breakdowns required).
-3. Absolute single CTA prohibition (no stacked asks).
-4. Strengthened tone guardrails (peer-guide vs. platform-selling).
-5. Four-weakness quality filter added.
+👉 Major Upgrades in v4.6:
+1. Subject line anti-mindset coaching rule (ops pain only, not therapy).
+2. ONE proof rule (no stacking stats back-to-back).
+3. Fluffy phrase prohibition (sharper ops tension language).
+4. Setup-specific CTA upgrade (consultative vs. generic).
+5. Precision quality filter for 4 drift patterns.
 
 ⸻
 
-⚡ This prompt ensures Lovable outputs emails that score 9+ by keeping them specific, measurable, and Sheri-style — while avoiding the 4 critical weaknesses.`;
+⚡ This prompt ensures Lovable outputs emails that score 9.2+ by preventing the 4 critical drift patterns while maintaining Sheri's authentic peer-guide voice.`;
         break;
       case "Promotional":
         categoryInstructions = "Use the promotional email framework to highlight benefits and create desire.";
