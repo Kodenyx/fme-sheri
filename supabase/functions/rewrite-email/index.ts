@@ -1225,105 +1225,95 @@ serve(async (req) => {
    ✓ Did I vary the opener's phrasing, rhythm, and framing (vs past outputs), while keeping the strategy intact?`;
         break;
       case "Conversion":
-        categoryInstructions = `✅ CONVERSION EMAIL PROMPT (Sheri – Decision Stage, v5.1 Fixed)
+        categoryInstructions = `For Aarti: Watch the bossiness tone.
+'If I were you, I would do this..)
 
-Core Purpose
-Rewrite conversion-stage emails for B2B founder Sheri. These are not cold intros or win-backs. The reader is already aware of the problem and considering action but hesitating due to timing, ROI confidence, or decision fatigue.
+Behavioral science principles Base doc to reference the tool on.
+You are analyzing a conversion-focused email, designed to drive action such as:
+Booking a sales call
+Booking a demo
+Starting a free trial
+Advancing to the next step in a sales conversation
+NOTE that emails perform better when they mirror behavior and relieve decision pressure, so aim to do that in these conversion emails
 
-Goal
-Relieve decision friction and guide them naturally toward saying yes — while staying 100% aligned to the core meaning of the input draft.
+Based on the input draft, assess the following:
+INPUT ANALYSIS
+Primary Conversion Goal
+Framing & Offer Type
+Audience Emotional State & Readiness
+Email Structure & Style
+Tone & Trust Level
+BEHAVIORAL STRATEGY
+Based on your analysis:
+Select the best-fit behavioral science principle or principles that will most increase conversion by enhancing message resonance, CTA clarity, and emotional motivation.
 
-⸻
+Rewrite or enhance the message by applying the principle to guide the reader naturally toward action.
 
-🧠 CONTEXT CLARIFICATION
-	•	🚫 This is NOT a re-engagement, win-back, or generic nurture.
-	•	✅ Assume the reader is evaluating a next step (demo, call, trial).
-	•	⚠️ Mandatory Rule: Do not change the theme of the draft.
-	•	If input is about pipeline velocity, keep it pipeline velocity.
-	•	If input is about growth, revenue, or handoffs, preserve that.
-	•	Never swap to "inbox chaos" or "AI system" unless it was already in the draft.
-	•	Your job = optimize tone, flow, and persuasion. Do not invent a new premise.
+PRINCIPLES TO CHOOSE FROM:
+Loss Aversion
+Anchoring
+Commitment & Consistency
+Reciprocity
+Information Gap
+Social Proof
+Scarcity or Urgency
+Autonomy Bias
+Fresh Start Effect
+Processing Fluency / Cognitive Fluency
+Salience
+Emotion
+Exclusivity
+Authority principle
+Labeling
 
-⸻
+CONVERSION SIGNAL EMAIL STRUCTURE
+Signal Mirror: Name what they've likely done (visited, clicked, ghosted)
+Address Internal Friction: Reflect what might be holding them back  (e.g., "not sure if now's the right time," "unclear if this is the right fit," "too many moving pieces").
+System Snapshot: Introduce the system that solves that specific hesitation 
+Trust Builder: Drop proof or social norm (e.g., "teams using this framework are seeing 2x the close rate")
+Low Friction CTA: Emphasize clarity, speed, and relevance (ex: "Let's look at 3 signals you're already sitting on")
 
-🔍 INPUT ANALYSIS
+CTA STRUCTURES
+ Avoid generic CTAs like:
+"Schedule a quick call"
+"Book a demo to learn more"
 
-For every draft, first identify:
-	1.	Primary Conversion Goal (demo, call, trial, reply)
-	2.	Offer Framing (time-sensitive, low effort, ROI focused)
-	3.	Reader State (cautious, overloaded, skeptical)
-	4.	Tone Match (Sheri = calm, peer-to-peer, consultative)
-	5.	Structure Clarity (is CTA obvious, specific, light?)
+Instead, favor:
+"Want me to show you the top 3 signals your CRM is hiding?"
+"Let's spend 10 minutes identifying where your best leads stalled"
+"I'll walk you through how to fix your follow-up—no new traffic required"
 
-⸻
+HARPER TONE CHECK
+After rewriting, ensure the tone mirrors the voice personal below:
+Tone should be: Calm, specific, 1:1 emotional truth, grounded in lived B2B moments.
 
-💡 BEHAVIORAL SCIENCE TO APPLY
+General:
+'You know the moment when your phone rings and you're too busy to answer it?' 
 
-Pick 1–2 principles per rewrite to increase conversion:
-	•	Loss Aversion – Show what slips away if they stall.
-	•	Salience – Make the benefit vivid and near-term.
-	•	Processing Fluency – Short, simple lines = easy action.
-	•	Autonomy Bias – Let them feel in control.
-	•	Fresh Start Effect – Tie to quarter, review, reset moment.
-	•	Social Proof – Anecdote, peer norm, benchmark.
-	•	Emotion – Speak to real B2B decision tension.
+'You rewrote that follow-up three times… then never sent it.'
 
-⸻
+'They booked the demo. You showed up. And then? Silence.'
 
-✍️ STRUCTURE: DECISION-STAGE EMAIL
-	1.	Signal Mirror (Emotional Opener)
-	•	Mirror a lived decision friction moment.
-	•	Examples:
-	•	"You refresh the pipeline report — and nothing's moved."
-	•	"You rewrote that follow-up three times… then never sent it."
-	•	"They booked the demo. You showed up. And then? Silence."
-	2.	Friction Validation
-	•	Normalize hesitation:
-	•	"Most teams pause here — where 'kind of working' hides real cost."
-	3.	System Snapshot
-	•	Simple, proven fix.
-	•	Stay aligned with input theme (growth, velocity, handoffs).
-	•	⚠️ Do not introduce new systems or vendor-speak.
-	4.	Trust Builder (Anti-Repetition Rule)
-	•	Rotate proof formats: anecdote, peer norm, benchmark, quantified outcome.
-	•	Never repeat "30% in 6 weeks" or recycle the same pattern across outputs.
-	5.	Benefit-Promise CTA (Anti-Repetition Rule)
-	•	One consultative ask, not stacked CTAs.
-	•	Examples:
-	•	"Worth 15 minutes — could cut days off this quarter. Want me to show you?"
-	•	"Takes 12 minutes — could unlock 2–3 more closes. Curious?"
+'It's been two weeks since the webinar, and you're still not sure who to follow up with.'
 
-⸻
+'You keep checking the CRM like the data's going to suddenly tell you what to do.'
+E.g.,These openers mirror micro-moments of uncertainty that block next steps—post-demo, post-download, or in final consideration.
+"They asked for the deck. Then never opened it."
+"You've got 17 warm leads and no idea what to say next."
+"The trial ended. They didn't convert. And you're stuck on how to ask why."
+"This could work. You're just not sure if they think so."
 
-📧 SUBJECT LINE RULES
-	•	Balance pain + payoff.
-	•	Rotate between pain-framing, gain-framing, curiosity.
-	•	Keep 6–10 words. Conversational, not hype.
-	•	No recycling the same structure.
+"You're circling the CTA like it's a trap. It's not. But it feels like one."
+Emotionally specific, grounded, and calming
+Reflective of real B2B decision tension
+Helpful, not pushy. Honest, not inflated
+Like the best friend or mentor who tells you what's actually going on
 
-⸻
-
-🎙 TONE CHECK (Sheri's Voice)
-	•	Calm operator. Trusted peer. Clear guide.
-	•	Helpful, not pushy. Honest, not inflated.
-	•	Phrasing examples:
-	•	"This probably isn't urgent. Until it is."
-	•	"Not a full overhaul — just one system fix with ROI baked in."
-	•	"You could be running this before your next review."
-	•	❌ Avoid vendor drift ("our AI system," "platform features," "cutting-edge").
-
-⸻
-
-🚦 FINAL FRICTION FILTER
-
-Before outputting:
-	•	Did you keep the core meaning/theme intact?
-	•	Is proof fresh, not recycled?
-	•	Is CTA consultative and light, not stacked?
-	•	Does the subject rotate format vs. last output?
-	•	Would this feel fresh if they saw 3–4 in sequence?
-
-⸻`;
+CONVERSION FRICTION FILTER
+Before finalizing:
+Is the CTA too vague, risky, or high-commitment for the context?
+Are we asking too much without clarity?
+Does the message build momentum or trigger decision fatigue?`;
         break;
       case "Promotional":
         categoryInstructions = "Use the promotional email framework to highlight benefits and create desire.";
