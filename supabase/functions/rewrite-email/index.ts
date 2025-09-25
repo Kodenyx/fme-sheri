@@ -1225,121 +1225,64 @@ serve(async (req) => {
    ✓ Did I vary the opener's phrasing, rhythm, and framing (vs past outputs), while keeping the strategy intact?`;
         break;
       case "Conversion":
-        categoryInstructions = `✅ CONVERSION EMAIL PROMPT (Sheri – Decision Stage, Fixed v4)
+        categoryInstructions = `You are rewriting a conversion-stage email for Sheri (a B2B founder helping teams with AI-powered systems). The goal: relieve decision friction and guide the reader naturally toward saying yes to the next step (book a call, start a trial, review roadmap).
 
-Core Purpose: Analyze and rewrite conversion-stage emails for B2B founder Sheri. These emails are for readers who are already aware of the problem and considering action but hesitating due to timing, ROI confidence, or decision fatigue.
+🚫 This is NOT a re-engagement or win-back email. Assume the reader is evaluating, interested but cautious — not ghosted.
 
-Goal: Relieve decision friction and guide them naturally toward saying yes — while staying 100% aligned to the theme and details of the input draft.
+---
 
-⸻
-
-🧠 CONTEXT CLARIFICATION
-	•	🚫 This is NOT a re-engagement or win-back email.
-	•	✅ The reader is evaluating a clear next step (book call, start trial, review roadmap).
-	•	Assume they are interested but cautious — not ghosted.
-	•	Mandatory Rule: Preserve the input's framing.
-	•	If the draft talks about growth, revenue, pipeline, or close rates, keep that theme.
-	•	Do NOT default back to "inbox chaos" unless that was the original input.
-
-⸻
-
-🔍 INPUT ANALYSIS — BEFORE REWRITING
-
-Assess the draft for:
-	1.	Primary Conversion Goal – What's the next step?
-	2.	Offer Framing – Time-sensitive, risk-free, or resource-based?
-	3.	Reader State – What's holding them back (timing, ROI, confidence)?
-	4.	Tone & Voice Match – Does this sound like Sheri (calm, clear, consultative)?
-	5.	Structure & CTA Clarity – Is the CTA obvious, light, and motivating?
-
-⸻
-
-💡 BEHAVIORAL PRINCIPLES TO APPLY
-
-Choose 1–2 principles that best address the hesitation:
-	•	Loss Aversion – Show what's quietly slipping away
-	•	Salience – Make benefits vivid and personal
-	•	Processing Fluency – Easy to read = easy to act on
-	•	Autonomy Bias – Let them feel in control
-	•	Fresh Start Effect – Tie to quarter, review, or reset moment
-	•	Social Proof – Peer examples, anecdotes, benchmarks
-	•	Anchoring – Compare to alternatives or past performance
-	•	Emotion – Speak to lived B2B decision tension
-
-⸻
-
-✍️ STRUCTURE: DECISION-STAGE CONVERSION EMAIL
+STRUCTURE TO FOLLOW:
 
 1. Emotional Mirror (Conversion Opener)
-	•	Mirror a decision-friction moment — not ghosting.
-	•	Rotate scenes so they don't repeat.
-	•	Examples:
-	•	"You know the moment when you refresh your pipeline report, hoping deals moved — and nothing changed?"
-	•	"You've rewritten that follow-up three times… then never sent it."
-	•	"They booked the demo. You showed up. And then? Silence."
-	•	"It's been two weeks since the webinar, and you're still unsure who to follow up with."
+- Mirror the moment of decision friction, not inactivity.
+- Use grounded B2B micro-moments, e.g.:
+  • "You've rewritten that follow-up three times… then never sent it."
+  • "They booked the demo. You showed up. And then? Silence."
+  • "It's been two weeks since the webinar, and you're still unsure who to follow up with."
+- ❌ Do NOT use re-engagement phrases like "life happened," "just circling back," or "you paused."
 
-2. Friction Validation
-	•	Normalize hesitation: "Most teams pause here — where 'kind of working' meets hidden cost."
+2. Address Internal Friction
+- Normalize hesitation: timing, fit, effort.
+- Example: "Most teams pause here — where 'kind of working' meets hidden cost."
 
 3. System Snapshot
-	•	Show the fix as simple and proven.
-	•	Keep it aligned with input's theme (growth, pipeline, revenue, inbox).
+- Describe the fix as simple, specific, and proven.
+- Must stay aligned with the input draft's theme (pipeline, growth, revenue, inbox).
+- ❌ Never swap themes (e.g., don't insert inbox chaos if the input is about pipeline growth).
 
-4. Trust Builder (Critical Anti-Repetition Rule)
-	•	NEVER recycle the same structure twice (e.g., "30-person SaaS team + % jump + 6 weeks").
-	•	Rotate proof types across outputs:
-	•	Anecdote: "One ops lead told me…"
-	•	Peer Norm: "Most RevOps teams using this framework double response speed."
-	•	Benchmark: "Industry data shows…"
-	•	Quantified Outcome: "A 22-person team boosted reply rates by 15 points."
+4. Trust Builder
+- Provide proof, but vary the format:
+  • Peer anecdote ("One ops lead told me…")
+  • Peer norm ("Most RevOps teams using this framework…")
+  • Industry benchmark ("Industry data shows…")
+  • Quantified outcome ("A growth-stage team boosted reply rates by 15 points…")
+- ⚠️ Never recycle the same stat/timeframe pattern (e.g., "30-person SaaS + % jump + 6 weeks").
+- ⚠️ Never fabricate if input has no numbers. Use anecdotes or peer norms instead.
 
-5. Benefit-Promise CTA (Anti-Repetition Rule)
-	•	Integrate CTA naturally with proof.
-	•	Vary timeframes and benefits (weekly, monthly, quarterly; hours saved, deals closed, faster replies).
-	•	Examples:
-	•	"Worth 10 minutes — could free 7 hours this week. Want me to show you?"
-	•	"Could unlock 2–3 more closes this month. Want a quick look?"
-	•	"Takes 12 minutes — might cut your follow-up lag in half. Want to see how?"
+5. Benefit-Promise CTA
+- Low-friction, consultative, outcome-linked.
+- Avoid generic CTAs like "Schedule a call" or "Book a demo."
+- Use Sheri-style CTAs:
+  • "Worth 10 minutes — could unlock 2–3 more closes this month. Want me to show you?"
+  • "Want me to walk you through how this would look in your setup?"
+  • "Takes 12 minutes — might cut your follow-up lag in half. Want to see how?"
 
-⸻
+---
 
-📧 SUBJECT LINE RULES
-	•	Balance pain + payoff.
-	•	Rotate formats: chaos-framing, gain-framing, curiosity-framing, benchmark-framing.
-	•	6–10 words, conversational, not hype.
-	•	Do not reuse the same subject structure in consecutive outputs.
+TONE & STYLE:
+- Calm, consultative, 1:1 voice.
+- Speak like a trusted peer, not a hype-y seller.
+- Emotionally specific, grounded in lived B2B decision tension.
+- ❌ Avoid bossy framing ("If I were you…") and corporate jargon ("accelerate pipeline velocity," "best-in-class," "seamless insights").
 
-⸻
+---
 
-🎙 TONE CHECK — SHERI'S VOICE
-	•	Calm operator. Trusted peer. Clear guide.
-	•	Helpful, not pushy. Honest, not inflated.
-	•	Use natural lines like:
-	•	"This probably isn't urgent. Until it is."
-	•	"Not a full overhaul — just one system fix with ROI baked in."
-	•	"You could be running this before your next review."
-	•	❌ Avoid re-engagement phrases: "life happened," "just circling back," "you paused."
-
-⸻
-
-🚦 FINAL FRICTION FILTER
-
-Before finalizing, check:
-	•	Does the opener mirror decision friction (not inactivity)?
-	•	Is the proof fresh (no recycled stat pattern)?
-	•	Is the CTA vivid, consultative, and varied?
-	•	Does the subject rotate style vs. last outputs?
-	•	Would this email still feel fresh if the reader saw 3–4 in sequence?
-
-⸻
-
-👉 This v4 framework makes three hard guardrails explicit:
-	1.	Stay on-theme with the input (no defaulting to inbox chaos).
-	2.	Rotate proof formats (no repeating team size + % + 6 weeks).
-	3.	Rotate CTA structures (no recycling 12 min / 91 hours).
-
-⸻`;
+FINAL QA (Conversion Friction Filter):
+1. Did the opener mirror decision friction (not inactivity)?
+2. Did the proof stay aligned to the input theme and feel fresh (no recycled stat/timeframe)?
+3. Is the CTA consultative and low-friction?
+4. Does the email respect Sheri's calm operator tone?
+5. Would this feel fresh if the reader saw 3–4 of these in sequence?`;
         break;
       case "Promotional":
         categoryInstructions = "Use the promotional email framework to highlight benefits and create desire.";
