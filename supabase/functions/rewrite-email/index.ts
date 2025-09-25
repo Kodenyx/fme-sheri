@@ -1295,13 +1295,15 @@ Apply 1–2 that best match the hesitation:
 
 ⸻
 
-📧 SUBJECT LINE RULES (Anti-B2C & Anti-Mindset Coaching)
+📧 SUBJECT LINE RULES (Anti-B2C & Anti-Mindset Coaching + Salience)
 • 🚫 BANNED: Emotional/personal framings ("Frustrated with...", "Tired of...", "Fed up with...")
 • 🚫 BANNED: Mindset/coaching framings ("decision mode," "stuck thinking," "analysis paralysis," anything therapy-sounding).
+• 🚫 BANNED: Generic blog headlines ("Pipeline bottlenecks slowing deals?" → too broad)
+• ✅ MANDATORY: Specific bottleneck identification with peer-to-peer conversational moments.
 • ✅ MANDATORY: Direct system language with operational specificity (pipeline, handoffs, lag, hours, deals, cycle time, backlog).
 • 6–10 words, tie pain + payoff with operational specificity.
-• Examples: "Pipeline bottlenecks slowing deals?", "3-day lag → same-day close?"
-• Quality check: "Does this sound B2C emotional or peer-operator direct?"
+• Examples: "3-day lag at SDR→AE handoff?", "When deals stall, it's usually this…", "Same team, 30% faster closes?"
+• Quality check: "Does this sound like a peer conversation or a blog headline?"
 • Rotate formats: pain-driven, gain-driven, curiosity-driven, benchmark-driven.
 
 ⸻
@@ -1312,6 +1314,8 @@ Apply 1–2 that best match the hesitation:
 • 🚫 BANNED FLUFFY PHRASES: "lingers longer," "familiar spot," "almost there," anything that sounds marketing vs. operational friction.
 • 🚫 BANNED HYPE PHRASES: "with ease," "effortlessly," "seamlessly," any hype flourishes.
 • ✅ Keep focus on reader's lived friction and small, proven fixes.
+• ✅ MANDATORY proof authority: Direct cause→effect with concrete specifics. Format: "One ops lead told me [specific action] → [specific result] — [percentage improvement]"
+• ✅ BANNED authority softening: No "for one ops lead I spoke with" or similar diluting phrases.
 • ✅ Add voice texture to proof points: Mirror decision tension (e.g., "Same team, just faster handoffs → 30% shorter cycles").
 • Grounded in lived B2B moments: "handoffs that take 3 days instead of 3 hours."
 • Avoid vendor hype: "streamline," "elevate," "cutting-edge."
@@ -1320,38 +1324,56 @@ Apply 1–2 that best match the hesitation:
 
 ⸻
 
+**CTA RULES (Consultative Edge + Single Workflow Focus)**
+• 🚫 BANNED: Generic flat endings ("Worth 20 minutes — could mean hitting Q4 targets")
+• 🚫 BANNED: Generic versions ("Want me to show you how?" "Interested in learning more?")
+• ✅ MANDATORY: Single-workflow focus with vivid payoff
+• ✅ Format: "Worth X minutes — could mean [big goal] by fixing just [one specific thing]. Want me to show you?"
+• ✅ Use the SETUP LANGUAGE directly in CTA. Match their exact friction point.
+• Examples: "Worth 20 minutes — could mean hitting Q4 targets by fixing just one workflow. Want me to show you?"
+• Always include timeframe ("20 minutes") and tie to their specific pain point.
+• Quality check: "Does this have consultative edge with single-workflow focus?"
+
+⸻
+
 🚦 PRECISION QUALITY FILTER
 
-Before finalizing, check for these 7 critical drift patterns:
+Before finalizing, check for these 10 critical drift patterns:
 1. **Subject Line B2C Drift**: Does it avoid emotional/personal language and use direct system language?
-2. **Subject Line Mindset Drift**: Does it ban coaching framings and anchor to systems/metrics?
-3. **Proof Stacking**: Is there exactly ONE proof point with voice texture?
-4. **Proof Voice Texture**: Does it mirror decision tension (not clinical)?
-5. **Tone Drift**: Does it avoid fluffy language and stay grounded in ops tension?
-6. **CTA Hype**: Does it avoid hype flourishes and stay clean/direct?
-7. **CTA Generic**: Does it use setup-specific consultative language vs. generic "show you how"?
+2. **Subject Line Generic Drift**: Does it avoid blog headlines and use specific bottleneck identification?
+3. **Subject Line Mindset Drift**: Does it ban coaching framings and anchor to systems/metrics?
+4. **Proof Stacking**: Is there exactly ONE proof point with voice texture?
+5. **Proof Authority**: Does it use direct cause→effect without softening language?
+6. **Proof Voice Texture**: Does it mirror decision tension (not clinical)?
+7. **Tone Drift**: Does it avoid fluffy language and stay grounded in ops tension?
+8. **CTA Hype**: Does it avoid hype flourishes and stay clean/direct?
+9. **CTA Flatness**: Does it have consultative edge with single-workflow focus?
+10. **CTA Generic**: Does it use setup-specific consultative language vs. generic "show you how"?
 
 Then verify overall quality:
 • Does the opener mirror a decision-friction moment?
-• Is proof specific, fresh, and operationally broken down?
-• Is there one clear CTA with sharp payoff + consistent timeframe?
-• Does subject line tie pain + payoff, anchored to a system/metric?
-• Would this email still feel fresh if read alongside 3 others in sequence?
+• Is the proof grounded in lived ops tension with authority?
+• Does the CTA feel consultative with vivid single-workflow payoff?
+• Is the voice consistently peer-guide (not vendor)?
+• Does it sound like Sheri Otto's authentic voice throughout?
 
 ⸻
 
-👉 Major Upgrades in v4.7:
+👉 Major Upgrades in v4.8:
 1. Subject line anti-B2C emotional language (peer-operator direct).
-2. Subject line anti-mindset coaching rule (ops pain only, not therapy).
-3. ONE proof rule with voice texture (mirror decision tension).
-4. Fluffy phrase prohibition (sharper ops tension language).
-5. CTA hype flourish ban (clean and direct).
-6. Setup-specific CTA upgrade (consultative vs. generic).
-7. Precision quality filter for 7 drift patterns.
+2. Subject line anti-generic blog headlines (specific bottleneck identification).
+3. Subject line anti-mindset coaching rule (ops pain only, not therapy).
+4. ONE proof rule with voice texture (mirror decision tension).
+5. Proof authority strengthening (direct cause→effect, no softening).
+6. Fluffy phrase prohibition (sharper ops tension language).
+7. CTA hype flourish ban (clean and direct).
+8. CTA consultative edge enhancement (single-workflow focus).
+9. Setup-specific CTA upgrade (consultative vs. generic).
+10. Precision quality filter for 10 drift patterns.
 
 ⸻
 
-⚡ This prompt ensures Lovable outputs emails that score 9.2+ by preventing the 7 critical drift patterns while maintaining Sheri's authentic peer-guide voice with precise voice texture.`;
+⚡ This prompt ensures Lovable outputs emails that score 9.2+ by preventing the 10 critical drift patterns while maintaining Sheri's authentic peer-guide voice with salience, authority, and consultative edge.`;
         break;
       case "Promotional":
         categoryInstructions = "Use the promotional email framework to highlight benefits and create desire.";
