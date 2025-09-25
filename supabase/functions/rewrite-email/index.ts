@@ -1225,86 +1225,63 @@ serve(async (req) => {
    ✓ Did I vary the opener's phrasing, rhythm, and framing (vs past outputs), while keeping the strategy intact?`;
         break;
       case "Conversion":
-        categoryInstructions = `You are rewriting a conversion-stage email for Sheri (a B2B founder helping teams with AI-powered systems). The goal: relieve decision friction and guide the reader naturally toward saying yes to the next step (book a call, start a trial, review roadmap).
+        categoryInstructions = `You are rewriting a conversion-stage email for Sheri (a B2B founder helping teams with AI-powered systems). The goal: relieve decision friction and guide the reader naturally toward saying yes to the next step (book a call, start a trial, review a roadmap).
 
-🚫 This is NOT a re-engagement or win-back email. Assume the reader is evaluating, interested but cautious — not ghosted.
-
----
-
-CRITICAL CONTRAST EXAMPLES:
-
-❌ BAD (Re-engagement drift):
-"Just circling back — you paused before. Most teams hesitate..."
-
-✅ GOOD (Conversion):
-"You've rewritten that follow-up three times… then never sent it. Most teams pause here — right where 'kind of working' meets hidden cost."
-
-❌ BAD (Generic follow-up):
-"Life happened, I get it. But this might still help..."
-
-✅ GOOD (Decision friction):
-"They booked the demo. You showed up. And then? Silence. Most teams get stuck right here — between 'looks promising' and 'let's do this.'"
-
-❌ BAD (Pushy/corporate):
-"Following up on our conversation. Ready to accelerate your pipeline velocity?"
-
-✅ GOOD (Consultative/specific):
-"It's been two weeks since the webinar, and you're still unsure who to follow up with. Worth 10 minutes — could unlock 2–3 more closes this month. Want me to show you?"
+🚫 This is NOT a re-engagement or win-back email. The reader is evaluating, interested but cautious — not ghosted.
 
 ---
 
-STRUCTURE TO FOLLOW:
+STRUCTURE:
 
 1. Emotional Mirror (Conversion Opener)
-- Mirror the moment of decision friction, not inactivity.
-- Use grounded B2B micro-moments, e.g.:
-  • "You've rewritten that follow-up three times… then never sent it."
+- Mirror a lived B2B moment of decision friction (not inactivity).
+- Use concrete scenes:
+  • "You refresh the pipeline report — and nothing's moved."
   • "They booked the demo. You showed up. And then? Silence."
-  • "It's been two weeks since the webinar, and you're still unsure who to follow up with."
-- ❌ Do NOT use re-engagement phrases like "life happened," "just circling back," or "you paused."
+  • "You've rewritten that follow-up three times… then never sent it."
+- ❌ Never use re-engagement phrases ("life happened," "just circling back," "you paused").
 
-2. Address Internal Friction
-- Normalize hesitation: timing, fit, effort.
-- Example: "Most teams pause here — where 'kind of working' meets hidden cost."
+2. Friction Validation
+- Normalize hesitation: timing, ROI, effort.
+- Example: "Most teams pause here — where 'kind of working' hides real costs."
 
 3. System Snapshot
-- Describe the fix as simple, specific, and proven.
-- Must stay aligned with the input draft's theme (pipeline, growth, revenue, inbox).
-- ❌ Never swap themes (e.g., don't insert inbox chaos if the input is about pipeline growth).
+- Show the fix as simple, specific, and proven.
+- Always stay aligned to the input draft's theme (pipeline, growth, revenue, inbox).
+- ❌ Never swap themes (don't inject inbox chaos into a growth email).
 
-4. Trust Builder
-- Provide proof, but vary the format:
-  • Peer anecdote ("One ops lead told me…")
-  • Peer norm ("Most RevOps teams using this framework…")
-  • Industry benchmark ("Industry data shows…")
-  • Quantified outcome ("A growth-stage team boosted reply rates by 15 points…")
-- ⚠️ Never recycle the same stat/timeframe pattern (e.g., "30-person SaaS + % jump + 6 weeks").
-- ⚠️ Never fabricate if input has no numbers. Use anecdotes or peer norms instead.
+4. Trust Builder (Variety Required)
+- Provide proof that feels fresh:
+  • Anecdote ("One ops lead told me…")
+  • Peer norm ("Most teams using this framework…")
+  • Benchmark ("Industry data shows…")
+  • Quantified outcome ("A growth-stage team boosted reply rates by 15 points in 30 days.")
+- ⚠️ Never repeat the same stat/timeframe pattern across outputs.
+- ⚠️ If input has no numbers, default to anecdote or peer norm — never fabricate.
 
 5. Benefit-Promise CTA
 - Low-friction, consultative, outcome-linked.
-- Avoid generic CTAs like "Schedule a call" or "Book a demo."
-- Use Sheri-style CTAs:
+- Examples:
   • "Worth 10 minutes — could unlock 2–3 more closes this month. Want me to show you?"
-  • "Want me to walk you through how this would look in your setup?"
   • "Takes 12 minutes — might cut your follow-up lag in half. Want to see how?"
+  • "Want me to walk you through how this would look in your setup?"
+- ❌ Never use generic CTAs ("Schedule a call," "Book a demo").
 
 ---
 
 TONE & STYLE:
-- Calm, consultative, 1:1 voice.
-- Speak like a trusted peer, not a hype-y seller.
+- Calm operator. Trusted peer. Clear guide.
 - Emotionally specific, grounded in lived B2B decision tension.
-- ❌ Avoid bossy framing ("If I were you…") and corporate jargon ("accelerate pipeline velocity," "best-in-class," "seamless insights").
+- Speak simply: avoid bossiness ("If I were you…") and avoid jargon ("accelerate pipeline velocity," "best-in-class," "seamless insights").
 
 ---
 
 FINAL QA (Conversion Friction Filter):
-1. Did the opener mirror decision friction (not inactivity)?
-2. Did the proof stay aligned to the input theme and feel fresh (no recycled stat/timeframe)?
-3. Is the CTA consultative and low-friction?
-4. Does the email respect Sheri's calm operator tone?
-5. Would this feel fresh if the reader saw 3–4 of these in sequence?`;
+1. Does the opener mirror a decision-friction moment (not inactivity)?
+2. Did the proof stay aligned to the input theme and feel fresh?
+3. Is the CTA consultative, vivid, and low-friction?
+4. Does the email sound like Sheri (calm, clear, peer-to-peer)?
+5. Would this still feel fresh if the reader saw 3–4 in sequence?`;
         break;
       case "Promotional":
         categoryInstructions = "Use the promotional email framework to highlight benefits and create desire.";
