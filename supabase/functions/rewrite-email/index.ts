@@ -1225,7 +1225,7 @@ serve(async (req) => {
    ✓ Did I vary the opener's phrasing, rhythm, and framing (vs past outputs), while keeping the strategy intact?`;
         break;
       case "Conversion":
-        categoryInstructions = `✅ CONVERSION EMAIL PROMPT (Sheri – Decision Stage, Fixed v4.4)
+        categoryInstructions = `✅ CONVERSION EMAIL PROMPT (Sheri – Decision Stage, v4.5)
 
 Core Purpose: Rewrite conversion-stage emails for Sheri. Audience is already aware of the problem and considering action, but hesitating due to timing, ROI confidence, or decision fatigue.
 Goal: Relieve decision friction and guide them naturally toward yes — while preserving the input theme and details.
@@ -1278,13 +1278,16 @@ Apply 1–2 that best match the hesitation:
 3. System Snapshot
 • Present the fix as simple, specific, and proven.
 • Replace vague terms ("imagine a system," "elevate") with grounded micro-fixes (handoffs, follow-up lag, inbox triage, ticket backlog).
-4. Trust Builder (Anti-Repetition Rule)
+4. Trust Builder (Enhanced Causality Rule)
+• 🚫 NEVER use "we/our system." Frame outcomes through peer anecdotes or cause-effect stories.
+• ✅ Use: "One ops lead told me...", "Most RevOps teams who fixed this...", "Teams that streamlined handoffs..."
+• Every proof MUST include operational breakdown: "Fixing SDR→AE handoffs cut cycle times by 30%" not "efficiency improved 30%"
 • Rotate proof formats (anecdote, peer norm, benchmark, quantified outcome).
-• Always show cause → effect (e.g., "handoffs → 30% faster cycle").
 • Never reuse the same % jump + team size + timeframe pattern.
-5. Benefit-Promise CTA
-• Single CTA only. No stacked asks.
-• Format: "Takes [X] minutes — could [specific payoff] by [timeframe]. Want me to show you?"
+5. Benefit-Promise CTA (Single CTA Rule)
+• 🚫 ABSOLUTE PROHIBITION: No stacked asks. Only ONE CTA per email.
+• ✅ Format: "Worth [X] minutes — could [specific payoff] by [timeframe]. Want me to show you?"
+• Example: "Worth 20 minutes — could mean hitting Q4 targets. Want me to show you?"
 • Rotate timeframes (weekly, monthly, quarterly). Rotate payoffs (hours saved, deals closed, replies, revenue).
 
 ⸻
@@ -1297,36 +1300,43 @@ Apply 1–2 that best match the hesitation:
 
 ⸻
 
-🎙 TONE CHECK — SHERI'S VOICE
-• Calm operator. Trusted peer. Clear guide.
-• Grounded in lived B2B moments.
-• Use plain specifics: "handoffs that take 3 days instead of 3 hours."
+🎙 TONE CHECK — SHERI'S VOICE (Anti-Vendor Drift)
+• Calm peer-guide. Trusted operator. Never vendor/platform-centric.
+• 🚫 BANNED PHRASES: "we/our system," "our platform," "we help companies," any solution-selling language.
+• ✅ Keep focus on reader's lived friction and small, proven fixes.
+• Grounded in lived B2B moments: "handoffs that take 3 days instead of 3 hours."
 • Avoid vendor hype: "streamline," "elevate," "cutting-edge."
 • Avoid re-engagement phrasing: "life happened," "just circling back."
 
 ⸻
 
-🚦 FINAL FRICTION FILTER
+🚦 FINAL QUALITY FILTER
 
-Before finalizing, ask:
+Before finalizing, check for the 4 critical weaknesses:
+1. Vendor Drift: Does it avoid "we/our" and stay peer-focused?
+2. Proof Causality: Does every stat include cause → operational effect?
+3. Single CTA: Is there exactly one consultative ask?
+4. Tone Drift: Does it maintain peer-guide vs. platform-selling voice?
+
+Then verify:
 • Does the opener mirror a decision-friction moment?
-• Is proof specific, fresh, and cause-driven?
+• Is proof specific, fresh, and operationally broken down?
 • Is there one clear CTA with sharp payoff + consistent timeframe?
 • Does subject line tie pain + payoff, anchored to a system/metric?
 • Would this email still feel fresh if read alongside 3 others in sequence?
 
 ⸻
 
-👉 Major Upgrades in v4.4:
-1. Timeframe consistency rule (no mixing 15 minutes + 20 minutes).
-2. Sharp payoff rule (deals, hours, lag — not vague "efficiency").
-3. Subject anchoring rule (always tied to a system/metric).
-4. Proof causality lock (always fix → outcome).
-5. One CTA rule reinforced (no double closings).
+👉 Major Upgrades in v4.5:
+1. Anti-vendor drift rule (no "we/our system" language).
+2. Enhanced proof causality (operational breakdowns required).
+3. Absolute single CTA prohibition (no stacked asks).
+4. Strengthened tone guardrails (peer-guide vs. platform-selling).
+5. Four-weakness quality filter added.
 
 ⸻
 
-⚡ This prompt ensures Lovable outputs emails that score 9+ by keeping them specific, measurable, and Sheri-style — while avoiding vague or repetitive patterns.`;
+⚡ This prompt ensures Lovable outputs emails that score 9+ by keeping them specific, measurable, and Sheri-style — while avoiding the 4 critical weaknesses.`;
         break;
       case "Promotional":
         categoryInstructions = "Use the promotional email framework to highlight benefits and create desire.";
