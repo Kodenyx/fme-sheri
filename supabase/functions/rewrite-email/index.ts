@@ -1225,79 +1225,78 @@ serve(async (req) => {
    ✓ Did I vary the opener's phrasing, rhythm, and framing (vs past outputs), while keeping the strategy intact?`;
         break;
       case "Conversion":
-        categoryInstructions = `✅ CONVERSION EMAIL PROMPT (Sheri – Decision Stage, Fixed v4.2)
+        categoryInstructions = `✅ CONVERSION EMAIL PROMPT (Sheri – Decision Stage, Fixed v4)
 
-Core Purpose: Rewrite conversion-stage emails for Sheri. These are for readers who already know the problem, are considering action, but hesitating due to timing, ROI confidence, or decision fatigue.
+Core Purpose: Analyze and rewrite conversion-stage emails for B2B founder Sheri. These emails are for readers who are already aware of the problem and considering action but hesitating due to timing, ROI confidence, or decision fatigue.
 
-Goal: Relieve decision friction and guide them naturally toward saying yes — while staying faithful to the input draft's theme and details.
+Goal: Relieve decision friction and guide them naturally toward saying yes — while staying 100% aligned to the theme and details of the input draft.
 
 ⸻
 
 🧠 CONTEXT CLARIFICATION
-	•	🚫 Not a re-engagement or win-back email.
-	•	✅ Reader is evaluating a clear next step (book call, start trial, review roadmap).
-	•	Assume interested but cautious — not ghosted.
-
-Mandatory Rule:
-	•	Always preserve the input's framing.
-	•	If the draft is about growth, pipeline, revenue, or close rates, keep it there.
-	•	Do not default to inbox chaos unless explicitly in the draft.
+	•	🚫 This is NOT a re-engagement or win-back email.
+	•	✅ The reader is evaluating a clear next step (book call, start trial, review roadmap).
+	•	Assume they are interested but cautious — not ghosted.
+	•	Mandatory Rule: Preserve the input's framing.
+	•	If the draft talks about growth, revenue, pipeline, or close rates, keep that theme.
+	•	Do NOT default back to "inbox chaos" unless that was the original input.
 
 ⸻
 
-🔍 INPUT ANALYSIS
+🔍 INPUT ANALYSIS — BEFORE REWRITING
 
-Before rewriting, check:
-	1.	Primary Conversion Goal (what's the action?)
-	2.	Offer Framing (time-sensitive, risk-free, resource-based)
-	3.	Reader State (timing, ROI, confidence)
-	4.	Tone & Voice (Sheri: calm, clear, consultative)
-	5.	Structure & CTA clarity
+Assess the draft for:
+	1.	Primary Conversion Goal – What's the next step?
+	2.	Offer Framing – Time-sensitive, risk-free, or resource-based?
+	3.	Reader State – What's holding them back (timing, ROI, confidence)?
+	4.	Tone & Voice Match – Does this sound like Sheri (calm, clear, consultative)?
+	5.	Structure & CTA Clarity – Is the CTA obvious, light, and motivating?
 
 ⸻
 
-💡 BEHAVIORAL PRINCIPLES (pick 1–2 max)
-	•	Loss Aversion – highlight what's slipping away
-	•	Salience – make the benefit vivid and personal
-	•	Processing Fluency – easy to read = easy to act on
-	•	Autonomy Bias – let them feel in control
-	•	Fresh Start Effect – tie to quarter, review, or reset
-	•	Social Proof – peer norms, anecdotes, benchmarks
-	•	Anchoring – compare to past or alternatives
-	•	Emotion – lived B2B decision tension
+💡 BEHAVIORAL PRINCIPLES TO APPLY
+
+Choose 1–2 principles that best address the hesitation:
+	•	Loss Aversion – Show what's quietly slipping away
+	•	Salience – Make benefits vivid and personal
+	•	Processing Fluency – Easy to read = easy to act on
+	•	Autonomy Bias – Let them feel in control
+	•	Fresh Start Effect – Tie to quarter, review, or reset moment
+	•	Social Proof – Peer examples, anecdotes, benchmarks
+	•	Anchoring – Compare to alternatives or past performance
+	•	Emotion – Speak to lived B2B decision tension
 
 ⸻
 
 ✍️ STRUCTURE: DECISION-STAGE CONVERSION EMAIL
 
-1. Emotional Mirror (Opener)
-Mirror a decision-friction moment (not ghosting).
-Rotate scenes to keep fresh. Examples:
-	•	"You know the moment when you refresh your pipeline report and nothing's moved?"
+1. Emotional Mirror (Conversion Opener)
+	•	Mirror a decision-friction moment — not ghosting.
+	•	Rotate scenes so they don't repeat.
+	•	Examples:
+	•	"You know the moment when you refresh your pipeline report, hoping deals moved — and nothing changed?"
 	•	"You've rewritten that follow-up three times… then never sent it."
 	•	"They booked the demo. You showed up. And then? Silence."
 	•	"It's been two weeks since the webinar, and you're still unsure who to follow up with."
 
 2. Friction Validation
-Normalize hesitation: "Most teams pause here — where 'kind of working' meets hidden cost."
+	•	Normalize hesitation: "Most teams pause here — where 'kind of working' meets hidden cost."
 
 3. System Snapshot
-Keep it simple, low-effort, aligned with input theme:
-	•	"They didn't overhaul anything. They streamlined one system: [input system]."
+	•	Show the fix as simple and proven.
+	•	Keep it aligned with input's theme (growth, pipeline, revenue, inbox).
 
-4. Trust Builder (Variety Rule, Soft)
-	•	Rotate proof types to avoid repetition (don't always default to "30-person SaaS + % + 6 weeks").
-	•	Options:
+4. Trust Builder (Critical Anti-Repetition Rule)
+	•	NEVER recycle the same structure twice (e.g., "30-person SaaS team + % jump + 6 weeks").
+	•	Rotate proof types across outputs:
 	•	Anecdote: "One ops lead told me…"
 	•	Peer Norm: "Most RevOps teams using this framework double response speed."
 	•	Benchmark: "Industry data shows…"
 	•	Quantified Outcome: "A 22-person team boosted reply rates by 15 points."
 
-⚠️ Rule: If input doesn't provide a stat, don't invent one. Use anecdote, peer norm, or benchmark.
-
-5. Benefit-Promise CTA
-	•	Integrate CTA with proof.
-	•	Vary timeframes & benefits across outputs (weekly, monthly, quarterly; hours saved, deals closed).
+5. Benefit-Promise CTA (Anti-Repetition Rule)
+	•	Integrate CTA naturally with proof.
+	•	Vary timeframes and benefits (weekly, monthly, quarterly; hours saved, deals closed, faster replies).
 	•	Examples:
 	•	"Worth 10 minutes — could free 7 hours this week. Want me to show you?"
 	•	"Could unlock 2–3 more closes this month. Want a quick look?"
@@ -1307,16 +1306,16 @@ Keep it simple, low-effort, aligned with input theme:
 
 📧 SUBJECT LINE RULES
 	•	Balance pain + payoff.
-	•	Rotate formats: pain, gain, curiosity, benchmark.
-	•	6–10 words, conversational.
-	•	Don't reuse the same subject pattern consecutively.
+	•	Rotate formats: chaos-framing, gain-framing, curiosity-framing, benchmark-framing.
+	•	6–10 words, conversational, not hype.
+	•	Do not reuse the same subject structure in consecutive outputs.
 
 ⸻
 
-🎙 TONE CHECK — SHERI
+🎙 TONE CHECK — SHERI'S VOICE
 	•	Calm operator. Trusted peer. Clear guide.
 	•	Helpful, not pushy. Honest, not inflated.
-	•	Use lines like:
+	•	Use natural lines like:
 	•	"This probably isn't urgent. Until it is."
 	•	"Not a full overhaul — just one system fix with ROI baked in."
 	•	"You could be running this before your next review."
@@ -1326,20 +1325,19 @@ Keep it simple, low-effort, aligned with input theme:
 
 🚦 FINAL FRICTION FILTER
 
-Ask before finalizing:
-	•	Does the opener mirror decision friction, not inactivity?
-	•	Is the proof fresh (no recycled stat patterns)?
-	•	Is the CTA consultative, specific, and light?
-	•	Is the subject line varied?
-	•	Would this still feel fresh if reader saw 3–4 in sequence?
+Before finalizing, check:
+	•	Does the opener mirror decision friction (not inactivity)?
+	•	Is the proof fresh (no recycled stat pattern)?
+	•	Is the CTA vivid, consultative, and varied?
+	•	Does the subject rotate style vs. last outputs?
+	•	Would this email still feel fresh if the reader saw 3–4 in sequence?
 
 ⸻
 
-🔑 Key Fix vs. v4.1
-	•	Theme preservation prioritized (never overwrite pipeline → inbox).
-	•	Proof rotation is soft (prefer variety, but no forced stat invention).
-	•	Fallback rules for input-light drafts (use anecdotes/norms instead of made-up numbers).
-	•	Decision-friction openers only (no re-engagement bleed).
+👉 This v4 framework makes three hard guardrails explicit:
+	1.	Stay on-theme with the input (no defaulting to inbox chaos).
+	2.	Rotate proof formats (no repeating team size + % + 6 weeks).
+	3.	Rotate CTA structures (no recycling 12 min / 91 hours).
 
 ⸻`;
         break;
