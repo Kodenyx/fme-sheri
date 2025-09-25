@@ -1225,119 +1225,103 @@ serve(async (req) => {
    ✓ Did I vary the opener's phrasing, rhythm, and framing (vs past outputs), while keeping the strategy intact?`;
         break;
       case "Conversion":
-        categoryInstructions = `✅ CONVERSION EMAIL PROMPT (Sheri – Decision Stage, Fixed v4)
+        categoryInstructions = `✅ CONVERSION EMAIL PROMPT (Sheri – Decision Stage, v5.1 Fixed)
 
-Core Purpose: Analyze and rewrite conversion-stage emails for B2B founder Sheri. These emails are for readers who are already aware of the problem and considering action but hesitating due to timing, ROI confidence, or decision fatigue.
+Core Purpose
+Rewrite conversion-stage emails for B2B founder Sheri. These are not cold intros or win-backs. The reader is already aware of the problem and considering action but hesitating due to timing, ROI confidence, or decision fatigue.
 
-Goal: Relieve decision friction and guide them naturally toward saying yes — while staying 100% aligned to the theme and details of the input draft.
+Goal
+Relieve decision friction and guide them naturally toward saying yes — while staying 100% aligned to the core meaning of the input draft.
 
 ⸻
 
 🧠 CONTEXT CLARIFICATION
-	•	🚫 This is NOT a re-engagement or win-back email.
-	•	✅ The reader is evaluating a clear next step (book call, start trial, review roadmap).
-	•	Assume they are interested but cautious — not ghosted.
-	•	Mandatory Rule: Preserve the input's framing.
-	•	If the draft talks about growth, revenue, pipeline, or close rates, keep that theme.
-	•	Do NOT default back to "inbox chaos" unless that was the original input.
+	•	🚫 This is NOT a re-engagement, win-back, or generic nurture.
+	•	✅ Assume the reader is evaluating a next step (demo, call, trial).
+	•	⚠️ Mandatory Rule: Do not change the theme of the draft.
+	•	If input is about pipeline velocity, keep it pipeline velocity.
+	•	If input is about growth, revenue, or handoffs, preserve that.
+	•	Never swap to "inbox chaos" or "AI system" unless it was already in the draft.
+	•	Your job = optimize tone, flow, and persuasion. Do not invent a new premise.
 
 ⸻
 
-🔍 INPUT ANALYSIS — BEFORE REWRITING
+🔍 INPUT ANALYSIS
 
-Assess the draft for:
-	1.	Primary Conversion Goal – What's the next step?
-	2.	Offer Framing – Time-sensitive, risk-free, or resource-based?
-	3.	Reader State – What's holding them back (timing, ROI, confidence)?
-	4.	Tone & Voice Match – Does this sound like Sheri (calm, clear, consultative)?
-	5.	Structure & CTA Clarity – Is the CTA obvious, light, and motivating?
-
-⸻
-
-💡 BEHAVIORAL PRINCIPLES TO APPLY
-
-Choose 1–2 principles that best address the hesitation:
-	•	Loss Aversion – Show what's quietly slipping away
-	•	Salience – Make benefits vivid and personal
-	•	Processing Fluency – Easy to read = easy to act on
-	•	Autonomy Bias – Let them feel in control
-	•	Fresh Start Effect – Tie to quarter, review, or reset moment
-	•	Social Proof – Peer examples, anecdotes, benchmarks
-	•	Anchoring – Compare to alternatives or past performance
-	•	Emotion – Speak to lived B2B decision tension
+For every draft, first identify:
+	1.	Primary Conversion Goal (demo, call, trial, reply)
+	2.	Offer Framing (time-sensitive, low effort, ROI focused)
+	3.	Reader State (cautious, overloaded, skeptical)
+	4.	Tone Match (Sheri = calm, peer-to-peer, consultative)
+	5.	Structure Clarity (is CTA obvious, specific, light?)
 
 ⸻
 
-✍️ STRUCTURE: DECISION-STAGE CONVERSION EMAIL
+💡 BEHAVIORAL SCIENCE TO APPLY
 
-1. Emotional Mirror (Conversion Opener)
-	•	Mirror a decision-friction moment — not ghosting.
-	•	Rotate scenes so they don't repeat.
+Pick 1–2 principles per rewrite to increase conversion:
+	•	Loss Aversion – Show what slips away if they stall.
+	•	Salience – Make the benefit vivid and near-term.
+	•	Processing Fluency – Short, simple lines = easy action.
+	•	Autonomy Bias – Let them feel in control.
+	•	Fresh Start Effect – Tie to quarter, review, reset moment.
+	•	Social Proof – Anecdote, peer norm, benchmark.
+	•	Emotion – Speak to real B2B decision tension.
+
+⸻
+
+✍️ STRUCTURE: DECISION-STAGE EMAIL
+	1.	Signal Mirror (Emotional Opener)
+	•	Mirror a lived decision friction moment.
 	•	Examples:
-	•	"You know the moment when you refresh your pipeline report, hoping deals moved — and nothing changed?"
-	•	"You've rewritten that follow-up three times… then never sent it."
+	•	"You refresh the pipeline report — and nothing's moved."
+	•	"You rewrote that follow-up three times… then never sent it."
 	•	"They booked the demo. You showed up. And then? Silence."
-	•	"It's been two weeks since the webinar, and you're still unsure who to follow up with."
-
-2. Friction Validation
-	•	Normalize hesitation: "Most teams pause here — where 'kind of working' meets hidden cost."
-
-3. System Snapshot
-	•	Show the fix as simple and proven.
-	•	Keep it aligned with input's theme (growth, pipeline, revenue, inbox).
-
-4. Trust Builder (Critical Anti-Repetition Rule)
-	•	NEVER recycle the same structure twice (e.g., "30-person SaaS team + % jump + 6 weeks").
-	•	Rotate proof types across outputs:
-	•	Anecdote: "One ops lead told me…"
-	•	Peer Norm: "Most RevOps teams using this framework double response speed."
-	•	Benchmark: "Industry data shows…"
-	•	Quantified Outcome: "A 22-person team boosted reply rates by 15 points."
-
-5. Benefit-Promise CTA (Anti-Repetition Rule)
-	•	Integrate CTA naturally with proof.
-	•	Vary timeframes and benefits (weekly, monthly, quarterly; hours saved, deals closed, faster replies).
+	2.	Friction Validation
+	•	Normalize hesitation:
+	•	"Most teams pause here — where 'kind of working' hides real cost."
+	3.	System Snapshot
+	•	Simple, proven fix.
+	•	Stay aligned with input theme (growth, velocity, handoffs).
+	•	⚠️ Do not introduce new systems or vendor-speak.
+	4.	Trust Builder (Anti-Repetition Rule)
+	•	Rotate proof formats: anecdote, peer norm, benchmark, quantified outcome.
+	•	Never repeat "30% in 6 weeks" or recycle the same pattern across outputs.
+	5.	Benefit-Promise CTA (Anti-Repetition Rule)
+	•	One consultative ask, not stacked CTAs.
 	•	Examples:
-	•	"Worth 10 minutes — could free 7 hours this week. Want me to show you?"
-	•	"Could unlock 2–3 more closes this month. Want a quick look?"
-	•	"Takes 12 minutes — might cut your follow-up lag in half. Want to see how?"
+	•	"Worth 15 minutes — could cut days off this quarter. Want me to show you?"
+	•	"Takes 12 minutes — could unlock 2–3 more closes. Curious?"
 
 ⸻
 
 📧 SUBJECT LINE RULES
 	•	Balance pain + payoff.
-	•	Rotate formats: chaos-framing, gain-framing, curiosity-framing, benchmark-framing.
-	•	6–10 words, conversational, not hype.
-	•	Do not reuse the same subject structure in consecutive outputs.
+	•	Rotate between pain-framing, gain-framing, curiosity.
+	•	Keep 6–10 words. Conversational, not hype.
+	•	No recycling the same structure.
 
 ⸻
 
-🎙 TONE CHECK — SHERI'S VOICE
+🎙 TONE CHECK (Sheri's Voice)
 	•	Calm operator. Trusted peer. Clear guide.
 	•	Helpful, not pushy. Honest, not inflated.
-	•	Use natural lines like:
+	•	Phrasing examples:
 	•	"This probably isn't urgent. Until it is."
 	•	"Not a full overhaul — just one system fix with ROI baked in."
 	•	"You could be running this before your next review."
-	•	❌ Avoid re-engagement phrases: "life happened," "just circling back," "you paused."
+	•	❌ Avoid vendor drift ("our AI system," "platform features," "cutting-edge").
 
 ⸻
 
 🚦 FINAL FRICTION FILTER
 
-Before finalizing, check:
-	•	Does the opener mirror decision friction (not inactivity)?
-	•	Is the proof fresh (no recycled stat pattern)?
-	•	Is the CTA vivid, consultative, and varied?
-	•	Does the subject rotate style vs. last outputs?
-	•	Would this email still feel fresh if the reader saw 3–4 in sequence?
-
-⸻
-
-👉 This v4 framework makes three hard guardrails explicit:
-	1.	Stay on-theme with the input (no defaulting to inbox chaos).
-	2.	Rotate proof formats (no repeating team size + % + 6 weeks).
-	3.	Rotate CTA structures (no recycling 12 min / 91 hours).
+Before outputting:
+	•	Did you keep the core meaning/theme intact?
+	•	Is proof fresh, not recycled?
+	•	Is CTA consultative and light, not stacked?
+	•	Does the subject rotate format vs. last output?
+	•	Would this feel fresh if they saw 3–4 in sequence?
 
 ⸻`;
         break;
