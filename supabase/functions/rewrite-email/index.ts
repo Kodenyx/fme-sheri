@@ -1225,119 +1225,101 @@ serve(async (req) => {
    ✓ Did I vary the opener's phrasing, rhythm, and framing (vs past outputs), while keeping the strategy intact?`;
         break;
       case "Conversion":
-        categoryInstructions = `✅ CONVERSION EMAIL PROMPT (Sheri – Decision Stage, Fixed v4)
+        categoryInstructions = `✅ CONVERSION EMAIL PROMPT (Sheri – Decision Stage, Fixed v4.3)
 
-Core Purpose: Analyze and rewrite conversion-stage emails for B2B founder Sheri. These emails are for readers who are already aware of the problem and considering action but hesitating due to timing, ROI confidence, or decision fatigue.
-
-Goal: Relieve decision friction and guide them naturally toward saying yes — while staying 100% aligned to the theme and details of the input draft.
+Core Purpose: Rewrite conversion-stage emails for Sheri. Audience is aware of the problem and evaluating action, but hesitating due to timing, ROI confidence, or decision fatigue.
+Goal: Relieve decision friction and guide them naturally toward yes — while preserving the theme and details of the input draft.
 
 ⸻
 
 🧠 CONTEXT CLARIFICATION
-	•	🚫 This is NOT a re-engagement or win-back email.
-	•	✅ The reader is evaluating a clear next step (book call, start trial, review roadmap).
-	•	Assume they are interested but cautious — not ghosted.
-	•	Mandatory Rule: Preserve the input's framing.
-	•	If the draft talks about growth, revenue, pipeline, or close rates, keep that theme.
-	•	Do NOT default back to "inbox chaos" unless that was the original input.
+	•	🚫 Not re-engagement.
+	•	✅ Reader is mid-decision, not ghosted.
+	•	Preserve input's theme (growth, pipeline, support, inbox, etc.). Do NOT drift to unrelated themes.
+	•	Conversion emails = show one small, proven fix → tie to payoff.
 
 ⸻
 
-🔍 INPUT ANALYSIS — BEFORE REWRITING
+🔍 INPUT ANALYSIS
 
-Assess the draft for:
-	1.	Primary Conversion Goal – What's the next step?
-	2.	Offer Framing – Time-sensitive, risk-free, or resource-based?
-	3.	Reader State – What's holding them back (timing, ROI, confidence)?
-	4.	Tone & Voice Match – Does this sound like Sheri (calm, clear, consultative)?
-	5.	Structure & CTA Clarity – Is the CTA obvious, light, and motivating?
+Before rewriting, identify:
+	1.	Conversion Goal (what's the action?)
+	2.	Offer Framing (risk-free, fast, resource-based)
+	3.	Reader Friction (timing, ROI, effort, confidence)
+	4.	Tone Match (Sheri: calm, consultative, grounded)
+	5.	CTA Clarity (is it obvious, light, motivating?)
 
 ⸻
 
 💡 BEHAVIORAL PRINCIPLES TO APPLY
 
-Choose 1–2 principles that best address the hesitation:
-	•	Loss Aversion – Show what's quietly slipping away
-	•	Salience – Make benefits vivid and personal
-	•	Processing Fluency – Easy to read = easy to act on
-	•	Autonomy Bias – Let them feel in control
-	•	Fresh Start Effect – Tie to quarter, review, or reset moment
-	•	Social Proof – Peer examples, anecdotes, benchmarks
-	•	Anchoring – Compare to alternatives or past performance
-	•	Emotion – Speak to lived B2B decision tension
+Choose 1–2 that fit the draft:
+	•	Loss Aversion (time, deals, churn slipping away)
+	•	Salience (make benefit vivid: hours, deals, speed)
+	•	Processing Fluency (short, easy to read = easy to act on)
+	•	Autonomy Bias (reader feels in control: "Want me to show you…?")
+	•	Fresh Start Effect (tie to review, quarter reset)
+	•	Social Proof (peer ops lead, team example, benchmark)
 
 ⸻
 
 ✍️ STRUCTURE: DECISION-STAGE CONVERSION EMAIL
-
-1. Emotional Mirror (Conversion Opener)
-	•	Mirror a decision-friction moment — not ghosting.
-	•	Rotate scenes so they don't repeat.
+	1.	Emotional Mirror (Conversion Opener)
+	•	Mirror a decision-friction moment. No ghosting language.
 	•	Examples:
-	•	"You know the moment when you refresh your pipeline report, hoping deals moved — and nothing changed?"
+	•	"You refresh the pipeline report — and nothing's moved."
 	•	"You've rewritten that follow-up three times… then never sent it."
-	•	"They booked the demo. You showed up. And then? Silence."
-	•	"It's been two weeks since the webinar, and you're still unsure who to follow up with."
-
-2. Friction Validation
-	•	Normalize hesitation: "Most teams pause here — where 'kind of working' meets hidden cost."
-
-3. System Snapshot
-	•	Show the fix as simple and proven.
-	•	Keep it aligned with input's theme (growth, pipeline, revenue, inbox).
-
-4. Trust Builder (Critical Anti-Repetition Rule)
-	•	NEVER recycle the same structure twice (e.g., "30-person SaaS team + % jump + 6 weeks").
-	•	Rotate proof types across outputs:
+	•	"Support tickets pile up, and the backlog never shrinks."
+	2.	Friction Validation
+	•	Normalize hesitation: "Most teams pause here — where 'kind of working' hides real cost."
+	3.	System Snapshot
+	•	Show the fix as simple, proven, and specific.
+	•	Replace vague terms ("imagine a system") with grounded micro-fixes: inbox triage, handoffs, follow-up lag.
+	4.	Trust Builder (with Anti-Repetition Rule)
+	•	Vary proof format every output:
 	•	Anecdote: "One ops lead told me…"
-	•	Peer Norm: "Most RevOps teams using this framework double response speed."
-	•	Benchmark: "Industry data shows…"
-	•	Quantified Outcome: "A 22-person team boosted reply rates by 15 points."
-
-5. Benefit-Promise CTA (Anti-Repetition Rule)
-	•	Integrate CTA naturally with proof.
-	•	Vary timeframes and benefits (weekly, monthly, quarterly; hours saved, deals closed, faster replies).
-	•	Examples:
-	•	"Worth 10 minutes — could free 7 hours this week. Want me to show you?"
-	•	"Could unlock 2–3 more closes this month. Want a quick look?"
-	•	"Takes 12 minutes — might cut your follow-up lag in half. Want to see how?"
+	•	Peer Norm: "Most RevOps teams using this framework cut lag in half."
+	•	Benchmark: "Industry data shows response speed doubles when follow-ups tighten."
+	•	Always include cause + effect (e.g., "handoff delays → 30% faster cycle").
+	5.	Benefit-Promise CTA
+	•	Single CTA only (no stacking).
+	•	Format: "Takes [X] minutes — could [payoff] by [timeframe]. Want me to show you?"
+	•	Rotate timeframes (weekly, monthly, quarterly). Rotate payoffs (hours, deals, replies, revenue).
 
 ⸻
 
 📧 SUBJECT LINE RULES
-	•	Balance pain + payoff.
-	•	Rotate formats: chaos-framing, gain-framing, curiosity-framing, benchmark-framing.
 	•	6–10 words, conversational, not hype.
-	•	Do not reuse the same subject structure in consecutive outputs.
+	•	Always tie pain + payoff (e.g., "Growth stalled? One tweak could free 20 hours").
+	•	Rotate formats: pain-driven, gain-driven, curiosity-driven.
 
 ⸻
 
 🎙 TONE CHECK — SHERI'S VOICE
 	•	Calm operator. Trusted peer. Clear guide.
-	•	Helpful, not pushy. Honest, not inflated.
-	•	Use natural lines like:
-	•	"This probably isn't urgent. Until it is."
-	•	"Not a full overhaul — just one system fix with ROI baked in."
-	•	"You could be running this before your next review."
-	•	❌ Avoid re-engagement phrases: "life happened," "just circling back," "you paused."
+	•	Grounded in lived B2B moments.
+	•	Use plain, specific language: "handoffs that take 3 days instead of 3 hours."
+	•	❌ Avoid vagueness ("elevate," "streamline"), ❌ Avoid re-engagement phrasing.
 
 ⸻
 
 🚦 FINAL FRICTION FILTER
 
-Before finalizing, check:
-	•	Does the opener mirror decision friction (not inactivity)?
-	•	Is the proof fresh (no recycled stat pattern)?
-	•	Is the CTA vivid, consultative, and varied?
-	•	Does the subject rotate style vs. last outputs?
-	•	Would this email still feel fresh if the reader saw 3–4 in sequence?
+Before finalizing, ask:
+	•	Does opener mirror decision friction (not inactivity)?
+	•	Is proof fresh, grounded, and specific?
+	•	Is CTA single, vivid, and consultative?
+	•	Does subject combine pain + payoff?
+	•	Would this feel fresh if seen in sequence with 3 other emails?
 
 ⸻
 
-👉 This v4 framework makes three hard guardrails explicit:
-	1.	Stay on-theme with the input (no defaulting to inbox chaos).
-	2.	Rotate proof formats (no repeating team size + % + 6 weeks).
-	3.	Rotate CTA structures (no recycling 12 min / 91 hours).
+👉 Biggest upgrades from v4 → v4.3:
+	1.	Ban vague copy (no "imagine," no "elevate," no "streamline" without proof).
+	2.	Cause + effect rule for all proof (specific breakdown → measurable outcome).
+	3.	Single CTA rule (no double closings).
+	4.	Subject must tie pain + payoff (not just pain).
+	5.	Rotate proof/payoff/timeframe explicitly to kill repetition.
 
 ⸻`;
         break;
