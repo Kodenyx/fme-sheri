@@ -1231,6 +1231,28 @@ serve(async (req) => {
 
 ---
 
+CRITICAL CONTRAST EXAMPLES:
+
+❌ BAD (Re-engagement drift):
+"Just circling back — you paused before. Most teams hesitate..."
+
+✅ GOOD (Conversion):
+"You've rewritten that follow-up three times… then never sent it. Most teams pause here — right where 'kind of working' meets hidden cost."
+
+❌ BAD (Generic follow-up):
+"Life happened, I get it. But this might still help..."
+
+✅ GOOD (Decision friction):
+"They booked the demo. You showed up. And then? Silence. Most teams get stuck right here — between 'looks promising' and 'let's do this.'"
+
+❌ BAD (Pushy/corporate):
+"Following up on our conversation. Ready to accelerate your pipeline velocity?"
+
+✅ GOOD (Consultative/specific):
+"It's been two weeks since the webinar, and you're still unsure who to follow up with. Worth 10 minutes — could unlock 2–3 more closes this month. Want me to show you?"
+
+---
+
 STRUCTURE TO FOLLOW:
 
 1. Emotional Mirror (Conversion Opener)
