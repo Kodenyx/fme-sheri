@@ -1225,7 +1225,7 @@ serve(async (req) => {
    ✓ Did I vary the opener's phrasing, rhythm, and framing (vs past outputs), while keeping the strategy intact?`;
         break;
       case "Conversion":
-        categoryInstructions = `✅ CONVERSION EMAIL PROMPT (Sheri – Decision Stage, v4.6)
+        categoryInstructions = `✅ CONVERSION EMAIL PROMPT (Sheri – Decision Stage, v4.9)
 
 Core Purpose: Rewrite conversion-stage emails for Sheri. Audience is already aware of the problem and considering action, but hesitating due to timing, ROI confidence, or decision fatigue.
 Goal: Relieve decision friction and guide them naturally toward yes — while preserving the input theme and details.
@@ -1266,32 +1266,42 @@ Apply 1–2 that best match the hesitation:
 
 ⸻
 
-✍️ STRUCTURE: DECISION-STAGE CONVERSION EMAIL
+✍️ STRUCTURE: DECISION-STAGE CONVERSION EMAIL (ENHANCED FLOW v4.9)
+
+**FRESH EMOTIONAL MIRROR LIBRARY (Rotate to avoid staleness):**
+• "You hand off a deal to AEs... and 3 days later, it's still untouched."
+• "Another 'qualified' lead sits in limbo between SDR and AE."
+• "Your pipeline report shows 47 opportunities, but nothing's actually moving."
+• "That hot prospect from last week? Still waiting for someone to call them back."
+• "You watch deals pile up in the handoff zone—again."
+• **Quality check**: Does this use a FRESH opener vs. repetitive "pipeline report refresh"?
+
 1. Emotional Mirror (Opener)
-• Mirror a decision-friction moment (not ghosting).
-• Example:
-  "You refresh the pipeline report — and nothing's moved."
-  "You've rewritten that follow-up three times… then never sent it."
-  "Support tickets pile up, and the backlog never shrinks."
-2. Friction Validation
+• Mirror a decision-friction moment using rotation library above
+• Avoid repetitive openers that lose emotional impact
+• Keep visceral and immediate with present tense
+
+2. Friction Validation (NEW PARAGRAPH)
 • Normalize hesitation: "Most teams pause here — where 'kind of working' hides real cost."
 • 🚫 BANNED FLUFFY PHRASES: "lingers longer," "familiar spot," "almost there," anything that sounds like life coaching vs. ops friction.
 • ✅ Keep grounded in operational moments vs generic reassurance.
-3. System Snapshot
+
+3. System Snapshot (SEPARATE PARAGRAPH)
 • Present the fix as simple, specific, and proven.
 • Replace vague terms ("imagine a system," "elevate") with grounded micro-fixes (handoffs, follow-up lag, inbox triage, ticket backlog).
-4. Trust Builder (ONE Proof Rule)
-• 🚫 ABSOLUTE RULE: ONE proof point only. No stacking stats back-to-back. If you have two good stats, pick the stronger one.
-• 🚫 NEVER use "we/our system." Frame outcomes through peer anecdotes or cause-effect stories.
-• ✅ Use: "One ops lead told me...", "Most RevOps teams who fixed this...", "Teams that streamlined handoffs..."
+
+4. Trust Builder (ONE Proof Rule - ANECDOTAL ENHANCEMENT)
+• 🚫 ABSOLUTE RULE: ONE proof point only. No stacking stats back-to-back.
+• 🚫 NEVER use "Most ops leads find..." - ALWAYS use anecdotal lived moment phrasing
+• ✅ MANDATORY FORMAT: "One ops lead told me [specific action] → [specific result] — [percentage improvement]"
+• Add decision tension mirroring to proof voice texture for conversational authenticity
 • Every proof MUST include operational breakdown: "Fixing SDR→AE handoffs cut cycle times by 30%" not "efficiency improved 30%"
-• Rotate proof formats (anecdote, peer norm, benchmark, quantified outcome).
-• Never reuse the same % jump + team size + timeframe pattern.
-5. Benefit-Promise CTA (Setup-Specific Format)
+
+5. Benefit-Promise CTA (SPECIFICITY UPGRADE)
 • 🚫 ABSOLUTE PROHIBITION: No stacked asks. Only ONE CTA per email.
-• ✅ Setup-specific format: "Worth [X] minutes — could [specific payoff] by [timeframe]. Want me to walk you through what that would look like in your setup?"
-• Example: "Worth 20 minutes — could mean hitting Q4 targets. Want me to walk you through what that would look like in your setup?"
-• Rotate timeframes (weekly, monthly, quarterly). Rotate payoffs (hours saved, deals closed, replies, revenue).
+• ✅ ENHANCED FORMAT: "Worth [X] minutes—could cut days from your cycle this quarter by fixing just [specific workflow]. Want me to show you?"
+• Make payoff tangible and immediate vs. abstract goals like "hitting Q4 targets"
+• Always include single-workflow focus with concrete benefit
 
 ⸻
 
@@ -1336,44 +1346,44 @@ Apply 1–2 that best match the hesitation:
 
 ⸻
 
-🚦 PRECISION QUALITY FILTER
+🚦 PRECISION QUALITY FILTER (ENHANCED v4.9)
 
-Before finalizing, check for these 10 critical drift patterns:
-1. **Subject Line B2C Drift**: Does it avoid emotional/personal language and use direct system language?
-2. **Subject Line Generic Drift**: Does it avoid blog headlines and use specific bottleneck identification?
-3. **Subject Line Mindset Drift**: Does it ban coaching framings and anchor to systems/metrics?
-4. **Proof Stacking**: Is there exactly ONE proof point with voice texture?
-5. **Proof Authority**: Does it use direct cause→effect without softening language?
-6. **Proof Voice Texture**: Does it mirror decision tension (not clinical)?
-7. **Tone Drift**: Does it avoid fluffy language and stay grounded in ops tension?
-8. **CTA Hype**: Does it avoid hype flourishes and stay clean/direct?
-9. **CTA Flatness**: Does it have consultative edge with single-workflow focus?
-10. **CTA Generic**: Does it use setup-specific consultative language vs. generic "show you how"?
+Before finalizing, check for these critical drift patterns:
+1. **Opener Staleness**: Does it use a fresh emotional mirror vs. repetitive "pipeline report refresh"?
+2. **Flow Density**: Is content broken into 2-3 paragraphs with breathing space vs. dense "pitch block"?
+3. **Proof Anecdotal**: Does it use "One ops lead told me..." vs. generic "Most ops leads find..."?
+4. **CTA Specificity**: Does it focus on concrete workflow vs. abstract "hitting Q4 targets"?
+5. **Conversation Rhythm**: Does it flow naturally with proper paragraph breaks?
+6. **Subject Line B2C Drift**: Does it avoid emotional/personal language and use direct system language?
+7. **Subject Line Generic Drift**: Does it avoid blog headlines and use specific bottleneck identification?
+8. **Proof Stacking**: Is there exactly ONE proof point with voice texture?
+9. **Proof Authority**: Does it use direct cause→effect without softening language?
+10. **CTA Consultative Edge**: Does it have single-workflow focus with vivid payoff?
 
 Then verify overall quality:
-• Does the opener mirror a decision-friction moment?
-• Is the proof grounded in lived ops tension with authority?
-• Does the CTA feel consultative with vivid single-workflow payoff?
-• Is the voice consistently peer-guide (not vendor)?
+• Does the opener use a fresh emotional mirror from the rotation library?
+• Is the content structured with natural conversation flow and breathing space?
+• Does the proof use anecdotal lived moment phrasing for authenticity?
+• Does the CTA focus on concrete workflow benefits vs. abstract goals?
 • Does it sound like Sheri Otto's authentic voice throughout?
 
 ⸻
 
-👉 Major Upgrades in v4.8:
-1. Subject line anti-B2C emotional language (peer-operator direct).
-2. Subject line anti-generic blog headlines (specific bottleneck identification).
-3. Subject line anti-mindset coaching rule (ops pain only, not therapy).
-4. ONE proof rule with voice texture (mirror decision tension).
-5. Proof authority strengthening (direct cause→effect, no softening).
-6. Fluffy phrase prohibition (sharper ops tension language).
-7. CTA hype flourish ban (clean and direct).
-8. CTA consultative edge enhancement (single-workflow focus).
-9. Setup-specific CTA upgrade (consultative vs. generic).
-10. Precision quality filter for 10 drift patterns.
+👉 Major Upgrades in v4.9:
+1. Fresh emotional mirror library (prevents opener staleness and repetition).
+2. Flow restructuring with paragraph breaks (eliminates dense "pitch block" walls).
+3. Anecdotal proof enhancement (mandates "One ops lead told me..." vs. generic "Most find...").
+4. CTA specificity upgrade (concrete workflow focus vs. abstract "Q4 targets").
+5. Conversation rhythm quality check (ensures natural breathing space).
+6. Subject line anti-B2C emotional language (peer-operator direct).
+7. Subject line anti-generic blog headlines (specific bottleneck identification).
+8. ONE proof rule with voice texture (mirror decision tension).
+9. Proof authority strengthening (direct cause→effect, no softening).
+10. Setup-specific CTA upgrade (consultative vs. generic).
 
 ⸻
 
-⚡ This prompt ensures Lovable outputs emails that score 9.2+ by preventing the 10 critical drift patterns while maintaining Sheri's authentic peer-guide voice with salience, authority, and consultative edge.`;
+⚡ This prompt ensures Lovable outputs emails that score 9.2+ by eliminating opener staleness, improving conversation flow, strengthening proof authenticity, and sharpening CTA specificity while maintaining Sheri's authentic peer-guide voice.`;
         break;
       case "Promotional":
         categoryInstructions = "Use the promotional email framework to highlight benefits and create desire.";
