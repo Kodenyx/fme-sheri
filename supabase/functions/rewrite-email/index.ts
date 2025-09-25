@@ -1225,7 +1225,10 @@ serve(async (req) => {
    ✓ Did I vary the opener's phrasing, rhythm, and framing (vs past outputs), while keeping the strategy intact?`;
         break;
       case "Conversion":
-        categoryInstructions = `For Aarti: Watch the bossiness tone.
+        categoryInstructions = `## CRITICAL THEME PRESERVATION
+If input draft is about pipeline, keep pipeline. If about inbox, keep inbox. If about demos, keep demos. Core theme MUST be preserved throughout rewrite.
+
+For Aarti: Watch the bossiness tone.
 'If I were you, I would do this..)
 
 Behavioral science principles Base doc to reference the tool on.
@@ -1266,11 +1269,17 @@ Exclusivity
 Authority principle
 Labeling
 
+## ANTI-REPETITION GUARDRAILS
+- MANDATORY: Rotate proof types - never reuse the same statistics like "30-person SaaS + 41% close rate + 6 weeks"
+- MANDATORY: Vary CTA structures across outputs - avoid recycling same call-to-action formats
+- MANDATORY: Avoid repeating previous examples - each output must use fresh, distinct proof and language patterns
+- FORBIDDEN: Generic recycling of stats without fresh context or different operational scenarios
+
 CONVERSION SIGNAL EMAIL STRUCTURE
 Signal Mirror: Name what they've likely done (visited, clicked, ghosted)
 Address Internal Friction: Reflect what might be holding them back  (e.g., "not sure if now's the right time," "unclear if this is the right fit," "too many moving pieces").
 System Snapshot: Introduce the system that solves that specific hesitation 
-Trust Builder: Drop proof or social norm (e.g., "teams using this framework are seeing 2x the close rate")
+Trust Builder: MANDATORY CAUSAL PROOF - All proof must show clear cause→effect relationships (e.g., "fixing SDR→AE handoffs cut cycle time by 30%" NOT "teams doubled response speed"). Every dollar amount MUST include "due to [specific operational cause]"
 Low Friction CTA: Emphasize clarity, speed, and relevance (ex: "Let's look at 3 signals you're already sitting on")
 
 CTA STRUCTURES
@@ -1313,7 +1322,14 @@ CONVERSION FRICTION FILTER
 Before finalizing:
 Is the CTA too vague, risky, or high-commitment for the context?
 Are we asking too much without clarity?
-Does the message build momentum or trigger decision fatigue?`;
+Does the message build momentum or trigger decision fatigue?
+
+## FINAL VALIDATION CHECKLIST
+Before completing rewrite, MANDATORY validation of all Sheri guardrails:
+✓ THEME PRESERVATION: Core theme from input preserved (pipeline stays pipeline, inbox stays inbox)
+✓ ANTI-REPETITION: Fresh proof types, varied CTA structures, no recycled examples from previous outputs  
+✓ CAUSAL PROOF: All statistics show clear cause→effect relationships with operational explanations
+✓ CONVERSION QUALITY: Addresses decision friction, guides naturally toward yes, maintains authentic voice`;
         break;
       case "Promotional":
         categoryInstructions = "Use the promotional email framework to highlight benefits and create desire.";
