@@ -1335,94 +1335,75 @@ Before completing rewrite, MANDATORY validation of all Sheri guardrails:
         categoryInstructions = "Use the promotional email framework to highlight benefits and create desire.";
         break;
       case "Re-engagement":
-        categoryInstructions = `FOR RE-ENGAGEMENT EMAILS - HARPER-STYLE CONVERSATIONAL FRAMEWORK:
+        categoryInstructions = `RE-ENGAGEMENT CATEGORY FRAMEWORK — SHERI STYLE
 
-CRITICAL INSTRUCTION: You MUST write like Harper speaking naturally, not following a template. This should sound like a real person having a conversation, not corporate copy.
+Purpose
 
-MANDATORY HARPER VOICE REQUIREMENTS:
-1. **Natural Conversational Flow**: Write like Harper would speak - casual, confident, human
-2. **"You're Here, Here's What Helps" Positioning**: NEVER say "we've done this" - always focus on what helps the reader
-3. **Authentic Signal Mirroring**: Use natural phrases like "You might've meant to revisit this..." or "This might be better timing"
-4. **Casual Authority Tone**: Use "No overhaul. No long calls. Just X." style confidence
-5. **Harper-Style CTAs**: "Want me to show you..." / "Can I walk you through..." (conversational questions, not formal requests)
-6. **Funnel-Stage-Specific P.S.**: "Most teams use this when post-demo leads go quiet. Might be useful here too."
+Re-engagement emails should anchor on what's new, what they missed, or why it matters now, not on vague empathy or nurture tone.
+The goal: move lapsed or inactive contacts back into the funnel with a low-friction action.
 
-ENFORCE ONE OF THREE HARPER FORMATS:
+⸻
 
-FORMAT 1: SHORT & DIRECT (50-65 words)
-Use for: Clear engagement signals that went quiet
+FORMAT CLASSIFICATION RULES
 
-REQUIRED ELEMENTS:
-- Authentic life acknowledgment: "You leaned in a while back—then life happened. Totally get it."
-- Natural signal mirroring: "You might've meant to revisit this..." or "This might be better timing."
-- Helper positioning: "Just picking this back up in case now's a better moment."
-- Casual authority solution: "No overhaul. No long calls. Just a 15-minute peek at how X works."
-- Harper conversational CTA: "Want me to show you what that could look like for your team?"
-- Funnel-specific P.S.: "Most teams use this when post-demo leads go quiet. Might be useful here too."
+Always classify the draft into one of three formats:
+	1.	Offer-Based (DEFAULT)
+	•	Use if draft mentions a new resource, event, update, or invitation.
+	•	Anchor the email around "since you've been gone / here's what you missed."
+	•	Example: event invites, list cleanup, subscription confirmation, product update.
+	2.	Problem-Solution
+	•	Use only if the draft is centered on an insight, analysis, or report.
+	•	Frame the problem, empathize, then offer the solution/update.
+	3.	Short & Direct
+	•	Use only if contact has been disengaged 12+ months with minimal context.
+	•	Keep it to 1–2 sentences with a very light CTA.
 
-EXAMPLE STRUCTURE:
-"You leaned in a while back—then life happened. Totally get it.
+⚠️ Important: Never "soften" an Offer-Based draft into a Problem-Solution or nurture email. If the signal is an event, update, or fresh start → always stay in Offer-Based lane.
 
-Just picking this back up in case now's a better moment.
+⸻
 
-Since then, we've helped a few teams restart cold outreach by fixing just one thing: the message misalignment in the first few lines.
+STRUCTURE — OFFER-BASED (Gold Standard)
+	•	Subject Line → anchor on what's new / what they missed ("Join us Oct 12: Growth Leaders Forum 2025").
+	•	Opening → acknowledge the gap ("Since we last connected…").
+	•	Benefit Snapshot → make the outcome tangible ("Walk away with 3 peer-tested growth strategies you can use this quarter").
+	•	CTA → light, specific, action-driven ("Reserve your spot here," "Confirm here to stay subscribed").
+	•	Urgency/Scarcity → add if relevant ("Spots are limited," "Most execs register early").
 
-No overhaul. No long calls. Just a 15-minute peek at how the rewrite works.
+⸻
 
-Want me to show you what that could look like for your team?"
+STRUCTURE — PROBLEM-SOLUTION
+	•	Subject Line → frame the challenge ("Still feeling pipeline gaps?").
+	•	Problem Acknowledgment → empathize with the pain.
+	•	Solution as Update → present the new insight or method.
+	•	CTA → light and specific ("Download the report here").
 
-FORMAT 2: OFFER-BASED (65-75 words)
-Use for: Specific solution needs
+⸻
 
-REQUIRED ELEMENTS:
-- Situational acknowledgment: "You might be looking for..." or "Guessing you're still wrestling with..."
-- Helper introduction: "Just thought this might help—"
-- Casual solution offer with specifics
-- Harper conversational CTA: "Want me to walk you through it?" or "Can I show you the shortcut?"
-- Funnel-specific P.S.: "Most teams grab this after initial demos stall. Timing might be perfect."
+STRUCTURE — SHORT & DIRECT
+	•	Subject Line → simple and clear ("Still want updates?").
+	•	Body → 1–2 short sentences.
+	•	CTA → ultra-light ("Click here to confirm").
 
-FORMAT 3: PROBLEM-SOLUTION (70-80 words)  
-Use for: Addressing specific pain points
+⸻
 
-REQUIRED ELEMENTS:
-- Problem acknowledgment: "Still feeling like [specific struggle]?"
-- Empathetic bridge: "Yeah, that's the thing everyone hits."
-- Solution as helper: "Here's what actually works: [specific method]."
-- Harper conversational CTA: "Want me to show you how that works?"
-- Funnel-specific P.S.: "This usually comes up after teams try everything else. Might be perfect timing."
+TONE GUARDRAILS
+	•	Direct, professional, benefit-driven.
+	•	No corporate fluff, no over-empathy.
+	•	Always framed as: "Here's what's new, here's why it matters, here's what to do next."
 
-MANDATORY LANGUAGE PATTERNS:
-✅ USE THESE HARPER-STYLE PHRASES:
-- "You leaned in a while back—then life happened. Totally get it."
-- "You might've meant to revisit this..."
-- "This might be better timing."
-- "Just picking this back up in case now's a better moment."
-- "Since then, we've helped a few teams fix just one thing:"
-- "No overhaul. No long calls. Just X."
-- "Want me to show you what that could look like?"
-- "Can I walk you through it?"
-- "Want me to walk you through it?"
-- "Can I show you the shortcut?"
+⸻
 
-🚫 NEVER USE THESE FORMULAIC PHRASES:
-- "We've done this" or "We've helped"
-- "You leaned in — then paused. Totally fair." (too templated)
-- "Since then, we've helped teams like yours unlock 8–12 hours" (track record focused)
-- "Reply 'WORD'" (not conversational)
-- Generic P.S. lines that don't specify funnel stage
+QUESTIONS FOR BETTER RESULTS
 
-HARPER VOICE VALIDATION CHECKLIST:
-1. Does this sound like Harper speaking naturally? (Not following a template)
-2. Is it "you're here, here's what helps" NOT "we've done this"?
-3. Are CTAs conversational questions like "Want me to show you..."?
-4. Does the P.S. specify the exact funnel stall stage?
-5. Is the tone casual authority, not corporate?
+At the end of every draft, output 2–3 reflective questions to help the user improve inputs. Only include the most relevant.
 
-ORIGINALITY REQUIREMENT:
-- You MUST create fresh, natural language
-- NEVER use the exact example phrases verbatim
-- Draw inspiration from the patterns but make it sound genuinely conversational
-- Each email should feel like Harper speaking in the moment, not reciting a script`;
+Examples:
+	•	What's the specific update or offer we can highlight instead of keeping it broad?
+	•	Can we make the CTA lighter and more specific?
+	•	Does the email clearly use the "since you've been gone / here's what you missed" framing?
+	•	Can we make the benefit snapshot more concrete (e.g., 3 strategies this quarter vs. "real insights")?
+
+⸻`;
         break;
       default:
         categoryInstructions = "Use the most appropriate framework based on the email content.";
