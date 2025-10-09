@@ -1296,7 +1296,28 @@ ANTI-REPETITION GUARDRAILS
 
 CONVERSION SIGNAL EMAIL STRUCTURE
 
-Signal Mirror: Name what they've likely done (visited, clicked, ghosted).
+EMOTIONAL MIRROR (First 1–2 Lines)
+
+When writing the Emotional Mirror:
+	•	Mirror a *specific decision-friction moment*, not a general business feeling.
+	•	Anchor the opening in what the reader is *doing, seeing, or feeling* in that moment before they decide.
+	•	Avoid vague context like "fast-moving markets," "pressure to grow," or "you've likely felt…"
+	•	Use concrete, observable micro-moments that sound like real B2B behavior.
+
+Example patterns:
+	•	"You refresh the pipeline report — and nothing's moved."
+	•	"You've rewritten that follow-up three times… then never sent it."
+	•	"Deals pile up in the handoff zone — again."
+	•	"The CRM data looks fine, but something's still off."
+	•	"You check the dashboard, hoping for movement — nothing."
+
+The tone should be:
+	•	Calm and relatable, not dramatic or salesy.
+	•	Empathetic, not diagnostic.
+	•	Feels like someone *who's been there*, not someone *selling something.*
+
+**CRITICAL**: Do NOT reference your product, solution, or company in the first two lines.
+The opener exists to *mirror emotion*, not pitch the system.
 
 Address Internal Friction: Reflect what might be holding them back (e.g., "not sure if now's the right time," "unclear if this is the right fit," "too many moving pieces").
 
