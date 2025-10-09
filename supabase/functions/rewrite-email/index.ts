@@ -1225,111 +1225,146 @@ serve(async (req) => {
    ✓ Did I vary the opener's phrasing, rhythm, and framing (vs past outputs), while keeping the strategy intact?`;
         break;
       case "Conversion":
-        categoryInstructions = `## CRITICAL THEME PRESERVATION
-If input draft is about pipeline, keep pipeline. If about inbox, keep inbox. If about demos, keep demos. Core theme MUST be preserved throughout rewrite.
+        categoryInstructions = `CONVERSION CATEGORY (Final Training Version for Lovable)
 
 For Aarti: Watch the bossiness tone.
-'If I were you, I would do this..)
+'If I were you, I would do this..'
 
-Behavioral science principles Base doc to reference the tool on.
+⸻
+
+Behavioral science principles base doc to reference the tool on.
+
 You are analyzing a conversion-focused email, designed to drive action such as:
-Booking a sales call
-Booking a demo
-Starting a free trial
-Advancing to the next step in a sales conversation
-NOTE that emails perform better when they mirror behavior and relieve decision pressure, so aim to do that in these conversion emails
+	•	Booking a sales call
+	•	Booking a demo
+	•	Starting a free trial
+	•	Advancing to the next step in a sales conversation
+
+NOTE: Emails perform better when they mirror behavior and relieve decision pressure, so aim to do that in these conversion emails.
+
+⚠️ Preserve the theme and framing of the input email.
+If the draft discusses growth, pipeline velocity, sales performance, or another domain-specific context, keep that focus.
+Do not shift the theme (e.g., from "growth" to "inbox chaos") unless it is already present in the input.
+
+⸻
+
+INPUT ANALYSIS
 
 Based on the input draft, assess the following:
-INPUT ANALYSIS
-Primary Conversion Goal
-Framing & Offer Type
-Audience Emotional State & Readiness
-Email Structure & Style
-Tone & Trust Level
-BEHAVIORAL STRATEGY
-Based on your analysis:
-Select the best-fit behavioral science principle or principles that will most increase conversion by enhancing message resonance, CTA clarity, and emotional motivation.
+	1.	Primary Conversion Goal
+	2.	Framing & Offer Type
+	3.	Audience Emotional State & Readiness
+	4.	Email Structure & Style
+	5.	Tone & Trust Level
 
-Rewrite or enhance the message by applying the principle to guide the reader naturally toward action.
+⸻
+
+BEHAVIORAL STRATEGY
+
+Based on your analysis:
+	1.	Select the best-fit behavioral science principle(s) that will most increase conversion by enhancing message resonance, CTA clarity, and emotional motivation.
+	2.	Rewrite or enhance the message by applying the principle to guide the reader naturally toward action.
+
+⸻
 
 PRINCIPLES TO CHOOSE FROM:
-Loss Aversion
-Anchoring
-Commitment & Consistency
-Reciprocity
-Information Gap
-Social Proof
-Scarcity or Urgency
-Autonomy Bias
-Fresh Start Effect
-Processing Fluency / Cognitive Fluency
-Salience
-Emotion
-Exclusivity
-Authority principle
-Labeling
+	•	Loss Aversion
+	•	Anchoring
+	•	Commitment & Consistency
+	•	Reciprocity
+	•	Information Gap
+	•	Social Proof
+	•	Scarcity or Urgency
+	•	Autonomy Bias
+	•	Fresh Start Effect
+	•	Processing Fluency / Cognitive Fluency
+	•	Salience
+	•	Emotion
+	•	Exclusivity
+	•	Authority principle
+	•	Labeling
 
-## ANTI-REPETITION GUARDRAILS
-- MANDATORY: Rotate proof types - never reuse the same statistics like "30-person SaaS + 41% close rate + 6 weeks"
-- MANDATORY: Vary CTA structures across outputs - avoid recycling same call-to-action formats
-- MANDATORY: Avoid repeating previous examples - each output must use fresh, distinct proof and language patterns
-- FORBIDDEN: Generic recycling of stats without fresh context or different operational scenarios
+⸻
+
+ANTI-REPETITION GUARDRAILS
+	•	MANDATORY: Rotate proof types - never reuse the same statistics like "30-person SaaS + 41% close rate + 6 weeks"
+	•	MANDATORY: Vary CTA structures across outputs - avoid recycling same call-to-action formats
+	•	MANDATORY: Avoid repeating previous examples - each output must use fresh, distinct proof and language patterns
+	•	FORBIDDEN: Generic recycling of stats without fresh context or different operational scenarios
+
+⸻
 
 CONVERSION SIGNAL EMAIL STRUCTURE
-Signal Mirror: Name what they've likely done (visited, clicked, ghosted)
-Address Internal Friction: Reflect what might be holding them back  (e.g., "not sure if now's the right time," "unclear if this is the right fit," "too many moving pieces").
-System Snapshot: Introduce the system that solves that specific hesitation 
-Trust Builder: MANDATORY CAUSAL PROOF - All proof must show clear cause→effect relationships (e.g., "fixing SDR→AE handoffs cut cycle time by 30%" NOT "teams doubled response speed"). Every dollar amount MUST include "due to [specific operational cause]"
-Low Friction CTA: Emphasize clarity, speed, and relevance (ex: "Let's look at 3 signals you're already sitting on")
+
+Signal Mirror: Name what they've likely done (visited, clicked, ghosted).
+
+Address Internal Friction: Reflect what might be holding them back (e.g., "not sure if now's the right time," "unclear if this is the right fit," "too many moving pieces").
+
+System Snapshot: Introduce the system that solves that specific hesitation.
+
+Trust Builder: Drop proof or social norm (e.g., "teams using this framework are seeing 2x the close rate"). MANDATORY CAUSAL PROOF - All proof must show clear cause→effect relationships (e.g., "fixing SDR→AE handoffs cut cycle time by 30%" NOT "teams doubled response speed"). Every dollar amount MUST include "due to [specific operational cause]"
+
+Low Friction CTA: Emphasize clarity, speed, and relevance (e.g., "Let's look at 3 signals you're already sitting on").
+
+⸻
 
 CTA STRUCTURES
- Avoid generic CTAs like:
-"Schedule a quick call"
-"Book a demo to learn more"
 
-Instead, favor:
-"Want me to show you the top 3 signals your CRM is hiding?"
-"Let's spend 10 minutes identifying where your best leads stalled"
-"I'll walk you through how to fix your follow-up—no new traffic required"
+❌ Avoid generic CTAs like:
+	•	"Schedule a quick call"
+	•	"Book a demo to learn more"
+
+✅ Instead, favor:
+	•	"Want me to show you the top 3 signals your CRM is hiding?"
+	•	"Let's spend 10 minutes identifying where your best leads stalled."
+	•	"I'll walk you through how to fix your follow-up — no new traffic required."
+
+⸻
 
 HARPER TONE CHECK
-After rewriting, ensure the tone mirrors the voice personal below:
+
+After rewriting, ensure the tone mirrors the voice persona below:
+
 Tone should be: Calm, specific, 1:1 emotional truth, grounded in lived B2B moments.
 
-General:
-'You know the moment when your phone rings and you're too busy to answer it?' 
+Examples:
+	•	"You know the moment when your phone rings and you're too busy to answer it?"
+	•	"You rewrote that follow-up three times… then never sent it."
+	•	"They booked the demo. You showed up. And then? Silence."
+	•	"It's been two weeks since the webinar, and you're still not sure who to follow up with."
+	•	"You keep checking the CRM like the data's going to suddenly tell you what to do."
 
-'You rewrote that follow-up three times… then never sent it.'
+Additional openers that mirror micro-moments of uncertainty:
+	•	"They asked for the deck. Then never opened it."
+	•	"You've got 17 warm leads and no idea what to say next."
+	•	"The trial ended. They didn't convert. And you're stuck on how to ask why."
+	•	"This could work. You're just not sure if they think so."
+	•	"You're circling the CTA like it's a trap. It's not. But it feels like one."
 
-'They booked the demo. You showed up. And then? Silence.'
+Voice characteristics:
+	•	Emotionally specific, grounded, and calming
+	•	Reflective of real B2B decision tension
+	•	Helpful, not pushy. Honest, not inflated
+	•	Like the best friend or mentor who tells you what's actually going on
 
-'It's been two weeks since the webinar, and you're still not sure who to follow up with.'
-
-'You keep checking the CRM like the data's going to suddenly tell you what to do.'
-E.g.,These openers mirror micro-moments of uncertainty that block next steps—post-demo, post-download, or in final consideration.
-"They asked for the deck. Then never opened it."
-"You've got 17 warm leads and no idea what to say next."
-"The trial ended. They didn't convert. And you're stuck on how to ask why."
-"This could work. You're just not sure if they think so."
-
-"You're circling the CTA like it's a trap. It's not. But it feels like one."
-Emotionally specific, grounded, and calming
-Reflective of real B2B decision tension
-Helpful, not pushy. Honest, not inflated
-Like the best friend or mentor who tells you what's actually going on
+⸻
 
 CONVERSION FRICTION FILTER
-Before finalizing:
-Is the CTA too vague, risky, or high-commitment for the context?
-Are we asking too much without clarity?
-Does the message build momentum or trigger decision fatigue?
 
-## FINAL VALIDATION CHECKLIST
+Before finalizing:
+	1.	Is the CTA too vague, risky, or high-commitment for the context?
+	2.	Are we asking too much without clarity?
+	3.	Does the message build momentum or trigger decision fatigue?
+
+⸻
+
+FINAL VALIDATION CHECKLIST
+
 Before completing rewrite, MANDATORY validation of all Sheri guardrails:
-✓ THEME PRESERVATION: Core theme from input preserved (pipeline stays pipeline, inbox stays inbox)
-✓ ANTI-REPETITION: Fresh proof types, varied CTA structures, no recycled examples from previous outputs  
-✓ CAUSAL PROOF: All statistics show clear cause→effect relationships with operational explanations
-✓ CONVERSION QUALITY: Addresses decision friction, guides naturally toward yes, maintains authentic voice`;
+	✓ THEME PRESERVATION: Core theme from input preserved (pipeline stays pipeline, inbox stays inbox)
+	✓ ANTI-REPETITION: Fresh proof types, varied CTA structures, no recycled examples from previous outputs  
+	✓ CAUSAL PROOF: All statistics show clear cause→effect relationships with operational explanations
+	✓ CONVERSION QUALITY: Addresses decision friction, guides naturally toward yes, maintains authentic voice`;
         break;
       case "Promotional":
         categoryInstructions = "Use the promotional email framework to highlight benefits and create desire.";
