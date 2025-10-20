@@ -1366,6 +1366,35 @@ Low Friction CTA: Emphasize clarity, speed, and relevance (e.g., "Let's look at 
 
 ⸻
 
+### MICRO-RECIPROCITY MODULE (Sheri Update v5.5)
+
+If the email output ends with a direct CTA such as:
+	•	"Want me to...?"
+	•	"Ready to...?"
+	•	"Let's..."
+
+and it does NOT already include a natural reciprocity phrase like:
+	•	"walk you through"
+	•	"show you how"
+	•	"peek"
+	•	"see it in action"
+
+Then insert one micro-reciprocity line immediately before the CTA.
+
+Use this format:
+"You'll [gain/see/uncover] [specific takeaway or benefit] before we even talk next steps."
+
+Example lines:
+	•	"You'll walk away knowing exactly where your process is leaking time."
+	•	"You'll see which 3 workflows would free your team up fastest."
+	•	"You'll uncover one quick automation win you can use immediately."
+	•	"You'll spot the one workflow slowing down your entire pipeline."
+
+Tone: calm, consultative, Harper-style — never hypey.
+Skip insertion if reciprocity language already exists.
+
+⸻
+
 CTA STRUCTURES
 
 ❌ Avoid generic CTAs like:
