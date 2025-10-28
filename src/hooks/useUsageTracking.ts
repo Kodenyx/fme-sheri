@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { usePricingTier } from './usePricingTier';
 import { useUnlimitedUsers } from './useUnlimitedUsers';
+import { useAuth } from '@/contexts/AuthContext';
 
 export const useUsageTracking = () => {
   const [usageCount, setUsageCount] = useState(0);
@@ -13,6 +14,7 @@ export const useUsageTracking = () => {
   const [monthlyLimit, setMonthlyLimit] = useState(60);
   const [isBetaUser, setIsBetaUser] = useState(false);
   
+  const { user } = useAuth();
   const { pricingData } = usePricingTier();
   const { isUnlimitedUser } = useUnlimitedUsers();
 
@@ -45,10 +47,10 @@ export const useUsageTracking = () => {
         console.log('Reset usage counters for new subscription');
       }
       
-      // Load stored email
-      const storedEmail = localStorage.getItem('userEmail');
+      // Prefer authenticated user email, fallback to localStorage
+      const storedEmail = user?.email || localStorage.getItem('userEmail');
       setEmail(storedEmail);
-      console.log('Stored email:', storedEmail);
+      console.log('Email (auth or stored):', storedEmail);
       
       // Check if beta user or unlimited user and ensure proper email format
       if (storedEmail) {

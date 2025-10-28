@@ -303,13 +303,16 @@ const Tool = () => {
     }
   };
 
-  const handleEmailSubmit = async (submittedEmail: string, firstName?: string) => {
-    setUserEmail(submittedEmail);
+  const handleAuthComplete = async (user: any) => {
+    const userEmail = user.email;
+    const firstName = user.user_metadata?.first_name;
     
-    await addToGHL(submittedEmail, firstName, false);
+    setUserEmail(userEmail);
+    await refreshUsageData();
+    await addToGHL(userEmail, firstName, false);
     
     toast({
-      title: "Email saved!",
+      title: "Account created!",
       description: "You can now continue using the tool.",
     });
   };
@@ -569,12 +572,12 @@ const Tool = () => {
       {/* Modals - only show for non-beta users */}
       {!isBetaUser && (
         <>
-          <EmailCaptureModal
-            isOpen={showEmailModal}
-            onClose={() => setShowEmailModal(false)}
-            onEmailSubmit={handleEmailSubmit}
-            usageCount={usageCount}
-          />
+      <EmailCaptureModal
+        isOpen={showEmailModal}
+        onClose={() => setShowEmailModal(false)}
+        onAuthComplete={handleAuthComplete}
+        usageCount={usageCount}
+      />
 
           <PaywallModal
             isOpen={showPaywallModal}

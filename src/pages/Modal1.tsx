@@ -11,8 +11,8 @@ const Modal1 = () => {
     setTimeout(() => setIsOpen(true), 500);
   };
 
-  const handleEmailSubmit = (email: string) => {
-    console.log("Email submitted:", email);
+  const handleAuthComplete = (user: any) => {
+    console.log("User authenticated:", user);
     // You can add more logic here for testing
   };
 
@@ -34,7 +34,7 @@ const Modal1 = () => {
       <EmailCaptureModal
         isOpen={isOpen}
         onClose={handleClose}
-        onEmailSubmit={handleEmailSubmit}
+        onAuthComplete={handleAuthComplete}
         usageCount={3}
       />
     </div>
