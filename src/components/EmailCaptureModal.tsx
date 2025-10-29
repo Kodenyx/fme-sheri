@@ -138,17 +138,23 @@ const EmailCaptureModal = ({ isOpen, onClose, onAuthComplete, usageCount }: Emai
         throw new Error('No user data returned from sign in');
       }
 
-      toast({
-        title: "Welcome Back! 👋",
-        description: "You've successfully signed in.",
-      });
-
       // Keep localStorage for backwards compatibility
       localStorage.setItem('userEmail', email);
 
       // Call the onAuthComplete callback with the user
       onAuthComplete(data.user);
+      
+      toast({
+        title: "Welcome Back! 👋",
+        description: "You've successfully signed in.",
+      });
+      
       onClose();
+      
+      // Refresh the page to ensure auth state is fully synced
+      setTimeout(() => {
+        window.location.reload();
+      }, 500);
     } catch (error: any) {
       console.error('Sign in error:', error);
       toast({
@@ -213,17 +219,23 @@ const EmailCaptureModal = ({ isOpen, onClose, onAuthComplete, usageCount }: Emai
         throw new Error('No user data returned from sign up');
       }
 
-      toast({
-        title: "Account Created! 🎉",
-        description: "Welcome aboard! You can now use the tool.",
-      });
-
       // Keep localStorage for backwards compatibility
       localStorage.setItem('userEmail', email);
 
       // Call the onAuthComplete callback with the user
       onAuthComplete(data.user);
+      
+      toast({
+        title: "Account Created! 🎉",
+        description: "Welcome aboard! Refreshing...",
+      });
+      
       onClose();
+      
+      // Refresh the page to ensure auth state is fully synced
+      setTimeout(() => {
+        window.location.reload();
+      }, 500);
     } catch (error: any) {
       console.error('Sign up error:', error);
       
