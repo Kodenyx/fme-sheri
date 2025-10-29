@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { usePricingTier } from './usePricingTier';
 import { useUnlimitedUsers } from './useUnlimitedUsers';
+import { usePromotionalAccess } from './usePromotionalAccess';
 import { useAuth } from '@/contexts/AuthContext';
 
 export const useUsageTracking = () => {
@@ -17,6 +18,7 @@ export const useUsageTracking = () => {
   const { user } = useAuth();
   const { pricingData } = usePricingTier();
   const { isUnlimitedUser } = useUnlimitedUsers();
+  const { hasPromotionalAccess, expiresAt } = usePromotionalAccess(email);
 
   const effectiveMonthlyLimit = pricingData?.foundersProgram?.is_available ? 60 : monthlyLimit;
 
@@ -216,7 +218,7 @@ export const useUsageTracking = () => {
 
   // Determine access control
   const needsEmailCapture = !email && usageCount >= 1;
-  const needsPaywall = email && !isSubscribed && !isBetaUser && usageCount >= (5 + bonusCredits);
+  const needsPaywall = email && !isSubscribed && !isBetaUser && !hasPromotionalAccess && usageCount >= (5 + bonusCredits);
 
   console.log('Current usage tracking state:', {
     usageCount,
@@ -224,6 +226,8 @@ export const useUsageTracking = () => {
     email,
     isSubscribed,
     isBetaUser,
+    hasPromotionalAccess,
+    promotionalExpiresAt: expiresAt,
     needsEmailCapture,
     needsPaywall,
     loading
@@ -235,6 +239,8 @@ export const useUsageTracking = () => {
     bonusCredits,
     email,
     isSubscribed,
+    hasPromotionalAccess,
+    promotionalExpiresAt: expiresAt,
     needsEmailCapture,
     needsPaywall,
     loading,

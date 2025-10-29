@@ -1,6 +1,7 @@
 
 import { useState, useEffect } from "react";
 import { supabase } from "@/integrations/supabase/client";
+import { usePromotionalAccess } from "./usePromotionalAccess";
 
 export interface CreditSystemData {
   usageCount: number;
@@ -17,6 +18,8 @@ export interface CreditSystemData {
 }
 
 export const useCreditSystem = (email: string | null) => {
+  const { hasPromotionalAccess } = usePromotionalAccess(email);
+  
   const [creditData, setCreditData] = useState<CreditSystemData>({
     usageCount: 0,
     monthlyUsage: 0,
@@ -94,8 +97,8 @@ export const useCreditSystem = (email: string | null) => {
         return;
       }
 
-      const subscriptionStatus = subscriptionData?.subscribed ? 'paid' : 'free';
-      const isSubscribed = subscriptionData?.subscribed || false;
+      const subscriptionStatus = (subscriptionData?.subscribed || hasPromotionalAccess) ? 'paid' : 'free';
+      const isSubscribed = subscriptionData?.subscribed || hasPromotionalAccess || false;
       
       const oneTimeBonusClaimed = usageData?.one_time_bonus_claimed || false;
       const lastMonthlyClaimDate = usageData?.last_monthly_claim || null;
