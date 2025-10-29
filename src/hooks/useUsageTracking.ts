@@ -18,7 +18,7 @@ export const useUsageTracking = () => {
   const { user } = useAuth();
   const { pricingData } = usePricingTier();
   const { isUnlimitedUser } = useUnlimitedUsers();
-  const { hasPromotionalAccess, expiresAt } = usePromotionalAccess(email);
+  const { hasPromotionalAccess, expiresAt, loading: promoLoading } = usePromotionalAccess(email);
 
   const effectiveMonthlyLimit = pricingData?.foundersProgram?.is_available ? 60 : monthlyLimit;
 

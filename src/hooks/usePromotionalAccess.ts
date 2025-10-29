@@ -7,10 +7,14 @@ export const usePromotionalAccess = (email: string | null) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    let mounted = true;
+    
     const checkPromotionalAccess = async () => {
       if (!email) {
-        setHasPromotionalAccess(false);
-        setLoading(false);
+        if (mounted) {
+          setHasPromotionalAccess(false);
+          setLoading(false);
+        }
         return;
       }
 
@@ -20,7 +24,9 @@ export const usePromotionalAccess = (email: string | null) => {
           .select('expires_at, is_active')
           .eq('email', email)
           .eq('is_active', true)
-          .single();
+          .maybeSingle();
+
+        if (!mounted) return;
 
         if (!error && data) {
           const expirationDate = new Date(data.expires_at);
@@ -39,13 +45,21 @@ export const usePromotionalAccess = (email: string | null) => {
         }
       } catch (error) {
         console.error('Error checking promotional access:', error);
-        setHasPromotionalAccess(false);
+        if (mounted) {
+          setHasPromotionalAccess(false);
+        }
       } finally {
-        setLoading(false);
+        if (mounted) {
+          setLoading(false);
+        }
       }
     };
 
     checkPromotionalAccess();
+    
+    return () => {
+      mounted = false;
+    };
   }, [email]);
 
   return { hasPromotionalAccess, expiresAt, loading };

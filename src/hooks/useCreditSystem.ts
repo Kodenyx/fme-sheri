@@ -18,7 +18,7 @@ export interface CreditSystemData {
 }
 
 export const useCreditSystem = (email: string | null) => {
-  const { hasPromotionalAccess } = usePromotionalAccess(email);
+  const { hasPromotionalAccess, loading: promoLoading } = usePromotionalAccess(email);
   
   const [creditData, setCreditData] = useState<CreditSystemData>({
     usageCount: 0,
