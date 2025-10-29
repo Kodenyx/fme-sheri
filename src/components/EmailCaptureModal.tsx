@@ -26,6 +26,7 @@ const EmailCaptureModal = ({ isOpen, onClose, onAuthComplete, usageCount }: Emai
   const [password, setPassword] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showMagicLink, setShowMagicLink] = useState(false);
+  const [mode, setMode] = useState<'signup' | 'signin'>('signup');
   const { toast } = useToast();
 
   const handleGoogleSignIn = async () => {
@@ -94,6 +95,65 @@ const EmailCaptureModal = ({ isOpen, onClose, onAuthComplete, usageCount }: Emai
       toast({
         title: "Error",
         description: error.message || "Failed to send magic link",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleSignIn = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      toast({
+        title: "Invalid Email",
+        description: "Please enter a valid email address",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    if (password.length < 6) {
+      toast({
+        title: "Password Too Short",
+        description: "Password must be at least 6 characters long",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const { data, error } = await supabase.auth.signInWithPassword({
+        email,
+        password,
+      });
+
+      if (error) throw error;
+
+      if (!data.user) {
+        throw new Error('No user data returned from sign in');
+      }
+
+      toast({
+        title: "Welcome Back! 👋",
+        description: "You've successfully signed in.",
+      });
+
+      // Keep localStorage for backwards compatibility
+      localStorage.setItem('userEmail', email);
+
+      // Call the onAuthComplete callback with the user
+      onAuthComplete(data.user);
+      onClose();
+    } catch (error: any) {
+      console.error('Sign in error:', error);
+      toast({
+        title: "Error",
+        description: error.message || "Failed to sign in. Please check your credentials.",
         variant: "destructive",
       });
     } finally {
@@ -171,9 +231,11 @@ const EmailCaptureModal = ({ isOpen, onClose, onAuthComplete, usageCount }: Emai
       if (error.message?.includes('already registered')) {
         toast({
           title: "Account Exists",
-          description: "This email is already registered. Try signing in instead.",
+          description: "This email is already registered.",
           variant: "destructive",
         });
+        // Switch to sign-in mode
+        setMode('signin');
       } else {
         toast({
           title: "Error",
@@ -192,10 +254,12 @@ const EmailCaptureModal = ({ isOpen, onClose, onAuthComplete, usageCount }: Emai
         <div className="rounded-3xl shadow-2xl overflow-hidden" style={{ backgroundColor: '#0D4049' }}>
           <DialogHeader className="p-8 pb-6">
             <DialogTitle className="text-center text-3xl font-bold text-white mb-2">
-              ✨ Keep Going!
+              {mode === 'signup' ? '✨ Keep Going!' : '👋 Welcome Back!'}
             </DialogTitle>
             <DialogDescription className="text-center text-lg" style={{ color: '#A9D6D4' }}>
-              Create your free account to unlock more rewrites
+              {mode === 'signup' 
+                ? 'Create your free account to unlock more rewrites' 
+                : 'Sign in to continue using the tool'}
             </DialogDescription>
           </DialogHeader>
 
@@ -224,14 +288,14 @@ const EmailCaptureModal = ({ isOpen, onClose, onAuthComplete, usageCount }: Emai
             </div>
 
             {/* Email + Password Form or Magic Link Form */}
-            <form className="space-y-4" onSubmit={showMagicLink ? handleMagicLink : handleEmailPasswordSignUp}>
-              {!showMagicLink && (
+            <form className="space-y-4" onSubmit={showMagicLink ? handleMagicLink : (mode === 'signin' ? handleSignIn : handleEmailPasswordSignUp)}>
+              {!showMagicLink && mode === 'signup' && (
                 <Input
                   type="text"
                   placeholder="First Name"
                   value={firstName}
                   onChange={(e) => setFirstName(e.target.value)}
-                  required={!showMagicLink}
+                  required={!showMagicLink && mode === 'signup'}
                   className="text-base py-5 px-5 border-2 rounded-xl bg-white text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
                   style={{ borderColor: '#A9D6D4' }}
                 />
@@ -273,6 +337,11 @@ const EmailCaptureModal = ({ isOpen, onClose, onAuthComplete, usageCount }: Emai
                     <Mail className="mr-2 h-5 w-5" />
                     Send Magic Link
                   </>
+                ) : mode === 'signin' ? (
+                  <>
+                    <Lock className="mr-2 h-5 w-5" />
+                    Sign In
+                  </>
                 ) : (
                   <>
                     <Lock className="mr-2 h-5 w-5" />
@@ -281,15 +350,31 @@ const EmailCaptureModal = ({ isOpen, onClose, onAuthComplete, usageCount }: Emai
                 )}
               </Button>
 
-              {/* Toggle Magic Link */}
-              <div className="text-center">
+              {/* Toggle Magic Link and Sign In/Sign Up */}
+              <div className="text-center space-y-2">
+                {!showMagicLink && (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setMode(mode === 'signin' ? 'signup' : 'signin');
+                      setFirstName('');
+                      setPassword('');
+                    }}
+                    className="text-sm font-medium hover:underline transition-colors block w-full"
+                    style={{ color: '#A9D6D4' }}
+                  >
+                    {mode === 'signin' 
+                      ? "Don't have an account? Sign up" 
+                      : "Already have an account? Sign in"}
+                  </button>
+                )}
                 <button
                   type="button"
                   onClick={() => setShowMagicLink(!showMagicLink)}
-                  className="text-sm font-medium hover:underline transition-colors"
+                  className="text-sm font-medium hover:underline transition-colors block w-full"
                   style={{ color: '#A9D6D4' }}
                 >
-                  {showMagicLink ? "← Back to sign up" : "✉️ Send me a magic link instead"}
+                  {showMagicLink ? "← Back to email/password" : "✉️ Send me a magic link instead"}
                 </button>
               </div>
 
