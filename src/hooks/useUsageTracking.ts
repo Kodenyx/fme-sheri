@@ -13,7 +13,6 @@ export const useUsageTracking = () => {
   const [loading, setLoading] = useState(true);
   const [monthlyLimit, setMonthlyLimit] = useState(60);
   const [isBetaUser, setIsBetaUser] = useState(false);
-  const [hasPromotionalAccess, setHasPromotionalAccess] = useState(false);
   
   const { user } = useAuth();
   const { pricingData } = usePricingTier();
@@ -70,29 +69,16 @@ export const useUsageTracking = () => {
         console.log('Beta user status:', isBeta);
       }
       
-      // Check subscription status and promotional access if we have an email
+      // Check subscription status if we have an email
       if (storedEmail && subscription !== 'success') {
         console.log('Checking subscription status for:', storedEmail);
-        
-        // Check promotional access
-        const { data: promoData } = await supabase
-          .from('promotional_access')
-          .select('expires_at, is_active')
-          .eq('email', storedEmail)
-          .eq('is_active', true)
-          .maybeSingle();
-        
-        const hasPromo = promoData && new Date(promoData.expires_at) > new Date();
-        setHasPromotionalAccess(!!hasPromo);
-        console.log('Promotional access:', hasPromo);
-        
         const { data: subData, error: subError } = await supabase.functions.invoke('check-subscription', {
           body: { email: storedEmail }
         });
         
         if (!subError && subData) {
           console.log('Subscription check result:', subData);
-          const isCurrentlySubscribed = subData.subscribed || hasPromo || false;
+          const isCurrentlySubscribed = subData.subscribed || false;
           setIsSubscribed(isCurrentlySubscribed);
           
           if (isCurrentlySubscribed) {
@@ -230,7 +216,7 @@ export const useUsageTracking = () => {
 
   // Determine access control
   const needsEmailCapture = !email && usageCount >= 1;
-  const needsPaywall = email && !isSubscribed && !isBetaUser && !hasPromotionalAccess && usageCount >= (5 + bonusCredits);
+  const needsPaywall = email && !isSubscribed && !isBetaUser && usageCount >= (5 + bonusCredits);
 
   console.log('Current usage tracking state:', {
     usageCount,
@@ -238,7 +224,6 @@ export const useUsageTracking = () => {
     email,
     isSubscribed,
     isBetaUser,
-    hasPromotionalAccess,
     needsEmailCapture,
     needsPaywall,
     loading
@@ -250,7 +235,6 @@ export const useUsageTracking = () => {
     bonusCredits,
     email,
     isSubscribed,
-    hasPromotionalAccess,
     needsEmailCapture,
     needsPaywall,
     loading,

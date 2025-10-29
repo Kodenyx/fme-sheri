@@ -84,16 +84,6 @@ export const useCreditSystem = (email: string | null) => {
         return;
       }
 
-      // Check promotional access
-      const { data: promoData } = await supabase
-        .from('promotional_access')
-        .select('expires_at, is_active')
-        .eq('email', email)
-        .eq('is_active', true)
-        .maybeSingle();
-      
-      const hasPromotionalAccess = promoData && new Date(promoData.expires_at) > new Date();
-
       // Get subscription status
       const { data: subscriptionData, error: subError } = await supabase.functions.invoke('check-subscription', {
         body: { email }
@@ -104,8 +94,8 @@ export const useCreditSystem = (email: string | null) => {
         return;
       }
 
-      const subscriptionStatus = (subscriptionData?.subscribed || hasPromotionalAccess) ? 'paid' : 'free';
-      const isSubscribed = subscriptionData?.subscribed || !!hasPromotionalAccess || false;
+      const subscriptionStatus = subscriptionData?.subscribed ? 'paid' : 'free';
+      const isSubscribed = subscriptionData?.subscribed || false;
       
       const oneTimeBonusClaimed = usageData?.one_time_bonus_claimed || false;
       const lastMonthlyClaimDate = usageData?.last_monthly_claim || null;
