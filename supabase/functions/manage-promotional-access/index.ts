@@ -34,7 +34,13 @@ serve(async (req) => {
     if (action === 'grant') {
       // Grant promotional access
       const expiresAt = new Date();
-      expiresAt.setMonth(expiresAt.getMonth() + duration);
+      
+      // If duration is 0, set to 100 years in the future (lifetime access)
+      if (duration === 0) {
+        expiresAt.setFullYear(expiresAt.getFullYear() + 100);
+      } else {
+        expiresAt.setMonth(expiresAt.getMonth() + duration);
+      }
 
       const { data, error } = await supabase
         .from('promotional_access')

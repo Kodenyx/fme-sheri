@@ -230,6 +230,7 @@ export default function AdminPanel() {
                           <SelectItem value="1">1 Month</SelectItem>
                           <SelectItem value="2">2 Months</SelectItem>
                           <SelectItem value="3">3 Months</SelectItem>
+                          <SelectItem value="0">Lifetime Access</SelectItem>
                         </SelectContent>
                       </Select>
                     </div>
@@ -277,9 +278,19 @@ export default function AdminPanel() {
                         {activePromos.map((promo) => (
                           <TableRow key={promo.id}>
                             <TableCell className="font-medium">{promo.email}</TableCell>
-                            <TableCell>{promo.duration_months} month{promo.duration_months > 1 ? 's' : ''}</TableCell>
+                            <TableCell>
+                              {promo.duration_months === 0 
+                                ? 'Lifetime' 
+                                : `${promo.duration_months} month${promo.duration_months > 1 ? 's' : ''}`
+                              }
+                            </TableCell>
                             <TableCell>{new Date(promo.granted_at).toLocaleDateString()}</TableCell>
-                            <TableCell>{new Date(promo.expires_at).toLocaleDateString()}</TableCell>
+                            <TableCell>
+                              {promo.duration_months === 0 
+                                ? 'Never' 
+                                : new Date(promo.expires_at).toLocaleDateString()
+                              }
+                            </TableCell>
                             <TableCell className="max-w-xs truncate">{promo.notes || '-'}</TableCell>
                             <TableCell>
                               <Button
@@ -324,9 +335,19 @@ export default function AdminPanel() {
                         {expiredPromos.map((promo) => (
                           <TableRow key={promo.id}>
                             <TableCell className="font-medium">{promo.email}</TableCell>
-                            <TableCell>{promo.duration_months} month{promo.duration_months > 1 ? 's' : ''}</TableCell>
+                            <TableCell>
+                              {promo.duration_months === 0 
+                                ? 'Lifetime' 
+                                : `${promo.duration_months} month${promo.duration_months > 1 ? 's' : ''}`
+                              }
+                            </TableCell>
                             <TableCell>{new Date(promo.granted_at).toLocaleDateString()}</TableCell>
-                            <TableCell>{new Date(promo.expires_at).toLocaleDateString()}</TableCell>
+                            <TableCell>
+                              {promo.duration_months === 0 
+                                ? 'Never' 
+                                : new Date(promo.expires_at).toLocaleDateString()
+                              }
+                            </TableCell>
                             <TableCell>
                               <span className="text-muted-foreground">
                                 {!promo.is_active ? 'Revoked' : 'Expired'}
