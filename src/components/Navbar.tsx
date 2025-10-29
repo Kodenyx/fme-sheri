@@ -1,8 +1,9 @@
-
 import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { useNavigate, useLocation } from "react-router-dom";
+import { useAuth } from "@/contexts/AuthContext";
+import UserMenu from "@/components/UserMenu";
 
 interface NavbarProps {
   onTestimonialsClick?: () => void;
@@ -13,6 +14,7 @@ interface NavbarProps {
 const Navbar = ({ onTestimonialsClick, onTryToolClick, onFAQsClick }: NavbarProps = {}) => {
   const navigate = useNavigate();
   const location = useLocation();
+  const { user } = useAuth();
 
   const handleLogoClick = () => {
     if (location.pathname === '/tool') {
@@ -93,6 +95,7 @@ const Navbar = ({ onTestimonialsClick, onTryToolClick, onFAQsClick }: NavbarProp
               Try Tool
             </button>
           )}
+          {user && <UserMenu />}
         </div>
 
         {/* Mobile Navigation */}
@@ -134,6 +137,11 @@ const Navbar = ({ onTestimonialsClick, onTryToolClick, onFAQsClick }: NavbarProp
                   >
                     Try Tool
                   </button>
+                )}
+                {user && (
+                  <div className="pt-4 border-t">
+                    <UserMenu />
+                  </div>
                 )}
               </div>
             </SheetContent>
