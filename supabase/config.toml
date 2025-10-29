@@ -1,1 +1,7 @@
 project_id = "xkoncobtixlrtvgpdqtq"
+
+[functions.validate-admin-password]
+verify_jwt = false
+
+[functions.check-promotional-access]
+verify_jwt = false

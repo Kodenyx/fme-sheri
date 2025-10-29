@@ -16,6 +16,7 @@ import Modal3 from "./pages/Modal3";
 import TagTest from "./pages/TagTest";
 import NotFound from "./pages/NotFound";
 import SocialCredits from "./pages/SocialCredits";
+import AdminPanel from "./pages/AdminPanel";
 
 const queryClient = new QueryClient();
 
@@ -35,6 +36,7 @@ const App = () => {
               <Route path="/offerbeta" element={<OfferBeta />} />
               <Route path="/tool" element={<Tool />} />
               <Route path="/social-credits" element={<SocialCredits />} />
+              <Route path="/admin-panel" element={<AdminPanel />} />
               <Route path="/auth" element={<Auth />} />
               <Route path="/modal" element={<Modal />} />
               <Route path="/modal1" element={<Modal1 />} />

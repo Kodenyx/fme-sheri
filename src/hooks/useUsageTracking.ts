@@ -68,6 +68,21 @@ export const useUsageTracking = () => {
         setIsBetaUser(isBeta);
         console.log('Beta user status:', isBeta);
       }
+
+      // Check promotional access
+      let hasPromoAccess = false;
+      if (storedEmail) {
+        console.log('Checking promotional access for:', storedEmail);
+        const { data: promoData, error: promoError } = await supabase.functions.invoke(
+          'check-promotional-access',
+          { body: { email: storedEmail } }
+        );
+        
+        if (!promoError && promoData) {
+          hasPromoAccess = promoData.hasAccess || false;
+          console.log('Promotional access result:', hasPromoAccess, promoData.expiresAt);
+        }
+      }
       
       // Check subscription status if we have an email
       if (storedEmail && subscription !== 'success') {
@@ -79,7 +94,8 @@ export const useUsageTracking = () => {
         if (!subError && subData) {
           console.log('Subscription check result:', subData);
           const isCurrentlySubscribed = subData.subscribed || false;
-          setIsSubscribed(isCurrentlySubscribed);
+          // Treat promotional access like a subscription
+          setIsSubscribed(isCurrentlySubscribed || hasPromoAccess);
           
           if (isCurrentlySubscribed) {
             // For subscribers, reset counters if this is first time checking after subscription
@@ -216,6 +232,7 @@ export const useUsageTracking = () => {
 
   // Determine access control
   const needsEmailCapture = !email && usageCount >= 1;
+  // Paywall is shown only if user has email, is not subscribed, not promo access, not beta, and exceeded limit
   const needsPaywall = email && !isSubscribed && !isBetaUser && usageCount >= (5 + bonusCredits);
 
   console.log('Current usage tracking state:', {
