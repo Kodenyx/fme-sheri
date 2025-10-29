@@ -153,7 +153,7 @@ export default function AdminPanel() {
             <div className="mx-auto mb-4 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
               <Lock className="w-6 h-6 text-primary" />
             </div>
-            <CardTitle className="text-2xl">Admin Panel</CardTitle>
+            <CardTitle className="text-2xl">FixMyEmail Admin Panel</CardTitle>
             <CardDescription>Enter the admin password to continue</CardDescription>
           </CardHeader>
           <CardContent>
@@ -184,8 +184,8 @@ export default function AdminPanel() {
       <div className="max-w-6xl mx-auto space-y-6">
         <div className="flex items-center justify-between">
           <div>
-            <h1 className="text-3xl font-bold">Admin Panel</h1>
-            <p className="text-muted-foreground">Manage promotional access and settings</p>
+            <h1 className="text-3xl font-bold">FixMyEmail Admin</h1>
+            <p className="text-muted-foreground">Manage promotional access and platform settings</p>
           </div>
           <Button variant="outline" onClick={() => setIsAuthenticated(false)}>
             Logout
