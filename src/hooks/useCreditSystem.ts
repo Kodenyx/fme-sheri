@@ -1,7 +1,6 @@
 
 import { useState, useEffect } from "react";
 import { supabase } from "@/integrations/supabase/client";
-import { usePromotionalAccess } from "./usePromotionalAccess";
 
 export interface CreditSystemData {
   usageCount: number;
@@ -18,8 +17,6 @@ export interface CreditSystemData {
 }
 
 export const useCreditSystem = (email: string | null) => {
-  const { hasPromotionalAccess, loading: promoLoading } = usePromotionalAccess(email);
-  
   const [creditData, setCreditData] = useState<CreditSystemData>({
     usageCount: 0,
     monthlyUsage: 0,
@@ -87,6 +84,16 @@ export const useCreditSystem = (email: string | null) => {
         return;
       }
 
+      // Check promotional access
+      const { data: promoData } = await supabase
+        .from('promotional_access')
+        .select('expires_at, is_active')
+        .eq('email', email)
+        .eq('is_active', true)
+        .maybeSingle();
+      
+      const hasPromotionalAccess = promoData && new Date(promoData.expires_at) > new Date();
+
       // Get subscription status
       const { data: subscriptionData, error: subError } = await supabase.functions.invoke('check-subscription', {
         body: { email }
@@ -98,7 +105,7 @@ export const useCreditSystem = (email: string | null) => {
       }
 
       const subscriptionStatus = (subscriptionData?.subscribed || hasPromotionalAccess) ? 'paid' : 'free';
-      const isSubscribed = subscriptionData?.subscribed || hasPromotionalAccess || false;
+      const isSubscribed = subscriptionData?.subscribed || !!hasPromotionalAccess || false;
       
       const oneTimeBonusClaimed = usageData?.one_time_bonus_claimed || false;
       const lastMonthlyClaimDate = usageData?.last_monthly_claim || null;

@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { usePricingTier } from './usePricingTier';
 import { useUnlimitedUsers } from './useUnlimitedUsers';
-import { usePromotionalAccess } from './usePromotionalAccess';
 import { useAuth } from '@/contexts/AuthContext';
 
 export const useUsageTracking = () => {
@@ -14,11 +13,11 @@ export const useUsageTracking = () => {
   const [loading, setLoading] = useState(true);
   const [monthlyLimit, setMonthlyLimit] = useState(60);
   const [isBetaUser, setIsBetaUser] = useState(false);
+  const [hasPromotionalAccess, setHasPromotionalAccess] = useState(false);
   
   const { user } = useAuth();
   const { pricingData } = usePricingTier();
   const { isUnlimitedUser } = useUnlimitedUsers();
-  const { hasPromotionalAccess, expiresAt, loading: promoLoading } = usePromotionalAccess(email);
 
   const effectiveMonthlyLimit = pricingData?.foundersProgram?.is_available ? 60 : monthlyLimit;
 
@@ -71,16 +70,29 @@ export const useUsageTracking = () => {
         console.log('Beta user status:', isBeta);
       }
       
-      // Check subscription status if we have an email
+      // Check subscription status and promotional access if we have an email
       if (storedEmail && subscription !== 'success') {
         console.log('Checking subscription status for:', storedEmail);
+        
+        // Check promotional access
+        const { data: promoData } = await supabase
+          .from('promotional_access')
+          .select('expires_at, is_active')
+          .eq('email', storedEmail)
+          .eq('is_active', true)
+          .maybeSingle();
+        
+        const hasPromo = promoData && new Date(promoData.expires_at) > new Date();
+        setHasPromotionalAccess(!!hasPromo);
+        console.log('Promotional access:', hasPromo);
+        
         const { data: subData, error: subError } = await supabase.functions.invoke('check-subscription', {
           body: { email: storedEmail }
         });
         
         if (!subError && subData) {
           console.log('Subscription check result:', subData);
-          const isCurrentlySubscribed = subData.subscribed || false;
+          const isCurrentlySubscribed = subData.subscribed || hasPromo || false;
           setIsSubscribed(isCurrentlySubscribed);
           
           if (isCurrentlySubscribed) {
@@ -227,7 +239,6 @@ export const useUsageTracking = () => {
     isSubscribed,
     isBetaUser,
     hasPromotionalAccess,
-    promotionalExpiresAt: expiresAt,
     needsEmailCapture,
     needsPaywall,
     loading
@@ -240,7 +251,6 @@ export const useUsageTracking = () => {
     email,
     isSubscribed,
     hasPromotionalAccess,
-    promotionalExpiresAt: expiresAt,
     needsEmailCapture,
     needsPaywall,
     loading,
