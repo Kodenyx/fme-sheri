@@ -37,10 +37,20 @@ const UserMenu = () => {
       const { error } = await supabase.auth.signOut();
       if (error) throw error;
       
+      // Clear all user-related localStorage data
+      localStorage.removeItem('userEmail');
+      localStorage.removeItem('totalUsage');
+      localStorage.removeItem('monthlyUsage');
+      localStorage.removeItem('bonusCredits');
+      localStorage.removeItem('wasSubscribed');
+      
       toast({
         title: "Signed out successfully",
         description: "You have been logged out of your account.",
       });
+      
+      // Reload the page to reset all state
+      window.location.href = '/tool';
     } catch (error: any) {
       toast({
         title: "Error signing out",
