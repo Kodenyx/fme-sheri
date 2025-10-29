@@ -49,7 +49,17 @@ export const useUsageTracking = () => {
       
       // Prefer authenticated user email, fallback to localStorage
       const storedEmail = user?.email || localStorage.getItem('userEmail');
-      setEmail(storedEmail);
+      
+      // IMPORTANT: For authenticated users, always use their auth email
+      // This prevents users from changing emails to bypass limits
+      if (user?.email) {
+        setEmail(user.email);
+        // Update localStorage to match authenticated email
+        localStorage.setItem('userEmail', user.email);
+      } else {
+        setEmail(storedEmail);
+      }
+      
       console.log('Email (auth or stored):', storedEmail);
       
       // Check if beta user or unlimited user and ensure proper email format
@@ -101,10 +111,10 @@ export const useUsageTracking = () => {
           console.error('Error checking subscription:', subError);
         }
       } else if (!storedEmail) {
-        // No email stored - load free usage
+        // No email stored - load free usage (anonymous users)
         const storedUsage = parseInt(localStorage.getItem('totalUsage') || '0');
         const storedBonusCredits = parseInt(localStorage.getItem('bonusCredits') || '0');
-        console.log('No email stored, loading free usage:', storedUsage, 'bonus credits:', storedBonusCredits);
+        console.log('No email stored, loading anonymous usage:', storedUsage, 'bonus credits:', storedBonusCredits);
         setUsageCount(storedUsage);
         setBonusCredits(storedBonusCredits);
       }

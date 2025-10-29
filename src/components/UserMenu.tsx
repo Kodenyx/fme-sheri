@@ -37,12 +37,17 @@ const UserMenu = () => {
       const { error } = await supabase.auth.signOut();
       if (error) throw error;
       
-      // Clear all user-related localStorage data
+      // Only clear authenticated user data, preserve anonymous usage tracking
+      const anonymousUsage = localStorage.getItem('totalUsage');
+      const anonymousBonusCredits = localStorage.getItem('bonusCredits');
+      
       localStorage.removeItem('userEmail');
-      localStorage.removeItem('totalUsage');
       localStorage.removeItem('monthlyUsage');
-      localStorage.removeItem('bonusCredits');
       localStorage.removeItem('wasSubscribed');
+      
+      // Restore anonymous usage after clearing user data
+      if (anonymousUsage) localStorage.setItem('totalUsage', anonymousUsage);
+      if (anonymousBonusCredits) localStorage.setItem('bonusCredits', anonymousBonusCredits);
       
       toast({
         title: "Signed out successfully",
