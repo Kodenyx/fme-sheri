@@ -26,7 +26,7 @@ const EmailCaptureModal = ({ isOpen, onClose, onAuthComplete, usageCount }: Emai
   const [password, setPassword] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showMagicLink, setShowMagicLink] = useState(false);
-  const [mode, setMode] = useState<'signup' | 'signin'>('signup');
+  const [mode, setMode] = useState<'signup' | 'signin' | 'setpassword'>('signup');
   const { toast } = useToast();
 
   const handleGoogleSignIn = async () => {
@@ -52,6 +52,46 @@ const EmailCaptureModal = ({ isOpen, onClose, onAuthComplete, usageCount }: Emai
         description: error.message || "Failed to sign in with Google",
         variant: "destructive",
       });
+      setIsSubmitting(false);
+    }
+  };
+
+  const handlePasswordReset = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      toast({
+        title: "Invalid Email",
+        description: "Please enter a valid email address",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const { error } = await supabase.auth.resetPasswordForEmail(email, {
+        redirectTo: `${window.location.origin}/tool`,
+      });
+
+      if (error) throw error;
+
+      toast({
+        title: "Check Your Email! 📧",
+        description: "We sent you a link to set/reset your password.",
+      });
+
+      onClose();
+    } catch (error: any) {
+      console.error('Password reset error:', error);
+      toast({
+        title: "Error",
+        description: error.message || "Failed to send password reset email",
+        variant: "destructive",
+      });
+    } finally {
       setIsSubmitting(false);
     }
   };
@@ -254,12 +294,12 @@ const EmailCaptureModal = ({ isOpen, onClose, onAuthComplete, usageCount }: Emai
       // Handle specific error cases
       if (error.message?.includes('already registered')) {
         toast({
-          title: "Account Exists",
-          description: "This email is already registered.",
+          title: "Account Exists - Set Password",
+          description: "This email is registered. Click 'Set/Reset Password' below to create a password.",
           variant: "destructive",
         });
-        // Switch to sign-in mode
-        setMode('signin');
+        // Switch to set password mode
+        setMode('setpassword');
       } else {
         toast({
           title: "Error",
@@ -278,12 +318,14 @@ const EmailCaptureModal = ({ isOpen, onClose, onAuthComplete, usageCount }: Emai
         <div className="rounded-3xl shadow-2xl overflow-hidden" style={{ backgroundColor: '#0D4049' }}>
           <DialogHeader className="p-8 pb-6">
             <DialogTitle className="text-center text-3xl font-bold text-white mb-2">
-              {mode === 'signup' ? '✨ Keep Going!' : '👋 Welcome Back!'}
+              {mode === 'signup' ? '✨ Keep Going!' : mode === 'signin' ? '👋 Welcome Back!' : '🔐 Set Your Password'}
             </DialogTitle>
             <DialogDescription className="text-center text-lg" style={{ color: '#A9D6D4' }}>
               {mode === 'signup' 
                 ? 'Create your free account to unlock more rewrites' 
-                : 'Sign in to continue using the tool'}
+                : mode === 'signin'
+                ? 'Sign in to continue using the tool'
+                : 'Create a password for your account'}
             </DialogDescription>
           </DialogHeader>
 
@@ -311,8 +353,13 @@ const EmailCaptureModal = ({ isOpen, onClose, onAuthComplete, usageCount }: Emai
               </div>
             </div>
 
-            {/* Email + Password Form or Magic Link Form */}
-            <form className="space-y-4" onSubmit={showMagicLink ? handleMagicLink : (mode === 'signin' ? handleSignIn : handleEmailPasswordSignUp)}>
+            {/* Email + Password Form, Magic Link Form, or Set Password Form */}
+            <form className="space-y-4" onSubmit={
+              showMagicLink ? handleMagicLink : 
+              mode === 'setpassword' ? handlePasswordReset :
+              mode === 'signin' ? handleSignIn : 
+              handleEmailPasswordSignUp
+            }>
               {!showMagicLink && mode === 'signup' && (
                 <Input
                   type="text"
@@ -331,11 +378,12 @@ const EmailCaptureModal = ({ isOpen, onClose, onAuthComplete, usageCount }: Emai
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
+                disabled={mode === 'setpassword'}
                 className="text-base py-5 px-5 border-2 rounded-xl bg-white text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
                 style={{ borderColor: '#A9D6D4' }}
               />
 
-              {!showMagicLink && (
+              {!showMagicLink && mode !== 'setpassword' && (
                 <Input
                   type="password"
                   placeholder="Create a password (min 6 characters)"
@@ -361,6 +409,11 @@ const EmailCaptureModal = ({ isOpen, onClose, onAuthComplete, usageCount }: Emai
                     <Mail className="mr-2 h-5 w-5" />
                     Send Magic Link
                   </>
+                ) : mode === 'setpassword' ? (
+                  <>
+                    <Mail className="mr-2 h-5 w-5" />
+                    Send Password Setup Link
+                  </>
                 ) : mode === 'signin' ? (
                   <>
                     <Lock className="mr-2 h-5 w-5" />
@@ -374,32 +427,64 @@ const EmailCaptureModal = ({ isOpen, onClose, onAuthComplete, usageCount }: Emai
                 )}
               </Button>
 
-              {/* Toggle Magic Link and Sign In/Sign Up */}
+              {/* Toggle Magic Link, Sign In/Sign Up, and Set Password */}
               <div className="text-center space-y-2">
-                {!showMagicLink && (
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setMode(mode === 'signin' ? 'signup' : 'signin');
-                      setFirstName('');
-                      setPassword('');
-                    }}
-                    className="text-sm font-medium hover:underline transition-colors block w-full"
-                    style={{ color: '#A9D6D4' }}
-                  >
-                    {mode === 'signin' 
-                      ? "Don't have an account? Sign up" 
-                      : "Already have an account? Sign in"}
-                  </button>
+                {mode === 'setpassword' ? (
+                  <>
+                    <p className="text-sm" style={{ color: '#A9D6D4' }}>
+                      We'll send you an email to set up your password
+                    </p>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setMode('signin');
+                      }}
+                      className="text-sm font-medium hover:underline transition-colors block w-full"
+                      style={{ color: '#A9D6D4' }}
+                    >
+                      ← Back to sign in
+                    </button>
+                  </>
+                ) : (
+                  <>
+                    {!showMagicLink && (
+                      <>
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setMode(mode === 'signin' ? 'signup' : 'signin');
+                            setFirstName('');
+                            setPassword('');
+                          }}
+                          className="text-sm font-medium hover:underline transition-colors block w-full"
+                          style={{ color: '#A9D6D4' }}
+                        >
+                          {mode === 'signin' 
+                            ? "Don't have an account? Sign up" 
+                            : "Already have an account? Sign in"}
+                        </button>
+                        {mode === 'signin' && (
+                          <button
+                            type="button"
+                            onClick={() => setMode('setpassword')}
+                            className="text-sm font-medium hover:underline transition-colors block w-full"
+                            style={{ color: '#A9D6D4' }}
+                          >
+                            🔐 Set/Reset Password
+                          </button>
+                        )}
+                      </>
+                    )}
+                    <button
+                      type="button"
+                      onClick={() => setShowMagicLink(!showMagicLink)}
+                      className="text-sm font-medium hover:underline transition-colors block w-full"
+                      style={{ color: '#A9D6D4' }}
+                    >
+                      {showMagicLink ? "← Back to email/password" : "✉️ Send me a magic link instead"}
+                    </button>
+                  </>
                 )}
-                <button
-                  type="button"
-                  onClick={() => setShowMagicLink(!showMagicLink)}
-                  className="text-sm font-medium hover:underline transition-colors block w-full"
-                  style={{ color: '#A9D6D4' }}
-                >
-                  {showMagicLink ? "← Back to email/password" : "✉️ Send me a magic link instead"}
-                </button>
               </div>
 
               <p className="text-center text-sm" style={{ color: '#A9D6D4' }}>
