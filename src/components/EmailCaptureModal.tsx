@@ -157,11 +157,23 @@ const EmailCaptureModal = ({ isOpen, onClose, onAuthComplete, usageCount }: Emai
       }, 500);
     } catch (error: any) {
       console.error('Sign in error:', error);
-      toast({
-        title: "Error",
-        description: error.message || "Failed to sign in. Please check your credentials.",
-        variant: "destructive",
-      });
+      
+      // Check if it's an invalid credentials error (likely no password set)
+      if (error.message?.includes('Invalid login credentials')) {
+        toast({
+          title: "No Password Set",
+          description: "This account was created without a password. Please use 'Send me a magic link instead' to sign in.",
+          variant: "destructive",
+        });
+        // Automatically switch to magic link mode
+        setShowMagicLink(true);
+      } else {
+        toast({
+          title: "Error",
+          description: error.message || "Failed to sign in. Please check your credentials.",
+          variant: "destructive",
+        });
+      }
     } finally {
       setIsSubmitting(false);
     }
