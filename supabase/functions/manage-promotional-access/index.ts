@@ -17,20 +17,17 @@ serve(async (req) => {
       Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? ''
     );
 
-    const authHeader = req.headers.get('Authorization');
-    if (!authHeader) {
-      throw new Error('No authorization header');
+    const { action, email, duration, notes, promoId, adminPassword } = await req.json();
+    
+    // Validate admin password for all operations
+    const expectedPassword = Deno.env.get('ADMIN_PASSWORD');
+    if (adminPassword !== expectedPassword) {
+      console.error('Invalid admin password attempt');
+      return new Response(
+        JSON.stringify({ success: false, error: 'Unauthorized' }),
+        { headers: { ...corsHeaders, 'Content-Type': 'application/json' }, status: 401 }
+      );
     }
-
-    const { data: { user }, error: authError } = await supabase.auth.getUser(
-      authHeader.replace('Bearer ', '')
-    );
-
-    if (authError || !user) {
-      throw new Error('Unauthorized');
-    }
-
-    const { action, email, duration, notes, promoId } = await req.json();
 
     console.log('Promotional access action:', action, { email, duration, promoId });
 
@@ -46,7 +43,7 @@ serve(async (req) => {
           duration_months: duration,
           expires_at: expiresAt.toISOString(),
           notes: notes || null,
-          granted_by: user.id,
+          granted_by: null, // No user ID since admin password auth
           is_active: true,
         })
         .select()

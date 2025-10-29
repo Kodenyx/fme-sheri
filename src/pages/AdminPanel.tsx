@@ -62,12 +62,10 @@ export default function AdminPanel() {
   const loadPromoAccess = async () => {
     setLoadingPromo(true);
     try {
-      const { data: { session } } = await supabase.auth.getSession();
-      
       const { data, error } = await supabase.functions.invoke('manage-promotional-access', {
-        body: { action: 'list' },
-        headers: {
-          Authorization: `Bearer ${session?.access_token}`
+        body: { 
+          action: 'list',
+          adminPassword: password 
         }
       });
 
@@ -86,17 +84,13 @@ export default function AdminPanel() {
     setLoadingPromo(true);
 
     try {
-      const { data: { session } } = await supabase.auth.getSession();
-      
       const { data, error } = await supabase.functions.invoke('manage-promotional-access', {
         body: {
           action: 'grant',
           email,
           duration: parseInt(duration),
-          notes
-        },
-        headers: {
-          Authorization: `Bearer ${session?.access_token}`
+          notes,
+          adminPassword: password
         }
       });
 
@@ -118,15 +112,11 @@ export default function AdminPanel() {
   const handleRevokeAccess = async (promoId: string) => {
     setLoadingPromo(true);
     try {
-      const { data: { session } } = await supabase.auth.getSession();
-      
       const { data, error } = await supabase.functions.invoke('manage-promotional-access', {
         body: {
           action: 'revoke',
-          promoId
-        },
-        headers: {
-          Authorization: `Bearer ${session?.access_token}`
+          promoId,
+          adminPassword: password
         }
       });
 
